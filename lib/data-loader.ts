@@ -200,13 +200,20 @@ async function loadDataset(): Promise<Dataset> {
 
   // 형제 id 묶음 — 같은 물질의 표기차 중복(F5). 정규화 INCI(대소문자·공백·구두점 통일) 또는
   // 동일 CAS 를 공유하면 같은 물질로 간주. 규제 분절 보정용 (lookup 이 형제 전부의 규제 합산).
-  const normKey = (s: string) => s.toLowerCase().replace(/\s*,\s*/g, ",").replace(/\s+/g, " ").trim();
-  // 표준 canonical 키: 정규화(대소문자·공백·구두점) + CI(Colour Index) 번호 제거.
-  // CI 번호("CI 77947")는 INCI 이름이 아니라 구조화 메타데이터(CosIng 도 INCI명/CI 별도 필드).
-  // 같은 색소가 소스마다 "Zinc Oxide, CI 77947" / "ZINC OXIDE" 로 달리 들어와 분절되던 것을
-  // 결정론적으로 통합 — 향후 추가되는 데이터에도 규칙이 자동 적용(케이스별 alias 불필요).
+  // 정규화: 소문자 + 세미콜론/전각괄호 통일 + 공백·쉼표 정리.
+  const normKey = (s: string) =>
+    s.toLowerCase()
+      .replace(/[；;]/g, ",")                                   // 세미콜론 → 쉼표 (동의어 구분자 통일)
+      .replace(/[（）]/g, (m) => (m === "（" ? "(" : ")"))        // 전각 괄호 → 반각
+      .replace(/\s*,\s*/g, ",").replace(/\s+/g, " ").trim();
+  // 표준 canonical 키 = 정규화 + 구조화 메타데이터(이름 아님) 제거. CosIng 도 별도 필드로 둠.
+  // 같은 물질이 소스마다 "Zinc Oxide, CI 77947"/"ZINC OXIDE", "...(CAS No. 8024-12-2)" 유무로
+  // 달리 들어와 분절되던 것을 결정론적으로 통합 — 향후 데이터에도 자동 적용(케이스별 alias 불필요).
   const canonName = (s: string) =>
-    normKey(s).replace(/[,\s]+c\.?i\.?\s*\d{4,6}/g, "").replace(/[,\s]+$/, "").trim();
+    normKey(s)
+      .replace(/[,\s]*\(\s*cas\s*(?:no\.?)?\s*[\d\-,\s/]+\)/g, "")   // "(CAS No. …)" 주석 제거
+      .replace(/[,\s]+c\.?i\.?\s*\d{4,6}/g, "")                       // ", CI #####" 색인 제거
+      .replace(/[,\s]+$/, "").replace(/^[,\s]+/, "").trim();
   // CAS 는 반드시 유효 형식(예: 68-26-8)만 형제 키로 사용. cas_no 에는 "0"·"(generic)"·"Yellow"
   // 같은 파싱 아티팩트가 섞여 있어, 이를 키로 쓰면 무관한 원료가 대거 오병합됨(정품검증서 발견).
   const isValidCas = (c: string) => /^\d{1,7}-\d{2}-\d$/.test(c);
