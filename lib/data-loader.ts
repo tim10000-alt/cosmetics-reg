@@ -95,6 +95,10 @@ export interface Dataset {
   ingredientByCas: Map<string, Ingredient>;
   // Regulation index: ingredient_id → country_code → row[] (source 우선순위로 정렬됨)
   regsByIngredientCountry: Map<string, Map<string, Regulation[]>>;
+  // 같은 물질의 중복 ingredient id 묶음 (정규화 INCI 또는 동일 CAS). 1개 초과일 때만 등재.
+  // F5: ingest 가 표기차(대소문자·공백)로 같은 원료를 복수 id 로 만들어 규제가 분절되는 것을
+  // 쿼리 시점에 합산해 보정. id → 형제 id[] (자신 포함).
+  siblingIds: Map<string, string[]>;
   countries: Country[];
   countryByCode: Map<string, Country>;
   // Quarantine: country_code → name_lower → row
@@ -194,6 +198,28 @@ async function loadDataset(): Promise<Dataset> {
     }
   }
 
+  // 형제 id 묶음 — 같은 물질의 표기차 중복(F5). 정규화 INCI(대소문자·공백·구두점 통일) 또는
+  // 동일 CAS 를 공유하면 같은 물질로 간주. 규제 분절 보정용 (lookup 이 형제 전부의 규제 합산).
+  const normKey = (s: string) => s.toLowerCase().replace(/\s*,\s*/g, ",").replace(/\s+/g, " ").trim();
+  const normInciToIds = new Map<string, string[]>();
+  const casToIds = new Map<string, string[]>();
+  const push = (m: Map<string, string[]>, k: string, id: string) => {
+    const arr = m.get(k);
+    if (arr) arr.push(id);
+    else m.set(k, [id]);
+  };
+  for (const i of ingredients) {
+    if (i.inci_name) push(normInciToIds, normKey(i.inci_name), i.id);
+    if (i.cas_no) for (const cas of i.cas_no.split(/\s+/)) { const c = cas.trim(); if (c) push(casToIds, c, i.id); }
+  }
+  const siblingIds = new Map<string, string[]>();
+  for (const i of ingredients) {
+    const set = new Set<string>([i.id]);
+    if (i.inci_name) for (const id of normInciToIds.get(normKey(i.inci_name)) ?? []) set.add(id);
+    if (i.cas_no) for (const cas of i.cas_no.split(/\s+/)) { const c = cas.trim(); if (c) for (const id of casToIds.get(c) ?? []) set.add(id); }
+    if (set.size > 1) siblingIds.set(i.id, Array.from(set));
+  }
+
   const countryByCode = new Map<string, Country>();
   for (const c of countries) countryByCode.set(c.code, c);
 
@@ -235,6 +261,7 @@ async function loadDataset(): Promise<Dataset> {
     ingredientByKoreanLower,
     ingredientByCas,
     regsByIngredientCountry,
+    siblingIds,
     countries,
     countryByCode,
     quarantineByCountryName,

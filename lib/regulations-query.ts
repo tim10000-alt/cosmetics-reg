@@ -1,4 +1,4 @@
-import { dataset, type Ingredient, type KciaArticle, type SourcePdf } from "./data-loader";
+import { dataset, type Ingredient, type Regulation, type KciaArticle, type SourcePdf } from "./data-loader";
 
 // 인메모리 검색 — Phase 5: Supabase 의존 제거.
 // public/data/*.json (브라우저 ETag 자동 비교) 의 인덱스만 사용.
@@ -114,22 +114,45 @@ export async function lookupRegulation(
     ? countries
     : ds.countries.map((c) => c.code);
 
-  const regsForIngredient = ds.regsByIngredientCountry.get(ingredient.id);
+  // F5: 같은 물질이 표기차(대소문자·공백)로 복수 id 로 쪼개져 규제가 분절된 경우를 보정 —
+  // 형제 id(정규화 INCI/동일 CAS) 전부의 규제를 country 별로 합산. siblingIds 없으면 자기 1개.
+  const ids = ds.siblingIds.get(ingredient.id) ?? [ingredient.id];
+  const bucketFor = (code: string): Regulation[] | undefined => {
+    let merged: Regulation[] | null = null;
+    for (const id of ids) {
+      const b = ds.regsByIngredientCountry.get(id)?.get(code);
+      if (b && b.length) (merged ??= []).push(...b);
+    }
+    if (!merged) return undefined;
+    // priority desc → last_verified desc (data-loader 버킷 정렬과 동일). 동일 출처 중복 제거.
+    merged.sort((a, b) => {
+      const pa = a.source_priority ?? 0, pb = b.source_priority ?? 0;
+      if (pa !== pb) return pb - pa;
+      return (b.last_verified_at ?? "").localeCompare(a.last_verified_at ?? "");
+    });
+    const seen = new Set<string>();
+    return merged.filter((r) => {
+      const k = `${r.source_document ?? ""}|${r.source_url ?? ""}|${r.status}`;
+      if (seen.has(k)) return false;
+      seen.add(k);
+      return true;
+    });
+  };
 
   const results: CountryLookupResult[] = [];
   for (const code of targetCodes) {
     const country = ds.countryByCode.get(code);
     if (!country) continue;
 
-    // bucket 은 priority desc → last_verified desc 로 미리 정렬됨 — [0] 이 1차 우선.
-    const bucket = regsForIngredient?.get(code);
+    // bucket 은 priority desc → last_verified desc 로 정렬 — [0] 이 1차 우선.
+    const bucket = bucketFor(code);
     let row = bucket?.[0];
     let allBucket = bucket;
 
     // 상속 fallback (예: VN inherits EU)
     let fromInherit: string | null = null;
     if (!row && country.inherits_from) {
-      const inheritedBucket = regsForIngredient?.get(country.inherits_from);
+      const inheritedBucket = bucketFor(country.inherits_from);
       row = inheritedBucket?.[0];
       if (row) {
         fromInherit = country.inherits_from;
