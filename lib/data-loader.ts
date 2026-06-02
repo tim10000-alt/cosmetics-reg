@@ -201,6 +201,10 @@ async function loadDataset(): Promise<Dataset> {
   // 형제 id 묶음 — 같은 물질의 표기차 중복(F5). 정규화 INCI(대소문자·공백·구두점 통일) 또는
   // 동일 CAS 를 공유하면 같은 물질로 간주. 규제 분절 보정용 (lookup 이 형제 전부의 규제 합산).
   const normKey = (s: string) => s.toLowerCase().replace(/\s*,\s*/g, ",").replace(/\s+/g, " ").trim();
+  // CAS 는 반드시 유효 형식(예: 68-26-8)만 형제 키로 사용. cas_no 에는 "0"·"(generic)"·"Yellow"
+  // 같은 파싱 아티팩트가 섞여 있어, 이를 키로 쓰면 무관한 원료가 대거 오병합됨(정품검증서 발견).
+  const isValidCas = (c: string) => /^\d{1,7}-\d{2}-\d$/.test(c);
+  const casTokens = (raw: string) => raw.split(/\s+/).map((c) => c.trim()).filter(isValidCas);
   const normInciToIds = new Map<string, string[]>();
   const casToIds = new Map<string, string[]>();
   const push = (m: Map<string, string[]>, k: string, id: string) => {
@@ -210,13 +214,13 @@ async function loadDataset(): Promise<Dataset> {
   };
   for (const i of ingredients) {
     if (i.inci_name) push(normInciToIds, normKey(i.inci_name), i.id);
-    if (i.cas_no) for (const cas of i.cas_no.split(/\s+/)) { const c = cas.trim(); if (c) push(casToIds, c, i.id); }
+    if (i.cas_no) for (const c of casTokens(i.cas_no)) push(casToIds, c, i.id);
   }
   const siblingIds = new Map<string, string[]>();
   for (const i of ingredients) {
     const set = new Set<string>([i.id]);
     if (i.inci_name) for (const id of normInciToIds.get(normKey(i.inci_name)) ?? []) set.add(id);
-    if (i.cas_no) for (const cas of i.cas_no.split(/\s+/)) { const c = cas.trim(); if (c) for (const id of casToIds.get(c) ?? []) set.add(id); }
+    if (i.cas_no) for (const c of casTokens(i.cas_no)) for (const id of casToIds.get(c) ?? []) set.add(id);
     if (set.size > 1) siblingIds.set(i.id, Array.from(set));
   }
 
