@@ -255,6 +255,11 @@ async function main() {
 
   console.log(`  matched existing ingredients: ${matched.length}, created new: ${created.length}`);
 
+  // F15+ (정품검증): 파싱 0건이면(eCFR 차단·구조변경) 기존 데이터 보존 — strip 후 빈 write 방지.
+  if (newRegs.length === 0) {
+    console.warn("  ! 파싱 0건 — 기존 regulations 보존 (write 생략)");
+    return;
+  }
   // 머지: 기존 source_document='US FDA 21 CFR 700' 행만 교체. 다른 source 보존.
   const existingRegs = await readRows<RegulationRow>("regulations");
   const otherSources = existingRegs.filter((r) => r.source_document !== SOURCE_DOC);

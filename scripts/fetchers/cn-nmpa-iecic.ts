@@ -168,6 +168,12 @@ async function main() {
   }
   console.log(`  ingredient matching: ${matched} matched, ${created} new`);
 
+  // F15+ (정품검증): 파싱 0건이면(NMPA 사이트 IP 차단·구조변경 등) 기존 CN IECIC 8천여 행을
+  // strip 후 빈 write 로 소실시키지 않고 보존. 다른 IP/환경에서도 자동으로 안전.
+  if (newRegs.length === 0) {
+    console.warn("  ! IECIC 파싱 0건 — 기존 regulations 보존 (write 생략)");
+    return;
+  }
   const existingRegs = await readRows<RegulationRow>("regulations");
   const otherSources = existingRegs.filter((r) => r.source_document !== SOURCE_DOC);
   const finalRegs = [...otherSources, ...newRegs];

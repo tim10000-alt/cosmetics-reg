@@ -240,6 +240,12 @@ async function main() {
     console.log(`     → matched ${matched}, new ${created}`);
   }
 
+  // F15+ (정품검증): 파싱 0건이면(EUR-Lex PDF 부재·구조변경·IP 차단) 기존 EU 데이터 보존 —
+  // strip 후 빈 write 로 소실 방지. 다른 IP/환경에서도 자동으로 안전.
+  if (newRegs.length === 0) {
+    console.warn("  ! EU 파싱 0건 — 기존 regulations 보존 (write 생략)");
+    return;
+  }
   const existingRegs = await readRows<RegulationRow>("regulations");
   const otherSources = existingRegs.filter((r) => r.source_document !== SOURCE_DOC);
   const finalRegs = [...otherSources, ...newRegs];

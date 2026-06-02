@@ -271,6 +271,11 @@ async function main() {
 
   createdCount = ingredients.length - initialIngredientCount;
 
+  // F15+ (정품검증): 파싱 0건이면(eCFR 차단·구조변경) 기존 색소 데이터 보존 — strip 후 빈 write 방지.
+  if (newRegs.length === 0) {
+    console.warn("  ! 색소 파싱 0건 — 기존 regulations 보존 (write 생략)");
+    return;
+  }
   // 머지: 이 파일의 source_document 들만 교체. 다른 source 보존.
   const sourceDocsToReplace = new Set([PART73_DOC, PART74_DOC, AB2762_DOC]);
   const existingRegs = await readRows<RegulationRow>("regulations");
