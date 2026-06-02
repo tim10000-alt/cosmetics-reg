@@ -90,7 +90,7 @@ function extractSubpartC(xml: string, part: number): ColorEntry[] {
     const headM = inner.match(/<HEAD>([^<]+)<\/HEAD>/);
     if (!headM) continue;
     // HEAD 형식: "§ 73.2030 Annatto." — section + 색소명 + 마침표
-    let head = headM[1].replace(/&#xA7;/g, "§").trim();
+    const head = headM[1].replace(/&#xA7;/g, "§").trim();
     // "§ 73.2030 Annatto." → "Annatto"
     const inciM = head.match(/§\s*\d+\.\d+\w*\s+(.+?)\.?\s*$/);
     if (!inciM) continue;
