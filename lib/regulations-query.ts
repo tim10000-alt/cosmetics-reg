@@ -58,10 +58,18 @@ export interface IngredientMatch {
   function_description: string | null;
 }
 
+// 예외(확인 필요) — 같은 한글명이나 표기/CAS 차이로 자동통합되지 않은 '동일 물질 추정' 레코드.
+// 추측 병합(오병합 위험)도, 침묵 누락도 아닌 '투명 노출' — 연구원이 동일물질 여부를 직접 확인.
+export interface RelatedVariant {
+  inci_name: string;
+  extra_country_names: string[];   // 이 표기 레코드에만 있는(현재 결과엔 없는) 국가 규제
+}
+
 export interface LookupResponse {
   query: string;
   ingredient: IngredientMatch | null;
   results: CountryLookupResult[];
+  related_variants?: RelatedVariant[];
 }
 
 function sanitize(s: string): string {
@@ -249,5 +257,36 @@ export async function lookupRegulation(
     });
   }
 
-  return { query: q, ingredient, results };
+  // 예외(확인 필요) 관련 표기 — 같은 한글명이나 표기/CAS 차이로 자동통합 안 된 동일추정 레코드 중,
+  // 현재 결과에 없는 국가 규제를 가진 것만. 거대 한글 그룹(석유류 카테고리 등)은 변이가 아니므로 제외.
+  const related_variants: RelatedVariant[] = [];
+  if (ingredient.korean_name) {
+    const sameKorean = ds.idsByKoreanLower.get(ingredient.korean_name.toLowerCase()) ?? [];
+    if (sameKorean.length > 1 && sameKorean.length <= 20) {
+      const sibSet = new Set(ids);
+      const coveredVerified = new Set(
+        results.filter((r) => r.source === "verified").map((r) => r.country_code),
+      );
+      for (const oid of sameKorean) {
+        if (sibSet.has(oid) || oid === ingredient.id) continue;
+        const other = ds.ingredientById.get(oid);
+        const otherRegs = ds.regsByIngredientCountry.get(oid);
+        if (!other || !otherRegs) continue;
+        const extra = Array.from(otherRegs.keys()).filter((cc) => !coveredVerified.has(cc));
+        if (extra.length > 0) {
+          related_variants.push({
+            inci_name: other.inci_name,
+            extra_country_names: extra.map((cc) => ds.countryByCode.get(cc)?.name_ko ?? cc),
+          });
+        }
+      }
+    }
+  }
+
+  return {
+    query: q,
+    ingredient,
+    results,
+    related_variants: related_variants.length ? related_variants : undefined,
+  };
 }

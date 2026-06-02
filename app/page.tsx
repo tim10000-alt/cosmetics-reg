@@ -209,6 +209,27 @@ function HomeInner() {
       {response?.ingredient && (
         <>
           <IngredientHeader ingredient={response.ingredient} />
+          {response.related_variants && response.related_variants.length > 0 && (
+            <div className="mt-4 rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 dark:border-amber-800 dark:bg-amber-950/40">
+              <div className="text-sm font-medium text-amber-900 dark:text-amber-200">
+                ⚠ 확인 필요 — 표기가 다른 동일 물질 추정 레코드
+              </div>
+              <p className="mt-1 text-xs leading-relaxed text-amber-800 dark:text-amber-300">
+                같은 한글명이나 INCI 표기·CAS 차이로 <b>자동 통합되지 않은</b> 레코드가 있습니다. 아래가 동일 물질이라면
+                해당 국가 규제도 함께 적용될 수 있으니, 공식 원문으로 동일 물질 여부를 확인해 주세요.
+              </p>
+              <ul className="mt-2 space-y-1.5">
+                {response.related_variants.map((v, i) => (
+                  <li key={i} className="text-xs text-amber-900 dark:text-amber-200">
+                    <span className="font-mono">{v.inci_name}</span>
+                    <span className="text-amber-700 dark:text-amber-400">
+                      {" "}— 이 표기에만 규제 있는 국가: {v.extra_country_names.join(", ")}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
           <section className="mt-6 grid gap-3 sm:grid-cols-2">
             {response.results.map((r) => (
               <CountryCard key={r.country_code} result={r} />

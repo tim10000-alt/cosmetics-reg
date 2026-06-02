@@ -93,6 +93,8 @@ export interface Dataset {
   ingredientByInciLower: Map<string, Ingredient>;
   ingredientByKoreanLower: Map<string, Ingredient>;
   ingredientByCas: Map<string, Ingredient>;
+  // 같은 한글명을 가진 모든 ingredient id (예외/관련표기 노출용 — 표기차로 자동통합 안 된 동일추정 레코드 탐지).
+  idsByKoreanLower: Map<string, string[]>;
   // Regulation index: ingredient_id → country_code → row[] (source 우선순위로 정렬됨)
   regsByIngredientCountry: Map<string, Map<string, Regulation[]>>;
   // 같은 물질의 중복 ingredient id 묶음 (정규화 INCI 또는 동일 CAS). 1개 초과일 때만 등재.
@@ -143,6 +145,7 @@ async function loadDataset(): Promise<Dataset> {
   const ingredientByInciLower = new Map<string, Ingredient>();
   const ingredientByKoreanLower = new Map<string, Ingredient>();
   const ingredientByCas = new Map<string, Ingredient>();
+  const idsByKoreanLower = new Map<string, string[]>();
 
   // 청크 단위 yield — main thread 5ms 마다 양보 → TBT 감소.
   // 33K ingredients × 4 Map ops + 91K regulations 인덱싱이 한 번에 끊기지 않게.
@@ -151,7 +154,12 @@ async function loadDataset(): Promise<Dataset> {
     const i = ingredients[idx];
     ingredientById.set(i.id, i);
     if (i.inci_name) ingredientByInciLower.set(i.inci_name.toLowerCase(), i);
-    if (i.korean_name) ingredientByKoreanLower.set(i.korean_name.toLowerCase(), i);
+    if (i.korean_name) {
+      const kl = i.korean_name.toLowerCase();
+      ingredientByKoreanLower.set(kl, i);
+      const arr = idsByKoreanLower.get(kl);
+      if (arr) arr.push(i.id); else idsByKoreanLower.set(kl, [i.id]);
+    }
     if (i.cas_no) {
       for (const cas of i.cas_no.split(/\s+/)) {
         if (cas.trim()) ingredientByCas.set(cas.trim(), i);
@@ -308,6 +316,7 @@ async function loadDataset(): Promise<Dataset> {
     ingredientByInciLower,
     ingredientByKoreanLower,
     ingredientByCas,
+    idsByKoreanLower,
     regsByIngredientCountry,
     siblingIds,
     countries,
