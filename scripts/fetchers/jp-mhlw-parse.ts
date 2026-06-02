@@ -1,3 +1,4 @@
+import "./pdf-polyfill";   // 환경 독립 — pdf-parse 가 구버전 Node 에서도 동작 (pdf-parse import 전 필수)
 import { randomUUID } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { loadEnv } from "../crawlers/env";
