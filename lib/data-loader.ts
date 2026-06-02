@@ -200,9 +200,17 @@ async function loadDataset(): Promise<Dataset> {
 
   // 형제 id 묶음 — 같은 물질의 표기차 중복(F5). 정규화 INCI(대소문자·공백·구두점 통일) 또는
   // 동일 CAS 를 공유하면 같은 물질로 간주. 규제 분절 보정용 (lookup 이 형제 전부의 규제 합산).
-  // 정규화: 소문자 + 세미콜론/전각괄호 통일 + 공백·쉼표 정리.
+  // 그리스 문자 → 영문 (유한·고정 집합이라 결정론적. 예: "α-Hydroxy" ↔ "Alpha-Hydroxy").
+  const GREEK: Record<string, string> = {
+    "α": "alpha", "β": "beta", "γ": "gamma", "δ": "delta", "ε": "epsilon", "ζ": "zeta",
+    "η": "eta", "θ": "theta", "ι": "iota", "κ": "kappa", "λ": "lambda", "μ": "mu",
+    "ν": "nu", "ξ": "xi", "ο": "omicron", "π": "pi", "ρ": "rho", "σ": "sigma",
+    "τ": "tau", "υ": "upsilon", "φ": "phi", "χ": "chi", "ψ": "psi", "ω": "omega",
+  };
+  // 정규화: 소문자 + 그리스문자 + 세미콜론/전각괄호 통일 + 공백·쉼표 정리.
   const normKey = (s: string) =>
     s.toLowerCase()
+      .replace(/[αβγδεζηθικλμνξοπρστυφχψω]/g, (m) => GREEK[m] ?? m)  // 그리스 → 영문
       .replace(/[；;]/g, ",")                                   // 세미콜론 → 쉼표 (동의어 구분자 통일)
       .replace(/[（）]/g, (m) => (m === "（" ? "(" : ")"))        // 전각 괄호 → 반각
       .replace(/\s*,\s*/g, ",").replace(/\s+/g, " ").trim();
