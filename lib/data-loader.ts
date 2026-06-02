@@ -211,22 +211,45 @@ async function loadDataset(): Promise<Dataset> {
   // 같은 파싱 아티팩트가 섞여 있어, 이를 키로 쓰면 무관한 원료가 대거 오병합됨(정품검증서 발견).
   const isValidCas = (c: string) => /^\d{1,7}-\d{2}-\d$/.test(c);
   const casTokens = (raw: string) => raw.split(/\s+/).map((c) => c.trim()).filter(isValidCas);
+  // 동의어-리스트 접두 규칙: 같은 한글명 + 한 canonName 이 다른 것의 '동의어 경계(쉼표/세미콜론)
+  // 접두'. 예: "Amaranth" ⊂ "Amaranth, Acid Red 27, CI 16185". 한 소스는 기본명, 다른 소스는
+  // 동의어를 덧붙여 분절되던 것을 통합. 경계를 쉼표/세미콜론으로 한정 → "Silver Chloride" 와
+  // "Silver Chloride Deposited on TiO2"(공백+다른물질) 같은 오병합 차단(측정으로 위험 0 확인).
+  const isSynPrefix = (a: string, b: string) => {
+    const sh = a.length <= b.length ? a : b, lo = a.length <= b.length ? b : a;
+    if (!sh || sh.length < 5 || sh === lo || !lo.startsWith(sh)) return false;
+    return /[,;]/.test(lo[sh.length]);
+  };
   const nameToIds = new Map<string, string[]>();
   const casToIds = new Map<string, string[]>();
+  const korToIngr = new Map<string, { id: string; cn: string }[]>();
   const push = (m: Map<string, string[]>, k: string, id: string) => {
     const arr = m.get(k);
     if (arr) arr.push(id);
     else m.set(k, [id]);
   };
   for (const i of ingredients) {
-    if (i.inci_name) { const k = canonName(i.inci_name); if (k) push(nameToIds, k, i.id); }
+    const cn = i.inci_name ? canonName(i.inci_name) : "";
+    if (cn) push(nameToIds, cn, i.id);
     if (i.cas_no) for (const c of casTokens(i.cas_no)) push(casToIds, c, i.id);
+    if (i.korean_name && cn) {
+      const k = i.korean_name.trim();
+      const arr = korToIngr.get(k);
+      if (arr) arr.push({ id: i.id, cn });
+      else korToIngr.set(k, [{ id: i.id, cn }]);
+    }
   }
   const siblingIds = new Map<string, string[]>();
   for (const i of ingredients) {
     const set = new Set<string>([i.id]);
-    if (i.inci_name) { const k = canonName(i.inci_name); if (k) for (const id of nameToIds.get(k) ?? []) set.add(id); }
+    const cn = i.inci_name ? canonName(i.inci_name) : "";
+    if (cn) for (const id of nameToIds.get(cn) ?? []) set.add(id);
     if (i.cas_no) for (const c of casTokens(i.cas_no)) for (const id of casToIds.get(c) ?? []) set.add(id);
+    if (i.korean_name && cn) {
+      for (const e of korToIngr.get(i.korean_name.trim()) ?? []) {
+        if (e.id !== i.id && isSynPrefix(cn, e.cn)) set.add(e.id);
+      }
+    }
     if (set.size > 1) siblingIds.set(i.id, Array.from(set));
   }
 
