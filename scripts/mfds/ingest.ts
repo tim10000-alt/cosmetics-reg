@@ -97,6 +97,13 @@ function normalizeInci(s: string | null | undefined): string | null {
   return trimmed.length > 0 ? trimmed : null;
 }
 
+// F5: 같은 원료를 표기차(대소문자·공백·구두점)로 다른 id 로 만들지 않기 위한 정규화 키.
+// 예: "Magnesium Ascorbyl Phosphate" / "magnesium ascorbyl phosphate" /
+//     "Magnesium Carbonate,CI 77713" / "Magnesium Carbonate, CI 77713" → 동일 키.
+function normKey(s: string): string {
+  return s.toLowerCase().replace(/\s*,\s*/g, ",").replace(/\s+/g, " ").trim();
+}
+
 function stage1IngredientMaster(ing: IngredientMasterItem[]): Map<string, CanonicalIngredient> {
   const byInci = new Map<string, CanonicalIngredient>();
   let skippedNoEng = 0;
@@ -230,7 +237,7 @@ function buildRegulationsFromRestriction(
   for (const r of rows) {
     const inci = normalizeInci(r.INGR_ENG_NAME);
     if (!inci) { skipped++; continue; }
-    const ingredient_id = idByInci.get(inci);
+    const ingredient_id = idByInci.get(normKey(inci));   // F5: 정규화 키로 조회
     if (!ingredient_id) { skipped++; continue; }
     const codes = mapCountryName(r.COUNTRY_NAME);
     if (codes.length === 0) continue;
@@ -302,8 +309,9 @@ function enrichRegulationsWithDetail(regulations: RegulationRow[], details: Coun
     const codes = mapCountryName(d.COUNTRY_NAME);
     if (codes.length === 0) continue;
     let ingredient_id: string | undefined;
+    const possibleKey = normKey(possibleInci);                  // F5: 정규화 키 비교
     for (const [inci, id] of idByInci.entries()) {
-      if (possibleInci.toLowerCase().startsWith(inci.toLowerCase())) {
+      if (possibleKey.startsWith(inci)) {
         ingredient_id = id;
         break;
       }
@@ -390,20 +398,40 @@ async function main() {
   );
 
   console.log("▶ [4/5] Building canonical ingredients + merging into ingredients.json...");
-  const canonical = stage1IngredientMaster(ingMaster);
-  mergeRestrictionIngredients(canonical, restrictions);
+  const canonicalRaw = stage1IngredientMaster(ingMaster);
+  mergeRestrictionIngredients(canonicalRaw, restrictions);
+
+  // F5: canonical 을 정규화 키로 합쳐 한 run 안의 표기차 중복(같은 원료 복수 id)을 차단.
+  const canonical = new Map<string, CanonicalIngredient>();   // key = normKey(inci)
+  for (const c of canonicalRaw.values()) {
+    const nk = normKey(c.inci_name);
+    const ex = canonical.get(nk);
+    if (!ex) { canonical.set(nk, { ...c, synonyms: [...c.synonyms] }); continue; }
+    ex.korean_name = ex.korean_name ?? c.korean_name;
+    ex.chinese_name = ex.chinese_name ?? c.chinese_name;
+    ex.japanese_name = ex.japanese_name ?? c.japanese_name;
+    ex.cas_no = ex.cas_no ?? c.cas_no;
+    ex.synonyms = Array.from(new Set([...ex.synonyms, ...c.synonyms]));
+    ex.description = ex.description ?? c.description;
+  }
 
   // Load existing ingredients to preserve id, function_category, multi-language names from prior enrichment.
+  // F5: 기존 id 를 정규화 키로 재사용 → 표기차로 새 id 가 발급돼 규제가 분절되는 것을 방지.
   const existingIngredients = await readRows<IngredientRow>("ingredients");
-  const existingByInci = new Map<string, IngredientRow>();
-  for (const e of existingIngredients) existingByInci.set(e.inci_name, e);
+  const existingByNorm = new Map<string, IngredientRow>();    // first-wins by normalized key
+  for (const e of existingIngredients) {
+    const nk = normKey(e.inci_name);
+    if (!existingByNorm.has(nk)) existingByNorm.set(nk, e);
+  }
 
   const mergedIngredients: IngredientRow[] = [];
-  const idByInci = new Map<string, string>();
-  for (const c of canonical.values()) {
-    const prev = existingByInci.get(c.inci_name);
+  const idByInci = new Map<string, string>();   // key = normKey(inci) — buildRegulations/enrich 가 normKey 로 조회
+  const assignedIds = new Set<string>();
+  for (const [nk, c] of canonical) {
+    const prev = existingByNorm.get(nk);
     const id = prev?.id ?? randomUUID();
-    idByInci.set(c.inci_name, id);
+    if (prev) assignedIds.add(prev.id);
+    idByInci.set(nk, id);
     mergedIngredients.push({
       id,
       inci_name: c.inci_name,
@@ -418,12 +446,13 @@ async function main() {
       function_description: prev?.function_description ?? null,
     });
   }
-  // Ingredients that existed before but no longer in MFDS — keep (other sources / historical)
+  // 기존에 있었으나 이번 canonical 이 대표하지 않은(id 미사용) 행 — 유지 (타 소스·과거 데이터의
+  // 규제가 그 id 를 참조하므로 drop 시 고아 발생). 기존 중복은 보존하되 새로 늘리지 않음.
   for (const e of existingIngredients) {
-    if (!idByInci.has(e.inci_name)) {
-      mergedIngredients.push(e);
-      idByInci.set(e.inci_name, e.id);
-    }
+    if (assignedIds.has(e.id)) continue;     // canonical 이 이미 이 id 를 재사용 = 대표됨
+    mergedIngredients.push(e);
+    const nk = normKey(e.inci_name);
+    if (!idByInci.has(nk)) idByInci.set(nk, e.id);
   }
   await writeRows("ingredients", mergedIngredients);
   console.log(`  ingredients.json: ${mergedIngredients.length} rows (canonical ${canonical.size} + retained ${mergedIngredients.length - canonical.size})`);
