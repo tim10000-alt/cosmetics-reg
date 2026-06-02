@@ -201,11 +201,17 @@ async function loadDataset(): Promise<Dataset> {
   // 형제 id 묶음 — 같은 물질의 표기차 중복(F5). 정규화 INCI(대소문자·공백·구두점 통일) 또는
   // 동일 CAS 를 공유하면 같은 물질로 간주. 규제 분절 보정용 (lookup 이 형제 전부의 규제 합산).
   const normKey = (s: string) => s.toLowerCase().replace(/\s*,\s*/g, ",").replace(/\s+/g, " ").trim();
+  // 표준 canonical 키: 정규화(대소문자·공백·구두점) + CI(Colour Index) 번호 제거.
+  // CI 번호("CI 77947")는 INCI 이름이 아니라 구조화 메타데이터(CosIng 도 INCI명/CI 별도 필드).
+  // 같은 색소가 소스마다 "Zinc Oxide, CI 77947" / "ZINC OXIDE" 로 달리 들어와 분절되던 것을
+  // 결정론적으로 통합 — 향후 추가되는 데이터에도 규칙이 자동 적용(케이스별 alias 불필요).
+  const canonName = (s: string) =>
+    normKey(s).replace(/[,\s]+c\.?i\.?\s*\d{4,6}/g, "").replace(/[,\s]+$/, "").trim();
   // CAS 는 반드시 유효 형식(예: 68-26-8)만 형제 키로 사용. cas_no 에는 "0"·"(generic)"·"Yellow"
   // 같은 파싱 아티팩트가 섞여 있어, 이를 키로 쓰면 무관한 원료가 대거 오병합됨(정품검증서 발견).
   const isValidCas = (c: string) => /^\d{1,7}-\d{2}-\d$/.test(c);
   const casTokens = (raw: string) => raw.split(/\s+/).map((c) => c.trim()).filter(isValidCas);
-  const normInciToIds = new Map<string, string[]>();
+  const nameToIds = new Map<string, string[]>();
   const casToIds = new Map<string, string[]>();
   const push = (m: Map<string, string[]>, k: string, id: string) => {
     const arr = m.get(k);
@@ -213,13 +219,13 @@ async function loadDataset(): Promise<Dataset> {
     else m.set(k, [id]);
   };
   for (const i of ingredients) {
-    if (i.inci_name) push(normInciToIds, normKey(i.inci_name), i.id);
+    if (i.inci_name) { const k = canonName(i.inci_name); if (k) push(nameToIds, k, i.id); }
     if (i.cas_no) for (const c of casTokens(i.cas_no)) push(casToIds, c, i.id);
   }
   const siblingIds = new Map<string, string[]>();
   for (const i of ingredients) {
     const set = new Set<string>([i.id]);
-    if (i.inci_name) for (const id of normInciToIds.get(normKey(i.inci_name)) ?? []) set.add(id);
+    if (i.inci_name) { const k = canonName(i.inci_name); if (k) for (const id of nameToIds.get(k) ?? []) set.add(id); }
     if (i.cas_no) for (const c of casTokens(i.cas_no)) for (const id of casToIds.get(c) ?? []) set.add(id);
     if (set.size > 1) siblingIds.set(i.id, Array.from(set));
   }
