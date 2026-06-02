@@ -220,6 +220,11 @@ function HomeInner() {
       <footer className="mt-12 border-t border-zinc-200 pt-6 text-xs leading-relaxed text-zinc-500 dark:border-zinc-800">
         본 서비스 정보는 식약처 공공데이터 포털의 공식 API를 자동 수집·정리한 참고 자료입니다.
         최종 규제 판단은 반드시 해당 국가 공식 문서 원문을 확인해 주세요.
+        <div className="mt-2">
+          <a href="/sources/" className="underline decoration-dotted hover:text-zinc-800 dark:hover:text-zinc-200">
+            데이터 상태·갱신 시점 보기 →
+          </a>
+        </div>
       </footer>
     </main>
   );

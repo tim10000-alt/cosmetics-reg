@@ -1,5 +1,4 @@
 const fs = require("node:fs");
-const path = require("node:path");
 
 // 충돌 패턴: <<<<<<< Updated upstream\n<remote>\n=======\n<stashed>\n>>>>>>> Stashed changes
 // "Stashed changes" 부분 keep — 우리 cn-iecic-kcia 출력 (latest).

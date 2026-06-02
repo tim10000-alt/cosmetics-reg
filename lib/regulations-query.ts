@@ -89,14 +89,22 @@ function findIngredientSync(
     if (cas) return cas;
   }
 
-  // 4) substring 검색 — INCI / Korean / Chinese / Japanese
+  // 4) substring 검색 — INCI / Korean / Chinese / Japanese.
+  // F6: 첫 매치 반환은 의도와 다른 원료를 잡을 수 있어, 가장 근접한 후보를 랭킹 선택.
+  // 점수 낮을수록 우선: 접두(startsWith) > 부분포함, 그리고 이름이 짧을수록(=질의에 근접) 우선.
+  let best: Ingredient | null = null;
+  let bestScore = Infinity;
   for (const ing of ds.ingredients) {
-    if (ing.inci_name && ing.inci_name.toLowerCase().includes(safe)) return ing;
-    if (ing.korean_name && ing.korean_name.toLowerCase().includes(safe)) return ing;
-    if (ing.chinese_name && ing.chinese_name.includes(query)) return ing;
-    if (ing.japanese_name && ing.japanese_name.includes(query)) return ing;
+    const inci = ing.inci_name ? ing.inci_name.toLowerCase() : null;
+    const kor = ing.korean_name ? ing.korean_name.toLowerCase() : null;
+    let score = Infinity;
+    if (inci && inci.includes(safe)) score = Math.min(score, (inci.startsWith(safe) ? 0 : 1000) + inci.length);
+    if (kor && kor.includes(safe)) score = Math.min(score, (kor.startsWith(safe) ? 0 : 1000) + kor.length);
+    if (ing.chinese_name && ing.chinese_name.includes(query)) score = Math.min(score, 500 + ing.chinese_name.length);
+    if (ing.japanese_name && ing.japanese_name.includes(query)) score = Math.min(score, 500 + ing.japanese_name.length);
+    if (score < bestScore) { bestScore = score; best = ing; }
   }
-  return null;
+  return best;
 }
 
 export async function lookupRegulation(

@@ -221,7 +221,8 @@ async function main() {
 
   const now = new Date().toISOString();
   const newRegs: RegulationRow[] = [];
-  let matched = 0, created = 0, skipped = 0;
+  let matched = 0, created = 0;
+  const skipped = 0;
 
   for (const e of entries) {
     let ing = byJp.get(e.japanese_name);

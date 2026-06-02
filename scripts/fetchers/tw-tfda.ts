@@ -176,6 +176,14 @@ async function main() {
     console.log(`     → matched ${matched}, new ${created}`);
   }
 
+  // F15: 소프트 파싱 실패(HTTP 200 + HTML 구조 변경 → 0~소수 행) 시 기존 TFDA 데이터가
+  // 빈 set 으로 덮어써지는 소실 방지. 결과가 기존의 50% 미만이면(기존이 유의미할 때) 중단.
+  const prevTfda = existingRegs.length - otherSources.length;
+  if (prevTfda > 100 && newRegs.length < prevTfda * 0.5) {
+    console.error(`✗ TFDA 파싱 결과 ${newRegs.length} 행 < 기존 ${prevTfda} 의 50% — 사이트 구조 변경 의심. 데이터 보존 위해 중단(write 안 함).`);
+    process.exit(1);
+  }
+
   const finalRegs = [...otherSources, ...newRegs];
   await writeRows("ingredients", ingredients);
   await writeRows("regulations", finalRegs);

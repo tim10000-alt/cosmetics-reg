@@ -63,7 +63,12 @@ export async function fetchAllPages<T>(
     const items = resp.body.items ?? [];
     all.push(...items);
     opts.onProgress?.(all.length, total);
-    if (items.length === 0 || all.length >= total) break;
+    if (all.length >= total) break;
+    // F18: total 미달인데 페이지가 0건 → 페이지네이션 불완전(API 이상). 부분 데이터로 진행하면
+    // ingest 가 완전한 MFDS 데이터를 부분 데이터로 교체해 소실되므로, 조용한 break 대신 throw.
+    if (items.length === 0) {
+      throw new Error(`${label} pagination incomplete: ${all.length}/${total} 수집 후 page ${pageNo} 가 0건 반환 — 부분 데이터 방지 위해 중단`);
+    }
     pageNo++;
     if (PAGE_DELAY_MS > 0) await new Promise((r) => setTimeout(r, PAGE_DELAY_MS));
   }

@@ -4,12 +4,18 @@
 const MAPPING: Record<string, string[]> = {
   "한국": ["KR"],
   "대한민국": ["KR"],
+  "Korea": ["KR"],
   "중국": ["CN"],
+  "China": ["CN"],
   "EU": ["EU"],
   "유럽": ["EU"],
   "유럽연합": ["EU"],
+  "European Union": ["EU"],
   "미국": ["US"],
+  "USA": ["US"],
+  "U.S.": ["US"],
   "일본": ["JP"],
+  "Japan": ["JP"],
   "아세안": ["VN", "TH", "ID", "MY", "PH", "SG"],
   "ASEAN": ["VN", "TH", "ID", "MY", "PH", "SG"],
   "대만": ["TW"],
@@ -33,6 +39,11 @@ export function mapCountryName(name: string | null | undefined): string[] {
   const trimmed = name.trim();
   if (!trimmed) return [];
   if (MAPPING[trimmed]) return MAPPING[trimmed];
+  // F14: 표기 변형 보정 — 내부 공백 정규화 / 공백 제거 변형도 시도 (예: "유럽 연합"→"유럽연합").
+  const collapsed = trimmed.replace(/\s+/g, " ");
+  if (MAPPING[collapsed]) return MAPPING[collapsed];
+  const nospace = trimmed.replace(/\s+/g, "");
+  if (MAPPING[nospace]) return MAPPING[nospace];
   if (!warned.has(trimmed)) {
     warned.add(trimmed);
     console.warn(`  [country-mapping] unknown COUNTRY_NAME="${trimmed}" — skipped`);

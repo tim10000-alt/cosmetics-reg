@@ -341,6 +341,13 @@ async function main() {
 
   const existingRegs = await readRows<RegulationRow>("regulations");
   const otherSources = existingRegs.filter((r) => r.source_document !== SOURCE_DOC);
+  // F15: 소프트 파싱 실패(PDF 구조/Appendix 마커 변경 → items 0~소수) 시 기존 JP MHLW 데이터
+  // 소실 방지. 결과가 기존의 50% 미만이면(기존 유의미 시) 중단.
+  const prevJp = existingRegs.length - otherSources.length;
+  if (prevJp > 50 && newRegs.length < prevJp * 0.5) {
+    console.error(`✗ JP MHLW 파싱 결과 ${newRegs.length} 행 < 기존 ${prevJp} 의 50% — PDF 구조 변경 의심. 데이터 보존 위해 중단(write 안 함).`);
+    process.exit(1);
+  }
   const finalRegs = [...otherSources, ...newRegs];
 
   await writeRows("ingredients", ingredients);
