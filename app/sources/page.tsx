@@ -61,8 +61,8 @@ export default function SourcesPage() {
       )}
 
       <footer className="mt-12 border-t border-zinc-200 pt-6 text-xs text-zinc-500 dark:border-zinc-800">
-        Phase 5 — 검색 path 100% 로컬 (Supabase·서버 의존 0). 데이터 갱신은 운영자가
-        <code className="mx-1">npm run export-data</code> 또는 별도 인제스트 파이프라인으로 수행.
+        Phase 5b — 검색 path·데이터 갱신 path 모두 100% 로컬 (Supabase·서버 의존 0). 데이터 갱신은
+        운영자가 인제스트 파이프라인(<code className="mx-1">npm run mfds:ingest</code> 등)으로 수행.
       </footer>
     </main>
   );

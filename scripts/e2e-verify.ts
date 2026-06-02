@@ -76,7 +76,7 @@ async function main() {
 
   await search(page, "Retinol");
   const cards = await page.locator("article").count();
-  record("T2 Retinol 15개 카드", cards === 15, `rendered ${cards}`);
+  record("T2 Retinol 19개 카드", cards === 19, `rendered ${cards}`);
 
   const cnHtml = await page.locator("article", { hasText: "중국" }).first().innerHTML();
   // Retinol 이 IECIC 등재 확인됨 (NMPA 1차 데이터) — listed 상태 표시 정상.
@@ -214,10 +214,11 @@ async function main() {
     const secOk = !!secH["x-content-type-options"] && !!secH["x-frame-options"] && !!secH["strict-transport-security"];
     record("T23 보안 헤더 5종", secOk,
       `XCTO=${!!secH["x-content-type-options"]} XFO=${!!secH["x-frame-options"]} HSTS=${!!secH["strict-transport-security"]}`);
+    // Phase 5b — Supabase 제거됨. CSP connect-src 'self' (외부 connect 없음) 확인.
     const csp = secH["content-security-policy-report-only"];
     record("T24 CSP-Report-Only",
-      !!csp && csp.includes("supabase.co"),
-      csp ? "supabase allowlist OK" : "MISSING");
+      !!csp && /connect-src\s+'self'/.test(csp) && csp.includes("default-src 'self'"),
+      csp ? "self-only CSP OK" : "MISSING");
   } else {
     record("T23 보안 헤더 (host-layer only — localhost skip)", true, "n/a on npx serve");
     record("T24 CSP (host-layer only — localhost skip)", true, "n/a on npx serve");
@@ -243,7 +244,7 @@ async function main() {
   await mpage.goto(BASE, { waitUntil: "networkidle", timeout: 30_000 });
   await search(mpage, "Retinol");
   const mCards = await mpage.locator("article").count();
-  record("T17 모바일 viewport 렌더", mCards === 15, `${mCards} cards at 375px`);
+  record("T17 모바일 viewport 렌더", mCards === 19, `${mCards} cards at 375px`);
   await mpage.screenshot({ path: `${SHOT_DIR}/mobile-retinol.png`, fullPage: true });
   await mctx.close();
 

@@ -124,7 +124,7 @@ function HomeInner() {
           화장품 원료 규제 검색
         </h1>
         <p className="mt-1 text-sm text-zinc-500">
-          식약처 공공데이터 API (4종) · 총 원료 26K·규제 55K건 (15개국: 한국·중국·EU·미국·일본·ASEAN·대만·브라질·아르헨티나·캐나다)
+          식약처 공공데이터 API (4종) + 각국 공식 법령 · 총 원료 34K·규제 92K건 (19개국: 한국·중국·EU·미국·일본·ASEAN 6국·대만·브라질·아르헨티나·캐나다·안데안공동체 4국)
         </p>
       </header>
 
@@ -307,6 +307,10 @@ const COUNTRY_FLAG: Record<string, string> = {
   BR: "🇧🇷",
   AR: "🇦🇷",
   CA: "🇨🇦",
+  CO: "🇨🇴",
+  EC: "🇪🇨",
+  PE: "🇵🇪",
+  BO: "🇧🇴",
 };
 
 const STATUS_STYLE: Record<string, { label: string; className: string }> = {

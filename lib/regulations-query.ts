@@ -68,12 +68,6 @@ function sanitize(s: string): string {
   return s.replace(/[,()%_\\"]/g, " ").trim();
 }
 
-function findIngredient(query: string): Ingredient | null {
-  // 비동기 호출 가능을 위해 dataset() await 가 외부에서 보장됨 (lookupRegulation 가 await)
-  // 여기선 sync 보조함수
-  return null;
-}
-
 function findIngredientSync(
   query: string,
   ds: Awaited<ReturnType<typeof dataset>>,
