@@ -256,7 +256,7 @@ function parseRefBasedAnnex(text: string, headerPattern: RegExp): Entry[] {
       // CAS 없으면 첫 250 chars 까지
       substanceEnd = Math.min(250, block.length);
     }
-    let substance = block.slice(0, substanceEnd)
+    const substance = block.slice(0, substanceEnd)
       .replace(/CAS No\.?/gi, " ")
       .replace(/\(\s*CAS\s*\)/gi, " ")
       .replace(/See also \d+[a-z]?/gi, " ")
