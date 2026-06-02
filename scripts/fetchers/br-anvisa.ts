@@ -490,12 +490,30 @@ async function main() {
   }
 
   const existingRegs = await readRows<RegulationRow>("regulations");
-  // 이전 run 에서 다른 prefix·suffix 로 저장된 stale 행도 함께 제거.
-  // BR ANVISA RDC 와 AR ANMAT MERCOSUL 채택분 모두.
+
+  // F15+ (정품검증): 이번 run 에 실제 처리한 RDC 가 0 이면(소스 zip 부재·전부 unchanged) 기존
+  // BR/AR 데이터를 절대 건드리지 않음. 과거엔 무조건 prefix-strip 후 newRegs 0 → 전량 소실.
+  // KCIA zip 미가용 환경(다른 IP/머신/첫 실행)에서도 데이터가 파괴되지 않도록 보장.
+  if (totalProcessed === 0) {
+    console.log("  처리된 RDC 0 — 기존 BR/AR regulations·ingredients 보존 (write 생략)");
+    return;
+  }
+
+  // 현재 RDCS 가 정의하는 유효 source_document 집합 — 이번에 skip(unchanged)된 RDC 의 기존 행은
+  // 보존하고, 정의에서 사라진 옛 prefix/suffix(stale) 행만 청소한다.
+  const validDocs = new Set<string>();
+  for (const rdc of RDCS) {
+    validDocs.add(`${SOURCE_PREFIX} — ${rdc.description}`);
+    if (rdc.mercosul_basis) {
+      const rid = rdc.description.match(/RDC \d+\/\d{4}/)?.[0] ?? rdc.description;
+      validDocs.add(`ANMAT Argentina — ${rdc.mercosul_basis} (BR ANVISA ${rid} 동일 채택)`);
+    }
+  }
   const filteredRegs = existingRegs.filter((r) => {
-    if (sourceDocsToReplace.has(r.source_document)) return false;
-    if (r.source_document.startsWith(`${SOURCE_PREFIX} — RDC `)) return false;
-    if (r.source_document.startsWith("ANMAT Argentina — MERCOSUL ")) return false;
+    if (sourceDocsToReplace.has(r.source_document)) return false;   // 이번에 재처리 = 교체
+    // BR-RDC/AR-MERCOSUL 계열인데 현재 유효 doc 가 아닌 것만 stale 로 제거 (유효·unchanged 는 보존).
+    const isBrAr = r.source_document.startsWith(`${SOURCE_PREFIX} — RDC `) || r.source_document.startsWith("ANMAT Argentina — MERCOSUL ");
+    if (isBrAr && !validDocs.has(r.source_document)) return false;
     return true;
   });
   const finalRegs = [...filteredRegs, ...newRegs];
