@@ -1,216 +1,85 @@
 {
+  "note": "국가별(cascade-aware) 신선도. 1차 stale 이어도 2/3차로 신선하면 OK. stale=국가 전체 동결.",
   "stale_threshold_days": 45,
   "stale_count": 0,
-  "stale_sources": [],
+  "stale_countries": [],
   "limit_anomaly_count": 0,
   "limit_anomalies": [],
-  "sources": [
+  "countries": [
     {
-      "src": "ANMAT Argentina — MERCOSUL GMC 62/2014",
-      "latest": "2026-04-30"
-    },
-    {
-      "src": "ANMAT Argentina — MERCOSUL GMC 24/2011",
-      "latest": "2026-04-30"
-    },
-    {
-      "src": "ANMAT Argentina — MERCOSUL GMC 23/2011",
-      "latest": "2026-04-30"
-    },
-    {
-      "src": "ANMAT Argentina — MERCOSUL GMC 16/2012",
-      "latest": "2026-04-30"
-    },
-    {
-      "src": "ANMAT Argentina — MERCOSUL GMC 48/2010",
-      "latest": "2026-04-30"
-    },
-    {
-      "src": "ANVISA Brazil — RDC 83/2016 — 배합금지 성분 목록",
-      "latest": "2026-04-30"
-    },
-    {
-      "src": "ANVISA Brazil — RDC 03/2012 — 배합한도 제한 성분",
-      "latest": "2026-04-30"
-    },
-    {
-      "src": "ANVISA Brazil — RDC 29/2012 — 허용 보존제 목록",
-      "latest": "2026-04-30"
-    },
-    {
-      "src": "ANVISA Brazil — RDC 628/2022 — 허용 착색물질",
-      "latest": "2026-04-30"
-    },
-    {
-      "src": "ANVISA Brazil — RDC 600/2022 — 허용 자외선 필터",
-      "latest": "2026-04-30"
-    },
-    {
-      "src": "ANVISA Brazil — IN 220/2023 — 헤어 스트레이트/웨",
-      "latest": "2026-04-30"
-    },
-    {
-      "src": "ANVISA Brazil — RDC 645/2022 — 납·포름알데히드·",
-      "latest": "2026-04-30"
-    },
-    {
-      "src": "NMPA 已使用化妆品原料目录",
-      "latest": "2026-04-30"
-    },
-    {
-      "src": "ASEAN Cosmetic Directive — Annex II — Pr",
-      "latest": "2026-04-30"
-    },
-    {
-      "src": "ASEAN Cosmetic Directive — Annex IV Part",
-      "latest": "2026-04-30"
-    },
-    {
-      "src": "ASEAN Cosmetic Directive — Annex VI Part",
-      "latest": "2026-04-30"
-    },
-    {
-      "src": "ASEAN Cosmetic Directive — Annex VII — P",
-      "latest": "2026-04-30"
-    },
-    {
-      "src": "ASEAN Cosmetic Directive — Annex III Par",
-      "latest": "2026-04-30"
-    },
-    {
-      "src": "MFDS 공공데이터 — 한국 식약처가 정리한 아르헨티나 사용제한 자료",
+      "cc": "AR",
       "latest": "2026-06-02"
     },
     {
-      "src": "MFDS 공공데이터 — 한국 식약처가 정리한 브라질 사용제한 자료",
+      "cc": "BR",
       "latest": "2026-06-02"
     },
     {
-      "src": "MFDS 공공데이터 — 한국 식약처가 정리한 캐나다 사용제한 자료",
+      "cc": "ID",
       "latest": "2026-06-02"
     },
     {
-      "src": "MFDS 공공데이터 — 한국 식약처가 정리한 중국 사용제한 자료",
+      "cc": "KR",
       "latest": "2026-06-02"
     },
     {
-      "src": "MFDS 공공데이터 — 한국 식약처가 정리한 유럽연합 사용제한 자료",
+      "cc": "MY",
       "latest": "2026-06-02"
     },
     {
-      "src": "MFDS 공공데이터 — 한국 식약처가 정리한 인도네시아 사용제한 자료",
+      "cc": "PH",
       "latest": "2026-06-02"
     },
     {
-      "src": "MFDS 공공데이터 — 한국 식약처가 정리한 일본 사용제한 자료",
+      "cc": "SG",
       "latest": "2026-06-02"
     },
     {
-      "src": "MFDS 공공데이터 API",
+      "cc": "TH",
       "latest": "2026-06-02"
     },
     {
-      "src": "MFDS 공공데이터 — 한국 식약처가 정리한 말레이시아 사용제한 자료",
+      "cc": "VN",
       "latest": "2026-06-02"
     },
     {
-      "src": "MFDS 공공데이터 — 한국 식약처가 정리한 필리핀 사용제한 자료",
-      "latest": "2026-06-02"
-    },
-    {
-      "src": "MFDS 공공데이터 — 한국 식약처가 정리한 싱가포르 사용제한 자료",
-      "latest": "2026-06-02"
-    },
-    {
-      "src": "MFDS 공공데이터 — 한국 식약처가 정리한 태국 사용제한 자료",
-      "latest": "2026-06-02"
-    },
-    {
-      "src": "MFDS 공공데이터 — 한국 식약처가 정리한 대만 사용제한 자료",
-      "latest": "2026-06-02"
-    },
-    {
-      "src": "MFDS 공공데이터 — 한국 식약처가 정리한 미국 사용제한 자료",
-      "latest": "2026-06-02"
-    },
-    {
-      "src": "MFDS 공공데이터 — 한국 식약처가 정리한 베트남 사용제한 자료",
-      "latest": "2026-06-02"
-    },
-    {
-      "src": "AGEMED Bolivia — Comunidad Andina Decisi",
+      "cc": "BO",
       "latest": "2026-06-03"
     },
     {
-      "src": "Health Canada Cosmetic Ingredient Hotlis",
+      "cc": "CA",
       "latest": "2026-06-03"
     },
     {
-      "src": "NMPA IECIC",
+      "cc": "CN",
       "latest": "2026-06-03"
     },
     {
-      "src": "KCIA NMPA 화장품안전기술규범",
+      "cc": "CO",
       "latest": "2026-06-03"
     },
     {
-      "src": "INVIMA Colombia — Comunidad Andina Decis",
+      "cc": "EC",
       "latest": "2026-06-03"
     },
     {
-      "src": "ARCSA Ecuador — Comunidad Andina Decisió",
+      "cc": "EU",
       "latest": "2026-06-03"
     },
     {
-      "src": "EU EUR-Lex 1223/2009",
+      "cc": "JP",
       "latest": "2026-06-03"
     },
     {
-      "src": "JP MHLW 化粧品基準 別表 1",
+      "cc": "PE",
       "latest": "2026-06-03"
     },
     {
-      "src": "JP MHLW 化粧品基準",
+      "cc": "TW",
       "latest": "2026-06-03"
     },
     {
-      "src": "DIGEMID Peru — Comunidad Andina Decisión",
-      "latest": "2026-06-03"
-    },
-    {
-      "src": "TFDA 化粧品禁限用成分管理規定 — 化粧品禁止使用成分表",
-      "latest": "2026-06-03"
-    },
-    {
-      "src": "TFDA 化粧品禁限用成分管理規定 — 化粧品防腐劑成分使用限制表",
-      "latest": "2026-06-03"
-    },
-    {
-      "src": "TFDA 化粧品禁限用成分管理規定 — 化粧品色素成分使用限制表",
-      "latest": "2026-06-03"
-    },
-    {
-      "src": "TFDA 化粧品禁限用成分管理規定 — 化粧品成分使用限制表",
-      "latest": "2026-06-03"
-    },
-    {
-      "src": "TFDA 化粧品禁限用成分管理規定 — 化粧品防曬劑成分使用限制表",
-      "latest": "2026-06-03"
-    },
-    {
-      "src": "US FDA 21 CFR 700",
-      "latest": "2026-06-03"
-    },
-    {
-      "src": "US FDA 21 CFR 73 Subpart C — Cosmetics 색",
-      "latest": "2026-06-03"
-    },
-    {
-      "src": "US FDA 21 CFR 74 Subpart C — Cosmetics 색",
-      "latest": "2026-06-03"
-    },
-    {
-      "src": "California AB 2762 — Toxic-Free Cosmetic",
+      "cc": "US",
       "latest": "2026-06-03"
     }
   ]

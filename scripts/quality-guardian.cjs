@@ -64,7 +64,8 @@ function loadJson(p, def) { return fs.existsSync(p) ? JSON.parse(fs.readFileSync
 function main() {
   let overFixed = 0;
   const counts = {};
-  const srcLatest = {};      // source_document → 최신 last_verified_at (신선도 감시)
+  const srcLatest = {};      // source_document → 최신 last_verified_at (진단용)
+  const ccLatest = {};       // country → 최신 last_verified_at (신선도 감시 = cascade-aware)
   const limitNow = {};       // ingredient_id|cc → max_concentration (한도 급변 이상탐지)
   for (const f of fs.readdirSync(REGDIR).filter((x) => x.endsWith(".json"))) {
     const cc = f.replace(".json", ""), p = path.join(REGDIR, f);
@@ -76,7 +77,9 @@ function main() {
         r.max_concentration = null; overFixed++; changed = true;
       }
       const src = (r.source_document || "?").replace(/\s*\(.*$/, "").slice(0, 40);
-      if ((r.last_verified_at || "") > (srcLatest[src] || "")) srcLatest[src] = r.last_verified_at || "";
+      const lv = r.last_verified_at || "";
+      if (lv > (srcLatest[src] || "")) srcLatest[src] = lv;
+      if (lv > (ccLatest[cc] || "")) ccLatest[cc] = lv; // 국가별 최신(cascade 중 가장 신선한 층)
       if (r.max_concentration != null) limitNow[`${r.ingredient_id}|${cc}`] = r.max_concentration;
     }
     counts[cc] = obj.rows.length;
@@ -113,13 +116,16 @@ function main() {
   //    API 소스(MFDS/NMPA)는 매일 갱신되므로 정상이면 안 걸림. 고정파일/zip 의존 소스(ASEAN·BR·AR
   //    등)가 동결되면 여기서 드러남 → silent rot 방지. (전 국가 신규법규 자동발견은 원천 불가 —
   //    이 감시가 현실적 안전장치.)
+  // 신선도는 *국가별*(cascade-aware)로 판정 — 한 국가는 1차(국가사이트)/2차(KCIA)/3차(MFDS) 중
+  // 가장 신선한 층 기준. 1차 소스 문서가 안 바뀌어도(예 ASEAN 2019 PDF) 3차 MFDS 가 매일 갱신하면
+  // 그 국가는 신선. 따라서 source 별이 아니라 country 별 최신으로 stale 판정(false 경보 방지).
   const STALE_DAYS = 45;
   const today = new Date();
-  const health = Object.entries(srcLatest).map(([src, d]) => {
+  const health = Object.entries(ccLatest).map(([cc, d]) => {
     const days = d ? Math.round((today - new Date(d)) / 86400000) : 9999;
-    return { src, latest: (d || "").slice(0, 10), days, stale: days > STALE_DAYS };
+    return { cc, latest: (d || "").slice(0, 10), days, stale: days > STALE_DAYS };
   }).sort((a, b) => b.days - a.days);
-  const stale = health.filter((h) => h.stale);
+  const stale = health.filter((h) => h.stale); // 국가 전체 cascade 가 동결된 경우만(진짜 문제)
 
   // 6) 한도 급변 이상탐지 — 직전 스냅샷 대비 5배+ 변동(0.5→5 같은 silent 오파싱 클래스 포착).
   const SNAP = path.join(DATA, "limit-snapshot.json");
@@ -138,16 +144,17 @@ function main() {
   // latest 만 저장(days 는 휘발성이라 churn 유발 → 제외, 읽을 때 계산). stale_count/anomaly 는
   // 임계 교차/이상 발생 시에만 변해 저churn → data-quality-check 가 신규증가 시 이슈 트리거.
   fs.writeFileSync(path.join(DATA, "source-health.json"), JSON.stringify(
-    { stale_threshold_days: STALE_DAYS, stale_count: stale.length, stale_sources: stale.map((s) => s.src),
+    { note: "국가별(cascade-aware) 신선도. 1차 stale 이어도 2/3차로 신선하면 OK. stale=국가 전체 동결.",
+      stale_threshold_days: STALE_DAYS, stale_count: stale.length, stale_countries: stale.map((s) => s.cc),
       limit_anomaly_count: limitAnomalies.length, limit_anomalies: limitAnomalies.slice(0, 20),
-      sources: health.map((h) => ({ src: h.src, latest: h.latest })) }, null, 2));
+      countries: health.map((h) => ({ cc: h.cc, latest: h.latest })) }, null, 2));
 
   console.log("=== 품질 가디언(자가복구 + 신선도/이상 감시) ===");
   console.log(`  불가능값(>100/≤0) 제거: ${overFixed}`);
   console.log(`  오염명 실명 복구(RTL 헤더 + JP matrix): ${recovered}`);
   console.log(`  격리(복구 불가) 성분명: ${corrupt.length}`);
   console.log(`  국가 행수 급감(회귀): ${regressions.length ? regressions.join(", ") : "없음"}`);
-  console.log(`  ⏳ stale 소스(>${STALE_DAYS}일 미갱신): ${stale.length ? stale.map((s) => `${s.src.slice(0, 22)}(${s.days}d)`).join(", ") : "없음"}`);
+  console.log(`  ⏳ stale 국가(cascade 전체 >${STALE_DAYS}일 미갱신): ${stale.length ? stale.map((s) => `${s.cc}(${s.days}d)`).join(", ") : "없음"}`);
   console.log(`  📊 한도 급변(5배+) 이상: ${limitAnomalies.length ? limitAnomalies.slice(0, 8).join(", ") : "없음"}`);
   if (regressions.length || stale.length || limitAnomalies.length) {
     console.error(`✗ 주의: 회귀 ${regressions.length}·stale ${stale.length}·한도이상 ${limitAnomalies.length} — source-health.json 확인`);
