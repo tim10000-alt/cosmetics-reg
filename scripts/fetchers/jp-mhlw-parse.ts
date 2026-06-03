@@ -4,6 +4,7 @@ import { readFileSync } from "node:fs";
 import { loadEnv } from "../crawlers/env";
 loadEnv();
 import { readRows, writeRows, updateMeta } from "../../lib/json-store";
+import { geminiRescue } from "../parsers/gemini-fallback";
 
 // JP MHLW 化粧品基準 영문 PDF text → ingredient 매칭 + JSON 머지.
 // pdf-parse 로 text 추출 → Appendix 1 (banned 30) + Appendix 3 (preservative
@@ -286,15 +287,32 @@ async function main() {
   const a2s3 = parseAppendix2Section3(app2sec3);
   const a3 = parseAmountTable(app3, "JP MHLW 化粧品基準 別表 3 (Appendix 3 — preservatives positive list)", "listed");
   const a4 = parseAmountTable(app4, "JP MHLW 化粧品基準 別表 4 (Appendix 4 — UV absorbers positive list)", "listed");
-  const items: ParsedItem[] = [...a1, ...a2s1, ...a2s2, ...a2s3, ...a3, ...a4];
+  let items: ParsedItem[] = [...a1, ...a2s1, ...a2s2, ...a2s3, ...a3, ...a4];
   console.log(`  parsed: A1=${a1.length}, A2§1=${a2s1.length}, A2§2=${a2s2.length}, A2§3=${a2s3.length}, A3=${a3.length}, A4=${a4.length}, total ${items.length}`);
+
+  // 정규식 0건 = PDF 양식이 완전히 바뀐 신호 → Gemini 폴백 1회(무료 throttle 적용).
+  // 정상(>0)이면 이 분기 미실행 → 기존 동작과 100% 동일(부작용 0).
+  let fromFallback = false;
+  if (items.length === 0) {
+    const rescued = await geminiRescue({ filePath: PDF_EN_PATH, country: "JP", title: SOURCE_DOC, url: SOURCE_URL });
+    items = rescued
+      .filter((r) => r.status !== "not_listed") // banned/restricted/listed/allowed 만 채택
+      .map((r) => ({
+        name: r.inci_name,
+        status: r.status === "banned" ? "banned" : r.status === "restricted" ? "restricted" : "listed",
+        max_concentration: r.max_concentration,
+        conditions: r.conditions ?? `${SOURCE_DOC} — Gemini 폴백 자동 파싱`,
+      }));
+    fromFallback = items.length > 0;
+    if (fromFallback) console.log(`  ⚠ 정규식 0건 → Gemini 폴백으로 ${items.length}건 확보 (confidence 0.75, source_version 에 표기)`);
+  }
 
   const ingredients = await readRows<IngredientRow>("ingredients");
   const byInciLower = new Map<string, IngredientRow>();
   for (const i of ingredients) byInciLower.set(i.inci_name.toLowerCase(), i);
 
   const now = new Date().toISOString();
-  const sourceVersion = `MHLW-${now.slice(0, 10)}`;
+  const sourceVersion = fromFallback ? `MHLW-${now.slice(0, 10)}-gemini-fallback` : `MHLW-${now.slice(0, 10)}`;
   const newRegs: RegulationRow[] = [];
   let matched = 0, created = 0;
 
@@ -334,7 +352,7 @@ async function main() {
       source_version: sourceVersion,
       source_priority: 100,
       last_verified_at: now,
-      confidence_score: 1.0,
+      confidence_score: fromFallback ? 0.75 : 1.0,
       override_note: null,
     });
   }
