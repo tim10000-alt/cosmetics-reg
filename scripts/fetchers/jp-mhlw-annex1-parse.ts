@@ -4,6 +4,7 @@ import { readFileSync } from "node:fs";
 import { loadEnv } from "../crawlers/env";
 loadEnv();
 import { readRows, writeRows, updateMeta } from "../../lib/json-store";
+import { geminiRescue, buildRegsFromExtracted } from "../parsers/gemini-fallback";
 
 // JP MHLW 化粧品基準 別表 1 (jp_mhlw_annex_1.pdf, 105 page positive list).
 // 카테고리 (1)~(11) × 성분 매트릭스. 각 cell 값: ○ = 무제한, 숫자 = 최대 농도, 빈칸 = 사용 불가.
@@ -206,10 +207,6 @@ async function main() {
 
   const entries = parseAnnex1(r.text);
   console.log(`  parsed entries: ${entries.length}`);
-  if (entries.length < 100) {
-    console.warn(`  ! 너무 적음 — abort`);
-    return;
-  }
 
   const ingredients = await readRows<IngredientRow>("ingredients");
   // 매칭 — japanese_name, inci_name 둘 다.
@@ -225,6 +222,17 @@ async function main() {
   let matched = 0, created = 0;
   const skipped = 0;
 
+  if (entries.length < 100) {
+    // 정규식 0/소수(<100) = 別表1 PDF 양식 변경 신호 → Gemini 폴백 1회(무료 throttle).
+    // 정상(≥100)이면 이 분기 미실행 → 기존 루프와 100% 동일(부작용 0).
+    const rescued = await geminiRescue({ filePath: PDF_PATH, country: "JP", title: SOURCE_DOC, url: SOURCE_URL });
+    if (rescued.length === 0) {
+      console.warn(`  ! entries ${entries.length}<100 이고 Gemini 폴백도 0건 — abort(기존 데이터 보존)`);
+      return;
+    }
+    newRegs.push(...buildRegsFromExtracted({ regs: rescued, ingredients, country: "JP", sourceDoc: SOURCE_DOC, sourceUrl: SOURCE_URL, now }));
+    console.log(`  ⚠ 정규식 ${entries.length}건(<100) → Gemini 폴백 ${newRegs.length}건 확보 (confidence 0.75)`);
+  } else {
   for (const e of entries) {
     let ing = byJp.get(e.japanese_name);
     if (!ing) ing = byInci.get(e.japanese_name.toLowerCase());
@@ -288,6 +296,7 @@ async function main() {
   }
 
   console.log(`  matched ${matched}, created ${created}, skipped ${skipped}`);
+  }
 
   const existingRegs = await readRows<RegulationRow>("regulations");
   // 이전 run 의 다른 suffix variant 도 함께 제거.
