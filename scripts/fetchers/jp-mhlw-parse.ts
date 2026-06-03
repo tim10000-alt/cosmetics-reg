@@ -159,10 +159,13 @@ function parseAppendix2Section2(text: string): ParsedItem[] {
     if (cleaned.length < 3) return;
     if (!/^[A-Za-z0-9(]/.test(cleaned)) return;
     if (isCategory(cleaned)) return;
+    // IU(역가 단위)·g/100g 가 아닌 값은 %농도가 아니므로 numeric max 로 저장하지 않음(조건엔 유지).
+    // IU 는 농도(%)와 스케일이 전혀 다름 → 20000 같은 값이 max_concentration 에 들어가면 오표기.
+    const numMax = (unit && /iu/i.test(unit)) || (amount != null && (amount <= 0 || amount > 100)) ? null : amount;
     out.push({
       name: cleaned,
       status,
-      max_concentration: amount,
+      max_concentration: numMax,
       conditions:
         status === "banned"
           ? "JP MHLW 化粧品基準 別表 2 §2 — 특정 화장품 카테고리(rinse-off / leave-on / mucosa / toothpaste 등)에서 사용 금지."

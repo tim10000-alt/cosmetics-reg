@@ -22,7 +22,7 @@
     "US": 205,
     "VN": 5889
   },
-  "restrictedNoLimit": 3839,
+  "restrictedNoLimit": 3840,
   "statusConflicts": 439,
   "quarantinePending": 0,
   "checked_at_note": "matches regulations-query primary-row logic"
