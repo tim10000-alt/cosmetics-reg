@@ -350,7 +350,7 @@ async function main() {
       source_url: SOURCE_URL,
       source_document: SOURCE_DOC,
       source_version: sourceVersion,
-      source_priority: 100,
+      source_priority: fromFallback ? 80 : 100, // 폴백 행은 2차(KCIA Gemini auto) tier — UI/정렬 일관
       last_verified_at: now,
       confidence_score: fromFallback ? 0.75 : 1.0,
       override_note: null,
