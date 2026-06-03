@@ -28,8 +28,23 @@ function isCorruptName(name) {
   // (%·장문·연속숫자 룰은 제거 — 정상 화학명/발효블렌드/CI번호가 그런 특징을 합법적으로 가짐.)
   if (/&#\d|&#x|&amp;|&lt;|&gt;/.test(name)) return true;
   if (/reb\s?m\s?u\s?n|laci\s?m\s?eh\s?c|recnerefe|noitacifitnedi|lanruoj/i.test(name)) return true;
-  if ((name.match(/(?:^|\s)[A-Za-z](?=\s|$)/g) || []).length >= 8) return true;
+  // 단일토큰(영문자/숫자/점) 8개+ = 표 헤더/citation 이 공백분해돼 박힌 것(RTL 역순 or 정방향).
+  // 숫자도 포함해야 "N E 9 0 0 2 . 2 1" 같은 날짜/EC번호 분해 꼬리를 잡음. 정상명엔 이만큼 없음.
+  if ((name.match(/(?:^|\s)[A-Za-z0-9.](?=\s|$)/g) || []).length >= 8) return true;
   return false;
+}
+
+// RTL 역순 헤더 꼬리 제거: 단일문자(영숫자/./슬래시) 토큰이 4개+ 연속되기 시작하는 지점에서 절단.
+// "Cantharidine N E 4 8 / 2 4 3 ..." → "Cantharidine". 정상명의 "L."·"No."(2자+)는 단일문자 아님→보존.
+function stripRtlTail(name) {
+  const toks = String(name).split(/\s+/);
+  const isSingle = (t) => /^[A-Za-z0-9/.]$/.test(t);
+  for (let i = 0; i <= toks.length - 4; i++) {
+    if (isSingle(toks[i]) && isSingle(toks[i + 1]) && isSingle(toks[i + 2]) && isSingle(toks[i + 3])) {
+      return toks.slice(0, i).join(" ").replace(/[\s/]+$/, "").trim();
+    }
+  }
+  return name; // RTL 꼬리 패턴 없음(다른 오염) → 그대로(격리)
 }
 
 function loadJson(p, def) { return fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, "utf8")) : def; }
@@ -51,9 +66,21 @@ function main() {
     if (changed) fs.writeFileSync(p, JSON.stringify(obj));
   }
 
-  // 3) 오염 성분명 격리 후보 집계
+  // 3) 오염 성분명: RTL 역순 헤더 bleed("Cantharidine N E 4 8 … reb m u n …")는 실명+꼬리쓰레기 →
+  //    단일문자 토큰 4+ 연속 시작점에서 잘라 실명 회복(결정론·보수적). 회복 실패분만 격리 flag.
   const ingObj = JSON.parse(fs.readFileSync(path.join(DATA, "ingredients.json"), "utf8"));
-  const corrupt = ingObj.rows.filter((i) => isCorruptName(i.inci_name)).map((i) => ({ id: i.id, inci: i.inci_name.slice(0, 80) }));
+  let recovered = 0, ingChanged = false;
+  const corrupt = [];
+  for (const i of ingObj.rows) {
+    if (!isCorruptName(i.inci_name)) continue;
+    const cleaned = stripRtlTail(i.inci_name);
+    if (cleaned && cleaned.length >= 3 && !isCorruptName(cleaned)) {
+      i.inci_name = cleaned; recovered++; ingChanged = true; // 실명 회복
+    } else {
+      corrupt.push({ id: i.id, inci: i.inci_name.slice(0, 80) }); // 회복 불가 → 격리
+    }
+  }
+  if (ingChanged) fs.writeFileSync(path.join(DATA, "ingredients.json"), JSON.stringify(ingObj));
 
   // 4) 회귀(국가별 행수 급감) 감지
   const baseline = loadJson(BASELINE, { counts: {} });
@@ -69,9 +96,10 @@ function main() {
   // 격리 후보 기록(Gemini/수동 복구 대상 — 표시 제외는 query 단에서 옵션)
   fs.writeFileSync(path.join(DATA, "quarantine-names.json"), JSON.stringify({ generated: "guardian", count: corrupt.length, items: corrupt }, null, 2));
 
-  console.log("=== 품질 가디언(결정론·안전: 불가능값 제거 + 이상 flag) ===");
+  console.log("=== 품질 가디언(결정론·안전: 불가능값 제거 + RTL 이름 복구 + flag) ===");
   console.log(`  불가능값(>100/≤0) 제거: ${overFixed}`);
-  console.log(`  오염 성분명 격리 후보: ${corrupt.length}`);
+  console.log(`  RTL 오염명 실명 복구: ${recovered}`);
+  console.log(`  격리(복구 불가) 성분명: ${corrupt.length}`);
   console.log(`  국가 행수 급감(회귀): ${regressions.length ? regressions.join(", ") : "없음"}`);
   if (regressions.length) { console.error("✗ 회귀 감지 — 확인 필요"); process.exitCode = 0; } // 정보성(파이프라인 중단 안 함)
 }
