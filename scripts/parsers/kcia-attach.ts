@@ -132,21 +132,30 @@ const SCHEMA = {
 
 // hwpx(한글 워드 — 한국 식약처 고시가 흔히 hwpx 첨부) = zip. Contents/section*.xml 의 <hp:t> 텍스트 추출.
 // (구 .hwp 바이너리는 zip 아니라 미지원.) 한국 안전기준 고시 일부개정이 hwpx-only 일 때 Gemini 파싱 가능케.
+// yauzl 최소 타입(@types/yauzl 미설치 — 사용하는 멤버만 정의해 any 회피).
+interface ZipEntry { fileName: string; }
+interface ReadStreamLike { on(ev: "data", cb: (d: Buffer) => void): void; on(ev: "end", cb: () => void): void; }
+interface ZipFile {
+  on(ev: "entry", cb: (e: ZipEntry) => void): void;
+  on(ev: "end", cb: () => void): void;
+  openReadStream(e: ZipEntry, cb: (err: Error | null, rs?: ReadStreamLike) => void): void;
+  readEntry(): void;
+}
+interface Yauzl { open(p: string, o: { lazyEntries: boolean }, cb: (err: Error | null, zip?: ZipFile) => void): void; }
+
 async function extractHwpx(filePath: string): Promise<string | null> {
   try {
-    const yauzl = (await import("yauzl")).default as unknown as {
-      open: (p: string, o: unknown, cb: (e: unknown, z: unknown) => void) => void;
-    };
-    return await new Promise((resolve) => {
+    const yauzl = (await import("yauzl")).default as unknown as Yauzl;
+    return await new Promise<string | null>((resolve) => {
       let text = "";
-      yauzl.open(filePath, { lazyEntries: true }, (err: unknown, zip: any) => {
+      yauzl.open(filePath, { lazyEntries: true }, (err, zip) => {
         if (err || !zip) return resolve(null);
-        zip.on("entry", (entry: any) => {
+        zip.on("entry", (entry) => {
           if (/^Contents\/section\d+\.xml$/i.test(entry.fileName)) {
-            zip.openReadStream(entry, (e: unknown, rs: any) => {
+            zip.openReadStream(entry, (e, rs) => {
               if (e || !rs) return zip.readEntry();
               const chunks: Buffer[] = [];
-              rs.on("data", (d: Buffer) => chunks.push(d));
+              rs.on("data", (d) => chunks.push(d));
               rs.on("end", () => {
                 const xml = Buffer.concat(chunks).toString("utf8");
                 text += [...xml.matchAll(/<hp:t>([^<]*)<\/hp:t>/g)].map((m) => m[1]).join(" ") + " ";
