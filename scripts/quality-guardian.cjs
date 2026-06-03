@@ -64,6 +64,8 @@ function loadJson(p, def) { return fs.existsSync(p) ? JSON.parse(fs.readFileSync
 function main() {
   let overFixed = 0;
   const counts = {};
+  const srcLatest = {};      // source_document → 최신 last_verified_at (신선도 감시)
+  const limitNow = {};       // ingredient_id|cc → max_concentration (한도 급변 이상탐지)
   for (const f of fs.readdirSync(REGDIR).filter((x) => x.endsWith(".json"))) {
     const cc = f.replace(".json", ""), p = path.join(REGDIR, f);
     const obj = JSON.parse(fs.readFileSync(p, "utf8"));
@@ -73,6 +75,9 @@ function main() {
       if (r.max_concentration != null && (r.max_concentration <= 0 || r.max_concentration > 100)) {
         r.max_concentration = null; overFixed++; changed = true;
       }
+      const src = (r.source_document || "?").replace(/\s*\(.*$/, "").slice(0, 40);
+      if ((r.last_verified_at || "") > (srcLatest[src] || "")) srcLatest[src] = r.last_verified_at || "";
+      if (r.max_concentration != null) limitNow[`${r.ingredient_id}|${cc}`] = r.max_concentration;
     }
     counts[cc] = obj.rows.length;
     if (changed) fs.writeFileSync(p, JSON.stringify(obj));
@@ -104,18 +109,46 @@ function main() {
     if (before > 50 && now < before * 0.8) regressions.push(`${cc}: ${before}→${now} (−${Math.round((1 - now / before) * 100)}%)`);
   }
 
-  // baseline 갱신(타임스탬프 없이 — churn 최소)
+  // 5) 소스 신선도 감시 — 소스가 N일 넘게 갱신 안 되면 stale(=fetch 차단/동결/upstream 새 URL).
+  //    API 소스(MFDS/NMPA)는 매일 갱신되므로 정상이면 안 걸림. 고정파일/zip 의존 소스(ASEAN·BR·AR
+  //    등)가 동결되면 여기서 드러남 → silent rot 방지. (전 국가 신규법규 자동발견은 원천 불가 —
+  //    이 감시가 현실적 안전장치.)
+  const STALE_DAYS = 45;
+  const today = new Date();
+  const health = Object.entries(srcLatest).map(([src, d]) => {
+    const days = d ? Math.round((today - new Date(d)) / 86400000) : 9999;
+    return { src, latest: (d || "").slice(0, 10), days, stale: days > STALE_DAYS };
+  }).sort((a, b) => b.days - a.days);
+  const stale = health.filter((h) => h.stale);
+
+  // 6) 한도 급변 이상탐지 — 직전 스냅샷 대비 5배+ 변동(0.5→5 같은 silent 오파싱 클래스 포착).
+  const SNAP = path.join(DATA, "limit-snapshot.json");
+  const prev = loadJson(SNAP, {});
+  const limitAnomalies = [];
+  for (const k in limitNow) {
+    const a = prev[k], b = limitNow[k];
+    if (a != null && b != null && a > 0.01 && b > 0.01 && (b / a >= 5 || a / b >= 5)) {
+      limitAnomalies.push(`${k}: ${a}→${b}`);
+    }
+  }
+  fs.writeFileSync(SNAP, JSON.stringify(limitNow));
+
   fs.writeFileSync(BASELINE, JSON.stringify({ counts }, null, 2));
-
-  // 격리 후보 기록(Gemini/수동 복구 대상 — 표시 제외는 query 단에서 옵션)
   fs.writeFileSync(path.join(DATA, "quarantine-names.json"), JSON.stringify({ generated: "guardian", count: corrupt.length, items: corrupt }, null, 2));
+  // latest 만 저장(days 는 휘발성이라 churn 유발 → 제외, 읽을 때 계산). 소스 갱신 시에만 파일 변경.
+  fs.writeFileSync(path.join(DATA, "source-health.json"), JSON.stringify(
+    { stale_threshold_days: STALE_DAYS, sources: health.map((h) => ({ src: h.src, latest: h.latest })) }, null, 2));
 
-  console.log("=== 품질 가디언(결정론·안전: 불가능값 제거 + RTL 이름 복구 + flag) ===");
+  console.log("=== 품질 가디언(자가복구 + 신선도/이상 감시) ===");
   console.log(`  불가능값(>100/≤0) 제거: ${overFixed}`);
   console.log(`  오염명 실명 복구(RTL 헤더 + JP matrix): ${recovered}`);
   console.log(`  격리(복구 불가) 성분명: ${corrupt.length}`);
   console.log(`  국가 행수 급감(회귀): ${regressions.length ? regressions.join(", ") : "없음"}`);
-  if (regressions.length) { console.error("✗ 회귀 감지 — 확인 필요"); process.exitCode = 0; } // 정보성(파이프라인 중단 안 함)
+  console.log(`  ⏳ stale 소스(>${STALE_DAYS}일 미갱신): ${stale.length ? stale.map((s) => `${s.src.slice(0, 22)}(${s.days}d)`).join(", ") : "없음"}`);
+  console.log(`  📊 한도 급변(5배+) 이상: ${limitAnomalies.length ? limitAnomalies.slice(0, 8).join(", ") : "없음"}`);
+  if (regressions.length || stale.length || limitAnomalies.length) {
+    console.error(`✗ 주의: 회귀 ${regressions.length}·stale ${stale.length}·한도이상 ${limitAnomalies.length} — source-health.json 확인`);
+  }
 }
 
 main();
