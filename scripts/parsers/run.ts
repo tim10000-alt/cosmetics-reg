@@ -75,6 +75,7 @@ async function main() {
   }
 
   let dirty = false;
+  let consecutive429 = 0; // Gemini 일일 quota 소진 circuit-breaker (enrich-functions 와 동일 패턴, 정품검증 발견 #3)
 
   for (const doc of batch) {
     if (!force && doc.last_parsed_hash && doc.last_parsed_hash === doc.content_hash) {
@@ -114,6 +115,7 @@ async function main() {
       );
       console.log(`  → ${JSON.stringify(stats)}`);
       dirty = true;
+      consecutive429 = 0; // 성공 시 리셋
 
       // mark parsed
       const idx = allStatus.findIndex((s) => s.country_code === doc.country_code && s.doc_key === doc.doc_key);
@@ -124,6 +126,16 @@ async function main() {
     } catch (e) {
       const msg = e instanceof Error ? e.message : String(e);
       console.error(`  ✗ parse failed: ${msg}`);
+      // 연속 429(일일 quota 소진) circuit-breaker: 무한 backoff 로 90분 job 을 다 먹고
+      // commit 에 도달 못 하는 것 방지(정품검증 발견 #3). 진행분은 아래서 write·commit.
+      if (/\b(429|RESOURCE_EXHAUSTED)\b/i.test(msg)) {
+        if (++consecutive429 >= 2) {
+          console.error(`  ⚠ 연속 429 ${consecutive429}회 — Gemini 일일 quota 소진 추정. parse 중단(진행분 보존, 다음 런 이어감).`);
+          break;
+        }
+      } else {
+        consecutive429 = 0;
+      }
     }
   }
 
