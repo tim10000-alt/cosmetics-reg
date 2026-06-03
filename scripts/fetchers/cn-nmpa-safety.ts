@@ -151,10 +151,10 @@ function parseRestrictedOrListed(
 ): Entry[] {
   const aoa: string[][] = XLSX.utils.sheet_to_json(ws, { header: 1, raw: false, defval: "" });
   const out: Entry[] = [];
+  let prev: Entry | null = null; // 직전 항목 — 순번 공백 연속행(2차 한도) 병합용
   for (let i = 4; i < aoa.length; i++) {
     const r = aoa[i];
     const num = clean(r[0]);
-    if (!/^\d/.test(num)) continue;
     let cn: string, en: string, inci: string, kr: string, cond_a: string, cond_b: string, cond_c: string;
     if (layout === "table3") {
       cn = clean(r[1]); en = clean(r[2]); inci = clean(r[3]); kr = clean(r[4]);
@@ -169,6 +169,13 @@ function parseRestrictedOrListed(
       cond_b = "비산화염모제 " + (clean(r[7]) || "-");
       cond_c = clean(r[8]);
     }
+    // 순번 공백 = 직전 항목의 연속(2차 적용범위·한도)행. 드롭 금지 → 직전 conditions 에 병합.
+    // (예: Boric acid 의 (b)기타 제품·(c)별도 한도가 별행으로 와서 순번이 비어있음 → 35/82 누락이던 것.)
+    if (!/^\d/.test(num)) {
+      const extra = [cond_a, cond_b, cond_c].filter((x) => x && !/^(산화염모제|비산화염모제)\s*-?$/.test(x)).join(" / ");
+      if (prev && extra) prev.conditions += `\n(추가 적용범위) ${extra}`;
+      continue;
+    }
     const inciOrEn = inci || extractInciFromEnglish(en);
     if (!inciOrEn || inciOrEn.length < 2) continue;
     const maxConc = parseAmount(cond_a) ?? parseAmount(cond_b);
@@ -180,11 +187,13 @@ function parseRestrictedOrListed(
       cond_b ? `사용범위/주의: ${cond_b}` : null,
       cond_c ? `기타: ${cond_c}` : null,
     ].filter(Boolean).join("\n");
-    out.push({
+    const entry: Entry = {
       inci: inciOrEn, korean: kr || null, chinese: cn || null,
       cas: extractCas(en), ci: null, status, max_concentration: maxConc,
       conditions, function_category,
-    });
+    };
+    out.push(entry);
+    prev = entry;
   }
   return out;
 }
