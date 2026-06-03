@@ -40,7 +40,11 @@ const CAS_RE = /\b\d{1,7}-\d{2}-\d\b/;
 const EC_RE = /\b\d{3}-\d{3}-\d\b/;
 
 function cellText(td: string): string {
-  return td.replace(/<[^>]+>/g, " ").replace(/&#160;|&nbsp;/g, " ").replace(/&[a-z#0-9]+;/g, " ").replace(/\s+/g, " ").trim();
+  return td.replace(/<[^>]+>/g, " ").replace(/&#160;|&nbsp;/g, " ").replace(/&[a-z#0-9]+;/g, " ")
+    // EUR-Lex 통합본 개정 마커(►M4·►C1·►B·►A2 = 변경 출처, ◄ = 닫기) 제거. 미제거 시
+    // ref 셀이 "►M4 22" 가 되어 숫자 검사 실패 → 개정된 물질(Resorcinol 등)이 전부 누락됨.
+    .replace(/►\s*[A-Z]\d*|◄/g, " ")
+    .replace(/\s+/g, " ").trim();
 }
 function singleMax(maxCell: string): number | null {
   const vals = [...new Set([...maxCell.matchAll(/(\d+(?:[.,]\d+)?)\s*%/g)].map((m) => m[1].replace(",", ".")))];
