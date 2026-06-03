@@ -28,7 +28,19 @@ const EXTRACT_PROMPT = (country: string, title: string, url: string) => `
 **중요**: 1건이라도 불확실하면 전체 배열을 비워서 반환하세요. 잘못된 데이터가 DB에 들어가는 것보다 0건이 낫습니다.
 `;
 
-async function callWithRetry<T>(fn: () => Promise<T>, maxAttempts = 5): Promise<T> {
+// --- 무료 티어(약 10 RPM · 250k TPM) 보호용 전역 rate limit ---
+// 모든 Gemini 호출을 최소 간격으로 띄워 RPM 초과를 사전 차단. TPM(분당 토큰) 초과는
+// callWithRetry 가 RESOURCE_EXHAUSTED 감지 시 1분 창이 리셋될 때까지 대기·재시도하여 흡수.
+// → 유료 전환 없이 무료 한도 내에서 (느리지만) 확실히 완주.
+const MIN_CALL_SPACING_MS = Number(process.env.GEMINI_MIN_SPACING_MS ?? 6_500); // ≈ 9 RPM
+let lastCallAt = 0;
+async function rateLimitGate() {
+  const wait = lastCallAt + MIN_CALL_SPACING_MS - Date.now();
+  if (wait > 0) await new Promise((r) => setTimeout(r, wait));
+  lastCallAt = Date.now();
+}
+
+async function callWithRetry<T>(fn: () => Promise<T>, maxAttempts = 8): Promise<T> {
   let lastErr: unknown;
   for (let attempt = 1; attempt <= maxAttempts; attempt++) {
     try {
@@ -36,9 +48,12 @@ async function callWithRetry<T>(fn: () => Promise<T>, maxAttempts = 5): Promise<
     } catch (e) {
       lastErr = e;
       const msg = e instanceof Error ? e.message : String(e);
-      const retriable = /\b(429|500|502|503|504|UNAVAILABLE|RESOURCE_EXHAUSTED)\b/.test(msg);
-      if (!retriable || attempt === maxAttempts) throw e;
-      const backoffMs = Math.min(60_000, 2_000 * 2 ** (attempt - 1));
+      const quota = /\b(429|RESOURCE_EXHAUSTED)\b/.test(msg);
+      const transient = /\b(500|502|503|504|UNAVAILABLE)\b/.test(msg);
+      if ((!quota && !transient) || attempt === maxAttempts) throw e;
+      // 무료 TPM/RPM 한도 초과(quota)는 분당 창이 리셋돼야 풀리므로 65초 대기.
+      // 일시적 5xx 는 지수 백오프.
+      const backoffMs = quota ? 65_000 : Math.min(60_000, 2_000 * 2 ** (attempt - 1));
       console.log(`    · retry ${attempt}/${maxAttempts - 1} after ${backoffMs}ms (${msg.slice(0, 80)})`);
       await new Promise((r) => setTimeout(r, backoffMs));
     }
@@ -79,8 +94,9 @@ export async function extractWithModel(args: {
   const raw = await readFile(args.filePath);
   const prompt = EXTRACT_PROMPT(args.country, args.title, args.url);
 
-  const res = await callWithRetry(async () =>
-    ai.models.generateContent({
+  const res = await callWithRetry(async () => {
+    await rateLimitGate(); // 매 시도(재시도 포함)마다 호출 간격 보장
+    return ai.models.generateContent({
       model: args.model,
       contents: buildContents(args.filePath, prompt, raw),
       config: {
@@ -88,8 +104,8 @@ export async function extractWithModel(args: {
         responseSchema: GEMINI_RESPONSE_SCHEMA as unknown as Record<string, unknown>,
         temperature: 0,
       },
-    }),
-  );
+    });
+  });
 
   const text = res.text ?? "";
   if (!text) return [];

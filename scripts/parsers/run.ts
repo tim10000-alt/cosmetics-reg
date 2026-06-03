@@ -44,6 +44,19 @@ async function main() {
     return;
   }
 
+  // 무료 티어 throttle: 미파싱(변경) 문서만, 런당 상한 만큼만 처리 → 다음 런에서 이어감.
+  // parse 가 느려져 30분 타임아웃 전에 write 못 하고 진행분이 소실되는 것을 방지.
+  const pending = docs.filter(
+    (d) => force || !(d.last_parsed_hash && d.last_parsed_hash === d.content_hash),
+  );
+  const MAX_DOCS_PER_RUN = Number(process.env.PARSE_MAX_DOCS ?? 12);
+  const batch = pending.slice(0, MAX_DOCS_PER_RUN);
+  if (pending.length > batch.length) {
+    console.log(
+      `ℹ️ 미파싱 ${pending.length}건 중 ${batch.length}건만 이번 런 처리(무료 throttle) — 나머지 ${pending.length - batch.length}건은 다음 런에서 자동 이어감.`,
+    );
+  }
+
   // Load + index in-memory
   const ingredients = await readRows<IngredientLite>("ingredients");
   const regulations = await readRows<RegulationRow>("regulations");
@@ -60,7 +73,7 @@ async function main() {
 
   let dirty = false;
 
-  for (const doc of docs) {
+  for (const doc of batch) {
     if (!force && doc.last_parsed_hash && doc.last_parsed_hash === doc.content_hash) {
       console.log(`⊘ [${doc.country_code}] ${doc.doc_key} — already parsed (use --force)`);
       continue;
@@ -76,10 +89,9 @@ async function main() {
 
     console.log(`▶ [${doc.country_code}] ${doc.doc_key} (${filePath})`);
     try {
-      const [primaryResults, secondaryResults] = await Promise.all([
-        extractWithModel({ model: PRIMARY_MODEL, filePath, country: doc.country_code, title: doc.title, url: doc.source_url }),
-        extractWithModel({ model: SECONDARY_MODEL, filePath, country: doc.country_code, title: doc.title, url: doc.source_url }),
-      ]);
+      // 무료 티어 보호: 두 모델을 동시(Promise.all)가 아니라 순차 호출 — 순간 TPM 절반.
+      const primaryResults = await extractWithModel({ model: PRIMARY_MODEL, filePath, country: doc.country_code, title: doc.title, url: doc.source_url });
+      const secondaryResults = await extractWithModel({ model: SECONDARY_MODEL, filePath, country: doc.country_code, title: doc.title, url: doc.source_url });
       console.log(`  ${PRIMARY_MODEL}: ${primaryResults.length}, ${SECONDARY_MODEL}: ${secondaryResults.length}`);
 
       const outcomes = consensusCheck(primaryResults, secondaryResults);
