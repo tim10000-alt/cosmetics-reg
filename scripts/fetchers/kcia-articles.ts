@@ -3,7 +3,7 @@ loadEnv();
 import { writeRows, updateMeta } from "../../lib/json-store";
 
 // 대한화장품협회 (KCIA) 의 해외법령·중국법령 게시물 metadata fetcher.
-// 첨부 PDF 는 회원 로그인 필요 — 자동 다운 X. 게시물 link/제목/날짜만 fetch.
+// 첨부(PDF/HWP/XLSX) 는 비회원 자동 다운로드 가능 — detail 페이지의 down.php 링크로 받음.
 // UI 에서 "관련 협회 자료 N건" 보조 정보로 사용자에게 link 안내.
 //
 // 한국 사이트라 한국 IP 차단 X. 100% 자동화 가능.
@@ -145,7 +145,9 @@ function parseList(html: string, category: string): KciaArticle[] {
       attach_pdf: attachPdf,
       attach_hwp: attachHwp,
       attach_excel: attachExcel,
-      detail_url: detailUrl.startsWith("http") ? detailUrl : `${BASE}/home/law/${category === "중국법령" ? "law_09" : "law_05"}.php${detailUrl}`,
+      // 카테고리별 정확한 게시판 페이지로 detail URL 구성(이전엔 국내법령도 law_05 로 잘못 매핑 → 첨부 0).
+      detail_url: detailUrl.startsWith("http") ? detailUrl
+        : `${BASE}/home/law/${category === "국내법령" ? "law_01" : category === "중국법령" ? "law_09" : "law_05"}.php${detailUrl}`,
     });
   }
   return articles;
