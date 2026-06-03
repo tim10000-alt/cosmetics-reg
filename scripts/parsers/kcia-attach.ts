@@ -6,6 +6,7 @@ import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { GoogleGenAI } from "@google/genai";
 import XLSX from "xlsx";
 import { readRows, writeRows, updateMeta } from "../../lib/json-store";
+import { GEMINI_PRIMARY } from "../gemini-models";
 
 // KCIA 게시물 첨부의 PDF/xlsx 자동 파싱 — Gemini Flash 호출.
 // 무료 tier 안 (일 5 요청 미만 예상). 변경된 첨부만 처리.
@@ -19,7 +20,7 @@ import { readRows, writeRows, updateMeta } from "../../lib/json-store";
 
 const FINGERPRINT_FILE = "public/data/kcia-attach-fingerprints.json";
 const SOURCE_PREFIX = "KCIA Gemini auto-parsed";
-const MODEL = "gemini-2.5-flash";
+const MODEL = GEMINI_PRIMARY;
 
 // Cascade fallback 정책 (1안 → 2안 → 3안):
 //   1안: 각국 공식 기관 사이트 (Open API/직접 fetch) — 우선

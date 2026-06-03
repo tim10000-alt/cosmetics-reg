@@ -8,13 +8,14 @@ import { consensusCheck } from "./consensus";
 import { applyOutcomes, type RegulationRow, type QuarantineRow } from "./upsert";
 import type { IngredientLite } from "./ingredients";
 import { readRows, writeRows, updateMeta } from "../../lib/json-store";
+import { GEMINI_PRIMARY, GEMINI_SECONDARY } from "../gemini-models";
 
 // Phase 5b — Supabase 제거. source-status.json 에서 ok/unchanged 행 순회 → .crawl-raw 파싱
 // → ingredients/regulations/quarantine in-memory 작업본 mutate → 마지막 한 번 write.
 
 const RAW_DIR = ".crawl-raw";
-const PRIMARY_MODEL = "gemini-2.5-flash";
-const SECONDARY_MODEL = "gemini-2.5-flash-lite";
+const PRIMARY_MODEL = GEMINI_PRIMARY;
+const SECONDARY_MODEL = GEMINI_SECONDARY;
 
 interface SourceStatusRow {
   country_code: string;

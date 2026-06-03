@@ -1,0 +1,19 @@
+version: 2
+# 보안·버전 업데이트를 PR 로 자동 제안(자동 머지 X — 사람 검토 후 병합).
+# PR 은 pr-check.yml(tsc·lint·build·E2E) 게이트를 거치므로 깨지는 업데이트는 걸러짐.
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    groups:
+      # 자잘한 patch/minor 는 묶어서 PR 수 줄임.
+      minor-and-patch:
+        update-types:
+          - "minor"
+          - "patch"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"

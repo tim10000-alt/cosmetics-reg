@@ -3,6 +3,7 @@ loadEnv();
 
 import { GoogleGenAI } from "@google/genai";
 import { readRows, writeRows } from "../lib/json-store";
+import { GEMINI_PRIMARY } from "./gemini-models";
 
 // Phase 5b — Supabase 제거. ingredients.json 에 chinese_name / japanese_name /
 // function_category / function_description 한 번 호출로 보강.
@@ -82,7 +83,7 @@ async function enrichOne(ai: GoogleGenAI, inci: string, korean: string | null): 
   for (let attempt = 1; attempt <= maxAttempts; attempt++) {
     try {
       const res = await ai.models.generateContent({
-        model: "gemini-2.5-flash",
+        model: GEMINI_PRIMARY,
         contents: prompt(inci, korean),
         config: {
           responseMimeType: "application/json",
