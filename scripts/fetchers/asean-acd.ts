@@ -1,8 +1,11 @@
 import { randomUUID, createHash } from "node:crypto";
-import { existsSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync, unlinkSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import { loadEnv } from "../crawlers/env";
 loadEnv();
 import { readRows, writeRows, updateMeta } from "../../lib/json-store";
+import { geminiRescue } from "../parsers/gemini-fallback";
 
 // ASEAN Cosmetic Directive (ACD) — Annex II/III/IV/VI/VII PDF 자동 fetch + 정규식 파싱.
 // 출처: aseancosmetics.org (ASEAN Cosmetic Association 공식). 매년 갱신.
@@ -352,11 +355,30 @@ async function main() {
       continue;
     }
     const text = await extractText(buf);
-    const entries = parseAnnex(text, annex.code);
+    let entries = parseAnnex(text, annex.code);
     console.log(`  ${(text.length / 1024).toFixed(0)}KB text → ${entries.length} entries`);
     if (entries.length === 0) {
-      console.warn(`  ! 0 entries — parser 패턴 검증 필요. fingerprint 미저장.`);
-      continue;
+      // 0건 = 이 Annex PDF 양식 변경 신호 → buf 를 임시 PDF 로 써서 Gemini 폴백 1회.
+      // 정상(>0)이면 이 분기 미실행 → 기존 동작과 100% 동일(부작용 0).
+      const tmp = join(tmpdir(), `asean-${annex.code}-${process.pid}.pdf`);
+      writeFileSync(tmp, buf);
+      const rescued = await geminiRescue({ filePath: tmp, country: "ASEAN", title: annex.description, url: annex.url });
+      try { unlinkSync(tmp); } catch { /* temp 정리 실패 무시 */ }
+      const fbEntries: Entry[] = rescued
+        .filter((r) => r.status !== "not_listed")
+        .map((r) => ({
+          inci: r.inci_name,
+          cas: r.cas_no,
+          ref: null,
+          max_concentration: r.max_concentration,
+          conditions: (r.conditions ? r.conditions + " " : "") + "(정규식 0건 → Gemini 폴백)",
+        }));
+      if (fbEntries.length === 0) {
+        console.warn(`  ! 0 entries + Gemini 폴백 0건 — fingerprint 미저장.`);
+        continue;
+      }
+      console.log(`  ⚠ 정규식 0건 → Gemini 폴백 ${fbEntries.length}건`);
+      entries = fbEntries;
     }
 
     const sourceDoc = `${SOURCE_PREFIX} — ${annex.description}`;
