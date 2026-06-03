@@ -188,13 +188,12 @@ async function main() {
   await ensureData();
   ensureBuilt();
 
-  // serve 는 devDependency. node_modules/.bin/serve 직접 실행 — npx registry 조회 0,
-  // 오프라인 환경 (첫 npm install 후) 에서도 즉시 시작.
-  const serveBin = isWin
-    ? path.join(ROOT, "node_modules", ".bin", "serve.cmd")
-    : path.join(ROOT, "node_modules", ".bin", "serve");
-  const server = spawnCmd(serveBin, ["out", "-l", String(PORT), "-L"], {
+  // 로컬 서버 = scripts/serve-local.cjs — out/ 정적 서빙 + "브라우저 모두 닫으면
+  // 자동 종료"(heartbeat). serve 패키지 의존 X, node 직접 실행. 이 프로세스가 종료되면
+  // 아래 server.on("exit") → launch 종료 → (숨은) 창도 닫힘.
+  const server = spawn(process.execPath, [path.join("scripts", "serve-local.cjs")], {
     stdio: ["ignore", "ignore", "inherit"],
+    env: { ...process.env, PORT: String(PORT) },
   });
 
   let shuttingDown = false;

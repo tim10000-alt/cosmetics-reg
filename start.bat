@@ -3,6 +3,17 @@ chcp 65001 >nul
 cd /d "%~dp0"
 title cosmetics-reg
 
+REM --- If already installed, relaunch hidden so no CMD window shows.
+REM     First install stays visible (shows download/build progress).
+REM     cwd is inherited by the hidden cmd, so no path is passed as an
+REM     argument (works with non-ASCII / spaced folder paths).
+if /i not "%~1"=="hidden" (
+    if exist "out\index.html" if exist "node_modules" (
+        powershell -NoProfile -Command "Start-Process cmd -ArgumentList '/c start.bat hidden' -WindowStyle Hidden"
+        exit /b
+    )
+)
+
 REM .bat file uses ASCII-only to avoid Windows cmd codepage issues.
 REM Korean messages are emitted by Node (launch.cjs), which speaks UTF-8.
 REM
@@ -70,6 +81,9 @@ echo.
 
 :launch
 node scripts\launch.cjs
+
+REM Hidden mode: exit silently when server stops (no leftover hidden window).
+if /i "%~1"=="hidden" exit /b
 
 echo.
 echo (Server stopped. Press any key to close this window.)

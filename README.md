@@ -46,17 +46,18 @@ public/data/meta.json
 
 ## 빌드·실행 (사용자) — 더블클릭 한 번
 
-**Windows**: 폴더의 `start.bat` 더블클릭
-- **CMD 창 없이 실행**: `run-quiet.vbs` 더블클릭 → 검은 창 없이 서버 시작 + 브라우저만 오픈 (첫 실행은 진행 표시용으로 창을 잠깐 보여줌). 종료는 `stop.bat` 더블클릭.
+**Windows**: 폴더의 `start.bat` **더블클릭 한 번** — 그게 전부입니다.
+- 설치가 끝난 뒤부터는 **검은 CMD 창 없이** 서버가 뜨고 브라우저만 열립니다 (첫 설치만 진행 표시용으로 창을 잠깐 보여줌).
+- **브라우저(모든 탭)를 닫으면 서버가 ~75초 내 자동 종료** — 따로 끌 필요 없음.
 
 **macOS / Linux**: 터미널에서 `./start.sh` (또는 `npm start`)
 
 `scripts/launch.cjs` 가 자동으로:
 1. `node_modules` 없으면 `npm install` (최초 1회)
 2. `out/` 없으면 `npm run build` (최초 1회 또는 코드 변경 시)
-3. `http://localhost:3010` 에 정적 서버 띄움
+3. `http://localhost:3010` 에 정적 서버 띄움 (`scripts/serve-local.cjs` — 브라우저 생존 heartbeat)
 4. 기본 브라우저 자동 진입
-5. `Ctrl+C` 또는 창 닫기로 종료
+5. **브라우저(모든 탭) 닫으면 ~75초 내 서버 자동 종료** (또는 `Ctrl+C`)
 
 **전제조건**: Node.js LTS (https://nodejs.org). 그 외 자격증명 0.
 
