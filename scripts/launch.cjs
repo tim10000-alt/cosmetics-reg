@@ -23,11 +23,7 @@ const isWin = platform() === "win32";
 
 // Windows 에선 npm/npx 가 .cmd 래퍼. Node 22+ 의 BatBadBut 패치로 .cmd 직접 spawn 은
 // EINVAL. shell:true + args 배열 조합은 DEP0190 warning. cmd.exe /c 로 감싸는 방식은
-// shell:false 유지 + EINVAL 회피 + 경고 0.
-function spawnCmd(executable, args, opts) {
-  if (isWin) return spawn("cmd.exe", ["/c", executable, ...args], { ...opts, shell: false });
-  return spawn(executable, args, { ...opts, shell: false });
-}
+// shell:false 유지 + EINVAL 회피 + 경고 0. (serve 는 이제 node serve-local.cjs 직접 spawn.)
 function spawnSyncCmd(executable, args, opts) {
   if (isWin) return spawnSync("cmd.exe", ["/c", executable, ...args], { ...opts, shell: false });
   return spawnSync(executable, args, { ...opts, shell: false });
