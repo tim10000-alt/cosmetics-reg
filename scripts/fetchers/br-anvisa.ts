@@ -4,6 +4,7 @@ import { spawn } from "node:child_process";
 import { loadEnv } from "../crawlers/env";
 loadEnv();
 import { readRows, writeRows, updateMeta } from "../../lib/json-store";
+import { geminiRescue } from "../parsers/gemini-fallback";
 
 // BR ANVISA RDC PDF 자동 fetch + 정규식 파싱.
 // 출처: KCIA 15087 첨부 zip (브라질 규정 원문 모음 — KCIA 가 자동 다운로드).
@@ -431,8 +432,25 @@ async function main() {
     console.log(`  ${textLen ? (textLen / 1024).toFixed(0) + "KB text → " : ""}${entries.length} entries`);
     // hand-list 는 항상 처리 (적은 entries 도 valid). 그 외는 너무 적으면 skip.
     if (rdc.parser !== "hand-list" && entries.length < 5) {
-      console.warn(`  ! 너무 적음 — fingerprint 미저장`);
-      continue;
+      // 정규식 <5 = 이 RDC PDF 양식 변경 신호 → 해당 PDF 1건만 Gemini 폴백(무료 throttle).
+      // 정상(≥5)이면 이 분기 미실행 → 기존 동작과 100% 동일(부작용 0).
+      const rescued = await geminiRescue({ filePath: path, country: "BR", title: rdc.description, url: "https://kcia.or.kr/home/law/law_05.php?type=view&no=15087" });
+      const fbEntries: Entry[] = rescued
+        .filter((r) => r.status !== "not_listed")
+        .map((r) => ({
+          inci: r.inci_name,
+          cas: r.cas_no,
+          ref: null,
+          max_concentration: r.max_concentration,
+          conditions: (r.conditions ? r.conditions + " " : "") + "(정규식 0건 → Gemini 폴백)",
+          status: r.status === "banned" ? "banned" : r.status === "restricted" ? "restricted" : "listed",
+        }));
+      if (fbEntries.length === 0) {
+        console.warn(`  ! 너무 적음(${entries.length}) + Gemini 폴백 0건 — fingerprint 미저장`);
+        continue;
+      }
+      console.log(`  ⚠ 정규식 ${entries.length}건(<5) → Gemini 폴백 ${fbEntries.length}건`);
+      entries = fbEntries;
     }
 
     const rdcId = rdc.description.match(/RDC \d+\/\d{4}/)?.[0] ?? rdc.description;
