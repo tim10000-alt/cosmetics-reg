@@ -65,8 +65,13 @@ jobs:
         run: npm run us:colors
         continue-on-error: true
 
+      # --with-deps 의 apt 단계가 간헐적으로 hang 하여 전체 파이프라인을 잡아먹음(run #1·#2
+      # 실측). 단계 타임아웃 8분 + continue-on-error 로 격리 — 행/실패해도 죽이고 진행.
+      # Chromium 미설치 시 CN IECIC(Playwright 필요)만 그 런에서 skip, 데이터는 보존됨.
       - name: Install Playwright Chromium for fetcher
         run: npx playwright install --with-deps chromium
+        timeout-minutes: 8
+        continue-on-error: true
 
       - name: Refresh CN NMPA IECIC (Playwright)
         run: npm run cn:iecic
