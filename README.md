@@ -1,7 +1,16 @@
 # cosmetics-reg
 
-화장품 원료 규제 정보 검색 — 한국·중국·EU·미국·일본·ASEAN·대만·브라질·아르헨티나·캐나다 (15국).
-26K 원료 · 55K 규제. 데이터 소스: 식약처 공공데이터 API 4종 + 각국 공식 법령.
+화장품 원료 규제 정보 검색 — 한국·중국·EU·미국·일본·ASEAN(6국)·대만·브라질·아르헨티나·캐나다·안데스공동체(4국) 등 19국.
+33.9K 원료 · 92K 규제. 데이터 소스: 식약처 공공데이터 API 4종 + 각국 공식 법령.
+
+## 🖱️ 다른 PC 에 1-클릭 설치 (가장 간편)
+
+설치 스크립트 하나만 빈 폴더에 두고 실행 → 다운로드·Node 설치·빌드·실행·브라우저까지 자동.
+
+- **Windows**: [`install.bat`](install.bat) 다운로드 → 더블클릭
+- **macOS / Linux**: `bash install.sh`
+
+Node 가 없어도 됩니다(Windows 는 portable Node 자동 설치). git 이 있으면 매일 자동갱신, 없으면 zip 다운로드. 두 번째 실행부터는 만들어진 `cosmetics-reg/start.bat`(또는 `start.sh`)만 더블클릭하면 됩니다.
 
 ## 100% 로컬 (Phase 5b — Supabase·Netlify·서버 의존 0)
 
@@ -9,10 +18,10 @@
 모든 데이터는 `public/data/*.json` (git 에 포함). 사용자 PC 단독 구동.
 
 ```bash
-git clone …
+git clone --depth 1 https://github.com/tim10000-alt/cosmetics-reg.git
 cd cosmetics-reg
-npm install
-npm run build && npm run serve   # http://localhost:3010
+npm start                         # 설치+빌드+서버+브라우저 자동 (또는 아래 수동)
+# npm install && npm run build && npm run serve   # http://localhost:3010
 ```
 
 자격증명 한 줄도 없이 검색 사이트가 즉시 동작.
