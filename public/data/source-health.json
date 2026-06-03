@@ -1,5 +1,9 @@
 {
   "stale_threshold_days": 45,
+  "stale_count": 0,
+  "stale_sources": [],
+  "limit_anomaly_count": 0,
+  "limit_anomalies": [],
   "sources": [
     {
       "src": "ANMAT Argentina — MERCOSUL GMC 62/2014",

@@ -135,9 +135,12 @@ function main() {
 
   fs.writeFileSync(BASELINE, JSON.stringify({ counts }, null, 2));
   fs.writeFileSync(path.join(DATA, "quarantine-names.json"), JSON.stringify({ generated: "guardian", count: corrupt.length, items: corrupt }, null, 2));
-  // latest 만 저장(days 는 휘발성이라 churn 유발 → 제외, 읽을 때 계산). 소스 갱신 시에만 파일 변경.
+  // latest 만 저장(days 는 휘발성이라 churn 유발 → 제외, 읽을 때 계산). stale_count/anomaly 는
+  // 임계 교차/이상 발생 시에만 변해 저churn → data-quality-check 가 신규증가 시 이슈 트리거.
   fs.writeFileSync(path.join(DATA, "source-health.json"), JSON.stringify(
-    { stale_threshold_days: STALE_DAYS, sources: health.map((h) => ({ src: h.src, latest: h.latest })) }, null, 2));
+    { stale_threshold_days: STALE_DAYS, stale_count: stale.length, stale_sources: stale.map((s) => s.src),
+      limit_anomaly_count: limitAnomalies.length, limit_anomalies: limitAnomalies.slice(0, 20),
+      sources: health.map((h) => ({ src: h.src, latest: h.latest })) }, null, 2));
 
   console.log("=== 품질 가디언(자가복구 + 신선도/이상 감시) ===");
   console.log(`  불가능값(>100/≤0) 제거: ${overFixed}`);

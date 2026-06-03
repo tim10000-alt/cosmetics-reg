@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-03T20:26:46.976Z",
-  "totalRegs": 94382,
+  "generated_at": "2026-06-03T21:52:30.583Z",
+  "totalRegs": 94372,
   "coverage": {
     "AR": 4843,
     "BO": 2161,
@@ -11,7 +11,7 @@
     "EC": 2161,
     "EU": 6786,
     "ID": 5889,
-    "JP": 3113,
+    "JP": 3084,
     "KR": 4035,
     "MY": 5889,
     "PE": 2161,
@@ -22,8 +22,11 @@
     "US": 205,
     "VN": 5889
   },
-  "restrictedNoLimit": 3840,
+  "restrictedNoLimit": 3834,
   "statusConflicts": 439,
   "quarantinePending": 0,
+  "staleCount": 0,
+  "staleSources": [],
+  "limitAnomalyCount": 0,
   "checked_at_note": "matches regulations-query primary-row logic"
 }

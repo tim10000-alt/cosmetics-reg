@@ -50,7 +50,17 @@ function compute() {
   }
   let quarantinePending = 0;
   try { quarantinePending = JSON.parse(fs.readFileSync(path.join(DATA, "quarantine.json"), "utf8")).rows.filter((q) => q.status === "pending").length; } catch {}
-  return { generated_at: meta.generated_at, totalRegs, coverage, restrictedNoLimit, statusConflicts, quarantinePending };
+  // 가디언 신선도/이상 리포트 — stale 은 latest 로 days 재계산(>임계).
+  let staleCount = 0, staleSources = [], limitAnomalyCount = 0;
+  try {
+    const h = JSON.parse(fs.readFileSync(path.join(DATA, "source-health.json"), "utf8"));
+    const thr = h.stale_threshold_days ?? 45, now = new Date();
+    for (const s of h.sources || []) {
+      if (s.latest && (now - new Date(s.latest)) / 86400000 > thr) { staleCount++; staleSources.push(s.src); }
+    }
+    limitAnomalyCount = h.limit_anomaly_count ?? 0;
+  } catch {}
+  return { generated_at: meta.generated_at, totalRegs, coverage, restrictedNoLimit, statusConflicts, quarantinePending, staleCount, staleSources, limitAnomalyCount };
 }
 
 function detectRegressions(cur, prev) {
@@ -63,6 +73,9 @@ function detectRegressions(cur, prev) {
   }
   if (cur.restrictedNoLimit > (prev.restrictedNoLimit ?? 0) * 1.1 + 50) out.push(`한도누락 restricted 증가: ${prev.restrictedNoLimit}→${cur.restrictedNoLimit}`);
   if (cur.statusConflicts > (prev.statusConflicts ?? 0) * 1.2 + 20) out.push(`status 충돌 증가: ${prev.statusConflicts}→${cur.statusConflicts}`);
+  // 가디언 신선도/이상 — 신규 발생 시만 경보(스팸 방지). stale=소스 동결/fetch차단, anomaly=한도 급변.
+  if (cur.staleCount > (prev.staleCount ?? 0)) out.push(`소스 stale 증가(>45일 미갱신): ${prev.staleCount ?? 0}→${cur.staleCount} [${(cur.staleSources || []).join(", ")}] — fetch 차단/동결/새 URL 확인`);
+  if (cur.limitAnomalyCount > 0) out.push(`한도 5배+ 급변 ${cur.limitAnomalyCount}건 — silent 오파싱 의심, source-health.json 의 limit_anomalies 확인`);
   return out;
 }
 
