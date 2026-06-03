@@ -47,6 +47,8 @@ public/data/meta.json
 ## 빌드·실행 (사용자) — 더블클릭 한 번
 
 **Windows**: 폴더의 `start.bat` 더블클릭
+- **CMD 창 없이 실행**: `run-quiet.vbs` 더블클릭 → 검은 창 없이 서버 시작 + 브라우저만 오픈 (첫 실행은 진행 표시용으로 창을 잠깐 보여줌). 종료는 `stop.bat` 더블클릭.
+
 **macOS / Linux**: 터미널에서 `./start.sh` (또는 `npm start`)
 
 `scripts/launch.cjs` 가 자동으로:
