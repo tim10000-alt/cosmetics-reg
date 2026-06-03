@@ -11,6 +11,7 @@ import { writeRows, updateMeta } from "../../lib/json-store";
 const BASE = "https://kcia.or.kr";
 const REFERER = `${BASE}/home/main/`;
 const PAGES = [
+  { url: `${BASE}/home/law/law_01.php`, category: "국내법령" }, // 한국 국내법령(화장품법·시행규칙·식약처 고시·안전기준) → KR 2차
   { url: `${BASE}/home/law/law_05.php`, category: "해외법령" },
   { url: `${BASE}/home/law/law_09.php`, category: "중국법령" },
 ];
@@ -50,6 +51,8 @@ const COUNTRY_KEYWORDS: { keys: string[]; code: string }[] = [
 ];
 
 function inferCountry(title: string, fallbackCategory: string): string | null {
+  // 국내법령 카테고리 = 한국 자국 법령(화장품법·식약처 고시) → 정의상 KR(키워드보다 우선).
+  if (fallbackCategory === "국내법령") return "KR";
   for (const { keys, code } of COUNTRY_KEYWORDS) {
     if (keys.some((k) => title.includes(k))) return code;
   }
