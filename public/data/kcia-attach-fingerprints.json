@@ -88,5 +88,29 @@
     "parsed_at": "2026-05-26T20:31:19.900Z",
     "entry_count": 0,
     "article_no": "17599"
+  },
+  "public/data/raw-attach/kcia-17610/붙임1. 해관총서, 수출입화장품검사검역감독관리방법(해관총서령제284호)_국문.pdf": {
+    "sha256": "2de4a043c31c34f12e5bf57328e02223dae9e7c5260020da5a3edae3476f3f69",
+    "parsed_at": "2026-06-03T15:30:51.262Z",
+    "entry_count": 0,
+    "article_no": "17610"
+  },
+  "public/data/raw-attach/kcia-17610/붙임2. 해관총서, 수출입화장품검사검역감독관리방법에 대한 해설_국문.pdf": {
+    "sha256": "4b3788a9509d8bf4bdf3bcf939c33e9c9d22c37de65810ab6794932008944a15",
+    "parsed_at": "2026-06-03T15:30:51.262Z",
+    "entry_count": 0,
+    "article_no": "17610"
+  },
+  "public/data/raw-attach/kcia-17610/붙임3. 해관총서, 수출입화장품검사검역감독관리방법(해관총서령제284호)_원문.pdf": {
+    "sha256": "7a5993259d4e8c5d38a99241f7e92c61b4243f152c2b842f9fb389d2f86c96b0",
+    "parsed_at": "2026-06-03T15:30:51.262Z",
+    "entry_count": 0,
+    "article_no": "17610"
+  },
+  "public/data/raw-attach/kcia-17610/붙임4. 해관총서, 수출입화장품검사검역감독관리방법에 대한 해설_원문.pdf": {
+    "sha256": "ae27c789e8fb330d5e74a3d31fe7ed209640a5d1f36ebaa8d779ba1123a082ec",
+    "parsed_at": "2026-06-03T15:30:51.262Z",
+    "entry_count": 0,
+    "article_no": "17610"
   }
 }
