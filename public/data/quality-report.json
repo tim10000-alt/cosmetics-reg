@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-03T15:36:32.870Z",
+  "generated_at": "2026-06-03T17:43:48.752Z",
   "totalRegs": 92172,
   "coverage": {
     "AR": 4843,
@@ -22,7 +22,7 @@
     "US": 205,
     "VN": 5889
   },
-  "restrictedNoLimit": 4149,
+  "restrictedNoLimit": 4141,
   "statusConflicts": 451,
   "quarantinePending": 0,
   "checked_at_note": "matches regulations-query primary-row logic"
