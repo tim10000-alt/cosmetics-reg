@@ -5,6 +5,9 @@
 // ppm 단위는 % 와 스케일이 달라 자동 숫자화 제외(조건 텍스트로 유지) — 오표기 방지.
 export function extractMaxConc(conditions: string | null | undefined): number | null {
   if (!conditions) return null;
+  // 쉼표 소수점(유럽/번역본 "0,68%" = 0.68%) → 점으로 정규화. 미적용 시 "68" 로 오추출(100배 오류).
+  // "숫자,숫자" 만 변환(리스트 구분 ", " 는 % 뒤 공백이라 영향 없음).
+  conditions = conditions.replace(/(\d),(\d)/g, "$1.$2");
   const segs = [...conditions.matchAll(/(?:최대\s*농도|배합한도)\s*[:：]?\s*([^*<]*?)(?:\n\s*\*|\n<|$)/g)].map((m) => m[1]);
   if (!segs.length) return null;
   const vals = [...new Set(segs.flatMap((s) => [...s.matchAll(/(\d+(?:\.\d+)?)\s*%/g)].map((x) => x[1])))];

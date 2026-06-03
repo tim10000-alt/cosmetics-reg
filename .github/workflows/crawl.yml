@@ -196,6 +196,12 @@ jobs:
         run: node scripts/apply-overrides.cjs
         continue-on-error: true
 
+      # 3-a-2) 품질 가디언(결정론·안전) — 모든 파서·override 후 실행. 불가능 농도값(>100/≤0) 제거 +
+      # 오염 성분명·국가 행수 급감 flag(quarantine-names.json / guardian-baseline.json). 한도는 만들지 않음.
+      - name: Quality guardian (self-heal + flag)
+        run: node scripts/quality-guardian.cjs
+        continue-on-error: true
+
       # 3-b) 데이터 품질 자동 점검 — 지표 계산 + 직전(quality-report.json) 대비 회귀 감지.
       # quality-report.json 갱신은 아래 commit 에 포함되어 추이가 장기 추적됨.
       - name: Data quality check
