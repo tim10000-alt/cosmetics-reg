@@ -5,113 +5,158 @@ import { randomUUID, createHash } from "node:crypto";
 import { existsSync, readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import { readRows, writeRows, updateMeta } from "../../lib/json-store";
 
-// KCIA(대한화장품협회) 성분사전 *표준화명칭목록* PDF 자동 ingest.
-// = 한국 표준 화장품 성분명 전체(2.2만건) — 한글 표준명 + 영문(INCI) + 구명칭.
-// 목적: 성분 사전 커버리지·한국어 검색 보강. (이 목록엔 CAS·규제 한도 없음 = 이름 전용.)
+// KCIA(대한화장품협회) 성분사전 *표준화명칭목록* + *명칭변경목록* PDF 자동 ingest.
+// = 한국 표준 화장품 성분명 전체(2.2만건). 결정론 파서(Gemini 불필요·전자동·HTML-first 원칙의 PDF판).
 //
-// 결정론 파서(Gemini 불필요·전자동). 증분: PDF Last-Modified/크기 해시스킵 → 변경 시만 재머지.
-// 멱등: 매 run 이름(INCI/한글)로 기존 매칭 → 있으면 보강, 없으면 신규 생성(재실행해도 중복 0).
-// dedup 안전: 규제는 손대지 않음(이름만). WAF(se-cu) 회피 위해 브라우저 헤더 필수.
+// 누락 0 설계: 표준화명칭목록 PDF 는 표 컬럼이 평탄화돼 "표준영문명 없는 한글전용" 행에서
+// 표준명+구명칭이 공백 없이 연접(예 "족도리풀족두리풀")한다. → *명칭변경목록*(개명된 항목의
+// 코드별 표준명/구명칭 분리본)을 코드로 참조해 정확히 분리. 개명 안 된 행은 단일 깨끗한 이름.
+// 따라서 21,635건 전부(한글전용 포함) 깨끗하게 머지.
+//
+// 이 목록엔 규제 한도 없음 = 이름 전용(한국어 검색·성분 커버리지 향상, 규제 데이터 영향 0).
+// 증분: 두 PDF sha256 해시스킵(변경 시만 재머지)·멱등(이름매칭, 재실행 중복 0).
+// WAF(se-cu) 회피: 브라우저 헤더(UA+Referer) 필수.
 
-const PDF_URL = "https://kcia.or.kr/cid/files/%ED%91%9C%EC%A4%80%ED%99%94%EB%AA%85%EC%B9%AD%EB%AA%A9%EB%A1%9D"; // 표준화명칭목록
-const REFERER = "https://kcia.or.kr/cid/";
 const UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36";
-const RAW = ".crawl-raw/kcia-names.pdf";
+const REFERER = "https://kcia.or.kr/cid/";
+const URL_NAMES = "https://kcia.or.kr/cid/files/%ED%91%9C%EC%A4%80%ED%99%94%EB%AA%85%EC%B9%AD%EB%AA%A9%EB%A1%9D"; // 표준화명칭목록
+const URL_CHANGES = "https://kcia.or.kr/cid/files/%EB%AA%85%EC%B9%AD%EB%B3%80%EA%B2%BD%EB%AA%A9%EB%A1%9D"; // 명칭변경목록
 const FINGERPRINT = "public/data/kcia-names-fingerprint.json";
 const SOURCE_TAG = "KCIA 표준화명칭목록";
-const MIN_RECORDS = 15_000; // 이보다 적으면 구조 변경/차단 의심 → 보존
+const MIN_RECORDS = 15_000;
 
 interface IngredientRow {
   id: string; inci_name: string; korean_name: string | null; chinese_name: string | null;
   japanese_name: string | null; cas_no: string | null; synonyms: string[];
   description: string | null; function_category: string | null; function_description: string | null;
 }
-interface KciaName { code: string; ko: string; inci: string; oldKo: string; }
+interface NameRec { code: string; ko: string; inci: string; oldKo: string; }
 
 const headers = { "User-Agent": UA, Referer: REFERER, "Accept-Language": "ko-KR,ko;q=0.9" };
+const isHangul = (s: string) => /[가-힣]/.test(s);
+const norm = (s: string) => s.toLowerCase().replace(/\s+/g, " ").trim();
 
-function loadFingerprint(): { sha256?: string; lastModified?: string; length?: string; parsed_at?: string } {
-  return existsSync(FINGERPRINT) ? JSON.parse(readFileSync(FINGERPRINT, "utf8")) : {};
-}
-
-async function headInfo(): Promise<{ lastModified: string | null; length: string | null } | null> {
+async function download(url: string, label: string): Promise<Buffer | null> {
   try {
-    const res = await fetch(PDF_URL, { method: "HEAD", headers, redirect: "follow" });
-    if (!res.ok) return null;
-    return { lastModified: res.headers.get("last-modified"), length: res.headers.get("content-length") };
-  } catch { return null; }
-}
-
-async function download(): Promise<Buffer | null> {
-  try {
-    const res = await fetch(PDF_URL, { headers, redirect: "follow" });
-    if (!res.ok) { console.error(`  ✗ 다운로드 HTTP ${res.status}`); return null; }
+    const res = await fetch(url, { headers, redirect: "follow" });
+    if (!res.ok) { console.error(`  ✗ ${label} HTTP ${res.status}`); return null; }
     const ct = res.headers.get("content-type") || "";
     const buf = Buffer.from(await res.arrayBuffer());
-    if (!/pdf/i.test(ct) || buf.length < 1_000_000) {
-      console.error(`  ✗ PDF 아님(ct=${ct}, ${buf.length}B) — WAF 차단 의심, 보존`);
-      return null;
-    }
+    if (!/pdf/i.test(ct) || buf.length < 500_000) { console.error(`  ✗ ${label} PDF 아님(ct=${ct}, ${buf.length}B) — WAF 차단 의심`); return null; }
     return buf;
-  } catch (e) { console.error(`  ✗ 다운로드 실패: ${e instanceof Error ? e.message : e}`); return null; }
+  } catch (e) { console.error(`  ✗ ${label} 다운로드 실패: ${e instanceof Error ? e.message : e}`); return null; }
 }
 
-const isHangul = (s: string) => /[가-힣]/.test(s);
+async function pdfLines(buf: Buffer): Promise<string[]> {
+  const { PDFParse } = await import("pdf-parse");
+  const text = (await new PDFParse({ data: buf }).getText()).text;
+  return text.split(/\r?\n/).map((l) => l.replace(/\t/g, " ").replace(/\s+/g, " ").trim()).filter(Boolean);
+}
 
-function parsePdf(text: string): KciaName[] {
-  const rawLines = text.split(/\r?\n/).map((l) => l.replace(/\t/g, " ").replace(/\s+/g, " ").trim()).filter(Boolean);
-  // 레코드 재조립: "코드(3~6자리)+한글" 로 시작하는 줄 = 새 레코드, 아니면 이전 줄에 이어붙임(긴 이름 줄바꿈 대응).
-  const records: string[] = [];
-  for (const l of rawLines) {
-    if (/^-- \d+ of \d+ --/.test(l) || /^성분코드/.test(l)) continue;
+// 레코드 재조립: "코드(3~6자리)+한글" 로 시작하는 줄 = 새 레코드, 아니면 이전 줄에 이어붙임(긴 이름 줄바꿈).
+function reassemble(lines: string[]): { code: string; rest: string }[] {
+  const recs: { code: string; rest: string }[] = [];
+  for (const l of lines) {
+    if (/^-- \d+ of \d+ --/.test(l) || /^성분코드/.test(l) || /^표준명칭/.test(l) || /^<.*>/.test(l) || /^\*/.test(l)) continue;
     const m = l.match(/^(\d{3,6})\s+(.*)/);
-    if (m && isHangul((m[2].split(" ")[0] ?? ""))) records.push(l);
-    else if (records.length) records[records.length - 1] += " " + l;
+    if (m && isHangul((m[2].split(" ")[0] ?? ""))) recs.push({ code: m[1], rest: m[2] });
+    else if (recs.length) recs[recs.length - 1].rest += " " + l;
   }
-  const out: KciaName[] = [];
-  for (const rec of records) {
-    const m = rec.match(/^(\d{3,6})\s+(.*)/);
-    if (!m) continue;
-    const toks = m[2].split(" ").filter(Boolean);
-    const ko: string[] = [], inci: string[] = [], oldKo: string[] = [];
-    let phase = 0; // 0=한글표준명 1=영문(INCI) 2=구명칭(한글) 3=이후 무시
-    for (const t of toks) {
-      const h = isHangul(t);
-      if (phase === 0) { if (h) ko.push(t); else { phase = 1; inci.push(t); } }
-      else if (phase === 1) { if (!h) inci.push(t); else { phase = 2; oldKo.push(t); } }
-      else if (phase === 2) { if (h) oldKo.push(t); else { phase = 3; break; } }
+  return recs;
+}
+
+// 토큰열을 [한글런, 라틴런, 한글런, 라틴런, ...] 으로 분절(스크립트 교대).
+function scriptRuns(rest: string): string[] {
+  const toks = rest.split(" ").filter(Boolean);
+  const runs: string[] = [];
+  let cur = "", curHangul: boolean | null = null;
+  for (const t of toks) {
+    if (/^\d{4}-\d{2}-\d{2}$/.test(t)) break; // 변경일자 = 레코드 끝
+    const h = isHangul(t);
+    if (curHangul === null || h === curHangul) { cur += (cur && !h ? " " : "") + t; curHangul = h; }
+    else { runs.push(cur); cur = t; curHangul = h; }
+  }
+  if (cur) runs.push(cur);
+  return runs;
+}
+
+// 명칭변경목록: 코드 → {표준명(한글), 표준영문, 구명칭(한글)}. runs = [KO_std, EN_std, KO_old, EN_old]
+function parseChanges(lines: string[]): Map<string, { ko: string; inci: string; oldKo: string }> {
+  const map = new Map<string, { ko: string; inci: string; oldKo: string }>();
+  for (const { code, rest } of reassemble(lines)) {
+    const runs = scriptRuns(rest);
+    if (runs.length < 2) continue;
+    map.set(code, { ko: runs[0] ?? "", inci: runs[1] ?? "", oldKo: runs[2] && isHangul(runs[2]) ? runs[2] : "" });
+  }
+  return map;
+}
+
+// 양쪽 목록 모두 영문이 없어 변경맵으로도 못 가르는 한글전용 개명(발효블렌드 등):
+// "표준명+구명칭" 이 공백 없이 연접되고 둘은 같은 토큰으로 시작하는 변이명 → 앞 7자 재등장
+// 위치에서 분할(길이 균형 가드로 오분할 방지). 영문 섞인 화학명은 대상 제외(오분할 위험).
+const hangulCount = (s: string) => (s.match(/[가-힣]/g) || []).length;
+const latinCount = (s: string) => (s.match(/[A-Za-z]/g) || []).length;
+function splitDoubled(s: string): { head: string; tail: string } | null {
+  const n = s.length;
+  // 라틴 우세(진짜 영문 INCI)면 제외. 한글 우세(영문 일부 박힌 한글명)는 분리 대상.
+  if (n < 18 || latinCount(s) >= hangulCount(s)) return null;
+  const key = s.slice(0, 7);
+  for (let i = Math.floor(n * 0.4); i <= n - 7; i++) {
+    if (s.slice(i, i + 7) === key) {
+      const head = s.slice(0, i), tail = s.slice(i);
+      if (tail.length >= head.length * 0.75 && tail.length <= head.length * 1.35) return { head, tail };
     }
-    out.push({ code: m[1], ko: ko.join(""), inci: inci.join(" ").trim(), oldKo: oldKo.join("") });
+  }
+  return null;
+}
+
+// 표준화명칭목록 — 변경맵으로 병합 해소. runs = [KO, EN?, (KO_old?), ...]
+function parseNames(lines: string[], changes: Map<string, { ko: string; inci: string; oldKo: string }>): NameRec[] {
+  const out: NameRec[] = [];
+  for (const { code, rest } of reassemble(lines)) {
+    const runs = scriptRuns(rest);
+    const ch = changes.get(code);
+    let ko = "", inci = "", oldKo = "";
+    if (ch) {
+      // 개명 항목: 변경목록이 표준명/구명칭을 정확히 분리(평탄화 병합 무관).
+      ko = ch.ko; inci = ch.inci; oldKo = ch.oldKo;
+    } else {
+      // 비개명: runs[0]=한글 단일 표준명(병합 없음). INCI=라틴 우세 run(한글에 N 등 박힌 blob 오선택 방지).
+      ko = runs[0] && isHangul(runs[0]) ? runs[0] : "";
+      inci = runs.find((r) => latinCount(r) > 0 && latinCount(r) > hangulCount(r)) ?? "";
+    }
+    // 한글전용 doubled 최종 정리(변경맵 미해소분 안전망).
+    const sd = splitDoubled(ko);
+    if (sd) { ko = sd.head; if (!oldKo) oldKo = sd.tail; }
+    if (!ko && !inci) continue;
+    out.push({ code, ko, inci, oldKo });
   }
   return out;
 }
 
-const norm = (s: string) => s.toLowerCase().replace(/\s+/g, " ").trim();
+function loadFingerprint(): { sha?: string } {
+  return existsSync(FINGERPRINT) ? JSON.parse(readFileSync(FINGERPRINT, "utf8")) : {};
+}
 
 async function main() {
-  console.log("▶ KCIA 표준화명칭목록 ingest...");
-  const fp = loadFingerprint();
-  const head = await headInfo();
-  if (head && head.lastModified && head.lastModified === fp.lastModified && head.length === fp.length) {
-    console.log(`  변경 없음 (Last-Modified ${head.lastModified}) — skip.`);
-    return;
-  }
+  console.log("▶ KCIA 표준화명칭목록 + 명칭변경목록 ingest...");
+  const namesBuf = await download(URL_NAMES, "표준화명칭목록");
+  if (!namesBuf) { console.error("  표준화명칭목록 실패 — 보존(write 생략)"); process.exit(1); }
+  const changesBuf = await download(URL_CHANGES, "명칭변경목록");
+  // 변경목록 실패 시에도 진행 가능(비개명 항목은 깨끗) — 단 개명 병합 해소만 약화.
 
-  const buf = await download();
-  if (!buf) { console.error("  다운로드 실패 — 기존 데이터 보존(write 생략)"); process.exit(1); }
-  const sha = createHash("sha256").update(buf).digest("hex");
-  if (sha === fp.sha256) {
-    console.log("  내용 동일(sha256 일치) — 재머지 skip.");
-    return;
-  }
-  mkdirSync(".crawl-raw", { recursive: true });
-  writeFileSync(RAW, buf);
+  const sha = createHash("sha256").update(namesBuf).update(changesBuf ?? Buffer.alloc(0)).digest("hex");
+  if (sha === loadFingerprint().sha) { console.log("  내용 동일(sha256 일치) — 재머지 skip."); return; }
 
-  const { PDFParse } = await import("pdf-parse");
-  const text = (await new PDFParse({ data: buf }).getText()).text;
-  const parsed = parsePdf(text);
+  const changes = changesBuf ? parseChanges(await pdfLines(changesBuf)) : new Map();
+  console.log(`  명칭변경 맵: ${changes.size}건`);
+  const parsed = parseNames(await pdfLines(namesBuf), changes);
   console.log(`  파싱 ${parsed.length} 성분명`);
   if (parsed.length < MIN_RECORDS) { console.error(`  ✗ ${parsed.length} < ${MIN_RECORDS} — 구조 변경 의심, 보존`); process.exit(1); }
+
+  mkdirSync(".crawl-raw", { recursive: true });
+  writeFileSync(".crawl-raw/kcia-names.pdf", namesBuf);
+  if (changesBuf) writeFileSync(".crawl-raw/kcia-changes.pdf", changesBuf);
 
   const ingredients = await readRows<IngredientRow>("ingredients");
   const byInci = new Map<string, IngredientRow>();
@@ -121,31 +166,32 @@ async function main() {
     if (i.korean_name) byKo.set(i.korean_name.replace(/\s+/g, "").trim(), i);
   }
 
-  let enriched = 0, created = 0, skippedKoreanOnly = 0;
+  const addSyn = (ing: IngredientRow, s: string) => { if (s && !ing.synonyms.includes(s)) { ing.synonyms.push(s); return true; } return false; };
+  let enriched = 0, created = 0;
   for (const k of parsed) {
     const inciKey = k.inci ? norm(k.inci) : "";
     const koKey = k.ko ? k.ko.replace(/\s+/g, "").trim() : "";
     const ing = (inciKey && byInci.get(inciKey)) || (koKey && byKo.get(koKey)) || undefined;
 
     if (ing) {
-      // 보강(영문 INCI 매칭이라 표준영문명 존재 → 한글명 분리 깨끗): 빈 한글명 채우고 구명칭 보존.
       let touched = false;
       if (!ing.korean_name && k.ko) { ing.korean_name = k.ko; byKo.set(koKey, ing); touched = true; }
-      if (k.oldKo && k.oldKo !== k.ko && !ing.synonyms.includes(k.oldKo)) { ing.synonyms.push(k.oldKo); touched = true; }
+      if (k.oldKo && k.oldKo !== k.ko && addSyn(ing, k.oldKo)) touched = true;
       if (touched) enriched++;
     } else {
-      // 신규: 깨끗한 영문 INCI 가 있는 것만 생성. 한글전용(표준영문명 없음) 행은 표준명·구명칭
-      // 분리가 모호(공백 없는 한글 연접)하고 INCI/CAS/규제도 없어 가치 낮음 → skip(개수 로깅).
-      if (!k.inci || /[가-힣]/.test(k.inci) || k.inci.length < 2 || k.inci.length > 250) { skippedKoreanOnly++; continue; }
+      // 신규: 영문 INCI 있으면 INCI, 없으면 한글 표준명(병합 해소돼 깨끗) 을 inci_name 으로.
+      const primary = (k.inci && /[A-Za-z]/.test(k.inci)) ? k.inci : k.ko;
+      if (!primary || primary.length < 2 || primary.length > 250) continue;
+      const syn: string[] = [];
+      if (k.oldKo && k.oldKo !== k.ko) syn.push(k.oldKo);
       const newIng: IngredientRow = {
-        id: randomUUID(), inci_name: k.inci, korean_name: k.ko || null,
-        chinese_name: null, japanese_name: null, cas_no: null,
-        synonyms: k.oldKo && k.oldKo !== k.ko && !/[A-Za-z]/.test(k.oldKo) ? [k.oldKo] : [],
+        id: randomUUID(), inci_name: primary, korean_name: k.ko || null,
+        chinese_name: null, japanese_name: null, cas_no: null, synonyms: syn,
         description: `${SOURCE_TAG} (성분코드 ${k.code})`,
         function_category: null, function_description: null,
       };
       ingredients.push(newIng);
-      byInci.set(inciKey, newIng);
+      byInci.set(norm(primary), newIng);
       if (koKey) byKo.set(koKey, newIng);
       created++;
     }
@@ -154,10 +200,10 @@ async function main() {
   await writeRows("ingredients", ingredients);
   await updateMeta({ ingredients: ingredients.length });
   writeFileSync(FINGERPRINT, JSON.stringify(
-    { sha256: sha, lastModified: head?.lastModified ?? null, length: head?.length ?? String(buf.length), parsed_at: new Date().toISOString(), parsed: parsed.length, enriched, created },
+    { sha, parsed_at: new Date().toISOString(), parsed: parsed.length, changes: changes.size, enriched, created },
     null, 2,
   ));
-  console.log(`✓ KCIA 명칭: 보강 ${enriched}, 신규 ${created}, 한글전용 skip ${skippedKoreanOnly}, 총 성분 ${ingredients.length}`);
+  console.log(`✓ KCIA 명칭: 보강 ${enriched}, 신규 ${created}, 총 성분 ${ingredients.length}`);
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });
