@@ -10,6 +10,7 @@ import type {
   CountryDetailItem,
 } from "./types";
 import { readRows, writeRows, updateMeta } from "../../lib/json-store";
+import { extractMaxConc } from "./extract-conc";
 
 // Phase 5b — Supabase 제거. 식약처 API → public/data/*.json 직접 머지.
 // 기존 ingredients 의 function_category / function_description / 다국어명 보존.
@@ -275,12 +276,14 @@ function buildRegulationsFromRestriction(
         existing.status = mergedStatus;
         const tagged = prefix && conditions ? `${prefix}\n${conditions}` : conditions;
         existing.conditions = appendCondition(existing.conditions, tagged);
+        // 단일 최대농도(%) 결정론적 추출 — 비어있을 때만 채움(다중값/모호는 null 유지).
+        if (existing.max_concentration == null) existing.max_concentration = extractMaxConc(existing.conditions);
       } else {
         merged.set(key, {
           ingredient_id,
           country_code: code,
           status,
-          max_concentration: null,
+          max_concentration: extractMaxConc(conditions),
           concentration_unit: "%",
           product_categories: [],
           conditions,
