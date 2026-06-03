@@ -31,7 +31,19 @@ function isCorruptName(name) {
   // 단일토큰(영문자/숫자/점) 8개+ = 표 헤더/citation 이 공백분해돼 박힌 것(RTL 역순 or 정방향).
   // 숫자도 포함해야 "N E 9 0 0 2 . 2 1" 같은 날짜/EC번호 분해 꼬리를 잡음. 정상명엔 이만큼 없음.
   if ((name.match(/(?:^|\s)[A-Za-z0-9.](?=\s|$)/g) || []).length >= 8) return true;
+  // JP 別表1 matrix-bleed: 일본어명 + ○ 또는 연접 소수점(셀 공백 손실로 "システイン421.51.5…").
+  if (/[ぁ-んァ-ヶ]/.test(name) && (/○/.test(name) || /\d\.\d\d?\.\d/.test(name) || /\d{3,}\./.test(name))) return true;
   return false;
+}
+
+// JP 別表1 matrix-bleed 실명 회복: 일본어명 뒤 "코드(1/31/41/42/72/73)+소수점값" 또는 ○ 또는
+// 연접 소수점이 시작되는 지점에서 절단. 각주문("…。") 포함분은 회복 거부(격리).
+function recoverJpMatrix(name) {
+  const m = name.match(/^(.*?[ぁ-んァ-ヶ一-龯])(?:(?:1|31|41|42|72|73)\d*\.\d|○|\d+\.\d{2,})/);
+  if (!m) return null;
+  const head = m[1].trim();
+  if (head.length < 2 || /[。○]/.test(head) || /\d\.\d\d?\.\d/.test(head)) return null; // 각주/잔존 matrix → 거부
+  return head;
 }
 
 // RTL 역순 헤더 꼬리 제거: 단일문자(영숫자/./슬래시) 토큰이 4개+ 연속되기 시작하는 지점에서 절단.
@@ -73,9 +85,11 @@ function main() {
   const corrupt = [];
   for (const i of ingObj.rows) {
     if (!isCorruptName(i.inci_name)) continue;
-    const cleaned = stripRtlTail(i.inci_name);
-    if (cleaned && cleaned.length >= 3 && !isCorruptName(cleaned)) {
-      i.inci_name = cleaned; recovered++; ingChanged = true; // 실명 회복
+    const cleaned = stripRtlTail(i.inci_name);            // RTL 역순 헤더 꼬리
+    const jp = recoverJpMatrix(i.inci_name);              // JP matrix-bleed
+    const best = (cleaned && cleaned !== i.inci_name) ? cleaned : jp;
+    if (best && best.length >= 2 && !isCorruptName(best)) {
+      i.inci_name = best; recovered++; ingChanged = true; // 실명 회복
     } else {
       corrupt.push({ id: i.id, inci: i.inci_name.slice(0, 80) }); // 회복 불가 → 격리
     }
@@ -98,7 +112,7 @@ function main() {
 
   console.log("=== 품질 가디언(결정론·안전: 불가능값 제거 + RTL 이름 복구 + flag) ===");
   console.log(`  불가능값(>100/≤0) 제거: ${overFixed}`);
-  console.log(`  RTL 오염명 실명 복구: ${recovered}`);
+  console.log(`  오염명 실명 복구(RTL 헤더 + JP matrix): ${recovered}`);
   console.log(`  격리(복구 불가) 성분명: ${corrupt.length}`);
   console.log(`  국가 행수 급감(회귀): ${regressions.length ? regressions.join(", ") : "없음"}`);
   if (regressions.length) { console.error("✗ 회귀 감지 — 확인 필요"); process.exitCode = 0; } // 정보성(파이프라인 중단 안 함)

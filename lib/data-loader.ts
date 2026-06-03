@@ -130,7 +130,13 @@ async function loadDataset(): Promise<Dataset> {
     fetchJson<{ rows: SourcePdf[] }>("/data/sources-pdf.json").catch(() => ({ rows: [] })),
   ]);
 
-  const ingredients = ingPayload.rows;
+  // 품질 가디언이 격리한 복구불가 오염 성분명(PDF matrix 잔해·각주행 등) — 검색/표시에서 제외.
+  // (없으면 무시.) 이름이 깨진 비실성분이 검색결과를 오염시키지 않게.
+  const quarantinedIds = new Set<string>(
+    (await fetchJson<{ items: { id: string }[] }>("/data/quarantine-names.json").catch(() => ({ items: [] })))
+      .items.map((x) => x.id),
+  );
+  const ingredients = quarantinedIds.size ? ingPayload.rows.filter((i) => !quarantinedIds.has(i.id)) : ingPayload.rows;
   const countries = ctyPayload.rows;
   const quarantine = quarPayload.rows;
 
