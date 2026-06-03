@@ -122,6 +122,9 @@ function parseAmountTable(text: string, sectionName: string, status: "restricted
     // header / footer skip
     if (/Ingredient name|Maximum amount|Cosmetics |^--|^[0-9]+\.\s|^Appendix /.test(trimmed)) continue;
     if (/^\(\*\d+\)/.test(trimmed)) continue;
+    // 다단(§2 rinse/leave/mucosa) 행 = 독립 숫자 2개+ → 단일값 파서로 오염시키지 말고 skip
+    // (§2 다단표는 parseAppendix2Section3 가 별도 처리). (*N) 각주 숫자는 괄호 안이라 미카운트.
+    if ((trimmed.match(/(?:^|\s)[0-9]+(?:\.[0-9]+)?(?=\s|$)/g) || []).length >= 2) continue;
     // 끝에 숫자 + (옵션) "as total" / 단위
     const m = trimmed.match(/^(.+?)\s+([0-9]+(?:\.[0-9]+)?)\s*(?:as total|g|%|IU)?\s*$/);
     if (m) {
@@ -203,8 +206,9 @@ function parseAppendix2Section2(text: string): ParsedItem[] {
       pendingName = "";
       continue;
     }
-    // standalone amount
-    const standaloneAmt = line.match(/^([0-9]+(?:\.[0-9]+)?)\s*(g|ｇ|%|IU)(?:\s+as\s+total)?\b/i);
+    // standalone amount. 끝 \b 는 전각 ｇ(U+FF47, 비\w) 뒤에서 매칭 실패 → "8.63ｇ"(Cysteamine
+    // 등) 한도가 드롭됐다. \b 대신 (?=\s|$) 로 — 줄 끝/공백 모두 허용.
+    const standaloneAmt = line.match(/^([0-9]+(?:\.[0-9]+)?)\s*(g|ｇ|%|IU)(?:\s+as\s+total)?(?=\s|$)/i);
     if (standaloneAmt) {
       if (pendingName) pushItem(pendingName, "restricted", Number(standaloneAmt[1]), standaloneAmt[2]);
       pendingName = "";
@@ -288,10 +292,19 @@ async function main() {
   const a2s1 = parseAmountTable(app2sec1, "JP MHLW 化粧品基準 別表 2 §1 (Appendix 2 §1 — restricted in all types)", "restricted");
   const a2s2 = parseAppendix2Section2(app2sec2);
   const a2s3 = parseAppendix2Section3(app2sec3);
+  // Appendix 3/4 = §1(단일값) + §2(rinse/leave/mucosa 3컬럼 표). 단일값은 parseAmountTable
+  // (다단행 skip), 3컬럼 §2 는 parseAppendix2Section3 로 별도 추출(이전엔 §2 가 단일값 파서에
+  // 먹혀 "name 5.0 1.0" 식 이름 오염 발생). 두 결과 합집합(이름키로 중복 제거됨).
   const a3 = parseAmountTable(app3, "JP MHLW 化粧品基準 別表 3 (Appendix 3 — preservatives positive list)", "listed");
+  const a3b = parseAppendix2Section3(app3).map((it) => ({ ...it, conditions: it.conditions.replace("別表 2 §3", "別表 3 §2(다단)") }));
   const a4 = parseAmountTable(app4, "JP MHLW 化粧品基準 別表 4 (Appendix 4 — UV absorbers positive list)", "listed");
-  let items: ParsedItem[] = [...a1, ...a2s1, ...a2s2, ...a2s3, ...a3, ...a4];
-  console.log(`  parsed: A1=${a1.length}, A2§1=${a2s1.length}, A2§2=${a2s2.length}, A2§3=${a2s3.length}, A3=${a3.length}, A4=${a4.length}, total ${items.length}`);
+  const a4b = parseAppendix2Section3(app4).map((it) => ({ ...it, conditions: it.conditions.replace("別表 2 §3", "別表 4 §2(다단)") }));
+  // 이름키 중복 제거(단일값 파서와 다단 파서가 같은 물질 잡을 수 있음 — 단일값 우선).
+  const seen3 = new Set([...a3, ...a4].map((it) => it.name.toLowerCase()));
+  const a3b2 = a3b.filter((it) => !seen3.has(it.name.toLowerCase()));
+  const a4b2 = a4b.filter((it) => !seen3.has(it.name.toLowerCase()) && !a3b2.some((x) => x.name.toLowerCase() === it.name.toLowerCase()));
+  let items: ParsedItem[] = [...a1, ...a2s1, ...a2s2, ...a2s3, ...a3, ...a3b2, ...a4, ...a4b2];
+  console.log(`  parsed: A1=${a1.length}, A2§1=${a2s1.length}, A2§2=${a2s2.length}, A2§3=${a2s3.length}, A3=${a3.length}+§2 ${a3b2.length}, A4=${a4.length}+§2 ${a4b2.length}, total ${items.length}`);
 
   // 정규식 0건 = PDF 양식이 완전히 바뀐 신호 → Gemini 폴백 1회(무료 throttle 적용).
   // 정상(>0)이면 이 분기 미실행 → 기존 동작과 100% 동일(부작용 0).
