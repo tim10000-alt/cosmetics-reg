@@ -90,7 +90,13 @@ function extractSubpartC(xml: string, part: number): ColorEntry[] {
     const headM = inner.match(/<HEAD>([^<]+)<\/HEAD>/);
     if (!headM) continue;
     // HEAD 형식: "§ 73.2030 Annatto." — section + 색소명 + 마침표
-    const head = headM[1].replace(/&#xA7;/g, "§").trim();
+    // 이름에도 HTML 엔티티 전체 디코드(이전엔 &#xA7; 만 → "D&amp;C", "&#x3B2;-Carotene" 깨짐).
+    const head = headM[1]
+      .replace(/&#xA7;/g, "§")
+      .replace(/&#x([0-9a-fA-F]+);/g, (_m, h) => String.fromCodePoint(parseInt(h, 16)))
+      .replace(/&#(\d+);/g, (_m, d) => String.fromCodePoint(Number(d)))
+      .replace(/&amp;/g, "&")
+      .trim();
     // "§ 73.2030 Annatto." → "Annatto"
     const inciM = head.match(/§\s*\d+\.\d+\w*\s+(.+?)\.?\s*$/);
     if (!inciM) continue;
