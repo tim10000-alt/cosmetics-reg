@@ -1,0 +1,82 @@
+// 데이터 품질 자동 점검 — 매일 산출물의 품질 지표를 계산하고 직전(quality-report.json)
+// 대비 '회귀'를 감지한다. crawl.yml(커밋 전) + watchdog.yml 에서 실행.
+//   · 회귀 감지 시 exit 1 + 사유 출력 → watchdog 이 GitHub Issue 자동 생성.
+//   · quality-report.json 을 갱신(커밋)해 추이를 장기 추적.
+// 목적: 전자동 운용에서 parser 파손·커버리지 급감·충돌 급증 등 '조용한 품질 저하'를
+//       사람이 모르고 지나치지 않게.
+const fs = require("node:fs");
+const path = require("node:path");
+
+const DATA = path.join(__dirname, "..", "public", "data");
+const REGDIR = path.join(DATA, "regulations");
+const REPORT = path.join(DATA, "quality-report.json");
+
+// 쿼리(regulations-query)의 1차행 선택과 동일 로직 — 지표가 '사용자가 보는 값' 반영.
+const byP = (a, b) => (b.source_priority ?? 0) - (a.source_priority ?? 0);
+const detailScore = (r) => {
+  const c = r.conditions || "";
+  const identityOnly = c.length < 20 || /등재 \(Reference \d+\)/.test(c);
+  return (r.max_concentration != null ? 2 : 0) + (!identityOnly && c.length >= 60 ? 1 : 0);
+};
+const pick = (g) => {
+  const ws = [...g].sort(byP)[0].status;
+  return [...g].sort((a, b) => {
+    const aw = a.status === ws ? 1 : 0, bw = b.status === ws ? 1 : 0;
+    if (aw !== bw) return bw - aw;
+    const d = detailScore(b) - detailScore(a);
+    if (d) return d;
+    return byP(a, b);
+  })[0];
+};
+const hasLimitInfo = (r) => r.max_concentration != null || /최대\s*농도|배합\s*한도|\d+(\.\d+)?\s*%/.test(r.conditions || "");
+
+function compute() {
+  const meta = JSON.parse(fs.readFileSync(path.join(DATA, "meta.json"), "utf8"));
+  const coverage = {};
+  let totalRegs = 0, restrictedNoLimit = 0, statusConflicts = 0;
+  for (const f of fs.readdirSync(REGDIR).filter((x) => x.endsWith(".json"))) {
+    const cc = f.replace(".json", "");
+    const rows = JSON.parse(fs.readFileSync(path.join(REGDIR, f), "utf8")).rows;
+    totalRegs += rows.length;
+    const by = new Map();
+    for (const r of rows) { if (!by.has(r.ingredient_id)) by.set(r.ingredient_id, []); by.get(r.ingredient_id).push(r); }
+    coverage[cc] = by.size;
+    for (const [, g] of by) {
+      const p = pick(g);
+      if (p.status === "restricted" && !hasLimitInfo(p)) restrictedNoLimit++;
+      const ss = new Set(g.map((x) => x.status));
+      if (ss.has("banned") && (ss.has("listed") || ss.has("allowed"))) statusConflicts++;
+    }
+  }
+  let quarantinePending = 0;
+  try { quarantinePending = JSON.parse(fs.readFileSync(path.join(DATA, "quarantine.json"), "utf8")).rows.filter((q) => q.status === "pending").length; } catch {}
+  return { generated_at: meta.generated_at, totalRegs, coverage, restrictedNoLimit, statusConflicts, quarantinePending };
+}
+
+function detectRegressions(cur, prev) {
+  if (!prev) return [];
+  const out = [];
+  if (cur.totalRegs < prev.totalRegs * 0.9) out.push(`총 규제 급감: ${prev.totalRegs}→${cur.totalRegs} (-10%↑)`);
+  for (const cc of Object.keys(prev.coverage || {})) {
+    const a = prev.coverage[cc] ?? 0, b = cur.coverage[cc] ?? 0;
+    if (a > 50 && b < a * 0.9) out.push(`${cc} 커버리지 급감: ${a}→${b} (-10%↑) — parser 파손 의심`);
+  }
+  if (cur.restrictedNoLimit > (prev.restrictedNoLimit ?? 0) * 1.1 + 50) out.push(`한도누락 restricted 증가: ${prev.restrictedNoLimit}→${cur.restrictedNoLimit}`);
+  if (cur.statusConflicts > (prev.statusConflicts ?? 0) * 1.2 + 20) out.push(`status 충돌 증가: ${prev.statusConflicts}→${cur.statusConflicts}`);
+  return out;
+}
+
+const cur = compute();
+const prev = fs.existsSync(REPORT) ? JSON.parse(fs.readFileSync(REPORT, "utf8")) : null;
+const regressions = detectRegressions(cur, prev);
+fs.writeFileSync(REPORT, JSON.stringify({ ...cur, checked_at_note: "matches regulations-query primary-row logic" }, null, 2));
+
+console.log("=== 데이터 품질 지표 ===");
+console.log(`  총 규제: ${cur.totalRegs} | restricted 한도누락: ${cur.restrictedNoLimit} | status충돌: ${cur.statusConflicts} | quarantine: ${cur.quarantinePending}`);
+console.log(`  커버리지(성분수): ${Object.entries(cur.coverage).map(([k, v]) => k + ":" + v).join(" ")}`);
+if (regressions.length) {
+  console.error("\n🔴 품질 회귀 감지:");
+  for (const r of regressions) console.error("  - " + r);
+  process.exit(1);
+}
+console.log(prev ? "\n✓ 직전 대비 회귀 없음" : "\n✓ baseline 최초 기록");

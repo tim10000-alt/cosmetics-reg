@@ -16,6 +16,7 @@ on:
 
 permissions:
   contents: write
+  issues: write   # 데이터 품질 회귀 시 Issue 자동 생성
 
 jobs:
   refresh:
@@ -184,6 +185,25 @@ jobs:
       - name: Parse changed HTML sources
         run: npm run parse
         continue-on-error: true
+
+      # 3-b) 데이터 품질 자동 점검 — 지표 계산 + 직전(quality-report.json) 대비 회귀 감지.
+      # quality-report.json 갱신은 아래 commit 에 포함되어 추이가 장기 추적됨.
+      - name: Data quality check
+        id: quality
+        run: node scripts/data-quality-check.cjs
+        continue-on-error: true
+
+      # 회귀(커버리지 급감=parser 파손 / 충돌·한도누락 급증) 시 Issue 자동 생성 — 전자동 자가신고.
+      - name: Open data-quality regression issue
+        if: steps.quality.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT || github.token }}
+        run: |
+          TITLE="🟠 데이터 품질 회귀 감지"
+          STAMP="$(date -u +%Y-%m-%dT%H:%MZ)"
+          BODY="data-quality-check 가 직전 대비 회귀를 감지했습니다(${STAMP}). Actions 로그의 'Data quality check' 스텝 출력 참조 — 커버리지 급감=parser 파손, status 충돌/한도누락 급증 등. quality-report.json 추이 확인."
+          EXISTING=$(gh issue list --state open --search "$TITLE in:title" --json number --jq '.[0].number // empty')
+          if [ -n "$EXISTING" ]; then gh issue comment "$EXISTING" --body "$BODY"; else gh issue create --title "$TITLE" --body "$BODY"; fi
 
       # 4) 변경분 commit + push
       # always(): 앞 단계 일부가 실패해도 그때까지 갱신된 데이터는 커밋·push (부분 진전 보존).
