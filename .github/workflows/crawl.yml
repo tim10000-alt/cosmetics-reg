@@ -162,6 +162,12 @@ jobs:
         run: npm run andean:fanout
         continue-on-error: true
 
+      # KCIA(대한화장품협회) 성분사전 표준화명칭목록 — 한국 표준 성분명 2.2만건 ingest.
+      # sha256 해시스킵(증분: 변경 시만 재머지)·멱등. 한글명 보강 + 깨끗한 영문 INCI 신규 추가.
+      - name: Ingest KCIA standardized ingredient names
+        run: npm run kcia:names
+        continue-on-error: true
+
       - name: Try BR ANVISA cosmetics index
         run: npm run fetch:try -- BR "https://www.gov.br/anvisa/pt-br/assuntos/cosmeticos" br_anvisa_index
         continue-on-error: true

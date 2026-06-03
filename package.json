@@ -40,7 +40,8 @@
     "sources:seed": "tsx scripts/sources/seed.ts",
     "e2e": "tsx scripts/e2e-verify.ts",
     "lighthouse": "tsx scripts/lighthouse.ts",
-    "eu:html": "tsx scripts/fetchers/eu-eurlex-html.ts"
+    "eu:html": "tsx scripts/fetchers/eu-eurlex-html.ts",
+    "kcia:names": "tsx scripts/fetchers/kcia-cid-names.ts"
   },
   "dependencies": {
     "@google/genai": "^1.50.1",
