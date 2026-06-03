@@ -4,6 +4,7 @@ import { readFileSync } from "node:fs";
 import { loadEnv } from "../crawlers/env";
 loadEnv();
 import { readRows, writeRows, updateMeta } from "../../lib/json-store";
+import { geminiRescue, buildRegsFromExtracted } from "../parsers/gemini-fallback";
 
 // EU Cosmetic Products Regulation 1223/2009 consolidated PDF → Annex II/III/IV/V/VI 파싱.
 // pdf-parse 로 text 추출 → reference number 기반 row 분리 → INCI 매칭.
@@ -244,8 +245,19 @@ async function main() {
   // F15+ (정품검증): 파싱 0건이면(EUR-Lex PDF 부재·구조변경·IP 차단) 기존 EU 데이터 보존 —
   // strip 후 빈 write 로 소실 방지. 다른 IP/환경에서도 자동으로 안전.
   if (newRegs.length === 0) {
-    console.warn("  ! EU 파싱 0건 — 기존 regulations 보존 (write 생략)");
-    return;
+    // 정규식 0건 = EUR-Lex PDF 양식 변경/부재 신호 → Gemini 폴백 1회(무료 throttle).
+    // 정상(>0)이면 이 분기 미실행 → 기존 동작과 100% 동일(부작용 0).
+    const { existsSync } = await import("node:fs");
+    const pdfPath = PDF_PATHS.find((p) => existsSync(p));
+    const rescued = pdfPath
+      ? await geminiRescue({ filePath: pdfPath, country: "EU", title: SOURCE_DOC, url: SOURCE_URL })
+      : [];
+    if (rescued.length === 0) {
+      console.warn("  ! EU 파싱 0건 + Gemini 폴백 0건 — 기존 regulations 보존 (write 생략)");
+      return;
+    }
+    newRegs.push(...buildRegsFromExtracted({ regs: rescued, ingredients, country: "EU", sourceDoc: SOURCE_DOC, sourceUrl: SOURCE_URL, now }));
+    console.log(`  ⚠ 정규식 0건 → Gemini 폴백 ${newRegs.length}건 확보 (confidence 0.75)`);
   }
   const existingRegs = await readRows<RegulationRow>("regulations");
   const otherSources = existingRegs.filter((r) => r.source_document !== SOURCE_DOC);
