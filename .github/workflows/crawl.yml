@@ -186,6 +186,12 @@ jobs:
         run: npm run parse
         continue-on-error: true
 
+      # 3-a) Claude 가 원문 대조로 추출한 한도/조건 override 반영 — 모든 소스 갱신 후 적용해
+      # daily 재인입이 덮어쓰지 못하게(durable). limit-overrides.json 기준 멱등.
+      - name: Apply curated limit overrides
+        run: node scripts/apply-overrides.cjs
+        continue-on-error: true
+
       # 3-b) 데이터 품질 자동 점검 — 지표 계산 + 직전(quality-report.json) 대비 회귀 감지.
       # quality-report.json 갱신은 아래 commit 에 포함되어 추이가 장기 추적됨.
       - name: Data quality check

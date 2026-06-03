@@ -1,0 +1,4 @@
+{
+  "_note": "Claude 가 원문 규제 PDF 를 직접 대조해 추출한 한도/조건 — 초기 백로그용. apply-overrides 가 매 run 마지막에 반영(durable). 증분은 추가/수정분만 쌓으면 됨. 항목: {inci 또는 cas, cc, status, max, unit?, note?, ref?}. 다중값은 max=null + note 서술.",
+  "overrides": []
+}
