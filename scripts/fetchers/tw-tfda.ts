@@ -1,7 +1,11 @@
 import { randomUUID } from "node:crypto";
+import { writeFileSync, unlinkSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 import { loadEnv } from "../crawlers/env";
 loadEnv();
 import { readRows, writeRows, updateMeta } from "../../lib/json-store";
+import { geminiRescue, buildRegsFromExtracted } from "../parsers/gemini-fallback";
 
 // 대만 TFDA — 화장품 5 카테고리 1차 소스 fetcher.
 // consumer.fda.gov.tw/LAW/Cosmetic1.aspx?nodeID=1068&t=N (N=1,3,5,7,8).
@@ -114,6 +118,18 @@ async function fetchCategory(cat: TwCategory): Promise<TwEntry[]> {
   return all;
 }
 
+// 폴백 전용: 카테고리 첫 페이지 raw HTML (Gemini 에 넘길 원본). 실패 시 빈 문자열.
+async function fetchRawFirstPage(t: number): Promise<string> {
+  try {
+    const res = await fetch(`https://consumer.fda.gov.tw/LAW/Cosmetic1.aspx?nodeID=1068&t=${t}`, {
+      headers: { "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/125.0.0.0", "Accept-Language": "zh-TW,zh;q=0.9" },
+    });
+    return res.ok ? await res.text() : "";
+  } catch {
+    return "";
+  }
+}
+
 async function main() {
   const startedAt = Date.now();
   const ingredients = await readRows<IngredientRow>("ingredients");
@@ -174,6 +190,22 @@ async function main() {
     }
     totalMatched += matched; totalCreated += created;
     console.log(`     → matched ${matched}, new ${created}`);
+  }
+
+  // 전 카테고리 0건 = TFDA HTML 테이블 양식 변경 신호 → 원본 HTML 을 Gemini 폴백 1회.
+  // 정상(>0)이면 이 분기 미실행 → 기존 동작과 100% 동일(부작용 0).
+  if (newRegs.length === 0) {
+    const rawHtml = (await Promise.all(CATEGORIES.map((c) => fetchRawFirstPage(c.t)))).join("\n\n<!-- next category -->\n\n");
+    if (rawHtml.trim()) {
+      const tmp = join(tmpdir(), `tw-tfda-fallback-${process.pid}.html`);
+      writeFileSync(tmp, rawHtml, "utf8");
+      const rescued = await geminiRescue({ filePath: tmp, country: "TW", title: BASE_DOC, url: SOURCE_URL });
+      try { unlinkSync(tmp); } catch { /* temp 정리 실패 무시 */ }
+      if (rescued.length > 0) {
+        newRegs.push(...buildRegsFromExtracted({ regs: rescued, ingredients, country: "TW", sourceDoc: `${BASE_DOC} (Gemini 폴백)`, sourceUrl: SOURCE_URL, now }));
+        console.log(`  ⚠ 정규식 0건 → Gemini 폴백 ${newRegs.length}건 확보 (confidence 0.75)`);
+      }
+    }
   }
 
   // F15: 소프트 파싱 실패(HTTP 200 + HTML 구조 변경 → 0~소수 행) 시 기존 TFDA 데이터가
