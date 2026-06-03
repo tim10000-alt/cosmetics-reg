@@ -130,7 +130,43 @@ const SCHEMA = {
   required: ["is_ingredient_regulation", "confidence", "ingredients"],
 } as const;
 
+// hwpx(한글 워드 — 한국 식약처 고시가 흔히 hwpx 첨부) = zip. Contents/section*.xml 의 <hp:t> 텍스트 추출.
+// (구 .hwp 바이너리는 zip 아니라 미지원.) 한국 안전기준 고시 일부개정이 hwpx-only 일 때 Gemini 파싱 가능케.
+async function extractHwpx(filePath: string): Promise<string | null> {
+  try {
+    const yauzl = (await import("yauzl")).default as unknown as {
+      open: (p: string, o: unknown, cb: (e: unknown, z: unknown) => void) => void;
+    };
+    return await new Promise((resolve) => {
+      let text = "";
+      yauzl.open(filePath, { lazyEntries: true }, (err: unknown, zip: any) => {
+        if (err || !zip) return resolve(null);
+        zip.on("entry", (entry: any) => {
+          if (/^Contents\/section\d+\.xml$/i.test(entry.fileName)) {
+            zip.openReadStream(entry, (e: unknown, rs: any) => {
+              if (e || !rs) return zip.readEntry();
+              const chunks: Buffer[] = [];
+              rs.on("data", (d: Buffer) => chunks.push(d));
+              rs.on("end", () => {
+                const xml = Buffer.concat(chunks).toString("utf8");
+                text += [...xml.matchAll(/<hp:t>([^<]*)<\/hp:t>/g)].map((m) => m[1]).join(" ") + " ";
+                zip.readEntry();
+              });
+            });
+          } else zip.readEntry();
+        });
+        zip.on("end", () => resolve(text.replace(/\s+/g, " ").trim() || null));
+        zip.readEntry();
+      });
+    });
+  } catch (e) {
+    console.warn(`  hwpx 추출 실패: ${e instanceof Error ? e.message : e}`);
+    return null;
+  }
+}
+
 async function extractText(savedTo: string, ext: string): Promise<string | null> {
+  if (/\.hwpx$/i.test(ext) || /\.hwpx$/i.test(savedTo)) return extractHwpx(savedTo);
   if (/\.pdf$/i.test(ext) || /\.pdf$/i.test(savedTo)) {
     try {
       const { PDFParse } = await import("pdf-parse");
@@ -250,8 +286,8 @@ async function main() {
     if (!a.attachments) continue;
     for (const att of a.attachments) {
       if (!att.saved_to || !existsSync(att.saved_to)) continue;
-      // PDF/xlsx만 (hwp/docx 는 한국어 워드라 텍스트 추출 한계)
-      if (!/\.(pdf|xlsx)$/i.test(att.saved_to)) continue;
+      // PDF/xlsx/hwpx (hwpx=한글 신규 zip 포맷 텍스트 추출 가능. 구 .hwp 바이너리·docx 만 제외).
+      if (!/\.(pdf|xlsx|hwpx)$/i.test(att.saved_to)) continue;
       const buf = readFileSync(att.saved_to);
       const sha = createHash("sha256").update(buf).digest("hex");
       const fp = fingerprints[att.saved_to];
