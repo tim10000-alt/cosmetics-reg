@@ -49,11 +49,13 @@ async function main() {
   const pending = docs.filter(
     (d) => force || !(d.last_parsed_hash && d.last_parsed_hash === d.content_hash),
   );
+  // --force(수동 전체 재파싱)는 상한 무시 — 누락 0. 일일 cron(비-force)만 상한 적용해
+  // 무료 throttle 로 느려진 parse 가 타임아웃 전 진행분을 잃지 않게 함.
   const MAX_DOCS_PER_RUN = Number(process.env.PARSE_MAX_DOCS ?? 12);
-  const batch = pending.slice(0, MAX_DOCS_PER_RUN);
+  const batch = force ? pending : pending.slice(0, MAX_DOCS_PER_RUN);
   if (pending.length > batch.length) {
     console.log(
-      `ℹ️ 미파싱 ${pending.length}건 중 ${batch.length}건만 이번 런 처리(무료 throttle) — 나머지 ${pending.length - batch.length}건은 다음 런에서 자동 이어감.`,
+      `ℹ️ 미파싱 ${pending.length}건 중 ${batch.length}건만 이번 런 처리(무료 throttle) — 나머지 ${pending.length - batch.length}건은 다음 런에서 자동 이어감(누락 아님·연기).`,
     );
   }
 

@@ -41,8 +41,15 @@ jobs:
       # continue-on-error: MFDS API 일시 장애/키 문제로 실패해도 job 을 멈추지 않고
       # 나머지 fetcher + commit 단계까지 도달하게 함(부분 갱신 보존). 실패는 로그에 남음.
       - name: Ingest MFDS public-data APIs
+        id: mfds
         run: npm run mfds:ingest
         continue-on-error: true
+
+      # continue-on-error 로 인해 MFDS 실패가 런 배지(초록)에 묻히는 것 방지 —
+      # job 을 실패시키지 않으면서 경고 주석만 남김(워치독과 별개의 즉시 신호).
+      - name: Flag MFDS ingest failure (job 은 계속)
+        if: steps.mfds.outcome == 'failure'
+        run: echo "::warning title=MFDS ingest 실패::오늘 MFDS 인입 실패 — 다른 소스로는 진행하나 KR 공정서 갱신 누락. 키 만료/소스 장애 점검 필요."
 
       # 2) 각국 1차 소스 (각 fetcher 는 in-place 머지 — 같은 source_document 행만 교체)
       - name: Refresh US FDA 21 CFR 700 (eCFR API)
