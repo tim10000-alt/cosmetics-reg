@@ -159,6 +159,12 @@ jobs:
         run: npm run eu:parse
         continue-on-error: true
 
+      # EU Annex III 한도/조건 — 깨끗한 통합본 HTML 에서 결정론적 추출(깨진 PDF 보완).
+      # Gemini 불필요, 매일 자동. 중복 생성 0(기존 성분 CAS/이름 매칭만).
+      - name: Parse EU EUR-Lex HTML (Annex III 한도·조건)
+        run: npm run eu:html
+        continue-on-error: true
+
       # Andean Community (CO/EC/PE/BO) Decisión 833 — EU 규제 채택. EU parse 직후 fanout.
       - name: Fanout EU 1차 → Andean Community 4국 (CO/EC/PE/BO)
         run: npm run andean:fanout
