@@ -198,7 +198,9 @@ jobs:
             exit 0
           fi
           git commit -m "chore(data): daily refresh $(date -u +%Y-%m-%dT%H:%MZ)"
-          git push
+          # rebase-retry: 동시 런/인터리브 push 로 origin 이 앞서가도 non-ff 거부 안 되게
+          # (enrich.yml 과 동일 패턴, 정품검증 발견 #4). 인증(GH_PAT) 실패는 둘 다 실패 → 스텝 실패로 노출.
+          git push || (git pull --rebase origin main && git push)
 
       - name: Upload raw snapshots (for audit)
         if: always()
