@@ -16,7 +16,7 @@ const ROOT = path.resolve(__dirname, "..");
 const DATA_DIR = path.join(ROOT, "public", "data");
 // 19국 split — countries.json 받은 다음 cc 별 regulations/{cc}.json 받음.
 const TOPLEVEL_DATA_FILES = ["meta.json", "countries.json", "ingredients.json", "quarantine.json", "kcia-articles.json", "sources-pdf.json"];
-const DATA_BASE_URL = "https://raw.githubusercontent.com/pro1-lgtm/cosmetics-reg/main/public/data";
+const DATA_BASE_URL = "https://raw.githubusercontent.com/tim10000-alt/cosmetics-reg/main/public/data";
 process.chdir(ROOT);
 
 const isWin = platform() === "win32";
