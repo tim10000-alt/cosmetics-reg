@@ -427,7 +427,7 @@ function CountryCard({ result }: { result: CountryLookupResult }) {
               {STATUS_STYLE[result.status]?.label ?? result.status}
             </span>
           )}
-          {typeof result.max_concentration === "number" && (
+          {typeof result.max_concentration === "number" ? (
             <div className="text-zinc-700 dark:text-zinc-300">
               최대 배합한도:{" "}
               <span className="font-semibold">
@@ -435,12 +435,23 @@ function CountryCard({ result }: { result: CountryLookupResult }) {
                 {result.concentration_unit ?? "%"}
               </span>
             </div>
-          )}
+          ) : result.conditions && /최대\s*농도|배합\s*한도|\d+(\.\d+)?\s*%/.test(result.conditions) ? (
+            // 한도 숫자 필드는 비었지만 사용조건 텍스트에 한도가 있는 경우(제품 유형별로 달라
+            // 단일 숫자로 못 담는 케이스 등) — "없음"으로 오인하지 않도록 조건 참조 안내.
+            <div className="text-zinc-700 dark:text-zinc-300">
+              최대 배합한도:{" "}
+              <span className="font-medium text-amber-700 dark:text-amber-300">아래 사용조건 참조 ↓</span>
+              <span className="ml-1 text-xs text-zinc-500">(제품 유형·부위별로 상이)</span>
+            </div>
+          ) : null}
           {result.product_categories && result.product_categories.length > 0 && (
             <div className="text-xs text-zinc-500">적용 제품: {result.product_categories.join(", ")}</div>
           )}
           {result.conditions && (
-            <details className="text-xs text-zinc-600 dark:text-zinc-400">
+            <details
+              open={result.status === "restricted" || result.status === "banned"}
+              className="text-xs text-zinc-600 dark:text-zinc-400"
+            >
               <summary className="cursor-pointer text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-200">
                 조건·비고 보기
               </summary>

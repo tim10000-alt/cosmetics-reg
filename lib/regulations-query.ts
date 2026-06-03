@@ -140,11 +140,31 @@ export async function lookupRegulation(
       if (b && b.length) (merged ??= []).push(...b);
     }
     if (!merged) return undefined;
-    // priority desc → last_verified desc (data-loader 버킷 정렬과 동일). 동일 출처 중복 제거.
-    merged.sort((a, b) => {
+    // 정보충실도 desc → priority desc → last_verified desc. 동일 출처 중복 제거.
+    // (정품검증: 농도·조건이 비어있는 '신원만' 공식행(EU-EURLex 등 자동파싱)이 실제
+    //  한도·조건을 담은 큐레이션행(MFDS)을 priority 로 가려 1차에 빈값이 뜨던 버그 수정.)
+    // ① 기존대로 priority 로 '대표 status' 결정 — status 선택은 바꾸지 않음(over-merge 로
+    //    인한 잘못된 격상/격하 위험 회피, 별도 데이터 감사 영역).
+    const byPriority = (a: Regulation, b: Regulation) => {
       const pa = a.source_priority ?? 0, pb = b.source_priority ?? 0;
       if (pa !== pb) return pb - pa;
       return (b.last_verified_at ?? "").localeCompare(a.last_verified_at ?? "");
+    };
+    const winStatus = [...merged].sort(byPriority)[0].status;
+    // ② 그 status 행들 중 '정보충실(농도·실조건 보유)' 행을 1차로 — 빈 '신원만' 자동파싱
+    //    행이 농도·조건 담긴 큐레이션 행을 가리던 버그 수정. status 는 불변.
+    const detailScore = (r: Regulation): number => {
+      const c = r.conditions ?? "";
+      const identityOnly = c.length < 20 || /등재 \(Reference \d+\)/.test(c);
+      const hasDetail = !identityOnly && c.length >= 60;
+      return (r.max_concentration != null ? 2 : 0) + (hasDetail ? 1 : 0);
+    };
+    merged.sort((a, b) => {
+      const aw = a.status === winStatus ? 1 : 0, bw = b.status === winStatus ? 1 : 0;
+      if (aw !== bw) return bw - aw;
+      const da = detailScore(a), db = detailScore(b);
+      if (da !== db) return db - da;
+      return byPriority(a, b);
     });
     const seen = new Set<string>();
     return merged.filter((r) => {
