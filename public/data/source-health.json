@@ -1,11 +1,12 @@
 {
-  "note": "국가별(cascade-aware) 신선도. 1차 stale 이어도 2/3차로 신선하면 OK. stale=국가 전체 동결.",
+  "note": "법령(국가별 cascade-aware: 1차 국가사이트→2차 KCIA 해외법령→3차 MFDS)과 성분사전(KCIA 성분명 표준화)은 별개. stale=해당 출처 전체 동결.",
   "stale_threshold_days": 45,
   "stale_count": 0,
   "stale_countries": [],
+  "stale_dictionaries": [],
   "limit_anomaly_count": 0,
   "limit_anomalies": [],
-  "countries": [
+  "regulations_by_country": [
     {
       "cc": "AR",
       "latest": "2026-06-02"
@@ -80,6 +81,12 @@
     },
     {
       "cc": "US",
+      "latest": "2026-06-03"
+    }
+  ],
+  "ingredient_dictionaries": [
+    {
+      "name": "KCIA 성분사전(표준화명칭)",
       "latest": "2026-06-03"
     }
   ]

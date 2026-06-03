@@ -55,8 +55,11 @@ function compute() {
   try {
     const h = JSON.parse(fs.readFileSync(path.join(DATA, "source-health.json"), "utf8"));
     const thr = h.stale_threshold_days ?? 45, now = new Date();
-    for (const s of h.countries || []) {
+    for (const s of h.regulations_by_country || []) {
       if (s.latest && (now - new Date(s.latest)) / 86400000 > thr) { staleCount++; staleSources.push(s.cc); }
+    }
+    for (const d of h.ingredient_dictionaries || []) {  // 성분사전(법령과 별개 출처)도 감시
+      if (d.latest && (now - new Date(d.latest)) / 86400000 > thr) { staleCount++; staleSources.push(d.name); }
     }
     limitAnomalyCount = h.limit_anomaly_count ?? 0;
   } catch {}

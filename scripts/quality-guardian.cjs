@@ -127,6 +127,18 @@ function main() {
   }).sort((a, b) => b.days - a.days);
   const stale = health.filter((h) => h.stale); // 국가 전체 cascade 가 동결된 경우만(진짜 문제)
 
+  // 5-b) 성분 데이터 출처 신선도 — *법령과 별개 출처*. 둘 다 대한화장품협회(KCIA)지만 목적이 다름:
+  //   · KCIA 해외법령 게시판 → 2차 *법령* 출처(위 국가별 cascade 의 2차).
+  //   · KCIA 성분사전(표준화명칭목록) → *성분명* 표준화 출처(규제 아님). 여기서 별도 감시.
+  //   MFDS API(성분 마스터)도 매일 갱신하지만 성분사전(WAF 다운로드)이 막히면 여기서 드러남.
+  const dicts = [];
+  try {
+    const fp = JSON.parse(fs.readFileSync(path.join(DATA, "kcia-names-fingerprint.json"), "utf8"));
+    const days = fp.parsed_at ? Math.round((today - new Date(fp.parsed_at)) / 86400000) : 9999;
+    dicts.push({ name: "KCIA 성분사전(표준화명칭)", latest: (fp.parsed_at || "").slice(0, 10), stale: days > STALE_DAYS });
+  } catch { /* fingerprint 없음 — skip */ }
+  const dictStale = dicts.filter((d) => d.stale);
+
   // 6) 한도 급변 이상탐지 — 직전 스냅샷 대비 5배+ 변동(0.5→5 같은 silent 오파싱 클래스 포착).
   const SNAP = path.join(DATA, "limit-snapshot.json");
   const prev = loadJson(SNAP, {});
@@ -144,17 +156,19 @@ function main() {
   // latest 만 저장(days 는 휘발성이라 churn 유발 → 제외, 읽을 때 계산). stale_count/anomaly 는
   // 임계 교차/이상 발생 시에만 변해 저churn → data-quality-check 가 신규증가 시 이슈 트리거.
   fs.writeFileSync(path.join(DATA, "source-health.json"), JSON.stringify(
-    { note: "국가별(cascade-aware) 신선도. 1차 stale 이어도 2/3차로 신선하면 OK. stale=국가 전체 동결.",
-      stale_threshold_days: STALE_DAYS, stale_count: stale.length, stale_countries: stale.map((s) => s.cc),
+    { note: "법령(국가별 cascade-aware: 1차 국가사이트→2차 KCIA 해외법령→3차 MFDS)과 성분사전(KCIA 성분명 표준화)은 별개. stale=해당 출처 전체 동결.",
+      stale_threshold_days: STALE_DAYS,
+      stale_count: stale.length + dictStale.length, stale_countries: stale.map((s) => s.cc), stale_dictionaries: dictStale.map((d) => d.name),
       limit_anomaly_count: limitAnomalies.length, limit_anomalies: limitAnomalies.slice(0, 20),
-      countries: health.map((h) => ({ cc: h.cc, latest: h.latest })) }, null, 2));
+      regulations_by_country: health.map((h) => ({ cc: h.cc, latest: h.latest })),
+      ingredient_dictionaries: dicts.map((d) => ({ name: d.name, latest: d.latest })) }, null, 2));
 
   console.log("=== 품질 가디언(자가복구 + 신선도/이상 감시) ===");
   console.log(`  불가능값(>100/≤0) 제거: ${overFixed}`);
   console.log(`  오염명 실명 복구(RTL 헤더 + JP matrix): ${recovered}`);
   console.log(`  격리(복구 불가) 성분명: ${corrupt.length}`);
   console.log(`  국가 행수 급감(회귀): ${regressions.length ? regressions.join(", ") : "없음"}`);
-  console.log(`  ⏳ stale 국가(cascade 전체 >${STALE_DAYS}일 미갱신): ${stale.length ? stale.map((s) => `${s.cc}(${s.days}d)`).join(", ") : "없음"}`);
+  console.log(`  ⏳ stale 국가법령(cascade 전체 >${STALE_DAYS}일): ${stale.length ? stale.map((s) => `${s.cc}(${s.days}d)`).join(", ") : "없음"} | stale 성분사전: ${dictStale.length ? dictStale.map((d) => d.name).join(", ") : "없음"}`);
   console.log(`  📊 한도 급변(5배+) 이상: ${limitAnomalies.length ? limitAnomalies.slice(0, 8).join(", ") : "없음"}`);
   if (regressions.length || stale.length || limitAnomalies.length) {
     console.error(`✗ 주의: 회귀 ${regressions.length}·stale ${stale.length}·한도이상 ${limitAnomalies.length} — source-health.json 확인`);
