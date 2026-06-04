@@ -4,8 +4,10 @@
   "stale_count": 0,
   "stale_countries": [],
   "stale_dictionaries": [],
-  "limit_anomaly_count": 0,
-  "limit_anomalies": [],
+  "limit_anomaly_count": 1,
+  "limit_anomalies": [
+    "74524e04-abe5-4c13-9d88-a1aee74f54d2|TW: 25→5"
+  ],
   "regulations_by_country": [
     {
       "cc": "AR",

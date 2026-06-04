@@ -112,5 +112,29 @@
     "parsed_at": "2026-06-03T15:30:51.262Z",
     "entry_count": 0,
     "article_no": "17610"
+  },
+  "public/data/raw-attach/kcia-17489/2026_0323_대한장협제3-116호(식품의약품안전처, 「화장품 안전기준 등에 관한 규정」 일부개정고시 알림의 건).pdf": {
+    "sha256": "bee4cba16207f445749e8c9b0c9385752912a18f2970977736f6ea4ea6e3ab38",
+    "parsed_at": "2026-06-03T23:33:05.301Z",
+    "entry_count": 0,
+    "article_no": "17489"
+  },
+  "public/data/raw-attach/kcia-16933/2025_0902_대한장협제9-351호(식품의약품안전처, 「화장품 안전기준 등에 관한 규정」 일부개정고시 알림의 건).pdf": {
+    "sha256": "f2dbcfe24e8b1155f79357492a8dada14d4ad33d60155b28c593e1b546b70136",
+    "parsed_at": "2026-06-03T23:33:05.301Z",
+    "entry_count": 0,
+    "article_no": "16933"
+  },
+  "public/data/raw-attach/kcia-16933/붙임1 「화장품 안전기준 등에 관한 규정 규정」일부 개정 고시.pdf": {
+    "sha256": "6e023de971ce56367c9967fe806e5afa0e747fd78bc00a9482558cd0e2f8de29",
+    "parsed_at": "2026-06-03T23:33:05.301Z",
+    "entry_count": 0,
+    "article_no": "16933"
+  },
+  "public/data/raw-attach/kcia-16933/붙임2 「화장품 안전기준 등에 관한 규정 규정」고시 전문.pdf": {
+    "sha256": "2f1882d2b4bc460a21447ee5b6b1b22d7093202d7fc8e08b2cd7fc253a5430cd",
+    "parsed_at": "2026-06-03T23:33:05.301Z",
+    "entry_count": 0,
+    "article_no": "16933"
   }
 }
