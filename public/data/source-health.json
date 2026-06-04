@@ -4,10 +4,8 @@
   "stale_count": 0,
   "stale_countries": [],
   "stale_dictionaries": [],
-  "limit_anomaly_count": 1,
-  "limit_anomalies": [
-    "74524e04-abe5-4c13-9d88-a1aee74f54d2|TW: 25→5"
-  ],
+  "limit_anomaly_count": 0,
+  "limit_anomalies": [],
   "regulations_by_country": [
     {
       "cc": "AR",
@@ -46,44 +44,44 @@
       "latest": "2026-06-02"
     },
     {
-      "cc": "BO",
-      "latest": "2026-06-03"
-    },
-    {
       "cc": "CA",
       "latest": "2026-06-03"
     },
     {
+      "cc": "BO",
+      "latest": "2026-06-04"
+    },
+    {
       "cc": "CN",
-      "latest": "2026-06-03"
+      "latest": "2026-06-04"
     },
     {
       "cc": "CO",
-      "latest": "2026-06-03"
+      "latest": "2026-06-04"
     },
     {
       "cc": "EC",
-      "latest": "2026-06-03"
+      "latest": "2026-06-04"
     },
     {
       "cc": "EU",
-      "latest": "2026-06-03"
+      "latest": "2026-06-04"
     },
     {
       "cc": "JP",
-      "latest": "2026-06-03"
+      "latest": "2026-06-04"
     },
     {
       "cc": "PE",
-      "latest": "2026-06-03"
+      "latest": "2026-06-04"
     },
     {
       "cc": "TW",
-      "latest": "2026-06-03"
+      "latest": "2026-06-04"
     },
     {
       "cc": "US",
-      "latest": "2026-06-03"
+      "latest": "2026-06-04"
     }
   ],
   "ingredient_dictionaries": [

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-04T00:04:46.400Z",
+  "generated_at": "2026-06-04T20:57:20.308Z",
   "totalRegs": 94372,
   "coverage": {
     "AR": 4843,
@@ -27,6 +27,6 @@
   "quarantinePending": 0,
   "staleCount": 0,
   "staleSources": [],
-  "limitAnomalyCount": 1,
+  "limitAnomalyCount": 0,
   "checked_at_note": "matches regulations-query primary-row logic"
 }
