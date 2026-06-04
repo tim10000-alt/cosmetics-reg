@@ -90,16 +90,33 @@ function main() {
   //    단일문자 토큰 4+ 연속 시작점에서 잘라 실명 회복(결정론·보수적). 회복 실패분만 격리 flag.
   const ingObj = JSON.parse(fs.readFileSync(path.join(DATA, "ingredients.json"), "utf8"));
   let recovered = 0, ingChanged = false;
+  let nameFieldRecovered = 0, nameFieldNulled = 0;       // 보조 표시명(한/중/일) 정리
   const corrupt = [];
+  // 한 필드의 오염명 복구 시도 — RTL 꼬리 절단 또는 JP matrix-bleed 절단. 회복 결과가 깨끗하면 반환.
+  const recoverName = (v) => {
+    const cleaned = stripRtlTail(v);                      // RTL 역순 헤더 꼬리
+    const jp = recoverJpMatrix(v);                        // JP matrix-bleed
+    const best = (cleaned && cleaned !== v) ? cleaned : jp;
+    return (best && best.length >= 2 && !isCorruptName(best)) ? best : null;
+  };
   for (const i of ingObj.rows) {
-    if (!isCorruptName(i.inci_name)) continue;
-    const cleaned = stripRtlTail(i.inci_name);            // RTL 역순 헤더 꼬리
-    const jp = recoverJpMatrix(i.inci_name);              // JP matrix-bleed
-    const best = (cleaned && cleaned !== i.inci_name) ? cleaned : jp;
-    if (best && best.length >= 2 && !isCorruptName(best)) {
-      i.inci_name = best; recovered++; ingChanged = true; // 실명 회복
-    } else {
-      corrupt.push({ id: i.id, inci: i.inci_name.slice(0, 80) }); // 회복 불가 → 격리
+    // inci_name = 검색 키/제목 — 복구 실패 시 레코드 전체 격리(검색에서 제외).
+    if (isCorruptName(i.inci_name)) {
+      const best = recoverName(i.inci_name);
+      if (best) { i.inci_name = best; recovered++; ingChanged = true; } // 실명 회복
+      else corrupt.push({ id: i.id, inci: i.inci_name.slice(0, 80) });  // 회복 불가 → 격리
+    }
+    // 보조 표시명(한/중/일) — IngredientHeader 에 그대로 노출되므로 동일 복구 필요. inci_name 이
+    // 이미 복구된(=깨끗한) 레코드는 위 분기를 건너뛰어 보조 필드의 matrix-bleed 잔재가 영구히
+    // 안 잡히던 버그(JP 別表1: inci 복구 후 japanese_name 에 "アラントイン410.5…" 잔존, UI 노출).
+    // 복구 불가 garbage 는 레코드 격리가 아니라 *그 필드만 null* — 제목/규제는 유효하기 때문.
+    // 정상명(숫자·○ 없는)은 isCorruptName=false 라 무손상(오탐 0).
+    for (const f of ["korean_name", "chinese_name", "japanese_name"]) {
+      if (!isCorruptName(i[f])) continue;
+      const best = recoverName(i[f]);
+      if (best) { i[f] = best; nameFieldRecovered++; }
+      else { i[f] = null; nameFieldNulled++; }
+      ingChanged = true;
     }
   }
   if (ingChanged) fs.writeFileSync(path.join(DATA, "ingredients.json"), JSON.stringify(ingObj));
@@ -166,6 +183,7 @@ function main() {
   console.log("=== 품질 가디언(자가복구 + 신선도/이상 감시) ===");
   console.log(`  불가능값(>100/≤0) 제거: ${overFixed}`);
   console.log(`  오염명 실명 복구(RTL 헤더 + JP matrix): ${recovered}`);
+  console.log(`  보조 표시명(한/중/일) 정리: 복구 ${nameFieldRecovered} · null처리 ${nameFieldNulled}`);
   console.log(`  격리(복구 불가) 성분명: ${corrupt.length}`);
   console.log(`  국가 행수 급감(회귀): ${regressions.length ? regressions.join(", ") : "없음"}`);
   console.log(`  ⏳ stale 국가법령(cascade 전체 >${STALE_DAYS}일): ${stale.length ? stale.map((s) => `${s.cc}(${s.days}d)`).join(", ") : "없음"} | stale 성분사전: ${dictStale.length ? dictStale.map((d) => d.name).join(", ") : "없음"}`);
