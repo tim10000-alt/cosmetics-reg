@@ -88,7 +88,7 @@ function lookup(query, codes){
   return out;
 }
 
-module.exports={lookup,findIngredient,ingredients,regs,regsByIC,byId,siblingIds,quarSet,countries};
+module.exports={lookup,findIngredient,ingredients,regs,regsByIC,byId,siblingIds,quarSet,countries,bucketFor};
 
 // CLI: node verify-groundtruth.cjs "<query>" [CC,CC]
 if(require.main===module){
