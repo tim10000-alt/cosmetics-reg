@@ -12,7 +12,6 @@ const CONC = Number(process.argv[3] || 6);
 const OFFSET = Number(process.argv[4] || 0);
 
 const STATUS_LABEL = { banned: "배합금지", restricted: "배합한도", listed: "수록 (수출 가능)", allowed: "허용", not_listed: "미수록 (수출 불가)", unknown: "분류 확인 필요" };
-const countryByCode = new Map(gt.countries.map((c) => [c.code, c]));
 const NAME_TO_CC = {}; for (const c of gt.countries) NAME_TO_CC[c.name_ko] = c.code;
 
 const norm = (s) => (s == null ? "" : String(s).replace(/\s+/g, " ").trim());
@@ -22,16 +21,17 @@ const normNW = (s) => (s == null ? "" : String(s).replace(/\s+/g, ""));
 
 // production lookupRegulation 미러(inherits 포함, 전체 row + all_sources)
 function richLookup(query) {
-  const ing = gt.findIngredient(query);
-  if (!ing) return null;
-  const ids = gt.siblingIds.get(ing.id) ?? [ing.id];
+  const resolved = gt.findIngredient(query);
+  if (!resolved) return null;
+  const ids = gt.siblingIds.get(resolved.id) ?? [resolved.id];
+  const ing = gt.buildCanonical(ids, resolved);  // 표시 성분 = 한국 등록 표준명 대표(production 미러)
   const results = {};
   for (const c of gt.countries) {
     let b = gt.bucketFor(ids, c.code), inh = null;
     if ((!b || !b.length) && c.inherits_from) { const ib = gt.bucketFor(ids, c.inherits_from); if (ib && ib.length) { b = ib; inh = c.inherits_from; } }
     if (b && b.length) { const r = b[0]; results[c.code] = { status: r.status, max: r.max_concentration, unit: r.concentration_unit, conditions: r.conditions, pcats: r.product_categories || [], src: r.source_document, url: r.source_url, inh, all: b }; }
   }
-  return { ing, results };
+  return { ing, results, ids };
 }
 
 // 전 성분 대상(무규제 포함 — 헤더/not-found 표기까지 검증). 환경변수 CARDS_ONLY=1 이면 규제보유만.
@@ -109,14 +109,16 @@ async function worker(page, items) {
   for (const ing of items) {
     if (/[\n\r\t]/.test(ing.inci_name)) { skipped++; continue; }
     const g = richLookup(ing.inci_name);
-    if (!g || g.ing.id !== ing.id) { skipped++; continue; }
+    // 검색이 이 성분을 포함한 형제그룹으로 resolve 됐는지(canonical 대표는 다른 형제일 수 있음).
+    if (!g || !g.ids.includes(ing.id)) { skipped++; continue; }
+    const expectTitle = g.ing.inci_name; // 표시 타이틀 = canonical 대표명
     let ok = false;
     for (let a = 0; a < 3 && !ok; a++) {
       await page.fill("input", ""); await page.fill("input", ing.inci_name);
       await page.waitForFunction((v) => document.querySelector("input")?.value === v, ing.inci_name, { timeout: 1500 }).catch(() => {});
       await page.waitForTimeout(50 + a * 70);
       await page.keyboard.press("Enter");
-      ok = await page.waitForFunction((e) => { const l = [...document.querySelectorAll("section div")].find((d) => d.textContent.trim() === "INCI"); return l?.nextElementSibling?.textContent?.trim() === e; }, ing.inci_name, { timeout: 4000 }).then(() => true).catch(() => false);
+      ok = await page.waitForFunction((e) => { const l = [...document.querySelectorAll("section div")].find((d) => d.textContent.trim() === "INCI"); return l?.nextElementSibling?.textContent?.trim() === e; }, expectTitle, { timeout: 4000 }).then(() => true).catch(() => false);
     }
     if (!ok) { add(`${ing.inci_name} :: RENDER-TITLE-FAIL`); continue; }
     const ui = await extract(page);

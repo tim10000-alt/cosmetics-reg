@@ -124,6 +124,58 @@ function findIngredientSync(
   return best;
 }
 
+// 형제 그룹(이미 CAS/INCI 로 병합된 동일물질)의 *대표 표시명*을 한국 등록 표준명 우선으로 선택.
+// 같은 물질이 영문 동의어(예: "Methylene Chloride")로 resolve 돼도 한국 등록명("Dichloromethane /
+// 다이클로로메탄")을 대표로 보여주기 위함. 데이터를 새로 합치는 게 아니라 *이미 묶인 것 중 어느 이름을
+// 보여줄지* 고르는 것이라 오융합 위험 0. 결정론·외부호출 0 → 무료 자동(매 조회 시 계산).
+function buildCanonical(
+  ids: string[],
+  resolved: IngredientMatch,
+  ds: Awaited<ReturnType<typeof dataset>>,
+): IngredientMatch {
+  const members = ids.map((id) => ds.ingredientById.get(id)).filter(Boolean) as IngredientMatch[];
+  if (members.length <= 1) return resolved;
+  // 대표 점수: 한국등록(korean_name) > 정상케이스(외국 ALL-CAPS 후순위) > 군더더기 없음 > CAS 보유, 짧을수록 가산.
+  const score = (m: IngredientMatch): number => {
+    const inci = m.inci_name || "";
+    const isAllCaps = inci === inci.toUpperCase() && /[A-Z]/.test(inci);
+    const hasJunk = /,?\s*C(?:AS|I)\s*[\d\-]/i.test(inci) || /\[\d\]/.test(inci) || /[,;]/.test(inci);
+    return (m.korean_name ? 1000 : 0) + (isAllCaps ? 0 : 100) + (hasJunk ? 0 : 50) + (m.cas_no ? 10 : 0) - inci.length * 0.01;
+  };
+  const rep = [...members].sort((a, b) => score(b) - score(a))[0];
+  const firstOf = (f: keyof IngredientMatch): string | null => {
+    if (rep[f]) return rep[f] as string;
+    for (const m of members) if (m[f]) return m[f] as string;
+    return null;
+  };
+  // CAS union (유효 형식만, 중복 제거)
+  const casSet: string[] = [];
+  for (const m of members) for (const c of String(m.cas_no || "").split(/[\s,;]+/)) {
+    const t = c.trim(); if (/^\d{2,7}-\d{2}-\d$/.test(t) && !casSet.includes(t)) casSet.push(t);
+  }
+  // synonyms union + 형제들의 다른 표기(inci)도 동의어로 노출(검색·"왜 이게 떴나" 투명성)
+  const synSet: string[] = [];
+  const repInciLc = (rep.inci_name || "").toLowerCase(), repKorLc = (rep.korean_name || "").toLowerCase();
+  const addSyn = (s: string | null | undefined) => {
+    const v = (s || "").trim(); if (!v) return;
+    if (v.toLowerCase() === repInciLc || v.toLowerCase() === repKorLc) return;
+    if (!synSet.some((x) => x.toLowerCase() === v.toLowerCase())) synSet.push(v);
+  };
+  for (const m of members) { (m.synonyms || []).forEach(addSyn); if (m.id !== rep.id) addSyn(m.inci_name); }
+  return {
+    id: rep.id,
+    inci_name: rep.inci_name,
+    korean_name: firstOf("korean_name"),
+    chinese_name: firstOf("chinese_name"),
+    japanese_name: firstOf("japanese_name"),
+    cas_no: casSet.length ? casSet.join(", ") : null,
+    synonyms: synSet,
+    description: firstOf("description"),
+    function_category: firstOf("function_category"),
+    function_description: firstOf("function_description"),
+  };
+}
+
 export async function lookupRegulation(
   query: string,
   countries?: string[],
@@ -132,8 +184,8 @@ export async function lookupRegulation(
   const q = query.trim();
   if (!q) return { query: q, ingredient: null, results: [] };
 
-  const ingredient = findIngredientSync(q, ds);
-  if (!ingredient) return { query: q, ingredient: null, results: [] };
+  const resolved = findIngredientSync(q, ds);
+  if (!resolved) return { query: q, ingredient: null, results: [] };
 
   const targetCodes = countries && countries.length > 0
     ? countries
@@ -141,7 +193,9 @@ export async function lookupRegulation(
 
   // F5: 같은 물질이 표기차(대소문자·공백)로 복수 id 로 쪼개져 규제가 분절된 경우를 보정 —
   // 형제 id(정규화 INCI/동일 CAS) 전부의 규제를 country 별로 합산. siblingIds 없으면 자기 1개.
-  const ids = ds.siblingIds.get(ingredient.id) ?? [ingredient.id];
+  const ids = ds.siblingIds.get(resolved.id) ?? [resolved.id];
+  // 표시 성분 = 형제 그룹의 한국 등록 표준명 대표(영문 동의어로 resolve 돼도 한국명으로 표기).
+  const ingredient = buildCanonical(ids, resolved, ds);
   const bucketFor = (code: string): Regulation[] | undefined => {
     let merged: Regulation[] | null = null;
     for (const id of ids) {

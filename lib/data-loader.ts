@@ -249,8 +249,14 @@ async function loadDataset(): Promise<Dataset> {
     if (!sh || sh.length < 5 || sh === lo || !lo.startsWith(sh)) return false;
     return /[,;]/.test(lo[sh.length]);
   };
+  // 정규화 영문키: 대소문자·공백·구두점·복수 s 제거. 같은 한글표준명 + 이 키가 완전히 같으면
+  // 동일물질의 표기변형(HC Red No. 1=HC RED NO.1, Polyacrylamide=POLYACRYLAMIDES)으로 보고 병합.
+  // 종/부위 다른 것(Lavandula Angustifolia vs Spica)은 키가 달라 안 걸림 → 오병합 0. 한글명 co-제약이
+  // 안전 앵커. (이전엔 쉼표경계 접두만 잡아 대소문자/복수 변형이 분절돼 규제가 쪼개지던 것 보정.)
+  const neKey = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, "").replace(/s$/, "");
   const nameToIds = new Map<string, string[]>();
   const casToIds = new Map<string, string[]>();
+  const neKorToIds = new Map<string, string[]>();
   const korToIngr = new Map<string, { id: string; cn: string }[]>();
   const push = (m: Map<string, string[]>, k: string, id: string) => {
     const arr = m.get(k);
@@ -261,6 +267,10 @@ async function loadDataset(): Promise<Dataset> {
     const cn = i.inci_name ? canonName(i.inci_name) : "";
     if (cn) push(nameToIds, cn, i.id);
     if (i.cas_no) for (const c of casTokens(i.cas_no)) push(casToIds, c, i.id);
+    if (i.korean_name) {
+      const ne = i.inci_name ? neKey(i.inci_name) : "";
+      if (ne && ne.length >= 4) push(neKorToIds, ne + "|" + i.korean_name.trim(), i.id);
+    }
     if (i.korean_name && cn) {
       const k = i.korean_name.trim();
       const arr = korToIngr.get(k);
@@ -274,6 +284,10 @@ async function loadDataset(): Promise<Dataset> {
     const cn = i.inci_name ? canonName(i.inci_name) : "";
     if (cn) for (const id of nameToIds.get(cn) ?? []) set.add(id);
     if (i.cas_no) for (const c of casTokens(i.cas_no)) for (const id of casToIds.get(c) ?? []) set.add(id);
+    if (i.korean_name) {
+      const ne = i.inci_name ? neKey(i.inci_name) : "";
+      if (ne && ne.length >= 4) for (const id of neKorToIds.get(ne + "|" + i.korean_name.trim()) ?? []) set.add(id);
+    }
     if (i.korean_name && cn) {
       for (const e of korToIngr.get(i.korean_name.trim()) ?? []) {
         if (e.id !== i.id && isSynPrefix(cn, e.cn)) set.add(e.id);
