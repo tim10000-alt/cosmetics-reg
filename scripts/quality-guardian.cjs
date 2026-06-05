@@ -66,6 +66,11 @@ function stripRtlTail(name) {
 // 원칙: **유효 CAS(체크디짓 검증)가 하나라도 있으면 절대 건드리지 않는다**(오삭제 0).
 // 유효값이 전혀 없을 때만 — 체크디짓이 맞는 복구만 적용, 복구 불가한 순수 아티팩트
 // (날짜 m/d/yy·"0"·"-")만 null. 이름/EC번호/그룹텍스트는 보존(우리가 판단할 일 아님).
+// 원소명 ↔ 원소 CAS 레퍼런스(물리 상수). inci_name 이 정확히 원소명인데 CAS 가 *다른 원소*의
+// CAS 면 명백한 오기 → 정정. (실측 사례: Gold 가 백금 CAS, Copper 가 은 CAS → 금↔백금·구리↔은
+// 오병합 유발.) 매 run 자가치유 = 봇 갱신이 또 틀린 CAS 를 가져와도 durable·무료 자동.
+const ELEMENT_CAS = { gold: "7440-57-5", silver: "7440-22-4", copper: "7440-50-8", platinum: "7440-06-4", lead: "7439-92-1", zinc: "7440-66-6", iron: "7439-89-6", aluminum: "7429-90-5", aluminium: "7429-90-5", titanium: "7440-32-6", tin: "7440-31-5", nickel: "7440-02-0", chromium: "7440-47-3", bismuth: "7440-69-9", palladium: "7440-05-3", magnesium: "7439-95-4", manganese: "7439-96-5", barium: "7440-39-3", cobalt: "7440-48-4" };
+const ELEMENT_BY_CAS = Object.fromEntries(Object.entries(ELEMENT_CAS).map(([e, c]) => [c, e]));
 const CAS_RE = /^\d{2,7}-\d{2}-\d$/;
 function casCheckDigit(twoGroups) {            // "7782-85" → 6
   const d = twoGroups.replace(/-/g, "").split("").map(Number);
@@ -131,7 +136,7 @@ function main() {
   const ingObj = JSON.parse(fs.readFileSync(path.join(DATA, "ingredients.json"), "utf8"));
   let recovered = 0, ingChanged = false;
   let nameFieldRecovered = 0, nameFieldNulled = 0;       // 보조 표시명(한/중/일) 정리
-  let casRecovered = 0, casNulled = 0;                   // CAS 정규화
+  let casRecovered = 0, casNulled = 0, casElementFixed = 0;   // CAS 정규화 + 원소CAS 오기교정
   const corrupt = [];
   // 한 필드의 오염명 복구 시도 — RTL 꼬리 절단 또는 JP matrix-bleed 절단. 회복 결과가 깨끗하면 반환.
   const recoverName = (v) => {
@@ -158,6 +163,16 @@ function main() {
       if (best) { i[f] = best; nameFieldRecovered++; }
       else { i[f] = null; nameFieldNulled++; }
       ingChanged = true;
+    }
+    // 원소명↔CAS 오기 자가치유: inci 가 정확히 원소명인데 CAS 가 다른 원소면 정정(금↔백금·구리↔은 오병합 방지).
+    {
+      const nm = (i.inci_name || "").toLowerCase().trim();
+      const correct = ELEMENT_CAS[nm];
+      if (correct) {
+        const toks = String(i.cas_no || "").match(/\d{2,7}-\d{2}-\d/g) || [];
+        const wrongEl = toks.some((c) => ELEMENT_BY_CAS[c] && ELEMENT_BY_CAS[c] !== nm);
+        if (!toks.includes(correct) && wrongEl) { i.cas_no = correct; casElementFixed++; ingChanged = true; }
+      }
     }
     // CAS 정규화 — 유효 CAS 보유 레코드는 무수정(오삭제 0), 깨진 것만 복구/null.
     if (i.cas_no != null) {
@@ -231,7 +246,7 @@ function main() {
   console.log(`  불가능값(>100/≤0) 제거: ${overFixed}`);
   console.log(`  오염명 실명 복구(RTL 헤더 + JP matrix): ${recovered}`);
   console.log(`  보조 표시명(한/중/일) 정리: 복구 ${nameFieldRecovered} · null처리 ${nameFieldNulled}`);
-  console.log(`  CAS 정규화: 복구 ${casRecovered} · 깨진값(날짜/0/대시) null ${casNulled}`);
+  console.log(`  CAS 정규화: 복구 ${casRecovered} · 깨진값(날짜/0/대시) null ${casNulled} · 원소CAS 오기교정 ${casElementFixed}`);
   console.log(`  격리(복구 불가) 성분명: ${corrupt.length}`);
   console.log(`  국가 행수 급감(회귀): ${regressions.length ? regressions.join(", ") : "없음"}`);
   console.log(`  ⏳ stale 국가법령(cascade 전체 >${STALE_DAYS}일): ${stale.length ? stale.map((s) => `${s.cc}(${s.days}d)`).join(", ") : "없음"} | stale 성분사전: ${dictStale.length ? dictStale.map((d) => d.name).join(", ") : "없음"}`);
