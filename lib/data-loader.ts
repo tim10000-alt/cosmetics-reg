@@ -138,6 +138,16 @@ async function loadDataset(): Promise<Dataset> {
       .items.map((x) => x.id),
   );
   const ingredients = quarantinedIds.size ? ingPayload.rows.filter((i) => !quarantinedIds.has(i.id)) : ingPayload.rows;
+
+  // 식별 판단기(Gemini consensus)가 '동일물질 확정'한 형제 링크 — 결정론으로 못 가른 같은 한글명
+  // 표기변형을 병합(예: Manganese Violet 변형). data-loader 가 형제로 읽어 규제 통합·대표명 통일.
+  const identityLinks = new Map<string, string[]>();
+  for (const pr of (await fetchJson<{ pairs: { ids: string[] }[] }>("/data/identity-overrides.json").catch(() => ({ pairs: [] }))).pairs ?? []) {
+    if (!pr.ids || pr.ids.length < 2) continue;
+    for (const a of pr.ids) for (const b of pr.ids) if (a !== b) {
+      let s = identityLinks.get(a); if (!s) { s = []; identityLinks.set(a, s); } if (!s.includes(b)) s.push(b);
+    }
+  }
   const countries = ctyPayload.rows;
   const quarantine = quarPayload.rows;
 
@@ -288,6 +298,7 @@ async function loadDataset(): Promise<Dataset> {
     if (cn) for (const id of nameToIds.get(cn) ?? []) set.add(id);
     if (i.cas_no) for (const c of casTokens(i.cas_no)) for (const id of casToIds.get(c) ?? []) set.add(id);
     if (i.kcia_code) for (const id of codeToIds.get(String(i.kcia_code).trim()) ?? []) set.add(id);  // 같은 KCIA 코드 = 같은 성분
+    for (const id of identityLinks.get(i.id) ?? []) set.add(id);  // Gemini consensus 동일물질 링크
     if (i.korean_name) {
       const ne = i.inci_name ? neKey(i.inci_name) : "";
       if (ne && ne.length >= 4) for (const id of neKorToIds.get(ne + "|" + i.korean_name.trim()) ?? []) set.add(id);

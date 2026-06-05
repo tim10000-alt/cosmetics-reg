@@ -42,11 +42,14 @@ const isValidCas = (c) => /^\d{1,7}-\d{2}-\d$/.test(c);
 const casTokens = (raw) => raw.split(/\s+/).map((c)=>c.trim()).filter(isValidCas);
 const isSynPrefix = (a,b) => { const sh=a.length<=b.length?a:b, lo=a.length<=b.length?b:a; if(!sh||sh.length<5||sh===lo||!lo.startsWith(sh))return false; return /[,;]/.test(lo[sh.length]); };
 const neKey=(s)=>s.toLowerCase().replace(/[^a-z0-9]/g,"").replace(/s$/,""); // 정규화 영문키(data-loader 미러)
+// 식별 판단기(Gemini consensus) 병합 링크 — data-loader 미러
+const identityLinks=new Map();
+try{for(const pr of (J("identity-overrides.json").pairs||[])){if(!pr.ids||pr.ids.length<2)continue;for(const a of pr.ids)for(const b of pr.ids)if(a!==b){const s=identityLinks.get(a)||identityLinks.set(a,[]).get(a);if(!s.includes(b))s.push(b);}}}catch{}
 const nameToIds=new Map(), casToIds=new Map(), korToIngr=new Map(), neKorToIds=new Map(), codeToIds=new Map();
 const push=(m,k,id)=>{const a=m.get(k);if(a)a.push(id);else m.set(k,[id]);};
 for (const i of ingredients){ const cn=i.inci_name?canonName(i.inci_name):""; if(cn)push(nameToIds,cn,i.id); if(i.cas_no)for(const c of casTokens(i.cas_no))push(casToIds,c,i.id); if(i.kcia_code)push(codeToIds,String(i.kcia_code).trim(),i.id); if(i.korean_name){const ne=i.inci_name?neKey(i.inci_name):"";if(ne&&ne.length>=4)push(neKorToIds,ne+"|"+i.korean_name.trim(),i.id);} if(i.korean_name&&cn){const k=i.korean_name.trim();const a=korToIngr.get(k);if(a)a.push({id:i.id,cn});else korToIngr.set(k,[{id:i.id,cn}]);} }
 const siblingIds=new Map();
-for (const i of ingredients){ const set=new Set([i.id]); const cn=i.inci_name?canonName(i.inci_name):""; if(cn)for(const id of nameToIds.get(cn)??[])set.add(id); if(i.cas_no)for(const c of casTokens(i.cas_no))for(const id of casToIds.get(c)??[])set.add(id); if(i.kcia_code)for(const id of codeToIds.get(String(i.kcia_code).trim())??[])set.add(id); if(i.korean_name){const ne=i.inci_name?neKey(i.inci_name):"";if(ne&&ne.length>=4)for(const id of neKorToIds.get(ne+"|"+i.korean_name.trim())??[])set.add(id);} if(i.korean_name&&cn){for(const e of korToIngr.get(i.korean_name.trim())??[]){if(e.id!==i.id&&isSynPrefix(cn,e.cn))set.add(e.id);}} if(set.size>1)siblingIds.set(i.id,Array.from(set)); }
+for (const i of ingredients){ const set=new Set([i.id]); const cn=i.inci_name?canonName(i.inci_name):""; if(cn)for(const id of nameToIds.get(cn)??[])set.add(id); if(i.cas_no)for(const c of casTokens(i.cas_no))for(const id of casToIds.get(c)??[])set.add(id); if(i.kcia_code)for(const id of codeToIds.get(String(i.kcia_code).trim())??[])set.add(id); for(const id of identityLinks.get(i.id)??[])set.add(id); if(i.korean_name){const ne=i.inci_name?neKey(i.inci_name):"";if(ne&&ne.length>=4)for(const id of neKorToIds.get(ne+"|"+i.korean_name.trim())??[])set.add(id);} if(i.korean_name&&cn){for(const e of korToIngr.get(i.korean_name.trim())??[]){if(e.id!==i.id&&isSynPrefix(cn,e.cn))set.add(e.id);}} if(set.size>1)siblingIds.set(i.id,Array.from(set)); }
 
 function sanitize(s){return s.replace(/[,()%_\\"]/g," ").trim();}
 function findIngredient(query){
