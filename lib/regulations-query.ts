@@ -43,6 +43,9 @@ export interface CountryLookupResult {
   kcia_articles?: KciaArticle[];
   source_pdfs?: SourcePdf[];
   all_sources?: SourceRef[];  // priority desc 정렬 — 모든 출처 (1안+2안+3안)
+  // EU 채택국(ASEAN ACD / Andean 833)에서 자국 한도가 없을 때, 채택 원천 EU 의 한도(법적으로 동일).
+  // 결정론·무AI·source-grounded — 앱이 준비된 EU 데이터를 끌어와 채움(검색마다 AI 호출 아님).
+  adopted_limit?: { max_concentration: number | null; concentration_unit: string | null; conditions: string | null; from: string } | null;
 }
 
 export interface IngredientMatch {
@@ -341,6 +344,23 @@ export async function lookupRegulation(
       kcia_articles: kciaArticles,
       source_pdfs: sourcePdfs,
     });
+  }
+
+  // EU 채택국(ASEAN ACD / Andean Decisión 833 = EU annex 채택) 한도 보강(결정론·무AI):
+  // 자국(verified) 행에 한도(숫자 or 조건문%)가 없으면, 채택 원천 EU 의 한도를 그대로 표시.
+  // EU annex 를 법적으로 채택하므로 EU 한도가 곧 그 나라의 적용 한도. 이미 파싱된 EU 데이터를
+  // 끌어와 채우는 것(검색마다 AI 호출 X — 설계 의도 부합). UI 에 "EU 채택 기준"으로 출처 명시.
+  const hasLimit = (r: CountryLookupResult): boolean =>
+    typeof r.max_concentration === "number" ||
+    (!!r.conditions && /최대\s*농도|배합\s*한도|\d+(\.\d+)?\s*%|\d+,\d+\s*%/.test(r.conditions));
+  const euRes = results.find((r) => r.country_code === "EU" && r.source === "verified");
+  if (euRes && hasLimit(euRes)) {
+    for (const r of results) {
+      if (r.source !== "verified") continue;
+      if (ds.countryByCode.get(r.country_code)?.inherits_from !== "EU") continue;
+      if (hasLimit(r)) continue;
+      r.adopted_limit = { max_concentration: euRes.max_concentration ?? null, concentration_unit: euRes.concentration_unit ?? null, conditions: euRes.conditions ?? null, from: "EU" };
+    }
   }
 
   // 예외(확인 필요) 관련 표기 — 같은 한글명이나 표기/CAS 차이로 자동통합 안 된 동일추정 레코드 중,

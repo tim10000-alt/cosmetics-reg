@@ -457,6 +457,17 @@ function CountryCard({ result }: { result: CountryLookupResult }) {
               <span className="font-medium text-amber-700 dark:text-amber-300">아래 사용조건 참조 ↓</span>
               <span className="ml-1 text-xs text-zinc-500">(제품 유형·부위별로 상이)</span>
             </div>
+          ) : result.adopted_limit ? (
+            // EU 채택국(ASEAN/Andean): 자국 한도 없음 → 채택 원천 EU 한도 표시(출처 명시).
+            <div className="text-zinc-700 dark:text-zinc-300">
+              최대 배합한도:{" "}
+              {typeof result.adopted_limit.max_concentration === "number" ? (
+                <span className="font-semibold">{result.adopted_limit.max_concentration}{result.adopted_limit.concentration_unit ?? "%"}</span>
+              ) : (
+                <span className="font-medium text-amber-700 dark:text-amber-300">아래 사용조건 참조 ↓</span>
+              )}
+              <span className="ml-1 text-xs text-zinc-500">(EU 채택 기준)</span>
+            </div>
           ) : null}
           {result.product_categories && result.product_categories.length > 0 && (
             <div className="text-xs text-zinc-500">적용 제품: {result.product_categories.join(", ")}</div>
@@ -470,6 +481,14 @@ function CountryCard({ result }: { result: CountryLookupResult }) {
                 조건·비고 보기
               </summary>
               <ConditionBlocks text={result.conditions} />
+            </details>
+          )}
+          {!result.conditions && result.adopted_limit?.conditions && (
+            <details open className="text-xs text-zinc-600 dark:text-zinc-400">
+              <summary className="cursor-pointer text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-200">
+                조건·비고 보기 (EU 채택 기준)
+              </summary>
+              <ConditionBlocks text={result.adopted_limit.conditions} />
             </details>
           )}
           {result.source_document && (

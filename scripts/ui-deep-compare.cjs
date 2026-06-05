@@ -31,6 +31,20 @@ function richLookup(query) {
     if ((!b || !b.length) && c.inherits_from) { const ib = gt.bucketFor(ids, c.inherits_from); if (ib && ib.length) { b = ib; inh = c.inherits_from; } }
     if (b && b.length) { const r = b[0]; results[c.code] = { status: r.status, max: r.max_concentration, unit: r.concentration_unit, conditions: r.conditions, pcats: r.product_categories || [], src: r.source_document, url: r.source_url, inh, all: b }; }
   }
+  // production EU-채택 한도 보강 미러: EU 채택국 자국한도 없으면 EU 한도 채택(표시).
+  const limRe = /최대\s*농도|배합\s*한도|\d+(\.\d+)?\s*%|\d+,\d+\s*%/;
+  const hasLim = (r) => r && (typeof r.max === "number" || (r.conditions && limRe.test(r.conditions)));
+  const euR = results["EU"];
+  if (euR && hasLim(euR)) {
+    for (const cc of Object.keys(results)) {
+      const c = gt.countries.find((x) => x.code === cc);
+      if (c && c.inherits_from === "EU" && !hasLim(results[cc])) {
+        if (typeof euR.max === "number") { results[cc].max = euR.max; results[cc].unit = euR.unit; }
+        if (!results[cc].conditions) results[cc].conditions = euR.conditions;
+        results[cc].adopted = true;
+      }
+    }
+  }
   return { ing, results, ids };
 }
 
