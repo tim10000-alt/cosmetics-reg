@@ -190,6 +190,34 @@
       "m2": null,
       "verdict": "uncertain",
       "by": "gemini-consensus"
+    },
+    "462baead-3c32-45c4-816f-99ddb17b0069|bb3e24e9-048d-4b0c-bed9-6586d140c5ca": {
+      "ko": "디메칠설폭사이드(DMSO)로 추출한 성분을 3% 초과하여 함유하는 탄화수소류 (C27-45, naphthenic vacuum distn)",
+      "a": "Hydrocarbons, C20-58, hydrotreated, if they contain > 3 % w/w DMSO extract",
+      "b": "Hydrocarbons, C27-45, dearomatised, if they contain > 3 % w/w DMSO extract",
+      "verdict": "different",
+      "by": "cas-veto"
+    },
+    "a0ad4405-9cc8-4ea4-9bbf-c6fffd3c7245|c628aaf3-4f69-40fe-b18f-d8a3c8999f57": {
+      "ko": "과산화수소 및 과산화수소 생성물질",
+      "a": "Hydrogen peroxide, and other compounds or mixtures that release hydrogen peroxide",
+      "b": "Peroxide and peroxide-generating compounds",
+      "verdict": "different",
+      "by": "cas-veto"
+    },
+    "a0ad4405-9cc8-4ea4-9bbf-c6fffd3c7245|a815d2ba-2f55-44da-85a6-4377fcb8503c": {
+      "ko": "과산화수소 및 과산화수소 생성물질",
+      "a": "Peroxide and peroxide-generating compounds",
+      "b": "Hydrogen peroxide and other compounds or mixtures that release hydrogen peroxide, including carbamide peroxide and zinc peroxide, with the exception of the following substances in Annex II: No 1397, 1398, 1399",
+      "verdict": "different",
+      "by": "cas-veto"
+    },
+    "184d0ae5-ae2f-49ce-91fb-f9bf61402b71|2554f59a-639e-4155-b5bf-86aa6c90e7ed": {
+      "ko": "알릴사이클로헥실아세테이트",
+      "a": "Allyl Cyclohexylacetate",
+      "b": "Allyl Cyclohexyloxyacetate",
+      "verdict": "different",
+      "by": "cas-veto"
     }
   }
 }
