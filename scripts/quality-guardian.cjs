@@ -137,6 +137,7 @@ function main() {
   let recovered = 0, ingChanged = false;
   let nameFieldRecovered = 0, nameFieldNulled = 0;       // 보조 표시명(한/중/일) 정리
   let casRecovered = 0, casNulled = 0, casElementFixed = 0;   // CAS 정규화 + 원소CAS 오기교정
+  let nameTrimmed = 0;                                          // 이름 앞뒤 공백 제거
   const corrupt = [];
   // 한 필드의 오염명 복구 시도 — RTL 꼬리 절단 또는 JP matrix-bleed 절단. 회복 결과가 깨끗하면 반환.
   const recoverName = (v) => {
@@ -146,6 +147,10 @@ function main() {
     return (best && best.length >= 2 && !isCorruptName(best)) ? best : null;
   };
   for (const i of ingObj.rows) {
+    // 이름 위생: 앞뒤 공백(\r\n·\t = 파싱 잔재) 제거. 표시·매칭·중복판정 정확도↑(247건 실측).
+    for (const f of ["inci_name", "korean_name", "chinese_name", "japanese_name"]) {
+      if (typeof i[f] === "string" && i[f] !== i[f].trim()) { i[f] = i[f].trim(); nameTrimmed++; ingChanged = true; }
+    }
     // inci_name = 검색 키/제목 — 복구 실패 시 레코드 전체 격리(검색에서 제외).
     if (isCorruptName(i.inci_name)) {
       const best = recoverName(i.inci_name);
@@ -247,6 +252,7 @@ function main() {
   console.log(`  오염명 실명 복구(RTL 헤더 + JP matrix): ${recovered}`);
   console.log(`  보조 표시명(한/중/일) 정리: 복구 ${nameFieldRecovered} · null처리 ${nameFieldNulled}`);
   console.log(`  CAS 정규화: 복구 ${casRecovered} · 깨진값(날짜/0/대시) null ${casNulled} · 원소CAS 오기교정 ${casElementFixed}`);
+  console.log(`  이름 앞뒤 공백 제거: ${nameTrimmed}`);
   console.log(`  격리(복구 불가) 성분명: ${corrupt.length}`);
   console.log(`  국가 행수 급감(회귀): ${regressions.length ? regressions.join(", ") : "없음"}`);
   console.log(`  ⏳ stale 국가법령(cascade 전체 >${STALE_DAYS}일): ${stale.length ? stale.map((s) => `${s.cc}(${s.days}d)`).join(", ") : "없음"} | stale 성분사전: ${dictStale.length ? dictStale.map((d) => d.name).join(", ") : "없음"}`);

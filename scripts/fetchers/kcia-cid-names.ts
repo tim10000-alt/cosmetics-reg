@@ -29,6 +29,7 @@ interface IngredientRow {
   id: string; inci_name: string; korean_name: string | null; chinese_name: string | null;
   japanese_name: string | null; cas_no: string | null; synonyms: string[];
   description: string | null; function_category: string | null; function_description: string | null;
+  kcia_code?: string | null;   // KCIA 표준화명칭 코드 = 권위 동일성 키(같은 코드=같은 성분)
 }
 interface NameRec { code: string; ko: string; inci: string; oldKo: string; }
 
@@ -177,6 +178,7 @@ async function main() {
       let touched = false;
       if (!ing.korean_name && k.ko) { ing.korean_name = k.ko; byKo.set(koKey, ing); touched = true; }
       if (k.oldKo && k.oldKo !== k.ko && addSyn(ing, k.oldKo)) touched = true;
+      if (k.code && ing.kcia_code !== k.code) { ing.kcia_code = k.code; touched = true; } // 권위 동일성 키 저장
       if (touched) enriched++;
     } else {
       // 신규: 영문 INCI 있으면 INCI, 없으면 한글 표준명(병합 해소돼 깨끗) 을 inci_name 으로.
@@ -188,7 +190,7 @@ async function main() {
         id: randomUUID(), inci_name: primary, korean_name: k.ko || null,
         chinese_name: null, japanese_name: null, cas_no: null, synonyms: syn,
         description: `${SOURCE_TAG} (성분코드 ${k.code})`,
-        function_category: null, function_description: null,
+        function_category: null, function_description: null, kcia_code: k.code || null,
       };
       ingredients.push(newIng);
       byInci.set(norm(primary), newIng);

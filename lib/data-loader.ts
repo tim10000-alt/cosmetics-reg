@@ -16,6 +16,7 @@ export interface Ingredient {
   description: string | null;
   function_category: string | null;
   function_description: string | null;
+  kcia_code?: string | null;   // KCIA 표준화명칭 코드 = 권위 동일성 키(같은 코드=같은 성분)
 }
 
 export interface Regulation {
@@ -257,6 +258,7 @@ async function loadDataset(): Promise<Dataset> {
   const nameToIds = new Map<string, string[]>();
   const casToIds = new Map<string, string[]>();
   const neKorToIds = new Map<string, string[]>();
+  const codeToIds = new Map<string, string[]>();   // KCIA 코드 = 권위 동일성 키
   const korToIngr = new Map<string, { id: string; cn: string }[]>();
   const push = (m: Map<string, string[]>, k: string, id: string) => {
     const arr = m.get(k);
@@ -267,6 +269,7 @@ async function loadDataset(): Promise<Dataset> {
     const cn = i.inci_name ? canonName(i.inci_name) : "";
     if (cn) push(nameToIds, cn, i.id);
     if (i.cas_no) for (const c of casTokens(i.cas_no)) push(casToIds, c, i.id);
+    if (i.kcia_code) push(codeToIds, String(i.kcia_code).trim(), i.id);
     if (i.korean_name) {
       const ne = i.inci_name ? neKey(i.inci_name) : "";
       if (ne && ne.length >= 4) push(neKorToIds, ne + "|" + i.korean_name.trim(), i.id);
@@ -284,6 +287,7 @@ async function loadDataset(): Promise<Dataset> {
     const cn = i.inci_name ? canonName(i.inci_name) : "";
     if (cn) for (const id of nameToIds.get(cn) ?? []) set.add(id);
     if (i.cas_no) for (const c of casTokens(i.cas_no)) for (const id of casToIds.get(c) ?? []) set.add(id);
+    if (i.kcia_code) for (const id of codeToIds.get(String(i.kcia_code).trim()) ?? []) set.add(id);  // 같은 KCIA 코드 = 같은 성분
     if (i.korean_name) {
       const ne = i.inci_name ? neKey(i.inci_name) : "";
       if (ne && ne.length >= 4) for (const id of neKorToIds.get(ne + "|" + i.korean_name.trim()) ?? []) set.add(id);

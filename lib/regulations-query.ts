@@ -56,6 +56,7 @@ export interface IngredientMatch {
   description: string | null;
   function_category: string | null;
   function_description: string | null;
+  kcia_code?: string | null;
 }
 
 // 예외(확인 필요) — 같은 한글명이나 표기/CAS 차이로 자동통합되지 않은 '동일 물질 추정' 레코드.
@@ -140,9 +141,10 @@ function buildCanonical(
     const inci = m.inci_name || "";
     const isAllCaps = inci === inci.toUpperCase() && /[A-Z]/.test(inci);
     const hasJunk = /,?\s*C(?:AS|I)\s*[\d\-]/i.test(inci) || /\[\d\]/.test(inci) || /[,;]/.test(inci);
-    return (m.korean_name ? 1000 : 0) + (isAllCaps ? 0 : 100) + (hasJunk ? 0 : 50) + (m.cas_no ? 10 : 0) - inci.length * 0.01;
+    return (m.kcia_code ? 2000 : 0) + (m.korean_name ? 1000 : 0) + (isAllCaps ? 0 : 100) + (hasJunk ? 0 : 50) + (m.cas_no ? 10 : 0) - inci.length * 0.01;
   };
   const rep = [...members].sort((a, b) => score(b) - score(a))[0];
+  const repInci = (rep.inci_name || "").trim();   // 표시 위생(데이터 잔여 공백 방어)
   const firstOf = (f: keyof IngredientMatch): string | null => {
     if (rep[f]) return rep[f] as string;
     for (const m of members) if (m[f]) return m[f] as string;
@@ -155,7 +157,7 @@ function buildCanonical(
   }
   // synonyms union + 형제들의 다른 표기(inci)도 동의어로 노출(검색·"왜 이게 떴나" 투명성)
   const synSet: string[] = [];
-  const repInciLc = (rep.inci_name || "").toLowerCase(), repKorLc = (rep.korean_name || "").toLowerCase();
+  const repInciLc = repInci.toLowerCase(), repKorLc = (rep.korean_name || "").trim().toLowerCase();
   const addSyn = (s: string | null | undefined) => {
     const v = (s || "").trim(); if (!v) return;
     if (v.toLowerCase() === repInciLc || v.toLowerCase() === repKorLc) return;
@@ -164,7 +166,7 @@ function buildCanonical(
   for (const m of members) { (m.synonyms || []).forEach(addSyn); if (m.id !== rep.id) addSyn(m.inci_name); }
   return {
     id: rep.id,
-    inci_name: rep.inci_name,
+    inci_name: repInci,
     korean_name: firstOf("korean_name"),
     chinese_name: firstOf("chinese_name"),
     japanese_name: firstOf("japanese_name"),
@@ -173,6 +175,7 @@ function buildCanonical(
     description: firstOf("description"),
     function_category: firstOf("function_category"),
     function_description: firstOf("function_description"),
+    kcia_code: firstOf("kcia_code"),
   };
 }
 

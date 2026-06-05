@@ -42,11 +42,11 @@ const isValidCas = (c) => /^\d{1,7}-\d{2}-\d$/.test(c);
 const casTokens = (raw) => raw.split(/\s+/).map((c)=>c.trim()).filter(isValidCas);
 const isSynPrefix = (a,b) => { const sh=a.length<=b.length?a:b, lo=a.length<=b.length?b:a; if(!sh||sh.length<5||sh===lo||!lo.startsWith(sh))return false; return /[,;]/.test(lo[sh.length]); };
 const neKey=(s)=>s.toLowerCase().replace(/[^a-z0-9]/g,"").replace(/s$/,""); // 정규화 영문키(data-loader 미러)
-const nameToIds=new Map(), casToIds=new Map(), korToIngr=new Map(), neKorToIds=new Map();
+const nameToIds=new Map(), casToIds=new Map(), korToIngr=new Map(), neKorToIds=new Map(), codeToIds=new Map();
 const push=(m,k,id)=>{const a=m.get(k);if(a)a.push(id);else m.set(k,[id]);};
-for (const i of ingredients){ const cn=i.inci_name?canonName(i.inci_name):""; if(cn)push(nameToIds,cn,i.id); if(i.cas_no)for(const c of casTokens(i.cas_no))push(casToIds,c,i.id); if(i.korean_name){const ne=i.inci_name?neKey(i.inci_name):"";if(ne&&ne.length>=4)push(neKorToIds,ne+"|"+i.korean_name.trim(),i.id);} if(i.korean_name&&cn){const k=i.korean_name.trim();const a=korToIngr.get(k);if(a)a.push({id:i.id,cn});else korToIngr.set(k,[{id:i.id,cn}]);} }
+for (const i of ingredients){ const cn=i.inci_name?canonName(i.inci_name):""; if(cn)push(nameToIds,cn,i.id); if(i.cas_no)for(const c of casTokens(i.cas_no))push(casToIds,c,i.id); if(i.kcia_code)push(codeToIds,String(i.kcia_code).trim(),i.id); if(i.korean_name){const ne=i.inci_name?neKey(i.inci_name):"";if(ne&&ne.length>=4)push(neKorToIds,ne+"|"+i.korean_name.trim(),i.id);} if(i.korean_name&&cn){const k=i.korean_name.trim();const a=korToIngr.get(k);if(a)a.push({id:i.id,cn});else korToIngr.set(k,[{id:i.id,cn}]);} }
 const siblingIds=new Map();
-for (const i of ingredients){ const set=new Set([i.id]); const cn=i.inci_name?canonName(i.inci_name):""; if(cn)for(const id of nameToIds.get(cn)??[])set.add(id); if(i.cas_no)for(const c of casTokens(i.cas_no))for(const id of casToIds.get(c)??[])set.add(id); if(i.korean_name){const ne=i.inci_name?neKey(i.inci_name):"";if(ne&&ne.length>=4)for(const id of neKorToIds.get(ne+"|"+i.korean_name.trim())??[])set.add(id);} if(i.korean_name&&cn){for(const e of korToIngr.get(i.korean_name.trim())??[]){if(e.id!==i.id&&isSynPrefix(cn,e.cn))set.add(e.id);}} if(set.size>1)siblingIds.set(i.id,Array.from(set)); }
+for (const i of ingredients){ const set=new Set([i.id]); const cn=i.inci_name?canonName(i.inci_name):""; if(cn)for(const id of nameToIds.get(cn)??[])set.add(id); if(i.cas_no)for(const c of casTokens(i.cas_no))for(const id of casToIds.get(c)??[])set.add(id); if(i.kcia_code)for(const id of codeToIds.get(String(i.kcia_code).trim())??[])set.add(id); if(i.korean_name){const ne=i.inci_name?neKey(i.inci_name):"";if(ne&&ne.length>=4)for(const id of neKorToIds.get(ne+"|"+i.korean_name.trim())??[])set.add(id);} if(i.korean_name&&cn){for(const e of korToIngr.get(i.korean_name.trim())??[]){if(e.id!==i.id&&isSynPrefix(cn,e.cn))set.add(e.id);}} if(set.size>1)siblingIds.set(i.id,Array.from(set)); }
 
 function sanitize(s){return s.replace(/[,()%_\\"]/g," ").trim();}
 function findIngredient(query){
@@ -83,14 +83,15 @@ function bucketFor(ids,code){
 function buildCanonical(ids, resolved){
   const members=ids.map(id=>byId.get(id)).filter(Boolean);
   if(members.length<=1)return resolved;
-  const score=(m)=>{const inci=m.inci_name||"";const allCaps=inci===inci.toUpperCase()&&/[A-Z]/.test(inci);const junk=/,?\s*C(?:AS|I)\s*[\d\-]/i.test(inci)||/\[\d\]/.test(inci)||/[,;]/.test(inci);return (m.korean_name?1000:0)+(allCaps?0:100)+(junk?0:50)+(m.cas_no?10:0)-inci.length*0.01;};
+  const score=(m)=>{const inci=m.inci_name||"";const allCaps=inci===inci.toUpperCase()&&/[A-Z]/.test(inci);const junk=/,?\s*C(?:AS|I)\s*[\d\-]/i.test(inci)||/\[\d\]/.test(inci)||/[,;]/.test(inci);return (m.kcia_code?2000:0)+(m.korean_name?1000:0)+(allCaps?0:100)+(junk?0:50)+(m.cas_no?10:0)-inci.length*0.01;};
   const rep=[...members].sort((a,b)=>score(b)-score(a))[0];
+  const repInci=(rep.inci_name||"").trim();
   const firstOf=(f)=>{if(rep[f])return rep[f];for(const m of members)if(m[f])return m[f];return null;};
   const casSet=[];for(const m of members)for(const c of String(m.cas_no||"").split(/[\s,;]+/)){const t=c.trim();if(/^\d{2,7}-\d{2}-\d$/.test(t)&&!casSet.includes(t))casSet.push(t);}
-  const synSet=[];const ri=(rep.inci_name||"").toLowerCase(),rk=(rep.korean_name||"").toLowerCase();
+  const synSet=[];const ri=repInci.toLowerCase(),rk=(rep.korean_name||"").trim().toLowerCase();
   const addSyn=s=>{const v=(s||"").trim();if(!v)return;if(v.toLowerCase()===ri||v.toLowerCase()===rk)return;if(!synSet.some(x=>x.toLowerCase()===v.toLowerCase()))synSet.push(v);};
   for(const m of members){(m.synonyms||[]).forEach(addSyn);if(m.id!==rep.id)addSyn(m.inci_name);}
-  return {id:rep.id,inci_name:rep.inci_name,korean_name:firstOf("korean_name"),chinese_name:firstOf("chinese_name"),japanese_name:firstOf("japanese_name"),cas_no:casSet.length?casSet.join(", "):null,synonyms:synSet,description:firstOf("description"),function_category:firstOf("function_category"),function_description:firstOf("function_description")};
+  return {id:rep.id,inci_name:repInci,korean_name:firstOf("korean_name"),chinese_name:firstOf("chinese_name"),japanese_name:firstOf("japanese_name"),cas_no:casSet.length?casSet.join(", "):null,synonyms:synSet,description:firstOf("description"),function_category:firstOf("function_category"),function_description:firstOf("function_description"),kcia_code:firstOf("kcia_code")};
 }
 function lookup(query, codes){
   const resolved=findIngredient(query); if(!resolved)return {ingredient:null};
