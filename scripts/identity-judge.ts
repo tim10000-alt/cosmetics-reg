@@ -12,6 +12,7 @@ import { GEMINI_PRIMARY, GEMINI_SECONDARY } from "./gemini-models";
 // 멱등: 이미 판단한 쌍은 캐시(identity-decisions.json) 스킵 → CI 무료 quota 절약·안정.
 // 비대칭 안전: 잘못 병합=규제사고 → 의심스러우면 병합 안 함. CAS 충돌은 LLM 판정보다 우선(veto).
 
+// 트리거: 이 파일/identity.yml 변경 push 시 Identity Judge 워크플로 즉시 1회 실행(백로그 소진).
 const DATA = join(__dirname, "..", "public", "data");
 const DECISIONS = join(DATA, "identity-decisions.json");
 const OVERRIDES = join(DATA, "identity-overrides.json");
