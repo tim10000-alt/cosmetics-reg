@@ -51,9 +51,14 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git fetch origin main
-          git rebase origin/main || (git rebase --abort && git reset --hard origin/main && exit 0)
+          # 판단기가 파일을 수정(uncommitted)함 → *먼저 commit*(tree clean) 후 rebase/push.
+          # (dirty tree 에서 rebase 하면 실패해 verdict 유실됨 — 실측 #3.)
           git add public/data/identity-overrides.json public/data/identity-decisions.json
           if git diff --cached --quiet; then echo "no identity changes"; exit 0; fi
           git commit -m "chore(identity): Gemini consensus 판단 $(date -u +%Y-%m-%dT%H:%MZ)"
-          git push || (git pull --rebase origin main && git push)
+          for i in 1 2 3 4 5; do
+            git fetch origin main
+            git rebase origin/main || { git rebase --abort || true; git reset --hard HEAD; git fetch origin main; git rebase origin/main; }
+            if git push; then echo "pushed"; break; fi
+            echo "push 충돌 재시도 $i"; sleep 5
+          done
