@@ -188,6 +188,19 @@ function main() {
   }
   if (ingChanged) fs.writeFileSync(path.join(DATA, "ingredients.json"), JSON.stringify(ingObj));
 
+  // self-heal 후 *잔존 가시 오염* 카운트 — 가디언 로직이 못 잡은 새 오염 패턴 조기경보용(0이어야 정상).
+  // (재발방지: 미래에 새 오염 형태가 들어와 self-heal 을 빠져나가면 여기서 >0 → data-quality-check 가
+  //  exit 1 → watchdog Issue. 가디언이 '고치는' 것에 더해 '못 고친 것을 알린다'.)
+  const corruptIdSet = new Set(corrupt.map((c) => c.id));
+  let residualCorrupt = 0, residualWhitespace = 0;
+  for (const i of ingObj.rows) {
+    if (corruptIdSet.has(i.id)) continue;
+    if (isCorruptName(i.inci_name) || isCorruptName(i.korean_name) || isCorruptName(i.chinese_name) || isCorruptName(i.japanese_name)) residualCorrupt++;
+    for (const f of ["inci_name", "korean_name", "chinese_name", "japanese_name"]) {
+      if (typeof i[f] === "string" && i[f] !== i[f].trim()) { residualWhitespace++; break; }
+    }
+  }
+
   // 4) 회귀(국가별 행수 급감) 감지
   const baseline = loadJson(BASELINE, { counts: {} });
   const regressions = [];
@@ -244,6 +257,7 @@ function main() {
       stale_threshold_days: STALE_DAYS,
       stale_count: stale.length + dictStale.length, stale_countries: stale.map((s) => s.cc), stale_dictionaries: dictStale.map((d) => d.name),
       limit_anomaly_count: limitAnomalies.length, limit_anomalies: limitAnomalies.slice(0, 20),
+      post_heal_corrupt_count: residualCorrupt, post_heal_whitespace_count: residualWhitespace,
       regulations_by_country: health.map((h) => ({ cc: h.cc, latest: h.latest })),
       ingredient_dictionaries: dicts.map((d) => ({ name: d.name, latest: d.latest })) }, null, 2));
 
@@ -254,6 +268,7 @@ function main() {
   console.log(`  CAS 정규화: 복구 ${casRecovered} · 깨진값(날짜/0/대시) null ${casNulled} · 원소CAS 오기교정 ${casElementFixed}`);
   console.log(`  이름 앞뒤 공백 제거: ${nameTrimmed}`);
   console.log(`  격리(복구 불가) 성분명: ${corrupt.length}`);
+  console.log(`  🩺 self-heal 후 잔존 가시오염(0이어야 정상): 오염명 ${residualCorrupt} · 공백 ${residualWhitespace}`);
   console.log(`  국가 행수 급감(회귀): ${regressions.length ? regressions.join(", ") : "없음"}`);
   console.log(`  ⏳ stale 국가법령(cascade 전체 >${STALE_DAYS}일): ${stale.length ? stale.map((s) => `${s.cc}(${s.days}d)`).join(", ") : "없음"} | stale 성분사전: ${dictStale.length ? dictStale.map((d) => d.name).join(", ") : "없음"}`);
   console.log(`  📊 한도 급변(5배+) 이상: ${limitAnomalies.length ? limitAnomalies.slice(0, 8).join(", ") : "없음"}`);

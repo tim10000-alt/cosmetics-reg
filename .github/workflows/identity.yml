@@ -53,12 +53,15 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           # 판단기가 파일을 수정(uncommitted)함 → *먼저 commit*(tree clean) 후 rebase/push.
           # (dirty tree 에서 rebase 하면 실패해 verdict 유실됨 — 실측 #3.)
+          # crawl/enrich 과 동일 robust 패턴: commit 먼저 → push, 실패 시 merge(-X ours)+재시도.
           git add public/data/identity-overrides.json public/data/identity-decisions.json
           if git diff --cached --quiet; then echo "no identity changes"; exit 0; fi
           git commit -m "chore(identity): Gemini consensus 판단 $(date -u +%Y-%m-%dT%H:%MZ)"
-          for i in 1 2 3 4 5; do
+          for i in 1 2 3 4 5 6; do
+            if git push; then echo "pushed"; exit 0; fi
+            echo "push 충돌 — fetch+merge(-X ours) 재시도 $i"
             git fetch origin main
-            git rebase origin/main || { git rebase --abort || true; git reset --hard HEAD; git fetch origin main; git rebase origin/main; }
-            if git push; then echo "pushed"; break; fi
-            echo "push 충돌 재시도 $i"; sleep 5
+            git merge -X ours --no-edit origin/main || { git merge --abort || true; git reset --hard HEAD; }
+            sleep 4
           done
+          echo "::error::push 6회 실패"; exit 1
