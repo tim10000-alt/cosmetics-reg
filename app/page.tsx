@@ -81,7 +81,10 @@ function HomeInner() {
     // URL 딥링크: ?q=... 로 직접 공유·뒤로가기 가능. replace로 history 폭증 방지.
     router.replace(`/?q=${encodeURIComponent(trimmed)}`, { scroll: false });
     try {
-      if (trimmed.length > 256) throw new Error("query too long (max 256)");
+      // 자유텍스트 남용 방지용 상한. 단 일부 규제 group entry(EU borates/nickel/PFOS 묶음·
+      // 복합 발효/IUPAC 폴리머명)는 inci_name 이 최대 ~1900자 → 256 으로 막으면 그 성분을
+      // 풀네임/자동완성 선택으로 못 찾는 사각 발생. 실제 최장(1886) 위로 상향.
+      if (trimmed.length > 2048) throw new Error("query too long (max 2048)");
       const data = await lookupRegulation(trimmed);
       setResponse(data);
     } catch (err) {
