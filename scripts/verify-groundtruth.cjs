@@ -62,6 +62,7 @@ function findIngredient(query){
     if(kor&&kor.includes(safe))score=Math.min(score,(kor.startsWith(safe)?0:1000)+kor.length);
     if(ing.chinese_name&&ing.chinese_name.includes(query))score=Math.min(score,500+ing.chinese_name.length);
     if(ing.japanese_name&&ing.japanese_name.includes(query))score=Math.min(score,500+ing.japanese_name.length);
+    if(score===Infinity&&ing.synonyms){for(const syn of ing.synonyms){const s=syn.toLowerCase();if(s.includes(safe)){score=2000+(s.startsWith(safe)?0:1000)+s.length;break;}}}
     if(score<bestScore){bestScore=score;best=ing;}
   }
   return best;

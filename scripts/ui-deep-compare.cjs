@@ -34,13 +34,13 @@ function richLookup(query) {
   return { ing, results };
 }
 
-const targets = [];
-for (const i of gt.ingredients) { const m = gt.regsByIC.get(i.id); if (m && m.size) targets.push(i); }
+// 전 성분 대상(무규제 포함 — 헤더/not-found 표기까지 검증). 환경변수 CARDS_ONLY=1 이면 규제보유만.
+const targets = process.env.CARDS_ONLY ? gt.ingredients.filter((i) => { const m = gt.regsByIC.get(i.id); return m && m.size; }) : gt.ingredients.slice();
 const slice = targets.slice(OFFSET, OFFSET + LIMIT);
 
 const mismatches = [];
 let checkedIng = 0, checkedCells = 0, skipped = 0;
-const cov = { cond: 0, src: 0, url: 0, pcat: 0, casc: 0, inh: 0, maxN: 0, cas: 0, kr: 0 }; // 실제 비교 실행 증명
+const cov = { cond: 0, src: 0, url: 0, pcat: 0, casc: 0, inh: 0, maxN: 0, cas: 0, kr: 0, syn: 0, func: 0, fdesc: 0, desc: 0, noReg: 0 }; // 실제 비교 실행 증명
 const add = (m) => mismatches.push(m);
 
 async function extract(page) {
@@ -52,9 +52,14 @@ async function extract(page) {
     document.querySelectorAll("section dl dt").forEach((dt) => { const dd = dt.nextElementSibling; if (dd) out.header[dt.textContent.trim()] = dd.textContent.trim(); });
     const sec = lab?.closest("section");
     if (sec) {
-      const sky = sec.querySelector("span.bg-sky-100, span[class*='sky-100']");
+      // 기능: sky 배지 + 그 형제 desc span(text-zinc-600). 동의어: zinc-100 배지 spans.
+      const sky = sec.querySelector("span[class*='sky-100']");
       out.header.func = sky?.textContent?.trim() || null;
-      out.header.synonyms = [...sec.querySelectorAll("div.flex-wrap span")].map((s) => s.textContent.trim()).filter(Boolean);
+      const fdesc = sky?.parentElement ? [...sky.parentElement.querySelectorAll("span")].find((s) => s !== sky && /zinc-600/.test(s.className)) : null;
+      out.header.funcDesc = fdesc?.textContent?.trim() || null;
+      out.header.synonyms = [...sec.querySelectorAll("span[class*='bg-zinc-100']")].map((s) => s.textContent.trim()).filter(Boolean);
+      const pdesc = sec.querySelector("p[class*='bg-zinc-50']");
+      out.header.desc = pdesc?.textContent?.trim() || null;
     }
     // 카드
     document.querySelectorAll("article").forEach((art) => {
@@ -123,6 +128,14 @@ async function worker(page, items) {
     if (g.ing.cas_no) { cov.cas++; if (norm(ui.header["CAS"]) !== norm(g.ing.cas_no)) add(`${I} HDR-CAS ui="${ui.header["CAS"]}" gt="${g.ing.cas_no}"`); }
     if (norm(ui.header["중국어"]) !== norm(g.ing.chinese_name)) add(`${I} HDR-CN ui="${ui.header["중국어"]}" gt="${g.ing.chinese_name}"`);
     if (norm(ui.header["일본어"]) !== norm(g.ing.japanese_name)) add(`${I} HDR-JP ui="${ui.header["일본어"]}" gt="${g.ing.japanese_name}"`);
+    // 기능 카테고리/설명
+    if (g.ing.function_category) { cov.func++; if (norm(ui.header.func) !== norm(g.ing.function_category)) add(`${I} HDR-FUNC ui="${ui.header.func}" gt="${g.ing.function_category}"`); }
+    if (g.ing.function_description) { cov.fdesc++; if (norm(ui.header.funcDesc) !== norm(g.ing.function_description)) add(`${I} HDR-FDESC ui="${norm(ui.header.funcDesc).slice(0,30)}" gt="${norm(g.ing.function_description).slice(0,30)}"`); }
+    // 설명(description)
+    if (g.ing.description) { cov.desc++; if (normNW(ui.header.desc) !== normNW(g.ing.description)) add(`${I} HDR-DESC ui="${norm(ui.header.desc).slice(0,30)}" gt="${norm(g.ing.description).slice(0,30)}"`); }
+    // 동의어(첫 8개, 순서)
+    if (g.ing.synonyms && g.ing.synonyms.length) { cov.syn++; const exp = g.ing.synonyms.slice(0, 8).map(norm); const got = (ui.header.synonyms || []).map(norm); if (exp.length !== got.length || !exp.every((s, k) => s === got[k])) add(`${I} HDR-SYN ui=[${got.join("|").slice(0,40)}] gt=[${exp.join("|").slice(0,40)}]`); }
+    if (Object.keys(g.results).length === 0) cov.noReg++;
     // 카드 대조
     for (const [cc, gv] of Object.entries(g.results)) {
       checkedCells++;

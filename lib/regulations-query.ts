@@ -110,6 +110,15 @@ function findIngredientSync(
     if (kor && kor.includes(safe)) score = Math.min(score, (kor.startsWith(safe) ? 0 : 1000) + kor.length);
     if (ing.chinese_name && ing.chinese_name.includes(query)) score = Math.min(score, 500 + ing.chinese_name.length);
     if (ing.japanese_name && ing.japanese_name.includes(query)) score = Math.min(score, 500 + ing.japanese_name.length);
+    // 5) synonym 매칭 — 통용명(예: "Bronopol")으로도 도달. 이름(INCI/한/중/일) 어디에도
+    //    안 걸린 경우(score=Infinity)에만 발동 + 2000+ 로 항상 최하위 우선순위 → 기존 resolve
+    //    결과는 절대 불변(순수 additive). 어떤 이름에도 매칭 안 되던 질의만 새로 도달.
+    if (score === Infinity && ing.synonyms) {
+      for (const syn of ing.synonyms) {
+        const s = syn.toLowerCase();
+        if (s.includes(safe)) { score = 2000 + (s.startsWith(safe) ? 0 : 1000) + s.length; break; }
+      }
+    }
     if (score < bestScore) { bestScore = score; best = ing; }
   }
   return best;

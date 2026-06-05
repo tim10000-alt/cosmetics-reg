@@ -50,6 +50,14 @@ export async function fetchSuggestions(rawQuery: string, signal?: AbortSignal): 
       else if (!isCasQuery && ((ing.chinese_name && ing.chinese_name.includes(raw)) || (ing.japanese_name && ing.japanese_name.includes(raw)))) add(ing);
     }
   }
+  // 5) synonym substring — 통용명("Bronopol" 등) 자동완성. 이름/CAS 결과가 부족할 때만 보충(additive).
+  if (results.length < 8 && !isCasQuery) {
+    for (const ing of ds.ingredients) {
+      if (results.length >= 8) break;
+      if (signal?.aborted) return [];
+      if (ing.synonyms && ing.synonyms.some((s) => s.toLowerCase().includes(safe))) add(ing);
+    }
+  }
 
   return results;
 }
