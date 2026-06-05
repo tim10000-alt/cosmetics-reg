@@ -51,7 +51,7 @@ function compute() {
   let quarantinePending = 0;
   try { quarantinePending = JSON.parse(fs.readFileSync(path.join(DATA, "quarantine.json"), "utf8")).rows.filter((q) => q.status === "pending").length; } catch {}
   // 가디언 신선도/이상 리포트 — stale 은 latest 로 days 재계산(>임계).
-  let staleCount = 0, staleSources = [], limitAnomalyCount = 0;
+  let staleCount = 0, staleSources = [], limitAnomalyCount = 0, postHealCorrupt = 0, postHealWhitespace = 0;
   try {
     const h = JSON.parse(fs.readFileSync(path.join(DATA, "source-health.json"), "utf8"));
     const thr = h.stale_threshold_days ?? 45, now = new Date();
@@ -62,8 +62,10 @@ function compute() {
       if (d.latest && (now - new Date(d.latest)) / 86400000 > thr) { staleCount++; staleSources.push(d.name); }
     }
     limitAnomalyCount = h.limit_anomaly_count ?? 0;
+    postHealCorrupt = h.post_heal_corrupt_count ?? 0;
+    postHealWhitespace = h.post_heal_whitespace_count ?? 0;
   } catch {}
-  return { generated_at: meta.generated_at, totalRegs, coverage, restrictedNoLimit, statusConflicts, quarantinePending, staleCount, staleSources, limitAnomalyCount };
+  return { generated_at: meta.generated_at, totalRegs, coverage, restrictedNoLimit, statusConflicts, quarantinePending, staleCount, staleSources, limitAnomalyCount, postHealCorrupt, postHealWhitespace };
 }
 
 function detectRegressions(cur, prev) {
@@ -79,6 +81,10 @@ function detectRegressions(cur, prev) {
   // 가디언 신선도/이상 — 신규 발생 시만 경보(스팸 방지). stale=소스 동결/fetch차단, anomaly=한도 급변.
   if (cur.staleCount > (prev.staleCount ?? 0)) out.push(`국가 cascade 동결 증가(>45일 전층 미갱신): ${prev.staleCount ?? 0}→${cur.staleCount} [${(cur.staleSources || []).join(", ")}] — 1·2·3차 모두 차단/실패 확인`);
   if (cur.limitAnomalyCount > 0) out.push(`한도 5배+ 급변 ${cur.limitAnomalyCount}건 — silent 오파싱 의심, source-health.json 의 limit_anomalies 확인`);
+  // 절대 경보(직전 대비 아님): 가디언 self-heal 후에도 가시 오염/공백이 남으면 = 가디언이 못 잡는
+  // 새 오염 패턴 유입 → 즉시 알림(재발방지 안전망의 '감지' 축). 정상은 항상 0.
+  if (cur.postHealCorrupt > 0) out.push(`🩺 self-heal 후 잔존 오염명 ${cur.postHealCorrupt}건 — 가디언 미인식 새 오염 패턴, isCorruptName/recover 로직 보강 필요`);
+  if (cur.postHealWhitespace > 0) out.push(`🩺 self-heal 후 잔존 이름공백 ${cur.postHealWhitespace}건 — 가디언 trim 누락 경로 확인`);
   return out;
 }
 

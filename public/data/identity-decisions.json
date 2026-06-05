@@ -218,6 +218,79 @@
       "b": "Allyl Cyclohexyloxyacetate",
       "verdict": "different",
       "by": "cas-veto"
+    },
+    "1cebba47-877c-4770-a84d-026ac1f15065|feae1c6a-ac18-4994-aa30-17c8f71842d5": {
+      "ko": "안티몬트라이옥사이드",
+      "a": "Diantimony Trioxide; Antimony Trioxide",
+      "b": "Antimony Trioxide",
+      "m1": null,
+      "m2": {
+        "verdict": "same",
+        "confidence": 1,
+        "reason": "Both entries refer to the same chemical substance, Antimony Trioxide, with Entry A including a synonym."
+      },
+      "verdict": "uncertain",
+      "by": "gemini-consensus"
+    },
+    "05128ef4-0020-451c-8dbc-f87bcf85deee|c628aaf3-4f69-40fe-b18f-d8a3c8999f57": {
+      "ko": "과산화수소 및 과산화수소 생성물질",
+      "a": "Hydrogen peroxide, and other compounds or mixtures that release hydrogen peroxide",
+      "b": "HYDROGEN PEROXIDE, AND OTHER COMPOUNDS OR MIXTURES THAT RELEASE HYDROGEN PEROXIDE, INCLUDING CARBAMIDE PEROXIDE AND ZINC PEROXIDE",
+      "m1": null,
+      "m2": {
+        "verdict": "different",
+        "confidence": 0.9,
+        "reason": "Entry A is a general category for hydrogen peroxide and its releasers, while Entry B specifically includes carbamide peroxide and zinc peroxide as examples within that category. Entry B is more specific."
+      },
+      "verdict": "different",
+      "by": "gemini-consensus"
+    },
+    "05128ef4-0020-451c-8dbc-f87bcf85deee|a0ad4405-9cc8-4ea4-9bbf-c6fffd3c7245": {
+      "ko": "과산화수소 및 과산화수소 생성물질",
+      "a": "Peroxide and peroxide-generating compounds",
+      "b": "HYDROGEN PEROXIDE, AND OTHER COMPOUNDS OR MIXTURES THAT RELEASE HYDROGEN PEROXIDE, INCLUDING CARBAMIDE PEROXIDE AND ZINC PEROXIDE",
+      "m1": null,
+      "m2": {
+        "verdict": "different",
+        "confidence": 0.9,
+        "reason": "Entry A refers to a specific CAS number (124-43-6) which is likely a single substance or a well-defined mixture. Entry B describes a broader category of substances that release hydrogen peroxide, including specific examples like carbamide peroxide and zinc peroxide, and explicitly states 'CAS=none', indicating it's a group rather than a single defined chemical entity."
+      },
+      "verdict": "different",
+      "by": "gemini-consensus"
+    },
+    "05128ef4-0020-451c-8dbc-f87bcf85deee|a815d2ba-2f55-44da-85a6-4377fcb8503c": {
+      "ko": "과산화수소 및 과산화수소 생성물질",
+      "a": "Hydrogen peroxide and other compounds or mixtures that release hydrogen peroxide, including carbamide peroxide and zinc peroxide, with the exception of the following substances in Annex II: No 1397, 1398, 1399",
+      "b": "HYDROGEN PEROXIDE, AND OTHER COMPOUNDS OR MIXTURES THAT RELEASE HYDROGEN PEROXIDE, INCLUDING CARBAMIDE PEROXIDE AND ZINC PEROXIDE",
+      "m1": null,
+      "m2": {
+        "verdict": "different",
+        "confidence": 0.9,
+        "reason": "Entry A includes specific regulatory exceptions (Annex II: No 1397, 1398, 1399) which are not present in Entry B. This indicates a difference in regulatory scope or definition."
+      },
+      "verdict": "different",
+      "by": "gemini-consensus"
+    },
+    "000964c9-d163-4bc6-a6ad-594be795bb38|97a0a18c-a2c8-4669-9a5f-d5bea3969dc0": {
+      "ko": "2-메톡시에틸아세테이트(메톡시에탄올아세테이트)",
+      "a": "2-Methoxyethyl Acetate(Methoxyethanol Acetate)",
+      "b": "2-Methoxyethanol and its acetate (2-Methoxyethyl acetate) / 110-49-6 / 203-772-9 6",
+      "verdict": "different",
+      "by": "cas-veto"
+    },
+    "314ccedd-3ce5-4790-9691-94f9449ab127|a7aade12-ac69-4fb8-b520-cb6219fe8a59": {
+      "ko": "N,N-다이메틸-p-페닐렌다이아민 및 그 염류",
+      "a": "N,N-Dimethyl-p-phenylenediamine and its salts",
+      "b": "N,N-Dimethyl-p-phenylenediamine and its salts, when used as a substance in hair dye products",
+      "verdict": "different",
+      "by": "cas-veto"
+    },
+    "788bb984-71ca-4480-b2f7-07972baf45db|f850a9a1-d5c0-45e0-a65c-ff61a2beb16d": {
+      "ko": "1-[(2-하이드록시에틸)아미노]-4-(메틸아미노-9,10-안트라센다이온 및 그 염류",
+      "a": "9,10-Anthracenedione, 1-[(2-hydroxyethyl)amino]-4-(methylamino)-, and its derivatives and salts, when used as a substance in hair dye products",
+      "b": "9,10-Anthracenedione, 1-[(2-hydroxyethyl)amino]-4-(methylamino)-",
+      "verdict": "different",
+      "by": "cas-veto"
     }
   }
 }
