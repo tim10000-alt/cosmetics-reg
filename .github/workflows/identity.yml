@@ -18,9 +18,11 @@ on:
 permissions:
   contents: write
 
-# crawl/enrich 와 동일 그룹 — ingredients/data 동시 push 충돌 방지(직렬화)
+# 독립 그룹 — crawl/enrich(data-write) 와 분리. 같은 그룹이면 그룹이 비는 순간 신규 pending
+# (crawl/enrich)에 밀려 판단기 run 이 반복 취소됨(실측). identity-*.json 만 쓰고 commit 은
+# rebase 기반(crawl 이 rebase 로 identity 커밋을 받아 재add=무변경)이라 동시 실행해도 안전.
 concurrency:
-  group: data-write
+  group: identity-write
   cancel-in-progress: false
 
 jobs:
