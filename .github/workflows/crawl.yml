@@ -29,10 +29,10 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    # 30분은 Playwright 설치 + 20여 fetcher + (throttle 적용된) Gemini 파싱을 다 못 끝내
-    # 뒤쪽 스텝(Crawl/Parse/Try-*)이 매 런 skip 되던 문제 → 90분으로 상향(상한일 뿐,
-    # 빨리 끝나면 그때 종료). public repo 라 Actions 분 비용 없음.
-    timeout-minutes: 90
+    # Playwright + 20여 fetcher + (throttle) Gemini 파싱. 실측 ~85분(90 한계 근접) → commit 전
+    # timeout 으로 가디언 클린이 커밋 안 될 위험 → 120분 여유(durability). 상한일 뿐 빨리 끝나면 종료.
+    # public repo 라 Actions 분 비용 없음.
+    timeout-minutes: 120
     env:
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       MFDS_API_KEY: ${{ secrets.MFDS_API_KEY }}
