@@ -22,6 +22,17 @@ function HomeInner() {
   const [response, setResponse] = useState<LookupResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
 
+  // 헤더 카운트 — meta.json 에서 동적 로드(하드코딩 시 매일 stale). 실패 시 폴백 텍스트.
+  const [counts, setCounts] = useState<{ ingredients: number; regulations: number } | null>(null);
+  useEffect(() => {
+    let alive = true;
+    fetch("/data/meta.json")
+      .then((r) => r.json())
+      .then((m) => { if (alive && m?.counts) setCounts({ ingredients: m.counts.ingredients, regulations: m.counts.regulations }); })
+      .catch(() => {});
+    return () => { alive = false; };
+  }, []);
+
   const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [activeIdx, setActiveIdx] = useState(-1);
@@ -124,7 +135,7 @@ function HomeInner() {
           화장품 원료 규제 검색
         </h1>
         <p className="mt-1 text-sm text-zinc-500">
-          식약처 공공데이터 API (4종) + 각국 공식 법령 · 총 원료 34K·규제 92K건 (19개국: 한국·중국·EU·미국·일본·ASEAN 6국·대만·브라질·아르헨티나·캐나다·안데안공동체 4국)
+          식약처 공공데이터 API (4종) + 각국 공식 법령 · 총 원료 {counts ? `${Math.round(counts.ingredients / 1000)}K` : "35K"}·규제 {counts ? `${Math.round(counts.regulations / 1000)}K` : "94K"}건 (19개국: 한국·중국·EU·미국·일본·ASEAN 6국·대만·브라질·아르헨티나·캐나다·안데안공동체 4국)
         </p>
       </header>
 

@@ -18,6 +18,14 @@ permissions:
   contents: write
   issues: write   # 데이터 품질 회귀 시 Issue 자동 생성
 
+# enrich.yml 과 동일 그룹 — 두 일일 writer(crawl/enrich)가 ingredients.json 을
+# 동시에 push 하다 rebase 충돌로 enrich commit 이 실패하던 race 방지.
+# concurrency group 은 같은 그룹을 선언한 워크플로우끼리만 직렬화되므로 양쪽 모두 선언해야 함.
+# 90분 crawl 이 enrich(KST 04:00) 와 겹쳐도 enrich 가 큐잉돼 crawl 완료 후 깨끗이 실행.
+concurrency:
+  group: data-write
+  cancel-in-progress: false
+
 jobs:
   refresh:
     runs-on: ubuntu-latest

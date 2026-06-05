@@ -59,6 +59,46 @@ function stripRtlTail(name) {
   return name; // RTL 꼬리 패턴 없음(다른 오염) → 그대로(격리)
 }
 
+// ── CAS 정규화 ─────────────────────────────────────────────────────────────
+// cas_no 는 IngredientHeader 에 그대로 노출된다(화학 도구에서 핵심 표시값). 시드/엑셀
+// 경유 데이터에 (a) 날짜화("7/2/81", "4630/07/03") (b) 체크디짓 절단("7782-85")
+// (c) 비ASCII 하이픈("6614‑96‑6") 등 깨진 값이 섞여 UI 에 그대로 떴다.
+// 원칙: **유효 CAS(체크디짓 검증)가 하나라도 있으면 절대 건드리지 않는다**(오삭제 0).
+// 유효값이 전혀 없을 때만 — 체크디짓이 맞는 복구만 적용, 복구 불가한 순수 아티팩트
+// (날짜 m/d/yy·"0"·"-")만 null. 이름/EC번호/그룹텍스트는 보존(우리가 판단할 일 아님).
+const CAS_RE = /^\d{2,7}-\d{2}-\d$/;
+function casCheckDigit(twoGroups) {            // "7782-85" → 6
+  const d = twoGroups.replace(/-/g, "").split("").map(Number);
+  let s = 0; for (let i = 0; i < d.length; i++) s += d[d.length - 1 - i] * (i + 1);
+  return s % 10;
+}
+function casValid(c) {                          // 형식 + 체크디짓 동시 검증
+  if (!CAS_RE.test(c)) return false;
+  const p = c.split("-");
+  return casCheckDigit(p[0] + "-" + p[1]) === Number(p[2]);
+}
+function recoverCasToken(tok) {                 // 단일 토큰 → 유효 CAS 또는 null
+  let t = String(tok).replace(/[‑–—]/g, "-").replace(/[\r\t]/g, "").replace(/\?+$/, "").trim();
+  const core = t.replace(/\[[^\]]*\]/g, "").replace(/\([^)]*\)/g, "").trim();  // [1] 각주·qualifier 제거
+  if (casValid(core)) return core;
+  let m = core.match(/^(\d{2,7})\/(\d{1,2})\/(\d{1,3})$/);                      // 슬래시 날짜화 → 대시
+  if (m) { for (const mid of new Set([m[2], m[2].padStart(2, "0")])) { const c = m[1] + "-" + mid + "-" + String(Number(m[3])); if (casValid(c)) return c; } }
+  m = core.match(/^(\d{2,7}-\d{2})-?$/);                                        // 체크디짓 절단 → 계산
+  if (m) { const c = m[1] + "-" + casCheckDigit(m[1]); if (casValid(c)) return c; }
+  return null;
+}
+function normalizeCas(raw) {                     // {value, action: none|recovered|nulled}
+  if (raw == null) return { value: raw, action: "none" };
+  const txt = String(raw).replace(/[‑–—]/g, "-");
+  const present = (txt.match(/\d{2,7}-\d{2}-\d/g) || []).filter(casValid);
+  if (present.length) return { value: raw, action: "none" };                    // 유효 CAS 보유 → 무수정
+  const rec = [...new Set(txt.split(/[,;\n]/).map((s) => s.trim()).filter(Boolean).map(recoverCasToken).filter(Boolean))];
+  if (rec.length) return { value: rec.join(", "), action: "recovered" };
+  const v = txt.trim();
+  const artifact = /^[-—–]$/.test(v) || /^0+$/.test(v) || /^\d{1,2}\/\d{1,2}\/\d{2,4}$/.test(v) || /^\d{1,2}-\d{1,2}-\d{1,2}$/.test(v);
+  return artifact ? { value: null, action: "nulled" } : { value: raw, action: "none" };
+}
+
 function loadJson(p, def) { return fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, "utf8")) : def; }
 
 function main() {
@@ -91,6 +131,7 @@ function main() {
   const ingObj = JSON.parse(fs.readFileSync(path.join(DATA, "ingredients.json"), "utf8"));
   let recovered = 0, ingChanged = false;
   let nameFieldRecovered = 0, nameFieldNulled = 0;       // 보조 표시명(한/중/일) 정리
+  let casRecovered = 0, casNulled = 0;                   // CAS 정규화
   const corrupt = [];
   // 한 필드의 오염명 복구 시도 — RTL 꼬리 절단 또는 JP matrix-bleed 절단. 회복 결과가 깨끗하면 반환.
   const recoverName = (v) => {
@@ -117,6 +158,12 @@ function main() {
       if (best) { i[f] = best; nameFieldRecovered++; }
       else { i[f] = null; nameFieldNulled++; }
       ingChanged = true;
+    }
+    // CAS 정규화 — 유효 CAS 보유 레코드는 무수정(오삭제 0), 깨진 것만 복구/null.
+    if (i.cas_no != null) {
+      const c = normalizeCas(i.cas_no);
+      if (c.action === "recovered") { i.cas_no = c.value; casRecovered++; ingChanged = true; }
+      else if (c.action === "nulled") { i.cas_no = c.value; casNulled++; ingChanged = true; }
     }
   }
   if (ingChanged) fs.writeFileSync(path.join(DATA, "ingredients.json"), JSON.stringify(ingObj));
@@ -184,6 +231,7 @@ function main() {
   console.log(`  불가능값(>100/≤0) 제거: ${overFixed}`);
   console.log(`  오염명 실명 복구(RTL 헤더 + JP matrix): ${recovered}`);
   console.log(`  보조 표시명(한/중/일) 정리: 복구 ${nameFieldRecovered} · null처리 ${nameFieldNulled}`);
+  console.log(`  CAS 정규화: 복구 ${casRecovered} · 깨진값(날짜/0/대시) null ${casNulled}`);
   console.log(`  격리(복구 불가) 성분명: ${corrupt.length}`);
   console.log(`  국가 행수 급감(회귀): ${regressions.length ? regressions.join(", ") : "없음"}`);
   console.log(`  ⏳ stale 국가법령(cascade 전체 >${STALE_DAYS}일): ${stale.length ? stale.map((s) => `${s.cc}(${s.days}d)`).join(", ") : "없음"} | stale 성분사전: ${dictStale.length ? dictStale.map((d) => d.name).join(", ") : "없음"}`);
