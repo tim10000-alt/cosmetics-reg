@@ -242,9 +242,18 @@ jobs:
             exit 0
           fi
           git commit -m "chore(data): daily refresh $(date -u +%Y-%m-%dT%H:%MZ)"
-          # rebase-retry: 동시 런/인터리브 push 로 origin 이 앞서가도 non-ff 거부 안 되게
-          # (enrich.yml 과 동일 패턴, 정품검증 발견 #4). 인증(GH_PAT) 실패는 둘 다 실패 → 스텝 실패로 노출.
-          git push || (git pull --rebase origin main && git push)
+          # 충돌 안전 재시도: 동시 run(enrich/identity)이 같은 public/data 를 push 해 origin 이
+          # 앞서가면 단순 push/rebase 가 충돌로 실패 → 가디언 클린 데이터가 커밋 안 되던 버그(실측 #26).
+          # merge -X ours = 이번 run 이 갓 생성·클린한 데이터를 우선 채택(동시 run 의 변경은 그쪽 run 이
+          # 자체 재적용). 6회 재시도. 이래야 매일 가디언 self-heal 이 반드시 반영(장기 정확도 유지).
+          for i in 1 2 3 4 5 6; do
+            if git push; then echo "pushed"; exit 0; fi
+            echo "push 충돌 — fetch+merge(-X ours) 재시도 $i"
+            git fetch origin main
+            git merge -X ours --no-edit origin/main || { git merge --abort || true; git reset --hard HEAD; }
+            sleep 4
+          done
+          echo "::error::push 6회 실패"; exit 1
 
       - name: Upload raw snapshots (for audit)
         if: always()

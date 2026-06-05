@@ -64,14 +64,19 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # 다른 워크플로우(crawl.yml)가 동안 push 했을 가능성 → rebase 후 push
-          git fetch origin main
-          git rebase origin/main || (git rebase --abort && git reset --hard origin/main && exit 0)
+          # *commit 먼저*(tree clean) 후 충돌 안전 재시도. (dirty tree 서 rebase 먼저 하면 실패 →
+          #  reset --hard 로 enrichment 폐기되던 버그. crawl.yml 과 동일 robust 패턴.)
           git add public/data/ingredients.json
           if git diff --cached --quiet; then
             echo "no enrichment changes"
             exit 0
           fi
           git commit -m "chore(enrich): daily Gemini $(date -u +%Y-%m-%dT%H:%MZ)"
-          # push 충돌 시 한 번 retry
-          git push || (git pull --rebase origin main && git push)
+          for i in 1 2 3 4 5 6; do
+            if git push; then echo "pushed"; exit 0; fi
+            echo "push 충돌 — fetch+merge(-X ours) 재시도 $i"
+            git fetch origin main
+            git merge -X ours --no-edit origin/main || { git merge --abort || true; git reset --hard HEAD; }
+            sleep 4
+          done
+          echo "::error::push 6회 실패"; exit 1
