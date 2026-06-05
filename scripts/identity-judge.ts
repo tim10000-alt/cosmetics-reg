@@ -49,7 +49,7 @@ Respond JSON: verdict ("same"|"different"|"uncertain"), confidence (0..1), reaso
 }
 
 async function ask(model: string, p: string): Promise<{ verdict: string; confidence: number; reason: string } | null> {
-  for (let attempt = 0; attempt < 5; attempt++) {
+  for (let attempt = 0; attempt < 2; attempt++) {   // 빠른 실패(quota 죽으면 행 금지)
     try {
       const res = await ai.models.generateContent({
         model, contents: p,
@@ -59,10 +59,10 @@ async function ask(model: string, p: string): Promise<{ verdict: string; confide
       if (t) return JSON.parse(t);
     } catch (e) {
       const msg = e instanceof Error ? e.message : String(e);
-      if (/429|quota|rate/i.test(msg)) { await sleep(15000); continue; }
+      if (/429|quota|rate/i.test(msg)) { await sleep(6000); continue; }
       console.error("  ask err:", msg.slice(0, 120));
+      break;
     }
-    await sleep(2000);
   }
   return null;
 }
@@ -112,15 +112,24 @@ async function main() {
   const decisions: Record<string, unknown> = existsSync(DECISIONS) ? JSON.parse(readFileSync(DECISIONS, "utf8")).decisions ?? {} : {};
   const key = (a: Ing, b: Ing) => [a.id, b.id].sort().join("|");
 
+  // 하드 시간 예산 + 연속 quota 실패 차단 — 메인 파이프라인(90분 job)을 절대 막지 않음.
+  // 미판단분은 다음 run 이 캐시 이어받아 처리(멱등·증분).
+  const START = Date.now();
+  const BUDGET_MS = Number(process.env.IDJUDGE_BUDGET_MS ?? 300000);   // 5분
+  let consecutiveNull = 0;
   let judged = 0, vetoed = 0, cached = 0;
   for (const [a, b] of pairs) {
     const k = key(a, b);
     if (decisions[k]) { cached++; continue; }
     if (casConflict(a, b)) { decisions[k] = { ko: a.korean_name, a: a.inci_name, b: b.inci_name, verdict: "different", by: "cas-veto" }; vetoed++; continue; }
     if (judged >= MAX_NEW) continue;
+    if (Date.now() - START > BUDGET_MS) { console.log("  ⏱ 시간 예산 도달 — 부분 판단(나머지 다음 run)"); break; }
+    if (consecutiveNull >= 6) { console.log("  ⛔ 연속 quota 실패 — 중단(나머지 다음 run)"); break; }
     const p = prompt(a.korean_name!, a, b);
-    const r1 = await ask(GEMINI_PRIMARY, p); await sleep(3200);
-    const r2 = await ask(GEMINI_SECONDARY, p); await sleep(3200);
+    const r1 = await ask(GEMINI_PRIMARY, p); await sleep(2000);
+    const r2 = await ask(GEMINI_SECONDARY, p); await sleep(2000);
+    if (!r1 && !r2) { consecutiveNull++; continue; }   // quota 죽음 — 기록 말고 다음 run 으로(캐시 안 채움)
+    consecutiveNull = 0;
     const consensusSame = r1?.verdict === "same" && r2?.verdict === "same" && (r1.confidence ?? 0) >= CONF_MIN && (r2.confidence ?? 0) >= CONF_MIN;
     decisions[k] = {
       ko: a.korean_name, a: a.inci_name, b: b.inci_name,

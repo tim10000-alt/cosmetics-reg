@@ -204,14 +204,6 @@ jobs:
         run: node scripts/apply-overrides.cjs
         continue-on-error: true
 
-      # 식별 판단(보수적 Gemini consensus) — 결정론(KCIA코드/CAS/neKey)으로 못 가른 같은 한글표준명
-      # 미병합 후보쌍만 Gemini 듀얼모델이 '동일물질?' 판정. 둘 다 고신뢰 '같음'+CAS충돌 없을 때만
-      # identity-overrides.json 에 병합 링크 추가(data-loader 가 형제로 읽음). 결정 캐시로 멱등·무료.
-      # 로컬은 Gemini 네트워크 차단이라 CI 전용. quota 부족 시 continue-on-error 로 보존.
-      - name: Identity judge (Gemini consensus 동일물질 병합)
-        run: npm run identity:judge
-        continue-on-error: true
-
       # 3-a-2) 품질 가디언(결정론·안전) — 모든 파서·override 후 실행. 불가능 농도값(>100/≤0) 제거 +
       # 오염 성분명·국가 행수 급감 flag(quarantine-names.json / guardian-baseline.json). 한도는 만들지 않음.
       - name: Quality guardian (self-heal + flag)

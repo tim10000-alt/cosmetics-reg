@@ -1,0 +1,57 @@
+name: Identity Judge
+
+# 결정론(KCIA코드/CAS/neKey/canonName)으로 못 가른 "같은 한글표준명·미병합" 후보쌍을
+# 보수적 Gemini 듀얼모델 consensus 로 '동일물질?' 판정 → identity-overrides.json 병합링크.
+# crawl.yml(parse 가 Gemini quota 소모) 과 분리 = 자체 시간대에 fresh quota 확보.
+# 시간 예산(IDJUDGE_BUDGET_MS)으로 절대 행 안 함. 결정 캐시로 멱등·증분(76 백로그를 여러 run 에 소진).
+
+on:
+  schedule:
+    - cron: "0 15 * * *"   # 매일 KST 00:00 (crawl 03:17 / enrich 04:00 과 다른 시간 = quota 충돌 회피)
+  workflow_dispatch:
+  push:                    # 워크플로/판단기 변경 시 즉시 1회(백로그 소진 시작)
+    branches: [main]
+    paths:
+      - '.github/workflows/identity.yml'
+      - 'scripts/identity-judge.ts'
+
+permissions:
+  contents: write
+
+# crawl/enrich 와 동일 그룹 — ingredients/data 동시 push 충돌 방지(직렬화)
+concurrency:
+  group: data-write
+  cancel-in-progress: false
+
+jobs:
+  judge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      CI: "true"
+      IDJUDGE_BUDGET_MS: "600000"   # 10분 하드 컷(타임아웃 전 안전 종료)
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: "npm"
+      - run: npm ci
+
+      - name: Identity judge (Gemini consensus 동일물질 병합)
+        run: npm run identity:judge
+        continue-on-error: true
+
+      - name: Commit identity decisions
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
+          git rebase origin/main || (git rebase --abort && git reset --hard origin/main && exit 0)
+          git add public/data/identity-overrides.json public/data/identity-decisions.json
+          if git diff --cached --quiet; then echo "no identity changes"; exit 0; fi
+          git commit -m "chore(identity): Gemini consensus 판단 $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push || (git pull --rebase origin main && git push)
