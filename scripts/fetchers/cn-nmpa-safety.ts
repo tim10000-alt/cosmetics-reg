@@ -80,8 +80,11 @@ function clean(s: unknown): string {
 }
 
 function extractInciFromEnglish(eng: string): string {
-  // "1-((3-Aminopropyl)amino)-4-(methylamino)anthraquinone (CAS No. 22366-99-0) and its salts"
-  // → INCI = "1-((3-Aminopropyl)amino)-4-(methylamino)anthraquinone"
+  // 소스가 "(INCI: X)" 로 표준 INCI 를 명시하면 그걸 우선 사용(가장 권위). 미사용 시 매칭 실패로
+  // banned 행이 엉뚱한 이름에 붙어 금지물질이 listed 로 보이던 안전결함(예: Isobutylparaben) 수정.
+  const inciTag = eng.match(/\(INCI:\s*([^);]+)\)?/i);
+  if (inciTag && inciTag[1].trim()) return inciTag[1].trim();
+  // "1-((3-Aminopropyl)amino)-...anthraquinone (CAS No. 22366-99-0) and its salts" → 본체명
   return eng.replace(/\(CAS\s*No\.\s*[\d-]+\)/gi, "")
     .replace(/and its salts?/gi, "").trim();
 }
