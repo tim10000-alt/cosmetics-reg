@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-06-05T17:49:58.899Z",
+  "generated_at": "2026-06-05T21:42:13.314Z",
   "totalRegs": 94372,
   "coverage": {
     "AR": 4843,
     "BO": 2160,
     "BR": 4868,
     "CA": 2180,
-    "CN": 13639,
+    "CN": 13640,
     "CO": 2160,
     "EC": 2160,
     "EU": 6786,
@@ -23,7 +23,7 @@
     "VN": 5889
   },
   "restrictedNoLimit": 3835,
-  "statusConflicts": 438,
+  "statusConflicts": 437,
   "quarantinePending": 0,
   "staleCount": 0,
   "staleSources": [],
