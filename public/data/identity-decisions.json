@@ -291,6 +291,45 @@
       "b": "9,10-Anthracenedione, 1-[(2-hydroxyethyl)amino]-4-(methylamino)-",
       "verdict": "different",
       "by": "cas-veto"
+    },
+    "7a4997a6-73e9-4997-b29d-d928c25c01cb|d75814f8-dff1-4b71-bfd4-fc9627e9d84a": {
+      "ko": "곤약",
+      "a": "Amorphophallus konjac K. Koch; Amorphophallus rivieri  （synonym）",
+      "b": "Amorphophallus rivieri Durieu (Amorphophallus konjac) ; Amorphophallus sinensisBelval (Amorphophallus kiusianus)",
+      "m1": null,
+      "m2": {
+        "verdict": "different",
+        "confidence": 0.9,
+        "reason": "Entry A lists Amorphophallus konjac and Amorphophallus rivieri. Entry B lists Amorphophallus rivieri and Amorphophallus sinensis. While Amorphophallus rivieri is common to both, the inclusion of Amorphophallus konjac in A and Amorphophallus sinensis in B indicates different botanical species are potentially included."
+      },
+      "verdict": "different",
+      "by": "gemini-consensus"
+    },
+    "db59ffdb-d616-40b4-af74-68bb01692623|f165639d-b130-4a44-ae39-bb01d7a045be": {
+      "ko": "다이소듐 3,3’-[[1,1’-바이페닐]-4,4‘-다이일비스(아조)]-비스(4-아미노나프탈렌-1-설포네이트)(콩고레드)",
+      "a": "Disodium 3,3'-[[1,1'-biphenyl]-4,4'-diylbis(azo)] bis(4-aminonaphthalene-1- sulphonate)(Congo red)",
+      "b": "Disodium 3,3′-[[1,1′-biphenyl]-4,4′-diylbis(azo)]bis(4-aminonaphthalene- 1-sulphonate) 9",
+      "m1": null,
+      "m2": {
+        "verdict": "same",
+        "confidence": 1,
+        "reason": "Both entries refer to Congo Red, with minor variations in spacing and punctuation. CAS 573-58-0 is the correct CAS for Congo Red."
+      },
+      "verdict": "uncertain",
+      "by": "gemini-consensus"
+    },
+    "4adafb41-bf10-4cdc-9ce6-507ea597bedb|f165639d-b130-4a44-ae39-bb01d7a045be": {
+      "ko": "다이소듐 3,3’-[[1,1’-바이페닐]-4,4‘-다이일비스(아조)]-비스(4-아미노나프탈렌-1-설포네이트)(콩고레드)",
+      "a": "Disodium 3,3'-[[1,1'-biphenyl]-4,4'-diylbis(azo)] bis(4-aminonaphthalene-1- sulphonate)(Congo red)",
+      "b": "Disodium 3,3′-[[1,1′-biphenyl]-4,4′-diylbis(azo)]bis(4-aminonaphthalene- 1-sulphonate)",
+      "m1": {
+        "verdict": "same",
+        "confidence": 1,
+        "reason": "The core chemical name is identical, with minor punctuation differences. Entry A includes the common name 'Congo red' in its INCI, while Entry B provides the CAS number (573-58-0) which corresponds to Congo Red. These are considered the same substance with different annotations/spellings."
+      },
+      "m2": null,
+      "verdict": "uncertain",
+      "by": "gemini-consensus"
     }
   }
 }
