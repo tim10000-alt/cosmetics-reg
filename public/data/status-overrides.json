@@ -121,6 +121,16 @@
       "inci": "Disodium Etidronate",
       "ko": "다이소듐에티드로네이트",
       "reason": "The regulatory text explicitly states allowed concentration limits for hair products (1.5%) and human cleansing products (0.2%), indicating it is restricted rather than banned."
+    },
+    {
+      "ingredient_id": "176e68d0-3500-4692-9a7e-28e42502c536",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Sodium Hydroxymethylglycinate",
+      "ko": "소듐하이드록시메칠글리시네이트",
+      "reason": "The regulatory text specifies a '배합한도' (concentration limit) of 0.5%. In Korean cosmetic regulations, the presence of a concentration limit indicates that the ingredient is allowed up to that concentration, rather than being prohibited. This is a typical condition for a restricted ingredient, not a banned one."
     }
   ]
 }

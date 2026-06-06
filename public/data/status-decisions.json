@@ -298,6 +298,42 @@
       },
       "verdict": "restricted",
       "by": "gemini-consensus"
+    },
+    "86210f1f-17e0-4693-a764-77534ced68e5:KR": {
+      "inci": "Sodium Bisulfite",
+      "ko": "소듐바이설파이트",
+      "country": "KR",
+      "m1": {
+        "verdict": "restricted",
+        "confidence": 1,
+        "reason": "The regulatory text specifies allowed concentration limits for preservative use (0.2% as free SO2) and in oxidative hair dyes (0.67% as free SO2), indicating it is restricted for specific uses rather than banned outright."
+      },
+      "m2": {
+        "verdict": "banned",
+        "confidence": 0.9,
+        "reason": "The text states a concentration limit for specific uses (preservative, oxidative hair dyes) but explicitly prohibits its use in other products ('기타 제품에는 사용금지'). This indicates a ban for general use, despite limited allowances."
+      },
+      "m3": null,
+      "verdict": "banned",
+      "by": "gemini-consensus"
+    },
+    "176e68d0-3500-4692-9a7e-28e42502c536:KR": {
+      "inci": "Sodium Hydroxymethylglycinate",
+      "ko": "소듐하이드록시메칠글리시네이트",
+      "country": "KR",
+      "m1": {
+        "verdict": "restricted",
+        "confidence": 0.9,
+        "reason": "The regulatory text specifies a '배합한도' (concentration limit) of 0.5%. In Korean cosmetic regulations, the presence of a concentration limit indicates that the ingredient is allowed up to that concentration, rather than being prohibited. This is a typical condition for a restricted ingredient, not a banned one."
+      },
+      "m2": {
+        "verdict": "restricted",
+        "confidence": 0.8,
+        "reason": "The text specifies a concentration limit of 0.5%, indicating it is restricted rather than outright banned."
+      },
+      "m3": null,
+      "verdict": "restricted",
+      "by": "gemini-consensus"
     }
   }
 }
