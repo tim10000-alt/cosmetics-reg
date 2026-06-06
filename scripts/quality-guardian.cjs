@@ -104,6 +104,23 @@ function normalizeCas(raw) {                     // {value, action: none|recover
   return artifact ? { value: null, action: "nulled" } : { value: raw, action: "none" };
 }
 
+// inci_name 안에 박힌 CAS 복구 — BR/Mercosur RDC PDF 추출이 CAS 간격을 깨뜨려("84603-50- 9",
+// "5 11 - 7 5 – 1") parseRefCas 가 진짜 CAS 를 놓치고 깨끗한 EINECS(283-252-6, 중간 3자리라 CAS 아님)
+// 를 cas_no 로 오인 → cas_no=EINECS, 진짜 CAS 는 이름에 잔존 → CAS 병합 실패 → 한글명 검색 시 ban 누락
+// (실측: 나도독미나리 Conium 등). 경계 숫자런(letter 로 막힘) 단위로만 despace+dash정규화 후 체크디짓
+// 검증된 CAS 가 *정확히 1개* 일 때만 채택(무관 숫자 병합·모호 케이스 배제 = 분별력). 같은 CAS = 같은
+// 물질이므로 오병합 불가. cas_no 가 이미 유효 CAS 면 호출 안 함(아래 가드).
+function casFromName(name) {
+  if (!name) return null;
+  const set = new Set();
+  const runs = String(name).match(/[\d][\d\s\-–—]*[\d]/g) || [];
+  for (const run of runs) {
+    const compact = run.replace(/[–—]/g, "-").replace(/\s+/g, "");
+    for (const x of compact.match(/\d{2,7}-\d{2}-\d/g) || []) if (casValid(x)) set.add(x);
+  }
+  return set.size === 1 ? [...set][0] : null;  // 0개·복수(모호) → null
+}
+
 function loadJson(p, def) { return fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, "utf8")) : def; }
 
 function main() {
@@ -136,7 +153,7 @@ function main() {
   const ingObj = JSON.parse(fs.readFileSync(path.join(DATA, "ingredients.json"), "utf8"));
   let recovered = 0, ingChanged = false;
   let nameFieldRecovered = 0, nameFieldNulled = 0;       // 보조 표시명(한/중/일) 정리
-  let casRecovered = 0, casNulled = 0, casElementFixed = 0;   // CAS 정규화 + 원소CAS 오기교정
+  let casRecovered = 0, casNulled = 0, casElementFixed = 0, casFromNameFixed = 0;   // CAS 정규화 + 원소CAS 오기교정 + 이름속 CAS 복구
   let nameTrimmed = 0;                                          // 이름 앞뒤 공백 제거
   const corrupt = [];
   // 한 필드의 오염명 복구 시도 — RTL 꼬리 절단 또는 JP matrix-bleed 절단. 회복 결과가 깨끗하면 반환.
@@ -184,6 +201,17 @@ function main() {
       const c = normalizeCas(i.cas_no);
       if (c.action === "recovered") { i.cas_no = c.value; casRecovered++; ingChanged = true; }
       else if (c.action === "nulled") { i.cas_no = c.value; casNulled++; ingChanged = true; }
+    }
+    // cas_no 가 여전히 유효 CAS 가 아니면(EINECS·null·복구실패) inci_name 에 박힌 CAS 복구 시도.
+    // CAS 병합을 살려 BR/Mercosur 한글 쌍둥이로 ban 이 도달하게 함. 한글명이 이미 있는 레코드는
+    // 표준명 보유 = 정상 경로라 건드리지 않음(이름없는 garbage 항목만 대상).
+    if (!i.korean_name) {
+      const cur = String(i.cas_no || "");
+      const hasValid = (cur.match(/\d{2,7}-\d{2}-\d/g) || []).some(casValid);
+      if (!hasValid) {
+        const rec = casFromName(i.inci_name);
+        if (rec) { i.cas_no = rec; casFromNameFixed++; ingChanged = true; }
+      }
     }
   }
   if (ingChanged) fs.writeFileSync(path.join(DATA, "ingredients.json"), JSON.stringify(ingObj));
@@ -265,7 +293,7 @@ function main() {
   console.log(`  불가능값(>100/≤0) 제거: ${overFixed}`);
   console.log(`  오염명 실명 복구(RTL 헤더 + JP matrix): ${recovered}`);
   console.log(`  보조 표시명(한/중/일) 정리: 복구 ${nameFieldRecovered} · null처리 ${nameFieldNulled}`);
-  console.log(`  CAS 정규화: 복구 ${casRecovered} · 깨진값(날짜/0/대시) null ${casNulled} · 원소CAS 오기교정 ${casElementFixed}`);
+  console.log(`  CAS 정규화: 복구 ${casRecovered} · 깨진값(날짜/0/대시) null ${casNulled} · 원소CAS 오기교정 ${casElementFixed} · 이름속CAS 복구 ${casFromNameFixed}`);
   console.log(`  이름 앞뒤 공백 제거: ${nameTrimmed}`);
   console.log(`  격리(복구 불가) 성분명: ${corrupt.length}`);
   console.log(`  🩺 self-heal 후 잔존 가시오염(0이어야 정상): 오염명 ${residualCorrupt} · 공백 ${residualWhitespace}`);
