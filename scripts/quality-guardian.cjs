@@ -151,6 +151,19 @@ function main() {
   // 3) 오염 성분명: RTL 역순 헤더 bleed("Cantharidine N E 4 8 … reb m u n …")는 실명+꼬리쓰레기 →
   //    단일문자 토큰 4+ 연속 시작점에서 잘라 실명 회복(결정론·보수적). 회복 실패분만 격리 flag.
   const ingObj = JSON.parse(fs.readFileSync(path.join(DATA, "ingredients.json"), "utf8"));
+  // 각주마커 collapse — "X(1)"·"X 註" 등 PDF 각주 변형을 *이미 존재하는 clean base "X"* 로 병합.
+  // 강한 안전조건(분별력): strip 결과가 다른 성분의 정확한 이름과 일치 + 그 base 의 각주변형이 단 1개
+  // 일 때만. 여러 변형(KI403(1),(2))은 서로 다른 하위항목 오병합 위험 → 제외. clean base 없으면 제외.
+  const FOOT_RE = /\s*[（(]\s*\d+\s*[)）]\s*$|\s*註\s*$/;
+  const stripFoot = (s) => s.replace(FOOT_RE, "").trim();
+  const normN = (s) => s.toLowerCase().replace(/\s+/g, " ").trim();
+  const cleanNameIds = new Map();
+  for (const i of ingObj.rows) if (i.inci_name && !FOOT_RE.test(i.inci_name)) cleanNameIds.set(normN(i.inci_name), i.id);
+  const footVariantCount = new Map();
+  for (const i of ingObj.rows) if (i.inci_name && FOOT_RE.test(i.inci_name)) {
+    const b = normN(stripFoot(i.inci_name)); footVariantCount.set(b, (footVariantCount.get(b) || 0) + 1);
+  }
+  let footCollapsed = 0;
   let recovered = 0, ingChanged = false;
   let nameFieldRecovered = 0, nameFieldNulled = 0;       // 보조 표시명(한/중/일) 정리
   let casRecovered = 0, casNulled = 0, casElementFixed = 0, casFromNameFixed = 0;   // CAS 정규화 + 원소CAS 오기교정 + 이름속 CAS 복구
@@ -167,6 +180,13 @@ function main() {
     // 이름 위생: 앞뒤 공백(\r\n·\t = 파싱 잔재) 제거. 표시·매칭·중복판정 정확도↑(247건 실측).
     for (const f of ["inci_name", "korean_name", "chinese_name", "japanese_name"]) {
       if (typeof i[f] === "string" && i[f] !== i[f].trim()) { i[f] = i[f].trim(); nameTrimmed++; ingChanged = true; }
+    }
+    // 각주마커 안전 collapse(위 강한 조건 충족 시만) — "X(1)"→"X"(기존 clean base 로 병합).
+    if (typeof i.inci_name === "string" && FOOT_RE.test(i.inci_name)) {
+      const stripped = stripFoot(i.inci_name), sn = normN(stripFoot(i.inci_name));
+      if (stripped && stripped !== i.inci_name && cleanNameIds.has(sn) && cleanNameIds.get(sn) !== i.id && footVariantCount.get(sn) === 1) {
+        i.inci_name = stripped; footCollapsed++; ingChanged = true;
+      }
     }
     // inci_name = 검색 키/제목 — 복구 실패 시 레코드 전체 격리(검색에서 제외).
     if (isCorruptName(i.inci_name)) {
@@ -295,6 +315,7 @@ function main() {
   console.log(`  보조 표시명(한/중/일) 정리: 복구 ${nameFieldRecovered} · null처리 ${nameFieldNulled}`);
   console.log(`  CAS 정규화: 복구 ${casRecovered} · 깨진값(날짜/0/대시) null ${casNulled} · 원소CAS 오기교정 ${casElementFixed} · 이름속CAS 복구 ${casFromNameFixed}`);
   console.log(`  이름 앞뒤 공백 제거: ${nameTrimmed}`);
+  console.log(`  각주마커 안전 collapse(X(1)→X): ${footCollapsed}`);
   console.log(`  격리(복구 불가) 성분명: ${corrupt.length}`);
   console.log(`  🩺 self-heal 후 잔존 가시오염(0이어야 정상): 오염명 ${residualCorrupt} · 공백 ${residualWhitespace}`);
   console.log(`  국가 행수 급감(회귀): ${regressions.length ? regressions.join(", ") : "없음"}`);
