@@ -153,11 +153,14 @@ async function main() {
   };
 
   // 후보 = 대상국 + status banned + MFDS 사용제한 출처 + 한도텍스트.
+  // COUNTRIES env 순서대로 정렬 → "KR 먼저"(최중요 시장) 우선 소진, 그 다음 CN·TW.
+  const order = new Map(COUNTRIES.map((c, i) => [c, i]));
   const candidates = regs.filter(
     (r) => COUNTRIES.includes(r.country_code) && r.status === "banned" &&
       (r.source_document ?? "").includes(SOURCE_MATCH) && r.conditions && LIMIT_RE.test(r.conditions),
-  );
-  console.log(`  후보(${COUNTRIES.join(",")}): ${candidates.length}`);
+  ).sort((a, b) => (order.get(a.country_code)! - order.get(b.country_code)!));
+  const perCountry = COUNTRIES.map((c) => `${c}:${candidates.filter((r) => r.country_code === c).length}`).join(" ");
+  console.log(`  후보(${perCountry}) 총 ${candidates.length}`);
 
   const decisions: Record<string, unknown> = existsSync(DECISIONS)
     ? JSON.parse(readFileSync(DECISIONS, "utf8")).decisions ?? {} : {};
@@ -204,15 +207,24 @@ async function main() {
       continue;
     }
     consecutiveNull = 0; quotaFail = 0;
+    const hi = (x: { confidence?: number } | null) => (x?.confidence ?? 0) >= CONF_MIN;
     const consensusRestricted =
-      r1?.verdict === "restricted" && r2?.verdict === "restricted" &&
-      (r1.confidence ?? 0) >= CONF_MIN && (r2.confidence ?? 0) >= CONF_MIN;
+      r1?.verdict === "restricted" && r2?.verdict === "restricted" && hi(r1) && hi(r2);
+    // 분리(한 모델 restricted / 다른 banned, 둘 다 고신뢰)는 보수적으로 banned 가 기본(안전측).
+    // 단 자동 해결을 위해 *3차 tiebreaker*(primary 재질의) 1회 — restricted 고신뢰면 다수결(2/3)로
+    // restricted 채택, 아니면 banned 유지. veto 는 위에서 이미 처리(진짜 금지는 여기 안 옴).
+    let r3: { verdict: string; confidence: number; reason: string } | null = null;
+    const isSplit = !consensusRestricted &&
+      ((r1?.verdict === "restricted" && hi(r1) && r2?.verdict === "banned") ||
+       (r2?.verdict === "restricted" && hi(r2) && r1?.verdict === "banned"));
+    if (isSplit) { r3 = (await ask(GEMINI_PRIMARY, p)).r; await sleep(2000); }
+    const tiebreakRestricted = isSplit && r3?.verdict === "restricted" && hi(r3);
     decisions[k] = {
       inci: ig.inci_name, ko: ig.korean_name, country: r.country_code,
-      m1: r1 ?? null, m2: r2 ?? null,
-      verdict: consensusRestricted ? "restricted"
+      m1: r1 ?? null, m2: r2 ?? null, m3: r3 ?? null,
+      verdict: (consensusRestricted || tiebreakRestricted) ? "restricted"
         : (r1?.verdict === "banned" || r2?.verdict === "banned" ? "banned" : "uncertain"),
-      by: "gemini-consensus",
+      by: tiebreakRestricted ? "gemini-tiebreak" : "gemini-consensus",
     };
     judged++;
     if (judged % 3 === 0) { console.log(`  판단 ${judged}...`); writeFileSync(DECISIONS, JSON.stringify({ generated: "status-judge", decisions }, null, 2)); }

@@ -111,6 +111,16 @@
       "inci": "4-Nitro-o-Phenylenediamine Sulfate",
       "ko": "황산p-니트로-o-페닐렌디아민",
       "reason": "The regulatory text explicitly permits the ingredient's use in oxidative hair dyes up to 2.0%, indicating a restriction rather than a complete ban."
+    },
+    {
+      "ingredient_id": "6f0dea4d-6d24-42ca-9fe9-f1af4b144d52",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Disodium Etidronate",
+      "ko": "다이소듐에티드로네이트",
+      "reason": "The regulatory text explicitly states allowed concentration limits for hair products (1.5%) and human cleansing products (0.2%), indicating it is restricted rather than banned."
     }
   ]
 }

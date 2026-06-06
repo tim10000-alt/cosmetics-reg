@@ -32,7 +32,7 @@ jobs:
     env:
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       CI: "true"
-      STATUS_COUNTRIES: "KR"          # 1순위 KR 144 먼저(이후 CN·TW 확장)
+      STATUS_COUNTRIES: "KR,CN,TW"    # KR(144) 먼저 소진 후 CN(109)·TW(62) — 판단기가 이 순서로 정렬·처리
       STATUSJUDGE_MAX: "30"           # 지속가능 배치 — 한 run 최대 30건만(quota 독식 방지, 백로그를
                                       # 며칠에 나눠 예측가능 소진·identity/parse 와 quota 공존). 캐시 멱등.
       STATUSJUDGE_BUDGET_MS: "600000"   # 10분 하드 컷(타임아웃 전 안전 종료)

@@ -457,6 +457,13 @@ function CountryCard({ result }: { result: CountryLookupResult }) {
               </ul>
             </div>
           )}
+          {/* status 교정 표기 — 자동 파이프라인이 '사용제한 자료' 오분류를 바로잡은 경우 근거 노출
+              (무인 운용의 감사·투명성: 사용자가 표기 status 의 출처를 확인 가능). */}
+          {result.override_note && /status 교정/.test(result.override_note) && (
+            <div className="rounded-md border border-sky-300 bg-sky-50 px-2 py-1 text-xs text-sky-800 dark:border-sky-700/60 dark:bg-sky-950/40 dark:text-sky-200">
+              ℹ 자동 교정: {result.override_note}
+            </div>
+          )}
           {typeof result.max_concentration === "number" ? (
             <div className="text-zinc-700 dark:text-zinc-300">
               최대 배합한도:{" "}
