@@ -1,83 +1,6 @@
 {
   "generated": "status-judge",
   "decisions": {
-    "3b47dec2-c19e-4ec5-86c2-6127103d137e:KR": {
-      "inci": "Sodium Perborate",
-      "ko": "과붕산나트륨",
-      "country": "KR",
-      "verdict": "banned",
-      "by": "prohibition-veto"
-    },
-    "d15fed26-c5a1-44a9-bf01-616d9d0f7e17:KR": {
-      "inci": "Isobutylparaben",
-      "ko": "아이소부틸파라벤",
-      "country": "KR",
-      "verdict": "banned",
-      "by": "prohibition-veto"
-    },
-    "afa75816-e86e-43a4-8789-c33812627337:KR": {
-      "inci": "Sodium Iodate",
-      "ko": "소듐아이오데이트",
-      "country": "KR",
-      "verdict": "banned",
-      "by": "prohibition-veto"
-    },
-    "ee4ff97b-8fdd-43a8-b678-d7ed9d0fcbbf:KR": {
-      "inci": "Chlorophene",
-      "ko": "클로로펜",
-      "country": "KR",
-      "verdict": "banned",
-      "by": "prohibition-veto"
-    },
-    "835ef5fa-2e24-4b1a-b668-83452fa87baa:KR": {
-      "inci": "Sodium Borate",
-      "ko": "소듐보레이트",
-      "country": "KR",
-      "verdict": "banned",
-      "by": "prohibition-veto"
-    },
-    "1f09854a-c485-4948-add6-ac730805b2b5:KR": {
-      "inci": "Isopropylparaben",
-      "ko": "아이소프로필파라벤",
-      "country": "KR",
-      "verdict": "banned",
-      "by": "prohibition-veto"
-    },
-    "ddabd373-7b0a-41d1-b70e-4bdc77677e4b:KR": {
-      "inci": "Sodium Isobutylparaben",
-      "ko": "소듐아이소부틸파라벤",
-      "country": "KR",
-      "verdict": "banned",
-      "by": "prohibition-veto"
-    },
-    "5b7d2295-c053-4aa7-93bf-d143de12ee95:KR": {
-      "inci": "Sodium Isopropylparaben",
-      "ko": "소듐아이소프로필파라벤",
-      "country": "KR",
-      "verdict": "banned",
-      "by": "prohibition-veto"
-    },
-    "40b557df-eee1-498c-bce4-069e11796fc7:KR": {
-      "inci": "Chloramine T",
-      "ko": "클로라민T",
-      "country": "KR",
-      "verdict": "banned",
-      "by": "prohibition-veto"
-    },
-    "46caeba2-e18c-4abc-8a62-f4e18c6ea826:KR": {
-      "inci": "Zinc Pyrithione",
-      "ko": "징크피리치온",
-      "country": "KR",
-      "verdict": "banned",
-      "by": "prohibition-veto"
-    },
-    "4aa5db5b-12b5-48dc-ac13-ada700b50353:KR": {
-      "inci": "Quaternium-15",
-      "ko": "쿼터늄-15",
-      "country": "KR",
-      "verdict": "banned",
-      "by": "prohibition-veto"
-    },
     "40fd3dfc-a8f3-46da-8f67-d73a05490936:KR": {
       "inci": "Dilithium Oxalate",
       "ko": "다이리튬옥살레이트",
@@ -425,17 +348,15 @@
       "inci": "Phenyl Mercuric Chloride",
       "ko": "페닐머큐릭클로라이드",
       "country": "CN",
-      "verdict": "restricted",
-      "by": "claude-judge",
-      "why": "제품/용도별 허용농도 명시"
+      "verdict": "banned",
+      "by": "prohibition-veto"
     },
     "9d812b4b-e557-442e-b38c-c2fbbf7e3663:CN": {
       "inci": "Phenyl Mercuric Borate",
       "ko": "페닐머큐릭보레이트",
       "country": "CN",
-      "verdict": "restricted",
-      "by": "claude-judge",
-      "why": "제품/용도별 허용농도 명시"
+      "verdict": "banned",
+      "by": "prohibition-veto"
     },
     "36b03669-2bb5-4045-b03e-7909acb0c3c2:CN": {
       "inci": "Alkali sulfides",
@@ -717,9 +638,8 @@
       "inci": "Phenyl Mercuric Benzoate",
       "ko": "페닐머큐릭벤조에이트",
       "country": "CN",
-      "verdict": "restricted",
-      "by": "claude-judge",
-      "why": "제품/용도별 허용농도 명시"
+      "verdict": "banned",
+      "by": "prohibition-veto"
     },
     "f0aa757a-4ac4-4b02-bb1a-1bba497398cb:CN": {
       "inci": "Aluminum Zirconium Tetrachlorohydrex PG",
@@ -1079,17 +999,15 @@
       "inci": "Phenyl Mercuric Bromide",
       "ko": "페닐머큐릭브로마이드",
       "country": "CN",
-      "verdict": "restricted",
-      "by": "claude-judge",
-      "why": "제품/용도별 허용농도 명시"
+      "verdict": "banned",
+      "by": "prohibition-veto"
     },
     "e92e4fe7-a2c0-45a4-812c-e03c0530b562:CN": {
       "inci": "Phenyl Mercuric Acetate",
       "ko": "페닐머큐릭아세테이트",
       "country": "CN",
-      "verdict": "restricted",
-      "by": "claude-judge",
-      "why": "제품/용도별 허용농도 명시"
+      "verdict": "banned",
+      "by": "prohibition-veto"
     },
     "357c0887-710b-4bfe-a145-48ea97d3aded:CN": {
       "inci": "Sodium Nitrite",
@@ -1194,6 +1112,13 @@
       "by": "claude-judge",
       "why": "허용 배합한도(농도) 명시"
     },
+    "3b47dec2-c19e-4ec5-86c2-6127103d137e:KR": {
+      "inci": "Sodium Perborate",
+      "ko": "과붕산나트륨",
+      "country": "KR",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
     "056de540-c6ff-4726-9694-ab2b32b1a261:KR": {
       "inci": "Borates (Sodium borate, tetraborate)",
       "ko": "보레이트류(소듐보레이트, 테트라보레이트)",
@@ -1201,6 +1126,13 @@
       "verdict": "restricted",
       "by": "claude-judge",
       "why": "허용 배합한도(농도) 명시"
+    },
+    "d15fed26-c5a1-44a9-bf01-616d9d0f7e17:KR": {
+      "inci": "Isobutylparaben",
+      "ko": "아이소부틸파라벤",
+      "country": "KR",
+      "verdict": "banned",
+      "by": "prohibition-veto"
     },
     "86210f1f-17e0-4693-a764-77534ced68e5:KR": {
       "inci": "Sodium Bisulfite",
@@ -1290,6 +1222,13 @@
       "by": "claude-judge",
       "why": "제품/용도별 허용농도 명시"
     },
+    "afa75816-e86e-43a4-8789-c33812627337:KR": {
+      "inci": "Sodium Iodate",
+      "ko": "소듐아이오데이트",
+      "country": "KR",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
     "e9caa9bf-83c7-4748-979f-a9fefa399967:KR": {
       "inci": "2-Amino-3-hydroxypyridine",
       "ko": "2-아미노-3-히드록시피리딘",
@@ -1321,6 +1260,13 @@
       "verdict": "banned",
       "by": "claude-judge",
       "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "ee4ff97b-8fdd-43a8-b678-d7ed9d0fcbbf:KR": {
+      "inci": "Chlorophene",
+      "ko": "클로로펜",
+      "country": "KR",
+      "verdict": "banned",
+      "by": "prohibition-veto"
     },
     "fbfaf3ee-556d-4ae7-9442-05947cf44b93:KR": {
       "inci": "Diisobutyl Oxalate",
@@ -1402,6 +1348,13 @@
       "by": "claude-judge",
       "why": "제품/용도별 허용농도 명시"
     },
+    "835ef5fa-2e24-4b1a-b668-83452fa87baa:KR": {
+      "inci": "Sodium Borate",
+      "ko": "소듐보레이트",
+      "country": "KR",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
     "ce9c5179-ba47-476f-a15b-bb7ebfd70c8d:KR": {
       "inci": "Magnesium Peroxide",
       "ko": "마그네슘퍼옥사이드",
@@ -1417,6 +1370,13 @@
       "verdict": "restricted",
       "by": "claude-judge",
       "why": "허용 배합한도(농도) 명시"
+    },
+    "1f09854a-c485-4948-add6-ac730805b2b5:KR": {
+      "inci": "Isopropylparaben",
+      "ko": "아이소프로필파라벤",
+      "country": "KR",
+      "verdict": "banned",
+      "by": "prohibition-veto"
     },
     "dba92452-f840-45ee-b78b-2ef91e46ee7d:KR": {
       "inci": "1,5-Naphthalenediol",
@@ -1506,6 +1466,13 @@
       "by": "claude-judge",
       "why": "허용 배합한도(농도) 명시"
     },
+    "ddabd373-7b0a-41d1-b70e-4bdc77677e4b:KR": {
+      "inci": "Sodium Isobutylparaben",
+      "ko": "소듐아이소부틸파라벤",
+      "country": "KR",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
     "73134c54-53f2-435d-a3bd-4fddae5809e4:KR": {
       "inci": "Quinine and its salts",
       "ko": "퀴닌 및 그 염류",
@@ -1553,6 +1520,13 @@
       "verdict": "restricted",
       "by": "claude-judge",
       "why": "허용 배합한도(농도) 명시"
+    },
+    "5b7d2295-c053-4aa7-93bf-d143de12ee95:KR": {
+      "inci": "Sodium Isopropylparaben",
+      "ko": "소듐아이소프로필파라벤",
+      "country": "KR",
+      "verdict": "banned",
+      "by": "prohibition-veto"
     },
     "cec13efc-8459-492f-9893-bb023ff4fabc:KR": {
       "inci": "Diethyl Oxalate",
@@ -1634,6 +1608,13 @@
       "by": "claude-judge",
       "why": "제품/용도별 허용농도 명시"
     },
+    "40b557df-eee1-498c-bce4-069e11796fc7:KR": {
+      "inci": "Chloramine T",
+      "ko": "클로라민T",
+      "country": "KR",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
     "deee5fdd-ce27-4d6c-90c6-f9c81a25c2c5:KR": {
       "inci": "2,6-Diaminopyridine",
       "ko": "2,6-디아미노피리딘",
@@ -1705,6 +1686,13 @@
       "verdict": "restricted",
       "by": "claude-judge",
       "why": "제품/용도별 허용농도 명시"
+    },
+    "46caeba2-e18c-4abc-8a62-f4e18c6ea826:KR": {
+      "inci": "Zinc Pyrithione",
+      "ko": "징크피리치온",
+      "country": "KR",
+      "verdict": "banned",
+      "by": "prohibition-veto"
     },
     "8db24f41-6488-4cf5-bd65-a40a59f4f92a:KR": {
       "inci": "PVP-Hydrogen Peroxide",
@@ -2010,6 +1998,13 @@
       "by": "claude-judge",
       "why": "제품/용도별 허용농도 명시"
     },
+    "4aa5db5b-12b5-48dc-ac13-ada700b50353:KR": {
+      "inci": "Quaternium-15",
+      "ko": "쿼터늄-15",
+      "country": "KR",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
     "ba52b71d-33a9-4b05-9304-c0f8e536bcd9:KR": {
       "inci": "2,4-Diaminophenol HCl",
       "ko": "염산2,4-디아미노페놀",
@@ -2137,6 +2132,472 @@
       "verdict": "restricted",
       "by": "claude-judge",
       "why": "허용 배합한도(농도) 명시"
+    },
+    "b5c03837-fc20-4ab8-8a2b-d640761cbe44:TW": {
+      "inci": "Lithol Red, Aka205, CI 15630",
+      "ko": "적색205호",
+      "country": "TW",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "fda489f5-be0a-4aa0-a6d8-cc85d8fd0abe:TW": {
+      "inci": "Deep Maroon, D&C Red No. 34, Red 34 Lake, CI 15880:1",
+      "ko": "적색220호",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "b80bde5b-61a5-4934-99a4-2e560057b4cd:TW": {
+      "inci": "Carbon Black, D&C Black No. 2, CI 77266",
+      "ko": "카본블랙",
+      "country": "TW",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "a0f7f6f1-2b0b-4af8-8766-d30273cbc345:TW": {
+      "inci": "Helindone Pink CN, D&C Red No. 30, Red 30 Lake, Aka226, VAT RED 1, CI 73360",
+      "ko": "적색226호",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "ac736c98-37be-4863-a994-640b27b849cf:TW": {
+      "inci": "Quinizarine Green SS, D&C Green No. 6, Midori202, CI 61565",
+      "ko": "녹색202호",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "0afebd58-d487-4bb7-8f5c-f675d2704430:TW": {
+      "inci": "CI 60725",
+      "ko": "CI 60725",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "51d04747-b65e-42e2-b234-de232425f43e:TW": {
+      "inci": "CI 61565",
+      "ko": "CI 61565",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "d9836068-e9d8-4a14-bd89-823374735cee:TW": {
+      "inci": "CI 77947",
+      "ko": "CI 77947",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "2d12c622-93a6-4963-a506-de7c1e81dd53:TW": {
+      "inci": "CI 74160",
+      "ko": "CI 74160",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "cdc3523f-ca9d-4954-9645-058a8dd632ef:TW": {
+      "inci": "CI 73360",
+      "ko": "CI 73360",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "896a006e-52ac-4bea-93dc-57b8631883eb:TW": {
+      "inci": "CI 45380",
+      "ko": "CI 45380",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "358dcbf3-ef7e-4a2a-8d5f-10bb6cc22940:TW": {
+      "inci": "CI 45350",
+      "ko": "CI 45350",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "ac61c81e-c500-45a0-bcfc-f7a3da88f6b9:TW": {
+      "inci": "CI 15630",
+      "ko": "CI 15630",
+      "country": "TW",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "b4ff6426-ad24-4e40-8af9-4dfa721cdb8d:TW": {
+      "inci": "CI 58000",
+      "ko": "CI 58000",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "c1942c88-0fe9-4d60-bdb5-b5a2324943b8:TW": {
+      "inci": "CI 45430",
+      "ko": "CI 45430",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "176e68d0-3500-4692-9a7e-28e42502c536:TW": {
+      "inci": "Sodium Hydroxymethylglycinate",
+      "ko": "소듐하이드록시메칠글리시네이트",
+      "country": "TW",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "c620c4bc-3b3d-4a4c-9512-196b081c443a:TW": {
+      "inci": "CI 45370",
+      "ko": "CI 45370",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "7bc5724b-f847-4ebb-8120-54c60cef989f:TW": {
+      "inci": "CI 42051",
+      "ko": "CI 42051",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "5d1a786b-0175-4732-b376-940161e0ba9c:TW": {
+      "inci": "CI 27755",
+      "ko": "CI 27755",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "3f7a7866-5c62-444d-85aa-836505a0345d:TW": {
+      "inci": "CI 15880",
+      "ko": "CI 15880",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "fd4aaabf-a6f2-4e0e-971f-e5438d38d4ed:TW": {
+      "inci": "CI 15865",
+      "ko": "CI 15865",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "275c0afe-d052-483f-8477-ed269313a8b4:TW": {
+      "inci": "CI 14700",
+      "ko": "CI 14700",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "a9f31503-5103-4534-ab1b-244c59836664:TW": {
+      "inci": "CI 11920",
+      "ko": "CI 11920",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "86efa188-e97c-4cde-bcdf-81c8b488a0f9:TW": {
+      "inci": "Pyridine",
+      "ko": "피리딘",
+      "country": "TW",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "10138630-3386-4f48-b1cb-50e8712130f3:TW": {
+      "inci": "Methenamine",
+      "ko": "메텐아민",
+      "country": "TW",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "528d4ce7-ef9d-4ed2-8208-ad3df1a20a90:TW": {
+      "inci": "Ponceau SX, FD&C Red No. 4, Red 4 Lake, Aka504, FOOD RED 1, CI 14700",
+      "ko": "적색504호",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "771cb7a7-9393-48f8-98f9-766084a50992:TW": {
+      "inci": "Tetrabromofluorescein, D&C Red No. 21, Red 21 Lake, Aka223, CI 45380:2",
+      "ko": "적색223호",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "5f1b1d14-4057-4a01-91b8-432e5f48b80c:TW": {
+      "inci": "4-Methylbenzylidene Camphor",
+      "ko": "4-메칠벤질리덴캠퍼",
+      "country": "TW",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "1e28ae3b-25e0-4300-a695-ead3077009b3:TW": {
+      "inci": "Amaranth, Aka2, Acid Red 27 Aluminum Lake, FOOD RED 9, CI 16185",
+      "ko": "적색2호",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "688eba02-71ea-4cd7-beb6-895c14039d87:TW": {
+      "inci": "Piroctone Olamine",
+      "ko": "피록톤올아민",
+      "country": "TW",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "ee4ff97b-8fdd-43a8-b678-d7ed9d0fcbbf:TW": {
+      "inci": "Chlorophene",
+      "ko": "클로로펜",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "ffa3935b-3765-4b41-8f4e-f179f972d11e:TW": {
+      "inci": "Lippia Citriodora Flower/Leaf/Stem Oil",
+      "ko": "레몬버베나꽃/잎/줄기오일",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "5df31ef0-1aa0-4ae5-b160-a1ba45fc2f80:TW": {
+      "inci": "Lippia Citriodora Leaf Oil",
+      "ko": "레몬버베나잎오일",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "73865be7-f6eb-4062-a1bf-559f8f236e6f:TW": {
+      "inci": "Fast Green FCF, FD&C Green No. 3, Green 3 Lake, Midori3, CI 42053",
+      "ko": "녹색3호",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "22058463-63eb-4f18-901d-bf3c79171db8:TW": {
+      "inci": "Selenium",
+      "ko": "셀레늄",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "8ba06f2b-84dc-47f8-ae9c-55056008295c:TW": {
+      "inci": "MEA-Benzoate",
+      "ko": "엠이에이-벤조에이트",
+      "country": "TW",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "0ea81c0f-15ac-4175-b270-433377cf212b:TW": {
+      "inci": "Urea Peroxide",
+      "ko": "우레아퍼옥사이드",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "b907078d-989a-4ee6-b219-935534aa90c5:TW": {
+      "inci": "Phthalocyanine Blue, Ao404, PIGMENT BLUE 15, CI 74160",
+      "ko": "청색404호",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "f24201bc-22ef-4b4f-8638-d243089e2979:TW": {
+      "inci": "Phenyl Mercuric Benzoate",
+      "ko": "페닐머큐릭벤조에이트",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "89d6c4d0-2e71-4f32-b5e5-1c6c69e62a86:TW": {
+      "inci": "Eosine YSK, D&C Red No. 22, Aka230(1), CI 45380",
+      "ko": "적색230호의(2)",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "7dd8ee92-35a7-448c-b20e-47152c0df94f:TW": {
+      "inci": "Aka3, CI 45430",
+      "ko": "적색3호",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "40b557df-eee1-498c-bce4-069e11796fc7:TW": {
+      "inci": "Chloramine T",
+      "ko": "클로라민T",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "c48adb5a-47e4-47ac-bc6b-51aa8eb91863:TW": {
+      "inci": "Lippia Citriodora Leaf/Flower Oil",
+      "ko": "레몬버베나잎/꽃오일",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "13852d5b-0b76-4037-a9d7-981d39f36547:TW": {
+      "inci": "Dibromofluorescein, D&C Orange No. 5, Daidai201, CI 45370:1",
+      "ko": "등색201호",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "f5db8f89-2ca3-4262-94bc-73c9555a6bf3:TW": {
+      "inci": "Strontium",
+      "ko": "스트론튬",
+      "country": "TW",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "e492a4e1-ea0a-422f-8a83-69fc66c9dd6a:TW": {
+      "inci": "Uranine, D&C Yellow No. 8, Acid Yellow 73 Sodium Salt, Ki202(2), CI 45350",
+      "ko": "황색202호의(1)",
+      "country": "TW",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "4df3636f-3a05-4837-86c1-965d8719c73f:TW": {
+      "inci": "Naphthalene",
+      "ko": "나프탈렌",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "da16a500-8edf-4b03-9075-cb958505b266:TW": {
+      "inci": "Thimerosal",
+      "ko": "티메로살",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "1e662c35-f39d-4570-bab0-89a606946138:TW": {
+      "inci": "Fluorescein, D&C Yellow No. 7, Ki201, CI 45350:1",
+      "ko": "황색201호",
+      "country": "TW",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "d431c911-76e4-43dc-a39c-a492ae766b9e:TW": {
+      "inci": "Benzene",
+      "ko": "벤젠",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "e1828cd2-38ec-4dd9-b1e3-a2e359c9799d:TW": {
+      "inci": "Permaton Red, D&C Red No. 36, Red 36 Lake, Aka228, PIGMENT RED 4, CI 12085",
+      "ko": "적색228호",
+      "country": "TW",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "ed25197b-d4b1-4c6a-822e-2080f8227abe:TW": {
+      "inci": "Pigment Red 5, CI 12490",
+      "ko": "피그먼트적색5호",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "02ba611d-ad95-4212-9208-877fcf12ec69:TW": {
+      "inci": "Eosine YS, D&C Red No. 22, Red 22 Lake, Pigment Red 90:1 Aluminum Lake, Aka230(1), CI 45380",
+      "ko": "적색103호의(1)",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "e92e4fe7-a2c0-45a4-812c-e03c0530b562:TW": {
+      "inci": "Phenyl Mercuric Acetate",
+      "ko": "페닐머큐릭아세테이트",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "4aa5db5b-12b5-48dc-ac13-ada700b50353:TW": {
+      "inci": "Quaternium-15",
+      "ko": "쿼터늄-15",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "ec3e1630-30cf-4f8e-8d73-ed21381c43a4:TW": {
+      "inci": "Uranine K, Ki202(2), CI 45350",
+      "ko": "황색202호의(2)",
+      "country": "TW",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "ca2ac2bd-a963-42be-85b4-45b97008e924:TW": {
+      "inci": "CI 77266",
+      "ko": "CI 77266",
+      "country": "TW",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "4ecbcb91-caac-4b1e-9a65-6f1582175dbf:TW": {
+      "inci": "CI 42053",
+      "ko": "CI 42053",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "1d358b0f-12ba-4797-b9c2-7c724366fcb2:TW": {
+      "inci": "CI 16185",
+      "ko": "CI 16185",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "b08e8d00-53fe-4f5c-aa1e-5c32920bc871:TW": {
+      "inci": "CI 12085",
+      "ko": "CI 12085",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "1b5236cb-40e4-40f7-a0d3-084c1cf0a482:TW": {
+      "inci": "MEA-Undecylenate",
+      "ko": "엠이에이-운데실레네이트",
+      "country": "TW",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "f6455095-1803-4bac-8332-2e4e1105fd3a:TW": {
+      "inci": "Alizurine Purple SS, D&C Violet No. 2, Murasaki201, CI 60725",
+      "ko": "자색201호",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
     }
   }
 }

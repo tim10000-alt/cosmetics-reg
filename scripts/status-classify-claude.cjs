@@ -30,6 +30,12 @@ const validCas = (raw) => String(raw || "").match(/\d{2,7}-\d{2}-\d/g) || [];
 const canon = (s) => s.toLowerCase().replace(/[；;]/g, ",").replace(/\s*,\s*/g, ",").replace(/\s+/g, " ").replace(/[,\s]*\(\s*cas[^)]*\)/g, "").replace(/[,\s]+c\.?i\.?\s*\d{4,6}/g, "").replace(/[,\s]+$/, "").trim();
 const PROHIB = /Annex II|Prohibited|California AB|표1[^\n]*금지|사용 금지 물질|Comunidad Andina|EUR-Lex 1223/i;
 const LIMIT = /배합한도|최대사용농도|허용된 최대농도/;
+// 중금속/고독성 명시 veto — stale 미량한도(예 수은 0.007%)여도 사실상 금지라 절대 restricted 금지.
+// 권위 annex 가 cas-null/동명변형으로 못 잡는 누수 차단(분별력 안전망). 이름 기반(보수적·광범위).
+// 명백히 *항상 금지*인 중금속/독성(화장품 restricted 용도 없음)만. selenium(Selenium Sulfide
+// 비듬약 restricted)·strontium(Thioglycolate 제모제)·zirconium(Al-Zr 발한억제)·naphthalene
+// (naphthalenediol 염모제)·benzene 은 restricted 용도 있거나 CAS-annex veto 가 처리하므로 제외(오veto 방지).
+const TOXIC = /mercur|수은|水銀|thimerosal|치메로살|thallium|탈륨|arsenic|비소|砷|cadmium|카드뮴|鎘|lead acetate|연\s*아세|beryll|베릴/i;
 
 function load() {
   const ing = J("ingredients.json").rows;
@@ -43,7 +49,7 @@ function load() {
     const ig = byId.get(r.ingredient_id);
     if (ig) { for (const c of validCas(ig.cas_no)) banCas.add(c); if (ig.inci_name) banName.add(canon(ig.inci_name)); }
   }
-  const vetoed = (ig) => banId.has(ig.id) || validCas(ig.cas_no).some((c) => banCas.has(c)) || (ig.inci_name && banName.has(canon(ig.inci_name)));
+  const vetoed = (ig) => banId.has(ig.id) || validCas(ig.cas_no).some((c) => banCas.has(c)) || (ig.inci_name && banName.has(canon(ig.inci_name))) || (ig.inci_name && TOXIC.test(ig.inci_name));
   return { ing, byId, all, vetoed };
 }
 
