@@ -63,7 +63,7 @@ for (const i of ingredients){ const cn=i.inci_name?canonName(i.inci_name):""; if
 const siblingIds=new Map();
 for (const i of ingredients){ const set=new Set([i.id]); const cn=i.inci_name?canonName(i.inci_name):""; if(cn)for(const id of nameToIds.get(cn)??[])set.add(id); if(i.cas_no)for(const c of casTokens(i.cas_no))for(const id of casToIds.get(c)??[])set.add(id); if(i.kcia_code)for(const id of codeToIds.get(String(i.kcia_code).trim())??[])set.add(id); for(const id of identityLinks.get(i.id)??[])set.add(id); if(i.korean_name){const ne=i.inci_name?neKey(i.inci_name):"";if(ne&&ne.length>=4)for(const id of neKorToIds.get(ne+"|"+i.korean_name.trim())??[])set.add(id);} if(i.korean_name&&cn){for(const e of korToIngr.get(i.korean_name.trim())??[]){if(e.id!==i.id&&isSynPrefix(cn,e.cn))set.add(e.id);}} if(set.size>1)siblingIds.set(i.id,Array.from(set)); }
 
-function sanitize(s){return s.replace(/[,()%_\\"]/g," ").trim();}
+function sanitize(s){return s.replace(/[,()%_\\"]/g," ").replace(/\s+/g," ").trim();}
 function findIngredient(query){
   const safe=sanitize(query).toLowerCase(); if(!safe)return null;
   const inci=byInciLower.get(safe); if(inci)return inci;
@@ -71,11 +71,11 @@ function findIngredient(query){
   if(/^\d{1,7}-\d{2}-\d$/.test(query.trim())){const cas=byCas.get(query.trim());if(cas)return cas;}
   let best=null,bestScore=Infinity;
   for(const ing of ingredients){
-    const inci=ing.inci_name?ing.inci_name.toLowerCase():null;
-    const kor=ing.korean_name?ing.korean_name.toLowerCase():null;
+    const inci=ing.inci_name?sanitize(ing.inci_name.toLowerCase()):null;
+    const kor=ing.korean_name?sanitize(ing.korean_name.toLowerCase()):null;
     let score=Infinity;
-    if(inci&&inci.includes(safe))score=Math.min(score,(inci.startsWith(safe)?0:1000)+inci.length);
-    if(kor&&kor.includes(safe))score=Math.min(score,(kor.startsWith(safe)?0:1000)+kor.length);
+    if(inci&&inci.includes(safe))score=Math.min(score,(inci===safe?0:inci.startsWith(safe)?1:1000)+inci.length);
+    if(kor&&kor.includes(safe))score=Math.min(score,(kor===safe?0:kor.startsWith(safe)?1:1000)+kor.length);
     if(ing.chinese_name&&ing.chinese_name.includes(query))score=Math.min(score,500+ing.chinese_name.length);
     if(ing.japanese_name&&ing.japanese_name.includes(query))score=Math.min(score,500+ing.japanese_name.length);
     if(score===Infinity&&ing.synonyms){for(const syn of ing.synonyms){const s=syn.toLowerCase();if(s.includes(safe)){score=2000+(s.startsWith(safe)?0:1000)+s.length;break;}}}

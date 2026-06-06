@@ -82,7 +82,7 @@ export interface LookupResponse {
 }
 
 function sanitize(s: string): string {
-  return s.replace(/[,()%_\\"]/g, " ").trim();
+  return s.replace(/[,()%_\\"]/g, " ").replace(/\s+/g, " ").trim();
 }
 
 function findIngredientSync(
@@ -112,11 +112,13 @@ function findIngredientSync(
   let best: Ingredient | null = null;
   let bestScore = Infinity;
   for (const ing of ds.ingredients) {
-    const inci = ing.inci_name ? ing.inci_name.toLowerCase() : null;
-    const kor = ing.korean_name ? ing.korean_name.toLowerCase() : null;
+    // 질의(safe)와 동일 정규화(쉼표/괄호→공백·공백압축) 한 이름으로 비교 — 비대칭으로 인해
+    // 전체명("Borates (Sodium borate, tetraborate)" 등 쉼표/괄호 포함)이 검색 미도달이던 버그 수정.
+    const inci = ing.inci_name ? sanitize(ing.inci_name.toLowerCase()) : null;
+    const kor = ing.korean_name ? sanitize(ing.korean_name.toLowerCase()) : null;
     let score = Infinity;
-    if (inci && inci.includes(safe)) score = Math.min(score, (inci.startsWith(safe) ? 0 : 1000) + inci.length);
-    if (kor && kor.includes(safe)) score = Math.min(score, (kor.startsWith(safe) ? 0 : 1000) + kor.length);
+    if (inci && inci.includes(safe)) score = Math.min(score, (inci === safe ? 0 : inci.startsWith(safe) ? 1 : 1000) + inci.length);
+    if (kor && kor.includes(safe)) score = Math.min(score, (kor === safe ? 0 : kor.startsWith(safe) ? 1 : 1000) + kor.length);
     if (ing.chinese_name && ing.chinese_name.includes(query)) score = Math.min(score, 500 + ing.chinese_name.length);
     if (ing.japanese_name && ing.japanese_name.includes(query)) score = Math.min(score, 500 + ing.japanese_name.length);
     // 5) synonym 매칭 — 통용명(예: "Bronopol")으로도 도달. 이름(INCI/한/중/일) 어디에도

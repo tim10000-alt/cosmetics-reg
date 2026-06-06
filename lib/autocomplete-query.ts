@@ -7,7 +7,7 @@ export interface Suggestion {
 }
 
 function sanitize(s: string): string {
-  return s.replace(/[,()%_\\"]/g, " ").trim();
+  return s.replace(/[,()%_\\"]/g, " ").replace(/\s+/g, " ").trim();
 }
 
 export async function fetchSuggestions(rawQuery: string, signal?: AbortSignal): Promise<Suggestion[]> {
