@@ -1,0 +1,70 @@
+name: Status Judge
+
+# "사용제한 자료" 출처에서 status=banned 인데 conditions 에 배합한도가 있는 행(오분류 후보)을
+# 보수적 Gemini 듀얼모델 consensus 로 banned vs restricted 판정 → restricted 확정만 교정
+# (status-overrides.json, data-loader 가 row.status 교정). 권위 금지 annex 등재(파라벤형)는 결정론
+# veto 로 절대 교정 안 함=검토큐. crawl/enrich/identity 와 다른 시간대 = fresh Gemini quota.
+# 시간 예산(STATUSJUDGE_BUDGET_MS)으로 절대 행 안 함. 캐시로 멱등·증분(KR 144 부터, 여러 run 소진).
+
+on:
+  schedule:
+    - cron: "0 16 * * *"   # 매일 KST 01:00 (identity 00:00 / crawl 03:17 / enrich 04:00 과 분리)
+  workflow_dispatch:
+  push:                    # 워크플로/판단기 변경 시 즉시 1회(백로그 소진 시작)
+    branches: [main]
+    paths:
+      - '.github/workflows/status.yml'
+      - 'scripts/status-judge.ts'
+
+permissions:
+  contents: write
+
+# 독립 그룹 — crawl/enrich(data-write)·identity(identity-write) 와 분리. status-*.json 만 쓰고
+# commit 은 먼저-commit→push(실패 시 merge -X ours 재시도)라 동시 실행해도 안전.
+concurrency:
+  group: status-write
+  cancel-in-progress: false
+
+jobs:
+  judge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      CI: "true"
+      STATUS_COUNTRIES: "KR"          # 1순위 KR 144 먼저(이후 CN·TW 확장)
+      STATUSJUDGE_MAX: "30"           # 지속가능 배치 — 한 run 최대 30건만(quota 독식 방지, 백로그를
+                                      # 며칠에 나눠 예측가능 소진·identity/parse 와 quota 공존). 캐시 멱등.
+      STATUSJUDGE_BUDGET_MS: "600000"   # 10분 하드 컷(타임아웃 전 안전 종료)
+      STATUSJUDGE_QUOTA_STOP: "3"     # quota 3연속 실패 = 오늘 소진 → 즉시 종료(무의미한 spin·CI 분 낭비 방지)
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: "npm"
+      - run: npm ci
+
+      - name: Status judge (Gemini consensus banned↔restricted)
+        run: npm run status:judge
+        continue-on-error: true
+
+      - name: Commit status decisions
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # 판단기가 파일을 수정(uncommitted)함 → *먼저 commit*(tree clean) 후 rebase/push.
+          # (dirty tree 에서 rebase 하면 실패해 verdict 유실 — identity #3 교훈.)
+          git add public/data/status-overrides.json public/data/status-decisions.json
+          if git diff --cached --quiet; then echo "no status changes"; exit 0; fi
+          git commit -m "chore(status): Gemini consensus banned↔restricted 판단 $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3 4 5 6; do
+            if git push; then echo "pushed"; exit 0; fi
+            echo "push 충돌 — fetch+merge(-X ours) 재시도 $i"
+            git fetch origin main
+            git merge -X ours --no-edit origin/main || { git merge --abort || true; git reset --hard HEAD; }
+            sleep 4
+          done
+          echo "::error::push 6회 실패"; exit 1

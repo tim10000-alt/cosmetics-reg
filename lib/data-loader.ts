@@ -158,6 +158,24 @@ async function loadDataset(): Promise<Dataset> {
   );
   const regulations: Regulation[] = regPayloads.flatMap((p) => p.rows);
 
+  // status 판단기(Gemini consensus)가 'restricted' 로 확정한 banned 오분류 교정 — "사용제한 자료"가
+  // 실제 제한물질을 banned 로 잘못 매핑한 행(과산화수소형)만 restricted 로 바로잡음. 금지annex veto·
+  // uncertain 은 제외(파라벤형 금지물질을 허용으로 바꾸지 않음). 원본 JSON 무변경(가역) — 로드시 적용.
+  type StatusCorrection = { ingredient_id: string; country_code: string; from: string; to: string; source_match?: string; reason?: string };
+  const statusCorr = new Map<string, StatusCorrection>();
+  for (const c of (await fetchJson<{ corrections: StatusCorrection[] }>("/data/status-overrides.json").catch(() => ({ corrections: [] }))).corrections ?? []) {
+    if (c?.ingredient_id && c?.country_code) statusCorr.set(`${c.ingredient_id}:${c.country_code}`, c);
+  }
+  if (statusCorr.size) {
+    for (const r of regulations) {
+      const c = statusCorr.get(`${r.ingredient_id}:${r.country_code}`);
+      if (!c || r.status !== c.from) continue;
+      if (c.source_match && !(r.source_document ?? "").includes(c.source_match)) continue;
+      r.status = c.to;
+      r.override_note = r.override_note ?? `status 교정(${c.from}→${c.to}): ${c.reason ?? "사용제한 자료 오분류"}`;
+    }
+  }
+
   const ingredientById = new Map<string, Ingredient>();
   const ingredientByInciLower = new Map<string, Ingredient>();
   const ingredientByKoreanLower = new Map<string, Ingredient>();

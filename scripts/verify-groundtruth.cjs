@@ -17,6 +17,18 @@ for (const c of countries) {
   try { regs.push(...J(`regulations/${c.code}.json`).rows); } catch {}
 }
 
+// status 판단기 교정 미러(data-loader 와 동일) — banned 오분류를 restricted 로 교정.
+try {
+  const corr = new Map();
+  for (const c of (J("status-overrides.json").corrections || [])) if (c && c.ingredient_id && c.country_code) corr.set(`${c.ingredient_id}:${c.country_code}`, c);
+  if (corr.size) for (const r of regs) {
+    const c = corr.get(`${r.ingredient_id}:${r.country_code}`);
+    if (!c || r.status !== c.from) continue;
+    if (c.source_match && !(r.source_document || "").includes(c.source_match)) continue;
+    r.status = c.to;
+  }
+} catch {}
+
 // indices
 const byInciLower = new Map(), byKorLower = new Map(), byCas = new Map(), byId = new Map();
 for (const i of ingredients) {

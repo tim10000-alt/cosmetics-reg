@@ -43,7 +43,8 @@
     "eu:html": "tsx scripts/fetchers/eu-eurlex-html.ts",
     "kcia:names": "tsx scripts/fetchers/kcia-cid-names.ts",
     "guardian": "node scripts/quality-guardian.cjs",
-    "identity:judge": "tsx scripts/identity-judge.ts"
+    "identity:judge": "tsx scripts/identity-judge.ts",
+    "status:judge": "tsx scripts/status-judge.ts"
   },
   "dependencies": {
     "@google/genai": "^1.50.1",

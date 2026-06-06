@@ -1,0 +1,86 @@
+{
+  "generated": "status-judge",
+  "note": "Gemini 듀얼 consensus 로 'restricted' 확정된 banned 오분류 교정(data-loader 가 row.status 교정). 금지annex veto·uncertain 은 제외=검토큐(status-decisions.json).",
+  "corrections": [
+    {
+      "ingredient_id": "40fd3dfc-a8f3-46da-8f67-d73a05490936",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Dilithium Oxalate",
+      "ko": "다이리튬옥살레이트",
+      "reason": "The regulatory text explicitly allows the ingredient in '두발용제품류' (hair products) up to 5%, while prohibiting it in other product types. This indicates a clear restriction, not a ban."
+    },
+    {
+      "ingredient_id": "347e91c2-8abd-4fe6-8363-e05138042f97",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Diisopropyl Oxalate",
+      "ko": "다이아이소프로필옥살레이트",
+      "reason": "The ingredient is allowed in hair products up to 5% concentration, but prohibited in other product types, indicating a clear restriction rather than a ban."
+    },
+    {
+      "ingredient_id": "ffcbc6a7-04ae-4715-b97b-767c7e470c8b",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Tetrasodium Etidronate",
+      "ko": "테트라소듐에티드로네이트",
+      "reason": "The regulatory text explicitly states allowed concentration limits for specific product types (hair products, hair dyeing products, and body cleansing products), indicating it is permitted under these conditions rather than being universally banned."
+    },
+    {
+      "ingredient_id": "657343dc-0547-4c24-940d-88e1ee2df2f8",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "p-Phenylenediamine HCl",
+      "ko": "염산p-페닐렌디아민",
+      "reason": "The ingredient is explicitly allowed in oxidative hair dyes up to 3.3%, and prohibited in other product types, which indicates a use restriction rather than a ban."
+    },
+    {
+      "ingredient_id": "01f61240-e33c-4e8e-928b-eb723b0fc72d",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Sodium Carbonate Peroxide",
+      "ko": "소듐카보네이트퍼옥사이드",
+      "reason": "The regulatory text explicitly permits the ingredient in hair products (3%), nail hardening products (2%), and hair dyes (12%) as hydrogen peroxide, indicating a restricted status rather than a complete ban."
+    },
+    {
+      "ingredient_id": "3b99ceec-e747-4033-8689-e53cb8a1a70f",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Dipotassium Oxalate",
+      "ko": "다이포타슘옥살레이트",
+      "reason": "The ingredient is allowed in hair products up to 5%, but prohibited in other product types, indicating a clear restriction rather than a ban."
+    },
+    {
+      "ingredient_id": "fa4313da-09dc-4616-a25e-b2d7d908a257",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Benzalkonium Saccharinate",
+      "ko": "벤잘코늄사카리네이트",
+      "reason": "The regulatory text specifies concentration limits for use in rinse-off and other product types, indicating conditional allowance. It also explicitly prohibits use in spray products, which is a specific restriction rather than a general ban."
+    },
+    {
+      "ingredient_id": "a83bc83d-04e4-4f7d-b02a-968e9c64cbab",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2-Chloro-p-Phenylenediamine Sulfate",
+      "ko": "황산o-클로로-p-페닐렌디아민",
+      "reason": "The ingredient is allowed in oxidative hair dyes up to 1.5%, but prohibited in all other product types."
+    }
+  ]
+}
