@@ -281,6 +281,57 @@
       },
       "verdict": "uncertain",
       "by": "gemini-consensus"
+    },
+    "fd77cc76-789d-4b22-aa2a-e38b35c84193:KR": {
+      "inci": "Hydrogen Peroxide",
+      "ko": "하이드로젠퍼옥사이드",
+      "country": "KR",
+      "m1": {
+        "verdict": "restricted",
+        "confidence": 1,
+        "reason": "The regulatory text explicitly allows Hydrogen Peroxide in hair products (3%), nail hardener products (2%), and hair dyes (12%), while prohibiting its use in other products. This indicates a restricted status, not a ban."
+      },
+      "m2": {
+        "verdict": "restricted",
+        "confidence": 0.9,
+        "reason": "The ingredient is allowed in specific product types (hair products, nail hardeners, hair dyes) up to certain concentrations, with a general prohibition for other uses."
+      },
+      "verdict": "restricted",
+      "by": "gemini-consensus"
+    },
+    "c628aaf3-4f69-40fe-b18f-d8a3c8999f57:KR": {
+      "inci": "Hydrogen peroxide, and other compounds or mixtures that release hydrogen peroxide",
+      "ko": "과산화수소 및 과산화수소 생성물질",
+      "country": "KR",
+      "m1": {
+        "verdict": "restricted",
+        "confidence": 1,
+        "reason": "The regulatory text explicitly allows hydrogen peroxide in hair products up to 3% and in nail hardening products up to 2%, while prohibiting its use in other product types. This indicates a restricted status, not a ban."
+      },
+      "m2": {
+        "verdict": "restricted",
+        "confidence": 0.9,
+        "reason": "The ingredient is allowed in specific product types (hair products and nail hardeners) up to certain concentrations, with a prohibition in other product types."
+      },
+      "verdict": "restricted",
+      "by": "gemini-consensus"
+    },
+    "9158b4db-f82b-4ff0-a998-f506094b3696:KR": {
+      "inci": "4-Nitro-o-Phenylenediamine Sulfate",
+      "ko": "황산p-니트로-o-페닐렌디아민",
+      "country": "KR",
+      "m1": {
+        "verdict": "restricted",
+        "confidence": 1,
+        "reason": "The regulatory text explicitly permits the ingredient's use in oxidative hair dyes up to 2.0%, indicating a restriction rather than a complete ban."
+      },
+      "m2": {
+        "verdict": "restricted",
+        "confidence": 0.9,
+        "reason": "The text specifies a concentration limit of 2.0% for oxidative hair dyes, indicating it is restricted, not banned."
+      },
+      "verdict": "restricted",
+      "by": "gemini-consensus"
     }
   }
 }
