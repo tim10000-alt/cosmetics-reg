@@ -2741,6 +2741,1446 @@
       "inci": "Terpinolene",
       "ko": "터피놀렌",
       "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "c94a44c7-f5eb-4f1f-842e-6c96148a9d3c",
+      "country_code": "ID",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2-Methyl-5-Hydroxyethylaminophenol",
+      "ko": "2-메칠-5-하이드록시에칠아미노페놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "fb487e0c-4f23-438e-9863-ac25e79c1b15",
+      "country_code": "ID",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Phenyl Methyl Pyrazolone",
+      "ko": "페닐메틸피라졸론",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "37395df0-86d4-4959-9fc4-95712b8309e2",
+      "country_code": "ID",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "m-Aminophenol and its salts",
+      "ko": "m-아미노페놀 및 그 염류",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "e9caa9bf-83c7-4748-979f-a9fefa399967",
+      "country_code": "ID",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2-Amino-3-hydroxypyridine",
+      "ko": "2-아미노-3-히드록시피리딘",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "6d0b772a-1a3e-4fde-a83b-dee66813d468",
+      "country_code": "ID",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "3-Amino-2,6-Dimethylphenol",
+      "ko": "3-아미노-2,6-다이메틸페놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "51eaa8d0-0b07-4ca1-851c-d3fa73a293f8",
+      "country_code": "ID",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2,5,6-Triamino-4-Pyrimidinol Sulfate",
+      "ko": "2,5,6-트라이아미노-4-피리미딘올설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "5158cdfc-5d62-4486-a647-56e8b9b4690d",
+      "country_code": "ID",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2,6-Dihydroxy-3,4-dimethylpyridine",
+      "ko": "2,6-다이하이드록시-3,4-다이메틸피리딘",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "d6ed8967-1af6-45a9-99ad-dc8b29d78d99",
+      "country_code": "ID",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "m-Aminophenol",
+      "ko": "m-아미노페놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "96b1570f-d47c-4984-a8b7-09cefd9c75ab",
+      "country_code": "ID",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "4-Amino-2-Hydroxytoluene",
+      "ko": "4-아미노-2-하이드록시톨루엔",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "c2aadb01-a9fc-4545-ad0f-ae3401613138",
+      "country_code": "ID",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "1-Hexyl 4,5-Diamino Pyrazole Sulfate",
+      "ko": "1-헥실4,5-다이아미노피라졸설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "7c1ade80-5f49-4ece-ba41-8eab49d4f029",
+      "country_code": "ID",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2,6-Dihydroxyethylaminotoluene",
+      "ko": "2,6-다이하이드록시에틸아미노톨루엔",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "c0fcd913-09db-4fc2-aaaf-24ab1b131ba7",
+      "country_code": "ID",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "p-Methylaminophenol",
+      "ko": "p-메칠아미노페놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "fb29d8b3-0aa3-45ef-a65b-cebf92d8c275",
+      "country_code": "ID",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2-Amino-5-Ethylphenol HCl",
+      "ko": "2-아미노-5-에틸페놀에이치씨엘",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "a9a727a8-eec8-43a1-a38d-7984484838ed",
+      "country_code": "ID",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "p-Methylaminophenol Sulfate",
+      "ko": "p-메칠아미노페놀설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "abbb4a46-a014-43a7-9277-b5acc0b742fa",
+      "country_code": "ID",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "4-Chlororesorcinol",
+      "ko": "4-클로로레조시놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "5561861c-3c53-4975-9eb2-5cc6508627b4",
+      "country_code": "ID",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Hydroxyethoxy Aminopyrazolopyridine HCl",
+      "ko": "하이드록시에틸아미노피라졸피리딘에이치씨엘",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "6ea7910c-66b3-4a3f-a32f-14b87c070b37",
+      "country_code": "ID",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2-Methoxymethyl-p-Phenylenediamine Sulfate",
+      "ko": "2-메톡시메틸-p-페닐렌다이아민설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "3654ebf4-e3c5-45a6-8f31-908d1ee12699",
+      "country_code": "ID",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "4-FORMYL-1-METHYLQUINOLINIUM-P-TOLUENESULFONATE",
+      "ko": "4-포밀-1-메틸퀴놀리늄-P-톨루엔설포네이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "a2c0a729-76ef-4eb4-8260-bf26f1442376",
+      "country_code": "ID",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Hydroxybenzomorpholine",
+      "ko": "하이드록시벤조모르폴린",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "9e3a4c48-02d3-427e-beca-f7dbc8969337",
+      "country_code": "ID",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "1-Hydroxyethyl 4,5-Diamino Pyrazole Sulfate",
+      "ko": "1-하이드록시에틸4,5-다이아미노피라졸설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "6b292bb5-3702-4622-9dca-50e6298cb232",
+      "country_code": "ID",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "1-Naphthol",
+      "ko": "1-나프톨",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "16f32260-272d-482a-baf7-04b97f695002",
+      "country_code": "ID",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "4-Amino-m-cresol",
+      "ko": "4-아미노-m-크레솔",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "04bd4a0a-3951-4089-9c6d-1210d8a06d51",
+      "country_code": "ID",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "p-Methylaminophenol (CAS No 150-75-4) and its sulphate",
+      "ko": "p-메틸아미노페놀 및 그 설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "91526c9c-6d98-4593-8470-ec0daf12e91d",
+      "country_code": "ID",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Hydroxyethyl-3,4-Methylenedioxyaniline HCl",
+      "ko": "하이드록시에틸-3,4-메틸렌다이옥시아닐린에이치씨엘",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "c94a44c7-f5eb-4f1f-842e-6c96148a9d3c",
+      "country_code": "MY",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2-Methyl-5-Hydroxyethylaminophenol",
+      "ko": "2-메칠-5-하이드록시에칠아미노페놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "fb487e0c-4f23-438e-9863-ac25e79c1b15",
+      "country_code": "MY",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Phenyl Methyl Pyrazolone",
+      "ko": "페닐메틸피라졸론",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "37395df0-86d4-4959-9fc4-95712b8309e2",
+      "country_code": "MY",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "m-Aminophenol and its salts",
+      "ko": "m-아미노페놀 및 그 염류",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "e9caa9bf-83c7-4748-979f-a9fefa399967",
+      "country_code": "MY",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2-Amino-3-hydroxypyridine",
+      "ko": "2-아미노-3-히드록시피리딘",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "6d0b772a-1a3e-4fde-a83b-dee66813d468",
+      "country_code": "MY",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "3-Amino-2,6-Dimethylphenol",
+      "ko": "3-아미노-2,6-다이메틸페놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "51eaa8d0-0b07-4ca1-851c-d3fa73a293f8",
+      "country_code": "MY",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2,5,6-Triamino-4-Pyrimidinol Sulfate",
+      "ko": "2,5,6-트라이아미노-4-피리미딘올설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "5158cdfc-5d62-4486-a647-56e8b9b4690d",
+      "country_code": "MY",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2,6-Dihydroxy-3,4-dimethylpyridine",
+      "ko": "2,6-다이하이드록시-3,4-다이메틸피리딘",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "d6ed8967-1af6-45a9-99ad-dc8b29d78d99",
+      "country_code": "MY",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "m-Aminophenol",
+      "ko": "m-아미노페놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "96b1570f-d47c-4984-a8b7-09cefd9c75ab",
+      "country_code": "MY",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "4-Amino-2-Hydroxytoluene",
+      "ko": "4-아미노-2-하이드록시톨루엔",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "c2aadb01-a9fc-4545-ad0f-ae3401613138",
+      "country_code": "MY",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "1-Hexyl 4,5-Diamino Pyrazole Sulfate",
+      "ko": "1-헥실4,5-다이아미노피라졸설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "7c1ade80-5f49-4ece-ba41-8eab49d4f029",
+      "country_code": "MY",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2,6-Dihydroxyethylaminotoluene",
+      "ko": "2,6-다이하이드록시에틸아미노톨루엔",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "c0fcd913-09db-4fc2-aaaf-24ab1b131ba7",
+      "country_code": "MY",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "p-Methylaminophenol",
+      "ko": "p-메칠아미노페놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "fb29d8b3-0aa3-45ef-a65b-cebf92d8c275",
+      "country_code": "MY",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2-Amino-5-Ethylphenol HCl",
+      "ko": "2-아미노-5-에틸페놀에이치씨엘",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "a9a727a8-eec8-43a1-a38d-7984484838ed",
+      "country_code": "MY",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "p-Methylaminophenol Sulfate",
+      "ko": "p-메칠아미노페놀설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "abbb4a46-a014-43a7-9277-b5acc0b742fa",
+      "country_code": "MY",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "4-Chlororesorcinol",
+      "ko": "4-클로로레조시놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "5561861c-3c53-4975-9eb2-5cc6508627b4",
+      "country_code": "MY",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Hydroxyethoxy Aminopyrazolopyridine HCl",
+      "ko": "하이드록시에틸아미노피라졸피리딘에이치씨엘",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "6ea7910c-66b3-4a3f-a32f-14b87c070b37",
+      "country_code": "MY",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2-Methoxymethyl-p-Phenylenediamine Sulfate",
+      "ko": "2-메톡시메틸-p-페닐렌다이아민설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "3654ebf4-e3c5-45a6-8f31-908d1ee12699",
+      "country_code": "MY",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "4-FORMYL-1-METHYLQUINOLINIUM-P-TOLUENESULFONATE",
+      "ko": "4-포밀-1-메틸퀴놀리늄-P-톨루엔설포네이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "a2c0a729-76ef-4eb4-8260-bf26f1442376",
+      "country_code": "MY",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Hydroxybenzomorpholine",
+      "ko": "하이드록시벤조모르폴린",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "9e3a4c48-02d3-427e-beca-f7dbc8969337",
+      "country_code": "MY",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "1-Hydroxyethyl 4,5-Diamino Pyrazole Sulfate",
+      "ko": "1-하이드록시에틸4,5-다이아미노피라졸설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "6b292bb5-3702-4622-9dca-50e6298cb232",
+      "country_code": "MY",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "1-Naphthol",
+      "ko": "1-나프톨",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "16f32260-272d-482a-baf7-04b97f695002",
+      "country_code": "MY",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "4-Amino-m-cresol",
+      "ko": "4-아미노-m-크레솔",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "04bd4a0a-3951-4089-9c6d-1210d8a06d51",
+      "country_code": "MY",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "p-Methylaminophenol (CAS No 150-75-4) and its sulphate",
+      "ko": "p-메틸아미노페놀 및 그 설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "91526c9c-6d98-4593-8470-ec0daf12e91d",
+      "country_code": "MY",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Hydroxyethyl-3,4-Methylenedioxyaniline HCl",
+      "ko": "하이드록시에틸-3,4-메틸렌다이옥시아닐린에이치씨엘",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "c94a44c7-f5eb-4f1f-842e-6c96148a9d3c",
+      "country_code": "PH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2-Methyl-5-Hydroxyethylaminophenol",
+      "ko": "2-메칠-5-하이드록시에칠아미노페놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "fb487e0c-4f23-438e-9863-ac25e79c1b15",
+      "country_code": "PH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Phenyl Methyl Pyrazolone",
+      "ko": "페닐메틸피라졸론",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "37395df0-86d4-4959-9fc4-95712b8309e2",
+      "country_code": "PH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "m-Aminophenol and its salts",
+      "ko": "m-아미노페놀 및 그 염류",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "e9caa9bf-83c7-4748-979f-a9fefa399967",
+      "country_code": "PH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2-Amino-3-hydroxypyridine",
+      "ko": "2-아미노-3-히드록시피리딘",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "6d0b772a-1a3e-4fde-a83b-dee66813d468",
+      "country_code": "PH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "3-Amino-2,6-Dimethylphenol",
+      "ko": "3-아미노-2,6-다이메틸페놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "51eaa8d0-0b07-4ca1-851c-d3fa73a293f8",
+      "country_code": "PH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2,5,6-Triamino-4-Pyrimidinol Sulfate",
+      "ko": "2,5,6-트라이아미노-4-피리미딘올설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "5158cdfc-5d62-4486-a647-56e8b9b4690d",
+      "country_code": "PH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2,6-Dihydroxy-3,4-dimethylpyridine",
+      "ko": "2,6-다이하이드록시-3,4-다이메틸피리딘",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "d6ed8967-1af6-45a9-99ad-dc8b29d78d99",
+      "country_code": "PH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "m-Aminophenol",
+      "ko": "m-아미노페놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "96b1570f-d47c-4984-a8b7-09cefd9c75ab",
+      "country_code": "PH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "4-Amino-2-Hydroxytoluene",
+      "ko": "4-아미노-2-하이드록시톨루엔",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "c2aadb01-a9fc-4545-ad0f-ae3401613138",
+      "country_code": "PH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "1-Hexyl 4,5-Diamino Pyrazole Sulfate",
+      "ko": "1-헥실4,5-다이아미노피라졸설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "7c1ade80-5f49-4ece-ba41-8eab49d4f029",
+      "country_code": "PH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2,6-Dihydroxyethylaminotoluene",
+      "ko": "2,6-다이하이드록시에틸아미노톨루엔",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "c0fcd913-09db-4fc2-aaaf-24ab1b131ba7",
+      "country_code": "PH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "p-Methylaminophenol",
+      "ko": "p-메칠아미노페놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "fb29d8b3-0aa3-45ef-a65b-cebf92d8c275",
+      "country_code": "PH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2-Amino-5-Ethylphenol HCl",
+      "ko": "2-아미노-5-에틸페놀에이치씨엘",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "a9a727a8-eec8-43a1-a38d-7984484838ed",
+      "country_code": "PH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "p-Methylaminophenol Sulfate",
+      "ko": "p-메칠아미노페놀설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "abbb4a46-a014-43a7-9277-b5acc0b742fa",
+      "country_code": "PH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "4-Chlororesorcinol",
+      "ko": "4-클로로레조시놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "5561861c-3c53-4975-9eb2-5cc6508627b4",
+      "country_code": "PH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Hydroxyethoxy Aminopyrazolopyridine HCl",
+      "ko": "하이드록시에틸아미노피라졸피리딘에이치씨엘",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "6ea7910c-66b3-4a3f-a32f-14b87c070b37",
+      "country_code": "PH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2-Methoxymethyl-p-Phenylenediamine Sulfate",
+      "ko": "2-메톡시메틸-p-페닐렌다이아민설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "3654ebf4-e3c5-45a6-8f31-908d1ee12699",
+      "country_code": "PH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "4-FORMYL-1-METHYLQUINOLINIUM-P-TOLUENESULFONATE",
+      "ko": "4-포밀-1-메틸퀴놀리늄-P-톨루엔설포네이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "a2c0a729-76ef-4eb4-8260-bf26f1442376",
+      "country_code": "PH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Hydroxybenzomorpholine",
+      "ko": "하이드록시벤조모르폴린",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "9e3a4c48-02d3-427e-beca-f7dbc8969337",
+      "country_code": "PH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "1-Hydroxyethyl 4,5-Diamino Pyrazole Sulfate",
+      "ko": "1-하이드록시에틸4,5-다이아미노피라졸설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "6b292bb5-3702-4622-9dca-50e6298cb232",
+      "country_code": "PH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "1-Naphthol",
+      "ko": "1-나프톨",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "16f32260-272d-482a-baf7-04b97f695002",
+      "country_code": "PH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "4-Amino-m-cresol",
+      "ko": "4-아미노-m-크레솔",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "04bd4a0a-3951-4089-9c6d-1210d8a06d51",
+      "country_code": "PH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "p-Methylaminophenol (CAS No 150-75-4) and its sulphate",
+      "ko": "p-메틸아미노페놀 및 그 설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "91526c9c-6d98-4593-8470-ec0daf12e91d",
+      "country_code": "PH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Hydroxyethyl-3,4-Methylenedioxyaniline HCl",
+      "ko": "하이드록시에틸-3,4-메틸렌다이옥시아닐린에이치씨엘",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "c94a44c7-f5eb-4f1f-842e-6c96148a9d3c",
+      "country_code": "SG",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2-Methyl-5-Hydroxyethylaminophenol",
+      "ko": "2-메칠-5-하이드록시에칠아미노페놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "fb487e0c-4f23-438e-9863-ac25e79c1b15",
+      "country_code": "SG",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Phenyl Methyl Pyrazolone",
+      "ko": "페닐메틸피라졸론",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "37395df0-86d4-4959-9fc4-95712b8309e2",
+      "country_code": "SG",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "m-Aminophenol and its salts",
+      "ko": "m-아미노페놀 및 그 염류",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "e9caa9bf-83c7-4748-979f-a9fefa399967",
+      "country_code": "SG",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2-Amino-3-hydroxypyridine",
+      "ko": "2-아미노-3-히드록시피리딘",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "6d0b772a-1a3e-4fde-a83b-dee66813d468",
+      "country_code": "SG",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "3-Amino-2,6-Dimethylphenol",
+      "ko": "3-아미노-2,6-다이메틸페놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "51eaa8d0-0b07-4ca1-851c-d3fa73a293f8",
+      "country_code": "SG",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2,5,6-Triamino-4-Pyrimidinol Sulfate",
+      "ko": "2,5,6-트라이아미노-4-피리미딘올설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "5158cdfc-5d62-4486-a647-56e8b9b4690d",
+      "country_code": "SG",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2,6-Dihydroxy-3,4-dimethylpyridine",
+      "ko": "2,6-다이하이드록시-3,4-다이메틸피리딘",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "d6ed8967-1af6-45a9-99ad-dc8b29d78d99",
+      "country_code": "SG",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "m-Aminophenol",
+      "ko": "m-아미노페놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "96b1570f-d47c-4984-a8b7-09cefd9c75ab",
+      "country_code": "SG",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "4-Amino-2-Hydroxytoluene",
+      "ko": "4-아미노-2-하이드록시톨루엔",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "c2aadb01-a9fc-4545-ad0f-ae3401613138",
+      "country_code": "SG",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "1-Hexyl 4,5-Diamino Pyrazole Sulfate",
+      "ko": "1-헥실4,5-다이아미노피라졸설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "7c1ade80-5f49-4ece-ba41-8eab49d4f029",
+      "country_code": "SG",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2,6-Dihydroxyethylaminotoluene",
+      "ko": "2,6-다이하이드록시에틸아미노톨루엔",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "c0fcd913-09db-4fc2-aaaf-24ab1b131ba7",
+      "country_code": "SG",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "p-Methylaminophenol",
+      "ko": "p-메칠아미노페놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "fb29d8b3-0aa3-45ef-a65b-cebf92d8c275",
+      "country_code": "SG",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2-Amino-5-Ethylphenol HCl",
+      "ko": "2-아미노-5-에틸페놀에이치씨엘",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "a9a727a8-eec8-43a1-a38d-7984484838ed",
+      "country_code": "SG",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "p-Methylaminophenol Sulfate",
+      "ko": "p-메칠아미노페놀설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "abbb4a46-a014-43a7-9277-b5acc0b742fa",
+      "country_code": "SG",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "4-Chlororesorcinol",
+      "ko": "4-클로로레조시놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "5561861c-3c53-4975-9eb2-5cc6508627b4",
+      "country_code": "SG",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Hydroxyethoxy Aminopyrazolopyridine HCl",
+      "ko": "하이드록시에틸아미노피라졸피리딘에이치씨엘",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "6ea7910c-66b3-4a3f-a32f-14b87c070b37",
+      "country_code": "SG",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2-Methoxymethyl-p-Phenylenediamine Sulfate",
+      "ko": "2-메톡시메틸-p-페닐렌다이아민설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "3654ebf4-e3c5-45a6-8f31-908d1ee12699",
+      "country_code": "SG",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "4-FORMYL-1-METHYLQUINOLINIUM-P-TOLUENESULFONATE",
+      "ko": "4-포밀-1-메틸퀴놀리늄-P-톨루엔설포네이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "a2c0a729-76ef-4eb4-8260-bf26f1442376",
+      "country_code": "SG",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Hydroxybenzomorpholine",
+      "ko": "하이드록시벤조모르폴린",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "9e3a4c48-02d3-427e-beca-f7dbc8969337",
+      "country_code": "SG",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "1-Hydroxyethyl 4,5-Diamino Pyrazole Sulfate",
+      "ko": "1-하이드록시에틸4,5-다이아미노피라졸설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "6b292bb5-3702-4622-9dca-50e6298cb232",
+      "country_code": "SG",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "1-Naphthol",
+      "ko": "1-나프톨",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "16f32260-272d-482a-baf7-04b97f695002",
+      "country_code": "SG",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "4-Amino-m-cresol",
+      "ko": "4-아미노-m-크레솔",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "04bd4a0a-3951-4089-9c6d-1210d8a06d51",
+      "country_code": "SG",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "p-Methylaminophenol (CAS No 150-75-4) and its sulphate",
+      "ko": "p-메틸아미노페놀 및 그 설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "91526c9c-6d98-4593-8470-ec0daf12e91d",
+      "country_code": "SG",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Hydroxyethyl-3,4-Methylenedioxyaniline HCl",
+      "ko": "하이드록시에틸-3,4-메틸렌다이옥시아닐린에이치씨엘",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "c94a44c7-f5eb-4f1f-842e-6c96148a9d3c",
+      "country_code": "TH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2-Methyl-5-Hydroxyethylaminophenol",
+      "ko": "2-메칠-5-하이드록시에칠아미노페놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "fb487e0c-4f23-438e-9863-ac25e79c1b15",
+      "country_code": "TH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Phenyl Methyl Pyrazolone",
+      "ko": "페닐메틸피라졸론",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "37395df0-86d4-4959-9fc4-95712b8309e2",
+      "country_code": "TH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "m-Aminophenol and its salts",
+      "ko": "m-아미노페놀 및 그 염류",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "e9caa9bf-83c7-4748-979f-a9fefa399967",
+      "country_code": "TH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2-Amino-3-hydroxypyridine",
+      "ko": "2-아미노-3-히드록시피리딘",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "6d0b772a-1a3e-4fde-a83b-dee66813d468",
+      "country_code": "TH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "3-Amino-2,6-Dimethylphenol",
+      "ko": "3-아미노-2,6-다이메틸페놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "51eaa8d0-0b07-4ca1-851c-d3fa73a293f8",
+      "country_code": "TH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2,5,6-Triamino-4-Pyrimidinol Sulfate",
+      "ko": "2,5,6-트라이아미노-4-피리미딘올설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "5158cdfc-5d62-4486-a647-56e8b9b4690d",
+      "country_code": "TH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2,6-Dihydroxy-3,4-dimethylpyridine",
+      "ko": "2,6-다이하이드록시-3,4-다이메틸피리딘",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "d6ed8967-1af6-45a9-99ad-dc8b29d78d99",
+      "country_code": "TH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "m-Aminophenol",
+      "ko": "m-아미노페놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "96b1570f-d47c-4984-a8b7-09cefd9c75ab",
+      "country_code": "TH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "4-Amino-2-Hydroxytoluene",
+      "ko": "4-아미노-2-하이드록시톨루엔",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "c2aadb01-a9fc-4545-ad0f-ae3401613138",
+      "country_code": "TH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "1-Hexyl 4,5-Diamino Pyrazole Sulfate",
+      "ko": "1-헥실4,5-다이아미노피라졸설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "7c1ade80-5f49-4ece-ba41-8eab49d4f029",
+      "country_code": "TH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2,6-Dihydroxyethylaminotoluene",
+      "ko": "2,6-다이하이드록시에틸아미노톨루엔",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "c0fcd913-09db-4fc2-aaaf-24ab1b131ba7",
+      "country_code": "TH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "p-Methylaminophenol",
+      "ko": "p-메칠아미노페놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "fb29d8b3-0aa3-45ef-a65b-cebf92d8c275",
+      "country_code": "TH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2-Amino-5-Ethylphenol HCl",
+      "ko": "2-아미노-5-에틸페놀에이치씨엘",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "a9a727a8-eec8-43a1-a38d-7984484838ed",
+      "country_code": "TH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "p-Methylaminophenol Sulfate",
+      "ko": "p-메칠아미노페놀설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "abbb4a46-a014-43a7-9277-b5acc0b742fa",
+      "country_code": "TH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "4-Chlororesorcinol",
+      "ko": "4-클로로레조시놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "5561861c-3c53-4975-9eb2-5cc6508627b4",
+      "country_code": "TH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Hydroxyethoxy Aminopyrazolopyridine HCl",
+      "ko": "하이드록시에틸아미노피라졸피리딘에이치씨엘",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "6ea7910c-66b3-4a3f-a32f-14b87c070b37",
+      "country_code": "TH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2-Methoxymethyl-p-Phenylenediamine Sulfate",
+      "ko": "2-메톡시메틸-p-페닐렌다이아민설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "3654ebf4-e3c5-45a6-8f31-908d1ee12699",
+      "country_code": "TH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "4-FORMYL-1-METHYLQUINOLINIUM-P-TOLUENESULFONATE",
+      "ko": "4-포밀-1-메틸퀴놀리늄-P-톨루엔설포네이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "a2c0a729-76ef-4eb4-8260-bf26f1442376",
+      "country_code": "TH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Hydroxybenzomorpholine",
+      "ko": "하이드록시벤조모르폴린",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "9e3a4c48-02d3-427e-beca-f7dbc8969337",
+      "country_code": "TH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "1-Hydroxyethyl 4,5-Diamino Pyrazole Sulfate",
+      "ko": "1-하이드록시에틸4,5-다이아미노피라졸설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "6b292bb5-3702-4622-9dca-50e6298cb232",
+      "country_code": "TH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "1-Naphthol",
+      "ko": "1-나프톨",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "16f32260-272d-482a-baf7-04b97f695002",
+      "country_code": "TH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "4-Amino-m-cresol",
+      "ko": "4-아미노-m-크레솔",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "04bd4a0a-3951-4089-9c6d-1210d8a06d51",
+      "country_code": "TH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "p-Methylaminophenol (CAS No 150-75-4) and its sulphate",
+      "ko": "p-메틸아미노페놀 및 그 설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "91526c9c-6d98-4593-8470-ec0daf12e91d",
+      "country_code": "TH",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Hydroxyethyl-3,4-Methylenedioxyaniline HCl",
+      "ko": "하이드록시에틸-3,4-메틸렌다이옥시아닐린에이치씨엘",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "c94a44c7-f5eb-4f1f-842e-6c96148a9d3c",
+      "country_code": "VN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2-Methyl-5-Hydroxyethylaminophenol",
+      "ko": "2-메칠-5-하이드록시에칠아미노페놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "fb487e0c-4f23-438e-9863-ac25e79c1b15",
+      "country_code": "VN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Phenyl Methyl Pyrazolone",
+      "ko": "페닐메틸피라졸론",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "37395df0-86d4-4959-9fc4-95712b8309e2",
+      "country_code": "VN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "m-Aminophenol and its salts",
+      "ko": "m-아미노페놀 및 그 염류",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "e9caa9bf-83c7-4748-979f-a9fefa399967",
+      "country_code": "VN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2-Amino-3-hydroxypyridine",
+      "ko": "2-아미노-3-히드록시피리딘",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "6d0b772a-1a3e-4fde-a83b-dee66813d468",
+      "country_code": "VN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "3-Amino-2,6-Dimethylphenol",
+      "ko": "3-아미노-2,6-다이메틸페놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "51eaa8d0-0b07-4ca1-851c-d3fa73a293f8",
+      "country_code": "VN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2,5,6-Triamino-4-Pyrimidinol Sulfate",
+      "ko": "2,5,6-트라이아미노-4-피리미딘올설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "5158cdfc-5d62-4486-a647-56e8b9b4690d",
+      "country_code": "VN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2,6-Dihydroxy-3,4-dimethylpyridine",
+      "ko": "2,6-다이하이드록시-3,4-다이메틸피리딘",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "d6ed8967-1af6-45a9-99ad-dc8b29d78d99",
+      "country_code": "VN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "m-Aminophenol",
+      "ko": "m-아미노페놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "96b1570f-d47c-4984-a8b7-09cefd9c75ab",
+      "country_code": "VN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "4-Amino-2-Hydroxytoluene",
+      "ko": "4-아미노-2-하이드록시톨루엔",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "c2aadb01-a9fc-4545-ad0f-ae3401613138",
+      "country_code": "VN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "1-Hexyl 4,5-Diamino Pyrazole Sulfate",
+      "ko": "1-헥실4,5-다이아미노피라졸설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "7c1ade80-5f49-4ece-ba41-8eab49d4f029",
+      "country_code": "VN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2,6-Dihydroxyethylaminotoluene",
+      "ko": "2,6-다이하이드록시에틸아미노톨루엔",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "c0fcd913-09db-4fc2-aaaf-24ab1b131ba7",
+      "country_code": "VN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "p-Methylaminophenol",
+      "ko": "p-메칠아미노페놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "fb29d8b3-0aa3-45ef-a65b-cebf92d8c275",
+      "country_code": "VN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2-Amino-5-Ethylphenol HCl",
+      "ko": "2-아미노-5-에틸페놀에이치씨엘",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "a9a727a8-eec8-43a1-a38d-7984484838ed",
+      "country_code": "VN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "p-Methylaminophenol Sulfate",
+      "ko": "p-메칠아미노페놀설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "abbb4a46-a014-43a7-9277-b5acc0b742fa",
+      "country_code": "VN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "4-Chlororesorcinol",
+      "ko": "4-클로로레조시놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "5561861c-3c53-4975-9eb2-5cc6508627b4",
+      "country_code": "VN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Hydroxyethoxy Aminopyrazolopyridine HCl",
+      "ko": "하이드록시에틸아미노피라졸피리딘에이치씨엘",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "6ea7910c-66b3-4a3f-a32f-14b87c070b37",
+      "country_code": "VN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2-Methoxymethyl-p-Phenylenediamine Sulfate",
+      "ko": "2-메톡시메틸-p-페닐렌다이아민설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "3654ebf4-e3c5-45a6-8f31-908d1ee12699",
+      "country_code": "VN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "4-FORMYL-1-METHYLQUINOLINIUM-P-TOLUENESULFONATE",
+      "ko": "4-포밀-1-메틸퀴놀리늄-P-톨루엔설포네이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "a2c0a729-76ef-4eb4-8260-bf26f1442376",
+      "country_code": "VN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Hydroxybenzomorpholine",
+      "ko": "하이드록시벤조모르폴린",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "9e3a4c48-02d3-427e-beca-f7dbc8969337",
+      "country_code": "VN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "1-Hydroxyethyl 4,5-Diamino Pyrazole Sulfate",
+      "ko": "1-하이드록시에틸4,5-다이아미노피라졸설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "6b292bb5-3702-4622-9dca-50e6298cb232",
+      "country_code": "VN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "1-Naphthol",
+      "ko": "1-나프톨",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "16f32260-272d-482a-baf7-04b97f695002",
+      "country_code": "VN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "4-Amino-m-cresol",
+      "ko": "4-아미노-m-크레솔",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "04bd4a0a-3951-4089-9c6d-1210d8a06d51",
+      "country_code": "VN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "p-Methylaminophenol (CAS No 150-75-4) and its sulphate",
+      "ko": "p-메틸아미노페놀 및 그 설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "91526c9c-6d98-4593-8470-ec0daf12e91d",
+      "country_code": "VN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Hydroxyethyl-3,4-Methylenedioxyaniline HCl",
+      "ko": "하이드록시에틸-3,4-메틸렌다이옥시아닐린에이치씨엘",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
     }
   ]
 }

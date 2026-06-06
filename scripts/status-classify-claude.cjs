@@ -31,7 +31,7 @@ const canon = (s) => s.toLowerCase().replace(/[；;]/g, ",").replace(/\s*,\s*/g,
 const PROHIB = /Annex II|Prohibited|California AB|표1[^\n]*금지|사용 금지 물질|Comunidad Andina|EUR-Lex 1223/i;
 // 허용/한도 신호 — 국가별 형식 변형 포함(KR/CN "배합한도", JP "100g당 최대 배합/제품 타입 또는
 // 목적", CA/US "【제한】/허용된 최대 농도(공백)", ASEAN "제한 사용범위"). narrow 만으로 타국 누락됐었음.
-const LIMIT = /배합한도|최대\s*사용\s*농도|허용된\s*최대\s*농도|【제한\s*[】:：]|100\s*g\s*당\s*최대\s*배합/;
+const LIMIT = /배합한도|최대\s*사용\s*농도|허용된\s*최대\s*농도|【제한\s*[】:：]|제한\s*【사용\s*범위|100\s*g\s*당\s*최대\s*배합|maximum theoretical concentration|산화형 염모제에 염색/;
 // 조건부 금지(오염물/불순물 임계치 = 진짜 금지, 허용 아님) — 후보에서 제외(석유·부타디엔·DMSO 등).
 const CONTAM_BAN = /함유하는 경우에 한함|contain[s]?\s*[>=]|초과하여 함유|불순물|impurit|w\/w\s+(?:Butadiene|DMSO|benzo)/i;
 // 중금속/고독성 명시 veto — stale 미량한도(예 수은 0.007%)여도 사실상 금지라 절대 restricted 금지.

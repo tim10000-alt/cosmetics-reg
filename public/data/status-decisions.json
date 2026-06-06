@@ -4115,6 +4115,1844 @@
       "country": "VN",
       "verdict": "banned",
       "by": "prohibition-veto"
+    },
+    "fd4aaabf-a6f2-4e0e-971f-e5438d38d4ed:AR": {
+      "inci": "CI 15865",
+      "ko": "CI 15865",
+      "country": "AR",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "275c0afe-d052-483f-8477-ed269313a8b4:AR": {
+      "inci": "CI 14700",
+      "ko": "CI 14700",
+      "country": "AR",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "57ddfecd-606f-44d6-893b-f4a13fa21810:AR": {
+      "inci": "Talc",
+      "ko": "탤크",
+      "country": "AR",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "c8634a92-2fc9-4dad-8194-f38813dc98ac:AR": {
+      "inci": "CI 59040",
+      "ko": "CI 59040",
+      "country": "AR",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "b99477cf-33bb-4758-bd94-c1079645c815:AR": {
+      "inci": "CI 47000",
+      "ko": "CI 47000",
+      "country": "AR",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "736de5f2-533f-4b9a-9aaa-51ca691217c9:AR": {
+      "inci": "CI 45190",
+      "ko": "CI 45190",
+      "country": "AR",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "59d5ed8c-b215-4da4-bc8c-4cef96130b02:AR": {
+      "inci": "CI 26100",
+      "ko": "CI 26100",
+      "country": "AR",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "4ecbcb91-caac-4b1e-9a65-6f1582175dbf:AR": {
+      "inci": "CI 42053",
+      "ko": "CI 42053",
+      "country": "AR",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "1d358b0f-12ba-4797-b9c2-7c724366fcb2:AR": {
+      "inci": "CI 16185",
+      "ko": "CI 16185",
+      "country": "AR",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "64628960-5cf9-4a7d-9ca4-39443a7185cd:AR": {
+      "inci": "CI 15800",
+      "ko": "CI 15800",
+      "country": "AR",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "b08e8d00-53fe-4f5c-aa1e-5c32920bc871:AR": {
+      "inci": "CI 12085",
+      "ko": "CI 12085",
+      "country": "AR",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "f30cbfc9-b6bb-4dd4-845d-f950f95782a5:AR": {
+      "inci": "CI 45425",
+      "ko": "CI 45425",
+      "country": "AR",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "056847b0-2eb8-4271-914f-00bfbf4edc22:AR": {
+      "inci": "CI 12490",
+      "ko": "CI 12490",
+      "country": "AR",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "e01b834c-6e0c-4a3e-b714-cf7146a62553:AR": {
+      "inci": "CI 10020",
+      "ko": "CI 10020",
+      "country": "AR",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "fd4aaabf-a6f2-4e0e-971f-e5438d38d4ed:BR": {
+      "inci": "CI 15865",
+      "ko": "CI 15865",
+      "country": "BR",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "275c0afe-d052-483f-8477-ed269313a8b4:BR": {
+      "inci": "CI 14700",
+      "ko": "CI 14700",
+      "country": "BR",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "57ddfecd-606f-44d6-893b-f4a13fa21810:BR": {
+      "inci": "Talc",
+      "ko": "탤크",
+      "country": "BR",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "c8634a92-2fc9-4dad-8194-f38813dc98ac:BR": {
+      "inci": "CI 59040",
+      "ko": "CI 59040",
+      "country": "BR",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "b99477cf-33bb-4758-bd94-c1079645c815:BR": {
+      "inci": "CI 47000",
+      "ko": "CI 47000",
+      "country": "BR",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "736de5f2-533f-4b9a-9aaa-51ca691217c9:BR": {
+      "inci": "CI 45190",
+      "ko": "CI 45190",
+      "country": "BR",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "4ecbcb91-caac-4b1e-9a65-6f1582175dbf:BR": {
+      "inci": "CI 42053",
+      "ko": "CI 42053",
+      "country": "BR",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "59d5ed8c-b215-4da4-bc8c-4cef96130b02:BR": {
+      "inci": "CI 26100",
+      "ko": "CI 26100",
+      "country": "BR",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "1d358b0f-12ba-4797-b9c2-7c724366fcb2:BR": {
+      "inci": "CI 16185",
+      "ko": "CI 16185",
+      "country": "BR",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "64628960-5cf9-4a7d-9ca4-39443a7185cd:BR": {
+      "inci": "CI 15800",
+      "ko": "CI 15800",
+      "country": "BR",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "b08e8d00-53fe-4f5c-aa1e-5c32920bc871:BR": {
+      "inci": "CI 12085",
+      "ko": "CI 12085",
+      "country": "BR",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "f30cbfc9-b6bb-4dd4-845d-f950f95782a5:BR": {
+      "inci": "CI 45425",
+      "ko": "CI 45425",
+      "country": "BR",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "056847b0-2eb8-4271-914f-00bfbf4edc22:BR": {
+      "inci": "CI 12490",
+      "ko": "CI 12490",
+      "country": "BR",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "e01b834c-6e0c-4a3e-b714-cf7146a62553:BR": {
+      "inci": "CI 10020",
+      "ko": "CI 10020",
+      "country": "BR",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "d234604f-207b-4c4c-8f69-dd68a436ce5b:EU": {
+      "inci": "Sodium N-(hydroxymethyl)glycinate; [formaldehyde released from sodium N-(hydroxymethyl)glycinate] if the maximum theoretical concentration of releasable formaldehyde, irrespective of the source, in the mixture as placed on the market is ≥ 0,1 % w/w",
+      "ko": "소듐하이드록시메칠글리시네이트[소듐하이드록시메칠글리시네이트로부터 방출된 포름알데하이드] 시판되는 혼합물의 최대 이론 농도가 0.1% w/w인 경우",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "c94a44c7-f5eb-4f1f-842e-6c96148a9d3c:ID": {
+      "inci": "2-Methyl-5-Hydroxyethylaminophenol",
+      "ko": "2-메칠-5-하이드록시에칠아미노페놀",
+      "country": "ID",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "3e6a4a9a-688c-4ac8-8813-b9b5a271e0d7:ID": {
+      "inci": "Hydroxypropyl bis(N-Hydroxyethyl-p-Phenylenediamine) HCl",
+      "ko": "하이드록시프로필비스(N-하이드록시에틸-p-페닐렌다이아민)에이치씨엘",
+      "country": "ID",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "fb487e0c-4f23-438e-9863-ac25e79c1b15:ID": {
+      "inci": "Phenyl Methyl Pyrazolone",
+      "ko": "페닐메틸피라졸론",
+      "country": "ID",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "8c6f7021-fb54-4d37-b10e-91cda7b41fa2:ID": {
+      "inci": "5-Amino-4-Chloro-o-Cresol HCl",
+      "ko": "5-아미노-4-클로로-o-크레솔에이치씨엘",
+      "country": "ID",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "37395df0-86d4-4959-9fc4-95712b8309e2:ID": {
+      "inci": "m-Aminophenol and its salts",
+      "ko": "m-아미노페놀 및 그 염류",
+      "country": "ID",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "e9caa9bf-83c7-4748-979f-a9fefa399967:ID": {
+      "inci": "2-Amino-3-hydroxypyridine",
+      "ko": "2-아미노-3-히드록시피리딘",
+      "country": "ID",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "012f5192-5ef4-4843-a45c-7b4b3da26724:ID": {
+      "inci": "2-Methyl-1-Naphthol",
+      "ko": "2-메틸-1-나프톨",
+      "country": "ID",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "6d0b772a-1a3e-4fde-a83b-dee66813d468:ID": {
+      "inci": "3-Amino-2,6-Dimethylphenol",
+      "ko": "3-아미노-2,6-다이메틸페놀",
+      "country": "ID",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "51eaa8d0-0b07-4ca1-851c-d3fa73a293f8:ID": {
+      "inci": "2,5,6-Triamino-4-Pyrimidinol Sulfate",
+      "ko": "2,5,6-트라이아미노-4-피리미딘올설페이트",
+      "country": "ID",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "5158cdfc-5d62-4486-a647-56e8b9b4690d:ID": {
+      "inci": "2,6-Dihydroxy-3,4-dimethylpyridine",
+      "ko": "2,6-다이하이드록시-3,4-다이메틸피리딘",
+      "country": "ID",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "d6ed8967-1af6-45a9-99ad-dc8b29d78d99:ID": {
+      "inci": "m-Aminophenol",
+      "ko": "m-아미노페놀",
+      "country": "ID",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "96b1570f-d47c-4984-a8b7-09cefd9c75ab:ID": {
+      "inci": "4-Amino-2-Hydroxytoluene",
+      "ko": "4-아미노-2-하이드록시톨루엔",
+      "country": "ID",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "7fdf6c8e-cdf8-425c-aa5c-59c0a80cab21:ID": {
+      "inci": "2-Amino-4-Hydroxyethylaminoanisole Sulfate",
+      "ko": "2-아미노-4-하이드록시에틸아미노아니솔설페이트",
+      "country": "ID",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "c2aadb01-a9fc-4545-ad0f-ae3401613138:ID": {
+      "inci": "1-Hexyl 4,5-Diamino Pyrazole Sulfate",
+      "ko": "1-헥실4,5-다이아미노피라졸설페이트",
+      "country": "ID",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "7c1ade80-5f49-4ece-ba41-8eab49d4f029:ID": {
+      "inci": "2,6-Dihydroxyethylaminotoluene",
+      "ko": "2,6-다이하이드록시에틸아미노톨루엔",
+      "country": "ID",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "c0fcd913-09db-4fc2-aaaf-24ab1b131ba7:ID": {
+      "inci": "p-Methylaminophenol",
+      "ko": "p-메칠아미노페놀",
+      "country": "ID",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "fb29d8b3-0aa3-45ef-a65b-cebf92d8c275:ID": {
+      "inci": "2-Amino-5-Ethylphenol HCl",
+      "ko": "2-아미노-5-에틸페놀에이치씨엘",
+      "country": "ID",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "5753909e-d0fb-4601-b8b0-d7f08916f51b:ID": {
+      "inci": "1-Acetoxy-2-Methylnaphthalene",
+      "ko": "1-아세톡시-2-메틸나프탈렌",
+      "country": "ID",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "a9a727a8-eec8-43a1-a38d-7984484838ed:ID": {
+      "inci": "p-Methylaminophenol Sulfate",
+      "ko": "p-메칠아미노페놀설페이트",
+      "country": "ID",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "abbb4a46-a014-43a7-9277-b5acc0b742fa:ID": {
+      "inci": "4-Chlororesorcinol",
+      "ko": "4-클로로레조시놀",
+      "country": "ID",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "5561861c-3c53-4975-9eb2-5cc6508627b4:ID": {
+      "inci": "Hydroxyethoxy Aminopyrazolopyridine HCl",
+      "ko": "하이드록시에틸아미노피라졸피리딘에이치씨엘",
+      "country": "ID",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "6ea7910c-66b3-4a3f-a32f-14b87c070b37:ID": {
+      "inci": "2-Methoxymethyl-p-Phenylenediamine Sulfate",
+      "ko": "2-메톡시메틸-p-페닐렌다이아민설페이트",
+      "country": "ID",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "3654ebf4-e3c5-45a6-8f31-908d1ee12699:ID": {
+      "inci": "4-FORMYL-1-METHYLQUINOLINIUM-P-TOLUENESULFONATE",
+      "ko": "4-포밀-1-메틸퀴놀리늄-P-톨루엔설포네이트",
+      "country": "ID",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "a2c0a729-76ef-4eb4-8260-bf26f1442376:ID": {
+      "inci": "Hydroxybenzomorpholine",
+      "ko": "하이드록시벤조모르폴린",
+      "country": "ID",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "9e3a4c48-02d3-427e-beca-f7dbc8969337:ID": {
+      "inci": "1-Hydroxyethyl 4,5-Diamino Pyrazole Sulfate",
+      "ko": "1-하이드록시에틸4,5-다이아미노피라졸설페이트",
+      "country": "ID",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "0aaf6489-aef3-45a5-bde2-f2592003af90:ID": {
+      "inci": "2,4-Diaminophenoxyethanol HCL",
+      "ko": "염산2,4-디아미노페녹시에탄올",
+      "country": "ID",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "6b292bb5-3702-4622-9dca-50e6298cb232:ID": {
+      "inci": "1-Naphthol",
+      "ko": "1-나프톨",
+      "country": "ID",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "57ddfecd-606f-44d6-893b-f4a13fa21810:ID": {
+      "inci": "Talc",
+      "ko": "탤크",
+      "country": "ID",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "16f32260-272d-482a-baf7-04b97f695002:ID": {
+      "inci": "4-Amino-m-cresol",
+      "ko": "4-아미노-m-크레솔",
+      "country": "ID",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "04bd4a0a-3951-4089-9c6d-1210d8a06d51:ID": {
+      "inci": "p-Methylaminophenol (CAS No 150-75-4) and its sulphate",
+      "ko": "p-메틸아미노페놀 및 그 설페이트",
+      "country": "ID",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "91526c9c-6d98-4593-8470-ec0daf12e91d:ID": {
+      "inci": "Hydroxyethyl-3,4-Methylenedioxyaniline HCl",
+      "ko": "하이드록시에틸-3,4-메틸렌다이옥시아닐린에이치씨엘",
+      "country": "ID",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "07ed1c94-c244-467d-8a76-225afa741ca0:ID": {
+      "inci": "Thioacids and their derivatives",
+      "ko": "티오애씨드 및 그 유도체",
+      "country": "ID",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "64228303-0b71-4b03-a494-18fba33d969c:ID": {
+      "inci": "2,6-Dimethoxy-3,5-pyridinediamine (CAS No 85679-78-3 (free base)) and its hydrochloride",
+      "ko": "2,6-다이메톡시-3,5-피리딘다이아민 및 그의 염산염",
+      "country": "ID",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "7d4dade6-c3b6-47d0-95a5-c8ea913684cb:ID": {
+      "inci": "2,6-Dimethoxy-3,5-Pyridinediamine HCl",
+      "ko": "2,6-다이메톡시-3,5-피리딘다이아민에이치씨엘",
+      "country": "ID",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "c94a44c7-f5eb-4f1f-842e-6c96148a9d3c:MY": {
+      "inci": "2-Methyl-5-Hydroxyethylaminophenol",
+      "ko": "2-메칠-5-하이드록시에칠아미노페놀",
+      "country": "MY",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "3e6a4a9a-688c-4ac8-8813-b9b5a271e0d7:MY": {
+      "inci": "Hydroxypropyl bis(N-Hydroxyethyl-p-Phenylenediamine) HCl",
+      "ko": "하이드록시프로필비스(N-하이드록시에틸-p-페닐렌다이아민)에이치씨엘",
+      "country": "MY",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "fb487e0c-4f23-438e-9863-ac25e79c1b15:MY": {
+      "inci": "Phenyl Methyl Pyrazolone",
+      "ko": "페닐메틸피라졸론",
+      "country": "MY",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "8c6f7021-fb54-4d37-b10e-91cda7b41fa2:MY": {
+      "inci": "5-Amino-4-Chloro-o-Cresol HCl",
+      "ko": "5-아미노-4-클로로-o-크레솔에이치씨엘",
+      "country": "MY",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "37395df0-86d4-4959-9fc4-95712b8309e2:MY": {
+      "inci": "m-Aminophenol and its salts",
+      "ko": "m-아미노페놀 및 그 염류",
+      "country": "MY",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "e9caa9bf-83c7-4748-979f-a9fefa399967:MY": {
+      "inci": "2-Amino-3-hydroxypyridine",
+      "ko": "2-아미노-3-히드록시피리딘",
+      "country": "MY",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "012f5192-5ef4-4843-a45c-7b4b3da26724:MY": {
+      "inci": "2-Methyl-1-Naphthol",
+      "ko": "2-메틸-1-나프톨",
+      "country": "MY",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "6d0b772a-1a3e-4fde-a83b-dee66813d468:MY": {
+      "inci": "3-Amino-2,6-Dimethylphenol",
+      "ko": "3-아미노-2,6-다이메틸페놀",
+      "country": "MY",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "51eaa8d0-0b07-4ca1-851c-d3fa73a293f8:MY": {
+      "inci": "2,5,6-Triamino-4-Pyrimidinol Sulfate",
+      "ko": "2,5,6-트라이아미노-4-피리미딘올설페이트",
+      "country": "MY",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "5158cdfc-5d62-4486-a647-56e8b9b4690d:MY": {
+      "inci": "2,6-Dihydroxy-3,4-dimethylpyridine",
+      "ko": "2,6-다이하이드록시-3,4-다이메틸피리딘",
+      "country": "MY",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "d6ed8967-1af6-45a9-99ad-dc8b29d78d99:MY": {
+      "inci": "m-Aminophenol",
+      "ko": "m-아미노페놀",
+      "country": "MY",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "96b1570f-d47c-4984-a8b7-09cefd9c75ab:MY": {
+      "inci": "4-Amino-2-Hydroxytoluene",
+      "ko": "4-아미노-2-하이드록시톨루엔",
+      "country": "MY",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "7fdf6c8e-cdf8-425c-aa5c-59c0a80cab21:MY": {
+      "inci": "2-Amino-4-Hydroxyethylaminoanisole Sulfate",
+      "ko": "2-아미노-4-하이드록시에틸아미노아니솔설페이트",
+      "country": "MY",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "c2aadb01-a9fc-4545-ad0f-ae3401613138:MY": {
+      "inci": "1-Hexyl 4,5-Diamino Pyrazole Sulfate",
+      "ko": "1-헥실4,5-다이아미노피라졸설페이트",
+      "country": "MY",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "7c1ade80-5f49-4ece-ba41-8eab49d4f029:MY": {
+      "inci": "2,6-Dihydroxyethylaminotoluene",
+      "ko": "2,6-다이하이드록시에틸아미노톨루엔",
+      "country": "MY",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "c0fcd913-09db-4fc2-aaaf-24ab1b131ba7:MY": {
+      "inci": "p-Methylaminophenol",
+      "ko": "p-메칠아미노페놀",
+      "country": "MY",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "fb29d8b3-0aa3-45ef-a65b-cebf92d8c275:MY": {
+      "inci": "2-Amino-5-Ethylphenol HCl",
+      "ko": "2-아미노-5-에틸페놀에이치씨엘",
+      "country": "MY",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "5753909e-d0fb-4601-b8b0-d7f08916f51b:MY": {
+      "inci": "1-Acetoxy-2-Methylnaphthalene",
+      "ko": "1-아세톡시-2-메틸나프탈렌",
+      "country": "MY",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "a9a727a8-eec8-43a1-a38d-7984484838ed:MY": {
+      "inci": "p-Methylaminophenol Sulfate",
+      "ko": "p-메칠아미노페놀설페이트",
+      "country": "MY",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "abbb4a46-a014-43a7-9277-b5acc0b742fa:MY": {
+      "inci": "4-Chlororesorcinol",
+      "ko": "4-클로로레조시놀",
+      "country": "MY",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "5561861c-3c53-4975-9eb2-5cc6508627b4:MY": {
+      "inci": "Hydroxyethoxy Aminopyrazolopyridine HCl",
+      "ko": "하이드록시에틸아미노피라졸피리딘에이치씨엘",
+      "country": "MY",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "6ea7910c-66b3-4a3f-a32f-14b87c070b37:MY": {
+      "inci": "2-Methoxymethyl-p-Phenylenediamine Sulfate",
+      "ko": "2-메톡시메틸-p-페닐렌다이아민설페이트",
+      "country": "MY",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "3654ebf4-e3c5-45a6-8f31-908d1ee12699:MY": {
+      "inci": "4-FORMYL-1-METHYLQUINOLINIUM-P-TOLUENESULFONATE",
+      "ko": "4-포밀-1-메틸퀴놀리늄-P-톨루엔설포네이트",
+      "country": "MY",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "a2c0a729-76ef-4eb4-8260-bf26f1442376:MY": {
+      "inci": "Hydroxybenzomorpholine",
+      "ko": "하이드록시벤조모르폴린",
+      "country": "MY",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "9e3a4c48-02d3-427e-beca-f7dbc8969337:MY": {
+      "inci": "1-Hydroxyethyl 4,5-Diamino Pyrazole Sulfate",
+      "ko": "1-하이드록시에틸4,5-다이아미노피라졸설페이트",
+      "country": "MY",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "0aaf6489-aef3-45a5-bde2-f2592003af90:MY": {
+      "inci": "2,4-Diaminophenoxyethanol HCL",
+      "ko": "염산2,4-디아미노페녹시에탄올",
+      "country": "MY",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "6b292bb5-3702-4622-9dca-50e6298cb232:MY": {
+      "inci": "1-Naphthol",
+      "ko": "1-나프톨",
+      "country": "MY",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "57ddfecd-606f-44d6-893b-f4a13fa21810:MY": {
+      "inci": "Talc",
+      "ko": "탤크",
+      "country": "MY",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "16f32260-272d-482a-baf7-04b97f695002:MY": {
+      "inci": "4-Amino-m-cresol",
+      "ko": "4-아미노-m-크레솔",
+      "country": "MY",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "04bd4a0a-3951-4089-9c6d-1210d8a06d51:MY": {
+      "inci": "p-Methylaminophenol (CAS No 150-75-4) and its sulphate",
+      "ko": "p-메틸아미노페놀 및 그 설페이트",
+      "country": "MY",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "91526c9c-6d98-4593-8470-ec0daf12e91d:MY": {
+      "inci": "Hydroxyethyl-3,4-Methylenedioxyaniline HCl",
+      "ko": "하이드록시에틸-3,4-메틸렌다이옥시아닐린에이치씨엘",
+      "country": "MY",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "07ed1c94-c244-467d-8a76-225afa741ca0:MY": {
+      "inci": "Thioacids and their derivatives",
+      "ko": "티오애씨드 및 그 유도체",
+      "country": "MY",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "64228303-0b71-4b03-a494-18fba33d969c:MY": {
+      "inci": "2,6-Dimethoxy-3,5-pyridinediamine (CAS No 85679-78-3 (free base)) and its hydrochloride",
+      "ko": "2,6-다이메톡시-3,5-피리딘다이아민 및 그의 염산염",
+      "country": "MY",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "7d4dade6-c3b6-47d0-95a5-c8ea913684cb:MY": {
+      "inci": "2,6-Dimethoxy-3,5-Pyridinediamine HCl",
+      "ko": "2,6-다이메톡시-3,5-피리딘다이아민에이치씨엘",
+      "country": "MY",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "c94a44c7-f5eb-4f1f-842e-6c96148a9d3c:PH": {
+      "inci": "2-Methyl-5-Hydroxyethylaminophenol",
+      "ko": "2-메칠-5-하이드록시에칠아미노페놀",
+      "country": "PH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "3e6a4a9a-688c-4ac8-8813-b9b5a271e0d7:PH": {
+      "inci": "Hydroxypropyl bis(N-Hydroxyethyl-p-Phenylenediamine) HCl",
+      "ko": "하이드록시프로필비스(N-하이드록시에틸-p-페닐렌다이아민)에이치씨엘",
+      "country": "PH",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "fb487e0c-4f23-438e-9863-ac25e79c1b15:PH": {
+      "inci": "Phenyl Methyl Pyrazolone",
+      "ko": "페닐메틸피라졸론",
+      "country": "PH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "8c6f7021-fb54-4d37-b10e-91cda7b41fa2:PH": {
+      "inci": "5-Amino-4-Chloro-o-Cresol HCl",
+      "ko": "5-아미노-4-클로로-o-크레솔에이치씨엘",
+      "country": "PH",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "37395df0-86d4-4959-9fc4-95712b8309e2:PH": {
+      "inci": "m-Aminophenol and its salts",
+      "ko": "m-아미노페놀 및 그 염류",
+      "country": "PH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "e9caa9bf-83c7-4748-979f-a9fefa399967:PH": {
+      "inci": "2-Amino-3-hydroxypyridine",
+      "ko": "2-아미노-3-히드록시피리딘",
+      "country": "PH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "012f5192-5ef4-4843-a45c-7b4b3da26724:PH": {
+      "inci": "2-Methyl-1-Naphthol",
+      "ko": "2-메틸-1-나프톨",
+      "country": "PH",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "6d0b772a-1a3e-4fde-a83b-dee66813d468:PH": {
+      "inci": "3-Amino-2,6-Dimethylphenol",
+      "ko": "3-아미노-2,6-다이메틸페놀",
+      "country": "PH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "51eaa8d0-0b07-4ca1-851c-d3fa73a293f8:PH": {
+      "inci": "2,5,6-Triamino-4-Pyrimidinol Sulfate",
+      "ko": "2,5,6-트라이아미노-4-피리미딘올설페이트",
+      "country": "PH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "5158cdfc-5d62-4486-a647-56e8b9b4690d:PH": {
+      "inci": "2,6-Dihydroxy-3,4-dimethylpyridine",
+      "ko": "2,6-다이하이드록시-3,4-다이메틸피리딘",
+      "country": "PH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "d6ed8967-1af6-45a9-99ad-dc8b29d78d99:PH": {
+      "inci": "m-Aminophenol",
+      "ko": "m-아미노페놀",
+      "country": "PH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "96b1570f-d47c-4984-a8b7-09cefd9c75ab:PH": {
+      "inci": "4-Amino-2-Hydroxytoluene",
+      "ko": "4-아미노-2-하이드록시톨루엔",
+      "country": "PH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "7fdf6c8e-cdf8-425c-aa5c-59c0a80cab21:PH": {
+      "inci": "2-Amino-4-Hydroxyethylaminoanisole Sulfate",
+      "ko": "2-아미노-4-하이드록시에틸아미노아니솔설페이트",
+      "country": "PH",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "c2aadb01-a9fc-4545-ad0f-ae3401613138:PH": {
+      "inci": "1-Hexyl 4,5-Diamino Pyrazole Sulfate",
+      "ko": "1-헥실4,5-다이아미노피라졸설페이트",
+      "country": "PH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "7c1ade80-5f49-4ece-ba41-8eab49d4f029:PH": {
+      "inci": "2,6-Dihydroxyethylaminotoluene",
+      "ko": "2,6-다이하이드록시에틸아미노톨루엔",
+      "country": "PH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "c0fcd913-09db-4fc2-aaaf-24ab1b131ba7:PH": {
+      "inci": "p-Methylaminophenol",
+      "ko": "p-메칠아미노페놀",
+      "country": "PH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "fb29d8b3-0aa3-45ef-a65b-cebf92d8c275:PH": {
+      "inci": "2-Amino-5-Ethylphenol HCl",
+      "ko": "2-아미노-5-에틸페놀에이치씨엘",
+      "country": "PH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "5753909e-d0fb-4601-b8b0-d7f08916f51b:PH": {
+      "inci": "1-Acetoxy-2-Methylnaphthalene",
+      "ko": "1-아세톡시-2-메틸나프탈렌",
+      "country": "PH",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "a9a727a8-eec8-43a1-a38d-7984484838ed:PH": {
+      "inci": "p-Methylaminophenol Sulfate",
+      "ko": "p-메칠아미노페놀설페이트",
+      "country": "PH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "abbb4a46-a014-43a7-9277-b5acc0b742fa:PH": {
+      "inci": "4-Chlororesorcinol",
+      "ko": "4-클로로레조시놀",
+      "country": "PH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "5561861c-3c53-4975-9eb2-5cc6508627b4:PH": {
+      "inci": "Hydroxyethoxy Aminopyrazolopyridine HCl",
+      "ko": "하이드록시에틸아미노피라졸피리딘에이치씨엘",
+      "country": "PH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "6ea7910c-66b3-4a3f-a32f-14b87c070b37:PH": {
+      "inci": "2-Methoxymethyl-p-Phenylenediamine Sulfate",
+      "ko": "2-메톡시메틸-p-페닐렌다이아민설페이트",
+      "country": "PH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "3654ebf4-e3c5-45a6-8f31-908d1ee12699:PH": {
+      "inci": "4-FORMYL-1-METHYLQUINOLINIUM-P-TOLUENESULFONATE",
+      "ko": "4-포밀-1-메틸퀴놀리늄-P-톨루엔설포네이트",
+      "country": "PH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "a2c0a729-76ef-4eb4-8260-bf26f1442376:PH": {
+      "inci": "Hydroxybenzomorpholine",
+      "ko": "하이드록시벤조모르폴린",
+      "country": "PH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "9e3a4c48-02d3-427e-beca-f7dbc8969337:PH": {
+      "inci": "1-Hydroxyethyl 4,5-Diamino Pyrazole Sulfate",
+      "ko": "1-하이드록시에틸4,5-다이아미노피라졸설페이트",
+      "country": "PH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "0aaf6489-aef3-45a5-bde2-f2592003af90:PH": {
+      "inci": "2,4-Diaminophenoxyethanol HCL",
+      "ko": "염산2,4-디아미노페녹시에탄올",
+      "country": "PH",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "6b292bb5-3702-4622-9dca-50e6298cb232:PH": {
+      "inci": "1-Naphthol",
+      "ko": "1-나프톨",
+      "country": "PH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "57ddfecd-606f-44d6-893b-f4a13fa21810:PH": {
+      "inci": "Talc",
+      "ko": "탤크",
+      "country": "PH",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "16f32260-272d-482a-baf7-04b97f695002:PH": {
+      "inci": "4-Amino-m-cresol",
+      "ko": "4-아미노-m-크레솔",
+      "country": "PH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "04bd4a0a-3951-4089-9c6d-1210d8a06d51:PH": {
+      "inci": "p-Methylaminophenol (CAS No 150-75-4) and its sulphate",
+      "ko": "p-메틸아미노페놀 및 그 설페이트",
+      "country": "PH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "91526c9c-6d98-4593-8470-ec0daf12e91d:PH": {
+      "inci": "Hydroxyethyl-3,4-Methylenedioxyaniline HCl",
+      "ko": "하이드록시에틸-3,4-메틸렌다이옥시아닐린에이치씨엘",
+      "country": "PH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "07ed1c94-c244-467d-8a76-225afa741ca0:PH": {
+      "inci": "Thioacids and their derivatives",
+      "ko": "티오애씨드 및 그 유도체",
+      "country": "PH",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "64228303-0b71-4b03-a494-18fba33d969c:PH": {
+      "inci": "2,6-Dimethoxy-3,5-pyridinediamine (CAS No 85679-78-3 (free base)) and its hydrochloride",
+      "ko": "2,6-다이메톡시-3,5-피리딘다이아민 및 그의 염산염",
+      "country": "PH",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "7d4dade6-c3b6-47d0-95a5-c8ea913684cb:PH": {
+      "inci": "2,6-Dimethoxy-3,5-Pyridinediamine HCl",
+      "ko": "2,6-다이메톡시-3,5-피리딘다이아민에이치씨엘",
+      "country": "PH",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "c94a44c7-f5eb-4f1f-842e-6c96148a9d3c:SG": {
+      "inci": "2-Methyl-5-Hydroxyethylaminophenol",
+      "ko": "2-메칠-5-하이드록시에칠아미노페놀",
+      "country": "SG",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "3e6a4a9a-688c-4ac8-8813-b9b5a271e0d7:SG": {
+      "inci": "Hydroxypropyl bis(N-Hydroxyethyl-p-Phenylenediamine) HCl",
+      "ko": "하이드록시프로필비스(N-하이드록시에틸-p-페닐렌다이아민)에이치씨엘",
+      "country": "SG",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "fb487e0c-4f23-438e-9863-ac25e79c1b15:SG": {
+      "inci": "Phenyl Methyl Pyrazolone",
+      "ko": "페닐메틸피라졸론",
+      "country": "SG",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "8c6f7021-fb54-4d37-b10e-91cda7b41fa2:SG": {
+      "inci": "5-Amino-4-Chloro-o-Cresol HCl",
+      "ko": "5-아미노-4-클로로-o-크레솔에이치씨엘",
+      "country": "SG",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "37395df0-86d4-4959-9fc4-95712b8309e2:SG": {
+      "inci": "m-Aminophenol and its salts",
+      "ko": "m-아미노페놀 및 그 염류",
+      "country": "SG",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "e9caa9bf-83c7-4748-979f-a9fefa399967:SG": {
+      "inci": "2-Amino-3-hydroxypyridine",
+      "ko": "2-아미노-3-히드록시피리딘",
+      "country": "SG",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "012f5192-5ef4-4843-a45c-7b4b3da26724:SG": {
+      "inci": "2-Methyl-1-Naphthol",
+      "ko": "2-메틸-1-나프톨",
+      "country": "SG",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "6d0b772a-1a3e-4fde-a83b-dee66813d468:SG": {
+      "inci": "3-Amino-2,6-Dimethylphenol",
+      "ko": "3-아미노-2,6-다이메틸페놀",
+      "country": "SG",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "51eaa8d0-0b07-4ca1-851c-d3fa73a293f8:SG": {
+      "inci": "2,5,6-Triamino-4-Pyrimidinol Sulfate",
+      "ko": "2,5,6-트라이아미노-4-피리미딘올설페이트",
+      "country": "SG",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "5158cdfc-5d62-4486-a647-56e8b9b4690d:SG": {
+      "inci": "2,6-Dihydroxy-3,4-dimethylpyridine",
+      "ko": "2,6-다이하이드록시-3,4-다이메틸피리딘",
+      "country": "SG",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "d6ed8967-1af6-45a9-99ad-dc8b29d78d99:SG": {
+      "inci": "m-Aminophenol",
+      "ko": "m-아미노페놀",
+      "country": "SG",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "96b1570f-d47c-4984-a8b7-09cefd9c75ab:SG": {
+      "inci": "4-Amino-2-Hydroxytoluene",
+      "ko": "4-아미노-2-하이드록시톨루엔",
+      "country": "SG",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "7fdf6c8e-cdf8-425c-aa5c-59c0a80cab21:SG": {
+      "inci": "2-Amino-4-Hydroxyethylaminoanisole Sulfate",
+      "ko": "2-아미노-4-하이드록시에틸아미노아니솔설페이트",
+      "country": "SG",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "c2aadb01-a9fc-4545-ad0f-ae3401613138:SG": {
+      "inci": "1-Hexyl 4,5-Diamino Pyrazole Sulfate",
+      "ko": "1-헥실4,5-다이아미노피라졸설페이트",
+      "country": "SG",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "7c1ade80-5f49-4ece-ba41-8eab49d4f029:SG": {
+      "inci": "2,6-Dihydroxyethylaminotoluene",
+      "ko": "2,6-다이하이드록시에틸아미노톨루엔",
+      "country": "SG",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "c0fcd913-09db-4fc2-aaaf-24ab1b131ba7:SG": {
+      "inci": "p-Methylaminophenol",
+      "ko": "p-메칠아미노페놀",
+      "country": "SG",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "fb29d8b3-0aa3-45ef-a65b-cebf92d8c275:SG": {
+      "inci": "2-Amino-5-Ethylphenol HCl",
+      "ko": "2-아미노-5-에틸페놀에이치씨엘",
+      "country": "SG",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "5753909e-d0fb-4601-b8b0-d7f08916f51b:SG": {
+      "inci": "1-Acetoxy-2-Methylnaphthalene",
+      "ko": "1-아세톡시-2-메틸나프탈렌",
+      "country": "SG",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "a9a727a8-eec8-43a1-a38d-7984484838ed:SG": {
+      "inci": "p-Methylaminophenol Sulfate",
+      "ko": "p-메칠아미노페놀설페이트",
+      "country": "SG",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "abbb4a46-a014-43a7-9277-b5acc0b742fa:SG": {
+      "inci": "4-Chlororesorcinol",
+      "ko": "4-클로로레조시놀",
+      "country": "SG",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "5561861c-3c53-4975-9eb2-5cc6508627b4:SG": {
+      "inci": "Hydroxyethoxy Aminopyrazolopyridine HCl",
+      "ko": "하이드록시에틸아미노피라졸피리딘에이치씨엘",
+      "country": "SG",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "6ea7910c-66b3-4a3f-a32f-14b87c070b37:SG": {
+      "inci": "2-Methoxymethyl-p-Phenylenediamine Sulfate",
+      "ko": "2-메톡시메틸-p-페닐렌다이아민설페이트",
+      "country": "SG",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "3654ebf4-e3c5-45a6-8f31-908d1ee12699:SG": {
+      "inci": "4-FORMYL-1-METHYLQUINOLINIUM-P-TOLUENESULFONATE",
+      "ko": "4-포밀-1-메틸퀴놀리늄-P-톨루엔설포네이트",
+      "country": "SG",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "a2c0a729-76ef-4eb4-8260-bf26f1442376:SG": {
+      "inci": "Hydroxybenzomorpholine",
+      "ko": "하이드록시벤조모르폴린",
+      "country": "SG",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "9e3a4c48-02d3-427e-beca-f7dbc8969337:SG": {
+      "inci": "1-Hydroxyethyl 4,5-Diamino Pyrazole Sulfate",
+      "ko": "1-하이드록시에틸4,5-다이아미노피라졸설페이트",
+      "country": "SG",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "0aaf6489-aef3-45a5-bde2-f2592003af90:SG": {
+      "inci": "2,4-Diaminophenoxyethanol HCL",
+      "ko": "염산2,4-디아미노페녹시에탄올",
+      "country": "SG",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "6b292bb5-3702-4622-9dca-50e6298cb232:SG": {
+      "inci": "1-Naphthol",
+      "ko": "1-나프톨",
+      "country": "SG",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "57ddfecd-606f-44d6-893b-f4a13fa21810:SG": {
+      "inci": "Talc",
+      "ko": "탤크",
+      "country": "SG",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "16f32260-272d-482a-baf7-04b97f695002:SG": {
+      "inci": "4-Amino-m-cresol",
+      "ko": "4-아미노-m-크레솔",
+      "country": "SG",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "04bd4a0a-3951-4089-9c6d-1210d8a06d51:SG": {
+      "inci": "p-Methylaminophenol (CAS No 150-75-4) and its sulphate",
+      "ko": "p-메틸아미노페놀 및 그 설페이트",
+      "country": "SG",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "91526c9c-6d98-4593-8470-ec0daf12e91d:SG": {
+      "inci": "Hydroxyethyl-3,4-Methylenedioxyaniline HCl",
+      "ko": "하이드록시에틸-3,4-메틸렌다이옥시아닐린에이치씨엘",
+      "country": "SG",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "07ed1c94-c244-467d-8a76-225afa741ca0:SG": {
+      "inci": "Thioacids and their derivatives",
+      "ko": "티오애씨드 및 그 유도체",
+      "country": "SG",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "64228303-0b71-4b03-a494-18fba33d969c:SG": {
+      "inci": "2,6-Dimethoxy-3,5-pyridinediamine (CAS No 85679-78-3 (free base)) and its hydrochloride",
+      "ko": "2,6-다이메톡시-3,5-피리딘다이아민 및 그의 염산염",
+      "country": "SG",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "7d4dade6-c3b6-47d0-95a5-c8ea913684cb:SG": {
+      "inci": "2,6-Dimethoxy-3,5-Pyridinediamine HCl",
+      "ko": "2,6-다이메톡시-3,5-피리딘다이아민에이치씨엘",
+      "country": "SG",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "c94a44c7-f5eb-4f1f-842e-6c96148a9d3c:TH": {
+      "inci": "2-Methyl-5-Hydroxyethylaminophenol",
+      "ko": "2-메칠-5-하이드록시에칠아미노페놀",
+      "country": "TH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "3e6a4a9a-688c-4ac8-8813-b9b5a271e0d7:TH": {
+      "inci": "Hydroxypropyl bis(N-Hydroxyethyl-p-Phenylenediamine) HCl",
+      "ko": "하이드록시프로필비스(N-하이드록시에틸-p-페닐렌다이아민)에이치씨엘",
+      "country": "TH",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "fb487e0c-4f23-438e-9863-ac25e79c1b15:TH": {
+      "inci": "Phenyl Methyl Pyrazolone",
+      "ko": "페닐메틸피라졸론",
+      "country": "TH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "8c6f7021-fb54-4d37-b10e-91cda7b41fa2:TH": {
+      "inci": "5-Amino-4-Chloro-o-Cresol HCl",
+      "ko": "5-아미노-4-클로로-o-크레솔에이치씨엘",
+      "country": "TH",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "37395df0-86d4-4959-9fc4-95712b8309e2:TH": {
+      "inci": "m-Aminophenol and its salts",
+      "ko": "m-아미노페놀 및 그 염류",
+      "country": "TH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "e9caa9bf-83c7-4748-979f-a9fefa399967:TH": {
+      "inci": "2-Amino-3-hydroxypyridine",
+      "ko": "2-아미노-3-히드록시피리딘",
+      "country": "TH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "012f5192-5ef4-4843-a45c-7b4b3da26724:TH": {
+      "inci": "2-Methyl-1-Naphthol",
+      "ko": "2-메틸-1-나프톨",
+      "country": "TH",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "6d0b772a-1a3e-4fde-a83b-dee66813d468:TH": {
+      "inci": "3-Amino-2,6-Dimethylphenol",
+      "ko": "3-아미노-2,6-다이메틸페놀",
+      "country": "TH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "51eaa8d0-0b07-4ca1-851c-d3fa73a293f8:TH": {
+      "inci": "2,5,6-Triamino-4-Pyrimidinol Sulfate",
+      "ko": "2,5,6-트라이아미노-4-피리미딘올설페이트",
+      "country": "TH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "5158cdfc-5d62-4486-a647-56e8b9b4690d:TH": {
+      "inci": "2,6-Dihydroxy-3,4-dimethylpyridine",
+      "ko": "2,6-다이하이드록시-3,4-다이메틸피리딘",
+      "country": "TH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "d6ed8967-1af6-45a9-99ad-dc8b29d78d99:TH": {
+      "inci": "m-Aminophenol",
+      "ko": "m-아미노페놀",
+      "country": "TH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "96b1570f-d47c-4984-a8b7-09cefd9c75ab:TH": {
+      "inci": "4-Amino-2-Hydroxytoluene",
+      "ko": "4-아미노-2-하이드록시톨루엔",
+      "country": "TH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "7fdf6c8e-cdf8-425c-aa5c-59c0a80cab21:TH": {
+      "inci": "2-Amino-4-Hydroxyethylaminoanisole Sulfate",
+      "ko": "2-아미노-4-하이드록시에틸아미노아니솔설페이트",
+      "country": "TH",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "c2aadb01-a9fc-4545-ad0f-ae3401613138:TH": {
+      "inci": "1-Hexyl 4,5-Diamino Pyrazole Sulfate",
+      "ko": "1-헥실4,5-다이아미노피라졸설페이트",
+      "country": "TH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "7c1ade80-5f49-4ece-ba41-8eab49d4f029:TH": {
+      "inci": "2,6-Dihydroxyethylaminotoluene",
+      "ko": "2,6-다이하이드록시에틸아미노톨루엔",
+      "country": "TH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "c0fcd913-09db-4fc2-aaaf-24ab1b131ba7:TH": {
+      "inci": "p-Methylaminophenol",
+      "ko": "p-메칠아미노페놀",
+      "country": "TH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "fb29d8b3-0aa3-45ef-a65b-cebf92d8c275:TH": {
+      "inci": "2-Amino-5-Ethylphenol HCl",
+      "ko": "2-아미노-5-에틸페놀에이치씨엘",
+      "country": "TH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "5753909e-d0fb-4601-b8b0-d7f08916f51b:TH": {
+      "inci": "1-Acetoxy-2-Methylnaphthalene",
+      "ko": "1-아세톡시-2-메틸나프탈렌",
+      "country": "TH",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "a9a727a8-eec8-43a1-a38d-7984484838ed:TH": {
+      "inci": "p-Methylaminophenol Sulfate",
+      "ko": "p-메칠아미노페놀설페이트",
+      "country": "TH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "abbb4a46-a014-43a7-9277-b5acc0b742fa:TH": {
+      "inci": "4-Chlororesorcinol",
+      "ko": "4-클로로레조시놀",
+      "country": "TH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "5561861c-3c53-4975-9eb2-5cc6508627b4:TH": {
+      "inci": "Hydroxyethoxy Aminopyrazolopyridine HCl",
+      "ko": "하이드록시에틸아미노피라졸피리딘에이치씨엘",
+      "country": "TH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "6ea7910c-66b3-4a3f-a32f-14b87c070b37:TH": {
+      "inci": "2-Methoxymethyl-p-Phenylenediamine Sulfate",
+      "ko": "2-메톡시메틸-p-페닐렌다이아민설페이트",
+      "country": "TH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "3654ebf4-e3c5-45a6-8f31-908d1ee12699:TH": {
+      "inci": "4-FORMYL-1-METHYLQUINOLINIUM-P-TOLUENESULFONATE",
+      "ko": "4-포밀-1-메틸퀴놀리늄-P-톨루엔설포네이트",
+      "country": "TH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "a2c0a729-76ef-4eb4-8260-bf26f1442376:TH": {
+      "inci": "Hydroxybenzomorpholine",
+      "ko": "하이드록시벤조모르폴린",
+      "country": "TH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "9e3a4c48-02d3-427e-beca-f7dbc8969337:TH": {
+      "inci": "1-Hydroxyethyl 4,5-Diamino Pyrazole Sulfate",
+      "ko": "1-하이드록시에틸4,5-다이아미노피라졸설페이트",
+      "country": "TH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "0aaf6489-aef3-45a5-bde2-f2592003af90:TH": {
+      "inci": "2,4-Diaminophenoxyethanol HCL",
+      "ko": "염산2,4-디아미노페녹시에탄올",
+      "country": "TH",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "6b292bb5-3702-4622-9dca-50e6298cb232:TH": {
+      "inci": "1-Naphthol",
+      "ko": "1-나프톨",
+      "country": "TH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "57ddfecd-606f-44d6-893b-f4a13fa21810:TH": {
+      "inci": "Talc",
+      "ko": "탤크",
+      "country": "TH",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "16f32260-272d-482a-baf7-04b97f695002:TH": {
+      "inci": "4-Amino-m-cresol",
+      "ko": "4-아미노-m-크레솔",
+      "country": "TH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "04bd4a0a-3951-4089-9c6d-1210d8a06d51:TH": {
+      "inci": "p-Methylaminophenol (CAS No 150-75-4) and its sulphate",
+      "ko": "p-메틸아미노페놀 및 그 설페이트",
+      "country": "TH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "91526c9c-6d98-4593-8470-ec0daf12e91d:TH": {
+      "inci": "Hydroxyethyl-3,4-Methylenedioxyaniline HCl",
+      "ko": "하이드록시에틸-3,4-메틸렌다이옥시아닐린에이치씨엘",
+      "country": "TH",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "07ed1c94-c244-467d-8a76-225afa741ca0:TH": {
+      "inci": "Thioacids and their derivatives",
+      "ko": "티오애씨드 및 그 유도체",
+      "country": "TH",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "64228303-0b71-4b03-a494-18fba33d969c:TH": {
+      "inci": "2,6-Dimethoxy-3,5-pyridinediamine (CAS No 85679-78-3 (free base)) and its hydrochloride",
+      "ko": "2,6-다이메톡시-3,5-피리딘다이아민 및 그의 염산염",
+      "country": "TH",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "7d4dade6-c3b6-47d0-95a5-c8ea913684cb:TH": {
+      "inci": "2,6-Dimethoxy-3,5-Pyridinediamine HCl",
+      "ko": "2,6-다이메톡시-3,5-피리딘다이아민에이치씨엘",
+      "country": "TH",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "c94a44c7-f5eb-4f1f-842e-6c96148a9d3c:VN": {
+      "inci": "2-Methyl-5-Hydroxyethylaminophenol",
+      "ko": "2-메칠-5-하이드록시에칠아미노페놀",
+      "country": "VN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "3e6a4a9a-688c-4ac8-8813-b9b5a271e0d7:VN": {
+      "inci": "Hydroxypropyl bis(N-Hydroxyethyl-p-Phenylenediamine) HCl",
+      "ko": "하이드록시프로필비스(N-하이드록시에틸-p-페닐렌다이아민)에이치씨엘",
+      "country": "VN",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "fb487e0c-4f23-438e-9863-ac25e79c1b15:VN": {
+      "inci": "Phenyl Methyl Pyrazolone",
+      "ko": "페닐메틸피라졸론",
+      "country": "VN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "8c6f7021-fb54-4d37-b10e-91cda7b41fa2:VN": {
+      "inci": "5-Amino-4-Chloro-o-Cresol HCl",
+      "ko": "5-아미노-4-클로로-o-크레솔에이치씨엘",
+      "country": "VN",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "37395df0-86d4-4959-9fc4-95712b8309e2:VN": {
+      "inci": "m-Aminophenol and its salts",
+      "ko": "m-아미노페놀 및 그 염류",
+      "country": "VN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "e9caa9bf-83c7-4748-979f-a9fefa399967:VN": {
+      "inci": "2-Amino-3-hydroxypyridine",
+      "ko": "2-아미노-3-히드록시피리딘",
+      "country": "VN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "012f5192-5ef4-4843-a45c-7b4b3da26724:VN": {
+      "inci": "2-Methyl-1-Naphthol",
+      "ko": "2-메틸-1-나프톨",
+      "country": "VN",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "6d0b772a-1a3e-4fde-a83b-dee66813d468:VN": {
+      "inci": "3-Amino-2,6-Dimethylphenol",
+      "ko": "3-아미노-2,6-다이메틸페놀",
+      "country": "VN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "51eaa8d0-0b07-4ca1-851c-d3fa73a293f8:VN": {
+      "inci": "2,5,6-Triamino-4-Pyrimidinol Sulfate",
+      "ko": "2,5,6-트라이아미노-4-피리미딘올설페이트",
+      "country": "VN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "5158cdfc-5d62-4486-a647-56e8b9b4690d:VN": {
+      "inci": "2,6-Dihydroxy-3,4-dimethylpyridine",
+      "ko": "2,6-다이하이드록시-3,4-다이메틸피리딘",
+      "country": "VN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "d6ed8967-1af6-45a9-99ad-dc8b29d78d99:VN": {
+      "inci": "m-Aminophenol",
+      "ko": "m-아미노페놀",
+      "country": "VN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "96b1570f-d47c-4984-a8b7-09cefd9c75ab:VN": {
+      "inci": "4-Amino-2-Hydroxytoluene",
+      "ko": "4-아미노-2-하이드록시톨루엔",
+      "country": "VN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "7fdf6c8e-cdf8-425c-aa5c-59c0a80cab21:VN": {
+      "inci": "2-Amino-4-Hydroxyethylaminoanisole Sulfate",
+      "ko": "2-아미노-4-하이드록시에틸아미노아니솔설페이트",
+      "country": "VN",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "c2aadb01-a9fc-4545-ad0f-ae3401613138:VN": {
+      "inci": "1-Hexyl 4,5-Diamino Pyrazole Sulfate",
+      "ko": "1-헥실4,5-다이아미노피라졸설페이트",
+      "country": "VN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "7c1ade80-5f49-4ece-ba41-8eab49d4f029:VN": {
+      "inci": "2,6-Dihydroxyethylaminotoluene",
+      "ko": "2,6-다이하이드록시에틸아미노톨루엔",
+      "country": "VN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "c0fcd913-09db-4fc2-aaaf-24ab1b131ba7:VN": {
+      "inci": "p-Methylaminophenol",
+      "ko": "p-메칠아미노페놀",
+      "country": "VN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "fb29d8b3-0aa3-45ef-a65b-cebf92d8c275:VN": {
+      "inci": "2-Amino-5-Ethylphenol HCl",
+      "ko": "2-아미노-5-에틸페놀에이치씨엘",
+      "country": "VN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "5753909e-d0fb-4601-b8b0-d7f08916f51b:VN": {
+      "inci": "1-Acetoxy-2-Methylnaphthalene",
+      "ko": "1-아세톡시-2-메틸나프탈렌",
+      "country": "VN",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "a9a727a8-eec8-43a1-a38d-7984484838ed:VN": {
+      "inci": "p-Methylaminophenol Sulfate",
+      "ko": "p-메칠아미노페놀설페이트",
+      "country": "VN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "abbb4a46-a014-43a7-9277-b5acc0b742fa:VN": {
+      "inci": "4-Chlororesorcinol",
+      "ko": "4-클로로레조시놀",
+      "country": "VN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "5561861c-3c53-4975-9eb2-5cc6508627b4:VN": {
+      "inci": "Hydroxyethoxy Aminopyrazolopyridine HCl",
+      "ko": "하이드록시에틸아미노피라졸피리딘에이치씨엘",
+      "country": "VN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "6ea7910c-66b3-4a3f-a32f-14b87c070b37:VN": {
+      "inci": "2-Methoxymethyl-p-Phenylenediamine Sulfate",
+      "ko": "2-메톡시메틸-p-페닐렌다이아민설페이트",
+      "country": "VN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "3654ebf4-e3c5-45a6-8f31-908d1ee12699:VN": {
+      "inci": "4-FORMYL-1-METHYLQUINOLINIUM-P-TOLUENESULFONATE",
+      "ko": "4-포밀-1-메틸퀴놀리늄-P-톨루엔설포네이트",
+      "country": "VN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "a2c0a729-76ef-4eb4-8260-bf26f1442376:VN": {
+      "inci": "Hydroxybenzomorpholine",
+      "ko": "하이드록시벤조모르폴린",
+      "country": "VN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "9e3a4c48-02d3-427e-beca-f7dbc8969337:VN": {
+      "inci": "1-Hydroxyethyl 4,5-Diamino Pyrazole Sulfate",
+      "ko": "1-하이드록시에틸4,5-다이아미노피라졸설페이트",
+      "country": "VN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "0aaf6489-aef3-45a5-bde2-f2592003af90:VN": {
+      "inci": "2,4-Diaminophenoxyethanol HCL",
+      "ko": "염산2,4-디아미노페녹시에탄올",
+      "country": "VN",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "6b292bb5-3702-4622-9dca-50e6298cb232:VN": {
+      "inci": "1-Naphthol",
+      "ko": "1-나프톨",
+      "country": "VN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "57ddfecd-606f-44d6-893b-f4a13fa21810:VN": {
+      "inci": "Talc",
+      "ko": "탤크",
+      "country": "VN",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "16f32260-272d-482a-baf7-04b97f695002:VN": {
+      "inci": "4-Amino-m-cresol",
+      "ko": "4-아미노-m-크레솔",
+      "country": "VN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "04bd4a0a-3951-4089-9c6d-1210d8a06d51:VN": {
+      "inci": "p-Methylaminophenol (CAS No 150-75-4) and its sulphate",
+      "ko": "p-메틸아미노페놀 및 그 설페이트",
+      "country": "VN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "91526c9c-6d98-4593-8470-ec0daf12e91d:VN": {
+      "inci": "Hydroxyethyl-3,4-Methylenedioxyaniline HCl",
+      "ko": "하이드록시에틸-3,4-메틸렌다이옥시아닐린에이치씨엘",
+      "country": "VN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "07ed1c94-c244-467d-8a76-225afa741ca0:VN": {
+      "inci": "Thioacids and their derivatives",
+      "ko": "티오애씨드 및 그 유도체",
+      "country": "VN",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "64228303-0b71-4b03-a494-18fba33d969c:VN": {
+      "inci": "2,6-Dimethoxy-3,5-pyridinediamine (CAS No 85679-78-3 (free base)) and its hydrochloride",
+      "ko": "2,6-다이메톡시-3,5-피리딘다이아민 및 그의 염산염",
+      "country": "VN",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "7d4dade6-c3b6-47d0-95a5-c8ea913684cb:VN": {
+      "inci": "2,6-Dimethoxy-3,5-Pyridinediamine HCl",
+      "ko": "2,6-다이메톡시-3,5-피리딘다이아민에이치씨엘",
+      "country": "VN",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
     }
   }
 }
