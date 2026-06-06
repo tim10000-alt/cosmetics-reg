@@ -79,38 +79,29 @@ export interface LookupResponse {
   ingredient: IngredientMatch | null;
   results: CountryLookupResult[];
   related_variants?: RelatedVariant[];
+  // 같은 질의에 매칭된 *다른* 원료(형제그룹) — 단일 best 가 가리던 결과를 선택지로 노출(shadowing 제거).
+  other_matches?: IngredientMatch[];
 }
 
 function sanitize(s: string): string {
   return s.replace(/[,()%_\\"]/g, " ").replace(/\s+/g, " ").trim();
 }
 
-function findIngredientSync(
+// 질의에 대한 *모든* 매칭을 점수순(낮을수록 우선)으로 반환 — 단일 best 만 쓰면 같은 질의에
+// 매칭되는 다른 원료가 가려짐(shadowing). lookupRegulation 이 [0]=주결과, 나머지=other_matches(선택지).
+function rankIngredients(
   query: string,
   ds: Awaited<ReturnType<typeof dataset>>,
-): Ingredient | null {
+  limit: number,
+): Ingredient[] {
   const safe = sanitize(query).toLowerCase();
-  if (!safe) return null;
-
-  // 1) exact INCI
-  const inci = ds.ingredientByInciLower.get(safe);
-  if (inci) return inci;
-
-  // 2) exact Korean
-  const kor = ds.ingredientByKoreanLower.get(safe);
-  if (kor) return kor;
-
-  // 3) CAS 정확 매칭 (CAS 형식만)
+  if (!safe) return [];
+  // CAS 정확 매칭 — 명확(단일).
   if (/^\d{1,7}-\d{2}-\d$/.test(query.trim())) {
     const cas = ds.ingredientByCas.get(query.trim());
-    if (cas) return cas;
+    if (cas) return [cas];
   }
-
-  // 4) substring 검색 — INCI / Korean / Chinese / Japanese.
-  // F6: 첫 매치 반환은 의도와 다른 원료를 잡을 수 있어, 가장 근접한 후보를 랭킹 선택.
-  // 점수 낮을수록 우선: 접두(startsWith) > 부분포함, 그리고 이름이 짧을수록(=질의에 근접) 우선.
-  let best: Ingredient | null = null;
-  let bestScore = Infinity;
+  const scored: { ing: Ingredient; score: number }[] = [];
   for (const ing of ds.ingredients) {
     // 질의(safe)와 동일 정규화(쉼표/괄호→공백·공백압축) 한 이름으로 비교 — 비대칭으로 인해
     // 전체명("Borates (Sodium borate, tetraborate)" 등 쉼표/괄호 포함)이 검색 미도달이던 버그 수정.
@@ -121,18 +112,25 @@ function findIngredientSync(
     if (kor && kor.includes(safe)) score = Math.min(score, (kor === safe ? 0 : kor.startsWith(safe) ? 1 : 1000) + kor.length);
     if (ing.chinese_name && ing.chinese_name.includes(query)) score = Math.min(score, 500 + ing.chinese_name.length);
     if (ing.japanese_name && ing.japanese_name.includes(query)) score = Math.min(score, 500 + ing.japanese_name.length);
-    // 5) synonym 매칭 — 통용명(예: "Bronopol")으로도 도달. 이름(INCI/한/중/일) 어디에도
-    //    안 걸린 경우(score=Infinity)에만 발동 + 2000+ 로 항상 최하위 우선순위 → 기존 resolve
-    //    결과는 절대 불변(순수 additive). 어떤 이름에도 매칭 안 되던 질의만 새로 도달.
+    // synonym 매칭 — 통용명(예: "Bronopol")으로도 도달. 이름 어디에도 안 걸린 경우에만 발동
+    // + 2000+ 로 최하위 → 기존 resolve 결과 불변(순수 additive).
     if (score === Infinity && ing.synonyms) {
       for (const syn of ing.synonyms) {
         const s = syn.toLowerCase();
-        if (s.includes(safe)) { score = 2000 + (s.startsWith(safe) ? 0 : 1000) + s.length; break; }
+        if (s.includes(safe)) { score = 2000 + (s.startsWith(safe) ? 1 : 1000) + s.length; break; }
       }
     }
-    if (score < bestScore) { bestScore = score; best = ing; }
+    if (score < Infinity) scored.push({ ing, score });
   }
-  return best;
+  scored.sort((a, b) => a.score - b.score);
+  return scored.slice(0, limit).map((x) => x.ing);
+}
+
+function findIngredientSync(
+  query: string,
+  ds: Awaited<ReturnType<typeof dataset>>,
+): Ingredient | null {
+  return rankIngredients(query, ds, 1)[0] ?? null;
 }
 
 // 형제 그룹(이미 CAS/INCI 로 병합된 동일물질)의 *대표 표시명*을 한국 등록 표준명 우선으로 선택.
@@ -209,6 +207,23 @@ export async function lookupRegulation(
   const ids = ds.siblingIds.get(resolved.id) ?? [resolved.id];
   // 표시 성분 = 형제 그룹의 한국 등록 표준명 대표(영문 동의어로 resolve 돼도 한국명으로 표기).
   const ingredient = buildCanonical(ids, resolved, ds);
+
+  // 다중결과 — 같은 질의에 매칭된 *다른 형제그룹* 들을 선택지로(shadowing 제거). 형제그룹 키로
+  // 중복 제거(같은 물질의 표기변형은 1개로), 주결과 그룹은 제외. 최대 8개.
+  const groupKey = (i: Ingredient): string => {
+    const sib = ds.siblingIds.get(i.id);
+    return sib && sib.length ? [...sib].sort()[0] : i.id;
+  };
+  const seenGroups = new Set<string>([groupKey(resolved)]);
+  const otherMatches: IngredientMatch[] = [];
+  for (const cand of rankIngredients(q, ds, 60)) {
+    const gk = groupKey(cand);
+    if (seenGroups.has(gk)) continue;
+    seenGroups.add(gk);
+    const cIds = ds.siblingIds.get(cand.id) ?? [cand.id];
+    otherMatches.push(buildCanonical(cIds, cand, ds));
+    if (otherMatches.length >= 8) break;
+  }
   const bucketFor = (code: string): Regulation[] | undefined => {
     let merged: Regulation[] | null = null;
     for (const id of ids) {
@@ -420,5 +435,6 @@ export async function lookupRegulation(
     ingredient,
     results,
     related_variants: related_variants.length ? related_variants : undefined,
+    other_matches: otherMatches.length ? otherMatches : undefined,
   };
 }

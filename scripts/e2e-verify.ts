@@ -108,7 +108,9 @@ async function main() {
   await page.fill('input[type="text"]', "");
   await page.type('input[type="text"]', "레티", { delay: 60 });
   await page.waitForTimeout(500);
-  const drop = page.locator("ul").first();
+  // 자동완성 드롭다운만 정확히 타겟(role=listbox) — 결과영역의 다른 ul(다중결과·related_variants)
+  // 과 구분. "ul.first()" 는 직전 결과의 다중결과 목록을 잡아 오탐했음.
+  const drop = page.locator('ul[role="listbox"]');
   const dropItems = await drop.locator("li").count().catch(() => 0);
   record("T8 autocomplete 레티", dropItems > 0, `items=${dropItems}`);
 

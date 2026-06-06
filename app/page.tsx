@@ -223,6 +223,30 @@ function HomeInner() {
       {response?.ingredient && (
         <>
           <IngredientHeader ingredient={response.ingredient} />
+          {/* 다중결과 — 같은 질의에 다른 원료도 매칭됐을 때 선택지로 노출(단일 best 가 가리던 결과
+              shadowing 제거). 클릭 시 해당 원료로 전환. */}
+          {response.other_matches && response.other_matches.length > 0 && (
+            <div className="mt-4 rounded-lg border border-zinc-200 bg-zinc-50 px-4 py-3 dark:border-zinc-700 dark:bg-zinc-900/60">
+              <div className="text-sm font-medium text-zinc-700 dark:text-zinc-200">
+                같은 검색어에 매칭된 다른 원료 {response.other_matches.length}건 — 클릭하여 보기
+              </div>
+              <ul className="mt-2 space-y-1">
+                {response.other_matches.map((m) => (
+                  <li key={m.id}>
+                    <button
+                      type="button"
+                      onClick={() => { setQuery(m.inci_name); setShowSuggestions(false); runSearch(m.inci_name); }}
+                      className="w-full rounded px-2 py-1 text-left text-xs hover:bg-zinc-200 dark:hover:bg-zinc-800"
+                    >
+                      <span className="font-medium text-zinc-800 dark:text-zinc-100">{m.inci_name}</span>
+                      {m.korean_name && <span className="text-zinc-500 dark:text-zinc-400"> · {m.korean_name}</span>}
+                      {m.cas_no && <span className="text-zinc-400"> · CAS {m.cas_no}</span>}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
           {response.related_variants && response.related_variants.length > 0 && (
             <div className="mt-4 rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 dark:border-amber-800 dark:bg-amber-950/40">
               <div className="text-sm font-medium text-amber-900 dark:text-amber-200">
