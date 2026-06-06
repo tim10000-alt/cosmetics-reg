@@ -217,7 +217,12 @@ async function main() {
     const isSplit = !consensusRestricted &&
       ((r1?.verdict === "restricted" && hi(r1) && r2?.verdict === "banned") ||
        (r2?.verdict === "restricted" && hi(r2) && r1?.verdict === "banned"));
-    if (isSplit) { r3 = (await ask(GEMINI_PRIMARY, p)).r; await sleep(2000); }
+    if (isSplit) {
+      r3 = (await ask(GEMINI_PRIMARY, p)).r; await sleep(2000);
+      // tiebreak 3차 호출이 quota/transient 로 null 이면 판정 미완 → 캐시 말고 다음 run 재시도.
+      // (보수적 banned 영구캐시 방지 — tiebreaker 가 실제로 투표할 기회를 보장. one-null 동류.)
+      if (!r3) { continue; }
+    }
     const tiebreakRestricted = isSplit && r3?.verdict === "restricted" && hi(r3);
     decisions[k] = {
       inci: ig.inci_name, ko: ig.korean_name, country: r.country_code,
