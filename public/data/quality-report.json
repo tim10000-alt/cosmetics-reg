@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-06-05T22:33:56.901Z",
+  "generated_at": "2026-06-06T00:34:11.984Z",
   "totalRegs": 94372,
   "coverage": {
     "AR": 4843,
     "BO": 2160,
     "BR": 4868,
     "CA": 2198,
-    "CN": 13640,
+    "CN": 13684,
     "CO": 2160,
     "EC": 2160,
     "EU": 6786,
@@ -28,5 +28,7 @@
   "staleCount": 0,
   "staleSources": [],
   "limitAnomalyCount": 0,
+  "postHealCorrupt": 0,
+  "postHealWhitespace": 0,
   "checked_at_note": "matches regulations-query primary-row logic"
 }
