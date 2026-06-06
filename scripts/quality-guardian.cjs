@@ -164,6 +164,14 @@ function main() {
     const b = normN(stripFoot(i.inci_name)); footVariantCount.set(b, (footVariantCount.get(b) || 0) + 1);
   }
   let footCollapsed = 0;
+  // 임베디드 조건문 collapse — "X (+)(1) 0.5% (acid)…"·"X Not to be used…" 처럼 PDF가 조건문을 이름에
+  // 박은 아티팩트를 clean base "X" 로 병합. 안전: strip 결과가 *EMBED 없는 기존 성분명*과 정확히 일치할
+  // 때만(잘못 잘리면 매칭 안 돼 자동 skip = 분별력). base 없으면 미처리(부정확 strip 데이터 오염 방지).
+  const EMBED_RE = /\s+(?:[（(]\s*[+\d]|Not to be used|Must not|\d+(?:\.\d+)?\s*%|등재\s*\(Ref|avoid contact)/i;
+  const stripEmbed = (s) => { const m = s.match(EMBED_RE); return m ? s.slice(0, m.index).trim() : s; };
+  const cleanBaseIds = new Map();
+  for (const i of ingObj.rows) if (i.inci_name && !EMBED_RE.test(i.inci_name) && !FOOT_RE.test(i.inci_name)) cleanBaseIds.set(normN(i.inci_name), i.id);
+  let embedCollapsed = 0;
   let recovered = 0, ingChanged = false;
   let nameFieldRecovered = 0, nameFieldNulled = 0;       // 보조 표시명(한/중/일) 정리
   let casRecovered = 0, casNulled = 0, casElementFixed = 0, casFromNameFixed = 0;   // CAS 정규화 + 원소CAS 오기교정 + 이름속 CAS 복구
@@ -186,6 +194,13 @@ function main() {
       const stripped = stripFoot(i.inci_name), sn = normN(stripFoot(i.inci_name));
       if (stripped && stripped !== i.inci_name && cleanNameIds.has(sn) && cleanNameIds.get(sn) !== i.id && footVariantCount.get(sn) === 1) {
         i.inci_name = stripped; footCollapsed++; ingChanged = true;
+      }
+    }
+    // 임베디드 조건문 collapse — strip 결과가 기존 clean base 와 일치할 때만(안전).
+    if (typeof i.inci_name === "string" && EMBED_RE.test(i.inci_name)) {
+      const st = stripEmbed(i.inci_name), sn = normN(st);
+      if (st && st !== i.inci_name && st.length >= 5 && cleanBaseIds.has(sn) && cleanBaseIds.get(sn) !== i.id) {
+        i.inci_name = st; embedCollapsed++; ingChanged = true;
       }
     }
     // inci_name = 검색 키/제목 — 복구 실패 시 레코드 전체 격리(검색에서 제외).
@@ -316,6 +331,7 @@ function main() {
   console.log(`  CAS 정규화: 복구 ${casRecovered} · 깨진값(날짜/0/대시) null ${casNulled} · 원소CAS 오기교정 ${casElementFixed} · 이름속CAS 복구 ${casFromNameFixed}`);
   console.log(`  이름 앞뒤 공백 제거: ${nameTrimmed}`);
   console.log(`  각주마커 안전 collapse(X(1)→X): ${footCollapsed}`);
+  console.log(`  임베디드 조건문 collapse(X 0.5%…→X): ${embedCollapsed}`);
   console.log(`  격리(복구 불가) 성분명: ${corrupt.length}`);
   console.log(`  🩺 self-heal 후 잔존 가시오염(0이어야 정상): 오염명 ${residualCorrupt} · 공백 ${residualWhitespace}`);
   console.log(`  국가 행수 급감(회귀): ${regressions.length ? regressions.join(", ") : "없음"}`);
