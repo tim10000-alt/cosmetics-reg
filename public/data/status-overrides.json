@@ -131,6 +131,16 @@
       "inci": "Sodium Hydroxymethylglycinate",
       "ko": "소듐하이드록시메칠글리시네이트",
       "reason": "The regulatory text specifies a '배합한도' (concentration limit) of 0.5%. In Korean cosmetic regulations, the presence of a concentration limit indicates that the ingredient is allowed up to that concentration, rather than being prohibited. This is a typical condition for a restricted ingredient, not a banned one."
+    },
+    {
+      "ingredient_id": "a1645817-7a02-4f91-8d92-78936abb9892",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "N,N-Bis(2-Hydroxyethyl)-p-Phenylenediamine Sulfate",
+      "ko": "N,N-비스(2-히드록시에틸)-p-페닐렌디아민설페이트",
+      "reason": "The ingredient is explicitly allowed in oxidative hair dyes up to 2.9%, but prohibited in other product types, indicating a use restriction rather than a ban."
     }
   ]
 }

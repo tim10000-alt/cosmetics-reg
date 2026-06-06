@@ -316,6 +316,24 @@
       "m3": null,
       "verdict": "restricted",
       "by": "gemini-consensus"
+    },
+    "a1645817-7a02-4f91-8d92-78936abb9892:KR": {
+      "inci": "N,N-Bis(2-Hydroxyethyl)-p-Phenylenediamine Sulfate",
+      "ko": "N,N-비스(2-히드록시에틸)-p-페닐렌디아민설페이트",
+      "country": "KR",
+      "m1": {
+        "verdict": "restricted",
+        "confidence": 1,
+        "reason": "The ingredient is explicitly allowed in oxidative hair dyes up to 2.9%, but prohibited in other product types, indicating a use restriction rather than a ban."
+      },
+      "m2": {
+        "verdict": "restricted",
+        "confidence": 0.9,
+        "reason": "The text specifies a concentration limit of 2.9% for oxidative hair dyes, indicating it is restricted rather than completely banned."
+      },
+      "m3": null,
+      "verdict": "restricted",
+      "by": "gemini-consensus"
     }
   }
 }
