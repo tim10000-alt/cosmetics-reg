@@ -2597,6 +2597,1524 @@
       "verdict": "banned",
       "by": "claude-judge",
       "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "6a421bfe-a31c-40dd-b87e-fefee8e0d7d1:CA": {
+      "inci": "Diethanolamine",
+      "ko": "다이에탄올아민",
+      "country": "CA",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "e9b0ff1f-ee8a-4e1b-acf4-095d11e1ea15:CA": {
+      "inci": "Sodium Fluoride",
+      "ko": "소듐플루오라이드",
+      "country": "CA",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "5bf2af4c-f1a4-4e82-8451-1764e18a5179:CA": {
+      "inci": "Fluoride containing substances",
+      "ko": "플루오라이드 함유 성분",
+      "country": "CA",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "bdb5eede-1ae8-419a-a57d-2e1de770383b:CA": {
+      "inci": "Human Placental Extract",
+      "ko": "인체태반추출물",
+      "country": "CA",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "9e722595-4285-4aa1-8e6c-7215f67d72dd:CA": {
+      "inci": "Human Umbilical Extract",
+      "ko": "인체탯줄추출물",
+      "country": "CA",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "e17df87c-4314-4181-9e3e-b3eb31c908bf:CA": {
+      "inci": "Methyl Alcohol",
+      "ko": "메틸알코올",
+      "country": "CA",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "de9ee7f7-cdb5-46f4-bb12-ac79789606e2:CA": {
+      "inci": "Human Placental Enzymes",
+      "ko": "인체태반효소",
+      "country": "CA",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "6b35733d-27f9-4551-b8b9-671a7a5fb42b:CA": {
+      "inci": "Methylene Glycol",
+      "ko": "메틸렌글라이콜",
+      "country": "CA",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "55ddc064-9c41-4b8a-b0f5-48e08ca1d216:CA": {
+      "inci": "Toluene-2,5-Diamine Sulfate, Toluene-2,5-diamine sulphate",
+      "ko": "황산톨루엔-2,5-디아민",
+      "country": "CA",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "4b8969c7-a423-4f84-af4e-3248b34c345e:CA": {
+      "inci": "Toluene-2,5-Diamine",
+      "ko": "톨루엔-2,5-디아민",
+      "country": "CA",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "333caad3-3b74-4213-8dc4-c9524f1fcc87:CA": {
+      "inci": "Hydrolyzed Human Placental Protein",
+      "ko": "하이드롤라이즈드인체태반단백질",
+      "country": "CA",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "04faf84c-4e6f-4163-96a1-2d6894e0360d:CA": {
+      "inci": "Catalase",
+      "ko": "카탈라아제",
+      "country": "CA",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "0dcbc616-87f9-4aa7-a94e-c07f4aac75e3:CA": {
+      "inci": "Calcium fluoride",
+      "ko": "칼슘플루오라이드",
+      "country": "CA",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "b1ebf0e1-0215-4659-bf18-aa17e70d9079:CA": {
+      "inci": "Hydrolyzed Hair Keratin",
+      "ko": "하이드롤라이즈드헤어케라틴",
+      "country": "CA",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "091baf04-3ac6-4e7c-9296-3dad46858bf3:CA": {
+      "inci": "Resorcinol",
+      "ko": "레조시놀",
+      "country": "CA",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "a8b30778-5478-4a28-b06a-9d3943a6cc6c:CA": {
+      "inci": "Stannous Fluoride",
+      "ko": "스태노우스플루오라이드",
+      "country": "CA",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "8370f219-1f90-498a-8557-e9a1baa22297:CA": {
+      "inci": "Human Placental Lipids",
+      "ko": "인체태반지질",
+      "country": "CA",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "0275272c-76b8-4541-a9cf-fb86f6815245:CA": {
+      "inci": "Sodium Monofluorophosphate",
+      "ko": "소듐모노플루오로포스페이트",
+      "country": "CA",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "157e42a1-fbed-4599-af6c-585705823e58:CA": {
+      "inci": "Ergocalciferol",
+      "ko": "에르고칼시페롤",
+      "country": "CA",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "1c303dcb-7134-41ea-810b-fdd3903f0050:CA": {
+      "inci": "Cholecalciferol",
+      "ko": "콜레칼시페롤",
+      "country": "CA",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "0aa07b09-10fa-4718-bd70-28e22848e786:CA": {
+      "inci": "Placental Extract",
+      "ko": "태반추출물",
+      "country": "CA",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "c35e84c3-0d4c-4e3f-881b-3eb04e2034be:CA": {
+      "inci": "Dichloromethane",
+      "ko": "다이클로로메탄",
+      "country": "CA",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "0e9aa5d5-ee02-4635-a129-cf89ab68eb1f:CA": {
+      "inci": "Coal tar dye",
+      "ko": "콜타르다이",
+      "country": "CA",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "35c18f67-4ee7-4c6f-aa04-0f521306e821:CN": {
+      "inci": "Strontium hydroxide",
+      "ko": "스트론튬하이드록사이드",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "57ddfecd-606f-44d6-893b-f4a13fa21810:CN": {
+      "inci": "Talc",
+      "ko": "탤크",
+      "country": "CN",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "a9a73f93-6a0d-41d8-bdb1-37123873f616:EU": {
+      "inci": "Oxyquinoline",
+      "ko": "옥시퀴놀린",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "da65a025-9fb3-47d0-9134-d7aba64fc13d:EU": {
+      "inci": "Pyranine Conc, D&C Green No. 8, Midori204, CI 59040",
+      "ko": "녹색204호",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "4dbae469-da49-4b02-879a-2b286ed45ad1:EU": {
+      "inci": "7-Ethylbicyclooxazolidine",
+      "ko": "7-에틸바이사이클로옥사졸리딘",
+      "country": "EU",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "98ec2cb0-995d-4d24-90de-3e9ed61efded:EU": {
+      "inci": "Butyl 4-hydroxybenzoate and its salts Propyl 4-hydroxybenzoate and its salts",
+      "ko": "부틸4-하이드록시벤조에이트 및 그 염류\n프로필4-하이드록시벤조에이트 및 그염류",
+      "country": "EU",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "6448bd27-1e4c-452d-a9a4-42cf6253dba7:EU": {
+      "inci": "Brilliant Lake Red R, D&C Red No. 31, Red 31 Lake, Aka219, PIGMENT RED 64, CI 15800",
+      "ko": "적색219호",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "3f7c71a6-5bab-4335-8ce7-3a209d1e6977:EU": {
+      "inci": "Turpentine",
+      "ko": "터펜틴",
+      "country": "EU",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "5d01b914-850c-42f6-aef2-da9c174b9e85:EU": {
+      "inci": "Abies Alba Leaf Oil,ABIES ALBA NEEDLE OIL",
+      "ko": "흰전나무잎오일",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "f4b312db-53aa-49ee-975a-fa63c2be9b9a:EU": {
+      "inci": "Quinoline Yellow SS, D&C Yellow No. 11, Ki204, SOLVENT YELLOW 33, CI 47000",
+      "ko": "황색204호",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "1e9f2d9b-4c32-4944-9f3a-f93351c8c6c8:EU": {
+      "inci": "Terpene Hydrocarbons",
+      "ko": "터펜하이드로카본",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "af741454-3e57-4d1a-95f4-6fd098eb5664:EU": {
+      "inci": "Butoxydiglycol",
+      "ko": "부톡시다이글라이콜",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "875300a9-afe2-4bdc-a747-2d5bc784b40b:EU": {
+      "inci": "CI 74260",
+      "ko": "CI 74260",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "39a08d01-a86e-408d-855b-b2c3385118b9:EU": {
+      "inci": "CI 74180",
+      "ko": "CI 74180",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "4f75e0f8-008b-4e28-9369-6b34240b7b1c:EU": {
+      "inci": "CI 73900",
+      "ko": "CI 73900",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "dc90ae2f-1736-4dbd-bea7-d66b2823a3c3:EU": {
+      "inci": "CI 71105",
+      "ko": "CI 71105",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "a3f578c6-40b2-46ed-ae90-299462183c93:EU": {
+      "inci": "CI 51319",
+      "ko": "CI 51319",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "3e3e587e-19b9-432a-9297-9e2e4faf0e3e:EU": {
+      "inci": "CI 50420",
+      "ko": "CI 50420",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "c1942c88-0fe9-4d60-bdb5-b5a2324943b8:EU": {
+      "inci": "CI 45430",
+      "ko": "CI 45430",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "176e68d0-3500-4692-9a7e-28e42502c536:EU": {
+      "inci": "Sodium Hydroxymethylglycinate",
+      "ko": "소듐하이드록시메칠글리시네이트",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "09ee2297-9f66-41e6-b07e-72f8c78fd325:EU": {
+      "inci": "CI 45405",
+      "ko": "CI 45405",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "7822ff9f-935a-4162-86b1-b333a8868916:EU": {
+      "inci": "CI 44045",
+      "ko": "CI 44045",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "b191c9cf-98aa-4052-879e-b64a86c158fb:EU": {
+      "inci": "CI 42735",
+      "ko": "CI 42735",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "1ff1c14e-7ca0-45ea-b645-93b13c90c874:EU": {
+      "inci": "CI 42510",
+      "ko": "CI 42510",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "a25fe6d4-015f-4217-8b14-6678f9f1445e:EU": {
+      "inci": "CI 42045",
+      "ko": "CI 42045",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "7bc5724b-f847-4ebb-8120-54c60cef989f:EU": {
+      "inci": "CI 42051",
+      "ko": "CI 42051",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "6e3b7b6b-aa56-477f-8611-00d028e76cad:EU": {
+      "inci": "CI 21230",
+      "ko": "CI 21230",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "f7f03592-fa52-4d9f-8aa5-12bc6686360b:EU": {
+      "inci": "CI 21100",
+      "ko": "CI 21100",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "3c8c79d4-08fa-4691-9ed0-bafaf04bbd52:EU": {
+      "inci": "CI 18050",
+      "ko": "CI 18050",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "d4b1fb89-bf01-4950-b01f-fd55933c0407:EU": {
+      "inci": "CI 16230",
+      "ko": "CI 16230",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "da954d60-730a-4086-aa88-8f30ac3a84a8:EU": {
+      "inci": "CI 12010",
+      "ko": "CI 12010",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "2b029d2c-8e5c-462b-8d7a-15392cb1806f:EU": {
+      "inci": "CI 11710",
+      "ko": "CI 11710",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "ec2e1e8d-2f73-46f0-a333-051f824c4df1:EU": {
+      "inci": "CI 12370",
+      "ko": "CI 12370",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "6d079881-0e27-428c-b2a7-ecdbd56c06a5:EU": {
+      "inci": "Cupressus Sempervirens Leaf/Nut/Stem Oil",
+      "ko": "솔잣나무잎/너트/줄기오일",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "4db1cf5b-24ef-42d5-86b6-c0c68df9e410:EU": {
+      "inci": "Pinus Mugo Twig Oil",
+      "ko": "무고소나무잔가지오일",
+      "country": "EU",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "af95596f-99f9-49f6-bdce-d5871bb5baec:EU": {
+      "inci": "Picea Mariana Leaf Extract",
+      "ko": "마리아나가문비잎추출물",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "10138630-3386-4f48-b1cb-50e8712130f3:EU": {
+      "inci": "Methenamine",
+      "ko": "메텐아민",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "d56f67d1-bfa6-4fcb-b65e-0395e08a7951:EU": {
+      "inci": "Silver Chloride",
+      "ko": "실버클로라이드",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "0050c1ab-82d9-4e30-8be0-4fd4e8239e76:EU": {
+      "inci": "3-Methylamino-4-Nitrophenoxyethanol",
+      "ko": "3-메틸아미노-4-나이트로페녹시에탄올",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "9a901cb9-002f-4ec7-b933-b7947149b42a:EU": {
+      "inci": "HC Red No. 13",
+      "ko": "에치씨적색13호",
+      "country": "EU",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "959ba0eb-5daf-451f-ac37-21c4f361de33:EU": {
+      "inci": "Propylparaben",
+      "ko": "프로필파라벤",
+      "country": "EU",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "c6902414-68b7-44cd-8897-c5ea9bfa9d02:EU": {
+      "inci": "Hanza Yellow, FOOD YELLOW 1, Ki401, CI 11680",
+      "ko": "황색401호",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "e17df87c-4314-4181-9e3e-b3eb31c908bf:EU": {
+      "inci": "Methyl Alcohol",
+      "ko": "메틸알코올",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "da7134cf-e570-49b4-9420-c7f6972f783b:EU": {
+      "inci": "Cedrus Atlantica Leaf Extract",
+      "ko": "아틀라스시다잎추출물",
+      "country": "EU",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "f465f42a-d22c-4bb3-b8d6-c2391ad30c1a:EU": {
+      "inci": "2-Hydroxyethylamino-5-Nitroanisole",
+      "ko": "2-하이드록시에틸아미노-5-나이트로아니솔",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "c53fdf43-14a2-41fc-8f16-2c133c8b729b:EU": {
+      "inci": "Lithium Sulfide",
+      "ko": "리튬설파이드",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "b120192f-118a-4a8c-a593-5c435da87dd0:EU": {
+      "inci": "Pinus Pinaster Leaf/Twig Oil",
+      "ko": "프랑스해안송잎/잔가지오일",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "43bfa1dd-f8aa-4d3a-a4df-efc2288d68ef:EU": {
+      "inci": "Naphthol Green B, Midori401, CI 10020",
+      "ko": "녹색401호",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "bb52a597-b04b-4dcd-a7dd-65f83a95f303:EU": {
+      "inci": "p-Chloro-m-Cresol",
+      "ko": "p-클로로-m-크레졸",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "8076e8bb-b23a-4dea-a855-74e6ed087916:EU": {
+      "inci": "Toluidine Red, Aka221, PIGMENT RED 3, CI 12120",
+      "ko": "적색221호",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "e298392b-aad6-4e70-82b3-435b86fb4cfb:EU": {
+      "inci": "Alizurol Purple, Ext. D&C Violet No. 2, Murasaki401, ACID VIOLET 43, CI 60730",
+      "ko": "자색401호",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "defe7e92-34f2-4468-bc5a-3813c5108ed4:EU": {
+      "inci": "Butoxyethanol",
+      "ko": "부톡시에탄올",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "639d86eb-1953-478b-9849-b894b604805d:EU": {
+      "inci": "Thuja Occidentalis Bark Extract",
+      "ko": "서양측백나무껍질추출물",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "724def46-37c2-45da-8609-b2aaa2ccc492:EU": {
+      "inci": "Sodium Dehydroacetate",
+      "ko": "소듐데하이드로아세테이트",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "0d388844-c4d5-47ee-93cc-74627b98ee27:EU": {
+      "inci": "Pinus Nigra Bud/Needle Extract",
+      "ko": "니그라소나무싹/잎추출물",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "d13a56e2-bab9-48d7-b869-4941cecd1847:EU": {
+      "inci": "Thuja Occidentalis Leaf/Stem Extract",
+      "ko": "서양측백나무잎/줄기추출물",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "620e8501-d8f1-49df-96e1-394873756dcb:EU": {
+      "inci": "2,7-Naphthalenediol",
+      "ko": "2,7-나프탈렌다이올",
+      "country": "EU",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "ac0c0f87-ec31-4ea0-aaa3-ff5287e53a77:EU": {
+      "inci": "Naphthol Yellow S, Ext. D&C Yellow No. 7, Ki403(1), CI 10316",
+      "ko": "황색403호의(1)",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "61d831e5-e13d-48a7-b988-6f9b53024ff9:EU": {
+      "inci": "Phenol",
+      "ko": "페놀",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "0424bbfd-426f-454f-8def-7c749cb9e8a7:EU": {
+      "inci": "Pinus Sylvestris Leaf Extract",
+      "ko": "구주소나무잎추출물",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "4c2fad3f-1727-4d15-88aa-32938c2df342:EU": {
+      "inci": "Pinus Mugo Twig Leaf Extract",
+      "ko": "무고소나무잔가지잎추출물",
+      "country": "EU",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "c394a280-216a-40e8-aaf2-edacd81da497:EU": {
+      "inci": "Nitromethane",
+      "ko": "니트로메탄",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "72bae0d1-cb2a-41ba-bafe-2dd6c256cc8a:EU": {
+      "inci": "Sodium Butylparaben",
+      "ko": "소듐부틸파라벤",
+      "country": "EU",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "ba619501-7fbd-4633-af2a-f905b83cbf6e:EU": {
+      "inci": "Polyurethane-18",
+      "ko": "폴리우레탄-18",
+      "country": "EU",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "a703878a-7151-427f-a39b-e6235f069d03:EU": {
+      "inci": "Polyurethane-19",
+      "ko": "폴리우레탄-19",
+      "country": "EU",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "7c8ad03d-f8b9-41e1-b621-1bbb366376e7:EU": {
+      "inci": "2-Hydroxyethyl Picramic Acid",
+      "ko": "2-하이드록시에틸피크라믹애씨드",
+      "country": "EU",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "3011133c-b946-4784-8a28-c55d759758bd:EU": {
+      "inci": "HC Blue No. 2",
+      "ko": "에치씨청색2호",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "26e94a43-e6dd-48bc-bf29-27b41900ba35:EU": {
+      "inci": "Pinus Sylvestris Leaf Oil",
+      "ko": "구주소나무잎오일",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "79283c05-b1e6-4221-a864-577f52aaa1de:EU": {
+      "inci": "Cedrus Atlantica Wood Extract",
+      "ko": "아틀라스시다목부추출물",
+      "country": "EU",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "60b0d06e-f3d6-4ca6-8ccf-b2af6ae719c4:EU": {
+      "inci": "Glutaral",
+      "ko": "글루타랄",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "a5340b7e-f4cc-481c-af28-55895d432536:EU": {
+      "inci": "Oxyquinoline Sulfate",
+      "ko": "옥시퀴놀린설페이트",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "615d4c10-2e80-4c02-875e-925630436fc4:EU": {
+      "inci": "Orange II, D&C Orange No. 4, Daidai205, CI 15510",
+      "ko": "등색205호",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "fc891914-bc5f-4950-b9d8-1df4ebe8619d:EU": {
+      "inci": "4-Nitrophenyl Aminoethylurea",
+      "ko": "4-나이트로페닐아미노에틸우레아",
+      "country": "EU",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "92543393-3d28-4d80-932b-73d79bd350e2:EU": {
+      "inci": "Pinus Sylvestris Bud Extract",
+      "ko": "구주소나무싹추출물",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "1c66fd74-cc7b-44fb-86c8-74f7e338d030:EU": {
+      "inci": "Chromium",
+      "ko": "크롬",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "32f0da94-455c-4c0d-a7cc-1b3aaf56e377:EU": {
+      "inci": "Dihydroxyindoline",
+      "ko": "다이하이드록시인돌린",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "a3a8873c-4083-4429-96c3-694a5cf78ffc:EU": {
+      "inci": "Abies Sibirica Needle Extract",
+      "ko": "분비나무잎추출물",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "7b48afc0-9161-4ec2-8345-75388eaacd26:EU": {
+      "inci": "Butylparaben",
+      "ko": "부틸파라벤",
+      "country": "EU",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "7c1ade80-5f49-4ece-ba41-8eab49d4f029:EU": {
+      "inci": "2,6-Dihydroxyethylaminotoluene",
+      "ko": "2,6-다이하이드록시에틸아미노톨루엔",
+      "country": "EU",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "567e8ee7-f55a-4acb-bb19-fa89fe415fa2:EU": {
+      "inci": "HC Orange No. 2",
+      "ko": "에치씨등색2호",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "40b557df-eee1-498c-bce4-069e11796fc7:EU": {
+      "inci": "Chloramine T",
+      "ko": "클로라민T",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "faae6a18-4568-4d44-a10a-af8142ee3130:EU": {
+      "inci": "ACID RED 195",
+      "ko": "산성적색195호",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "bc357204-f53f-427a-8c3f-428564ae1468:EU": {
+      "inci": "Magnesium Sulfide",
+      "ko": "마그네슘설파이드",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "d4a165ea-7729-4b9b-b4d1-c8118175808e:EU": {
+      "inci": "HC Violet No. 2",
+      "ko": "에치씨자색2호",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "21afc66e-f740-4a40-853c-bc819a68916c:EU": {
+      "inci": "Calcium Sulfide",
+      "ko": "칼슘설파이드",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "31e721be-383d-4e49-ac4f-6c0bbf74f91d:EU": {
+      "inci": "Picea Mariana Leaf Oil",
+      "ko": "마리아나가문비잎오일",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "522e8d7b-e9ea-436d-bbd2-c8abbd5965cb:EU": {
+      "inci": "Barium Sulfide",
+      "ko": "바륨설파이드",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "6f4aa053-cdc8-4187-ad9f-24b5ac4e0237:EU": {
+      "inci": "Pinus Mugo Leaf Oil",
+      "ko": "무고소나무잎오일",
+      "country": "EU",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "b281f44f-638d-489a-838b-0e73d684d322:EU": {
+      "inci": "Sudan III, D&C Red No. 17, Aka225, CI 26100",
+      "ko": "적색225호",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "d695f5ba-ff43-4630-be21-14282d76134a:EU": {
+      "inci": "Cedrus Atlantica Bark Extract",
+      "ko": "아틀라스시다껍질추출물",
+      "country": "EU",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "4df3636f-3a05-4837-86c1-965d8719c73f:EU": {
+      "inci": "Naphthalene",
+      "ko": "나프탈렌",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "dc5bf7b8-2f5a-4416-9781-9f12f386f89d:EU": {
+      "inci": "2-Amino-6-Chloro-4-Nitrophenol",
+      "ko": "2-아미노-6-클로로-4-니트로페놀",
+      "country": "EU",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "fc629121-ca0f-4823-9ba8-e8e5e79f38aa:EU": {
+      "inci": "Strontium Sulfide",
+      "ko": "스트론튬설파이드",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "e43e9c38-ceb0-472e-b19c-16a30f4e0503:EU": {
+      "inci": "Cedrus Atlantica Bark Oil",
+      "ko": "아틀라스시다나무껍질오일",
+      "country": "EU",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "9a553bcb-9ae9-4850-87da-68ba27eabf3c:EU": {
+      "inci": "Potassium Propylparaben",
+      "ko": "포타슘프로필파라벤",
+      "country": "EU",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "6fdc9076-03b1-430e-917f-4f8c99e8d861:EU": {
+      "inci": "Thuja Occidentalis Leaf Extract",
+      "ko": "서양측백나무잎추출물",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "ea360cfe-e56c-4581-aadb-c7dfea86f4cc:EU": {
+      "inci": "Potassium Sulfide",
+      "ko": "포타슘설파이드",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "6112eaa0-e6b2-4a6d-bd9d-00682a589bde:EU": {
+      "inci": "Thuja Occidentalis Leaf Oil",
+      "ko": "서양측백나무잎오일",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "98983aa2-ec33-48b1-ac2d-9a38b5021a0d:EU": {
+      "inci": "Cupressus Sempervirens Leaf Oil",
+      "ko": "솔잣나무잎오일",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "825df8f5-6ed4-454c-af78-6f3f630cd112:EU": {
+      "inci": "4-Hydroxypropylamino-3-Nitrophenol",
+      "ko": "4-하이드록시프로필아미노-3-나이트로페놀",
+      "country": "EU",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "1613046a-a4a4-407e-b0bf-cb2aae88307c:EU": {
+      "inci": "HC Yellow No. 10",
+      "ko": "에치씨황색10호",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "5aa85f1f-39bc-45eb-8a1a-28683aa978d0:EU": {
+      "inci": "Cedrus Atlantica Wood Oil",
+      "ko": "아틀라스시다목부오일",
+      "country": "EU",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "93342616-59ae-4245-9da5-3d521c6ab1ae:EU": {
+      "inci": "Sodium Sulfide",
+      "ko": "소듐설파이드",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "1de299e4-825c-4da2-bf71-40a4273a5583:EU": {
+      "inci": "Hydroxyethyl-2-Nitro-p-Toluidine",
+      "ko": "하이드록시에틸-2-나이트로-p-톨루이딘",
+      "country": "EU",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "c171d023-65cb-47f5-87b2-11d291615cd9:EU": {
+      "inci": "3-Nitro-p-Hydroxyethylaminophenol",
+      "ko": "3-나이트로-p-하이드록시에틸아미노페놀",
+      "country": "EU",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "d431c911-76e4-43dc-a39c-a492ae766b9e:EU": {
+      "inci": "Benzene",
+      "ko": "벤젠",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "f2ad3631-e488-4b77-bb8e-42737036dce4:EU": {
+      "inci": "1,2,3-Propanetricarboxylic acid, 2-hydroxy-, monohydrate and 1,2,3-Propanetricarboxylic acid, 2-hydroxy-silver(1+) salt, monohydrate",
+      "ko": "1,2,3-프로판트리카복실릭애씨드,2-하이드록시-,모노하이드레이트 및 1,2,3-프로판트리카복실릭애씨드,2-하이드록시-은(+1)염,모노하이드레이트",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "48860b82-6929-42db-a5b5-43deac002f6b:EU": {
+      "inci": "3-Amino-2,4-Dichlorophenol",
+      "ko": "3-아미노-2,4-다이클로로페놀",
+      "country": "EU",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "ab511864-ddb3-4f7c-b226-a4eaec84d242:EU": {
+      "inci": "Ethyl Lauroyl Arginate HCl",
+      "ko": "에칠라우로일알지네이트하이드로클로라이드",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "4814e61a-6795-46c1-aea6-0a04c6a98148:EU": {
+      "inci": "Dehydroacetic Acid",
+      "ko": "데하이드로아세틱애씨드",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "a2c0a729-76ef-4eb4-8260-bf26f1442376:EU": {
+      "inci": "Hydroxybenzomorpholine",
+      "ko": "하이드록시벤조모르폴린",
+      "country": "EU",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "dbe5f4d4-fd89-4d7e-a706-6e54ba85ca78:EU": {
+      "inci": "6-Methyl Coumarin",
+      "ko": "6-메틸쿠마린",
+      "country": "EU",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "c8f7e936-43ba-40fa-8596-bb3bb41c0e92:EU": {
+      "inci": "Laurus Nobilis Oil",
+      "ko": "월계수오일",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "db7a4a06-8de2-4f6e-9342-5c1f1afe5aaf:EU": {
+      "inci": "HC Violet No. 1",
+      "ko": "에치씨자색1호",
+      "country": "EU",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "6b292bb5-3702-4622-9dca-50e6298cb232:EU": {
+      "inci": "1-Naphthol",
+      "ko": "1-나프톨",
+      "country": "EU",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "6c4e22d0-e885-4eb4-bb50-2f613be7eb58:EU": {
+      "inci": "Potassium Butylparaben",
+      "ko": "포타슘부틸파라벤",
+      "country": "EU",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "1b00ab67-d5b6-4ef0-87d2-1b08c43450d0:EU": {
+      "inci": "Methyl Eugenol",
+      "ko": "메틸유제놀",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "5179c071-7037-4165-b2c1-24861ce85312:EU": {
+      "inci": "Thuja Occidentalis Leaf",
+      "ko": "서양측백나무잎",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "57ddfecd-606f-44d6-893b-f4a13fa21810:EU": {
+      "inci": "Talc",
+      "ko": "탤크",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "e476e793-02ca-4bf4-a182-75d9b1c158e0:EU": {
+      "inci": "Cupressus Sempervirens Leaf/Stem Extract",
+      "ko": "솔잣나무잎/줄기추출물",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "16979c10-a8b7-4c23-9dc8-ebcb39f429af:EU": {
+      "inci": "Cupressus Sempervirens Leaf Extract",
+      "ko": "솔잣나무잎추출물",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "d86895bf-5415-4d66-8aed-5beeff7a9faa:EU": {
+      "inci": "Myroxylon Pereirae (Balsam Peru) Resin",
+      "ko": "발삼페루수지",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "0bce90f9-83d5-4dd2-a181-1b484bf2af6b:EU": {
+      "inci": "Abies Pectinata Leaf Extract, Abies Pectinata Needle Extract",
+      "ko": "펙티나타전나무잎추출물",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "218b3fc2-0da2-441a-9d1f-d7a3bcd1a71f:EU": {
+      "inci": "Sodium Propylparaben",
+      "ko": "소듐프로필파라벤",
+      "country": "EU",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "91526c9c-6d98-4593-8470-ec0daf12e91d:EU": {
+      "inci": "Hydroxyethyl-3,4-Methylenedioxyaniline HCl",
+      "ko": "하이드록시에틸-3,4-메틸렌다이옥시아닐린에이치씨엘",
+      "country": "EU",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "bd737065-ed44-42be-b286-14b9645615e0:EU": {
+      "inci": "Verbena essential oils (Lippia citriodora Kunth.)\n(Verbena absolute (Lippia citriodora Kunth.)除外)",
+      "ko": "레몬버베나오일",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "1f0e986c-7dd1-4055-a672-6d84e7f860ba:EU": {
+      "inci": "Pinus Mugo Pumilio Twig Leaf Oil",
+      "ko": "푸밀리오무고소나무잔가지잎오일",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "e846abab-846b-4906-b096-ffd4da13a337:EU": {
+      "inci": "Pinus Mugo Pumilio Twig Leaf Extract",
+      "ko": "푸밀리오무고소나무잔가지잎추출물",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "dd612e71-ffde-44e9-b125-f53d0b3f2511:EU": {
+      "inci": "Pinus Nigra Twig Leaf Extract",
+      "ko": "니그라소나무잔가지잎추출물",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "94ed8719-f596-45fd-ba48-2250960d3a09:EU": {
+      "inci": "Pinus Nigra Twig Leaf Oil",
+      "ko": "니그라소나무잔가지잎오일",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "06ac4a72-c3df-408a-8336-8054c2ae7cfc:EU": {
+      "inci": "Pinus Cembra Leaf/Twig Oil",
+      "ko": "켐브라잣나무잎/잔가지오일",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "5468d272-5bb5-498e-a043-f70427cc518d:EU": {
+      "inci": "Pinus Palustris Twig Leaf Oil",
+      "ko": "대왕소나무잔가지잎오일",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "7d4dade6-c3b6-47d0-95a5-c8ea913684cb:EU": {
+      "inci": "2,6-Dimethoxy-3,5-Pyridinediamine HCl",
+      "ko": "2,6-다이메톡시-3,5-피리딘다이아민에이치씨엘",
+      "country": "EU",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "f940aacf-3680-46a9-9bc1-b8264f855a7b:EU": {
+      "inci": "HC Red No. 11",
+      "ko": "에치씨적색11호",
+      "country": "EU",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "cd72a328-d876-4931-842c-d3c430d81ff1:EU": {
+      "inci": "Isodiprene",
+      "ko": "아이소다이프렌",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "4244c159-b4bd-48bc-8d77-58c02195e93a:EU": {
+      "inci": "Pinus Palustris Leaf Extract",
+      "ko": "대왕소나무잎추출물",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "1d902c1b-187a-46ea-839e-0d33a870e284:EU": {
+      "inci": "Pinus Palustris Oil",
+      "ko": "대왕소나무오일",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "c0b4655e-9e82-475b-a988-29f08e03e0f0:EU": {
+      "inci": "Terpinolene",
+      "ko": "터피놀렌",
+      "country": "EU",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "ea64ef1e-808d-4ae3-8ed4-fcd33ac227b4:EU": {
+      "inci": "Gold",
+      "ko": "금",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "17f15fbe-25ce-4290-a475-52c5d8e7a25d:EU": {
+      "inci": "Terpene Alcohols Acetates",
+      "ko": "터펜알코올아세테이트",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "ad67e9e7-c001-41a7-b129-2e3cfc137093:EU": {
+      "inci": "Chlorobutanol",
+      "ko": "클로로부탄올",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "b40100af-26da-46da-a135-5cf001815fb6:EU": {
+      "inci": "Dichlorophene",
+      "ko": "다이클로로펜",
+      "country": "EU",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "61d831e5-e13d-48a7-b988-6f9b53024ff9:ID": {
+      "inci": "Phenol",
+      "ko": "페놀",
+      "country": "ID",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "d431c911-76e4-43dc-a39c-a492ae766b9e:ID": {
+      "inci": "Benzene",
+      "ko": "벤젠",
+      "country": "ID",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "d2555c8e-1b6d-43cc-b4f0-2df9f53216d1:JP": {
+      "inci": "PABA",
+      "ko": "파바",
+      "country": "JP",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "d15fed26-c5a1-44a9-bf01-616d9d0f7e17:JP": {
+      "inci": "Isobutylparaben",
+      "ko": "아이소부틸파라벤",
+      "country": "JP",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "9fa19203-6d9c-4d0d-805a-2180cf72efb2:JP": {
+      "inci": "Aminoether type antihistamines",
+      "ko": "아미노에텔형 항히스타민제",
+      "country": "JP",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "31aca2a2-3b9a-4744-b106-6e5c35cfdf44:JP": {
+      "inci": "Butyl PABA",
+      "ko": "부틸파바",
+      "country": "JP",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "637a0f76-4eda-42b3-9691-b1b7689e6a41:JP": {
+      "inci": "Undecylenamide MEA",
+      "ko": "운데실렌아마이드엠이에이",
+      "country": "JP",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "835ef5fa-2e24-4b1a-b668-83452fa87baa:JP": {
+      "inci": "Sodium Borate",
+      "ko": "소듐보레이트",
+      "country": "JP",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "1f09854a-c485-4948-add6-ac730805b2b5:JP": {
+      "inci": "Isopropylparaben",
+      "ko": "아이소프로필파라벤",
+      "country": "JP",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "61d831e5-e13d-48a7-b988-6f9b53024ff9:JP": {
+      "inci": "Phenol",
+      "ko": "페놀",
+      "country": "JP",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "8ba06f2b-84dc-47f8-ae9c-55056008295c:JP": {
+      "inci": "MEA-Benzoate",
+      "ko": "엠이에이-벤조에이트",
+      "country": "JP",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "4a089a3e-80c2-4b75-b978-aafada79a2f2:JP": {
+      "inci": "Benzylparaben",
+      "ko": "벤질파라벤",
+      "country": "JP",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "ddabd373-7b0a-41d1-b70e-4bdc77677e4b:JP": {
+      "inci": "Sodium Isobutylparaben",
+      "ko": "소듐아이소부틸파라벤",
+      "country": "JP",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "5b7d2295-c053-4aa7-93bf-d143de12ee95:JP": {
+      "inci": "Sodium Isopropylparaben",
+      "ko": "소듐아이소프로필파라벤",
+      "country": "JP",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "5534cfa9-0d39-47c3-a16f-0827636d2717:JP": {
+      "inci": "Ethyl PABA",
+      "ko": "에틸파바",
+      "country": "JP",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "7f91cbf9-e502-4ab7-9549-298d7157d668:JP": {
+      "inci": "Thiram",
+      "ko": "티람",
+      "country": "JP",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "e54d8ad6-fd05-422a-b73a-5d8685d106e9:JP": {
+      "inci": "Diethylene Glycol",
+      "ko": "다이에틸렌글라이콜",
+      "country": "JP",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "55c7c134-cac5-4b52-996e-ce1b88cc325a:JP": {
+      "inci": "Glyceryl PABA",
+      "ko": "글리세릴파바",
+      "country": "JP",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "1155de3a-18fb-4981-9c04-73fa64e9ea82:JP": {
+      "inci": "Phenyl Salicylate",
+      "ko": "페닐살리실레이트",
+      "country": "JP",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "ee01929f-b305-4602-86f8-4c7325085da4:JP": {
+      "inci": "Zirconium",
+      "ko": "지르코늄",
+      "country": "JP",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "e7351b51-e179-4d7b-b6a6-656d55abe16a:JP": {
+      "inci": "Sodium Lauroyl Sarcosinate",
+      "ko": "소듐라우로일사코시네이트",
+      "country": "JP",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "61d831e5-e13d-48a7-b988-6f9b53024ff9:MY": {
+      "inci": "Phenol",
+      "ko": "페놀",
+      "country": "MY",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "d431c911-76e4-43dc-a39c-a492ae766b9e:MY": {
+      "inci": "Benzene",
+      "ko": "벤젠",
+      "country": "MY",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "61d831e5-e13d-48a7-b988-6f9b53024ff9:PH": {
+      "inci": "Phenol",
+      "ko": "페놀",
+      "country": "PH",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "d431c911-76e4-43dc-a39c-a492ae766b9e:PH": {
+      "inci": "Benzene",
+      "ko": "벤젠",
+      "country": "PH",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "61d831e5-e13d-48a7-b988-6f9b53024ff9:SG": {
+      "inci": "Phenol",
+      "ko": "페놀",
+      "country": "SG",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "d431c911-76e4-43dc-a39c-a492ae766b9e:SG": {
+      "inci": "Benzene",
+      "ko": "벤젠",
+      "country": "SG",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "61d831e5-e13d-48a7-b988-6f9b53024ff9:TH": {
+      "inci": "Phenol",
+      "ko": "페놀",
+      "country": "TH",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "d431c911-76e4-43dc-a39c-a492ae766b9e:TH": {
+      "inci": "Benzene",
+      "ko": "벤젠",
+      "country": "TH",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "d2555c8e-1b6d-43cc-b4f0-2df9f53216d1:US": {
+      "inci": "PABA",
+      "ko": "파바",
+      "country": "US",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "61d831e5-e13d-48a7-b988-6f9b53024ff9:VN": {
+      "inci": "Phenol",
+      "ko": "페놀",
+      "country": "VN",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "d431c911-76e4-43dc-a39c-a492ae766b9e:VN": {
+      "inci": "Benzene",
+      "ko": "벤젠",
+      "country": "VN",
+      "verdict": "banned",
+      "by": "prohibition-veto"
     }
   }
 }

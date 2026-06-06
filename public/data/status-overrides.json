@@ -2361,6 +2361,386 @@
       "inci": "MEA-Undecylenate",
       "ko": "엠이에이-운데실레네이트",
       "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "35c18f67-4ee7-4c6f-aa04-0f521306e821",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Strontium hydroxide",
+      "ko": "스트론튬하이드록사이드",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "4dbae469-da49-4b02-879a-2b286ed45ad1",
+      "country_code": "EU",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "7-Ethylbicyclooxazolidine",
+      "ko": "7-에틸바이사이클로옥사졸리딘",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "98ec2cb0-995d-4d24-90de-3e9ed61efded",
+      "country_code": "EU",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Butyl 4-hydroxybenzoate and its salts Propyl 4-hydroxybenzoate and its salts",
+      "ko": "부틸4-하이드록시벤조에이트 및 그 염류\n프로필4-하이드록시벤조에이트 및 그염류",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "3f7c71a6-5bab-4335-8ce7-3a209d1e6977",
+      "country_code": "EU",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Turpentine",
+      "ko": "터펜틴",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "4db1cf5b-24ef-42d5-86b6-c0c68df9e410",
+      "country_code": "EU",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Pinus Mugo Twig Oil",
+      "ko": "무고소나무잔가지오일",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "9a901cb9-002f-4ec7-b933-b7947149b42a",
+      "country_code": "EU",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "HC Red No. 13",
+      "ko": "에치씨적색13호",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "959ba0eb-5daf-451f-ac37-21c4f361de33",
+      "country_code": "EU",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Propylparaben",
+      "ko": "프로필파라벤",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "da7134cf-e570-49b4-9420-c7f6972f783b",
+      "country_code": "EU",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Cedrus Atlantica Leaf Extract",
+      "ko": "아틀라스시다잎추출물",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "620e8501-d8f1-49df-96e1-394873756dcb",
+      "country_code": "EU",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2,7-Naphthalenediol",
+      "ko": "2,7-나프탈렌다이올",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "4c2fad3f-1727-4d15-88aa-32938c2df342",
+      "country_code": "EU",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Pinus Mugo Twig Leaf Extract",
+      "ko": "무고소나무잔가지잎추출물",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "72bae0d1-cb2a-41ba-bafe-2dd6c256cc8a",
+      "country_code": "EU",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Sodium Butylparaben",
+      "ko": "소듐부틸파라벤",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "ba619501-7fbd-4633-af2a-f905b83cbf6e",
+      "country_code": "EU",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Polyurethane-18",
+      "ko": "폴리우레탄-18",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "a703878a-7151-427f-a39b-e6235f069d03",
+      "country_code": "EU",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Polyurethane-19",
+      "ko": "폴리우레탄-19",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "7c8ad03d-f8b9-41e1-b621-1bbb366376e7",
+      "country_code": "EU",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2-Hydroxyethyl Picramic Acid",
+      "ko": "2-하이드록시에틸피크라믹애씨드",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "79283c05-b1e6-4221-a864-577f52aaa1de",
+      "country_code": "EU",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Cedrus Atlantica Wood Extract",
+      "ko": "아틀라스시다목부추출물",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "fc891914-bc5f-4950-b9d8-1df4ebe8619d",
+      "country_code": "EU",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "4-Nitrophenyl Aminoethylurea",
+      "ko": "4-나이트로페닐아미노에틸우레아",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "7b48afc0-9161-4ec2-8345-75388eaacd26",
+      "country_code": "EU",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Butylparaben",
+      "ko": "부틸파라벤",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "7c1ade80-5f49-4ece-ba41-8eab49d4f029",
+      "country_code": "EU",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2,6-Dihydroxyethylaminotoluene",
+      "ko": "2,6-다이하이드록시에틸아미노톨루엔",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "6f4aa053-cdc8-4187-ad9f-24b5ac4e0237",
+      "country_code": "EU",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Pinus Mugo Leaf Oil",
+      "ko": "무고소나무잎오일",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "d695f5ba-ff43-4630-be21-14282d76134a",
+      "country_code": "EU",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Cedrus Atlantica Bark Extract",
+      "ko": "아틀라스시다껍질추출물",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "dc5bf7b8-2f5a-4416-9781-9f12f386f89d",
+      "country_code": "EU",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2-Amino-6-Chloro-4-Nitrophenol",
+      "ko": "2-아미노-6-클로로-4-니트로페놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "e43e9c38-ceb0-472e-b19c-16a30f4e0503",
+      "country_code": "EU",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Cedrus Atlantica Bark Oil",
+      "ko": "아틀라스시다나무껍질오일",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "9a553bcb-9ae9-4850-87da-68ba27eabf3c",
+      "country_code": "EU",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Potassium Propylparaben",
+      "ko": "포타슘프로필파라벤",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "825df8f5-6ed4-454c-af78-6f3f630cd112",
+      "country_code": "EU",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "4-Hydroxypropylamino-3-Nitrophenol",
+      "ko": "4-하이드록시프로필아미노-3-나이트로페놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "5aa85f1f-39bc-45eb-8a1a-28683aa978d0",
+      "country_code": "EU",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Cedrus Atlantica Wood Oil",
+      "ko": "아틀라스시다목부오일",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "1de299e4-825c-4da2-bf71-40a4273a5583",
+      "country_code": "EU",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Hydroxyethyl-2-Nitro-p-Toluidine",
+      "ko": "하이드록시에틸-2-나이트로-p-톨루이딘",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "c171d023-65cb-47f5-87b2-11d291615cd9",
+      "country_code": "EU",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "3-Nitro-p-Hydroxyethylaminophenol",
+      "ko": "3-나이트로-p-하이드록시에틸아미노페놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "48860b82-6929-42db-a5b5-43deac002f6b",
+      "country_code": "EU",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "3-Amino-2,4-Dichlorophenol",
+      "ko": "3-아미노-2,4-다이클로로페놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "a2c0a729-76ef-4eb4-8260-bf26f1442376",
+      "country_code": "EU",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Hydroxybenzomorpholine",
+      "ko": "하이드록시벤조모르폴린",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "dbe5f4d4-fd89-4d7e-a706-6e54ba85ca78",
+      "country_code": "EU",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "6-Methyl Coumarin",
+      "ko": "6-메틸쿠마린",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "db7a4a06-8de2-4f6e-9342-5c1f1afe5aaf",
+      "country_code": "EU",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "HC Violet No. 1",
+      "ko": "에치씨자색1호",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "6b292bb5-3702-4622-9dca-50e6298cb232",
+      "country_code": "EU",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "1-Naphthol",
+      "ko": "1-나프톨",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "6c4e22d0-e885-4eb4-bb50-2f613be7eb58",
+      "country_code": "EU",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Potassium Butylparaben",
+      "ko": "포타슘부틸파라벤",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "218b3fc2-0da2-441a-9d1f-d7a3bcd1a71f",
+      "country_code": "EU",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Sodium Propylparaben",
+      "ko": "소듐프로필파라벤",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "91526c9c-6d98-4593-8470-ec0daf12e91d",
+      "country_code": "EU",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Hydroxyethyl-3,4-Methylenedioxyaniline HCl",
+      "ko": "하이드록시에틸-3,4-메틸렌다이옥시아닐린에이치씨엘",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "7d4dade6-c3b6-47d0-95a5-c8ea913684cb",
+      "country_code": "EU",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2,6-Dimethoxy-3,5-Pyridinediamine HCl",
+      "ko": "2,6-다이메톡시-3,5-피리딘다이아민에이치씨엘",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "f940aacf-3680-46a9-9bc1-b8264f855a7b",
+      "country_code": "EU",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "HC Red No. 11",
+      "ko": "에치씨적색11호",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "c0b4655e-9e82-475b-a988-29f08e03e0f0",
+      "country_code": "EU",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Terpinolene",
+      "ko": "터피놀렌",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
     }
   ]
 }

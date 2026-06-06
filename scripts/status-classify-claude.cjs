@@ -29,7 +29,11 @@ function classify(cond) {
 const validCas = (raw) => String(raw || "").match(/\d{2,7}-\d{2}-\d/g) || [];
 const canon = (s) => s.toLowerCase().replace(/[；;]/g, ",").replace(/\s*,\s*/g, ",").replace(/\s+/g, " ").replace(/[,\s]*\(\s*cas[^)]*\)/g, "").replace(/[,\s]+c\.?i\.?\s*\d{4,6}/g, "").replace(/[,\s]+$/, "").trim();
 const PROHIB = /Annex II|Prohibited|California AB|표1[^\n]*금지|사용 금지 물질|Comunidad Andina|EUR-Lex 1223/i;
-const LIMIT = /배합한도|최대사용농도|허용된 최대농도/;
+// 허용/한도 신호 — 국가별 형식 변형 포함(KR/CN "배합한도", JP "100g당 최대 배합/제품 타입 또는
+// 목적", CA/US "【제한】/허용된 최대 농도(공백)", ASEAN "제한 사용범위"). narrow 만으로 타국 누락됐었음.
+const LIMIT = /배합한도|최대\s*사용\s*농도|허용된\s*최대\s*농도|【제한\s*[】:：]|100\s*g\s*당\s*최대\s*배합/;
+// 조건부 금지(오염물/불순물 임계치 = 진짜 금지, 허용 아님) — 후보에서 제외(석유·부타디엔·DMSO 등).
+const CONTAM_BAN = /함유하는 경우에 한함|contain[s]?\s*[>=]|초과하여 함유|불순물|impurit|w\/w\s+(?:Butadiene|DMSO|benzo)/i;
 // 중금속/고독성 명시 veto — stale 미량한도(예 수은 0.007%)여도 사실상 금지라 절대 restricted 금지.
 // 권위 annex 가 cas-null/동명변형으로 못 잡는 누수 차단(분별력 안전망). 이름 기반(보수적·광범위).
 // 명백히 *항상 금지*인 중금속/독성(화장품 restricted 용도 없음)만. selenium(Selenium Sulfide
@@ -65,7 +69,7 @@ function load() {
 }
 
 function candidates(all, countries) {
-  return all.filter((r) => countries.includes(r.country_code) && r.status === "banned" && (r.source_document || "").includes("MFDS") && r.conditions && LIMIT.test(r.conditions));
+  return all.filter((r) => countries.includes(r.country_code) && r.status === "banned" && (r.source_document || "").includes("MFDS") && r.conditions && LIMIT.test(r.conditions) && !CONTAM_BAN.test(r.conditions));
 }
 
 if (require.main === module) {
