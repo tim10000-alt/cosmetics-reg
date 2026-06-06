@@ -236,17 +236,18 @@ async function main() {
   }
   writeFileSync(DECISIONS, JSON.stringify({ generated: "status-judge", decisions }, null, 2));
 
-  // override = consensus 'restricted' 만. (banned→restricted 교정, MFDS 출처행 한정.)
+  // override = 'restricted' 확정 전부(Gemini consensus·tiebreak·claude-judge 초기벌크).
+  // 출처별 reason 보존 — claude-judge(초기벌크 Claude 직접판정) 는 그 attribution 유지(override_note
+  // 투명성이 "Gemini"로 오표기되지 않게). by 기록 추가로 감사성↑.
   const corrections = Object.entries(decisions)
     .filter(([, d]) => (d as { verdict: string }).verdict === "restricted")
     .map(([k, d]) => {
       const [ingredient_id, country_code] = k.split(":");
-      const dd = d as { inci: string; ko: string | null; m1?: { reason?: string } | null };
-      return {
-        ingredient_id, country_code, from: "banned", to: "restricted",
-        source_match: SOURCE_MATCH, inci: dd.inci, ko: dd.ko,
-        reason: dd.m1?.reason ?? "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류",
-      };
+      const dd = d as { inci: string; ko: string | null; by?: string; why?: string; m1?: { reason?: string } | null };
+      const reason = dd.by === "claude-judge"
+        ? `claude-judge: ${dd.why ?? "사용제한 자료 오분류"}`
+        : (dd.m1?.reason ?? "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류");
+      return { ingredient_id, country_code, from: "banned", to: "restricted", source_match: SOURCE_MATCH, inci: dd.inci, ko: dd.ko, reason };
     });
   writeFileSync(OVERRIDES, JSON.stringify({
     generated: "status-judge",

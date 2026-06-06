@@ -50,7 +50,18 @@ function load() {
     if (ig) { for (const c of validCas(ig.cas_no)) banCas.add(c); if (ig.inci_name) banName.add(canon(ig.inci_name)); }
   }
   const vetoed = (ig) => banId.has(ig.id) || validCas(ig.cas_no).some((c) => banCas.has(c)) || (ig.inci_name && banName.has(canon(ig.inci_name))) || (ig.inci_name && TOXIC.test(ig.inci_name));
-  return { ing, byId, all, vetoed };
+  // siblingIds(canonName + CAS) — 헤드라인은 형제 규제를 병합하므로 권위 출처 판정도 형제 포함.
+  const nameToIds = new Map(), casToIds = new Map();
+  const push2 = (m, k, v) => { const a = m.get(k); if (a) a.push(v); else m.set(k, [v]); };
+  for (const i of ing) { const cn = i.inci_name ? canon(i.inci_name) : ""; if (cn) push2(nameToIds, cn, i.id); for (const c of validCas(i.cas_no)) push2(casToIds, c, i.id); }
+  const siblings = (id) => { const i = byId.get(id); const s = new Set([id]); if (!i) return s; const cn = i.inci_name ? canon(i.inci_name) : ""; if (cn) for (const x of nameToIds.get(cn) || []) s.add(x); for (const c of validCas(i.cas_no)) for (const x of casToIds.get(c) || []) s.add(x); return s; };
+  // 같은 국가에 *더 높은 우선순위(>50)의 비-MFDS banned* 출처(형제 포함)가 있으면 그 권위 출처가
+  // 헤드라인=banned 를 결정 → MFDS(50) 행을 restricted 로 교정하면 안 됨(예: TW Pyridine=TFDA 금지).
+  const authBanned = (id, cc) => {
+    const sib = siblings(id);
+    return all.some((r) => sib.has(r.ingredient_id) && r.country_code === cc && r.status === "banned" && (r.source_priority || 0) > 50 && !(r.source_document || "").includes("MFDS"));
+  };
+  return { ing, byId, all, vetoed, authBanned };
 }
 
 function candidates(all, countries) {
@@ -59,7 +70,7 @@ function candidates(all, countries) {
 
 if (require.main === module) {
   const mode = process.argv[2] || "--validate";
-  const { byId, all, vetoed } = load();
+  const { byId, all, vetoed, authBanned } = load();
   const dec = (() => { try { return J("status-decisions.json").decisions; } catch { return {}; } })();
 
   if (mode === "--validate") {
@@ -94,6 +105,8 @@ if (require.main === module) {
       const ig = byId.get(r.ingredient_id);
       if (!ig) continue;
       if (vetoed(ig)) { decObj.decisions[key] = { inci: ig.inci_name, ko: ig.korean_name, country: r.country_code, verdict: "banned", by: "prohibition-veto" }; vetoSkip++; continue; }
+      // 같은 국가 권위 출처(TFDA/IECIC 등 prio>50)가 banned 면 그게 헤드라인=금지 → MFDS 행 교정 금지.
+      if (authBanned(r.ingredient_id, r.country_code)) { decObj.decisions[key] = { inci: ig.inci_name, ko: ig.korean_name, country: r.country_code, verdict: "banned", by: "authoritative-ban" }; vetoSkip++; continue; }
       const cls = classify(r.conditions);
       if (cls.v === "restricted") {
         ov.corrections.push({ ingredient_id: r.ingredient_id, country_code: r.country_code, from: "banned", to: "restricted", source_match: "MFDS", inci: ig.inci_name, ko: ig.korean_name, reason: `claude-judge: ${cls.why}` });

@@ -2253,16 +2253,6 @@
       "reason": "claude-judge: 제품/용도별 허용농도 명시"
     },
     {
-      "ingredient_id": "86efa188-e97c-4cde-bcdf-81c8b488a0f9",
-      "country_code": "TW",
-      "from": "banned",
-      "to": "restricted",
-      "source_match": "MFDS",
-      "inci": "Pyridine",
-      "ko": "피리딘",
-      "reason": "claude-judge: 제품/용도별 허용농도 명시"
-    },
-    {
       "ingredient_id": "10138630-3386-4f48-b1cb-50e8712130f3",
       "country_code": "TW",
       "from": "banned",

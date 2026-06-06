@@ -126,13 +126,6 @@ function rankIngredients(
   return scored.slice(0, limit).map((x) => x.ing);
 }
 
-function findIngredientSync(
-  query: string,
-  ds: Awaited<ReturnType<typeof dataset>>,
-): Ingredient | null {
-  return rankIngredients(query, ds, 1)[0] ?? null;
-}
-
 // 형제 그룹(이미 CAS/INCI 로 병합된 동일물질)의 *대표 표시명*을 한국 등록 표준명 우선으로 선택.
 // 같은 물질이 영문 동의어(예: "Methylene Chloride")로 resolve 돼도 한국 등록명("Dichloromethane /
 // 다이클로로메탄")을 대표로 보여주기 위함. 데이터를 새로 합치는 게 아니라 *이미 묶인 것 중 어느 이름을
@@ -195,7 +188,9 @@ export async function lookupRegulation(
   const q = query.trim();
   if (!q) return { query: q, ingredient: null, results: [] };
 
-  const resolved = findIngredientSync(q, ds);
+  // 단일 스캔 — 상위 매칭 목록을 한 번에 구해 [0]=주결과, 나머지=other_matches(이중 O(N) 스캔 제거).
+  const ranked = rankIngredients(q, ds, 60);
+  const resolved = ranked[0];
   if (!resolved) return { query: q, ingredient: null, results: [] };
 
   const targetCodes = countries && countries.length > 0
@@ -216,7 +211,7 @@ export async function lookupRegulation(
   };
   const seenGroups = new Set<string>([groupKey(resolved)]);
   const otherMatches: IngredientMatch[] = [];
-  for (const cand of rankIngredients(q, ds, 60)) {
+  for (const cand of ranked) {
     const gk = groupKey(cand);
     if (seenGroups.has(gk)) continue;
     seenGroups.add(gk);

@@ -2309,9 +2309,8 @@
       "inci": "Pyridine",
       "ko": "피리딘",
       "country": "TW",
-      "verdict": "restricted",
-      "by": "claude-judge",
-      "why": "제품/용도별 허용농도 명시"
+      "verdict": "banned",
+      "by": "authoritative-ban"
     },
     "10138630-3386-4f48-b1cb-50e8712130f3:TW": {
       "inci": "Methenamine",
