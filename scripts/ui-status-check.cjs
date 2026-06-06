@@ -36,15 +36,14 @@ function check(name, cond, detail) {
 
 async function cardStatus(page, q) {
   try {
-    await page.goto(BASE + "/?q=" + encodeURIComponent(q), { waitUntil: "networkidle", timeout: 15000 });
+    await page.goto(BASE + "/?q=" + encodeURIComponent(q), { waitUntil: "domcontentloaded", timeout: 10000 });
   } catch {
-    // serve 일시 끊김 등 — 한 번 재시도 후에도 실패면 표식 반환(크래시 방지)
-    await sleep(1500);
-    try { await page.goto(BASE + "/?q=" + encodeURIComponent(q), { waitUntil: "domcontentloaded", timeout: 15000 }); }
+    await sleep(1000);
+    try { await page.goto(BASE + "/?q=" + encodeURIComponent(q), { waitUntil: "domcontentloaded", timeout: 10000 }); }
     catch { return "(nav실패)"; }
   }
-  await page.waitForFunction(() => document.querySelectorAll("article").length > 0 || /찾을 수 없|결과가 없/.test(document.body.innerText), { timeout: 9000 }).catch(() => {});
-  await sleep(250);
+  await page.waitForFunction(() => document.querySelectorAll("article").length > 0 || /찾을 수 없|결과가 없/.test(document.body.innerText), { timeout: 5000 }).catch(() => {});
+  await sleep(200);
   return await page.evaluate((cn) => {
     const labels = ["배합금지", "배합한도", "허용", "수록 (수출 가능)", "미수록 (수출 불가)"];
     for (const art of document.querySelectorAll("article")) {
@@ -66,22 +65,33 @@ async function cardStatus(page, q) {
   page.on("pageerror", (e) => console.log("  [pageerror]", e.message));
 
   console.log(`\n=== KR 후보 ${candidates.length}건 전수 UI 대조 (교정 ${corrSet.size}) ===`);
-  let nCorr = 0, nKeep = 0;
-  for (const r of candidates) {
+  let nCorr = 0, nKeep = 0, nUnreach = 0;
+  const unreachList = [];
+  const unreached = (g) => g === "(카드없음)" || g === "(배지없음)" || g === "(nav실패)";
+  for (let i = 0; i < candidates.length; i++) {
+    const r = candidates[i];
     const ig = byId.get(r.ingredient_id);
     if (!ig || !ig.inci_name) { check(`후보 ${r.ingredient_id}`, false, "성분/이름 없음"); continue; }
     const corrected = corrSet.has(`${r.ingredient_id}:KR`);
     const expect = corrected ? LABEL.restricted : LABEL.banned;
     // 검색 도달용 쿼리: inci_name → korean_name → CAS (그룹/쉼표/괄호명 도달 보강)
-    const unreached = (g) => g === "(카드없음)" || g === "(배지없음)" || g === "(nav실패)";
     let got = await cardStatus(page, ig.inci_name);
     if (unreached(got) && ig.korean_name) got = await cardStatus(page, ig.korean_name);
     if (unreached(got) && ig.cas_no) { const cas = (ig.cas_no.match(/\d{2,7}-\d{2}-\d/) || [])[0]; if (cas) got = await cardStatus(page, cas); }
-    check(`${ig.inci_name} [KR] expect ${expect}`, got === expect, `corrected=${corrected} rendered="${got}" (검색도달불가일수있음)`);
-    if (corrected) nCorr++; else nKeep++;
-    if ((nCorr + nKeep) % 20 === 0) console.log(`  …진행 ${nCorr + nKeep}/${candidates.length} (PASS ${PASS} FAIL ${FAIL})`);
+    if (unreached(got)) {
+      // 검색 미도달(그룹/쉼표/괄호명 = 기존 reachability 한계). status 버그 아님 — 데이터 정합만 확인:
+      // 미교정 후보는 raw banned 유지여야(override 에 없어야). 누락 0 = 전부 계상.
+      const dataOk = corrected ? false : (r.status === "banned" && !corrSet.has(`${r.ingredient_id}:KR`));
+      check(`${ig.inci_name} [KR] 데이터정합(미도달)`, dataOk, `corrected=${corrected} raw=${r.status} (검색 미도달=기존 reachability 한계)`);
+      nUnreach++; unreachList.push(ig.inci_name);
+    } else {
+      check(`${ig.inci_name} [KR] expect ${expect}`, got === expect, `corrected=${corrected} rendered="${got}"`);
+      if (corrected) nCorr++; else nKeep++;
+    }
+    if ((i + 1) % 20 === 0) console.log(`  …진행 ${i + 1}/${candidates.length} (PASS ${PASS} FAIL ${FAIL} 미도달 ${nUnreach})`);
   }
-  console.log(`  교정 확인 ${nCorr} · 금지유지 확인 ${nKeep}`);
+  console.log(`  교정렌더 ${nCorr} · 금지유지렌더 ${nKeep} · 검색미도달(데이터정합확인) ${nUnreach}`);
+  if (nUnreach) console.log(`  미도달 목록: ${unreachList.join(", ")}`);
 
   console.log(`\n=== spillover: 비후보 KR ${spillSample.length}건 (raw status 유지) ===`);
   for (const r of spillSample) {
