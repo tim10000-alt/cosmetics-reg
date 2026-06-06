@@ -141,6 +141,2126 @@
       "inci": "N,N-Bis(2-Hydroxyethyl)-p-Phenylenediamine Sulfate",
       "ko": "N,N-비스(2-히드록시에틸)-p-페닐렌디아민설페이트",
       "reason": "The ingredient is explicitly allowed in oxidative hair dyes up to 2.9%, but prohibited in other product types, indicating a use restriction rather than a ban."
+    },
+    {
+      "ingredient_id": "fd77cc76-789d-4b22-aa2a-e38b35c84193",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Hydrogen Peroxide",
+      "ko": "하이드로젠퍼옥사이드",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "ed6d8a5c-7e19-4f95-991a-6c9adf49c814",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Isopropyl Thioglycolate",
+      "ko": "아이소프로필티오글라이콜레이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "c94a44c7-f5eb-4f1f-842e-6c96148a9d3c",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2-Methyl-5-Hydroxyethylaminophenol",
+      "ko": "2-메칠-5-하이드록시에칠아미노페놀",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "4dbae469-da49-4b02-879a-2b286ed45ad1",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "7-Ethylbicyclooxazolidine",
+      "ko": "7-에틸바이사이클로옥사졸리딘",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "01f61240-e33c-4e8e-928b-eb723b0fc72d",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Sodium Carbonate Peroxide",
+      "ko": "소듐카보네이트퍼옥사이드",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "176e68d0-3500-4692-9a7e-28e42502c536",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Sodium Hydroxymethylglycinate",
+      "ko": "소듐하이드록시메칠글리시네이트",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "c628aaf3-4f69-40fe-b18f-d8a3c8999f57",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Hydrogen peroxide, and other compounds or mixtures that release hydrogen peroxide",
+      "ko": "과산화수소 및 과산화수소 생성물질",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "fa4313da-09dc-4616-a25e-b2d7d908a257",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Benzalkonium Saccharinate",
+      "ko": "벤잘코늄사카리네이트",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "a83bc83d-04e4-4f7d-b02a-968e9c64cbab",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2-Chloro-p-Phenylenediamine Sulfate",
+      "ko": "황산o-클로로-p-페닐렌디아민",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "636f0c44-ed80-4223-bc39-a5a100eb1e9e",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Phenyl Mercuric Chloride",
+      "ko": "페닐머큐릭클로라이드",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "9d812b4b-e557-442e-b38c-c2fbbf7e3663",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Phenyl Mercuric Borate",
+      "ko": "페닐머큐릭보레이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "36b03669-2bb5-4045-b03e-7909acb0c3c2",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Alkali sulfides",
+      "ko": "알칼리설파이드류",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "d56f67d1-bfa6-4fcb-b65e-0395e08a7951",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Silver Chloride",
+      "ko": "실버클로라이드",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "3ca8947a-998c-4e28-bf26-d2df0d8d8511",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Aluminum Zirconium Trichlorohydrex GLY",
+      "ko": "알루미늄지르코늄트라이클로로하이드렉스글라이신",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "f00eae17-08ef-4a7f-bee0-e1b10ca324ac",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Methyl Thioglycolate",
+      "ko": "메틸티오글라이콜레이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "def39fac-5e02-4220-8c8a-a13c335b3bb3",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Stearalkonium Chloride",
+      "ko": "스테아랄코늄클로라이드",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "a6bda78f-bda1-4cf8-9e5e-84d02c51c53b",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Selenium Sulfide",
+      "ko": "셀레늄설파이드",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "cd90f232-8db0-4f54-9c70-45513f293c46",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Aluminum Zirconium Tetrachlorohydrate",
+      "ko": "알루미늄지르코늄테트라클로로하이드레이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "7110587c-f1b1-42bc-9f4d-fdb08e50f6dc",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Benzalkonium chloride, bromide and saccharinate",
+      "ko": "벤잘코늄클로라이드, 브로마이드 및 사카리네이트",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "5f1b1d14-4057-4a01-91b8-432e5f48b80c",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "4-Methylbenzylidene Camphor",
+      "ko": "4-메칠벤질리덴캠퍼",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "eb7659e0-99de-431e-b043-9d6712731fc5",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Alkaline earth sulphides",
+      "ko": "알칼리토금속설파이드류",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "c53fdf43-14a2-41fc-8f16-2c133c8b729b",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Lithium Sulfide",
+      "ko": "리튬설파이드",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "bb52a597-b04b-4dcd-a7dd-65f83a95f303",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "p-Chloro-m-Cresol",
+      "ko": "p-클로로-m-크레졸",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "18c2a585-2d5a-4ac7-8616-a8efe3d190b4",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Tetraborates",
+      "ko": "테트라보레이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "561b9b0c-a24b-4e47-89df-e6e57c60c80f",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Butyl Thioglycolate",
+      "ko": "부틸티오글라이콜레이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "9b5df999-0c50-44e1-8387-9d743a627f88",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Aluminum Zirconium Octachlorohydrate",
+      "ko": "알루미늄지르코늄옥타클로로하이드레이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "724def46-37c2-45da-8609-b2aaa2ccc492",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Sodium Dehydroacetate",
+      "ko": "소듐데하이드로아세테이트",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "ce3ad912-d95d-4598-9627-bcece36732c4",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Aluminum Zirconium Octachlorohydrex GLY",
+      "ko": "알루미늄지르코늄옥타클로로하이드렉스글라이신",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "9d5af712-645c-41f3-8f89-bf92193e6229",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Aluminum Zirconium Tetrachlorohydrex GLY",
+      "ko": "알루미늄지르코늄테트라클로로하이드렉스글라이신",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "620e8501-d8f1-49df-96e1-394873756dcb",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2,7-Naphthalenediol",
+      "ko": "2,7-나프탈렌다이올",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "ce9c5179-ba47-476f-a15b-bb7ebfd70c8d",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Magnesium Peroxide",
+      "ko": "마그네슘퍼옥사이드",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "13831db9-3bbc-44f7-be75-6ff3376a7ae0",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Lauralkonium Bromide",
+      "ko": "라우랄코늄브로마이드",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "951d565d-eaec-4e56-bafe-ff5634505660",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "p-Phenylenediamine",
+      "ko": "p-페닐렌디아민",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "c394a280-216a-40e8-aaf2-edacd81da497",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Nitromethane",
+      "ko": "니트로메탄",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "aa95b26d-7554-43dd-ac64-41f251ab987a",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Aluminum Zirconium Pentachlorohydrex GLY",
+      "ko": "알루미늄지르코늄펜타클로로하이드렉스글라이신",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "8ba06f2b-84dc-47f8-ae9c-55056008295c",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "MEA-Benzoate",
+      "ko": "엠이에이-벤조에이트",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "46985eaf-8c51-461f-80dd-ede6bc6f693d",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Complexes of zirconium and aluminium hydroxides AlxZr(OH)yClz and its complexes with glycine",
+      "ko": "지르코늄 및 알루미늄 및 그 글라이신 화합물",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "fdf7df9f-78ac-430a-93a8-e57b889d8a85",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Cetalkonium Chloride",
+      "ko": "세탈코늄클로라이드",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "0ea81c0f-15ac-4175-b270-433377cf212b",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Urea Peroxide",
+      "ko": "우레아퍼옥사이드",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "7c8ad03d-f8b9-41e1-b621-1bbb366376e7",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2-Hydroxyethyl Picramic Acid",
+      "ko": "2-하이드록시에틸피크라믹애씨드",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "60b0d06e-f3d6-4ca6-8ccf-b2af6ae719c4",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Glutaral",
+      "ko": "글루타랄",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "73b96345-5cf6-40f7-a332-219477a853b3",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Myristalkonium Saccharinate",
+      "ko": "미리스탈코늄사카리네이트",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "f24201bc-22ef-4b4f-8638-d243089e2979",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Phenyl Mercuric Benzoate",
+      "ko": "페닐머큐릭벤조에이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "f0aa757a-4ac4-4b02-bb1a-1bba497398cb",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Aluminum Zirconium Tetrachlorohydrex PG",
+      "ko": "알루미늄지르코늄테트라클로로하이드렉스피지",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "7fdf6c8e-cdf8-425c-aa5c-59c0a80cab21",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2-Amino-4-Hydroxyethylaminoanisole Sulfate",
+      "ko": "2-아미노-4-하이드록시에틸아미노아니솔설페이트",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "9eedc1d4-47ed-4b97-83f2-a037af5a14d3",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Aluminum Zirconium Pentachlorohydrate",
+      "ko": "알루미늄지르코늄펜타클로로하이드레이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "7c1ade80-5f49-4ece-ba41-8eab49d4f029",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2,6-Dihydroxyethylaminotoluene",
+      "ko": "2,6-다이하이드록시에틸아미노톨루엔",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "cc7cf245-affe-46e7-9e31-1e14e84c5955",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Tallowalkonium Chloride",
+      "ko": "탈로우알코늄클로라이드",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "8f9b30b0-a7fa-4e7c-9229-9c80ae8d57eb",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Calcium Peroxide",
+      "ko": "칼슘퍼옥사이드",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "42fa96fc-a051-488b-a58e-a2b82f50595c",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Benzalkonium Chloride",
+      "ko": "벤잘코늄클로라이드",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "8db24f41-6488-4cf5-bd65-a40a59f4f92a",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "PVP-Hydrogen Peroxide",
+      "ko": "피브이피-하이드로젠퍼옥사이드",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "cbe6e381-d805-4e84-a8a4-a7a28d76a53b",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Silver Nitrate",
+      "ko": "실버나이트레이트",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "dc5bf7b8-2f5a-4416-9781-9f12f386f89d",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2-Amino-6-Chloro-4-Nitrophenol",
+      "ko": "2-아미노-6-클로로-4-니트로페놀",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "76f6ee32-9fc1-43d7-b527-912f3ef770ef",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Potassium Thioglycolate",
+      "ko": "포타슘티오글라이콜레이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "8402b3db-20aa-4b02-aa6d-4ff9599d2464",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Sodium Thioglycolate",
+      "ko": "소듐티오글라이콜레이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "d68a61d6-3c28-4c6f-9575-33d37df5538d",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Calcium Thioglycolate",
+      "ko": "칼슘티오글라이콜레이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "8c108718-3ebb-45ed-89fc-d1050e29f753",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Lauralkonium Chloride",
+      "ko": "라우랄코늄클로라이드",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "ea360cfe-e56c-4581-aadb-c7dfea86f4cc",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Potassium Sulfide",
+      "ko": "포타슘설파이드",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "22acb37f-762e-40e1-93b6-22086db6221f",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Cocoalkonium Chloride",
+      "ko": "코코알코늄클로라이드",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "f6a44765-a7f2-4ff2-a87c-5946de595419",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2-Amino-4-Hydroxyethylaminoanisole",
+      "ko": "2-아미노-4-하이드록시에틸아미노아니솔",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "3a0274e4-478c-4fc4-bcc6-3a26ccaf6c3c",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Strontium Peroxide",
+      "ko": "스트론튬퍼옥사이드",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "825df8f5-6ed4-454c-af78-6f3f630cd112",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "4-Hydroxypropylamino-3-Nitrophenol",
+      "ko": "4-하이드록시프로필아미노-3-나이트로페놀",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "93342616-59ae-4245-9da5-3d521c6ab1ae",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Sodium Sulfide",
+      "ko": "소듐설파이드",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "1de299e4-825c-4da2-bf71-40a4273a5583",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Hydroxyethyl-2-Nitro-p-Toluidine",
+      "ko": "하이드록시에틸-2-나이트로-p-톨루이딘",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "4919d909-db6d-4a72-a5ef-39a3293f7e9d",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Aluminum Zirconium Tetrachlorohydrex PEG",
+      "ko": "알루미늄지르코늄테트라클로로하이드렉스피이지",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "a78330a1-b885-4a2d-bf8b-6cea2c92cc24",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Magnesium Thioglycolate",
+      "ko": "마그네슘티오글라이콜레이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "c171d023-65cb-47f5-87b2-11d291615cd9",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "3-Nitro-p-Hydroxyethylaminophenol",
+      "ko": "3-나이트로-p-하이드록시에틸아미노페놀",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "0b66ea87-2587-44b1-a581-9c8d6aabbceb",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Aluminum Zirconium Trichlorohydrate",
+      "ko": "알루미늄지르코늄트리클로로하이드레이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "a9e849b7-9819-464a-b035-866a64884fc9",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Isooctyl Thioglycolate",
+      "ko": "아이소옥틸티오글라이콜레이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "7b1a7c39-fe9d-4847-bf99-28cde17f8bdc",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Cetearalkonium Bromide",
+      "ko": "세탈코늄브로마이드",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "4814e61a-6795-46c1-aea6-0a04c6a98148",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Dehydroacetic Acid",
+      "ko": "데하이드로아세틱애씨드",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "f39904f9-6f4f-490b-adf1-1d0c4b056cee",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Calcium Thioglycolate Hydroxide",
+      "ko": "칼슘티오글라이콜레이트하이드록사이드",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "8a0072ec-f532-4783-a11c-a40b0f0eec70",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Ethanolamine Thioglycolate",
+      "ko": "에탄올아민티오글라이콜레이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "a2c0a729-76ef-4eb4-8260-bf26f1442376",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Hydroxybenzomorpholine",
+      "ko": "하이드록시벤조모르폴린",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "75d839bb-a827-4cbe-8790-a90d930f3a1c",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Myristalkonium Chloride",
+      "ko": "미리스탈코늄클로라이드",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "6fd7ab7b-74de-4006-b3f2-059368da20be",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Zinc Peroxide",
+      "ko": "징크퍼옥사이드",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "19764c7a-2a54-424e-a8df-6ab2d576f80e",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "6-Amino-m-Cresol",
+      "ko": "6-아미노-m-크레솔",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "ae7f3ab4-c4c6-4072-8b83-1e58ea9ae5c6",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Strontium Thioglycolate",
+      "ko": "스트론튬티오글라이콜레이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "dc31353b-36db-41db-9f87-f130d43b4bc3",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Thioglycolic acid and its salts and esters",
+      "ko": "치오글라이콜릭애씨드, 그 염류 및 에스텔류",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "6b292bb5-3702-4622-9dca-50e6298cb232",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "1-Naphthol",
+      "ko": "1-나프톨",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "c8b547e2-661a-4ecd-b8d4-9ec3c00c831f",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Zinc Phenolsulfonate",
+      "ko": "징크페놀설포네이트",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "4e1260ab-4c59-4f1a-bf4d-a04c5799024c",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Phenyl Mercuric Bromide",
+      "ko": "페닐머큐릭브로마이드",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "e92e4fe7-a2c0-45a4-812c-e03c0530b562",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Phenyl Mercuric Acetate",
+      "ko": "페닐머큐릭아세테이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "357c0887-710b-4bfe-a145-48ea97d3aded",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Sodium Nitrite",
+      "ko": "소듐나이트라이트",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "a7cda4f5-a062-42df-a566-ffe938cbeb78",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Ammonium Thioglycolate",
+      "ko": "암모늄티오글라이콜레이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "16f32260-272d-482a-baf7-04b97f695002",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "4-Amino-m-cresol",
+      "ko": "4-아미노-m-크레솔",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "631ba7e9-a816-4829-b9bb-cefe55fdab0f",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Benzalkonium Bromide",
+      "ko": "벤잘코늄브로마이드",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "e1d3adf9-aa32-4461-b677-3f72c1d6d912",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Dimethylol Ethylene Thiourea",
+      "ko": "다이메틸올에틸렌티오우레아",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "394fd5c1-3cee-4fd1-bf8d-4e641a9fe149",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Ethyl Thioglycolate",
+      "ko": "에틸티오글라이콜레이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "c3b3821e-fee9-463e-a51a-506f1bf57e87",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Glyceryl Thioglycolate",
+      "ko": "글리세릴티오글라이콜레이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "91526c9c-6d98-4593-8470-ec0daf12e91d",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Hydroxyethyl-3,4-Methylenedioxyaniline HCl",
+      "ko": "하이드록시에틸-3,4-메틸렌다이옥시아닐린에이치씨엘",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "7d4dade6-c3b6-47d0-95a5-c8ea913684cb",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2,6-Dimethoxy-3,5-Pyridinediamine HCl",
+      "ko": "2,6-다이메톡시-3,5-피리딘다이아민에이치씨엘",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "2ccc4a7d-a6fb-4849-b142-a9ab06e05fb6",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Hydrogenated Tallowalkonium Chloride",
+      "ko": "하이드로제네이티드탈로우알코늄클로라이드",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "ad67e9e7-c001-41a7-b129-2e3cfc137093",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Chlorobutanol",
+      "ko": "클로로부탄올",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "b40100af-26da-46da-a135-5cf001815fb6",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Dichlorophene",
+      "ko": "다이클로로펜",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "056de540-c6ff-4726-9694-ab2b32b1a261",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Borates (Sodium borate, tetraborate)",
+      "ko": "보레이트류(소듐보레이트, 테트라보레이트)",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "86210f1f-17e0-4693-a764-77534ced68e5",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Sodium Bisulfite",
+      "ko": "소듐바이설파이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "327aa743-eb00-4ec8-a4ec-a8ccbb205b09",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Ammonium Bisulfite",
+      "ko": "암모늄바이설파이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "20af6c47-3319-4df2-af08-c1e811ccc14a",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Climbazole",
+      "ko": "클림바졸",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "def39fac-5e02-4220-8c8a-a13c335b3bb3",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Stearalkonium Chloride",
+      "ko": "스테아랄코늄클로라이드",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "d486c92c-367c-44ae-bf25-01018ce88f44",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Potassium Undecylenate",
+      "ko": "포타슘운데실레네이트",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "e7105e68-9fc3-4d8a-979d-d2dc57df4216",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "m-Aminophenol Sulfate",
+      "ko": "황산m-아미노페놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "7110587c-f1b1-42bc-9f4d-fdb08e50f6dc",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Benzalkonium chloride, bromide and saccharinate",
+      "ko": "벤잘코늄클로라이드, 브로마이드 및 사카리네이트",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "5f1b1d14-4057-4a01-91b8-432e5f48b80c",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "4-Methylbenzylidene Camphor",
+      "ko": "4-메칠벤질리덴캠퍼",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "57e75712-dbea-498b-bd63-9bd985178b3b",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Dipropyl Oxalate",
+      "ko": "다이프로필옥살레이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "30932c03-0050-4766-b8f6-05a9cdfe9ae1",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "4-Amino-2-Hydroxytoluene Sulfate",
+      "ko": "황산5-아미노-o-크레솔",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "a8f2fe18-649b-4302-9cf7-a27a0f69fbfa",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Sodium Sulfite",
+      "ko": "소듐설파이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "e9caa9bf-83c7-4748-979f-a9fefa399967",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2-Amino-3-hydroxypyridine",
+      "ko": "2-아미노-3-히드록시피리딘",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "688eba02-71ea-4cd7-beb6-895c14039d87",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Piroctone Olamine",
+      "ko": "피록톤올아민",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "bb52a597-b04b-4dcd-a7dd-65f83a95f303",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "p-Chloro-m-Cresol",
+      "ko": "p-클로로-m-크레졸",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "fbfaf3ee-556d-4ae7-9442-05947cf44b93",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Diisobutyl Oxalate",
+      "ko": "다이아이소부틸옥살레이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "08479815-1e49-4d26-bfd7-86e208f9ce42",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Oxalic Acid",
+      "ko": "옥살릭애씨드",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "3b2cb7eb-868c-49a3-b5a8-cc9c7acdca18",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Tagetes minuta Flower Extract",
+      "ko": "만수국아재비꽃추출물",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "39975d4a-7f6f-4139-8902-1b6ad7801fc5",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Calcium Undecylenate",
+      "ko": "칼슘운데실레네이트",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "bacdc969-d9e3-4167-b641-02dc35230844",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Sodium Oxalate",
+      "ko": "소듐옥살레이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "cc2f5dcb-0f0e-4393-a6c4-7a514f2c061f",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "p-Aminophenol",
+      "ko": "p-아미노페놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "724def46-37c2-45da-8609-b2aaa2ccc492",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Sodium Dehydroacetate",
+      "ko": "소듐데하이드로아세테이트",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "f41e7668-b43c-4d41-adb1-c17ea6d1fde6",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Phenoxyisopropanol",
+      "ko": "페녹시이소프로판올",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "5c837bba-e300-4316-8afe-cc4107abff47",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Dehydroacetic acid(3-acetyl-6-methyl-2,4(3H)-dione) and its salts",
+      "ko": "데하이드로아세틱애씨드(3-아세틸-6-메칠피란-2,4(3H)-디온) 및 그 염류",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "f9d4a473-b5b2-425c-bf07-184846bd7277",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "N-Phenyl-p-Phenylenediamine Sulfate",
+      "ko": "N-페닐-p-페닐렌다이아민설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "ce9c5179-ba47-476f-a15b-bb7ebfd70c8d",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Magnesium Peroxide",
+      "ko": "마그네슘퍼옥사이드",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "13831db9-3bbc-44f7-be75-6ff3376a7ae0",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Lauralkonium Bromide",
+      "ko": "라우랄코늄브로마이드",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "dba92452-f840-45ee-b78b-2ef91e46ee7d",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "1,5-Naphthalenediol",
+      "ko": "1,5-디히드록시나프탈렌",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "951d565d-eaec-4e56-bafe-ff5634505660",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "p-Phenylenediamine",
+      "ko": "p-페닐렌디아민",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "18787d76-d62b-4533-9b67-27b6df982b9c",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Dimethyl Oxalate",
+      "ko": "다이메틸옥살레이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "8fbf7532-0997-4d86-8156-1581174fe64f",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Etidronic Acid",
+      "ko": "에티드로닉애씨드",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "fdf7df9f-78ac-430a-93a8-e57b889d8a85",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Cetalkonium Chloride",
+      "ko": "세탈코늄클로라이드",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "0ea81c0f-15ac-4175-b270-433377cf212b",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Urea Peroxide",
+      "ko": "우레아퍼옥사이드",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "89befd52-943c-44b1-9660-6cda8282d63f",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Polyaminopropyl Biguanide",
+      "ko": "폴리아미노프로필바이구아나이드",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "5a81e4bd-554e-43ca-936a-9afc2f201931",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Tagetes patula flower extract; Tagetes patula flower oil",
+      "ko": "만수국꽃 추출물 또는 오일",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "60b0d06e-f3d6-4ca6-8ccf-b2af6ae719c4",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Glutaral",
+      "ko": "글루타랄",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "f35fac61-efd9-4662-b254-b208e55382ec",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Diaminopyrimidine Oxide",
+      "ko": "다이아미노피리미딘옥사이드",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "73b96345-5cf6-40f7-a332-219477a853b3",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Myristalkonium Saccharinate",
+      "ko": "미리스탈코늄사카리네이트",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "73134c54-53f2-435d-a3bd-4fddae5809e4",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Quinine and its salts",
+      "ko": "퀴닌 및 그 염류",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "5b522c4e-d566-460f-8848-10d1ebea400c",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Tetrapotassium Etidronate",
+      "ko": "테트라포타슘에티드로네이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "d6ed8967-1af6-45a9-99ad-dc8b29d78d99",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "m-Aminophenol",
+      "ko": "m-아미노페놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "96b1570f-d47c-4984-a8b7-09cefd9c75ab",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "4-Amino-2-Hydroxytoluene",
+      "ko": "4-아미노-2-하이드록시톨루엔",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "11d526be-986c-4e60-8280-2c82b2745c52",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Indigofera Tinctoria Leaf Powder",
+      "ko": "인디고잎가루",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "6db411c4-46c3-4793-838e-de24a5acf39d",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Benzylhemiformal",
+      "ko": "벤질헤미포름알",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "cec13efc-8459-492f-9893-bb023ff4fabc",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Diethyl Oxalate",
+      "ko": "다이에틸옥살레이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "283f157d-d8d1-4440-9b5f-88db1a9665d8",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "N-Phenyl-p-Phenylenediamine",
+      "ko": "N-페닐-p-페닐렌디아민",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "a5d33985-2fbc-4769-a3ff-01e53185e144",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2-Bromo-2-Nitropropane-1,3-Diol",
+      "ko": "2-브로모-2-나이트로프로판-1,3-디올",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "259e8f67-62dc-403c-bfb8-3968e97831b5",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Inorganic sulphites and hydrogensulphites",
+      "ko": "무기설파이트 및 하이드로젠설파이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "cc7cf245-affe-46e7-9e31-1e14e84c5955",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Tallowalkonium Chloride",
+      "ko": "탈로우알코늄클로라이드",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "6440509f-89c1-4a1e-b890-48c947f58dbd",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "N-Phenyl-p-Phenylenediamine and their salts",
+      "ko": "N-페닐-p-페닐렌다이아민 및 그 염류",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "49176d9f-f957-4423-bdad-9c3dd082608d",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "6-Hydroxyindole",
+      "ko": "6-히드록시인돌",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "1e1ac209-998e-4bea-a63a-019fb1483e7f",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Tagetes patula flower extract",
+      "ko": "만수국꽃추출물",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "05493128-8a48-4bf9-adcd-b14ce176e949",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Combination of ethanol. Borax. Sodium lauryl sulfate (4:1:1)",
+      "ko": "에탄올․붕사․라우릴황산나트륨(4:1:1)혼합물",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "7f712caf-6b61-4f7e-9a42-50eb9c45425d",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2-Methylresorcinol",
+      "ko": "2-메틸레조시놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "deee5fdd-ce27-4d6c-90c6-f9c81a25c2c5",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2,6-Diaminopyridine",
+      "ko": "2,6-디아미노피리딘",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "8f9b30b0-a7fa-4e7c-9229-9c80ae8d57eb",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Calcium Peroxide",
+      "ko": "칼슘퍼옥사이드",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "4b4474d2-07fe-4d3d-beb0-c284916e4e7b",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Tagetes patula flower oil",
+      "ko": "만수국꽃오일",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "a7fe2be8-83bc-41e9-9c73-1ffe149a49af",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "p-Aminophenol Sulfate",
+      "ko": "황산p-아미노페놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "ed5b8e0e-6861-4310-866f-a08d6fad0f53",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "N-Phenyl-p-Phenylenediamine HCl",
+      "ko": "N-페닐-p-페닐렌다이아민에이치씨엘",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "ee455827-0405-461e-a470-915ccf4b5c7f",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Tagetes Minuta Flower Oil",
+      "ko": "만수국아재비꽃오일",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "a9a727a8-eec8-43a1-a38d-7984484838ed",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "p-Methylaminophenol Sulfate",
+      "ko": "p-메칠아미노페놀설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "42fa96fc-a051-488b-a58e-a2b82f50595c",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Benzalkonium Chloride",
+      "ko": "벤잘코늄클로라이드",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "d0f30dc4-1ef7-4f99-a1b8-7b8e81b91232",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "p-Phenylenediamine Sulfate",
+      "ko": "황산p-페닐렌디아민",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "8db24f41-6488-4cf5-bd65-a40a59f4f92a",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "PVP-Hydrogen Peroxide",
+      "ko": "피브이피-하이드로젠퍼옥사이드",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "cbe6e381-d805-4e84-a8a4-a7a28d76a53b",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Silver Nitrate",
+      "ko": "실버나이트레이트",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "55759db0-71e8-4151-8a90-cc298d1e738f",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "TEA-Undecylenate",
+      "ko": "티이에이-운데실레네이트",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "4b8969c7-a423-4f84-af4e-3248b34c345e",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Toluene-2,5-Diamine",
+      "ko": "톨루엔-2,5-디아민",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "1643f899-e64b-440d-b546-97ff3c68c477",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "m-Phenylenediamine Sulfate",
+      "ko": "황산m-페닐렌디아민",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "808afc51-051c-4899-8497-11267554aeb1",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Sodium Picramate",
+      "ko": "피크라민산나트륨",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "8c108718-3ebb-45ed-89fc-d1050e29f753",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Lauralkonium Chloride",
+      "ko": "라우랄코늄클로라이드",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "0cef1d41-f119-405c-8ec0-6209bcfc41d9",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Hexetidine",
+      "ko": "헥세티딘",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "22acb37f-762e-40e1-93b6-22086db6221f",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Cocoalkonium Chloride",
+      "ko": "코코알코늄클로라이드",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "3a0274e4-478c-4fc4-bcc6-3a26ccaf6c3c",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Strontium Peroxide",
+      "ko": "스트론튬퍼옥사이드",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "75b65043-7a75-4cd5-b706-b6b16cca2bc2",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Ammonium Sulfite",
+      "ko": "암모늄설파이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "8f5032f4-ca08-4ba8-b1d7-7f326913a3e9",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Toluene-2,5-diamine hydrochloride",
+      "ko": "염산톨루엔-2,5-디아민",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "4b8a0b2d-55e9-4d08-a605-f41089186079",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Tagetes Patula Flower/Leaf/Stem Extract",
+      "ko": "만수국꽃/잎/줄기추출물",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "d7e8871e-ffdd-4b4e-a689-fd86ea6286dc",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Benzethonium Chloride",
+      "ko": "벤제토늄클로라이드",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "66738be8-e3f4-457d-bc4e-617db3a8a4e6",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Allyl Heptine Carbonate",
+      "ko": "아릴헵틴카보네이트",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "80efe8d6-ec86-4887-be65-241fb1250d3e",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Tagetes minuta flower extract; Tagetes minuta flower oil",
+      "ko": "만수국아재비꽃 추출물 또는 오일",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "b48c7a1f-5cc9-454b-91a2-0b3f11d5c8fc",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Undecylenic acid, its salts and monoethanolamide",
+      "ko": "운데실레닉애씨드 및 그 염류 및 모노에탄올아마이드",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "100d8189-971b-4d56-be3f-3d9d65d3add5",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Toluene",
+      "ko": "톨루엔",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "7b1a7c39-fe9d-4847-bf99-28cde17f8bdc",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Cetearalkonium Bromide",
+      "ko": "세탈코늄브로마이드",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "ab511864-ddb3-4f7c-b226-a4eaec84d242",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Ethyl Lauroyl Arginate HCl",
+      "ko": "에칠라우로일알지네이트하이드로클로라이드",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "4814e61a-6795-46c1-aea6-0a04c6a98148",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Dehydroacetic Acid",
+      "ko": "데하이드로아세틱애씨드",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "cad15409-1b3e-4b74-9113-98ffb0f86c64",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Calcium Hydroxide",
+      "ko": "칼슘하이드록사이드",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "75a35b4f-4d3d-491d-b70f-e20c8c2ee391",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Lithium Hydroxide",
+      "ko": "리튬하이드록사이드",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "75d839bb-a827-4cbe-8790-a90d930f3a1c",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Myristalkonium Chloride",
+      "ko": "미리스탈코늄클로라이드",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "a07be993-7829-4d68-bc29-e34c03adc448",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Etidronic acid and its salts (1-hydroxyethylidene- di-phosphonic acid and its salts)",
+      "ko": "에티드로닉애씨드 및 그 염류(1-하이드록시에칠리덴-디-포스포닉애씨드 및 그 염류)",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "6fd7ab7b-74de-4006-b3f2-059368da20be",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Zinc Peroxide",
+      "ko": "징크퍼옥사이드",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "8128a8a1-9618-4ef3-bbd2-e80db802d667",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Sodium Metabisulfite",
+      "ko": "소듐메타바이설파이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "9e3a4c48-02d3-427e-beca-f7dbc8969337",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "1-Hydroxyethyl 4,5-Diamino Pyrazole Sulfate",
+      "ko": "1-하이드록시에틸4,5-다이아미노피라졸설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "9250bcd6-679c-4601-815f-ea5fd8bc34b4",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Quinine",
+      "ko": "퀴닌",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "8c5336ba-2598-401b-9d70-9cf629a7769b",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Sodium Undecylenate",
+      "ko": "소듐운데실레네이트",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "1619e842-87cd-4a8e-8253-fa4f2681a12d",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Potassium Sulfite",
+      "ko": "포타슘설파이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "ebee6a7b-7289-4b1a-95fd-a01351ca20ec",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Mixture of Methylchloroisothiazoline and Methylisothiazoline(including Magnesium chloride and Magnesium nitreate)",
+      "ko": "메칠클로로이소치아졸리논과 메칠이소치아졸리논 혼합물(염화마그네슘과 질산마그네슘 포함)",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "bc28ccf7-97db-4a9c-aef1-14d46a5c1195",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Methylchloroisothiazolinone",
+      "ko": "메칠클로로이소치아졸리논",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "7dababca-e2e0-497a-bf0b-d580d34a1346",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "5-Amino-6-Chloro-o-Cresol",
+      "ko": "5-아미노-6-클로로-o-크레솔",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "3b338de9-22da-4785-9555-fa383b1c04af",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2-Amino-5-nitrophenol sulfate",
+      "ko": "황산2-아미노-5-니트로페놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "357c0887-710b-4bfe-a145-48ea97d3aded",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Sodium Nitrite",
+      "ko": "소듐나이트라이트",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "1066817d-4dd8-4b47-b0be-8d89b22699b0",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "4-Nitro-o-Phenylenediamine",
+      "ko": "p-니트로-o-페닐렌디아민",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "76db2ef8-6a94-4a17-b802-6603f42b61ae",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Oxalic Acid, Its Esters And Alkaline Salts",
+      "ko": "옥살릭애씨드, 그 에스텔류 및 알칼리 염류",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "ba52b71d-33a9-4b05-9304-c0f8e536bcd9",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "2,4-Diaminophenol HCl",
+      "ko": "염산2,4-디아미노페놀",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "c72ee65c-385e-4064-a607-c9b09f675d52",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Dibutyl Oxalate",
+      "ko": "다이부틸옥살레이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "86c121bb-5570-4bb1-b549-dc4db349cde9",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Undecylenic Acid",
+      "ko": "운데실레닉애씨드",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "ad0991ab-3fcd-4d00-b0de-72e0b907305f",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Picramic Acid",
+      "ko": "피크라민산",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "29b5c215-9f11-43e2-9d0e-b5d17fc4550d",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Toluene-2,5-Diamine Sulfate",
+      "ko": "황산톨루엔-2,5-디아민",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "631ba7e9-a816-4829-b9bb-cefe55fdab0f",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Benzalkonium Bromide",
+      "ko": "벤잘코늄브로마이드",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "e320f23e-8e76-4262-845e-b9ae98a9602f",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Potassium Metabisulfite",
+      "ko": "포타슘메타바이설파이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "1b5236cb-40e4-40f7-a0d3-084c1cf0a482",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "MEA-Undecylenate",
+      "ko": "엠이에이-운데실레네이트",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "2ccc4a7d-a6fb-4849-b142-a9ab06e05fb6",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Hydrogenated Tallowalkonium Chloride",
+      "ko": "하이드로제네이티드탈로우알코늄클로라이드",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "ac2c280e-22a2-4c63-8141-995a3aad255e",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Silver Sulfate",
+      "ko": "실버설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "03a33e8a-0da8-48b1-afd7-b40452d63a08",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Hematein",
+      "ko": "헤마테인",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "d6d5a81a-b2b9-40c8-a4c2-3e1f9c37844b",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Ferrous Sulfate",
+      "ko": "페러스설페이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "b8ac0f28-d75a-4d9f-ae13-90a4e97edddf",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Methoxypropylamino Cyclohexenylidene Ethoxyethylcyanoacetate",
+      "ko": "메톡시프로필아미노사이클로헥세닐리덴에톡시에틸사이아노아세테이트",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+    },
+    {
+      "ingredient_id": "c102663c-f813-44a4-b89f-373505cd52b2",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Sodium Disulfite",
+      "ko": "소듐다이설파이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "bccfc22d-86db-4ea4-923b-0630797fe2a2",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Potassium Bisulfite",
+      "ko": "포타슘바이설파이트",
+      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "ad67e9e7-c001-41a7-b129-2e3cfc137093",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Chlorobutanol",
+      "ko": "클로로부탄올",
+      "reason": "claude-judge: 허용 배합한도(농도) 명시"
     }
   ]
 }

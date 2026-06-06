@@ -1,0 +1,107 @@
+#!/usr/bin/env node
+// Claude 직접 판정기(초기 백로그 벌크) — 무료 Gemini 일일한도로 못 도는 banned↔restricted 오분류를
+// *conditions 원문 근거*로 분류(내 기억 아님, 15차 교훈). 보수적: restricted 는 conditions 에
+// *제품/용도별 허용농도*가 명확할 때만. 일반한도(파라벤 "단일성분 0.4%")·색소 등재조항·금지문구·
+// 애매 = banned 유지. 권위 금지annex veto 병행(이중안전). 출처 by:"claude-judge"(Gemini 와 구분).
+// 검증모드(--validate): 이미 판정된 Gemini verdict 와 일치도 측정. 생성모드(--apply): overrides 갱신.
+const fs = require("fs");
+const path = require("path");
+const DATA = path.join(__dirname, "..", "public", "data");
+const REG = path.join(DATA, "regulations");
+const J = (f) => JSON.parse(fs.readFileSync(path.join(DATA, f), "utf8"));
+
+// 제품/용도 키워드(KR/CN 번역 원문) + 농도 + 허용맥락. 색소 단서조항(농도 없는 등재규칙)은 제외됨.
+const PRODUCT = /두발|모발|염모|탈[염색]|퍼[머마]|파마|피부|손발톱|손톱|네일|세정|세안|면도|구강|치약|데오도|자외선|선스크린|메이크업|영유아|제품류|제품에서|제품\s*중|화장품에|oral|hair|skin|nail|rinse|leave|cosmetic/i;
+const CONC = /\d+(?:\.\d+)?\s*%|\d+(?:\.\d+)?\s*(?:g|mg|ppm)\b/;
+const ALLOW = /(적용|사용범위|사용 가능|허용|배합한도|최대\s*사용\s*농도|최대사용농도|사용할 수 있|준용|참조)/;
+
+// conditions 원문 기반 분류(veto 는 호출측에서 별도 적용 — 진짜 금지 차단).
+// restricted IF: 허용 맥락(배합한도/사용범위/허용) + 실제 농도값. 색소 단서조항(농도 없음)·순수
+// 금지문구·애매 = banned. 제품별 한정은 불필요(보존제 등 일반 허용한도도 restricted). PRODUCT 는
+// 참고용(제품맥락 있으면 확신↑)이나 필수 아님.
+function classify(cond) {
+  if (!cond) return { v: "banned", why: "조건없음" };
+  const allow = ALLOW.test(cond), conc = CONC.test(cond), prod = PRODUCT.test(cond);
+  if (allow && conc) return { v: "restricted", why: prod ? "제품/용도별 허용농도 명시" : "허용 배합한도(농도) 명시" };
+  return { v: "banned", why: "허용농도 없음(색소조항/금지문구/애매)" };
+}
+
+const validCas = (raw) => String(raw || "").match(/\d{2,7}-\d{2}-\d/g) || [];
+const canon = (s) => s.toLowerCase().replace(/[；;]/g, ",").replace(/\s*,\s*/g, ",").replace(/\s+/g, " ").replace(/[,\s]*\(\s*cas[^)]*\)/g, "").replace(/[,\s]+c\.?i\.?\s*\d{4,6}/g, "").replace(/[,\s]+$/, "").trim();
+const PROHIB = /Annex II|Prohibited|California AB|표1[^\n]*금지|사용 금지 물질|Comunidad Andina|EUR-Lex 1223/i;
+const LIMIT = /배합한도|최대사용농도|허용된 최대농도/;
+
+function load() {
+  const ing = J("ingredients.json").rows;
+  const byId = new Map(ing.map((i) => [i.id, i]));
+  const all = [];
+  for (const f of fs.readdirSync(REG).filter((x) => x.endsWith(".json"))) all.push(...JSON.parse(fs.readFileSync(path.join(REG, f), "utf8")).rows);
+  const banId = new Set(), banCas = new Set(), banName = new Set();
+  for (const r of all) {
+    if (r.status !== "banned" || !PROHIB.test(`${r.source_document || ""} ${r.conditions || ""}`)) continue;
+    banId.add(r.ingredient_id);
+    const ig = byId.get(r.ingredient_id);
+    if (ig) { for (const c of validCas(ig.cas_no)) banCas.add(c); if (ig.inci_name) banName.add(canon(ig.inci_name)); }
+  }
+  const vetoed = (ig) => banId.has(ig.id) || validCas(ig.cas_no).some((c) => banCas.has(c)) || (ig.inci_name && banName.has(canon(ig.inci_name)));
+  return { ing, byId, all, vetoed };
+}
+
+function candidates(all, countries) {
+  return all.filter((r) => countries.includes(r.country_code) && r.status === "banned" && (r.source_document || "").includes("MFDS") && r.conditions && LIMIT.test(r.conditions));
+}
+
+if (require.main === module) {
+  const mode = process.argv[2] || "--validate";
+  const { byId, all, vetoed } = load();
+  const dec = (() => { try { return J("status-decisions.json").decisions; } catch { return {}; } })();
+
+  if (mode === "--validate") {
+    let agree = 0, disagree = 0; const dis = [];
+    for (const k in dec) {
+      const x = dec[k];
+      if (x.by !== "gemini-consensus" && x.by !== "gemini-tiebreak") continue;
+      const [id, cc] = k.split(":");
+      const r = all.find((rr) => rr.ingredient_id === id && rr.country_code === cc);
+      if (!r) continue;
+      const ig = byId.get(id);
+      const c = (ig && vetoed(ig)) ? "banned" : classify(r.conditions).v;   // veto 우선(진짜 금지)
+      const gem = x.verdict === "restricted" ? "restricted" : "banned";
+      if (c === gem) agree++; else { disagree++; dis.push(`${x.inci}: 분류기=${c} vs Gemini=${x.verdict} | cond="${(r.conditions||"").replace(/\n/g," ").slice(0,90)}"`); }
+    }
+    console.log(`검증 — 이미판정 Gemini 대비 일치 ${agree} · 불일치 ${disagree}`);
+    dis.forEach((d) => console.log("  ⚠ " + d));
+    return;
+  }
+
+  if (mode === "--apply") {
+    const countries = (process.argv[3] || "KR,CN,TW").split(",");
+    const ovFile = path.join(DATA, "status-overrides.json");
+    const ov = JSON.parse(fs.readFileSync(ovFile, "utf8"));
+    const existing = new Set(ov.corrections.map((c) => `${c.ingredient_id}:${c.country_code}`));
+    const decFile = path.join(DATA, "status-decisions.json");
+    const decObj = JSON.parse(fs.readFileSync(decFile, "utf8"));
+    let added = 0, vetoSkip = 0, keptBanned = 0, alreadyDec = 0;
+    for (const r of candidates(all, countries)) {
+      const key = `${r.ingredient_id}:${r.country_code}`;
+      if (dec[key] || existing.has(key)) { alreadyDec++; continue; }
+      const ig = byId.get(r.ingredient_id);
+      if (!ig) continue;
+      if (vetoed(ig)) { decObj.decisions[key] = { inci: ig.inci_name, ko: ig.korean_name, country: r.country_code, verdict: "banned", by: "prohibition-veto" }; vetoSkip++; continue; }
+      const cls = classify(r.conditions);
+      if (cls.v === "restricted") {
+        ov.corrections.push({ ingredient_id: r.ingredient_id, country_code: r.country_code, from: "banned", to: "restricted", source_match: "MFDS", inci: ig.inci_name, ko: ig.korean_name, reason: `claude-judge: ${cls.why}` });
+        decObj.decisions[key] = { inci: ig.inci_name, ko: ig.korean_name, country: r.country_code, verdict: "restricted", by: "claude-judge", why: cls.why };
+        added++;
+      } else {
+        decObj.decisions[key] = { inci: ig.inci_name, ko: ig.korean_name, country: r.country_code, verdict: "banned", by: "claude-judge", why: cls.why };
+        keptBanned++;
+      }
+    }
+    fs.writeFileSync(ovFile, JSON.stringify(ov, null, 2));
+    fs.writeFileSync(decFile, JSON.stringify({ generated: "status-judge", decisions: decObj.decisions }, null, 2));
+    console.log(`적용 — 교정추가(restricted) ${added} · banned유지 ${keptBanned} · veto ${vetoSkip} · 기존 ${alreadyDec}`);
+    console.log(`총 교정: ${ov.corrections.length}`);
+  }
+}
+module.exports = { classify };

@@ -334,6 +334,1809 @@
       "m3": null,
       "verdict": "restricted",
       "by": "gemini-consensus"
+    },
+    "fd77cc76-789d-4b22-aa2a-e38b35c84193:CN": {
+      "inci": "Hydrogen Peroxide",
+      "ko": "하이드로젠퍼옥사이드",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "ed6d8a5c-7e19-4f95-991a-6c9adf49c814:CN": {
+      "inci": "Isopropyl Thioglycolate",
+      "ko": "아이소프로필티오글라이콜레이트",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "3b47dec2-c19e-4ec5-86c2-6127103d137e:CN": {
+      "inci": "Sodium Perborate",
+      "ko": "과붕산나트륨",
+      "country": "CN",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "c94a44c7-f5eb-4f1f-842e-6c96148a9d3c:CN": {
+      "inci": "2-Methyl-5-Hydroxyethylaminophenol",
+      "ko": "2-메칠-5-하이드록시에칠아미노페놀",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "4dbae469-da49-4b02-879a-2b286ed45ad1:CN": {
+      "inci": "7-Ethylbicyclooxazolidine",
+      "ko": "7-에틸바이사이클로옥사졸리딘",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "48139f6f-7b15-4747-a8df-9f618ae53947:CN": {
+      "inci": "Formaldehyde",
+      "ko": "포름알데하이드",
+      "country": "CN",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "01f61240-e33c-4e8e-928b-eb723b0fc72d:CN": {
+      "inci": "Sodium Carbonate Peroxide",
+      "ko": "소듐카보네이트퍼옥사이드",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "176e68d0-3500-4692-9a7e-28e42502c536:CN": {
+      "inci": "Sodium Hydroxymethylglycinate",
+      "ko": "소듐하이드록시메칠글리시네이트",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "c628aaf3-4f69-40fe-b18f-d8a3c8999f57:CN": {
+      "inci": "Hydrogen peroxide, and other compounds or mixtures that release hydrogen peroxide",
+      "ko": "과산화수소 및 과산화수소 생성물질",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "fa4313da-09dc-4616-a25e-b2d7d908a257:CN": {
+      "inci": "Benzalkonium Saccharinate",
+      "ko": "벤잘코늄사카리네이트",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "a83bc83d-04e4-4f7d-b02a-968e9c64cbab:CN": {
+      "inci": "2-Chloro-p-Phenylenediamine Sulfate",
+      "ko": "황산o-클로로-p-페닐렌디아민",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "636f0c44-ed80-4223-bc39-a5a100eb1e9e:CN": {
+      "inci": "Phenyl Mercuric Chloride",
+      "ko": "페닐머큐릭클로라이드",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "9d812b4b-e557-442e-b38c-c2fbbf7e3663:CN": {
+      "inci": "Phenyl Mercuric Borate",
+      "ko": "페닐머큐릭보레이트",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "36b03669-2bb5-4045-b03e-7909acb0c3c2:CN": {
+      "inci": "Alkali sulfides",
+      "ko": "알칼리설파이드류",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "406106d7-e79e-410a-9c77-878afe3b2db7:CN": {
+      "inci": "Thioglycolic acid esters",
+      "ko": "치오글라이콜릭애씨드 에스터류",
+      "country": "CN",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "d56f67d1-bfa6-4fcb-b65e-0395e08a7951:CN": {
+      "inci": "Silver Chloride",
+      "ko": "실버클로라이드",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "3ca8947a-998c-4e28-bf26-d2df0d8d8511:CN": {
+      "inci": "Aluminum Zirconium Trichlorohydrex GLY",
+      "ko": "알루미늄지르코늄트라이클로로하이드렉스글라이신",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "f00eae17-08ef-4a7f-bee0-e1b10ca324ac:CN": {
+      "inci": "Methyl Thioglycolate",
+      "ko": "메틸티오글라이콜레이트",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "def39fac-5e02-4220-8c8a-a13c335b3bb3:CN": {
+      "inci": "Stearalkonium Chloride",
+      "ko": "스테아랄코늄클로라이드",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "a6bda78f-bda1-4cf8-9e5e-84d02c51c53b:CN": {
+      "inci": "Selenium Sulfide",
+      "ko": "셀레늄설파이드",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "cd90f232-8db0-4f54-9c70-45513f293c46:CN": {
+      "inci": "Aluminum Zirconium Tetrachlorohydrate",
+      "ko": "알루미늄지르코늄테트라클로로하이드레이트",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "7110587c-f1b1-42bc-9f4d-fdb08e50f6dc:CN": {
+      "inci": "Benzalkonium chloride, bromide and saccharinate",
+      "ko": "벤잘코늄클로라이드, 브로마이드 및 사카리네이트",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "5f1b1d14-4057-4a01-91b8-432e5f48b80c:CN": {
+      "inci": "4-Methylbenzylidene Camphor",
+      "ko": "4-메칠벤질리덴캠퍼",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "eb7659e0-99de-431e-b043-9d6712731fc5:CN": {
+      "inci": "Alkaline earth sulphides",
+      "ko": "알칼리토금속설파이드류",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "c53fdf43-14a2-41fc-8f16-2c133c8b729b:CN": {
+      "inci": "Lithium Sulfide",
+      "ko": "리튬설파이드",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "bb52a597-b04b-4dcd-a7dd-65f83a95f303:CN": {
+      "inci": "p-Chloro-m-Cresol",
+      "ko": "p-클로로-m-크레졸",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "18c2a585-2d5a-4ac7-8616-a8efe3d190b4:CN": {
+      "inci": "Tetraborates",
+      "ko": "테트라보레이트",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "ee4ff97b-8fdd-43a8-b678-d7ed9d0fcbbf:CN": {
+      "inci": "Chlorophene",
+      "ko": "클로로펜",
+      "country": "CN",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "561b9b0c-a24b-4e47-89df-e6e57c60c80f:CN": {
+      "inci": "Butyl Thioglycolate",
+      "ko": "부틸티오글라이콜레이트",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "9b5df999-0c50-44e1-8387-9d743a627f88:CN": {
+      "inci": "Aluminum Zirconium Octachlorohydrate",
+      "ko": "알루미늄지르코늄옥타클로로하이드레이트",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "724def46-37c2-45da-8609-b2aaa2ccc492:CN": {
+      "inci": "Sodium Dehydroacetate",
+      "ko": "소듐데하이드로아세테이트",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "ce3ad912-d95d-4598-9627-bcece36732c4:CN": {
+      "inci": "Aluminum Zirconium Octachlorohydrex GLY",
+      "ko": "알루미늄지르코늄옥타클로로하이드렉스글라이신",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "9d5af712-645c-41f3-8f89-bf92193e6229:CN": {
+      "inci": "Aluminum Zirconium Tetrachlorohydrex GLY",
+      "ko": "알루미늄지르코늄테트라클로로하이드렉스글라이신",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "620e8501-d8f1-49df-96e1-394873756dcb:CN": {
+      "inci": "2,7-Naphthalenediol",
+      "ko": "2,7-나프탈렌다이올",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "ce9c5179-ba47-476f-a15b-bb7ebfd70c8d:CN": {
+      "inci": "Magnesium Peroxide",
+      "ko": "마그네슘퍼옥사이드",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "13831db9-3bbc-44f7-be75-6ff3376a7ae0:CN": {
+      "inci": "Lauralkonium Bromide",
+      "ko": "라우랄코늄브로마이드",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "61d831e5-e13d-48a7-b988-6f9b53024ff9:CN": {
+      "inci": "Phenol",
+      "ko": "페놀",
+      "country": "CN",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "951d565d-eaec-4e56-bafe-ff5634505660:CN": {
+      "inci": "p-Phenylenediamine",
+      "ko": "p-페닐렌디아민",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "c394a280-216a-40e8-aaf2-edacd81da497:CN": {
+      "inci": "Nitromethane",
+      "ko": "니트로메탄",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "aa95b26d-7554-43dd-ac64-41f251ab987a:CN": {
+      "inci": "Aluminum Zirconium Pentachlorohydrex GLY",
+      "ko": "알루미늄지르코늄펜타클로로하이드렉스글라이신",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "8ba06f2b-84dc-47f8-ae9c-55056008295c:CN": {
+      "inci": "MEA-Benzoate",
+      "ko": "엠이에이-벤조에이트",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "46985eaf-8c51-461f-80dd-ede6bc6f693d:CN": {
+      "inci": "Complexes of zirconium and aluminium hydroxides AlxZr(OH)yClz and its complexes with glycine",
+      "ko": "지르코늄 및 알루미늄 및 그 글라이신 화합물",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "fdf7df9f-78ac-430a-93a8-e57b889d8a85:CN": {
+      "inci": "Cetalkonium Chloride",
+      "ko": "세탈코늄클로라이드",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "0ea81c0f-15ac-4175-b270-433377cf212b:CN": {
+      "inci": "Urea Peroxide",
+      "ko": "우레아퍼옥사이드",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "1fad868f-b68b-4419-a2c5-315a8535a7e1:CN": {
+      "inci": "2-Chloro-p-Phenylenediamine",
+      "ko": "2-클로로-p-페닐렌다이아민",
+      "country": "CN",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "7c8ad03d-f8b9-41e1-b621-1bbb366376e7:CN": {
+      "inci": "2-Hydroxyethyl Picramic Acid",
+      "ko": "2-하이드록시에틸피크라믹애씨드",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "60b0d06e-f3d6-4ca6-8ccf-b2af6ae719c4:CN": {
+      "inci": "Glutaral",
+      "ko": "글루타랄",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "73b96345-5cf6-40f7-a332-219477a853b3:CN": {
+      "inci": "Myristalkonium Saccharinate",
+      "ko": "미리스탈코늄사카리네이트",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "f24201bc-22ef-4b4f-8638-d243089e2979:CN": {
+      "inci": "Phenyl Mercuric Benzoate",
+      "ko": "페닐머큐릭벤조에이트",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "f0aa757a-4ac4-4b02-bb1a-1bba497398cb:CN": {
+      "inci": "Aluminum Zirconium Tetrachlorohydrex PG",
+      "ko": "알루미늄지르코늄테트라클로로하이드렉스피지",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "e3b053cf-be33-4444-a69b-1d9ba775e977:CN": {
+      "inci": "Formaldehyde and p-Formaldehyde",
+      "ko": "포름알데하이드 및 p-폼알데하이드",
+      "country": "CN",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "7fdf6c8e-cdf8-425c-aa5c-59c0a80cab21:CN": {
+      "inci": "2-Amino-4-Hydroxyethylaminoanisole Sulfate",
+      "ko": "2-아미노-4-하이드록시에틸아미노아니솔설페이트",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "9eedc1d4-47ed-4b97-83f2-a037af5a14d3:CN": {
+      "inci": "Aluminum Zirconium Pentachlorohydrate",
+      "ko": "알루미늄지르코늄펜타클로로하이드레이트",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "7c1ade80-5f49-4ece-ba41-8eab49d4f029:CN": {
+      "inci": "2,6-Dihydroxyethylaminotoluene",
+      "ko": "2,6-다이하이드록시에틸아미노톨루엔",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "cc7cf245-affe-46e7-9e31-1e14e84c5955:CN": {
+      "inci": "Tallowalkonium Chloride",
+      "ko": "탈로우알코늄클로라이드",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "5370e1f8-10bc-46e1-b13a-603d8151d124:CN": {
+      "inci": "3-Benzylidene Camphor",
+      "ko": "3-벤질리덴캠퍼",
+      "country": "CN",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "40b557df-eee1-498c-bce4-069e11796fc7:CN": {
+      "inci": "Chloramine T",
+      "ko": "클로라민T",
+      "country": "CN",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "8f9b30b0-a7fa-4e7c-9229-9c80ae8d57eb:CN": {
+      "inci": "Calcium Peroxide",
+      "ko": "칼슘퍼옥사이드",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "42fa96fc-a051-488b-a58e-a2b82f50595c:CN": {
+      "inci": "Benzalkonium Chloride",
+      "ko": "벤잘코늄클로라이드",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "46caeba2-e18c-4abc-8a62-f4e18c6ea826:CN": {
+      "inci": "Zinc Pyrithione",
+      "ko": "징크피리치온",
+      "country": "CN",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "8db24f41-6488-4cf5-bd65-a40a59f4f92a:CN": {
+      "inci": "PVP-Hydrogen Peroxide",
+      "ko": "피브이피-하이드로젠퍼옥사이드",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "cbe6e381-d805-4e84-a8a4-a7a28d76a53b:CN": {
+      "inci": "Silver Nitrate",
+      "ko": "실버나이트레이트",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "dc5bf7b8-2f5a-4416-9781-9f12f386f89d:CN": {
+      "inci": "2-Amino-6-Chloro-4-Nitrophenol",
+      "ko": "2-아미노-6-클로로-4-니트로페놀",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "76f6ee32-9fc1-43d7-b527-912f3ef770ef:CN": {
+      "inci": "Potassium Thioglycolate",
+      "ko": "포타슘티오글라이콜레이트",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "8402b3db-20aa-4b02-aa6d-4ff9599d2464:CN": {
+      "inci": "Sodium Thioglycolate",
+      "ko": "소듐티오글라이콜레이트",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "d68a61d6-3c28-4c6f-9575-33d37df5538d:CN": {
+      "inci": "Calcium Thioglycolate",
+      "ko": "칼슘티오글라이콜레이트",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "8c108718-3ebb-45ed-89fc-d1050e29f753:CN": {
+      "inci": "Lauralkonium Chloride",
+      "ko": "라우랄코늄클로라이드",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "ea360cfe-e56c-4581-aadb-c7dfea86f4cc:CN": {
+      "inci": "Potassium Sulfide",
+      "ko": "포타슘설파이드",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "22acb37f-762e-40e1-93b6-22086db6221f:CN": {
+      "inci": "Cocoalkonium Chloride",
+      "ko": "코코알코늄클로라이드",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "f6a44765-a7f2-4ff2-a87c-5946de595419:CN": {
+      "inci": "2-Amino-4-Hydroxyethylaminoanisole",
+      "ko": "2-아미노-4-하이드록시에틸아미노아니솔",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "da16a500-8edf-4b03-9075-cb958505b266:CN": {
+      "inci": "Thimerosal",
+      "ko": "티메로살",
+      "country": "CN",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "3a0274e4-478c-4fc4-bcc6-3a26ccaf6c3c:CN": {
+      "inci": "Strontium Peroxide",
+      "ko": "스트론튬퍼옥사이드",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "6835faaa-2afa-4259-936f-084fdec051ef:CN": {
+      "inci": "6-Methoxy-2-methylamino-3-aminopyridine HCL",
+      "ko": "6-메톡시-2-메틸아미노-3-아미노피리딘에이치씨엘",
+      "country": "CN",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "825df8f5-6ed4-454c-af78-6f3f630cd112:CN": {
+      "inci": "4-Hydroxypropylamino-3-Nitrophenol",
+      "ko": "4-하이드록시프로필아미노-3-나이트로페놀",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "93342616-59ae-4245-9da5-3d521c6ab1ae:CN": {
+      "inci": "Sodium Sulfide",
+      "ko": "소듐설파이드",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "1de299e4-825c-4da2-bf71-40a4273a5583:CN": {
+      "inci": "Hydroxyethyl-2-Nitro-p-Toluidine",
+      "ko": "하이드록시에틸-2-나이트로-p-톨루이딘",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "4919d909-db6d-4a72-a5ef-39a3293f7e9d:CN": {
+      "inci": "Aluminum Zirconium Tetrachlorohydrex PEG",
+      "ko": "알루미늄지르코늄테트라클로로하이드렉스피이지",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "a78330a1-b885-4a2d-bf8b-6cea2c92cc24:CN": {
+      "inci": "Magnesium Thioglycolate",
+      "ko": "마그네슘티오글라이콜레이트",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "c171d023-65cb-47f5-87b2-11d291615cd9:CN": {
+      "inci": "3-Nitro-p-Hydroxyethylaminophenol",
+      "ko": "3-나이트로-p-하이드록시에틸아미노페놀",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "0b66ea87-2587-44b1-a581-9c8d6aabbceb:CN": {
+      "inci": "Aluminum Zirconium Trichlorohydrate",
+      "ko": "알루미늄지르코늄트리클로로하이드레이트",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "a9e849b7-9819-464a-b035-866a64884fc9:CN": {
+      "inci": "Isooctyl Thioglycolate",
+      "ko": "아이소옥틸티오글라이콜레이트",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "7b1a7c39-fe9d-4847-bf99-28cde17f8bdc:CN": {
+      "inci": "Cetearalkonium Bromide",
+      "ko": "세탈코늄브로마이드",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "4814e61a-6795-46c1-aea6-0a04c6a98148:CN": {
+      "inci": "Dehydroacetic Acid",
+      "ko": "데하이드로아세틱애씨드",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "f39904f9-6f4f-490b-adf1-1d0c4b056cee:CN": {
+      "inci": "Calcium Thioglycolate Hydroxide",
+      "ko": "칼슘티오글라이콜레이트하이드록사이드",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "8a0072ec-f532-4783-a11c-a40b0f0eec70:CN": {
+      "inci": "Ethanolamine Thioglycolate",
+      "ko": "에탄올아민티오글라이콜레이트",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "a2c0a729-76ef-4eb4-8260-bf26f1442376:CN": {
+      "inci": "Hydroxybenzomorpholine",
+      "ko": "하이드록시벤조모르폴린",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "75d839bb-a827-4cbe-8790-a90d930f3a1c:CN": {
+      "inci": "Myristalkonium Chloride",
+      "ko": "미리스탈코늄클로라이드",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "6fd7ab7b-74de-4006-b3f2-059368da20be:CN": {
+      "inci": "Zinc Peroxide",
+      "ko": "징크퍼옥사이드",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "19764c7a-2a54-424e-a8df-6ab2d576f80e:CN": {
+      "inci": "6-Amino-m-Cresol",
+      "ko": "6-아미노-m-크레솔",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "ae7f3ab4-c4c6-4072-8b83-1e58ea9ae5c6:CN": {
+      "inci": "Strontium Thioglycolate",
+      "ko": "스트론튬티오글라이콜레이트",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "1130b831-cae7-44a4-a552-c20d1778e0d9:CN": {
+      "inci": "Thioglycolic Acid",
+      "ko": "치오글라이콜릭애씨드",
+      "country": "CN",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "dc31353b-36db-41db-9f87-f130d43b4bc3:CN": {
+      "inci": "Thioglycolic acid and its salts and esters",
+      "ko": "치오글라이콜릭애씨드, 그 염류 및 에스텔류",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "6b292bb5-3702-4622-9dca-50e6298cb232:CN": {
+      "inci": "1-Naphthol",
+      "ko": "1-나프톨",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "c8b547e2-661a-4ecd-b8d4-9ec3c00c831f:CN": {
+      "inci": "Zinc Phenolsulfonate",
+      "ko": "징크페놀설포네이트",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "4e1260ab-4c59-4f1a-bf4d-a04c5799024c:CN": {
+      "inci": "Phenyl Mercuric Bromide",
+      "ko": "페닐머큐릭브로마이드",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "e92e4fe7-a2c0-45a4-812c-e03c0530b562:CN": {
+      "inci": "Phenyl Mercuric Acetate",
+      "ko": "페닐머큐릭아세테이트",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "357c0887-710b-4bfe-a145-48ea97d3aded:CN": {
+      "inci": "Sodium Nitrite",
+      "ko": "소듐나이트라이트",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "a7cda4f5-a062-42df-a566-ffe938cbeb78:CN": {
+      "inci": "Ammonium Thioglycolate",
+      "ko": "암모늄티오글라이콜레이트",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "16f32260-272d-482a-baf7-04b97f695002:CN": {
+      "inci": "4-Amino-m-cresol",
+      "ko": "4-아미노-m-크레솔",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "631ba7e9-a816-4829-b9bb-cefe55fdab0f:CN": {
+      "inci": "Benzalkonium Bromide",
+      "ko": "벤잘코늄브로마이드",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "e1d3adf9-aa32-4461-b677-3f72c1d6d912:CN": {
+      "inci": "Dimethylol Ethylene Thiourea",
+      "ko": "다이메틸올에틸렌티오우레아",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "c35e84c3-0d4c-4e3f-881b-3eb04e2034be:CN": {
+      "inci": "Dichloromethane",
+      "ko": "다이클로로메탄",
+      "country": "CN",
+      "verdict": "banned",
+      "by": "prohibition-veto"
+    },
+    "394fd5c1-3cee-4fd1-bf8d-4e641a9fe149:CN": {
+      "inci": "Ethyl Thioglycolate",
+      "ko": "에틸티오글라이콜레이트",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "c3b3821e-fee9-463e-a51a-506f1bf57e87:CN": {
+      "inci": "Glyceryl Thioglycolate",
+      "ko": "글리세릴티오글라이콜레이트",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "91526c9c-6d98-4593-8470-ec0daf12e91d:CN": {
+      "inci": "Hydroxyethyl-3,4-Methylenedioxyaniline HCl",
+      "ko": "하이드록시에틸-3,4-메틸렌다이옥시아닐린에이치씨엘",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "7d4dade6-c3b6-47d0-95a5-c8ea913684cb:CN": {
+      "inci": "2,6-Dimethoxy-3,5-Pyridinediamine HCl",
+      "ko": "2,6-다이메톡시-3,5-피리딘다이아민에이치씨엘",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "2ccc4a7d-a6fb-4849-b142-a9ab06e05fb6:CN": {
+      "inci": "Hydrogenated Tallowalkonium Chloride",
+      "ko": "하이드로제네이티드탈로우알코늄클로라이드",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "ad67e9e7-c001-41a7-b129-2e3cfc137093:CN": {
+      "inci": "Chlorobutanol",
+      "ko": "클로로부탄올",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "b40100af-26da-46da-a135-5cf001815fb6:CN": {
+      "inci": "Dichlorophene",
+      "ko": "다이클로로펜",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "056de540-c6ff-4726-9694-ab2b32b1a261:KR": {
+      "inci": "Borates (Sodium borate, tetraborate)",
+      "ko": "보레이트류(소듐보레이트, 테트라보레이트)",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "86210f1f-17e0-4693-a764-77534ced68e5:KR": {
+      "inci": "Sodium Bisulfite",
+      "ko": "소듐바이설파이트",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "327aa743-eb00-4ec8-a4ec-a8ccbb205b09:KR": {
+      "inci": "Ammonium Bisulfite",
+      "ko": "암모늄바이설파이트",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "20af6c47-3319-4df2-af08-c1e811ccc14a:KR": {
+      "inci": "Climbazole",
+      "ko": "클림바졸",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "def39fac-5e02-4220-8c8a-a13c335b3bb3:KR": {
+      "inci": "Stearalkonium Chloride",
+      "ko": "스테아랄코늄클로라이드",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "d486c92c-367c-44ae-bf25-01018ce88f44:KR": {
+      "inci": "Potassium Undecylenate",
+      "ko": "포타슘운데실레네이트",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "e7105e68-9fc3-4d8a-979d-d2dc57df4216:KR": {
+      "inci": "m-Aminophenol Sulfate",
+      "ko": "황산m-아미노페놀",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "7110587c-f1b1-42bc-9f4d-fdb08e50f6dc:KR": {
+      "inci": "Benzalkonium chloride, bromide and saccharinate",
+      "ko": "벤잘코늄클로라이드, 브로마이드 및 사카리네이트",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "5f1b1d14-4057-4a01-91b8-432e5f48b80c:KR": {
+      "inci": "4-Methylbenzylidene Camphor",
+      "ko": "4-메칠벤질리덴캠퍼",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "57e75712-dbea-498b-bd63-9bd985178b3b:KR": {
+      "inci": "Dipropyl Oxalate",
+      "ko": "다이프로필옥살레이트",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "30932c03-0050-4766-b8f6-05a9cdfe9ae1:KR": {
+      "inci": "4-Amino-2-Hydroxytoluene Sulfate",
+      "ko": "황산5-아미노-o-크레솔",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "a8f2fe18-649b-4302-9cf7-a27a0f69fbfa:KR": {
+      "inci": "Sodium Sulfite",
+      "ko": "소듐설파이트",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "e9caa9bf-83c7-4748-979f-a9fefa399967:KR": {
+      "inci": "2-Amino-3-hydroxypyridine",
+      "ko": "2-아미노-3-히드록시피리딘",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "688eba02-71ea-4cd7-beb6-895c14039d87:KR": {
+      "inci": "Piroctone Olamine",
+      "ko": "피록톤올아민",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "bb52a597-b04b-4dcd-a7dd-65f83a95f303:KR": {
+      "inci": "p-Chloro-m-Cresol",
+      "ko": "p-클로로-m-크레졸",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "8076e8bb-b23a-4dea-a855-74e6ed087916:KR": {
+      "inci": "Toluidine Red, Aka221, PIGMENT RED 3, CI 12120",
+      "ko": "적색221호",
+      "country": "KR",
+      "verdict": "banned",
+      "by": "claude-judge",
+      "why": "허용농도 없음(색소조항/금지문구/애매)"
+    },
+    "fbfaf3ee-556d-4ae7-9442-05947cf44b93:KR": {
+      "inci": "Diisobutyl Oxalate",
+      "ko": "다이아이소부틸옥살레이트",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "08479815-1e49-4d26-bfd7-86e208f9ce42:KR": {
+      "inci": "Oxalic Acid",
+      "ko": "옥살릭애씨드",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "3b2cb7eb-868c-49a3-b5a8-cc9c7acdca18:KR": {
+      "inci": "Tagetes minuta Flower Extract",
+      "ko": "만수국아재비꽃추출물",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "39975d4a-7f6f-4139-8902-1b6ad7801fc5:KR": {
+      "inci": "Calcium Undecylenate",
+      "ko": "칼슘운데실레네이트",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "bacdc969-d9e3-4167-b641-02dc35230844:KR": {
+      "inci": "Sodium Oxalate",
+      "ko": "소듐옥살레이트",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "cc2f5dcb-0f0e-4393-a6c4-7a514f2c061f:KR": {
+      "inci": "p-Aminophenol",
+      "ko": "p-아미노페놀",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "724def46-37c2-45da-8609-b2aaa2ccc492:KR": {
+      "inci": "Sodium Dehydroacetate",
+      "ko": "소듐데하이드로아세테이트",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "f41e7668-b43c-4d41-adb1-c17ea6d1fde6:KR": {
+      "inci": "Phenoxyisopropanol",
+      "ko": "페녹시이소프로판올",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "5c837bba-e300-4316-8afe-cc4107abff47:KR": {
+      "inci": "Dehydroacetic acid(3-acetyl-6-methyl-2,4(3H)-dione) and its salts",
+      "ko": "데하이드로아세틱애씨드(3-아세틸-6-메칠피란-2,4(3H)-디온) 및 그 염류",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "f9d4a473-b5b2-425c-bf07-184846bd7277:KR": {
+      "inci": "N-Phenyl-p-Phenylenediamine Sulfate",
+      "ko": "N-페닐-p-페닐렌다이아민설페이트",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "ce9c5179-ba47-476f-a15b-bb7ebfd70c8d:KR": {
+      "inci": "Magnesium Peroxide",
+      "ko": "마그네슘퍼옥사이드",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "13831db9-3bbc-44f7-be75-6ff3376a7ae0:KR": {
+      "inci": "Lauralkonium Bromide",
+      "ko": "라우랄코늄브로마이드",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "dba92452-f840-45ee-b78b-2ef91e46ee7d:KR": {
+      "inci": "1,5-Naphthalenediol",
+      "ko": "1,5-디히드록시나프탈렌",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "951d565d-eaec-4e56-bafe-ff5634505660:KR": {
+      "inci": "p-Phenylenediamine",
+      "ko": "p-페닐렌디아민",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "18787d76-d62b-4533-9b67-27b6df982b9c:KR": {
+      "inci": "Dimethyl Oxalate",
+      "ko": "다이메틸옥살레이트",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "8fbf7532-0997-4d86-8156-1581174fe64f:KR": {
+      "inci": "Etidronic Acid",
+      "ko": "에티드로닉애씨드",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "fdf7df9f-78ac-430a-93a8-e57b889d8a85:KR": {
+      "inci": "Cetalkonium Chloride",
+      "ko": "세탈코늄클로라이드",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "0ea81c0f-15ac-4175-b270-433377cf212b:KR": {
+      "inci": "Urea Peroxide",
+      "ko": "우레아퍼옥사이드",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "89befd52-943c-44b1-9660-6cda8282d63f:KR": {
+      "inci": "Polyaminopropyl Biguanide",
+      "ko": "폴리아미노프로필바이구아나이드",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "5a81e4bd-554e-43ca-936a-9afc2f201931:KR": {
+      "inci": "Tagetes patula flower extract; Tagetes patula flower oil",
+      "ko": "만수국꽃 추출물 또는 오일",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "60b0d06e-f3d6-4ca6-8ccf-b2af6ae719c4:KR": {
+      "inci": "Glutaral",
+      "ko": "글루타랄",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "f35fac61-efd9-4662-b254-b208e55382ec:KR": {
+      "inci": "Diaminopyrimidine Oxide",
+      "ko": "다이아미노피리미딘옥사이드",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "73b96345-5cf6-40f7-a332-219477a853b3:KR": {
+      "inci": "Myristalkonium Saccharinate",
+      "ko": "미리스탈코늄사카리네이트",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "73134c54-53f2-435d-a3bd-4fddae5809e4:KR": {
+      "inci": "Quinine and its salts",
+      "ko": "퀴닌 및 그 염류",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "5b522c4e-d566-460f-8848-10d1ebea400c:KR": {
+      "inci": "Tetrapotassium Etidronate",
+      "ko": "테트라포타슘에티드로네이트",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "d6ed8967-1af6-45a9-99ad-dc8b29d78d99:KR": {
+      "inci": "m-Aminophenol",
+      "ko": "m-아미노페놀",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "96b1570f-d47c-4984-a8b7-09cefd9c75ab:KR": {
+      "inci": "4-Amino-2-Hydroxytoluene",
+      "ko": "4-아미노-2-하이드록시톨루엔",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "11d526be-986c-4e60-8280-2c82b2745c52:KR": {
+      "inci": "Indigofera Tinctoria Leaf Powder",
+      "ko": "인디고잎가루",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "6db411c4-46c3-4793-838e-de24a5acf39d:KR": {
+      "inci": "Benzylhemiformal",
+      "ko": "벤질헤미포름알",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "cec13efc-8459-492f-9893-bb023ff4fabc:KR": {
+      "inci": "Diethyl Oxalate",
+      "ko": "다이에틸옥살레이트",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "283f157d-d8d1-4440-9b5f-88db1a9665d8:KR": {
+      "inci": "N-Phenyl-p-Phenylenediamine",
+      "ko": "N-페닐-p-페닐렌디아민",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "a5d33985-2fbc-4769-a3ff-01e53185e144:KR": {
+      "inci": "2-Bromo-2-Nitropropane-1,3-Diol",
+      "ko": "2-브로모-2-나이트로프로판-1,3-디올",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "259e8f67-62dc-403c-bfb8-3968e97831b5:KR": {
+      "inci": "Inorganic sulphites and hydrogensulphites",
+      "ko": "무기설파이트 및 하이드로젠설파이트",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "cc7cf245-affe-46e7-9e31-1e14e84c5955:KR": {
+      "inci": "Tallowalkonium Chloride",
+      "ko": "탈로우알코늄클로라이드",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "6440509f-89c1-4a1e-b890-48c947f58dbd:KR": {
+      "inci": "N-Phenyl-p-Phenylenediamine and their salts",
+      "ko": "N-페닐-p-페닐렌다이아민 및 그 염류",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "49176d9f-f957-4423-bdad-9c3dd082608d:KR": {
+      "inci": "6-Hydroxyindole",
+      "ko": "6-히드록시인돌",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "1e1ac209-998e-4bea-a63a-019fb1483e7f:KR": {
+      "inci": "Tagetes patula flower extract",
+      "ko": "만수국꽃추출물",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "05493128-8a48-4bf9-adcd-b14ce176e949:KR": {
+      "inci": "Combination of ethanol. Borax. Sodium lauryl sulfate (4:1:1)",
+      "ko": "에탄올․붕사․라우릴황산나트륨(4:1:1)혼합물",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "7f712caf-6b61-4f7e-9a42-50eb9c45425d:KR": {
+      "inci": "2-Methylresorcinol",
+      "ko": "2-메틸레조시놀",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "deee5fdd-ce27-4d6c-90c6-f9c81a25c2c5:KR": {
+      "inci": "2,6-Diaminopyridine",
+      "ko": "2,6-디아미노피리딘",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "8f9b30b0-a7fa-4e7c-9229-9c80ae8d57eb:KR": {
+      "inci": "Calcium Peroxide",
+      "ko": "칼슘퍼옥사이드",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "4b4474d2-07fe-4d3d-beb0-c284916e4e7b:KR": {
+      "inci": "Tagetes patula flower oil",
+      "ko": "만수국꽃오일",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "a7fe2be8-83bc-41e9-9c73-1ffe149a49af:KR": {
+      "inci": "p-Aminophenol Sulfate",
+      "ko": "황산p-아미노페놀",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "ed5b8e0e-6861-4310-866f-a08d6fad0f53:KR": {
+      "inci": "N-Phenyl-p-Phenylenediamine HCl",
+      "ko": "N-페닐-p-페닐렌다이아민에이치씨엘",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "ee455827-0405-461e-a470-915ccf4b5c7f:KR": {
+      "inci": "Tagetes Minuta Flower Oil",
+      "ko": "만수국아재비꽃오일",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "a9a727a8-eec8-43a1-a38d-7984484838ed:KR": {
+      "inci": "p-Methylaminophenol Sulfate",
+      "ko": "p-메칠아미노페놀설페이트",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "42fa96fc-a051-488b-a58e-a2b82f50595c:KR": {
+      "inci": "Benzalkonium Chloride",
+      "ko": "벤잘코늄클로라이드",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "d0f30dc4-1ef7-4f99-a1b8-7b8e81b91232:KR": {
+      "inci": "p-Phenylenediamine Sulfate",
+      "ko": "황산p-페닐렌디아민",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "8db24f41-6488-4cf5-bd65-a40a59f4f92a:KR": {
+      "inci": "PVP-Hydrogen Peroxide",
+      "ko": "피브이피-하이드로젠퍼옥사이드",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "cbe6e381-d805-4e84-a8a4-a7a28d76a53b:KR": {
+      "inci": "Silver Nitrate",
+      "ko": "실버나이트레이트",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "55759db0-71e8-4151-8a90-cc298d1e738f:KR": {
+      "inci": "TEA-Undecylenate",
+      "ko": "티이에이-운데실레네이트",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "4b8969c7-a423-4f84-af4e-3248b34c345e:KR": {
+      "inci": "Toluene-2,5-Diamine",
+      "ko": "톨루엔-2,5-디아민",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "1643f899-e64b-440d-b546-97ff3c68c477:KR": {
+      "inci": "m-Phenylenediamine Sulfate",
+      "ko": "황산m-페닐렌디아민",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "808afc51-051c-4899-8497-11267554aeb1:KR": {
+      "inci": "Sodium Picramate",
+      "ko": "피크라민산나트륨",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "8c108718-3ebb-45ed-89fc-d1050e29f753:KR": {
+      "inci": "Lauralkonium Chloride",
+      "ko": "라우랄코늄클로라이드",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "0cef1d41-f119-405c-8ec0-6209bcfc41d9:KR": {
+      "inci": "Hexetidine",
+      "ko": "헥세티딘",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "22acb37f-762e-40e1-93b6-22086db6221f:KR": {
+      "inci": "Cocoalkonium Chloride",
+      "ko": "코코알코늄클로라이드",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "3a0274e4-478c-4fc4-bcc6-3a26ccaf6c3c:KR": {
+      "inci": "Strontium Peroxide",
+      "ko": "스트론튬퍼옥사이드",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "75b65043-7a75-4cd5-b706-b6b16cca2bc2:KR": {
+      "inci": "Ammonium Sulfite",
+      "ko": "암모늄설파이트",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "8f5032f4-ca08-4ba8-b1d7-7f326913a3e9:KR": {
+      "inci": "Toluene-2,5-diamine hydrochloride",
+      "ko": "염산톨루엔-2,5-디아민",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "4b8a0b2d-55e9-4d08-a605-f41089186079:KR": {
+      "inci": "Tagetes Patula Flower/Leaf/Stem Extract",
+      "ko": "만수국꽃/잎/줄기추출물",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "d7e8871e-ffdd-4b4e-a689-fd86ea6286dc:KR": {
+      "inci": "Benzethonium Chloride",
+      "ko": "벤제토늄클로라이드",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "66738be8-e3f4-457d-bc4e-617db3a8a4e6:KR": {
+      "inci": "Allyl Heptine Carbonate",
+      "ko": "아릴헵틴카보네이트",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "80efe8d6-ec86-4887-be65-241fb1250d3e:KR": {
+      "inci": "Tagetes minuta flower extract; Tagetes minuta flower oil",
+      "ko": "만수국아재비꽃 추출물 또는 오일",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "b48c7a1f-5cc9-454b-91a2-0b3f11d5c8fc:KR": {
+      "inci": "Undecylenic acid, its salts and monoethanolamide",
+      "ko": "운데실레닉애씨드 및 그 염류 및 모노에탄올아마이드",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "100d8189-971b-4d56-be3f-3d9d65d3add5:KR": {
+      "inci": "Toluene",
+      "ko": "톨루엔",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "7b1a7c39-fe9d-4847-bf99-28cde17f8bdc:KR": {
+      "inci": "Cetearalkonium Bromide",
+      "ko": "세탈코늄브로마이드",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "ab511864-ddb3-4f7c-b226-a4eaec84d242:KR": {
+      "inci": "Ethyl Lauroyl Arginate HCl",
+      "ko": "에칠라우로일알지네이트하이드로클로라이드",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "4814e61a-6795-46c1-aea6-0a04c6a98148:KR": {
+      "inci": "Dehydroacetic Acid",
+      "ko": "데하이드로아세틱애씨드",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "cad15409-1b3e-4b74-9113-98ffb0f86c64:KR": {
+      "inci": "Calcium Hydroxide",
+      "ko": "칼슘하이드록사이드",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "75a35b4f-4d3d-491d-b70f-e20c8c2ee391:KR": {
+      "inci": "Lithium Hydroxide",
+      "ko": "리튬하이드록사이드",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "75d839bb-a827-4cbe-8790-a90d930f3a1c:KR": {
+      "inci": "Myristalkonium Chloride",
+      "ko": "미리스탈코늄클로라이드",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "a07be993-7829-4d68-bc29-e34c03adc448:KR": {
+      "inci": "Etidronic acid and its salts (1-hydroxyethylidene- di-phosphonic acid and its salts)",
+      "ko": "에티드로닉애씨드 및 그 염류(1-하이드록시에칠리덴-디-포스포닉애씨드 및 그 염류)",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "6fd7ab7b-74de-4006-b3f2-059368da20be:KR": {
+      "inci": "Zinc Peroxide",
+      "ko": "징크퍼옥사이드",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "8128a8a1-9618-4ef3-bbd2-e80db802d667:KR": {
+      "inci": "Sodium Metabisulfite",
+      "ko": "소듐메타바이설파이트",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "9e3a4c48-02d3-427e-beca-f7dbc8969337:KR": {
+      "inci": "1-Hydroxyethyl 4,5-Diamino Pyrazole Sulfate",
+      "ko": "1-하이드록시에틸4,5-다이아미노피라졸설페이트",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "9250bcd6-679c-4601-815f-ea5fd8bc34b4:KR": {
+      "inci": "Quinine",
+      "ko": "퀴닌",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "8c5336ba-2598-401b-9d70-9cf629a7769b:KR": {
+      "inci": "Sodium Undecylenate",
+      "ko": "소듐운데실레네이트",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "1619e842-87cd-4a8e-8253-fa4f2681a12d:KR": {
+      "inci": "Potassium Sulfite",
+      "ko": "포타슘설파이트",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "ebee6a7b-7289-4b1a-95fd-a01351ca20ec:KR": {
+      "inci": "Mixture of Methylchloroisothiazoline and Methylisothiazoline(including Magnesium chloride and Magnesium nitreate)",
+      "ko": "메칠클로로이소치아졸리논과 메칠이소치아졸리논 혼합물(염화마그네슘과 질산마그네슘 포함)",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "bc28ccf7-97db-4a9c-aef1-14d46a5c1195:KR": {
+      "inci": "Methylchloroisothiazolinone",
+      "ko": "메칠클로로이소치아졸리논",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "7dababca-e2e0-497a-bf0b-d580d34a1346:KR": {
+      "inci": "5-Amino-6-Chloro-o-Cresol",
+      "ko": "5-아미노-6-클로로-o-크레솔",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "3b338de9-22da-4785-9555-fa383b1c04af:KR": {
+      "inci": "2-Amino-5-nitrophenol sulfate",
+      "ko": "황산2-아미노-5-니트로페놀",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "357c0887-710b-4bfe-a145-48ea97d3aded:KR": {
+      "inci": "Sodium Nitrite",
+      "ko": "소듐나이트라이트",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "1066817d-4dd8-4b47-b0be-8d89b22699b0:KR": {
+      "inci": "4-Nitro-o-Phenylenediamine",
+      "ko": "p-니트로-o-페닐렌디아민",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "76db2ef8-6a94-4a17-b802-6603f42b61ae:KR": {
+      "inci": "Oxalic Acid, Its Esters And Alkaline Salts",
+      "ko": "옥살릭애씨드, 그 에스텔류 및 알칼리 염류",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "ba52b71d-33a9-4b05-9304-c0f8e536bcd9:KR": {
+      "inci": "2,4-Diaminophenol HCl",
+      "ko": "염산2,4-디아미노페놀",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "c72ee65c-385e-4064-a607-c9b09f675d52:KR": {
+      "inci": "Dibutyl Oxalate",
+      "ko": "다이부틸옥살레이트",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "86c121bb-5570-4bb1-b549-dc4db349cde9:KR": {
+      "inci": "Undecylenic Acid",
+      "ko": "운데실레닉애씨드",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "ad0991ab-3fcd-4d00-b0de-72e0b907305f:KR": {
+      "inci": "Picramic Acid",
+      "ko": "피크라민산",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "29b5c215-9f11-43e2-9d0e-b5d17fc4550d:KR": {
+      "inci": "Toluene-2,5-Diamine Sulfate",
+      "ko": "황산톨루엔-2,5-디아민",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "631ba7e9-a816-4829-b9bb-cefe55fdab0f:KR": {
+      "inci": "Benzalkonium Bromide",
+      "ko": "벤잘코늄브로마이드",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "e320f23e-8e76-4262-845e-b9ae98a9602f:KR": {
+      "inci": "Potassium Metabisulfite",
+      "ko": "포타슘메타바이설파이트",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "1b5236cb-40e4-40f7-a0d3-084c1cf0a482:KR": {
+      "inci": "MEA-Undecylenate",
+      "ko": "엠이에이-운데실레네이트",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "2ccc4a7d-a6fb-4849-b142-a9ab06e05fb6:KR": {
+      "inci": "Hydrogenated Tallowalkonium Chloride",
+      "ko": "하이드로제네이티드탈로우알코늄클로라이드",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "ac2c280e-22a2-4c63-8141-995a3aad255e:KR": {
+      "inci": "Silver Sulfate",
+      "ko": "실버설페이트",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "03a33e8a-0da8-48b1-afd7-b40452d63a08:KR": {
+      "inci": "Hematein",
+      "ko": "헤마테인",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "d6d5a81a-b2b9-40c8-a4c2-3e1f9c37844b:KR": {
+      "inci": "Ferrous Sulfate",
+      "ko": "페러스설페이트",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "b8ac0f28-d75a-4d9f-ae13-90a4e97edddf:KR": {
+      "inci": "Methoxypropylamino Cyclohexenylidene Ethoxyethylcyanoacetate",
+      "ko": "메톡시프로필아미노사이클로헥세닐리덴에톡시에틸사이아노아세테이트",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
+    },
+    "c102663c-f813-44a4-b89f-373505cd52b2:KR": {
+      "inci": "Sodium Disulfite",
+      "ko": "소듐다이설파이트",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "bccfc22d-86db-4ea4-923b-0630797fe2a2:KR": {
+      "inci": "Potassium Bisulfite",
+      "ko": "포타슘바이설파이트",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "제품/용도별 허용농도 명시"
+    },
+    "ad67e9e7-c001-41a7-b129-2e3cfc137093:KR": {
+      "inci": "Chlorobutanol",
+      "ko": "클로로부탄올",
+      "country": "KR",
+      "verdict": "restricted",
+      "by": "claude-judge",
+      "why": "허용 배합한도(농도) 명시"
     }
   }
 }
