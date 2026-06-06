@@ -43,6 +43,11 @@ export interface CountryLookupResult {
   kcia_articles?: KciaArticle[];
   source_pdfs?: SourcePdf[];
   all_sources?: SourceRef[];  // priority desc 정렬 — 모든 출처 (1안+2안+3안)
+  // 출처 상충: 대표 status(헤드라인)보다 더 엄격한 status(금지>제한>허용)를 주장하는 출처가 존재.
+  // 자동으로 status 를 바꾸지 않는다 — MFDS '사용제한' 데이터의 banned/restricted 오분류와 과거 한도
+  // 잔존(예: 금지된 파라벤에 옛 0.4% 한도) 때문에 어느 방향으로 자동결정해도 오표기 위험. 대신 상충을
+  // 표면화해 전문가(연구원)가 원문 대조로 판단하게 한다(분별력). null = 상충 없음.
+  status_conflict?: { statuses: string[]; sources: { status: string; source_document: string | null }[] } | null;
   // EU 채택국(ASEAN ACD / Andean 833)에서 자국 한도가 없을 때, 채택 원천 EU 의 한도(법적으로 동일).
   // 결정론·무AI·source-grounded — 앱이 준비된 EU 데이터를 끌어와 채움(검색마다 AI 호출 아님).
   adopted_limit?: { max_concentration: number | null; concentration_unit: string | null; conditions: string | null; from: string } | null;
@@ -277,6 +282,24 @@ export async function lookupRegulation(
       confidence_score: r.confidence_score,
     }));
 
+    // 출처 상충 감지 — 헤드라인 status 보다 더 엄격한 status 를 가진 출처가 있으면 표면화.
+    // 심각도: 금지(3) > 제한(2) > 허용/listed(1) > 미등재/unknown(0). status 자체는 바꾸지 않는다.
+    const sev = (s: string | null | undefined): number =>
+      s === "banned" ? 3 : s === "restricted" ? 2 : (s === "allowed" || s === "listed") ? 1 : 0;
+    let statusConflict: CountryLookupResult["status_conflict"] = null;
+    if (row && allBucket && allBucket.length > 1) {
+      const headSev = sev(row.status);
+      const stricter = allBucket.filter((r) => sev(r.status) > headSev);
+      if (stricter.length) {
+        const byStatus = new Map<string, string | null>();
+        for (const r of stricter) if (r.status && !byStatus.has(r.status)) byStatus.set(r.status, r.source_document);
+        statusConflict = {
+          statuses: [...byStatus.keys()],
+          sources: [...byStatus.entries()].map(([status, source_document]) => ({ status, source_document })),
+        };
+      }
+    }
+
     // KCIA 보조 자료 — country별 최근 5건만 전달 (협회 회원 자료 link)
     const kciaArticles = ds.kciaByCountry.get(code)?.slice(0, 5);
     // 자동 다운로드된 1차 소스 PDF — 사용자가 원본 PDF 직접 다운 link
@@ -305,6 +328,7 @@ export async function lookupRegulation(
         kcia_articles: kciaArticles,
         source_pdfs: sourcePdfs,
         all_sources: allSources,
+        status_conflict: statusConflict,
       });
       continue;
     }

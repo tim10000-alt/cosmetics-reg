@@ -441,6 +441,22 @@ function CountryCard({ result }: { result: CountryLookupResult }) {
               {STATUS_STYLE[result.status]?.label ?? result.status}
             </span>
           )}
+          {/* 출처 상충 경고 — 더 엄격한 status 를 주장하는 출처가 있을 때. 자동결정하지 않고(오분류·
+              과거한도 잔존 위험) 전문가가 원문 확인하도록 표면화. 컴플라이언스 도구의 핵심 안전장치. */}
+          {result.status_conflict && result.status_conflict.statuses.length > 0 && (
+            <div className="rounded-md border border-amber-300 bg-amber-50 px-2 py-1 text-xs text-amber-800 dark:border-amber-700/60 dark:bg-amber-950/40 dark:text-amber-200">
+              ⚠ 출처 상충 — 다른 출처는{" "}
+              <span className="font-semibold">
+                {result.status_conflict.statuses.map((s) => STATUS_STYLE[s]?.label ?? s).join(" / ")}
+              </span>
+              (으)로 분류합니다. 아래 “추가 출처”와 원문을 반드시 확인하세요.
+              <ul className="mt-1 space-y-0.5 pl-3">
+                {result.status_conflict.sources.map((s, i) => (
+                  <li key={i}>· {STATUS_STYLE[s.status]?.label ?? s.status}: {s.source_document ?? "(출처)"}</li>
+                ))}
+              </ul>
+            </div>
+          )}
           {typeof result.max_concentration === "number" ? (
             <div className="text-zinc-700 dark:text-zinc-300">
               최대 배합한도:{" "}
@@ -510,7 +526,7 @@ function CountryCard({ result }: { result: CountryLookupResult }) {
             </div>
           )}
           {result.all_sources && result.all_sources.length > 1 && (
-            <details className="text-[11px] text-zinc-500 dark:text-zinc-400">
+            <details open={!!result.status_conflict} className="text-[11px] text-zinc-500 dark:text-zinc-400">
               <summary className="cursor-pointer hover:text-zinc-800 dark:hover:text-zinc-200">
                 추가 출처 {result.all_sources.length - 1}건 보기 (cascade fallback)
               </summary>
