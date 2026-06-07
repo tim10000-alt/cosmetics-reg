@@ -6130,7 +6130,7 @@
       "source_match": "MFDS",
       "inci": "Pyranine Conc, D&C Green No. 8, Midori204, CI 59040",
       "ko": "녹색204호",
-      "reason": "claude-color: 화장품 허용색소표(着色劑 positive-list)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA/US) 허용확증 + 농도한도"
+      "reason": "claude-color: 허용색소표 오태깅·외국허용확증"
     },
     {
       "ingredient_id": "6448bd27-1e4c-452d-a9a4-42cf6253dba7",
@@ -6140,7 +6140,7 @@
       "source_match": "MFDS",
       "inci": "Brilliant Lake Red R, D&C Red No. 31, Red 31 Lake, Aka219, PIGMENT RED 64, CI 15800",
       "ko": "적색219호",
-      "reason": "claude-color: 화장품 허용색소표(着色劑 positive-list)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA/US) 허용확증 + 농도한도"
+      "reason": "claude-color: 허용색소표 오태깅·외국허용확증"
     },
     {
       "ingredient_id": "a0f7f6f1-2b0b-4af8-8766-d30273cbc345",
@@ -6150,7 +6150,7 @@
       "source_match": "MFDS",
       "inci": "Helindone Pink CN, D&C Red No. 30, Red 30 Lake, Aka226, VAT RED 1, CI 73360",
       "ko": "적색226호",
-      "reason": "claude-color: 화장품 허용색소표(着色劑 positive-list)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA/US) 허용확증"
+      "reason": "claude-color: 허용색소표 오태깅·외국허용확증"
     },
     {
       "ingredient_id": "ac736c98-37be-4863-a994-640b27b849cf",
@@ -6160,7 +6160,7 @@
       "source_match": "MFDS",
       "inci": "Quinizarine Green SS, D&C Green No. 6, Midori202, CI 61565",
       "ko": "녹색202호",
-      "reason": "claude-color: 화장품 허용색소표(着色劑 positive-list)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA/US) 허용확증 + 농도한도"
+      "reason": "claude-color: 허용색소표 오태깅·외국허용확증"
     },
     {
       "ingredient_id": "f4b312db-53aa-49ee-975a-fa63c2be9b9a",
@@ -6170,7 +6170,7 @@
       "source_match": "MFDS",
       "inci": "Quinoline Yellow SS, D&C Yellow No. 11, Ki204, SOLVENT YELLOW 33, CI 47000",
       "ko": "황색204호",
-      "reason": "claude-color: 화장품 허용색소표(着色劑 positive-list)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA/US) 허용확증 + 농도한도"
+      "reason": "claude-color: 허용색소표 오태깅·외국허용확증"
     },
     {
       "ingredient_id": "528d4ce7-ef9d-4ed2-8208-ad3df1a20a90",
@@ -6180,7 +6180,7 @@
       "source_match": "MFDS",
       "inci": "Ponceau SX, FD&C Red No. 4, Red 4 Lake, Aka504, FOOD RED 1, CI 14700",
       "ko": "적색504호",
-      "reason": "claude-color: 화장품 허용색소표(着色劑 positive-list)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA/US) 허용확증 + 농도한도"
+      "reason": "claude-color: 허용색소표 오태깅·외국허용확증"
     },
     {
       "ingredient_id": "f6455095-1803-4bac-8332-2e4e1105fd3a",
@@ -6190,7 +6190,7 @@
       "source_match": "MFDS",
       "inci": "Alizurine Purple SS, D&C Violet No. 2, Murasaki201, CI 60725",
       "ko": "자색201호",
-      "reason": "claude-color: 화장품 허용색소표(着色劑 positive-list)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA/US) 허용확증 + 농도한도"
+      "reason": "claude-color: 허용색소표 오태깅·외국허용확증"
     },
     {
       "ingredient_id": "fda489f5-be0a-4aa0-a6d8-cc85d8fd0abe",
@@ -6200,7 +6200,7 @@
       "source_match": "MFDS",
       "inci": "Deep Maroon, D&C Red No. 34, Red 34 Lake, CI 15880:1",
       "ko": "적색220호",
-      "reason": "claude-color: 화장품 허용색소표(着色劑 positive-list)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA/US) 허용확증"
+      "reason": "claude-color: 허용색소표 오태깅·외국허용확증"
     },
     {
       "ingredient_id": "a0f7f6f1-2b0b-4af8-8766-d30273cbc345",
@@ -6210,7 +6210,7 @@
       "source_match": "MFDS",
       "inci": "Helindone Pink CN, D&C Red No. 30, Red 30 Lake, Aka226, VAT RED 1, CI 73360",
       "ko": "적색226호",
-      "reason": "claude-color: 화장품 허용색소표(着色劑 positive-list)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA/US) 허용확증"
+      "reason": "claude-color: 허용색소표 오태깅·외국허용확증"
     },
     {
       "ingredient_id": "ac736c98-37be-4863-a994-640b27b849cf",
@@ -6220,7 +6220,7 @@
       "source_match": "MFDS",
       "inci": "Quinizarine Green SS, D&C Green No. 6, Midori202, CI 61565",
       "ko": "녹색202호",
-      "reason": "claude-color: 화장품 허용색소표(着色劑 positive-list)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA/US) 허용확증"
+      "reason": "claude-color: 허용색소표 오태깅·외국허용확증"
     },
     {
       "ingredient_id": "528d4ce7-ef9d-4ed2-8208-ad3df1a20a90",
@@ -6230,7 +6230,7 @@
       "source_match": "MFDS",
       "inci": "Ponceau SX, FD&C Red No. 4, Red 4 Lake, Aka504, FOOD RED 1, CI 14700",
       "ko": "적색504호",
-      "reason": "claude-color: 화장품 허용색소표(着色劑 positive-list)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA/US) 허용확증"
+      "reason": "claude-color: 허용색소표 오태깅·외국허용확증"
     },
     {
       "ingredient_id": "bce0157c-ed39-491e-a08c-df0cf3b4beed",
@@ -6240,7 +6240,7 @@
       "source_match": "MFDS",
       "inci": "Alizarine Cyanine Green F, D&C Green No. 5, Midori201, CI 61570",
       "ko": "녹색201호",
-      "reason": "claude-color: 화장품 허용색소표(着色劑 positive-list)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA/US) 허용확증"
+      "reason": "claude-color: 허용색소표 오태깅·외국허용확증"
     },
     {
       "ingredient_id": "f6455095-1803-4bac-8332-2e4e1105fd3a",
@@ -6250,7 +6250,7 @@
       "source_match": "MFDS",
       "inci": "Alizurine Purple SS, D&C Violet No. 2, Murasaki201, CI 60725",
       "ko": "자색201호",
-      "reason": "claude-color: 화장품 허용색소표(着色劑 positive-list)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA/US) 허용확증"
+      "reason": "claude-color: 허용색소표 오태깅·외국허용확증"
     }
   ]
 }
