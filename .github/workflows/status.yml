@@ -47,6 +47,17 @@ jobs:
           cache: "npm"
       - run: npm ci
 
+      # 결정론 탐지기(무료·오프라인·API 0) — 매 refresh 새 데이터의 banned 오분류를 규칙으로 선교정.
+      # ① classifier: MFDS-banned + 허용농도(배합한도) → restricted. ② colors: 허용색소표(positive-list)
+      # 오태깅 → listed/restricted. 둘 다 veto/authBanned/외국확증 5중 안전망. decisions 에 기록 →
+      # 아래 status:judge 가 overrides 재생성 시 보존(claude-judge/claude-color attribution). 사람개입 0.
+      - name: Deterministic detectors (classifier + colors, free/offline)
+        run: |
+          node scripts/status-classify-claude.cjs --apply AR,BO,BR,CA,CN,CO,EC,EU,ID,JP,KR,MY,PE,PH,SG,TH,TW,US,VN
+          node scripts/colors-positive-list.cjs --apply
+          node scripts/authority-conditional-ban.cjs --apply
+        continue-on-error: true
+
       - name: Status judge (Gemini consensus banned↔restricted)
         run: npm run status:judge
         continue-on-error: true

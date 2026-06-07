@@ -229,11 +229,18 @@ export async function lookupRegulation(
     // 정보충실도 desc → priority desc → last_verified desc. 동일 출처 중복 제거.
     // (정품검증: 농도·조건이 비어있는 '신원만' 공식행(EU-EURLex 등 자동파싱)이 실제
     //  한도·조건을 담은 큐레이션행(MFDS)을 priority 로 가려 1차에 빈값이 뜨던 버그 수정.)
-    // ① 기존대로 priority 로 '대표 status' 결정 — status 선택은 바꾸지 않음(over-merge 로
-    //    인한 잘못된 격상/격하 위험 회피, 별도 데이터 감사 영역).
+    // ① priority 로 '대표 status' 결정. **동일 priority 동률 시 severity(banned>restricted>listed)
+    //    우선** — 같은 권위가 금지/허용을 동시 보유할 때(예: 중국 NMPA 표1 금지 vs IECIC 已使用목록
+    //    등재, ASEAN Annex II 금지 vs Annex IV 색소허용) 더 엄격한 banned 를 헤드라인으로(분별력:
+    //    진짜 금지물질이 last_verified 우연으로 '허용' 표기되는 false-allowed=규제사고 방지). 허용은
+    //    status_conflict 배지로 표면화. (조건부금지는 데이터 단계서 restricted 로 교정 → 여기선 절대금지만 banned.)
+    const sevRank = (s: Regulation["status"]): number =>
+      s === "banned" ? 3 : s === "restricted" ? 2 : (s === "allowed" || s === "listed") ? 1 : 0;
     const byPriority = (a: Regulation, b: Regulation) => {
       const pa = a.source_priority ?? 0, pb = b.source_priority ?? 0;
       if (pa !== pb) return pb - pa;
+      const sa = sevRank(a.status), sb = sevRank(b.status);
+      if (sa !== sb) return sb - sa;
       return (b.last_verified_at ?? "").localeCompare(a.last_verified_at ?? "");
     };
     const winStatus = [...merged].sort(byPriority)[0].status;

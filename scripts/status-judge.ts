@@ -239,19 +239,22 @@ async function main() {
   // override = 'restricted' 확정 전부(Gemini consensus·tiebreak·claude-judge 초기벌크).
   // 출처별 reason 보존 — claude-judge(초기벌크 Claude 직접판정) 는 그 attribution 유지(override_note
   // 투명성이 "Gemini"로 오표기되지 않게). by 기록 추가로 감사성↑.
+  // verdict 'restricted'(사용제한 자료 오분류) + 'listed'(TW 허용색소표가 banned 로 오태깅된 양성리스트
+  // 색소 — claude-color, 외국 EU/JP/CN-NMPA 허용확증). to 는 verdict 그대로(둘 다 자동복원).
   const corrections = Object.entries(decisions)
-    .filter(([, d]) => (d as { verdict: string }).verdict === "restricted")
+    .filter(([, d]) => { const v = (d as { verdict: string }).verdict; return v === "restricted" || v === "listed"; })
     .map(([k, d]) => {
       const [ingredient_id, country_code] = k.split(":");
-      const dd = d as { inci: string; ko: string | null; by?: string; why?: string; m1?: { reason?: string } | null };
-      const reason = dd.by === "claude-judge"
-        ? `claude-judge: ${dd.why ?? "사용제한 자료 오분류"}`
+      const dd = d as { inci: string; ko: string | null; verdict: string; by?: string; why?: string; source_match?: string; m1?: { reason?: string } | null };
+      const reason = (dd.by && dd.by.startsWith("claude-"))   // claude-judge/color/cond 등 결정론 판정 attribution 보존
+        ? `${dd.by}: ${dd.why ?? "사용제한 자료 오분류"}`
         : (dd.m1?.reason ?? "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류");
-      return { ingredient_id, country_code, from: "banned", to: "restricted", source_match: SOURCE_MATCH, inci: dd.inci, ko: dd.ko, reason };
+      // source_match 는 decision 에 저장된 값 우선(권위 표1=화장품안전기술규범 등 비-MFDS 보존). 없으면 기본 MFDS.
+      return { ingredient_id, country_code, from: "banned", to: dd.verdict, source_match: dd.source_match ?? SOURCE_MATCH, inci: dd.inci, ko: dd.ko, reason };
     });
   writeFileSync(OVERRIDES, JSON.stringify({
     generated: "status-judge",
-    note: "Gemini 듀얼 consensus 로 'restricted' 확정된 banned 오분류 교정(data-loader 가 row.status 교정). 금지annex veto·uncertain 은 제외=검토큐(status-decisions.json).",
+    note: "banned 오분류 교정(data-loader 가 row.status 교정): 'restricted'(Gemini consensus/claude-judge 사용제한자료) + 'listed'(claude-color TW 허용색소표·외국허용확증). 금지annex veto·uncertain·확증無 색소 = 제외(검토큐 status-decisions.json).",
     corrections,
   }, null, 2));
 

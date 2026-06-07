@@ -4181,6 +4181,1946 @@
       "inci": "Hydroxyethyl-3,4-Methylenedioxyaniline HCl",
       "ko": "하이드록시에틸-3,4-메틸렌다이옥시아닐린에이치씨엘",
       "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "42221665-7e69-4107-b35a-bd06c820841b",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Beta-Carotene,CI 75130",
+      "ko": "베타-카로틴",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "ce4c4e4b-d642-4e5d-a2b0-945a874c88af",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Guanine,CI 75170",
+      "ko": "구아닌",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "9658b0ae-29d9-41f5-bea4-87ad9bc1bdb8",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Bronze Powder, CI 77400",
+      "ko": "청동가루",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "b45d5107-2d98-4c21-b99a-efcb49a87dff",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Vegetable Carbon, Coke Black, CI 77268:1",
+      "ko": "베지터블카본",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "149a9b28-2135-4167-9c64-e664427629b1",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Tartrazine, , FD&C Yellow No. 5, Acid Yellow 23 Aluminum Lake, Yellow 5 Lake, Ki4, FOOD YELLOW 4, CI 19140",
+      "ko": "황색4호",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "6a4d4629-43b9-4ae4-97ae-30fc08f66814",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Cobalt Alumium Oxide, CI 77346",
+      "ko": "코발트알루미늄옥사이드",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "61cf76a4-ca7c-46ef-b6c0-4f655455cd66",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Chromium Oxide Greens,CI 77288",
+      "ko": "크로뮴옥사이드그린",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "2a5f650e-639e-4e35-9b25-0c3dc669b41c",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Iron Oxide Black,Ferrous-Ferric Oxide,CI 77499",
+      "ko": "흑색산화철",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "0afebd58-d487-4bb7-8f5c-f675d2704430",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 60725",
+      "ko": "CI 60725",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "bf4dbc01-7591-4776-9624-4faddd5cd459",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 77004",
+      "ko": "CI 77004",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "0ccdffda-3257-419d-acd5-16f845bf2999",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 77891",
+      "ko": "CI 77891",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "d9836068-e9d8-4a14-bd89-823374735cee",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 77947",
+      "ko": "CI 77947",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "b099dc87-223c-46c6-9d54-886da28508f5",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 77820",
+      "ko": "CI 77820",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "6d7cc25b-9c2f-40e2-a8b0-7f90f08de10d",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 77742",
+      "ko": "CI 77742",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "2a010868-e207-4038-aa74-11d367ca1611",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 77713",
+      "ko": "CI 77713",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "3b018efa-d789-4a43-8e8e-4d21e8b43558",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 77510",
+      "ko": "CI 77510",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "87e996e3-0eae-4985-a62e-bccf91e7d4bb",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 77499",
+      "ko": "CI 77499",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "e2eb74c9-abec-4f95-8ba4-fc6de134ebe2",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 77492",
+      "ko": "CI 77492",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "e936c7fd-373a-44de-b1b5-a976fea77cd3",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 77491",
+      "ko": "CI 77491",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "3129e49d-2f17-47b2-956e-e20d2430623a",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 77489",
+      "ko": "CI 77489",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "064f66b0-a9c2-4353-b151-c2f102c32328",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 77400",
+      "ko": "CI 77400",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "886264db-7c71-456a-ad50-4e9a164e812e",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 77346",
+      "ko": "CI 77346",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "61a3d5b3-0279-49ab-9f03-91909ccad1d8",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 77289",
+      "ko": "CI 77289",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "8a52172c-5ff3-47a8-957d-7c5376491427",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 77288",
+      "ko": "CI 77288",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "70be69e2-76dd-4fe4-83a4-13abd14705e0",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 77268:1",
+      "ko": "CI 77268:1",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "670dc725-3a80-4bcb-8dbb-d6a0bf30af87",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 77267",
+      "ko": "CI 77267",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "88c183e3-75c0-4fc3-9652-74136b26220f",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 77231",
+      "ko": "CI 77231",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "0c4191d9-7492-4d8f-a525-fe19b384d873",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 77220",
+      "ko": "CI 77220",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "4d20d678-78b2-4750-9867-10666df5bd2a",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 77163",
+      "ko": "CI 77163",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "2821dd19-156e-493c-997f-216f3b120785",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 77120",
+      "ko": "CI 77120",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "e7364f6a-5a33-4204-aba9-c83354b57495",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 77007",
+      "ko": "CI 77007",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "00c72d7a-84b3-44b2-a2b9-3838e5b9ba47",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 77000",
+      "ko": "CI 77000",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "b11e8ae5-bce0-4e9b-a45f-c2d4ac357fe3",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 75810",
+      "ko": "CI 75810",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "33c95ba4-1efd-4c26-bd86-35c3c1efc3b3",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 75470",
+      "ko": "CI 75470",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "f7f133f6-400c-460d-9e4b-8c6c3642338d",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 75300",
+      "ko": "CI 75300",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "02d933ec-d5c5-42a7-b442-7d02b3f14e14",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 75170",
+      "ko": "CI 75170",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "c7efc730-2b38-4669-9d79-3ef4dfd88628",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 75130",
+      "ko": "CI 75130",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "6e9f592b-bdcb-4345-98cc-195854a42734",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 75125",
+      "ko": "CI 75125",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "a1082090-5ec0-4556-930f-281b5f4f76ec",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 75120",
+      "ko": "CI 75120",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "3a28b6cd-a8d1-4272-83be-c62159ade2c0",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 73015",
+      "ko": "CI 73015",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "26e22065-372c-413f-b392-6e6fee185028",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 69825",
+      "ko": "CI 69825",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "896a006e-52ac-4bea-93dc-57b8631883eb",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 45380",
+      "ko": "CI 45380",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "cdca0223-3dfc-4363-8592-c87d0c96dc41",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 77745",
+      "ko": "CI 77745",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "1b3f3b19-065a-45f9-86f2-1da184af13a2",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 77015",
+      "ko": "CI 77015",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "8006697c-ae5c-4f9d-a6c2-04055fdb056a",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 77002",
+      "ko": "CI 77002",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "c690a3b8-b05d-496a-a842-55a76f329cb2",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 75135",
+      "ko": "CI 75135",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "fe3a6fc2-b79d-4c20-b55a-96221ab7bf41",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 75100",
+      "ko": "CI 75100",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "ddb248d7-37c6-42a8-a75a-49b513c12c73",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 73385",
+      "ko": "CI 73385",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "b5572f0d-23a6-42d3-936c-5561e90ab7d6",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 69800",
+      "ko": "CI 69800",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "c1942c88-0fe9-4d60-bdb5-b5a2324943b8",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 45430",
+      "ko": "CI 45430",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "1d9760cd-904d-445f-855d-a317062b6ac8",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 45410",
+      "ko": "CI 45410",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "2f89d34d-85c7-44d9-8fd0-004f8ab7f2ca",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 44090",
+      "ko": "CI 44090",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "a66f0145-c718-4a1a-9055-d2d898518e94",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 42090",
+      "ko": "CI 42090",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "eb6eddeb-ad1d-4d98-b994-f6a6862c6671",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 40850",
+      "ko": "CI 40850",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "1be3a06d-53a3-4027-8f95-98ab4c815206",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 40825",
+      "ko": "CI 40825",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "85848d0f-e085-4d38-98df-c0db7718bd98",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 40820",
+      "ko": "CI 40820",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "e79d7f40-33f7-480a-adf8-b02003de4d92",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 40800",
+      "ko": "CI 40800",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "6917ba37-fd3d-4c50-b121-ce3a5ae1451e",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 28440",
+      "ko": "CI 28440",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "0d17ed08-f190-4c17-be6d-10941567b75e",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 16290",
+      "ko": "CI 16290",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "37830030-b660-4db5-b12e-4448772f4c94",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 15980",
+      "ko": "CI 15980",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "76069767-1717-43c7-9c08-280ebd50968b",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 18965",
+      "ko": "CI 18965",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "97f6356a-4ee7-4007-9c6e-db21b655c972",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 13015",
+      "ko": "CI 13015",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "36a8cb93-fdc8-400e-aebf-2ba6aca8d58b",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 14270",
+      "ko": "CI 14270",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "72b78d04-35a9-40fd-8cd2-e3cb89fdd78b",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 14720",
+      "ko": "CI 14720",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "6dd7aef1-fe58-4471-b759-970edfd578ce",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 14815",
+      "ko": "CI 14815",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "ec0f14bd-73bb-4741-9a88-fdb593a06568",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 15525",
+      "ko": "CI 15525",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "9c82095b-b2be-4250-b762-4d19a04028f4",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 15580",
+      "ko": "CI 15580",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "dc354d09-5514-4982-b200-a40a1e284fd1",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Calcium Sulfate,CI 77231",
+      "ko": "칼슘설페이트",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "378a5130-99f9-4851-a678-4a0e3a960673",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Alphazurine FG, D&C Blue No. 4, Ao205, Acid Blue 9 Ammonium Salt, CI 42090",
+      "ko": "청색205호",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "8aa75806-31a7-42a8-aed7-24ae93919bb2",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Aluminum,CI 77000",
+      "ko": "알루미늄",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "8da149ac-a230-4031-ac05-5c5281c2f2cf",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Iron Oxide Yellow, Hydrated Ferric Oxide, CI 77492, PIGMRNT YELLOW 42, 43",
+      "ko": "황색산화철",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "78278306-f4bc-44e4-83a1-1943ba6a18ff",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Capsanthin/Capsorubin",
+      "ko": "캡산틴/캡소루빈",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "21e6356b-1962-40b3-93e0-4fd2492868b5",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Bone black, Bone Charcoal, CI 77267, D&C Black No. 3",
+      "ko": "본블랙, 본챠콜",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "698ea80a-5435-4d56-818c-f0c638a0bbd2",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Lycopene,CI 75125",
+      "ko": "라이코펜",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "1e28ae3b-25e0-4300-a695-ead3077009b3",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Amaranth, Aka2, Acid Red 27 Aluminum Lake, FOOD RED 9, CI 16185",
+      "ko": "적색2호",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "db3835bd-50b8-45a7-b0ff-2c840639afe8",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Magnesium Carbonate,CI 77713",
+      "ko": "마그네슘카보네이트",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "6b5d23f9-539b-49b2-82d6-cbef6c185826",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Calcium Stearate",
+      "ko": "칼슘스테아레이트",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "36d2d978-f1ab-4e44-923c-3e26bca9dec2",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Lactoflavin",
+      "ko": "락토플라빈",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "e04e492e-4b58-4573-9f05-d7c438eaa245",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Phloxine BK, Aka231, CI 45410",
+      "ko": "적색104호의(2)",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "6146101d-839c-42a4-a9b2-620377059378",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Anthocyanins",
+      "ko": "안토시아닌",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "7efb5234-7629-4032-85c7-6d68050d3137",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Ferric Ammonium Ferrocyanide,CI 77510",
+      "ko": "페릭암모늄페로시아나이드",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "42cb6cc8-b2cd-4f38-8234-7949227da891",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Barium Sulfate,CI 77120",
+      "ko": "바륨설페이트",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "6d701f47-fa8a-4d74-8c88-ba2b98c1fca2",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Ultramarines,CI 77007",
+      "ko": "울트라마린",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "ee90939e-383c-4680-b1c1-de1f9d06e35c",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Beetroot Red",
+      "ko": "비트루트레드",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "6d7277d0-6a31-4704-a543-511918de63f7",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Lithol Rubine B, D&C Red No. 6, Red 6 Lake, Aka201, PIGMENT RED 57, CI 15850",
+      "ko": "적색201호",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "4e85aad9-7b40-40f0-b79a-d2e88fbd12c5",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Chromium Hydroxide Green,CI 77289",
+      "ko": "크로뮴하이드록사이드그린",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "89d6c4d0-2e71-4f32-b5e5-1c6c69e62a86",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Eosine YSK, D&C Red No. 22, Aka230(1), CI 45380",
+      "ko": "적색230호의(2)",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "8507f70f-36f1-4c2e-b90e-1dc993229c3b",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Brilliant Blue FCF, FD&C Blue No. 1, Blue 1 Lake, Ao1, CI 42090",
+      "ko": "청색1호",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "acbc6afa-a9cd-4ad7-a997-73fad386eea4",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Bismuth Oxychloride,CI 77163",
+      "ko": "비스머스옥시클로라이드",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "84e20c82-d490-424f-b63d-53ceda2ee7e6",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Ammonium Manganese(3+) Diphosphate, Manganese Violet, CI 77742",
+      "ko": "망가니즈바이올렛",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "7dd8ee92-35a7-448c-b20e-47152c0df94f",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Aka3, CI 45430",
+      "ko": "적색3호",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "a7676b73-c8a7-4ee4-abcb-5ef818f10094",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Bentonite,CI 77004",
+      "ko": "벤토나이트",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "f555f910-b0cf-43ee-a515-13accffc2f65",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Aluminum Stearate",
+      "ko": "알루미늄스테아레이트",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "cd930293-9b87-4787-95a9-019c70355080",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Curcumin,CI 75300",
+      "ko": "커큐민",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "2a24b629-ce36-4648-a1bd-272d6ba0326e",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Mica,CI 77019",
+      "ko": "마이카",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "71d7953d-72e1-4084-95a1-77de3208d169",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Tetrachlorotetrabromofluorescein, D&C Red No. 27, Aka218, Red 27 Lake, CI 45410:1",
+      "ko": "적색218호",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "624d58f3-633f-4e29-b7e8-8926816ebdfe",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Indigo Carmine, Acid Blue 74 Aluminum Lake, FOOD BLUE 1, Ao2, CI 73015",
+      "ko": "청색2호",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "82c0047c-8512-42e0-8c5c-c0a00976aa5c",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Silver,CI 77820",
+      "ko": "실버",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "b45d1951-381f-4e52-a0b0-133c590d60aa",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Zinc Stearate",
+      "ko": "징크스테아레이트",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "c8f5a7ac-1467-4cb6-9be3-47a64cd087ba",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Iron Oxide Red, Ferric Oxide, CI 77491, PIGMENT RED 101,102",
+      "ko": "적색산화철",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "a31825f1-937f-4263-83b3-5bd8a8488ea2",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "MEA-Salicylate",
+      "ko": "엠이에이-살리실레이트",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "2980aefd-a1c5-47e3-a589-2a01b7691755",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Ferrous oxide, Iron Oxide, CI 77489",
+      "ko": "페러스옥사이드",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "aeda1e28-907c-4efb-b202-5137e29ed1ba",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Fast Acid Magenta, D&C Red No. 33, Red 33 Lake, Aka227, FOOD RED 12, CI 17200",
+      "ko": "적색227호",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "a7a290a3-a1fa-4bed-ae44-5ffa5ab5482f",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Carmine, Cochineal, CI 75470",
+      "ko": "카민",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "cf3e473d-3d67-4480-a049-f70840fdfd30",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Magnesium Stearate",
+      "ko": "마그네슘스테아레이트",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "ed25197b-d4b1-4c6a-822e-2080f8227abe",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Pigment Red 5, CI 12490",
+      "ko": "피그먼트적색5호",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "9063beb7-4ee1-4378-9a15-0fe1d8f34e37",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Calcium Carbonate,CI 77220",
+      "ko": "칼슘카보네이트",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "02ba611d-ad95-4212-9208-877fcf12ec69",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Eosine YS, D&C Red No. 22, Red 22 Lake, Pigment Red 90:1 Aluminum Lake, Aka230(1), CI 45380",
+      "ko": "적색103호의(1)",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "316f163d-ee73-4b47-b4f3-d5cd01b3bce3",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Sunset Yellow FCF, FD&C Yellow No. 6, Sunset Yellow Aluminum Lake, Yellow 6 Lake, FOOD YELLOW 3, CI 15985",
+      "ko": "황색5호",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "dea53e73-58e9-4cfc-a0d3-de955eb53eed",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Caramel",
+      "ko": "카라멜",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "3190b479-4ab4-4018-9108-26246fb54cd9",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Quinoline Yellow WS, D&C Yellow No. 10, Yellow 10 Lake, Ki203, Acid Yellow 3 Aluminum Lake, FOOD YELLOW 13, CI 47005",
+      "ko": "황색203호",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "233a0226-3904-4a1a-8e25-d7fe2ff3a659",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Phloxine B, D&C Red No. 28, Red 28 Lake, Aka104(1), CI 45410",
+      "ko": "적색104호의(1)",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "cd08e926-5abc-4ed0-9d44-8ce0a107e8cf",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "New Coccine, Aka102, Acid Red 18 Aluminum Lake, FOOD RED 7, CI 16255",
+      "ko": "적색102호",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "a941a104-3aec-4b4e-a54c-d57f424fa9af",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 77480",
+      "ko": "CI 77480",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "6e99fb18-0c37-4287-a104-5a6e98e61678",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 77019",
+      "ko": "CI 77019",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "0f9ee62a-7e01-4401-a011-540637d91785",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 61570",
+      "ko": "CI 61570",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "deb074b8-9a37-428a-98e0-9ff4f2d09029",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 47005",
+      "ko": "CI 47005",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "5f1bca68-2aca-4ece-b785-ac1bd8d90f0e",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 19140",
+      "ko": "CI 19140",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "4c66e911-94a9-4b65-a7b8-f7e11802fb1a",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 17200",
+      "ko": "CI 17200",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "e37752b1-cb9a-40f8-b610-bbe12158338a",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 16255",
+      "ko": "CI 16255",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "83fe63e6-9918-470a-a067-9b7f3a27a4f6",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 16035",
+      "ko": "CI 16035",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "21434b21-5a24-49ea-83a7-acec04e27272",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 15985",
+      "ko": "CI 15985",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "1365a6de-fed1-4e8e-a725-e7319f1dbc86",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 15850",
+      "ko": "CI 15850",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "738c568c-6812-454f-b295-258151a9bb27",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Gold, CI 77480",
+      "ko": "금",
+      "reason": "claude-color: 대만 화장품색소 허용표(着色劑)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA) 허용확증"
+    },
+    {
+      "ingredient_id": "b80bde5b-61a5-4934-99a4-2e560057b4cd",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Carbon Black, D&C Black No. 2, CI 77266",
+      "ko": "카본블랙",
+      "reason": "claude-color: 화장품 허용색소표(着色劑 positive-list)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA/US) 허용확증"
+    },
+    {
+      "ingredient_id": "896a006e-52ac-4bea-93dc-57b8631883eb",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "CI 45380",
+      "ko": "CI 45380",
+      "reason": "claude-color: 화장품 허용색소표(着色劑 positive-list)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA/US) 허용확증 + 농도한도"
+    },
+    {
+      "ingredient_id": "c1942c88-0fe9-4d60-bdb5-b5a2324943b8",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "CI 45430",
+      "ko": "CI 45430",
+      "reason": "claude-color: 화장품 허용색소표(着色劑 positive-list)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA/US) 허용확증 + 농도한도"
+    },
+    {
+      "ingredient_id": "1ff1c14e-7ca0-45ea-b645-93b13c90c874",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 42510",
+      "ko": "CI 42510",
+      "reason": "claude-color: 화장품 허용색소표(着色劑 positive-list)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA/US) 허용확증"
+    },
+    {
+      "ingredient_id": "76069767-1717-43c7-9c08-280ebd50968b",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 18965",
+      "ko": "CI 18965",
+      "reason": "claude-color: 화장품 허용색소표(着色劑 positive-list)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA/US) 허용확증"
+    },
+    {
+      "ingredient_id": "36a8cb93-fdc8-400e-aebf-2ba6aca8d58b",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 14270",
+      "ko": "CI 14270",
+      "reason": "claude-color: 화장품 허용색소표(着色劑 positive-list)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA/US) 허용확증"
+    },
+    {
+      "ingredient_id": "1e28ae3b-25e0-4300-a695-ead3077009b3",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Amaranth, Aka2, Acid Red 27 Aluminum Lake, FOOD RED 9, CI 16185",
+      "ko": "적색2호",
+      "reason": "claude-color: 화장품 허용색소표(着色劑 positive-list)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA/US) 허용확증 + 농도한도"
+    },
+    {
+      "ingredient_id": "92dc5399-86ff-4df3-9e40-31bd46fffaff",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Violamine R, Aka401, ACID VIOLET 9, CI 45190",
+      "ko": "적색401호",
+      "reason": "claude-color: 화장품 허용색소표(着色劑 positive-list)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA/US) 허용확증"
+    },
+    {
+      "ingredient_id": "ed25197b-d4b1-4c6a-822e-2080f8227abe",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "Pigment Red 5, CI 12490",
+      "ko": "피그먼트적색5호",
+      "reason": "claude-color: 화장품 허용색소표(着色劑 positive-list)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA/US) 허용확증"
+    },
+    {
+      "ingredient_id": "1ff1c14e-7ca0-45ea-b645-93b13c90c874",
+      "country_code": "ID",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 42510",
+      "ko": "CI 42510",
+      "reason": "claude-color: 화장품 허용색소표(着色劑 positive-list)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA/US) 허용확증"
+    },
+    {
+      "ingredient_id": "76069767-1717-43c7-9c08-280ebd50968b",
+      "country_code": "ID",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 18965",
+      "ko": "CI 18965",
+      "reason": "claude-color: 화장품 허용색소표(着色劑 positive-list)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA/US) 허용확증"
+    },
+    {
+      "ingredient_id": "1ff1c14e-7ca0-45ea-b645-93b13c90c874",
+      "country_code": "MY",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 42510",
+      "ko": "CI 42510",
+      "reason": "claude-color: 화장품 허용색소표(着色劑 positive-list)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA/US) 허용확증"
+    },
+    {
+      "ingredient_id": "76069767-1717-43c7-9c08-280ebd50968b",
+      "country_code": "MY",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 18965",
+      "ko": "CI 18965",
+      "reason": "claude-color: 화장품 허용색소표(着色劑 positive-list)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA/US) 허용확증"
+    },
+    {
+      "ingredient_id": "1ff1c14e-7ca0-45ea-b645-93b13c90c874",
+      "country_code": "PH",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 42510",
+      "ko": "CI 42510",
+      "reason": "claude-color: 화장품 허용색소표(着色劑 positive-list)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA/US) 허용확증"
+    },
+    {
+      "ingredient_id": "76069767-1717-43c7-9c08-280ebd50968b",
+      "country_code": "PH",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 18965",
+      "ko": "CI 18965",
+      "reason": "claude-color: 화장품 허용색소표(着色劑 positive-list)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA/US) 허용확증"
+    },
+    {
+      "ingredient_id": "1ff1c14e-7ca0-45ea-b645-93b13c90c874",
+      "country_code": "SG",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 42510",
+      "ko": "CI 42510",
+      "reason": "claude-color: 화장품 허용색소표(着色劑 positive-list)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA/US) 허용확증"
+    },
+    {
+      "ingredient_id": "76069767-1717-43c7-9c08-280ebd50968b",
+      "country_code": "SG",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 18965",
+      "ko": "CI 18965",
+      "reason": "claude-color: 화장품 허용색소표(着色劑 positive-list)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA/US) 허용확증"
+    },
+    {
+      "ingredient_id": "1ff1c14e-7ca0-45ea-b645-93b13c90c874",
+      "country_code": "TH",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 42510",
+      "ko": "CI 42510",
+      "reason": "claude-color: 화장품 허용색소표(着色劑 positive-list)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA/US) 허용확증"
+    },
+    {
+      "ingredient_id": "76069767-1717-43c7-9c08-280ebd50968b",
+      "country_code": "TH",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 18965",
+      "ko": "CI 18965",
+      "reason": "claude-color: 화장품 허용색소표(着色劑 positive-list)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA/US) 허용확증"
+    },
+    {
+      "ingredient_id": "1ff1c14e-7ca0-45ea-b645-93b13c90c874",
+      "country_code": "VN",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 42510",
+      "ko": "CI 42510",
+      "reason": "claude-color: 화장품 허용색소표(着色劑 positive-list)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA/US) 허용확증"
+    },
+    {
+      "ingredient_id": "76069767-1717-43c7-9c08-280ebd50968b",
+      "country_code": "VN",
+      "from": "banned",
+      "to": "listed",
+      "source_match": "MFDS",
+      "inci": "CI 18965",
+      "ko": "CI 18965",
+      "reason": "claude-color: 화장품 허용색소표(着色劑 positive-list)가 사용제한으로 오태깅 — 외국(EU/JP/CN-NMPA/US) 허용확증"
+    },
+    {
+      "ingredient_id": "202234b4-8e25-4215-a86f-548b83f24607",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Methyleugenol (CAS No 93-15-2) except for normal content in the natural essences used",
+      "ko": "메틸유게놀, 천연 에센스로 함유된 경우는 제외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 919. 국문: 메틸유게놀. 중문: 甲基丁香酚，天然香料含有的除外."
+    },
+    {
+      "ingredient_id": "ec17aa0b-275c-4f8e-8922-d10e0ea849cd",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Butane, if it contains ≥ 0,1 % w/w Butadiene",
+      "ko": "부타디엔 0.1%w/w이상 함유하는 부탄",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 371. 국문: 부타디엔 0.1%w/w이상 함유하는 부탄. 중문: 丁二烯含量大"
+    },
+    {
+      "ingredient_id": "7bb6bab4-70bf-4748-a5d9-b99e916ca133",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Isobutane, if it contains ≥ 0,1 % w/w Butadiene",
+      "ko": "부타디엔 0.1%w/w이상 함유하는 아이소부탄",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 862. 국문: 부타디엔 0.1%w/w이상 함유하는 아이소부탄. 중문: 丁二烯"
+    },
+    {
+      "ingredient_id": "68012f8f-1bb2-48b2-9665-cb867a5a1fbb",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Petrolatum, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 9",
+      "ko": "석유 페트롤라툼, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 1041. 국문: 석유 페트롤라툼, 정제과정이 완전히 알려지고 발암물질을 함유"
+    },
+    {
+      "ingredient_id": "7af5c5f7-ab50-45d6-b3a8-bc38cd2e6607",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Distillates (petroleum), hydrotreated middle, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 8",
+      "ko": "석유 증류물, 수소화처리 중질, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 539. 국문: 석유 증류물, 수소화처리 중질, 정제과정이 완전히 알려지고 발"
+    },
+    {
+      "ingredient_id": "57b7c5c6-f6f8-48cc-88b2-9a04a8db2b2c",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Slack wax (petroleum), low-melting, clay-treated, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 9",
+      "ko": "석유 슬랙왁스, low-melting, clay-treated, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 1159. 국문: 석유 슬랙왁스, low-melting, clay-treate"
+    },
+    {
+      "ingredient_id": "82a97bba-e17d-45c1-89bc-6230ea857739",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Distillates (petroleum), hydrodesulfurised middle, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 8",
+      "ko": "석유 증류물, 탈황 중질, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 534. 국문: 석유 증류물, 탈황 중질, 정제과정이 완전히 알려지고 발암물질"
+    },
+    {
+      "ingredient_id": "c2c80144-2db2-4163-94b1-3528e891bb08",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Alkanes, C 12-26, branched and linear, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen",
+      "ko": "알칸류, C12-16, 측쇄형 및 직선형, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 282. 국문: 알칸류, C12-16, 측쇄형 및 직선형, 정제과정이 완전히 "
+    },
+    {
+      "ingredient_id": "07fda845-3c3a-441e-b758-145d12bb4fc8",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Distillates (petroleum), catalytic reformer fractionator residue, intermediate-boiling, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 8",
+      "ko": "석유 증류물, catalytic reformer fractionator residue, intermediate-boiling, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 514. 국문: 석유 증류물, catalytic reformer fractio"
+    },
+    {
+      "ingredient_id": "a626f371-746c-4b96-b938-813f476aee61",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Hydrocarbons, C 11-17, solvent-extd. light naphthenic, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen",
+      "ko": "탄화수소류, C11-17, solvent-extd. light naphthenic, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 810. 국문: 탄화수소류, C11-17, solvent-extd. light"
+    },
+    {
+      "ingredient_id": "7bccaf61-758c-414b-af08-83b6d9e25c65",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Distillates (petroleum), intermediate paraffinic, clay-treated, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 8",
+      "ko": "석유증류물, intermediate paraffinic, clay-treated, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 541. 국문: 석유증류물, intermediate paraffinic, cl"
+    },
+    {
+      "ingredient_id": "26d03999-4ec5-4e87-b690-b20436384e8b",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Distillates (petroleum), sweetened middle, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 8",
+      "ko": "석유 증류물, 스위텐드 중질, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 559. 국문: 석유 증류물, 스위텐드 중질, 정제과정이 완전히 알려지고 발암"
+    },
+    {
+      "ingredient_id": "a848f66a-50e0-4872-b05c-6dd2f6562e60",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Distillates (petroleum), acid-treated middle, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 8",
+      "ko": "석유 증류물, 산-처리 중질, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 510. 국문: 석유 증류물, 산-처리 중질, 정제과정이 완전히 알려지고 발암"
+    },
+    {
+      "ingredient_id": "b6d5cc06-66ce-433c-95b3-a77cf5be7f1c",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Hydrocarbons, C 12-20, hydrotreated paraffinic, distn. lights, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen",
+      "ko": "탄화수소류, C12-20, hydrotreated paraffinic, distn. lights,, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 811. 국문: 탄화수소류, C12-20, hydrotreated paraff"
+    },
+    {
+      "ingredient_id": "caf34a9c-f7be-49f6-ad5b-bd22d8f7acad",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Petrolatum (petroleum), silicic acid-treated, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 9",
+      "ko": "석유 페트롤라툼, 규산처리, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 1047. 국문: 석유 페트롤라툼, 규산처리, 정제과정이 완전히 알려지고 발암"
+    },
+    {
+      "ingredient_id": "f36d7c33-0ece-457a-972a-b390a68aca67",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Distillates (petroleum), catalytic reformer fractionator residue, low-boiling, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 8",
+      "ko": "석유 증류물, catalytic reformer fractionator residue, low-boiling, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 515. 국문: 석유 증류물, catalytic reformer fractio"
+    },
+    {
+      "ingredient_id": "dfff8d05-16e7-45d1-bf98-ed2d4fec0118",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Distillates (petroleum), catalytic reformer fractionator residue, high-boiling, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 8",
+      "ko": "석유 증류물, catalytic reformer fractionator residue, high-boiling, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 513. 국문: 석유 증류물, catalytic reformer fractio"
+    },
+    {
+      "ingredient_id": "2dfbaf20-e3e9-43b5-85c4-bd7ec859b2c3",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Distillates (petroleum), chemically neutralised middle, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 8",
+      "ko": "석유 증류물, 화학적 중화 중질, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 517. 국문: 석유 증류물, 화학적 중화 중질, 정제과정이 완전히 알려지고 "
+    },
+    {
+      "ingredient_id": "bd579328-f5e1-4844-a9e2-1f299d257cda",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Distillates (petroleum), acid-treated light",
+      "ko": "석유 유래물질 (Distillates (petroleum), acid-treated light)",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 509. 국문: 석유 증류물, 산-처리 경질, 정제과정이 완전히 알려지고 발암"
+    },
+    {
+      "ingredient_id": "f953999e-203c-4546-845e-b060a8e3f2c9",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Distillates (petroleum), solvent-refined middle, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 8",
+      "ko": "석유 증류물, 용매-정제 중질, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 558. 국문: 석유 증류물, 용매-정제 중질, 정제과정이 완전히 알려지고 발"
+    },
+    {
+      "ingredient_id": "e6a660d5-7c6d-40b0-b66e-080dd81b01db",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Slack wax (petroleum), low-melting, carbon-treated, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 9",
+      "ko": "석유 슬랙왁스, low-melting, carbon-treated, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 1158. 국문: 석유 슬랙왁스, low-melting, carbon-trea"
+    },
+    {
+      "ingredient_id": "d1554f3c-2c6a-4c23-930d-1b3c9ddc68cf",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Distillates (petroleum), highly refined middle, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 8",
+      "ko": "석유증류물, 정제 중질, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 528. 국문: 석유증류물, 정제 중질, 정제과정이 완전히 알려지고 발암물질을"
+    },
+    {
+      "ingredient_id": "750f64ec-7a7c-4844-8d59-cf9add590e78",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Slack wax (petroleum), except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 8",
+      "ko": "석유 슬랙왁스, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 1152. 국문: 석유 슬랙왁스, 정제과정이 완전히 알려지고 발암물질을 함유하"
+    },
+    {
+      "ingredient_id": "e058b3e3-1aed-4f2a-9246-94d27872027d",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Slack wax (petroleum), acid-treated, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 8",
+      "ko": "석유 슬랙왁스, 산처리, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 1153. 국문: 석유 슬랙왁스, 산처리, 정제과정이 완전히 알려지고 발암물질"
+    },
+    {
+      "ingredient_id": "d994ea9b-2c36-44ce-a6a6-5fd0b8e0c34e",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Slack wax (petroleum), low-melting, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 8",
+      "ko": "석유 슬랙왁스, low-melting, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 1157. 국문: 석유 슬랙왁스, low-melting, 정제과정이 완전히 알"
+    },
+    {
+      "ingredient_id": "779a5f07-0bac-4748-8d81-a8af445e6522",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Petrolatum (petroleum), hydrotreated, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 9",
+      "ko": "석유 페트롤라툼, 수소화처리,, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 1045. 국문: 석유 페트롤라툼, 수소화처리,, 정제과정이 완전히 알려지고 "
+    },
+    {
+      "ingredient_id": "d391a29c-1d13-435f-8516-b2bfb5b72d9f",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Hydrocarbons, C16-20, hydrotreated middle distillate, distn. Lights",
+      "ko": "탄화수소류, C16-20, hydrotreated middle distillate,\ndistn. Lights,",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 819. 국문: 탄화수소류, C16-20, hydrotreated middle"
+    },
+    {
+      "ingredient_id": "4d8e2885-02fa-49b9-aa45-838eaeee1a40",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Distillates (petroleum), intermediate paraffinic, carbon-treated, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 8",
+      "ko": "석유증류물, intermediate paraffinic, carbon-treated, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 540. 국문: 석유증류물, intermediate paraffinic, ca"
+    },
+    {
+      "ingredient_id": "8a131fd2-a2c0-497e-ac04-bd9317c99fe2",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Slack wax (petroleum), carbon-treated, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 9",
+      "ko": "석유 슬랙왁스, carbon-treated, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 1154. 국문: 석유 슬랙왁스, carbon-treated, 정제과정이 완전"
+    },
+    {
+      "ingredient_id": "cc77f086-c7d9-48e6-9875-f3981f1a6f45",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Gas oils (petroleum), acid-treated, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 8",
+      "ko": "석유 가스오일, 산-처리, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 681. 국문: 석유 가스오일, 산-처리, 정제과정이 완전히 알려지고 발암물질"
+    },
+    {
+      "ingredient_id": "79bc7374-6b47-40c9-beda-d1a8435740f8",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Gas oils (petroleum), chemically neutralised, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen",
+      "ko": "석유 가스오일, 화학적 중화, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 682. 국문: 석유 가스오일, 화학적 중화, 정제과정이 완전히 알려지고 발암"
+    },
+    {
+      "ingredient_id": "3a61f52e-18ec-4dff-8cbc-08f1486caf08",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Slack wax (petroleum), low-melting, hydrotreated, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 9",
+      "ko": "석유 슬랙왁스, low-melting, hydrotreated, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 1160. 국문: 석유 슬랙왁스, low-melting, hydrotreate"
+    },
+    {
+      "ingredient_id": "68e7afe9-4f5f-4d52-8ad9-01477e9edc44",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Distillates (petroleum), clay-treated middle, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 8",
+      "ko": "석유 증류물, 클레이-처리 중질, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 522. 국문: 석유 증류물, 클레이-처리 중질, 정제과정이 완전히 알려지고 "
+    },
+    {
+      "ingredient_id": "b8a4ddd6-f722-409b-921a-c7769f5d113d",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Distillates (petroleum), carbon-treated light paraffinic, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 8",
+      "ko": "석유증류물, carbon-treated light paraffinic, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 512. 국문: 석유증류물, carbon-treated light paraff"
+    },
+    {
+      "ingredient_id": "6bd8446f-10d8-4027-a325-731e9e316c0b",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Petrolatum (petroleum), alumina-treated, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen",
+      "ko": "석유 페트롤라툼, 알루미나 처리, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 1042. 국문: 석유 페트롤라툼, 알루미나 처리, 정제과정이 완전히 알려지고"
+    },
+    {
+      "ingredient_id": "af77a042-8c1e-4fda-9381-c1ce7f0c71c3",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Slack wax (petroleum), low-melting, silicic acid-treated, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 9",
+      "ko": "석유 슬랙왁스, low-melting, silicic acid-treated, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 1161. 국문: 석유 슬랙왁스, low-melting, silicic aci"
+    },
+    {
+      "ingredient_id": "e62bc55a-e9bb-4e67-a1f6-0a1e0dca6775",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Distillates (petroleum), catalytic reformer, heavy arom. conc., except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 8",
+      "ko": "석유증류물, catalytic reformer, heavy arom. conc., 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 516. 국문: 석유증류물, catalytic reformer, heavy a"
+    },
+    {
+      "ingredient_id": "65cad29c-5f5a-44cf-9c9b-efeaf4d5b0d9",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Slack wax (petroleum), clay-treated, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 8",
+      "ko": "석유 슬랙왁스, 클레이처리, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 1155. 국문: 석유 슬랙왁스, 클레이처리, 정제과정이 완전히 알려지고 발암"
+    },
+    {
+      "ingredient_id": "ed193901-e045-4aab-8e5b-06e25cf88fd7",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Naphtha (petroleum), solvent-refined hydrodesulfurised heavy, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 8",
+      "ko": "석유 나프타, 용매-정제 탈황 중질, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 968. 국문: 석유 나프타, 용매-정제 탈황 중질, 정제과정이 완전히 알려지"
+    },
+    {
+      "ingredient_id": "41d7450e-97cf-4d89-a80b-8fdc4900f0d8",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Gas oils, hydrotreated, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 8",
+      "ko": "가스오일, 수소처리, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 693. 국문: 가스오일, 수소처리, 정제과정이 완전히 알려지고 발암물질을 함"
+    },
+    {
+      "ingredient_id": "4991dd66-5ad8-4cd1-bdc8-a62af4c709ad",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Slack wax (petroleum), hydrotreated, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 8",
+      "ko": "석유 슬랙왁스, 수소화처리, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 1156. 국문: 석유 슬랙왁스, 수소화처리, 정제과정이 완전히 알려지고 발암"
+    },
+    {
+      "ingredient_id": "c1403d12-5814-46fc-93da-4fd36ef86a69",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Gas oils, paraffinic, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 8",
+      "ko": "석유 가스오일, 파라핀성, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 694. 국문: 석유 가스오일, 파라핀성, 정제과정이 완전히 알려지고 발암물질"
+    },
+    {
+      "ingredient_id": "852e57c5-5334-437b-91c1-830dd5db55b1",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Gas oils (petroleum), hydrodesulfurised, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen",
+      "ko": "석유 가스오일, 탈황, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 684. 국문: 석유 가스오일, 탈황, 정제과정이 완전히 알려지고 발암물질을 "
+    },
+    {
+      "ingredient_id": "a8ed4783-5c6e-4fee-9b48-4bedef6902ac",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Petrolatum (petroleum), oxidised, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen",
+      "ko": "석유 페트롤라툼 oxidised, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 1046. 국문: 석유 페트롤라툼 oxidised, 정제과정이 완전히 알려지고"
+    },
+    {
+      "ingredient_id": "fe365734-1961-4286-8b99-5d70118d682c",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Petrolatum (petroleum), clay-treated, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 9",
+      "ko": "석유 페트롤라툼, 클레이처리, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 1044. 국문: 석유 페트롤라툼, 클레이처리, 정제과정이 완전히 알려지고 발"
+    },
+    {
+      "ingredient_id": "f5eb6ce9-232a-4838-820f-534cc9beeaf2",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Gas oils (petroleum), solvent-refined, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 8",
+      "ko": "석유 가스오일, 용매-정제, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 685. 국문: 석유 가스오일, 용매-정제, 정제과정이 완전히 알려지고 발암물"
+    },
+    {
+      "ingredient_id": "b627eee8-6716-4747-b4bb-6e7b595a4064",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Fuels, diesel, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 1",
+      "ko": "디젤 연료, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 669. 국문: 디젤 연료, 정제과정이 완전히 알려지고 발암물질을 함유하지 않"
+    },
+    {
+      "ingredient_id": "0323a07d-29ee-45f7-8226-869b01db60b1",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Petrolatum (petroleum), carbon-treated, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 9",
+      "ko": "석유 페트롤라툼, 탄소처리, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 1043. 국문: 석유 페트롤라툼, 탄소처리, 정제과정이 완전히 알려지고 발암"
+    },
+    {
+      "ingredient_id": "86600c6e-364f-49f4-b83f-838c7ada5538",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "화장품안전기술규범",
+      "inci": "Lubricating greases, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 8",
+      "ko": "윤활용 그리스, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외",
+      "reason": "claude-cond: 권위 금지목록의 조건부-허용 금지(물질 자체 사용가능, 특정 불순/형태만 금지) — restricted 교정. 원조건: NMPA 화장품안전기술규범 표1 — 화장품 사용 금지 물질. 순번 880. 국문: 윤활용 그리스, 정제과정이 완전히 알려지고 발암물질을 함유하지"
     }
   ]
 }

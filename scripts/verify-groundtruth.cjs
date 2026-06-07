@@ -87,7 +87,8 @@ function bucketFor(ids,code){
   let merged=null;
   for(const id of ids){const b=regsByIC.get(id)?.get(code);if(b&&b.length)(merged??=[]).push(...b);}
   if(!merged)return undefined;
-  const byPriority=(a,b)=>{const pa=a.source_priority??0,pb=b.source_priority??0;if(pa!==pb)return pb-pa;return (b.last_verified_at??"").localeCompare(a.last_verified_at??"");};
+  const sevRank=s=>s==="banned"?3:s==="restricted"?2:(s==="allowed"||s==="listed")?1:0; // lib 미러: 동일prio 동률시 severity 우선
+  const byPriority=(a,b)=>{const pa=a.source_priority??0,pb=b.source_priority??0;if(pa!==pb)return pb-pa;const sa=sevRank(a.status),sb=sevRank(b.status);if(sa!==sb)return sb-sa;return (b.last_verified_at??"").localeCompare(a.last_verified_at??"");};
   const winStatus=[...merged].sort(byPriority)[0].status;
   const detailScore=(r)=>{const c=r.conditions??"";const identityOnly=c.length<20||/등재 \(Reference \d+\)/.test(c);const hasDetail=!identityOnly&&c.length>=60;return (r.max_concentration!=null?2:0)+(hasDetail?1:0);};
   merged.sort((a,b)=>{const aw=a.status===winStatus?1:0,bw=b.status===winStatus?1:0;if(aw!==bw)return bw-aw;const da=detailScore(a),db=detailScore(b);if(da!==db)return db-da;return byPriority(a,b);});

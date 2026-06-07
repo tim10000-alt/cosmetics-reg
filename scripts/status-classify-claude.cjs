@@ -114,7 +114,7 @@ if (require.main === module) {
       const cls = classify(r.conditions);
       if (cls.v === "restricted") {
         ov.corrections.push({ ingredient_id: r.ingredient_id, country_code: r.country_code, from: "banned", to: "restricted", source_match: "MFDS", inci: ig.inci_name, ko: ig.korean_name, reason: `claude-judge: ${cls.why}` });
-        decObj.decisions[key] = { inci: ig.inci_name, ko: ig.korean_name, country: r.country_code, verdict: "restricted", by: "claude-judge", why: cls.why };
+        decObj.decisions[key] = { inci: ig.inci_name, ko: ig.korean_name, country: r.country_code, verdict: "restricted", by: "claude-judge", why: cls.why, source_match: "MFDS" };
         added++;
       } else {
         decObj.decisions[key] = { inci: ig.inci_name, ko: ig.korean_name, country: r.country_code, verdict: "banned", by: "claude-judge", why: cls.why };

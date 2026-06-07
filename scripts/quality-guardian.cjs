@@ -71,6 +71,13 @@ function stripRtlTail(name) {
 // 오병합 유발.) 매 run 자가치유 = 봇 갱신이 또 틀린 CAS 를 가져와도 durable·무료 자동.
 const ELEMENT_CAS = { gold: "7440-57-5", silver: "7440-22-4", copper: "7440-50-8", platinum: "7440-06-4", lead: "7439-92-1", zinc: "7440-66-6", iron: "7439-89-6", aluminum: "7429-90-5", aluminium: "7429-90-5", titanium: "7440-32-6", tin: "7440-31-5", nickel: "7440-02-0", chromium: "7440-47-3", bismuth: "7440-69-9", palladium: "7440-05-3", magnesium: "7439-95-4", manganese: "7439-96-5", barium: "7440-39-3", cobalt: "7440-48-4" };
 const ELEMENT_BY_CAS = Object.fromEntries(Object.entries(ELEMENT_CAS).map(([e, c]) => [c, e]));
+// 화합물 CAS 오기 자가치유 — *독성 금지물질*이 *다른(허용) 물질*의 CAS 를 잘못 보유해 CAS 병합으로
+// 오병합되는 경우(분별력 사고: 발암물질↔허용안료가 한 헤드라인). 정확한 CAS 로 교정해 분리.
+// 실측: "Chromium (VI) Trioxide"(6가 크로뮴=발암, 정확 CAS 1333-82-0)가 1308-38-9(=Chromium(III)
+// Oxide 허용 녹색안료 CI 77288)를 보유 → 허용안료가 banned 로 병합. 매 run 치유(봇 갱신 대비 durable).
+const COMPOUND_CAS_FIX = [
+  { match: /chromium\s*\(?\s*vi\s*\)?\s*trioxide|chromium trioxide|chromic (?:acid|anhydride)/i, wrong: "1308-38-9", correct: "1333-82-0" },
+];
 const CAS_RE = /^\d{2,7}-\d{2}-\d$/;
 function casCheckDigit(twoGroups) {            // "7782-85" → 6
   const d = twoGroups.replace(/-/g, "").split("").map(Number);
@@ -229,6 +236,21 @@ function main() {
         const toks = String(i.cas_no || "").match(/\d{2,7}-\d{2}-\d/g) || [];
         const wrongEl = toks.some((c) => ELEMENT_BY_CAS[c] && ELEMENT_BY_CAS[c] !== nm);
         if (!toks.includes(correct) && wrongEl) { i.cas_no = correct; casElementFixed++; ingChanged = true; }
+      }
+    }
+    // 화합물 CAS 오기(독성↔허용 오병합) 자가치유 — 이름이 알려진 독성화합물인데 CAS 가 다른(허용)
+    // 물질 CAS 면 정확 CAS 로 교정해 분리(예: Chromium VI Trioxide 가 CI 77288 허용안료 CAS 보유).
+    {
+      const fix = COMPOUND_CAS_FIX.find((f) => f.match.test(i.inci_name || ""));
+      if (fix) {
+        const toks = String(i.cas_no || "").match(/\d{2,7}-\d{2}-\d/g) || [];
+        // 오기 CAS(다른 허용물질 것)를 제거 — 정확 CAS 가 이미 있으면 그대로, 없으면 추가.
+        if (toks.includes(fix.wrong)) {
+          const kept = toks.filter((c) => c !== fix.wrong);
+          if (!kept.includes(fix.correct)) kept.push(fix.correct);
+          i.cas_no = kept.join(", ");
+          casElementFixed++; ingChanged = true;
+        }
       }
     }
     // CAS 정규화 — 유효 CAS 보유 레코드는 무수정(오삭제 0), 깨진 것만 복구/null.
