@@ -38,7 +38,7 @@ jobs:
       MFDS_API_KEY: ${{ secrets.MFDS_API_KEY }}
       CI: "true"
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           # GH_PAT 가 있으면 그 토큰으로 push → 봇 커밋이 "사람 활동"으로 집계돼
           # 60일 무활동 시 스케줄 자동 disable 을 방지. 없으면 기본 토큰으로 정상 동작.
