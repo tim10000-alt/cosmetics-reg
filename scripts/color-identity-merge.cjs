@@ -86,13 +86,25 @@ function doMerge(o, target, tag) {
   log.push(`  + [${tag}] regs ${movedThis} 이전${dedupThis ? ` (중복 ${dedupThis} 폐기)` : ""}: "${(o.inci_name || "").slice(0, 32)}" -> "${(target.inci_name || "").slice(0, 40)}"`);
 }
 
+// 같은 토큰에 colorant 가 여럿이면(동일색소 중복 ingredient) — *모두 같은 CAS(=같은 물질)* 일 때만
+// 대표(reg 최다)로 병합(분별력: CAS 불일치=다른물질 가능성→skip). 권위 listing(US 21CFR 등)이
+// 중복 colorant 분절로 검색카드에 안 닿던 것 해소. (대표 외 중복은 CAS-sibling 이라 표시 통합됨.)
+const casSet = (ig) => new Set(String(ig.cas_no || "").match(/\d{2,7}-\d{2}-\d/g) || []);
+function pickTarget(targets, tag) {
+  if (targets.length === 1) return targets[0];
+  const sets = targets.map(casSet);
+  const common = [...sets[0]].filter((c) => sets.every((s) => s.has(c)));
+  if (!common.length) { skippedAmbig++; log.push(`  ~ skip(ambiguous ${targets.length}, CAS 불일치): ${tag}`); return null; }
+  return targets.slice().sort((a, b) => (regsByIng.get(b.id) || []).length - (regsByIng.get(a.id) || []).length)[0];
+}
+
 // ── Pass 1: D&C/FD&C designation 토큰 ──
 for (const o of orphans) {
   const tok = [...colorTokens(o.inci_name)][0];
   const targets = (tokToColorants.get(tok) || []).filter((c) => c.id !== o.id && !removeIds.has(c.id));
   if (targets.length === 0) { skippedNone++; continue; }
-  if (targets.length > 1) { skippedAmbig++; log.push(`  ~ skip(ambiguous ${targets.length}): ${tok}`); continue; }
-  doMerge(o, targets[0], tok);
+  const target = pickTarget(targets, tok);
+  if (target) doMerge(o, target, tok);
 }
 
 // ── Pass 2: CI 번호 identity (단일 CI-marked thin → 유일 단일 CI rich target) ──
