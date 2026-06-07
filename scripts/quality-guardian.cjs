@@ -147,6 +147,11 @@ function main() {
   const srcLatest = {};      // source_document → 최신 last_verified_at (진단용)
   const ccLatest = {};       // country → 최신 last_verified_at (신선도 감시 = cascade-aware)
   const limitNow = {};       // ingredient_id|cc → max_concentration (한도 급변 이상탐지)
+  // 존재하는 성분 id 집합(가디언은 성분을 추가·삭제하지 않고 필드만 수정 → id 집합 안정).
+  // dangling reg(성분 없는 규제 = 렌더 불가·silent 손실) 자가청소용. 원인: 파서 생성 성분이
+  // 교차-워크플로(enrich 등) 쓰기 경합으로 ingredients.json 에서 누락되어도 reg 는 잔존(예: JP 別表1).
+  const _ingIds = new Set(JSON.parse(fs.readFileSync(path.join(DATA, "ingredients.json"), "utf8")).rows.map((i) => i.id));
+  let danglingRegs = 0, dupRegs = 0;
   for (const f of fs.readdirSync(REGDIR).filter((x) => x.endsWith(".json"))) {
     const cc = f.replace(".json", ""), p = path.join(REGDIR, f);
     const obj = JSON.parse(fs.readFileSync(p, "utf8"));
@@ -162,6 +167,15 @@ function main() {
       if (lv > (ccLatest[cc] || "")) ccLatest[cc] = lv; // 국가별 최신(cascade 중 가장 신선한 층)
       if (r.max_concentration != null) limitNow[`${r.ingredient_id}|${cc}`] = r.max_concentration;
     }
+    // dangling reg 청소: 성분 없는 규제 제거(이미 렌더 불가=UI 무영향, 무결성 유지·누적 방지).
+    const beforeN = obj.rows.length;
+    obj.rows = obj.rows.filter((r) => _ingIds.has(r.ingredient_id));
+    if (obj.rows.length !== beforeN) { danglingRegs += beforeN - obj.rows.length; changed = true; }
+    // 완전동일 행 dedup(전 필드 일치=진짜 redundant). *멀티annex(같은 status·다른 조건문)는 보존* —
+    // signature 에 conditions/max/url 포함해 조건문 다른 정당 행은 안 합침(분별력).
+    const sigSeen = new Set(); const beforeD = obj.rows.length;
+    obj.rows = obj.rows.filter((r) => { const sig = [r.ingredient_id, r.country_code, r.source_document, r.status, r.conditions, r.max_concentration, r.source_url].join("|@|"); if (sigSeen.has(sig)) return false; sigSeen.add(sig); return true; });
+    if (obj.rows.length !== beforeD) { dupRegs += beforeD - obj.rows.length; changed = true; }
     counts[cc] = obj.rows.length;
     if (changed) fs.writeFileSync(p, JSON.stringify(obj));
   }
@@ -392,7 +406,7 @@ function main() {
       ingredient_dictionaries: dicts.map((d) => ({ name: d.name, latest: d.latest })) }, null, 2));
 
   console.log("=== 품질 가디언(자가복구 + 신선도/이상 감시) ===");
-  console.log(`  불가능값(>100/≤0) 제거: ${overFixed}`);
+  console.log(`  불가능값(>100/≤0) 제거: ${overFixed} · dangling reg 청소: ${danglingRegs} · 완전중복 reg dedup: ${dupRegs}`);
   console.log(`  오염명 실명 복구(RTL 헤더 + JP matrix): ${recovered}`);
   console.log(`  보조 표시명(한/중/일) 정리: 복구 ${nameFieldRecovered} · null처리 ${nameFieldNulled}`);
   console.log(`  CAS 정규화: 복구 ${casRecovered} · 깨진값 null ${casNulled} · 원소/안료CAS ${casElementFixed} · 이름속CAS ${casFromNameFixed} · 이름오염→syn ${casNameToSyn} · 합의backfill ${casConsensus}`);

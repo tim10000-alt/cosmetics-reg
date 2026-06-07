@@ -193,6 +193,7 @@ async function worker(page, items) {
   // 유형별 집계
   const byType = {}; mismatches.forEach((m) => { const t = (m.match(/\[(?:[A-Z]{2})\] (\w+)|:: (\w+[-\w]*)|(HDR-\w+)/) || [])[1] || (m.match(/(HDR-\w+|RENDER-\w+)/) || [])[1] || "OTHER"; byType[t] = (byType[t] || 0) + 1; });
   console.log("불일치:", mismatches.length, JSON.stringify(byType));
+  try { require("fs").writeFileSync(require("path").join(require("os").tmpdir(), "deepcompare-all.txt"), `성분 ${checkedIng} 셀 ${checkedCells}\n불일치 ${mismatches.length} ${JSON.stringify(byType)}\n` + mismatches.join("\n")); } catch {}
   mismatches.slice(0, 50).forEach((m) => console.log("  ❌ " + m));
   if (mismatches.length > 50) console.log(`  ... +${mismatches.length - 50}`);
   process.exit(mismatches.length ? 1 : 0);
