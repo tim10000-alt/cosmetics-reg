@@ -1,5 +1,51 @@
 {
   "generated": "identity-judge",
   "note": "Gemini 듀얼 consensus 로 동일물질 확정된 형제 링크(data-loader 가 병합)",
-  "pairs": []
+  "pairs": [
+    {
+      "ids": [
+        "eb7659e0-99de-431e-b043-9d6712731fc5",
+        "f3506b38-95e9-46e4-9798-a2e77d8c4200"
+      ],
+      "ko": "알칼리토금속설파이드류",
+      "a": "Alkaline earth sulphides",
+      "b": "Alkali earth metal sulfides"
+    },
+    {
+      "ids": [
+        "1fe5f67f-0e0f-4e20-bd3d-c17959aec1fe",
+        "66370498-b7f7-4ebc-91cc-ad83df619a7e"
+      ],
+      "ko": "다이아미노톨루엔, [4-메틸-엠-페닐렌 다이아민]및[2-메틸-엠-페닐렌다이아민]의 혼합물",
+      "a": "mixture of Diaminotoluene, [4-methyl-m-phenylene diamine] and [2-methyl-m-phenylene diamine]",
+      "b": "Diaminotoluene, technical product -mixture of [4-methyl-m- phenylenediamine] ( 4 ) and [2-methyl-m-phenylenediamine] ( 5 ) Methyl-phenylenediamine 1"
+    },
+    {
+      "ids": [
+        "1e433849-3ae5-4711-bbb1-c6b05e3fc027",
+        "1fe5f67f-0e0f-4e20-bd3d-c17959aec1fe"
+      ],
+      "ko": "다이아미노톨루엔, [4-메틸-엠-페닐렌 다이아민]및[2-메틸-엠-페닐렌다이아민]의 혼합물",
+      "a": "mixture of Diaminotoluene, [4-methyl-m-phenylene diamine] and [2-methyl-m-phenylene diamine]",
+      "b": "Diaminotoluene, technical product -mixture of [4-methyl-m- phenylenediamine] ( 4 ) and [2-methyl-m-phenylenediamine] ( 5 ) Methyl-phenylenediamine"
+    },
+    {
+      "ids": [
+        "22373c8f-708c-4eb1-b75d-2a783fbf70bd",
+        "70e0a026-1f8f-4986-aad4-c6ebdccd5c02"
+      ],
+      "ko": "벤조익애씨드 및 그 소듐염",
+      "a": "Benzoic acid (CAS No. 65-85-0), and its sodium salt (CAS No 532-32-1)",
+      "b": "Benzoic acid and its sodium salt"
+    },
+    {
+      "ids": [
+        "9c6a4c40-52c2-4028-bf29-71a76bc5eaad",
+        "bd8f0582-4270-48f2-a9af-155cd7b18797"
+      ],
+      "ko": "알파-하이드록시애씨드",
+      "a": "Alpha-hydroxy acids",
+      "b": "α-Hydroxy acids"
+    }
+  ]
 }

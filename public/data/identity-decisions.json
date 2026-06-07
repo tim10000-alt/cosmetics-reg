@@ -330,6 +330,461 @@
       "m2": null,
       "verdict": "uncertain",
       "by": "gemini-consensus"
+    },
+    "c3352b3c-e5da-4eb2-91cc-23a080610ce4|d56f67d1-bfa6-4fcb-b65e-0395e08a7951": {
+      "ko": "실버클로라이드",
+      "a": "Silver Chloride",
+      "b": "Silver Chloride deposited on titanium dioxide",
+      "m1": {
+        "verdict": "different",
+        "confidence": 1,
+        "reason": "Entry B describes a composite material where Silver Chloride is deposited on Titanium Dioxide, making it distinct from pure Silver Chloride (Entry A)."
+      },
+      "m2": {
+        "verdict": "different",
+        "confidence": 0.9,
+        "reason": "Entry A is pure Silver Chloride. Entry B is Silver Chloride deposited on Titanium Dioxide, which is a composite material and not the same chemical substance."
+      },
+      "verdict": "different",
+      "by": "gemini-consensus"
+    },
+    "e442e218-bfdb-4020-852d-b1ba99f68ea1|e4a6eb3d-5292-473d-bd18-13897bf19f5a": {
+      "ko": "2,6-다이메틸-1,3-다이옥산-4-일아세테이트(다이메톡세인, o-아세톡시-2,4-다이메틸-m-다이옥세인)",
+      "a": "2,6-Dimethyl-1,3-dioxan-4-yl acetate (Dimethoxane, o-acetoxy-2,4-dimethyl-m-dioxane)",
+      "b": "2,6-Dimethyl-1,3-dioxan-4-yl acetate (Dimethoxane) 3",
+      "m1": {
+        "verdict": "same",
+        "confidence": 0.9,
+        "reason": "Both entries refer to '2,6-Dimethyl-1,3-dioxan-4-yl acetate (Dimethoxane)'. Entry A includes an additional synonym, and Entry B includes the CAS number (828-00-2) which corresponds to this substance. The identical and specific Korean standardized name for both entries strongly indicates they are the same chemical substance; the trailing '3' in Entry B's INCI is likely a descriptor or database artifact."
+      },
+      "m2": {
+        "verdict": "different",
+        "confidence": 0.9,
+        "reason": "Entry B has a CAS number (828-00-2) and a numerical suffix '3' in its INCI name, suggesting it refers to a specific isomer or a different registration of the substance, while Entry A lacks a CAS number and this suffix, potentially referring to the general substance or a different form."
+      },
+      "verdict": "different",
+      "by": "gemini-consensus"
+    },
+    "eb7659e0-99de-431e-b043-9d6712731fc5|f3506b38-95e9-46e4-9798-a2e77d8c4200": {
+      "ko": "알칼리토금속설파이드류",
+      "a": "Alkaline earth sulphides",
+      "b": "Alkali earth metal sulfides",
+      "m1": {
+        "verdict": "same",
+        "confidence": 1,
+        "reason": "The INCI names 'Alkaline earth sulphides' and 'Alkali earth metal sulfides' are synonymous, with 'sulphides' vs 'sulfides' being a spelling variation. Both refer to the same group of substances, and the presence of a CAS number for one entry while the other has none is consistent with them being the same substance/group."
+      },
+      "m2": {
+        "verdict": "same",
+        "confidence": 1,
+        "reason": "Both INCI names are essentially the same, referring to alkaline earth metal sulfides. The CAS number in Entry B is likely a specific example or registration within this group, but the INCI names themselves are synonymous."
+      },
+      "verdict": "same",
+      "by": "gemini-consensus"
+    },
+    "5b7d677a-2190-40e7-95fb-82cd5b039b8f|eb7659e0-99de-431e-b043-9d6712731fc5": {
+      "ko": "알칼리토금속설파이드류",
+      "a": "Alkaline earth sulphides",
+      "b": "(a) Alkali sulphides (b) Alkaline earth sulphides",
+      "m1": {
+        "verdict": "different",
+        "confidence": 1,
+        "reason": "Entry B includes 'Alkali sulphides' in addition to 'Alkaline earth sulphides', making it a broader and chemically distinct group from Entry A, which only specifies 'Alkaline earth sulphides'."
+      },
+      "m2": {
+        "verdict": "different",
+        "confidence": 0.9,
+        "reason": "Entry A refers to 'Alkaline earth sulphides' while Entry B includes both 'Alkali sulphides' and 'Alkaline earth sulphides'. These are distinct chemical categories."
+      },
+      "verdict": "different",
+      "by": "gemini-consensus"
+    },
+    "5b7d677a-2190-40e7-95fb-82cd5b039b8f|f3506b38-95e9-46e4-9798-a2e77d8c4200": {
+      "ko": "알칼리토금속설파이드류",
+      "a": "Alkali earth metal sulfides",
+      "b": "(a) Alkali sulphides (b) Alkaline earth sulphides",
+      "m1": {
+        "verdict": "different",
+        "confidence": 0.9,
+        "reason": "Entry B includes 'Alkali sulphides' which are chemically distinct from 'Alkaline earth metal sulfides' (the subject of Entry A). Entry B represents a broader or combined group."
+      },
+      "m2": {
+        "verdict": "different",
+        "confidence": 0.9,
+        "reason": "Entry A refers to 'Alkali earth metal sulfides' with a specific CAS number, while Entry B is a broader category that includes both 'Alkali sulphides' and 'Alkaline earth sulphides', and lacks a CAS number. These are not identical."
+      },
+      "verdict": "different",
+      "by": "gemini-consensus"
+    },
+    "1fe5f67f-0e0f-4e20-bd3d-c17959aec1fe|66370498-b7f7-4ebc-91cc-ad83df619a7e": {
+      "ko": "다이아미노톨루엔, [4-메틸-엠-페닐렌 다이아민]및[2-메틸-엠-페닐렌다이아민]의 혼합물",
+      "a": "mixture of Diaminotoluene, [4-methyl-m-phenylene diamine] and [2-methyl-m-phenylene diamine]",
+      "b": "Diaminotoluene, technical product -mixture of [4-methyl-m- phenylenediamine] ( 4 ) and [2-methyl-m-phenylenediamine] ( 5 ) Methyl-phenylenediamine 1",
+      "m1": {
+        "verdict": "same",
+        "confidence": 1,
+        "reason": "Both entries share an identical Korean name and describe the same chemical mixture of 4-methyl-m-phenylenediamine and 2-methyl-m-phenylenediamine (i.e., Toluenediamine isomers). The differences in INCI are minor descriptive additions, and the presence of a CAS number in one entry but not the other does not indicate different substances."
+      },
+      "m2": {
+        "verdict": "same",
+        "confidence": 1,
+        "reason": "Both entries refer to a mixture of diaminotoluene, specifically [4-methyl-m-phenylene diamine] and [2-methyl-m-phenylene diamine]. Entry B provides a CAS number and a more technical description, but the core chemical identity is the same."
+      },
+      "verdict": "same",
+      "by": "gemini-consensus"
+    },
+    "1e433849-3ae5-4711-bbb1-c6b05e3fc027|1fe5f67f-0e0f-4e20-bd3d-c17959aec1fe": {
+      "ko": "다이아미노톨루엔, [4-메틸-엠-페닐렌 다이아민]및[2-메틸-엠-페닐렌다이아민]의 혼합물",
+      "a": "mixture of Diaminotoluene, [4-methyl-m-phenylene diamine] and [2-methyl-m-phenylene diamine]",
+      "b": "Diaminotoluene, technical product -mixture of [4-methyl-m- phenylenediamine] ( 4 ) and [2-methyl-m-phenylenediamine] ( 5 ) Methyl-phenylenediamine",
+      "m1": {
+        "verdict": "same",
+        "confidence": 0.95,
+        "reason": "Both entries describe a mixture of 4-methyl-m-phenylenediamine and 2-methyl-m-phenylenediamine, as indicated by the identical Korean name and highly similar INCI names. The differences in INCI phrasing (e.g., 'technical product') and the presence of a CAS number in one entry but not the other are minor variations consistent with the 'same' verdict."
+      },
+      "m2": {
+        "verdict": "same",
+        "confidence": 0.9,
+        "reason": "Both entries refer to a mixture of diaminotoluene, specifically [4-methyl-m-phenylene diamine] and [2-methyl-m-phenylene diamine]. Entry B provides a CAS number and additional descriptive terms, but the core chemical identity is the same."
+      },
+      "verdict": "same",
+      "by": "gemini-consensus"
+    },
+    "57ed1e51-78bc-42ed-953f-e83633b9b02e|7b09bab3-16f6-466e-99e5-1a33f1927234": {
+      "ko": "2-메톡시-4-나이트로페놀(4-나이트로구아이아콜) 및 그 염류",
+      "a": "2-Methoxy-4-Nitrophenol (4-Nitroguaiacol) and its salts",
+      "b": "2-methoxy-4-nitrophenol (4-Nitroguaiacol) and its salts, when used as a substance in hair dye products 1",
+      "m1": {
+        "verdict": "different",
+        "confidence": 0.8,
+        "reason": "Entry A refers to a group of substances ('and its salts'). Entry B, despite its INCI name also including 'and its salts', provides a specific CAS number (3251-56-7) which identifies only the single parent compound, 2-Methoxy-4-Nitrophenol. This distinction between a group and a single substance makes them different."
+      },
+      "m2": {
+        "verdict": "different",
+        "confidence": 0.9,
+        "reason": "Entry B specifies a CAS number and a restriction for use in hair dye products, indicating it might be a specific regulated form or application of the substance mentioned more generally in Entry A."
+      },
+      "verdict": "different",
+      "by": "gemini-consensus"
+    },
+    "22373c8f-708c-4eb1-b75d-2a783fbf70bd|70e0a026-1f8f-4986-aad4-c6ebdccd5c02": {
+      "ko": "벤조익애씨드 및 그 소듐염",
+      "a": "Benzoic acid (CAS No. 65-85-0), and its sodium salt (CAS No 532-32-1)",
+      "b": "Benzoic acid and its sodium salt",
+      "m1": {
+        "verdict": "same",
+        "confidence": 1,
+        "reason": "Entry A provides CAS numbers for the components of the group 'Benzoic acid and its sodium salt', while Entry B does not, which falls under the 'identical chemical with/without a CI/CAS annotation' rule for being the same."
+      },
+      "m2": {
+        "verdict": "same",
+        "confidence": 1,
+        "reason": "Both entries refer to Benzoic acid and its sodium salt. Entry A provides CAS numbers for both, while Entry B uses a more general INCI name. The core chemical substances are identical."
+      },
+      "verdict": "same",
+      "by": "gemini-consensus"
+    },
+    "7c6fb3b0-04e3-4aa3-bdbc-1545674099cf|dee0359d-3dd0-43e9-adda-61170beb5395": {
+      "ko": "염기성자색1호(메틸바이올렛)",
+      "a": "Basic Violet 1(Methyl Violet)",
+      "b": "Colouring agent CI 42535 (Basic Violet 1) 3",
+      "verdict": "different",
+      "by": "cas-veto"
+    },
+    "7c6fb3b0-04e3-4aa3-bdbc-1545674099cf|f836677c-3c81-4830-b75e-b76e8dedd220": {
+      "ko": "염기성자색1호(메틸바이올렛)",
+      "a": "Basic Violet 1(Methyl Violet)",
+      "b": "Colouring agent CI 42535 (Basic Violet 1)",
+      "verdict": "different",
+      "by": "cas-veto"
+    },
+    "510e79d0-5ed6-4c85-9bfa-440888b8203a|5c4ce55c-413c-4f5e-8359-d2ee87281ba4": {
+      "ko": "BSE(Bovine Spongiform Encephalopathy) 감염조직 및 이를 함유하는 성분",
+      "a": "Prohibited cattle materials. To protect against bovine spongiform encephalopathy (BSE), also known as mad cow disease",
+      "b": "Bovine tissues and ingredients derived from the skull, brain, trigeminal ganglia, eyes, spinal cord, and dorsal root ganglia of cattle aged 30 months or older and the small intestine and tonsils of cattle of all ages. This prohibition does not apply to tallow derivatives, or to gelatin, collagen and hydrolyzed proteins prepared from bovine hides and skins",
+      "m1": {
+        "verdict": "same",
+        "confidence": 0.9,
+        "reason": "Entry B provides a detailed specification of the 'prohibited cattle materials' generally referred to in Entry A, both pertaining to the same BSE-related regulatory prohibition. They describe the same regulatory scope."
+      },
+      "m2": {
+        "verdict": "different",
+        "confidence": 0.9,
+        "reason": "Entry A is a broad prohibition against BSE-infected materials. Entry B specifies particular bovine tissues and age restrictions, while also listing exceptions like tallow derivatives and gelatin, indicating a more specific and nuanced definition than the general prohibition in Entry A."
+      },
+      "verdict": "different",
+      "by": "gemini-consensus"
+    },
+    "72784c91-91ab-471f-a116-00186e3cdf8c|9f18b94b-e595-46b7-8758-593ce64742bf": {
+      "ko": "드라이백스",
+      "a": "Dryvax (Smallpox Vaccine)",
+      "b": "Dryvax",
+      "m1": null,
+      "m2": {
+        "verdict": "same",
+        "confidence": 1,
+        "reason": "The INCI names are identical except for the addition of '(Smallpox Vaccine)' in Entry A, which is a descriptive annotation and not a chemical difference. Both refer to the same substance 'Dryvax'."
+      },
+      "verdict": "uncertain",
+      "by": "gemini-consensus"
+    },
+    "9c6a4c40-52c2-4028-bf29-71a76bc5eaad|bd8f0582-4270-48f2-a9af-155cd7b18797": {
+      "ko": "알파-하이드록시애씨드",
+      "a": "Alpha-hydroxy acids",
+      "b": "α-Hydroxy acids",
+      "m1": {
+        "verdict": "same",
+        "confidence": 0.95,
+        "reason": "The INCI names 'Alpha-hydroxy acids' and 'α-Hydroxy acids' are synonymous, differing only in the spelling of 'alpha' (word vs. Greek letter). Both refer to the same group of chemical substances. The presence or absence of a CAS number for an otherwise identical chemical group falls under the 'same' criteria."
+      },
+      "m2": {
+        "verdict": "same",
+        "confidence": 1,
+        "reason": "Both entries refer to 'Alpha-hydroxy acids' (or its Greek letter variant), which is a class of compounds. The difference in CAS number and the presence/absence of it does not indicate different chemical substances, as CAS numbers are identifiers for specific substances or mixtures, and 'Alpha-hydroxy acids' is a general term."
+      },
+      "verdict": "same",
+      "by": "gemini-consensus"
+    },
+    "387e6b7d-0d63-4642-9b7b-418ff5eee313|4f3ed9e2-cff9-4908-962c-a1f7e6b9b172": {
+      "ko": "사바딜라 Schoenocaulon officinale Lind.(씨 및 그 생약제제)",
+      "a": "Schoenocaulon Officinale Seed",
+      "b": "Schoenocaulon Officinale Lind (seeds and galenical preparations)",
+      "m1": {
+        "verdict": "different",
+        "confidence": 0.9,
+        "reason": "Entry A refers to the 'Seed' while Entry B explicitly includes 'seeds and galenical preparations' and has a CAS number (84604-18-2) typically associated with an extract. An extract (galenical preparation) is chemically distinct from the raw seed."
+      },
+      "m2": {
+        "verdict": "same",
+        "confidence": 0.9,
+        "reason": "Both entries refer to Schoenocaulon officinale seeds and their preparations, with minor variations in INCI naming conventions and the presence of a CAS number in one entry."
+      },
+      "verdict": "different",
+      "by": "gemini-consensus"
+    },
+    "d836d448-759b-4e7c-a936-d1348eb1773c|dde3aaf1-14b9-42b3-b7d5-0ed29cd65c20": {
+      "ko": "피프로큘라륨 및 그 염류",
+      "a": "Piprocurarium and its salts",
+      "b": "Piprocurarium iodide (INN)",
+      "m1": null,
+      "m2": {
+        "verdict": "different",
+        "confidence": 0.9,
+        "reason": "Entry B specifies 'Piprocurarium iodide (INN)' with a CAS number, indicating a specific salt. Entry A is a broader term 'Piprocurarium and its salts' without a specific CAS, suggesting it might encompass multiple salts or the base compound itself, making them not strictly identical."
+      },
+      "verdict": "different",
+      "by": "gemini-consensus"
+    },
+    "38555006-5153-4ffc-9531-8ee0a61c389c|d440d0b7-8d1e-47df-8e15-df7a47932d05": {
+      "ko": "디기탈리스(Digitalis)속 및 그 생약제제",
+      "a": "Digitaline spp. and its galenical preparations",
+      "b": "Digitaline and all heterosides of Digitalis purpurea L.",
+      "m1": null,
+      "m2": {
+        "verdict": "different",
+        "confidence": 0.9,
+        "reason": "Entry A refers to the genus Digitalis and its preparations, a broad category. Entry B specifies Digitaline and heterosides from a particular species, Digitalis purpurea L., which is a more specific chemical entity. Therefore, they are not the same."
+      },
+      "verdict": "different",
+      "by": "gemini-consensus"
+    },
+    "8282b869-3475-4511-9775-7a293bc4aa70|ac916b7e-fa45-4242-b393-191c8ab1a900": {
+      "ko": "5-((4-(다이메틸아미노)페닐)아조-1,4-다이메틸-1H-1,2,4-트라이아졸리움 및 그 염류",
+      "a": "5-((4-(Dimethylamino)phenyl)azo)-1,4-dimethyl-1H-1,2,4-triazolium and its salts",
+      "b": "5-((4-(Dimethylamino)phenyl)azo)-1,4-dimethyl-1H-1,2,4-triazolium and its salts, when used as a substance in hair dye products 1",
+      "verdict": "different",
+      "by": "cas-veto"
+    },
+    "9751a165-bd5b-4645-9663-50c34c034ca3|d5f66ac5-4318-4a75-a913-93d070e49009": {
+      "ko": "3-[[(4-[[다이아미노(페닐아조)페닐]아조]-2-메틸페닐]아조]-N,N,N-트라이메틸-벤젠아미니움 및 그 염류",
+      "a": "3-[[(4-[[diamino(phenylazo)phenyl]azo]-2-methylphenyl]azo]-N,N,N-trimethyl-Benzenaminium and its salts",
+      "b": "Benzenaminium, 3-[[4-[[diamino(phenylazo)phenyl]azo]-2-methylphenyl]azo]- N,N,N-trimethyl-, and its salts, when used as a substance in hair dye products 1",
+      "verdict": "different",
+      "by": "cas-veto"
+    },
+    "9751a165-bd5b-4645-9663-50c34c034ca3|9ea5bfbd-171f-45f2-8b96-1cbe0772e8f2": {
+      "ko": "3-[[(4-[[다이아미노(페닐아조)페닐]아조]-2-메틸페닐]아조]-N,N,N-트라이메틸-벤젠아미니움 및 그 염류",
+      "a": "3-[[(4-[[diamino(phenylazo)phenyl]azo]-2-methylphenyl]azo]-N,N,N-trimethyl-Benzenaminium and its salts",
+      "b": "Benzenaminium, 3-[[4-[[diamino(phenylazo)phenyl]azo]-2-methylphenyl]azo]- N,N,N-trimethyl-, and its salts, when used as a substance in hair dye products",
+      "verdict": "different",
+      "by": "cas-veto"
+    },
+    "40607ac8-992d-46ef-a9dc-05680feac7df|b706fee9-bee7-4880-9d35-9d6f1ac42755": {
+      "ko": "위령선",
+      "a": "Clematis chinensis Osbeck",
+      "b": "Clematis chinensis Osbeck; Clematis hexapetala Pall.; Clematis terniflora var. mandshurica Rupr.( Clematis mandshurica Rupr.)",
+      "m1": {
+        "verdict": "different",
+        "confidence": 1,
+        "reason": "Entry B includes additional distinct botanical species (Clematis hexapetala Pall., Clematis terniflora var. mandshurica Rupr.) not present in Entry A, making them different substances/preparations."
+      },
+      "m2": {
+        "verdict": "different",
+        "confidence": 0.9,
+        "reason": "Entry B includes multiple botanical species (Clematis hexapetala, Clematis terniflora var. mandshurica) in addition to Clematis chinensis, while Entry A only lists Clematis chinensis. These are distinct botanical origins."
+      },
+      "verdict": "different",
+      "by": "gemini-consensus"
+    },
+    "5ef6dbc7-7cab-44e8-8e25-936bced51ff8|ff34bf17-aa72-48bc-82e7-420eb167e16c": {
+      "ko": "7-(벤조일아미노)-4-하이드록시-3-[[4-[(4-설포페닐)아조]페닐]아조]-2-나프탈렌설포닉애씨드 및 그 염류",
+      "a": "7-(Benzoylamino)-4-Hydroxy-3-[[4-[(4-Sulfophenyl)azo]phenyl]azo]-2-Naphthalenesulfonic Acid and its salts",
+      "b": "2-Naphthalenesulfonic acid, 7-(benzoylamino)-4-hydroxy-3-[[4-[(4-sulfophenyl)azo]phenyl]azo]-, and its salts, when used as a substance in hair dye products 1",
+      "verdict": "different",
+      "by": "cas-veto"
+    },
+    "21fa72ae-ae8f-4a57-9fce-20cae9a76756|ff34bf17-aa72-48bc-82e7-420eb167e16c": {
+      "ko": "7-(벤조일아미노)-4-하이드록시-3-[[4-[(4-설포페닐)아조]페닐]아조]-2-나프탈렌설포닉애씨드 및 그 염류",
+      "a": "7-(Benzoylamino)-4-Hydroxy-3-[[4-[(4-Sulfophenyl)azo]phenyl]azo]-2-Naphthalenesulfonic Acid and its salts",
+      "b": "2-Naphthalenesulfonic acid, 7-(benzoylamino)-4-hydroxy-3-[[4-[(4-sulfophenyl)azo]phenyl]azo]-, and its salts, when used as a substance in hair dye products",
+      "verdict": "different",
+      "by": "cas-veto"
+    },
+    "03c382c5-43da-4753-8952-5a47ef509538|683106fb-a2b2-4162-9d04-55f2dde808c8": {
+      "ko": "브로목시닐 3,5-다이브로모-4-하이드록시벤조나이트릴 및 브로목시닐헵타노에이트",
+      "a": "Bromoxynil Heptanoate",
+      "b": "Bromoxynil (ISO) (3,5-Dibromo-4-hydroxybenzonitrile) and Bromoxynil heptanoate (ISO)",
+      "m1": null,
+      "m2": {
+        "verdict": "different",
+        "confidence": 0.9,
+        "reason": "Entry A is Bromoxynil Heptanoate, while Entry B is a mixture of Bromoxynil and Bromoxynil Heptanoate. The presence of Bromoxynil as a separate component in Entry B makes it different from Entry A."
+      },
+      "verdict": "different",
+      "by": "gemini-consensus"
+    },
+    "45c24540-366d-451b-97e3-7a7d99c30043|9656b64b-f105-4820-94a4-29610ad2d198": {
+      "ko": "우로카닉애씨드, 우로카닉애씨드에틸",
+      "a": "Urocanic Acid and its ethyl ester",
+      "b": "3-Imidazol-4-ylacrylic acid (Urocanic acid) and its ethyl ester / 27538-35-8 / 248-515-1 4",
+      "m1": null,
+      "m2": {
+        "verdict": "different",
+        "confidence": 0.9,
+        "reason": "Entry A lists 'Urocanic Acid and its ethyl ester' without a CAS number. Entry B specifies '3-Imidazol-4-ylacrylic acid (Urocanic acid) and its ethyl ester' and provides CAS numbers 27538-35-8 and 104-98-3. The presence of a specific CAS number (104-98-3) in Entry B, which is not present or implied in Entry A, suggests a potential difference in the exact substance or its purity/form being referenced, or that Entry A is a broader category while Entry B is more specific."
+      },
+      "verdict": "different",
+      "by": "gemini-consensus"
+    },
+    "13208435-9c94-4595-ab67-504bb96b71e8|14bde2a8-b1c4-4862-80e0-6613a3f48b6c": {
+      "ko": "1,3,5-트라이하이드록시벤젠(플로로글루시놀) 및 그 염류",
+      "a": "1,3,5-Trihydroxybenzene (Phloroglucinol) and its salts",
+      "b": "1,3,5-Trihydroxybenzene (Phloroglucinol) and its salts, when used as a substance in hair dye products 1",
+      "m1": {
+        "verdict": "same",
+        "confidence": 0.9,
+        "reason": "Both entries refer to the same chemical group '1,3,5-Trihydroxybenzene (Phloroglucinol) and its salts'. Entry B adds a CAS number for the parent compound and a regulatory usage annotation, which do not define a chemically different substance or group."
+      },
+      "m2": {
+        "verdict": "different",
+        "confidence": 0.9,
+        "reason": "Entry B specifies a CAS number and a regulatory restriction for use in hair dye products, while Entry A does not. This suggests Entry B refers to a specific regulated form or application of the substance."
+      },
+      "verdict": "different",
+      "by": "gemini-consensus"
+    },
+    "0ca9a34a-613f-4e01-9388-d61d8ac01a11|6844428b-0ce6-4d3a-9ef2-5705bf7d9ac6": {
+      "ko": "2-다이에틸아미노에틸3-하이드록시-4-페닐벤조에이트 및 그 염류",
+      "a": "2-Diethylaminoethyl 3-hydroxy-4-phenylbenzoate and its salts",
+      "b": "2-Diethylaminoethyl 3-hydroxy-4-phenylbenzoate and its salts 1",
+      "verdict": "different",
+      "by": "cas-veto"
+    },
+    "1eea609e-a5b8-4adf-b6ae-a13a617edba8|c7bbb98b-9d9f-4d6c-95c7-8eeb2f814a32": {
+      "ko": "프로카인아미드, 그 염류 및 유도체",
+      "a": "Procainamide, its salts and derivatives",
+      "b": "Procainamide (INN), its salts and derivatives 2",
+      "verdict": "different",
+      "by": "cas-veto"
+    },
+    "8b8b6e5f-ca79-4bd9-9c50-c10463e92540|b0e8f63c-44e8-44ef-ae29-af5a017f2fe4": {
+      "ko": "N,N-다이에틸-p-페닐렌다이아민 및 그 염류",
+      "a": "N,N-Diethyl-p-phenylenediamine and its salts",
+      "b": "N,N-Diethyl-p-phenylenediamine and its salts, when used as a substance in hair dye products / 6065-27-6/ 6283-63-2 / 227-995-6/ 228-500-6 1",
+      "verdict": "different",
+      "by": "cas-veto"
+    },
+    "133a657b-2a05-4367-b553-8f945a3ba14a|58ef51ea-5ad3-48c5-b70c-49ffd0c462f7": {
+      "ko": "5-[(2,4-다이나이트로페닐]아미노]-2-(페닐아미노)-벤젠설포닉애씨드 및 그 염류",
+      "a": "5-[(2,4-dinitrophenyl]amino]-2-(phenylamino)-Benzenesulfonic acid and its salts",
+      "b": "Benzenesulfonic acid, 5-[(2,4-dinitrophenyl)amino]-2-(phenylamino)-, and its salts, when used as a substance in hair dye products",
+      "verdict": "different",
+      "by": "cas-veto"
+    },
+    "25e08de2-438f-4169-aa40-4d924182ad5d|c7f54619-b534-4af3-9495-e1c4064b2520": {
+      "ko": "설폰아마이드 및 그 유도체(톨루엔설폰아마이드/폼알데하이드수지, 톨루엔설폰아마이드/에폭시수지는 제외)",
+      "a": "Sulphonamide and and its derivatives(Except Toluenesulfonamide/Formaldehyde Resin, Toluenesulfonamide/Epoxy Resin)",
+      "b": "Sulphonamides (sulphanilamide and its derivatives obtained by substitution of one or more H-atoms of the -NH2 groups) and their salts",
+      "m1": {
+        "verdict": "different",
+        "confidence": 0.9,
+        "reason": "While the Korean standardized name is identical, the INCI names define the scope of the chemical groups differently. Entry A describes 'Sulphonamide and its derivatives' with specific exclusions, whereas Entry B defines 'Sulphonamides' as 'sulphanilamide and its derivatives obtained by substitution of one or more H-atoms of the -NH2 groups' and explicitly includes 'their salts'. These are distinct chemical definitions for the respective groups."
+      },
+      "m2": {
+        "verdict": "different",
+        "confidence": 0.9,
+        "reason": "Entry A refers to a broader category of sulfonamides and their derivatives, explicitly excluding certain resins. Entry B is more specific, defining sulfonamides as sulphanilamide and its derivatives obtained by substitution of H-atoms of the -NH2 groups, and their salts. The exclusion in A and the specific definition in B suggest they are not identical."
+      },
+      "verdict": "different",
+      "by": "gemini-consensus"
+    },
+    "23d7c687-699b-4885-9b70-103ab4b3af54|39f93623-f680-4be9-9b3f-2c5285ce56ce": {
+      "ko": "1,3,5-트리스(옥시라닐메틸)-1,3,5-트라이아진-2,4,6(1H,3H,5H)-트라이온",
+      "a": "1,3,5-Tris(Oxiranylmethyl)-1,3,5-Triazine-2,4,6(1H,3H,5H)-Trione",
+      "b": "1,3,5-Tris(oxiranylmethyl)-1,3,5-triazine-2,4,6(1H,3H,5H)-trione (TGIC)",
+      "verdict": "different",
+      "by": "cas-veto"
+    },
+    "12f1dbfa-8501-4eef-be61-6fe63871eb29|5922ba8f-00b6-4b46-ae71-8dc0ea6552ea": {
+      "ko": "플루아니손",
+      "a": "Fluanisone",
+      "b": "Fluanisone (INN)",
+      "verdict": "different",
+      "by": "cas-veto"
+    },
+    "24a1dfb7-406c-4edb-8a33-06738426f1a4|ec1ef159-d1eb-4b1f-b486-ed73cd74900c": {
+      "ko": "2급 알킬아민 및 그 염류",
+      "a": "Secondary alkylamine and its salts",
+      "b": "6-Isopropyl-2-decahydronaphthalenol, when used as a fragrance ingredient 4",
+      "m1": null,
+      "m2": {
+        "verdict": "different",
+        "confidence": 1,
+        "reason": "Entry A refers to a general class of chemicals (secondary alkylamines and their salts), while Entry B refers to a specific chemical compound (6-Isopropyl-2-decahydronaphthalenol) used as a fragrance ingredient. These are not the same substance."
+      },
+      "verdict": "different",
+      "by": "gemini-consensus"
+    },
+    "cdffef33-0b8d-4610-874f-7bdae8679643|e7af1dd4-e6a5-4cb8-8c33-a30b7fc2b203": {
+      "ko": "3,7-비스(다이메틸아미노)-페노치아진-5-윰 및 그 염류",
+      "a": "3,7-bis(Dimethylamino)-Phenothiazin-5-ium and its salts",
+      "b": "Phenothiazin-5-ium, 3,7-bis(dimethylamino)-, and its salts, when used as a substance in hair dye products",
+      "m1": {
+        "verdict": "same",
+        "confidence": 0.95,
+        "reason": "The INCI names describe the same core chemical entity, 3,7-bis(dimethylamino)-phenothiazin-5-ium and its salts. The difference in phrasing is stylistic, and the additional phrase in Entry B is a usage annotation, not a chemical distinction. The presence of a CAS number in B and its absence in A is considered an annotation difference."
+      },
+      "m2": {
+        "verdict": "different",
+        "confidence": 0.9,
+        "reason": "Entry B specifies 'when used as a substance in hair dye products' and provides a CAS number, indicating a specific regulated form or application, while Entry A is more general and lacks a CAS number."
+      },
+      "verdict": "different",
+      "by": "gemini-consensus"
+    },
+    "0a778996-ca5c-409d-b5ff-73087249b623|4d83d9d6-6c1a-495b-9c53-803bbda9e44e": {
+      "ko": "석유 증류물, hydrodesulfurised light catalytic cracked",
+      "a": "Distillates (petroleum), hydrodesulfurised light catalytic cracked 9",
+      "b": "Distillates (petroleum), light steam-cracked naphtha 9",
+      "verdict": "different",
+      "by": "cas-veto"
+    },
+    "49c85e3b-b7fe-4bbe-87af-7d5fdb5da3ae|cb761da6-474c-45d9-a370-bcf632724152": {
+      "ko": "석유 증류물, acidtreated light naphthenic",
+      "a": "Distillates (petroleum), acid-treated light naphthenic 9",
+      "b": "Distillates (petroleum), acid-treated heavy paraffinic 9",
+      "verdict": "different",
+      "by": "cas-veto"
     }
   }
 }
