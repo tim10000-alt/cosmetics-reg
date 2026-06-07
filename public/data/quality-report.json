@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-07T16:48:22.286Z",
+  "generated_at": "2026-06-07T17:31:34.321Z",
   "totalRegs": 94372,
   "coverage": {
     "AR": 4842,
@@ -19,11 +19,11 @@
     "SG": 5887,
     "TH": 5887,
     "TW": 2935,
-    "US": 184,
+    "US": 182,
     "VN": 5887
   },
   "restrictedNoLimit": 3840,
-  "statusConflicts": 454,
+  "statusConflicts": 456,
   "quarantinePending": 0,
   "staleCount": 0,
   "staleSources": [],
