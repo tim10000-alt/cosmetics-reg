@@ -100,7 +100,11 @@ function recoverCasToken(tok) {                 // 단일 토큰 → 유효 CAS 
   const core = t.replace(/\[[^\]]*\]/g, "").replace(/\([^)]*\)/g, "").trim();  // [1] 각주·qualifier 제거
   if (casValid(core)) return core;
   let m = core.match(/^(\d{2,7})\/(\d{1,2})\/(\d{1,3})$/);                      // 슬래시 날짜화 → 대시
-  if (m) { for (const mid of new Set([m[2], m[2].padStart(2, "0")])) { const c = m[1] + "-" + mid + "-" + String(Number(m[3])); if (casValid(c)) return c; } }
+  if (m) {
+    const firsts = new Set([m[1]]);
+    if (/^(19|20)\d{2}$/.test(m[1])) firsts.add(m[1].slice(2));               // 엑셀 날짜화 세기접두(19/20) 제거: "1993/04/09"→93-04-9
+    for (const f of firsts) for (const mid of new Set([m[2], m[2].padStart(2, "0")])) { const c = f + "-" + mid + "-" + String(Number(m[3])); if (casValid(c)) return c; }
+  }
   m = core.match(/^(\d{2,7}-\d{2})-?$/);                                        // 체크디짓 절단 → 계산
   if (m) { const c = m[1] + "-" + casCheckDigit(m[1]); if (casValid(c)) return c; }
   return null;
@@ -109,11 +113,12 @@ function normalizeCas(raw) {                     // {value, action: none|recover
   if (raw == null) return { value: raw, action: "none" };
   const txt = String(raw).replace(/[‑–—]/g, "-");
   const present = (txt.match(/\d{2,7}-\d{2}-\d/g) || []).filter(casValid);
-  if (present.length) return { value: raw, action: "none" };                    // 유효 CAS 보유 → 무수정
+  if (present.length) return raw !== txt ? { value: txt, action: "normalized" } : { value: raw, action: "none" }; // 유효 CAS — 단 유니코드 하이픈(‑–—)이면 ASCII 로 write-back
   const rec = [...new Set(txt.split(/[,;\n]/).map((s) => s.trim()).filter(Boolean).map(recoverCasToken).filter(Boolean))];
   if (rec.length) return { value: rec.join(", "), action: "recovered" };
   const v = txt.trim();
-  const artifact = /^[-—–]$/.test(v) || /^0+$/.test(v) || /^\d{1,2}\/\d{1,2}\/\d{2,4}$/.test(v) || /^\d{1,2}-\d{1,2}-\d{1,2}$/.test(v);
+  // 깨진 비-CAS 잔재 null: 대시/0/날짜형(d/m/yy·yyyy/mm/dd)/EINECS(\d3-\d3-\d=CAS아님). 복구는 위에서 이미 시도.
+  const artifact = /^[-—–]$/.test(v) || /^0+$/.test(v) || /^\d{1,2}[\/.-]\d{1,2}[\/.-]\d{2,4}$/.test(v) || /^\d{4}[\/.-]\d{1,2}[\/.-]\d{1,2}$/.test(v) || /^\d{3}-\d{3}-\d$/.test(v);
   return artifact ? { value: null, action: "nulled" } : { value: raw, action: "none" };
 }
 
@@ -285,7 +290,7 @@ function main() {
     // CAS 정규화 — 유효 CAS 보유 레코드는 무수정(오삭제 0), 깨진 것만 복구/null.
     if (i.cas_no != null) {
       const c = normalizeCas(i.cas_no);
-      if (c.action === "recovered") { i.cas_no = c.value; casRecovered++; ingChanged = true; }
+      if (c.action === "recovered" || c.action === "normalized") { i.cas_no = c.value; casRecovered++; ingChanged = true; }
       else if (c.action === "nulled") { i.cas_no = c.value; casNulled++; ingChanged = true; }
     }
     // cas_no 가 *성분명*으로 오염(CAS 패턴 0 + 알파벳 = 파서가 이름을 CAS 필드에 넣음. 예 색소
