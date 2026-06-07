@@ -41,7 +41,7 @@ jobs:
           # commit 후 push 시 latest 위에 rebase 위해 fetch-depth 충분히
           fetch-depth: 0
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: "24"
           cache: "npm"

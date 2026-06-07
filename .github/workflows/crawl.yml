@@ -45,7 +45,7 @@ jobs:
           # ⚠️ GH_PAT 요건: fine-grained + 이 repo + **Contents: Read and write**.
           #    (read-only PAT 를 넣으면 push 가 거부되어 commit 단계 실패 — 정품검증 발견 #2.)
           token: ${{ secrets.GH_PAT || github.token }}
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: "24"
           cache: "npm"
