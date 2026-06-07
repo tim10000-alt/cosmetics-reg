@@ -211,6 +211,13 @@ jobs:
         run: node scripts/color-identity-merge.cjs --apply
         continue-on-error: true
 
+      # 3-a-1.6) identity 분절 병합(결정론·자가치유) — byte-동일 inci_name 으로 쪼개진 동일물질 다중 entry
+      # (특히 JP 파서가 성분당 ~11 중복 생성)를 대표로 통합. 안전: 합의CAS 1개 or 전부無 + korean ≤1종만
+      # (CAS충돌=다른form 보존=분별력). 검색 시 한 성분이 여러 카드로 쪼개지지 않게 함.
+      - name: Merge fragmented identities (exact-name)
+        run: node scripts/identity-name-merge.cjs --apply
+        continue-on-error: true
+
       # 3-a-2) 품질 가디언(결정론·안전) — 모든 파서·override 후 실행. 불가능 농도값(>100/≤0) 제거 +
       # 오염 성분명·국가 행수 급감 flag(quarantine-names.json / guardian-baseline.json). 한도는 만들지 않음.
       - name: Quality guardian (self-heal + flag)
