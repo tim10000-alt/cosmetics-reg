@@ -2363,14 +2363,6 @@
       "why": "제품/용도별 허용농도 명시",
       "source_match": "MFDS"
     },
-    "fda489f5-be0a-4aa0-a6d8-cc85d8fd0abe:TW": {
-      "inci": "Deep Maroon, D&C Red No. 34, Red 34 Lake, CI 15880:1",
-      "ko": "적색220호",
-      "country": "TW",
-      "verdict": "banned",
-      "by": "claude-color",
-      "why": "외국허용 확증無 — 보류(검토큐)"
-    },
     "b80bde5b-61a5-4934-99a4-2e560057b4cd:TW": {
       "inci": "Carbon Black, D&C Black No. 2, CI 77266",
       "ko": "카본블랙",
@@ -2379,22 +2371,6 @@
       "by": "claude-judge",
       "why": "제품/용도별 허용농도 명시",
       "source_match": "MFDS"
-    },
-    "a0f7f6f1-2b0b-4af8-8766-d30273cbc345:TW": {
-      "inci": "Helindone Pink CN, D&C Red No. 30, Red 30 Lake, Aka226, VAT RED 1, CI 73360",
-      "ko": "적색226호",
-      "country": "TW",
-      "verdict": "banned",
-      "by": "claude-color",
-      "why": "외국허용 확증無 — 보류(검토큐)"
-    },
-    "ac736c98-37be-4863-a994-640b27b849cf:TW": {
-      "inci": "Quinizarine Green SS, D&C Green No. 6, Midori202, CI 61565",
-      "ko": "녹색202호",
-      "country": "TW",
-      "verdict": "banned",
-      "by": "claude-color",
-      "why": "외국허용 확증無 — 보류(검토큐)"
     },
     "0afebd58-d487-4bb7-8f5c-f675d2704430:TW": {
       "inci": "CI 60725",
@@ -2550,14 +2526,6 @@
       "why": "제품/용도별 허용농도 명시",
       "source_match": "MFDS"
     },
-    "528d4ce7-ef9d-4ed2-8208-ad3df1a20a90:TW": {
-      "inci": "Ponceau SX, FD&C Red No. 4, Red 4 Lake, Aka504, FOOD RED 1, CI 14700",
-      "ko": "적색504호",
-      "country": "TW",
-      "verdict": "banned",
-      "by": "claude-color",
-      "why": "외국허용 확증無 — 보류(검토큐)"
-    },
     "771cb7a7-9393-48f8-98f9-766084a50992:TW": {
       "inci": "Tetrabromofluorescein, D&C Red No. 21, Red 21 Lake, Aka223, CI 45380:2",
       "ko": "적색223호",
@@ -2643,14 +2611,6 @@
       "verdict": "banned",
       "by": "claude-judge",
       "why": "허용농도 없음(색소조항/금지문구/애매)"
-    },
-    "b907078d-989a-4ee6-b219-935534aa90c5:TW": {
-      "inci": "Phthalocyanine Blue, Ao404, PIGMENT BLUE 15, CI 74160",
-      "ko": "청색404호",
-      "country": "TW",
-      "verdict": "banned",
-      "by": "claude-color",
-      "why": "외국허용 확증無 — 보류(검토큐)"
     },
     "f24201bc-22ef-4b4f-8638-d243089e2979:TW": {
       "inci": "Phenyl Mercuric Benzoate",
@@ -2834,14 +2794,6 @@
       "by": "claude-judge",
       "why": "허용 배합한도(농도) 명시",
       "source_match": "MFDS"
-    },
-    "f6455095-1803-4bac-8332-2e4e1105fd3a:TW": {
-      "inci": "Alizurine Purple SS, D&C Violet No. 2, Murasaki201, CI 60725",
-      "ko": "자색201호",
-      "country": "TW",
-      "verdict": "banned",
-      "by": "claude-color",
-      "why": "외국허용 확증無 — 보류(검토큐)"
     },
     "6a421bfe-a31c-40dd-b87e-fefee8e0d7d1:CA": {
       "inci": "Diethanolamine",
@@ -6991,14 +6943,6 @@
       "why": "허용색소표 오태깅·외국허용확증",
       "source_match": "MFDS"
     },
-    "22645d55-480f-432a-81f5-5068aadabfc8:TW": {
-      "inci": "Carbanthrene Blue, Ao204, VAT BLUE 6, CI 69825",
-      "ko": "청색204호",
-      "country": "TW",
-      "verdict": "banned",
-      "by": "claude-color",
-      "why": "외국허용 확증無 — 보류(검토큐)"
-    },
     "78278306-f4bc-44e4-83a1-1943ba6a18ff:TW": {
       "inci": "Capsanthin/Capsorubin",
       "ko": "캡산틴/캡소루빈",
@@ -7034,14 +6978,6 @@
       "by": "claude-color",
       "why": "허용색소표 오태깅·외국허용확증",
       "source_match": "MFDS"
-    },
-    "9af57fed-62e6-4970-b4d7-735f2e7c6291:TW": {
-      "inci": "Aluminium, zinc, magnesium and calcium stearates",
-      "ko": "알루미늄스테아레이트/징크스테아레이트/마그네슘스테아레이트/칼슘스테아레이트",
-      "country": "TW",
-      "verdict": "banned",
-      "by": "claude-color",
-      "why": "외국허용 확증無 — 보류(검토큐)"
     },
     "6b5d23f9-539b-49b2-82d6-cbef6c185826:TW": {
       "inci": "Calcium Stearate",
@@ -7195,14 +7131,6 @@
       "by": "claude-color",
       "why": "허용색소표 오태깅·외국허용확증",
       "source_match": "MFDS"
-    },
-    "bce0157c-ed39-491e-a08c-df0cf3b4beed:TW": {
-      "inci": "Alizarine Cyanine Green F, D&C Green No. 5, Midori201, CI 61570",
-      "ko": "녹색201호",
-      "country": "TW",
-      "verdict": "banned",
-      "by": "claude-color",
-      "why": "외국허용 확증無 — 보류(검토큐)"
     },
     "71d7953d-72e1-4084-95a1-77de3208d169:TW": {
       "inci": "Tetrachlorotetrabromofluorescein, D&C Red No. 27, Aka218, Red 27 Lake, CI 45410:1",
@@ -7454,22 +7382,6 @@
       "why": "허용색소표 오태깅·외국허용확증",
       "source_match": "MFDS"
     },
-    "da65a025-9fb3-47d0-9134-d7aba64fc13d:CN": {
-      "inci": "Pyranine Conc, D&C Green No. 8, Midori204, CI 59040",
-      "ko": "녹색204호",
-      "country": "CN",
-      "verdict": "banned",
-      "by": "claude-color",
-      "why": "외국허용 확증無 — 보류(검토큐)"
-    },
-    "6448bd27-1e4c-452d-a9a4-42cf6253dba7:CN": {
-      "inci": "Brilliant Lake Red R, D&C Red No. 31, Red 31 Lake, Aka219, PIGMENT RED 64, CI 15800",
-      "ko": "적색219호",
-      "country": "CN",
-      "verdict": "banned",
-      "by": "claude-color",
-      "why": "외국허용 확증無 — 보류(검토큐)"
-    },
     "b80bde5b-61a5-4934-99a4-2e560057b4cd:CN": {
       "inci": "Carbon Black, D&C Black No. 2, CI 77266",
       "ko": "카본블랙",
@@ -7478,30 +7390,6 @@
       "by": "claude-color",
       "why": "허용색소표 오태깅·외국허용확증",
       "source_match": "MFDS"
-    },
-    "a0f7f6f1-2b0b-4af8-8766-d30273cbc345:CN": {
-      "inci": "Helindone Pink CN, D&C Red No. 30, Red 30 Lake, Aka226, VAT RED 1, CI 73360",
-      "ko": "적색226호",
-      "country": "CN",
-      "verdict": "banned",
-      "by": "claude-color",
-      "why": "외국허용 확증無 — 보류(검토큐)"
-    },
-    "ac736c98-37be-4863-a994-640b27b849cf:CN": {
-      "inci": "Quinizarine Green SS, D&C Green No. 6, Midori202, CI 61565",
-      "ko": "녹색202호",
-      "country": "CN",
-      "verdict": "banned",
-      "by": "claude-color",
-      "why": "외국허용 확증無 — 보류(검토큐)"
-    },
-    "f4b312db-53aa-49ee-975a-fa63c2be9b9a:CN": {
-      "inci": "Quinoline Yellow SS, D&C Yellow No. 11, Ki204, SOLVENT YELLOW 33, CI 47000",
-      "ko": "황색204호",
-      "country": "CN",
-      "verdict": "banned",
-      "by": "claude-color",
-      "why": "외국허용 확증無 — 보류(검토큐)"
     },
     "896a006e-52ac-4bea-93dc-57b8631883eb:CN": {
       "inci": "CI 45380",
@@ -7674,14 +7562,6 @@
       "why": "허용색소표 오태깅·외국허용확증",
       "source_match": "MFDS"
     },
-    "528d4ce7-ef9d-4ed2-8208-ad3df1a20a90:CN": {
-      "inci": "Ponceau SX, FD&C Red No. 4, Red 4 Lake, Aka504, FOOD RED 1, CI 14700",
-      "ko": "적색504호",
-      "country": "CN",
-      "verdict": "banned",
-      "by": "claude-color",
-      "why": "외국허용 확증無 — 보류(검토큐)"
-    },
     "1e28ae3b-25e0-4300-a695-ead3077009b3:CN": {
       "inci": "Amaranth, Aka2, Acid Red 27 Aluminum Lake, FOOD RED 9, CI 16185",
       "ko": "적색2호",
@@ -7698,28 +7578,12 @@
       "verdict": "banned",
       "by": "prohibition-veto"
     },
-    "8076e8bb-b23a-4dea-a855-74e6ed087916:CN": {
-      "inci": "Toluidine Red, Aka221, PIGMENT RED 3, CI 12120",
-      "ko": "적색221호",
-      "country": "CN",
-      "verdict": "banned",
-      "by": "claude-color",
-      "why": "외국허용 확증無 — 보류(검토큐)"
-    },
     "73865be7-f6eb-4062-a1bf-559f8f236e6f:CN": {
       "inci": "Fast Green FCF, FD&C Green No. 3, Green 3 Lake, Midori3, CI 42053",
       "ko": "녹색3호",
       "country": "CN",
       "verdict": "banned",
       "by": "prohibition-veto"
-    },
-    "b907078d-989a-4ee6-b219-935534aa90c5:CN": {
-      "inci": "Phthalocyanine Blue, Ao404, PIGMENT BLUE 15, CI 74160",
-      "ko": "청색404호",
-      "country": "CN",
-      "verdict": "banned",
-      "by": "claude-color",
-      "why": "외국허용 확증無 — 보류(검토큐)"
     },
     "eadf6b65-7856-4f8e-9ce6-f633fcedf018:CN": {
       "inci": "Erythrosine Yellowish NA, D&C Orange No. 11, Daidai207, CI 45425",
@@ -7752,14 +7616,6 @@
       "by": "claude-color",
       "why": "허용색소표 오태깅·외국허용확증",
       "source_match": "MFDS"
-    },
-    "f6455095-1803-4bac-8332-2e4e1105fd3a:CN": {
-      "inci": "Alizurine Purple SS, D&C Violet No. 2, Murasaki201, CI 60725",
-      "ko": "자색201호",
-      "country": "CN",
-      "verdict": "banned",
-      "by": "claude-color",
-      "why": "외국허용 확증無 — 보류(검토큐)"
     },
     "51d04747-b65e-42e2-b234-de232425f43e:ID": {
       "inci": "CI 61565",
@@ -7939,14 +7795,6 @@
       "country": "JP",
       "verdict": "banned",
       "by": "prohibition-veto"
-    },
-    "8076e8bb-b23a-4dea-a855-74e6ed087916:JP": {
-      "inci": "Toluidine Red, Aka221, PIGMENT RED 3, CI 12120",
-      "ko": "적색221호",
-      "country": "JP",
-      "verdict": "banned",
-      "by": "claude-color",
-      "why": "외국허용 확증無 — 보류(검토큐)"
     },
     "73865be7-f6eb-4062-a1bf-559f8f236e6f:JP": {
       "inci": "Fast Green FCF, FD&C Green No. 3, Green 3 Lake, Midori3, CI 42053",
@@ -9255,6 +9103,171 @@
       "by": "claude-cond",
       "why": "조건부-허용 authority-ban",
       "source_match": "화장품안전기술규범"
+    },
+    "da65a025-9fb3-47d0-9134-d7aba64fc13d:CN": {
+      "inci": "Pyranine Conc, D&C Green No. 8, Midori204, CI 59040",
+      "ko": "녹색204호",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-color",
+      "why": "허용색소표 오태깅·외국허용확증",
+      "source_match": "MFDS"
+    },
+    "6448bd27-1e4c-452d-a9a4-42cf6253dba7:CN": {
+      "inci": "Brilliant Lake Red R, D&C Red No. 31, Red 31 Lake, Aka219, PIGMENT RED 64, CI 15800",
+      "ko": "적색219호",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-color",
+      "why": "허용색소표 오태깅·외국허용확증",
+      "source_match": "MFDS"
+    },
+    "a0f7f6f1-2b0b-4af8-8766-d30273cbc345:CN": {
+      "inci": "Helindone Pink CN, D&C Red No. 30, Red 30 Lake, Aka226, VAT RED 1, CI 73360",
+      "ko": "적색226호",
+      "country": "CN",
+      "verdict": "listed",
+      "by": "claude-color",
+      "why": "허용색소표 오태깅·외국허용확증",
+      "source_match": "MFDS"
+    },
+    "ac736c98-37be-4863-a994-640b27b849cf:CN": {
+      "inci": "Quinizarine Green SS, D&C Green No. 6, Midori202, CI 61565",
+      "ko": "녹색202호",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-color",
+      "why": "허용색소표 오태깅·외국허용확증",
+      "source_match": "MFDS"
+    },
+    "f4b312db-53aa-49ee-975a-fa63c2be9b9a:CN": {
+      "inci": "Quinoline Yellow SS, D&C Yellow No. 11, Ki204, SOLVENT YELLOW 33, CI 47000",
+      "ko": "황색204호",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-color",
+      "why": "허용색소표 오태깅·외국허용확증",
+      "source_match": "MFDS"
+    },
+    "528d4ce7-ef9d-4ed2-8208-ad3df1a20a90:CN": {
+      "inci": "Ponceau SX, FD&C Red No. 4, Red 4 Lake, Aka504, FOOD RED 1, CI 14700",
+      "ko": "적색504호",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-color",
+      "why": "허용색소표 오태깅·외국허용확증",
+      "source_match": "MFDS"
+    },
+    "8076e8bb-b23a-4dea-a855-74e6ed087916:CN": {
+      "inci": "Toluidine Red, Aka221, PIGMENT RED 3, CI 12120",
+      "ko": "적색221호",
+      "country": "CN",
+      "verdict": "banned",
+      "by": "claude-color",
+      "why": "외국허용 확증無 — 보류(검토큐)"
+    },
+    "b907078d-989a-4ee6-b219-935534aa90c5:CN": {
+      "inci": "Phthalocyanine Blue, Ao404, PIGMENT BLUE 15, CI 74160",
+      "ko": "청색404호",
+      "country": "CN",
+      "verdict": "banned",
+      "by": "claude-color",
+      "why": "외국허용 확증無 — 보류(검토큐)"
+    },
+    "f6455095-1803-4bac-8332-2e4e1105fd3a:CN": {
+      "inci": "Alizurine Purple SS, D&C Violet No. 2, Murasaki201, CI 60725",
+      "ko": "자색201호",
+      "country": "CN",
+      "verdict": "restricted",
+      "by": "claude-color",
+      "why": "허용색소표 오태깅·외국허용확증",
+      "source_match": "MFDS"
+    },
+    "8076e8bb-b23a-4dea-a855-74e6ed087916:JP": {
+      "inci": "Toluidine Red, Aka221, PIGMENT RED 3, CI 12120",
+      "ko": "적색221호",
+      "country": "JP",
+      "verdict": "banned",
+      "by": "claude-color",
+      "why": "외국허용 확증無 — 보류(검토큐)"
+    },
+    "fda489f5-be0a-4aa0-a6d8-cc85d8fd0abe:TW": {
+      "inci": "Deep Maroon, D&C Red No. 34, Red 34 Lake, CI 15880:1",
+      "ko": "적색220호",
+      "country": "TW",
+      "verdict": "listed",
+      "by": "claude-color",
+      "why": "허용색소표 오태깅·외국허용확증",
+      "source_match": "MFDS"
+    },
+    "a0f7f6f1-2b0b-4af8-8766-d30273cbc345:TW": {
+      "inci": "Helindone Pink CN, D&C Red No. 30, Red 30 Lake, Aka226, VAT RED 1, CI 73360",
+      "ko": "적색226호",
+      "country": "TW",
+      "verdict": "listed",
+      "by": "claude-color",
+      "why": "허용색소표 오태깅·외국허용확증",
+      "source_match": "MFDS"
+    },
+    "ac736c98-37be-4863-a994-640b27b849cf:TW": {
+      "inci": "Quinizarine Green SS, D&C Green No. 6, Midori202, CI 61565",
+      "ko": "녹색202호",
+      "country": "TW",
+      "verdict": "listed",
+      "by": "claude-color",
+      "why": "허용색소표 오태깅·외국허용확증",
+      "source_match": "MFDS"
+    },
+    "528d4ce7-ef9d-4ed2-8208-ad3df1a20a90:TW": {
+      "inci": "Ponceau SX, FD&C Red No. 4, Red 4 Lake, Aka504, FOOD RED 1, CI 14700",
+      "ko": "적색504호",
+      "country": "TW",
+      "verdict": "listed",
+      "by": "claude-color",
+      "why": "허용색소표 오태깅·외국허용확증",
+      "source_match": "MFDS"
+    },
+    "22645d55-480f-432a-81f5-5068aadabfc8:TW": {
+      "inci": "Carbanthrene Blue, Ao204, VAT BLUE 6, CI 69825",
+      "ko": "청색204호",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "claude-color",
+      "why": "외국허용 확증無 — 보류(검토큐)"
+    },
+    "9af57fed-62e6-4970-b4d7-735f2e7c6291:TW": {
+      "inci": "Aluminium, zinc, magnesium and calcium stearates",
+      "ko": "알루미늄스테아레이트/징크스테아레이트/마그네슘스테아레이트/칼슘스테아레이트",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "claude-color",
+      "why": "외국허용 확증無 — 보류(검토큐)"
+    },
+    "b907078d-989a-4ee6-b219-935534aa90c5:TW": {
+      "inci": "Phthalocyanine Blue, Ao404, PIGMENT BLUE 15, CI 74160",
+      "ko": "청색404호",
+      "country": "TW",
+      "verdict": "banned",
+      "by": "claude-color",
+      "why": "외국허용 확증無 — 보류(검토큐)"
+    },
+    "bce0157c-ed39-491e-a08c-df0cf3b4beed:TW": {
+      "inci": "Alizarine Cyanine Green F, D&C Green No. 5, Midori201, CI 61570",
+      "ko": "녹색201호",
+      "country": "TW",
+      "verdict": "listed",
+      "by": "claude-color",
+      "why": "허용색소표 오태깅·외국허용확증",
+      "source_match": "MFDS"
+    },
+    "f6455095-1803-4bac-8332-2e4e1105fd3a:TW": {
+      "inci": "Alizurine Purple SS, D&C Violet No. 2, Murasaki201, CI 60725",
+      "ko": "자색201호",
+      "country": "TW",
+      "verdict": "listed",
+      "by": "claude-color",
+      "why": "허용색소표 오태깅·외국허용확증",
+      "source_match": "MFDS"
     }
   }
 }

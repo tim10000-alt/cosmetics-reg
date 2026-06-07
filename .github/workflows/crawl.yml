@@ -204,6 +204,13 @@ jobs:
         run: node scripts/apply-overrides.cjs
         continue-on-error: true
 
+      # 3-a-1.5) 색소 identity 병합(결정론·자가치유) — us:colors(21 CFR)·andean fetcher 가 만든
+      # 단독 색소명 orphan(예 "D&C Red No. 34")을 같은 designation 의 검색가능 colorant(복합명·CI번호)에
+      # 병합. 권위 US/Andean 허용표가 검색카드·foreign-permit 검증에 보이게 함(유일매칭만, 멱등).
+      - name: Merge fragmented color identities
+        run: node scripts/color-identity-merge.cjs --apply
+        continue-on-error: true
+
       # 3-a-2) 품질 가디언(결정론·안전) — 모든 파서·override 후 실행. 불가능 농도값(>100/≤0) 제거 +
       # 오염 성분명·국가 행수 급감 flag(quarantine-names.json / guardian-baseline.json). 한도는 만들지 않음.
       - name: Quality guardian (self-heal + flag)
