@@ -30,6 +30,15 @@ function isPureColorName(inci) {
   return t.size === 1 && [...t][0] === (inci || "").trim().replace(/\s+/g, " ").replace(/No\.\s*/, "No. ");
 }
 
+// ── CI(Colour Index) 번호 identity (2차 pass) ──
+// CI 번호는 색소의 권위 동일성 키(같은 단일 CI = 같은 색소). 단 ①접미(:1/:2=다른 lake)는 정확매칭
+// ②복수 CI(group fragment)·③조건문 잔재 이름(parser artifact)은 위험 → 제외. "CI" 마커 동반 숫자만
+// (bare 5자리 CAS 오인 방지).
+const ciMarked = (s) => { const out = new Set(); const re = /\bC\.?\s?I\.?\s*(\d{5}(?::\d)?)\b/gi; let m; while ((m = re.exec(String(s || "")))) out.add(m[1]); return [...out]; };
+const MFDS_SRC = /MFDS/;
+const AUTH_COLOR = /21 ?CFR|Comunidad Andina|Annex IV|Annex VI|NMPA|IECIC|MHLW|ASEAN|positive list|착색|着色|色素/i;
+const NAME_ARTIFACT = /when |and its| if |except|함유|제한|provided|용도|범위|기타|단서|salt.*\(/i;
+
 // ── load ──
 const ingObj = JSON.parse(fs.readFileSync(path.join(DATA, "ingredients.json"), "utf8"));
 const ingredients = ingObj.rows;
@@ -59,28 +68,52 @@ for (const c of colorants) {
 let merged = 0, skippedAmbig = 0, skippedNone = 0, regsMoved = 0, regsDedup = 0;
 const removeIds = new Set();
 const log = [];
-for (const o of orphans) {
-  const tok = [...colorTokens(o.inci_name)][0];
-  const targets = (tokToColorants.get(tok) || []).filter((c) => c.id !== o.id);
-  if (targets.length === 0) { skippedNone++; continue; }
-  if (targets.length > 1) { skippedAmbig++; log.push(`  ~ skip(ambiguous ${targets.length}): ${tok}`); continue; }
-  const target = targets[0];
-  // colorant 의 기존 (country, source_document) 집합 — 중복 방지
+// orphan 의 전 규제를 target 으로 이전(국가+출처 중복제거)·synonym 추가·orphan 제거.
+function doMerge(o, target, tag) {
   const existing = new Set((regsByIng.get(target.id) || []).map((x) => x.reg.country_code + "||" + x.reg.source_document));
   let movedThis = 0, dedupThis = 0;
   for (const { reg } of (regsByIng.get(o.id) || [])) {
     const key = reg.country_code + "||" + reg.source_document;
-    if (existing.has(key)) { reg.__drop = true; dedupThis++; continue; } // colorant 가 이미 동일 출처 보유 → orphan reg 폐기
-    reg.ingredient_id = target.id;   // 이전
+    if (existing.has(key)) { reg.__drop = true; dedupThis++; continue; }
+    reg.ingredient_id = target.id;
     existing.add(key);
     movedThis++;
   }
-  // 단독명을 synonym 에 추가(검색 도달)
   if (!target.synonyms) target.synonyms = [];
   if (!target.synonyms.includes(o.inci_name) && !(target.inci_name || "").includes(o.inci_name)) target.synonyms.push(o.inci_name);
   removeIds.add(o.id);
   merged++; regsMoved += movedThis; regsDedup += dedupThis;
-  log.push(`  + ${tok}: regs ${movedThis} 이전${dedupThis ? ` (중복 ${dedupThis} 폐기)` : ""} -> "${(target.inci_name || "").slice(0, 46)}"`);
+  log.push(`  + [${tag}] regs ${movedThis} 이전${dedupThis ? ` (중복 ${dedupThis} 폐기)` : ""}: "${(o.inci_name || "").slice(0, 32)}" -> "${(target.inci_name || "").slice(0, 40)}"`);
+}
+
+// ── Pass 1: D&C/FD&C designation 토큰 ──
+for (const o of orphans) {
+  const tok = [...colorTokens(o.inci_name)][0];
+  const targets = (tokToColorants.get(tok) || []).filter((c) => c.id !== o.id && !removeIds.has(c.id));
+  if (targets.length === 0) { skippedNone++; continue; }
+  if (targets.length > 1) { skippedAmbig++; log.push(`  ~ skip(ambiguous ${targets.length}): ${tok}`); continue; }
+  doMerge(o, targets[0], tok);
+}
+
+// ── Pass 2: CI 번호 identity (단일 CI-marked thin → 유일 단일 CI rich target) ──
+// thin = MFDS 없음 + 권위 색소 reg 보유 + 단일 CI-marked + non-artifact 이름. rich = MFDS 보유.
+const hasMfds = (id) => (regsByIng.get(id) || []).some((x) => MFDS_SRC.test(x.reg.source_document || ""));
+const hasAuthColor = (id) => (regsByIng.get(id) || []).some((x) => AUTH_COLOR.test((x.reg.source_document || "") + " " + (x.reg.conditions || "")));
+const ciToRich = new Map();
+for (const c of ingredients) {
+  if (removeIds.has(c.id) || !hasMfds(c.id)) continue;
+  const cis = ciMarked(c.inci_name);
+  if (cis.length !== 1) continue;           // 단일 CI rich target 만(group 위험 제외)
+  (ciToRich.get(cis[0]) || ciToRich.set(cis[0], []).get(cis[0])).push(c);
+}
+for (const o of ingredients) {
+  if (removeIds.has(o.id) || hasMfds(o.id) || !hasAuthColor(o.id)) continue;
+  if (NAME_ARTIFACT.test(o.inci_name || "")) continue;        // 조건문 잔재 이름 제외(분별력)
+  const cis = ciMarked(o.inci_name);
+  if (cis.length !== 1) continue;                              // 복수 CI fragment 제외
+  const targets = (ciToRich.get(cis[0]) || []).filter((c) => c.id !== o.id && !removeIds.has(c.id));
+  if (targets.length !== 1) { if (targets.length > 1) skippedAmbig++; continue; }
+  doMerge(o, targets[0], "CI " + cis[0]);
 }
 
 // ── 적용: reg rows 재작성(__drop 제거, ingredient_id 재지정 반영) + orphan ingredient 제거 ──
@@ -95,5 +128,12 @@ if (apply && merged > 0) {
   ingObj.rows = newIngredients;
   fs.writeFileSync(path.join(DATA, "ingredients.json"), JSON.stringify(ingObj));
   for (const f of regFiles) fs.writeFileSync(path.join(REGDIR, f), JSON.stringify(regByFile[f]));
+  // meta.json 성분 카운트 동기화 — us:colors 가 merge 전 카운트로 써둔 것을 orphan 제거 반영해 갱신
+  // (안 하면 부제목 성분수가 매일 merge 제거분만큼 stale). regs 는 불변(이전만)이라 그대로.
+  try {
+    const metaPath = path.join(DATA, "meta.json");
+    const meta = JSON.parse(fs.readFileSync(metaPath, "utf8"));
+    if (meta.counts) { meta.counts.ingredients = newIngredients.length; fs.writeFileSync(metaPath, JSON.stringify(meta, null, 2)); }
+  } catch {}
   console.log("적용 완료.");
 } else if (!apply) console.log("(dry-run — --apply 로 적용)");
