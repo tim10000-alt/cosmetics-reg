@@ -71,6 +71,12 @@ function stripRtlTail(name) {
 // 오병합 유발.) 매 run 자가치유 = 봇 갱신이 또 틀린 CAS 를 가져와도 durable·무료 자동.
 const ELEMENT_CAS = { gold: "7440-57-5", silver: "7440-22-4", copper: "7440-50-8", platinum: "7440-06-4", lead: "7439-92-1", zinc: "7440-66-6", iron: "7439-89-6", aluminum: "7429-90-5", aluminium: "7429-90-5", titanium: "7440-32-6", tin: "7440-31-5", nickel: "7440-02-0", chromium: "7440-47-3", bismuth: "7440-69-9", palladium: "7440-05-3", magnesium: "7439-95-4", manganese: "7439-96-5", barium: "7440-39-3", cobalt: "7440-48-4" };
 const ELEMENT_BY_CAS = Object.fromEntries(Object.entries(ELEMENT_CAS).map(([e, c]) => [c, e]));
+// 흔한 무기 안료(authoritative CAS=물리상수). fetcher 가 같은 안료를 "Titanium dioxide"(CAS無)·
+// "Titanium Dioxide,CI 77891"(CAS有) 등 변형명/CAS유무로 분절 생성 → 검색 시 색소(listed)·UV필터
+// (restricted) facet 이 다른 카드로 쪼개짐. 이름이 *정확히*(CI접미 제거 후) 안료명일 때만 CAS 부여 →
+// CAS 병합으로 한 카드 통합. 부분일치 금지("Silver chloride deposited on titanium dioxide" 오병합 방지).
+const PIGMENT_CAS = { "titanium dioxide": "13463-67-7", "zinc oxide": "1314-13-2", "mica": "12001-26-2" };
+const pigNorm = (s) => String(s || "").toLowerCase().replace(/[,\s]*c\.?\s?i\.?\s*\d{4,6}(:\d)?/g, "").replace(/[,\s]+$/, "").trim();
 // 화합물 CAS 오기 자가치유 — *독성 금지물질*이 *다른(허용) 물질*의 CAS 를 잘못 보유해 CAS 병합으로
 // 오병합되는 경우(분별력 사고: 발암물질↔허용안료가 한 헤드라인). 정확한 CAS 로 교정해 분리.
 // 실측: "Chromium (VI) Trioxide"(6가 크로뮴=발암, 정확 CAS 1333-82-0)가 1308-38-9(=Chromium(III)
@@ -182,6 +188,7 @@ function main() {
   let recovered = 0, ingChanged = false;
   let nameFieldRecovered = 0, nameFieldNulled = 0;       // 보조 표시명(한/중/일) 정리
   let casRecovered = 0, casNulled = 0, casElementFixed = 0, casFromNameFixed = 0;   // CAS 정규화 + 원소CAS 오기교정 + 이름속 CAS 복구
+  let casNameToSyn = 0;                                          // cas_no 에 박힌 *성분명*(CAS 아님) → synonyms 이전 + null
   let nameTrimmed = 0;                                          // 이름 앞뒤 공백 제거
   const corrupt = [];
   // 한 필드의 오염명 복구 시도 — RTL 꼬리 절단 또는 JP matrix-bleed 절단. 회복 결과가 깨끗하면 반환.
@@ -253,11 +260,30 @@ function main() {
         }
       }
     }
+    // 안료 CAS 부여(분절 통합) — 이름이 정확히(CI접미 제거) 흔한 안료명인데 유효 CAS 가 없으면 부여.
+    {
+      const pc = PIGMENT_CAS[pigNorm(i.inci_name)];
+      if (pc) {
+        const hasValid = (String(i.cas_no || "").match(/\d{2,7}-\d{2}-\d/g) || []).some(casValid);
+        if (!hasValid) { i.cas_no = pc; casElementFixed++; ingChanged = true; }
+      }
+    }
     // CAS 정규화 — 유효 CAS 보유 레코드는 무수정(오삭제 0), 깨진 것만 복구/null.
     if (i.cas_no != null) {
       const c = normalizeCas(i.cas_no);
       if (c.action === "recovered") { i.cas_no = c.value; casRecovered++; ingChanged = true; }
       else if (c.action === "nulled") { i.cas_no = c.value; casNulled++; ingChanged = true; }
+    }
+    // cas_no 가 *성분명*으로 오염(CAS 패턴 0 + 알파벳 = 파서가 이름을 CAS 필드에 넣음. 예 색소
+    // "CI 60725" 의 cas="Solvent Violet 13\nD&C Violet No. 2…"). IngredientHeader CAS 칸에 이름이
+    // 그대로 노출되는 표기버그(~663건) → 이름들을 synonyms 로 이전(검색보존)하고 cas_no=null.
+    // 유효 CAS 가 하나라도 있으면 위 normalizeCas 가 보존했으므로 여기 안 옴(오삭제 0).
+    if (i.cas_no != null && !(String(i.cas_no).match(/\d{2,7}-\d{2}-\d/g) || []).some(casValid) && /[A-Za-z가-힣]{3,}/.test(String(i.cas_no))) {
+      const names = String(i.cas_no).split(/[\n\/;]+/).map((s) => s.trim()).filter((s) => s && s.length >= 2 && !/^\d+$/.test(s));
+      if (!Array.isArray(i.synonyms)) i.synonyms = [];
+      const have = new Set([...(i.synonyms || []).map((s) => s.toLowerCase().trim()), String(i.inci_name || "").toLowerCase().trim()]);
+      for (const nm of names) if (!have.has(nm.toLowerCase())) { i.synonyms.push(nm); have.add(nm.toLowerCase()); }
+      i.cas_no = null; casNameToSyn++; ingChanged = true;
     }
     // cas_no 가 여전히 유효 CAS 가 아니면(EINECS·null·복구실패) inci_name 에 박힌 CAS 복구 시도.
     // CAS 병합을 살려 BR/Mercosur 한글 쌍둥이로 ban 이 도달하게 함. 한글명이 이미 있는 레코드는
@@ -350,7 +376,7 @@ function main() {
   console.log(`  불가능값(>100/≤0) 제거: ${overFixed}`);
   console.log(`  오염명 실명 복구(RTL 헤더 + JP matrix): ${recovered}`);
   console.log(`  보조 표시명(한/중/일) 정리: 복구 ${nameFieldRecovered} · null처리 ${nameFieldNulled}`);
-  console.log(`  CAS 정규화: 복구 ${casRecovered} · 깨진값(날짜/0/대시) null ${casNulled} · 원소CAS 오기교정 ${casElementFixed} · 이름속CAS 복구 ${casFromNameFixed}`);
+  console.log(`  CAS 정규화: 복구 ${casRecovered} · 깨진값(날짜/0/대시) null ${casNulled} · 원소CAS 오기교정 ${casElementFixed} · 이름속CAS 복구 ${casFromNameFixed} · 이름오염→synonyms ${casNameToSyn}`);
   console.log(`  이름 앞뒤 공백 제거: ${nameTrimmed}`);
   console.log(`  각주마커 안전 collapse(X(1)→X): ${footCollapsed}`);
   console.log(`  임베디드 조건문 collapse(X 0.5%…→X): ${embedCollapsed}`);
