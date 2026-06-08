@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-08T03:42:56.652Z",
-  "totalRegs": 94478,
+  "generated_at": "2026-06-08T14:55:06.817Z",
+  "totalRegs": 94477,
   "coverage": {
     "AR": 4832,
     "BO": 2180,
@@ -11,7 +11,7 @@
     "EC": 2180,
     "EU": 6773,
     "ID": 5881,
-    "JP": 3074,
+    "JP": 3072,
     "KR": 4035,
     "MY": 5881,
     "PE": 2180,
@@ -32,7 +32,7 @@
     "EC": 2180,
     "EU": 2081,
     "ID": 1815,
-    "JP": 2743,
+    "JP": 2741,
     "KR": 0,
     "MY": 1815,
     "PE": 2180,
@@ -49,7 +49,7 @@
   "casContaminationSuspects": 222,
   "staleCount": 0,
   "staleSources": [],
-  "limitAnomalyCount": 1,
+  "limitAnomalyCount": 0,
   "postHealCorrupt": 0,
   "postHealWhitespace": 0,
   "checked_at_note": "matches regulations-query primary-row logic"
