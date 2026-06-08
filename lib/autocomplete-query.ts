@@ -46,7 +46,7 @@ export async function fetchSuggestions(rawQuery: string, signal?: AbortSignal): 
     for (const ing of ds.ingredients) {
       if (results.length >= 8) break;
       if (signal?.aborted) return [];
-      if (isCasQuery && ing.cas_no && ing.cas_no.split(/\s+/).some((c) => c.trim().startsWith(rawCas))) add(ing);
+      if (isCasQuery && ing.cas_no && ing.cas_no.split(/[\s,;]+/).some((c) => c.trim().startsWith(rawCas))) add(ing);  // 쉼표/세미콜론 분리(다중 CAS 검색 도달, lib 미러)
       else if (!isCasQuery && ((ing.chinese_name && ing.chinese_name.includes(raw)) || (ing.japanese_name && ing.japanese_name.includes(raw)))) add(ing);
     }
   }

@@ -70,7 +70,7 @@ async function main() {
   for (const i of ingredients) {
     byInciLower.set(i.inci_name.toLowerCase(), i);
     if (i.cas_no) {
-      for (const cas of i.cas_no.split(/\s+/)) if (cas.trim()) byCas.set(cas.trim(), i);
+      for (const cas of i.cas_no.split(/[\s,;]+/)) if (cas.trim()) byCas.set(cas.trim(), i);  // 쉼표/세미콜론 분리 — 다중 CAS 매칭 누락 방지(lib/data-loader 미러)
     }
   }
 

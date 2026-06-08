@@ -106,7 +106,7 @@ async function main() {
   const byCas = new Map<string, IngredientRow>(), byInci = new Map<string, IngredientRow>();
   for (const i of ingredients) {
     byInci.set(i.inci_name.toLowerCase(), i);
-    if (i.cas_no) for (const c of String(i.cas_no).split(/\s+/)) if (c.trim()) byCas.set(c.trim(), i);
+    if (i.cas_no) for (const c of String(i.cas_no).split(/[\s,;]+/)) if (c.trim()) byCas.set(c.trim(), i);  // 쉼표/세미콜론 분리(다중 CAS 매칭, lib 미러)
   }
 
   const now = new Date().toISOString();
