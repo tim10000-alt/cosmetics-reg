@@ -224,6 +224,13 @@ jobs:
         run: node scripts/quality-guardian.cjs
         continue-on-error: true
 
+      # 3-a-3) 교차출처 일관성 감사(결정론·無Gemini) — EU 법적채택국(ASEAN6·Andean4)·Mercosur 가
+      # 같은 물질에 다른 권위 status 면 표면화(cross-source-divergences.json 검토큐). 자동교정 안 함
+      # (관할권 차이는 실제 법 — 분별력). 신규 desync 급증 = 파서 regression 조기경보.
+      - name: Cross-source consistency audit (review queue)
+        run: node scripts/cross-source-consistency.cjs --write
+        continue-on-error: true
+
       # 3-b) 데이터 품질 자동 점검 — 지표 계산 + 직전(quality-report.json) 대비 회귀 감지.
       # quality-report.json 갱신은 아래 commit 에 포함되어 추이가 장기 추적됨.
       - name: Data quality check
