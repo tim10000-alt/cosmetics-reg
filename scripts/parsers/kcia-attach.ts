@@ -284,7 +284,7 @@ async function main() {
   const byKorean = new Map<string, IngredientRow>();
   for (const i of ingredients) {
     byInci.set(i.inci_name.toLowerCase(), i);
-    if (i.cas_no) { byCas.set(i.cas_no, i); for (const c of i.cas_no.split(/[\s,;]+/)) { const t = c.trim(); if (t && t !== i.cas_no) byCas.set(t, i); } }  // 다중 CAS 토큰별 키 추가(분절 방지·전체문자열 키 유지=무회귀)
+    if (i.cas_no) { byCas.set(i.cas_no, i); for (const c of i.cas_no.split(/[\s,;/]+/)) { const t = c.trim().replace(/\(.*$/, ""); if (t && t !== i.cas_no) byCas.set(t, i); } }  // 다중 CAS 토큰별 키 추가(쉼표/세미콜론/슬래시·주석strip·분절 방지·전체문자열 키 유지=무회귀)
     if (i.korean_name) byKorean.set(i.korean_name, i);
   }
 

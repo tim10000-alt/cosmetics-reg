@@ -33,8 +33,8 @@ export function findOrCreateIngredient(
   if (cas) {
     // byCas 는 *개별* CAS 토큰으로 키가 만들어진다(run.ts). 추출 reg 가 다중 CAS("A, B")면 전체
     // 문자열로 조회하면 매칭 실패→신규성분 중복생성(분절). 토큰별로 조회해 기존 성분에 정확 귀속.
-    for (const tok of cas.split(/[\s,;]+/)) {
-      const t = tok.trim();
+    for (const tok of cas.split(/[\s,;/]+/)) {
+      const t = tok.trim().replace(/\(.*$/, "");
       if (!t) continue;
       const byC = byCas.get(t);
       if (byC) return byC.id;

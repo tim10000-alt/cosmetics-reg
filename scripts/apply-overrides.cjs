@@ -18,7 +18,7 @@ const ings = JSON.parse(fs.readFileSync(path.join(DATA, "ingredients.json"), "ut
 const byInci = new Map(), byCas = new Map();
 for (const i of ings) {
   byInci.set((i.inci_name || "").toLowerCase(), i.id);
-  if (i.cas_no) for (const c of String(i.cas_no).split(/[\s,;]+/)) if (c.trim()) byCas.set(c.trim(), i.id);  // 쉼표/세미콜론 분리(다중 CAS 매칭, lib 미러)
+  if (i.cas_no) for (const c of String(i.cas_no).split(/[\s,;/]+/)) { const t = c.trim().replace(/\(.*$/, ""); if (t) byCas.set(t, i.id); }  // 쉼표/세미콜론/슬래시 분리 + 주석 strip(다중 CAS 매칭, lib 미러)
 }
 
 const now = new Date().toISOString();

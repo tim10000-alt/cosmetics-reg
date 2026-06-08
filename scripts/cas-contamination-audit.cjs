@@ -29,7 +29,7 @@ const toks = (s) => new Set(String(s || "").toLowerCase().replace(/[^a-z0-9\s]/g
 const single = new Map();
 for (const i of ingredients) {
   if (!i.cas_no) continue;
-  const t = i.cas_no.split(/[\s,;]+/).map((c) => c.trim()).filter(isValid);
+  const t = i.cas_no.split(/[\s,;/]+/).map((c) => c.trim().replace(/\(.*$/, "")).filter(isValid);
   if (t.length === 1) { const a = single.get(t[0]) || []; a.push(i); single.set(t[0], a); }
 }
 
@@ -37,7 +37,7 @@ const suspects = [];
 const seen = new Set();
 for (const i of ingredients) {
   if (!i.cas_no) continue;
-  const t = i.cas_no.split(/[\s,;]+/).map((c) => c.trim()).filter(isValid);
+  const t = i.cas_no.split(/[\s,;/]+/).map((c) => c.trim().replace(/\(.*$/, "")).filter(isValid);
   if (t.length < 2) continue;
   const myt = toks(i.inci_name);
   if (!myt.size) continue;
