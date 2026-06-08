@@ -297,7 +297,9 @@ function IngredientHeader({ ingredient }: { ingredient: NonNullable<LookupRespon
   return (
     <section className="rounded-lg border border-zinc-200 bg-white px-5 py-4 dark:border-zinc-800 dark:bg-zinc-900">
       <div className="text-sm text-zinc-500">INCI</div>
-      <div className="text-lg font-semibold text-zinc-900 dark:text-zinc-50">
+      {/* overflow-wrap:anywhere — 복합 발효명 등 공백 없는 긴 "/"-연결 토큰(예 388자)이 CSS 기본
+          줄바꿈("/"는 break point 아님)에 안 걸려 가로 오버플로우하던 것 방지(전수 sweep 30,397중 1건). */}
+      <div className="text-lg font-semibold text-zinc-900 dark:text-zinc-50 [overflow-wrap:anywhere]">
         {ingredient.inci_name}
       </div>
       <dl className="mt-2 grid grid-cols-2 gap-x-4 gap-y-1 text-xs text-zinc-600 dark:text-zinc-400 sm:grid-cols-4">
