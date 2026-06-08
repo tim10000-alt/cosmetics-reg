@@ -1,0 +1,1022 @@
+{
+  "generated": "cas-contamination-audit",
+  "note": "다중CAS↔다른이름 단일CAS 0토큰겹침 검토큐. 대부분 같은물질 다른명명(legit). 자동수정 금지(분별력). 검토 후 guardian COMPOUND_CAS_FIX 명시교정. 위험방향(다른status)은 false-allowed 스캔이 별도 보증. 큐 *증가* = 신규오염/파서버그 점검.",
+  "count": 203,
+  "suspects": [
+    {
+      "inci": "[(p-Tolyloxy)methyl]Oxirane",
+      "shared_cas": "26447-14-3",
+      "conflicts_with": "Cresyl Glycidyl Ether"
+    },
+    {
+      "inci": "1- and 2-Naphthylamines and their salts",
+      "shared_cas": "91-59-8",
+      "conflicts_with": "2-Naphthylamine"
+    },
+    {
+      "inci": "1- and 2-Naphthylamines and their salts",
+      "shared_cas": "91-59-8",
+      "conflicts_with": "2-Naphthylamine and its salts"
+    },
+    {
+      "inci": "1- and 2-Naphthylamines and their salts",
+      "shared_cas": "134-32-7",
+      "conflicts_with": "1-Naphthylamine"
+    },
+    {
+      "inci": "1-(5,6,7,8-Tetrahydro-3,5,5,6,8,8,-hexamethyl-2-naphthyl)ethan-1-one (AHTN)",
+      "shared_cas": "21145-77-7",
+      "conflicts_with": "1-(5,6,7,8- Tetrahidro- 3,5,5,6,8,8- hexame-til-2- naftil)etan-1-ona Todos os produtos exceto pro- dutos de higiene bucal a) Produtos sem enxágue: 0,1 % exceto: Produtos hidroalcoólicos : 1 % (N.o CAS"
+    },
+    {
+      "inci": "1-Amino-2-nitro-4-(2', 3'-dihydroxypropyl)amino-5-chloro-benzene + 1,4-bis-(2',3'-dihydroxypropyl)amino-2-nitro-5-chlorobenzene",
+      "shared_cas": "95576-92-4",
+      "conflicts_with": "HC Red No.11"
+    },
+    {
+      "inci": "1-Amino-2-nitro-4-(2', 3'-dihydroxypropyl)amino-5-chloro-benzene + 1,4-bis-(2',3'-dihydroxypropyl)amino-2-nitro-5-chlorobenzene",
+      "shared_cas": "95576-92-4",
+      "conflicts_with": "HC Red No. 11"
+    },
+    {
+      "inci": "2-Amino-4,6-dinitrophenol and 2- amino-4,6-dinitrophenol, sodium salt",
+      "shared_cas": "96-91-3",
+      "conflicts_with": "Picramic Acid"
+    },
+    {
+      "inci": "2-Methoxymethyl-p-Aminophenol",
+      "shared_cas": "90817-34-8",
+      "conflicts_with": "(203) 6-Methoxy-N2- methyl-2,3- pyridinediamine hydrochloride and dihydrochloride salt 6-Methoxy-2-Methylamino-3- Aminopyridine HCl"
+    },
+    {
+      "inci": "3 and 4-(4-Hydroxy-4-methylpentyl)cyclohex-3-ene-1-carbaldehyde",
+      "shared_cas": "31906-04-4",
+      "conflicts_with": ") HYDROXYCITRONELLAL 21. Hydroxymethylpentylcyclohexenecarboxaldehyde (CAS No"
+    },
+    {
+      "inci": "3-[[4-[(2-Hydroxyethyl)amino]-2-nitrophenyl]amino]-1,2-propanediol and its salts, when used as a substance in hair dye products",
+      "shared_cas": "114087-42-2",
+      "conflicts_with": "HC Blue No. 9"
+    },
+    {
+      "inci": "3-[[4-[(2-Hydroxyethyl)methylamino]-2-nitrophenyl]amino]-1,2-propanediol and its salts",
+      "shared_cas": "102767-27-1",
+      "conflicts_with": "HC Blue No. 10"
+    },
+    {
+      "inci": "3-[[4-[(2-Hydroxyethyl)methylamino]-2-nitrophenyl]amino]-1,2-propanediol and its salts, when used as a substance in hair dye products",
+      "shared_cas": "102767-27-1",
+      "conflicts_with": "HC Blue No. 10"
+    },
+    {
+      "inci": "3-[[4-[Ethyl(2-Hydroxyethyl)Amino]-2-Nitrophenyl]Amino]-1,2- Propanediol and its salts",
+      "shared_cas": "114087-42-2",
+      "conflicts_with": "HC Blue No. 9"
+    },
+    {
+      "inci": "3,7-bis(diethylamino)-Phenoxazin-5-ium and its salts",
+      "shared_cas": "33203-82-6",
+      "conflicts_with": "Basic Blue 3"
+    },
+    {
+      "inci": "3',6'-Dihydroxy-4',5'-diiodospiro(isobenzofuran-1(3H),9'-[9H]xanthene)-3-one; (Solvent Red 73) and its sodium salt (Acid Red 95; CI 45425) when used as a substance in hair dye products",
+      "shared_cas": "33239-19-9",
+      "conflicts_with": "Erythrosine Yellowish NA, D&C Orange No. 11, Daidai207, CI 45425"
+    },
+    {
+      "inci": "4-Aminobenzenesulfonic acid",
+      "shared_cas": "515-74-2",
+      "conflicts_with": "Sodium Sulfanilate"
+    },
+    {
+      "inci": "4-Aminobenzenesulfonic acid and its salts",
+      "shared_cas": "515-74-2",
+      "conflicts_with": "Sodium Sulfanilate"
+    },
+    {
+      "inci": "4-Aminobenzenesulfonic acid, when used as a substance in hair dye products",
+      "shared_cas": "515-74-2",
+      "conflicts_with": "Sodium Sulfanilate"
+    },
+    {
+      "inci": "4-Benzyloxyphenol(Hydroquinone monobenzyl ether)",
+      "shared_cas": "622-62-8",
+      "conflicts_with": "4-Ethoxyphenol"
+    },
+    {
+      "inci": "4-Ethoxy-m-Phenylenediamine",
+      "shared_cas": "67801-06-3",
+      "conflicts_with": "4-Ethoxybenzene-1,3-diammonium dichloride"
+    },
+    {
+      "inci": "4-Ethoxy-m-phenylenediamine and its salts",
+      "shared_cas": "67801-06-3",
+      "conflicts_with": "4-Ethoxybenzene-1,3-diammonium dichloride"
+    },
+    {
+      "inci": "4-Ethoxy-m-Phenylenediamine and its salts (e.g. 4-Ethoxy-m-Phenylenediamine Sulfate)",
+      "shared_cas": "67801-06-3",
+      "conflicts_with": "4-Ethoxybenzene-1,3-diammonium dichloride"
+    },
+    {
+      "inci": "4-Methyl-m-phenylenediamine (Toluene-2,4-diamine)",
+      "shared_cas": "25376-45-8",
+      "conflicts_with": "Methylphenylenediamines, their N-substituted derivatives and their salts(e.g. : 2,6-Dihydroxyethylaminotoluene) (with the exception of hair dye substance used in hair dyes products)"
+    },
+    {
+      "inci": "Acetyl Hexamethyl Tetralin",
+      "shared_cas": "21145-77-7",
+      "conflicts_with": "1-(5,6,7,8- Tetrahidro- 3,5,5,6,8,8- hexame-til-2- naftil)etan-1-ona Todos os produtos exceto pro- dutos de higiene bucal a) Produtos sem enxágue: 0,1 % exceto: Produtos hidroalcoólicos : 1 % (N.o CAS"
+    },
+    {
+      "inci": "Alpha-Damascone",
+      "shared_cas": "23726-94-5",
+      "conflicts_with": "(Z)-1-(2,6,6- Trimetil-2- ciclohexen-1-il)- 2-buten-1-ona (N.o CAS"
+    },
+    {
+      "inci": "Alpha-Damascone",
+      "shared_cas": "24720-09-0",
+      "conflicts_with": "trans-rose Ketone-1"
+    },
+    {
+      "inci": "Alpha-Damascone; cis-Rose ketone 1, trans-Rose ketone 1, Rose ketone 4 (Damascone), Rose ketone 3 (delta-Damascone), trans-Rose ketone 3, cis-Rose ketone 2 (cis-beta-Damascone), trans-Rose ketone 2 (trans-beta-Damascone)",
+      "shared_cas": "23726-94-5",
+      "conflicts_with": "(Z)-1-(2,6,6- Trimetil-2- ciclohexen-1-il)- 2-buten-1-ona (N.o CAS"
+    },
+    {
+      "inci": "Basic Blue 47",
+      "shared_cas": "67905-56-0",
+      "conflicts_with": "1-Amino-4-[[4-[(dimethylamino)methyl]phenyl]amino]anthraquinone and its salts, when used as a substance in hair dye products / 12217-43-5 / 235-398-7 1"
+    },
+    {
+      "inci": "Basic Blue 47",
+      "shared_cas": "12217-43-5",
+      "conflicts_with": "1-Amino-4-[[4-[(dimethylamino)methyl]phenyl]amino]anthraquinone and its salts不得使用於染髮用途化粧品"
+    },
+    {
+      "inci": "Basic Blue 47",
+      "shared_cas": "12217-43-5",
+      "conflicts_with": "1-Amino-4-[[4- [(dimethylamino)methyl]phenyl]amino]anthraquinone and its salts, when used as a substance in hair dye products 67905-56- 0/"
+    },
+    {
+      "inci": "Basic Blue 6",
+      "shared_cas": "7057-57-0",
+      "conflicts_with": "Benzo[a]phenoxazin-7-ium, 9-(dimethylamino)-, and its salts, when used as a substance in hair dye products / 966-62-1 / 213-524-1 1"
+    },
+    {
+      "inci": "Basic Blue 6",
+      "shared_cas": "966-62-1",
+      "conflicts_with": "Benzo[a]phenoxazin -7-ium, 9-(dimethylamino)-, and its salts不得使用於染髮用途化粧品"
+    },
+    {
+      "inci": "Basic Red 22",
+      "shared_cas": "12221-52-2",
+      "conflicts_with": "5-((4-(Dimethylamino)phenyl)azo)-1,4-dimethyl-1H-1,2,4-triazolium and its salts不得使用於染髮用途化粧品"
+    },
+    {
+      "inci": "Basic Red 22",
+      "shared_cas": "12221-52-2",
+      "conflicts_with": "5-((4-(Dimethylamino)phenyl)azo)-1,4-dimethyl-1H-1,2,4-triazolium and its salts, when used as a substance in hair dye products 1"
+    },
+    {
+      "inci": "Basic Red 46",
+      "shared_cas": "12221-69-1",
+      "conflicts_with": "3(or5)-((4-(Benzylmethylamino)phenyl)azo)-1,2-(or1,4)-dimethyl-1H-1,2,4-triazolium and its salts 不得使用於染髮用途化粧品"
+    },
+    {
+      "inci": "Basic Red 46",
+      "shared_cas": "12221-69-1",
+      "conflicts_with": "3(or 5)-((4-(Benzylmethylamino)phenyl)azo)-1,2-(or 1,4)- dimethyl-1H-1,2,4-triazolium and its salts, when used as a substance in hair dye products 89959-98- 8/"
+    },
+    {
+      "inci": "Basic Red 46",
+      "shared_cas": "89959-98-8",
+      "conflicts_with": "3(or5)-((4-(Benzylmethylamino)phenyl)azo)-1,2-(or1,4)-dimethyl-1H- 1,2,4-triazolium and its salts, when used as a substance in hair dye products / 12221-69-1 1"
+    },
+    {
+      "inci": "Basic Red 46",
+      "shared_cas": "89959-98-8",
+      "conflicts_with": "3(or5)-((4-(Benzylmethylamino)phenyl)azo)-1,2-(or1,4)-dimethyl-1H- 1,2,4-triazolium and its salts, when used as a substance in hair dye products"
+    },
+    {
+      "inci": "Basic Violet 3",
+      "shared_cas": "467-63-0",
+      "conflicts_with": "380 Corante CI 42555; Corante CI 42555:1; Corante CI 42555:2 548-62- 9/"
+    },
+    {
+      "inci": "Benzene",
+      "shared_cas": "8002-05-9",
+      "conflicts_with": "Petroleum"
+    },
+    {
+      "inci": "Benzene",
+      "shared_cas": "8002-05-9",
+      "conflicts_with": "Petroleum 7"
+    },
+    {
+      "inci": "Benzenemethanaminium, N-ethyl-N-[4-[[4-[ethyl-[(3-sulfo-phenyl)-methyl]-amino]- phenyl] [2-sulfophenyl)methylene]-2,5-cyclohexadien-1-ylidene]-3-sulfo, inner salts, disodium salt and its ammonium and aluminium salts",
+      "shared_cas": "3844-45-9",
+      "conflicts_with": "Acid Blue 9"
+    },
+    {
+      "inci": "Benzo[a]Pyrene",
+      "shared_cas": "65996-93-2",
+      "conflicts_with": "Pitch, coal tar, high-temp."
+    },
+    {
+      "inci": "Benzoic Acid and its salts and ester",
+      "shared_cas": "1863-63-4",
+      "conflicts_with": "Ammonium Benzoate"
+    },
+    {
+      "inci": "Benzoic Acid and its salts and ester",
+      "shared_cas": "582-25-2",
+      "conflicts_with": "Potassium Benzoate"
+    },
+    {
+      "inci": "Benzoic Acid and its salts and ester",
+      "shared_cas": "553-70-8",
+      "conflicts_with": "Magnesium Benzoate"
+    },
+    {
+      "inci": "Benzoic Acid and its salts and ester",
+      "shared_cas": "93-58-3",
+      "conflicts_with": "Methyl Benzoate"
+    },
+    {
+      "inci": "Benzoic Acid and its salts and ester",
+      "shared_cas": "93-89-0",
+      "conflicts_with": "Ethyl Benzoate"
+    },
+    {
+      "inci": "Benzoic Acid and its salts and ester",
+      "shared_cas": "2315-68-6",
+      "conflicts_with": "Propyl Benzoate"
+    },
+    {
+      "inci": "Benzoic Acid and its salts and ester",
+      "shared_cas": "136-60-7",
+      "conflicts_with": "Butyl Benzoate"
+    },
+    {
+      "inci": "Benzoic Acid and its salts and ester",
+      "shared_cas": "939-48-0",
+      "conflicts_with": "Isopropyl Benzoate"
+    },
+    {
+      "inci": "Benzoic Acid and its salts and ester",
+      "shared_cas": "93-99-2",
+      "conflicts_with": "Phenyl Benzoate"
+    },
+    {
+      "inci": "Benzoic Acid and its salts and ester",
+      "shared_cas": "532-32-1",
+      "conflicts_with": "Sodium Benzoate"
+    },
+    {
+      "inci": "Benzoic Acid and its salts and ester",
+      "shared_cas": "532-32-1",
+      "conflicts_with": "Sodium benzoate"
+    },
+    {
+      "inci": "Biphenyl-4-ylamine",
+      "shared_cas": "92-67-1",
+      "conflicts_with": "Xenylamine"
+    },
+    {
+      "inci": "Biphenyl-4-ylamine",
+      "shared_cas": "92-67-1",
+      "conflicts_with": "4-Biphenylamine"
+    },
+    {
+      "inci": "Biphenyl-4-ylamine",
+      "shared_cas": "92-67-1",
+      "conflicts_with": "4-Aminobiphenyl"
+    },
+    {
+      "inci": "Biphenyl-4-ylamine",
+      "shared_cas": "2113-61-3",
+      "conflicts_with": "4-Aminobiphenyl hydrochloride"
+    },
+    {
+      "inci": "Biphenyl-4-ylamine",
+      "shared_cas": "2113-61-3",
+      "conflicts_with": "4-Aminobiphenyl Hydrochloride"
+    },
+    {
+      "inci": "Bromoxynil",
+      "shared_cas": "1689-84-5",
+      "conflicts_with": "3,5-Dibromo-4-Hydroxybenzonitrile"
+    },
+    {
+      "inci": "Brown 1",
+      "shared_cas": "1320-07-6",
+      "conflicts_with": "Acid Orange 24 (CI 20170), when used as a substance in hair dye products"
+    },
+    {
+      "inci": "Brown 1",
+      "shared_cas": "1320-07-6",
+      "conflicts_with": "Acid Orange 24 (CI 20170) 不得使用於染髮用途化粧品"
+    },
+    {
+      "inci": "Brown 1",
+      "shared_cas": "1320-07-6",
+      "conflicts_with": "Acid Orange 24 (CI 20170), when used as a substance in hair dye products 1"
+    },
+    {
+      "inci": "Butenal",
+      "shared_cas": "4170-30-3",
+      "conflicts_with": "Crotonaldehyde"
+    },
+    {
+      "inci": "Butenal",
+      "shared_cas": "4170-30-3",
+      "conflicts_with": "Crotonaldehyde 1"
+    },
+    {
+      "inci": "Butyl 4-hydroxybenzoate and its salts Propyl 4-hydroxybenzoate and its salts",
+      "shared_cas": "94-26-8",
+      "conflicts_with": "Butylparaben"
+    },
+    {
+      "inci": "Butyl 4-hydroxybenzoate and its salts Propyl 4-hydroxybenzoate and its salts",
+      "shared_cas": "94-13-3",
+      "conflicts_with": "Propylparaben"
+    },
+    {
+      "inci": "Butyl 4-hydroxybenzoate and its salts Propyl 4-hydroxybenzoate and its salts",
+      "shared_cas": "35285-69-9",
+      "conflicts_with": "Sodium Propylparaben"
+    },
+    {
+      "inci": "Butyl 4-hydroxybenzoate and its salts Propyl 4-hydroxybenzoate and its salts",
+      "shared_cas": "36457-20-2",
+      "conflicts_with": "Sodium Butylparaben"
+    },
+    {
+      "inci": "Butyl 4-hydroxybenzoate and its salts Propyl 4-hydroxybenzoate and its salts",
+      "shared_cas": "38566-94-8",
+      "conflicts_with": "Potassium Butylparaben"
+    },
+    {
+      "inci": "Butyl 4-hydroxybenzoate and its salts Propyl 4-hydroxybenzoate and its salts",
+      "shared_cas": "84930-16-5",
+      "conflicts_with": "Potassium Propylparaben"
+    },
+    {
+      "inci": "C15-19 Alkane",
+      "shared_cas": "64741-76-0",
+      "conflicts_with": "Distillates (petroleum), heavy hydrocracked, if they contain > 3 % w/w DMSO extract"
+    },
+    {
+      "inci": "C15-19 Alkane",
+      "shared_cas": "64741-76-0",
+      "conflicts_with": "Distillates (petroleum), heavy hydrocracked, if they contain > 3 % w/w DMSO extract 7"
+    },
+    {
+      "inci": "C15-19 Alkane",
+      "shared_cas": "64742-46-7",
+      "conflicts_with": "C12-20 Isoalkane"
+    },
+    {
+      "inci": "C15-19 Alkane",
+      "shared_cas": "64742-46-7",
+      "conflicts_with": "Distillates (petroleum), hydrotreated middle, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen"
+    },
+    {
+      "inci": "C15-19 Alkane",
+      "shared_cas": "64742-46-7",
+      "conflicts_with": "Distillates (petroleum), hydrotreated middle"
+    },
+    {
+      "inci": "C15-19 Alkane",
+      "shared_cas": "64742-46-7",
+      "conflicts_with": "Distillates (petroleum), hydrotreated middle, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen 8"
+    },
+    {
+      "inci": "Citric Acid",
+      "shared_cas": "77-92-9",
+      "conflicts_with": "Alpha-hydroxy acids, including polyhydroxy acids and bionic acids with alpha hydroxyl groups, and their salts"
+    },
+    {
+      "inci": "Cyclotetrasiloxane",
+      "shared_cas": "556-67-2",
+      "conflicts_with": "Octamethylcyclotetrasiloxane, D4"
+    },
+    {
+      "inci": "Damascenone",
+      "shared_cas": "23696-85-7",
+      "conflicts_with": "Rose Ketone-4"
+    },
+    {
+      "inci": "Decamethylenebis(trimethylammonium) salt (e.g. decamethonium bromide)",
+      "shared_cas": "156-74-1",
+      "conflicts_with": "1,10-Decanediaminium, N,N,N,N',N',N'-hexamethyl-(9CI)"
+    },
+    {
+      "inci": "Dehydroacetic acid and its salts",
+      "shared_cas": "4418-26-2",
+      "conflicts_with": "Sodium Dehydroacetate"
+    },
+    {
+      "inci": "Delta-Damascone",
+      "shared_cas": "23726-91-2",
+      "conflicts_with": "trans-Rose Ketone-2"
+    },
+    {
+      "inci": "Delta-Damascone",
+      "shared_cas": "23726-91-2",
+      "conflicts_with": "Trans-Rose Ketone-2"
+    },
+    {
+      "inci": "Delta-Damascone",
+      "shared_cas": "23726-92-3",
+      "conflicts_with": "cis-Rose Ketone-2"
+    },
+    {
+      "inci": "Delta-Damascone",
+      "shared_cas": "23726-92-3",
+      "conflicts_with": "Cis-Rose Ketone-2"
+    },
+    {
+      "inci": "Delta-Damascone",
+      "shared_cas": "71048-82-3",
+      "conflicts_with": "trans-rose Ketone-3"
+    },
+    {
+      "inci": "Delta-Damascone",
+      "shared_cas": "57378-68-4",
+      "conflicts_with": "Rose Ketone-3"
+    },
+    {
+      "inci": "Diaminotoluene, [4-methyl-m-phenylene diamine]",
+      "shared_cas": "25376-45-8",
+      "conflicts_with": "Methylphenylenediamines, their N-substituted derivatives and their salts(e.g. : 2,6-Dihydroxyethylaminotoluene) (with the exception of hair dye substance used in hair dyes products)"
+    },
+    {
+      "inci": "Dimethylnitrosoamine",
+      "shared_cas": "621-64-7",
+      "conflicts_with": "Nitrosodipropylamine"
+    },
+    {
+      "inci": "Dimethylnitrosoamine",
+      "shared_cas": "1116-54-7",
+      "conflicts_with": "2,2'-(Nitrosoimino)bisethanol"
+    },
+    {
+      "inci": "Direct Black 51",
+      "shared_cas": "3442-21-5",
+      "conflicts_with": "3(or5)-[[4-[(7-amino-1-hydroxy-3-sulphonato-2-naphthyl)azo]- 1-naphthyl]azo]salicylic acid and its salts, when used as a substance in hair dye products / 34977-63-4 / 252-305-5 1"
+    },
+    {
+      "inci": "Direct Black 51",
+      "shared_cas": "3442-21-5",
+      "conflicts_with": "3(or5)-[[4-[(7-amino-1-hydroxy-3-sulphonato-2-naphthyl)azo]- 1-naphthyl]azo]salicylic acid and its salts, when used as a substance in hair dye products"
+    },
+    {
+      "inci": "Direct Black 51",
+      "shared_cas": "34977-63-4",
+      "conflicts_with": "3(or5)-[[4-[(7-amino-1-hydroxy-3-sulphonato-2-naphthyl)azo]-1-naphthyl]azo]salicylic acid and its salts不得使用於染髮用途化粧品"
+    },
+    {
+      "inci": "Direct Black 51",
+      "shared_cas": "34977-63-4",
+      "conflicts_with": "3(or5)-[[4-[(7-amino-1-hydroxy-3-sulphonato-2-naphthyl)azo]-1- naphthyl]azo]salicylic acid and its salts, when used as a substance in hair dye products 3442-21- 5/"
+    },
+    {
+      "inci": "Direct Red 80",
+      "shared_cas": "2610-10-8",
+      "conflicts_with": "2-Naphthalenesulfonic acid, 7,7'-(carbonyldiimino)bis(4-hydroxy-3-[[2-sulfo-4-[(4-sulfophenyl)azo]phenyl]azo]-"
+    },
+    {
+      "inci": "Direct Red 80",
+      "shared_cas": "2610-10-8",
+      "conflicts_with": "7,7'-(carbonyldiimino)bis(4-hydroxy-3-[[2-sulfo-4-[(4-sulfophenyl)azo]phenyl]azo-2-Naphthalenesulfonic acid"
+    },
+    {
+      "inci": "Direct Red 80",
+      "shared_cas": "2610-10-8",
+      "conflicts_with": "2-Naphthalenesulfonic acid, 7,7'-(carbonyldiimino)bis(4-hydroxy-3-[[2-sulfo-4-[(4-sulfophenyl)azo]phenyl]azo]-, and its salts, when used as a substance in hair dye products"
+    },
+    {
+      "inci": "Direct Red 80",
+      "shared_cas": "2610-10-8",
+      "conflicts_with": "2-Naphthalenesulfonic acid, 7,7’-(carbonyldiimino)bis(4-hydroxy-3-[[2-sulfo-4-[(4-sulfophenyl) azo]phenyl]azo]-, and its salts, when used as a substance in hair dye products / 25188-41-4 1"
+    },
+    {
+      "inci": "Direct Red 80",
+      "shared_cas": "2610-10-8",
+      "conflicts_with": "2-Naphthalenesulfonic acid, 7,7’-(carbonyldiimino)bis(4-hydroxy-3-[[2-sulfo-4-[(4-sulfophenyl) azo]phenyl]azo]-, and its salts, when used as a substance in hair dye products"
+    },
+    {
+      "inci": "Direct Red 80",
+      "shared_cas": "25188-41-4",
+      "conflicts_with": "2-Naphthalenesulfonic acid, 7,7'-(carbonyldiimino)bis(4-hydroxy-3-[[2-sulfo-4-[(4-sulfophenyl)azo]phenyl]azo]-, and its salts 不得使用於染髮用途化粧品"
+    },
+    {
+      "inci": "Direct Red 80",
+      "shared_cas": "25188-41-4",
+      "conflicts_with": "2-Naphthalenesulfonic acid, 7,7'-(carbonyldiimino)bis(4- hydroxy-3-[[2-sulfo-4-[(4-sulfophenyl)azo] phenyl]azo]- and its salts, when used as a substance in hair dye products 2610-10- 8/"
+    },
+    {
+      "inci": "Disperse Blue 3",
+      "shared_cas": "2475-46-9",
+      "conflicts_with": "9,10-Anthracenedione, 1-[(2-hydroxyethyl)amino]-4-(methylamino)-, and its derivatives and salts, when used as a substance in hair dye products / 86722-66-9 / 289-276-3 1"
+    },
+    {
+      "inci": "Disperse Blue 3",
+      "shared_cas": "86722-66-9",
+      "conflicts_with": "9,10-Anthracenedione, 1-[(2-hydroxyethyl)amino]-4-(methylamino)-, and its derivatives and salts 不得使用於染髮用途化粧品"
+    },
+    {
+      "inci": "Disperse Blue 3",
+      "shared_cas": "86722-66-9",
+      "conflicts_with": "9,10-Anthracenedione, 1-[(2-hydroxyethyl)amino]-4- (methylamino)- and its derivatives and salts, when used as a substance in hair dye products 2475-46- 9/"
+    },
+    {
+      "inci": "Ethylene Dichloride",
+      "shared_cas": "107-06-2",
+      "conflicts_with": "1,2-Dichloroethane"
+    },
+    {
+      "inci": "Ethylene Dichloride",
+      "shared_cas": "107-06-2",
+      "conflicts_with": "Dichloroethanes"
+    },
+    {
+      "inci": "Formaldehyde and p-Formaldehyde",
+      "shared_cas": "30525-89-4",
+      "conflicts_with": "Paraformaldehyde"
+    },
+    {
+      "inci": "Furocoumarine",
+      "shared_cas": "298-81-7",
+      "conflicts_with": "Methoxsalen; 9-Methoxyfuro[3,2-g]chromen-7-one; 8-MOP"
+    },
+    {
+      "inci": "Furocoumarine",
+      "shared_cas": "484-20-8",
+      "conflicts_with": "5-Methoxypsoralen; 4-methoxy-7H-furo[3,2-g][1]benzopyran-7-one; 5-MOP"
+    },
+    {
+      "inci": "Furocoumarine",
+      "shared_cas": "3902-71-4",
+      "conflicts_with": "Trioxsalen"
+    },
+    {
+      "inci": "Furocoumarine",
+      "shared_cas": "3902-71-4",
+      "conflicts_with": "Furocoumarines (e.g. trioxysalen (INN), 8 -methoxypsoralen, 5-methoxypsoralen) except for normal content in natural essences used."
+    },
+    {
+      "inci": "Furocoumarine",
+      "shared_cas": "3902-71-4",
+      "conflicts_with": "Furocoumarines (e. g. trioxysalen (INN), 8-methoxypsoralen, 5-methoxypsoralen) except for normal content in natural essences used. In sun protection and in bronzing products, furocoumarines shall be below 1 mg/kg / 298-81-7/ 484-20-8 / 206-066-9/ 207-604-5 3"
+    },
+    {
+      "inci": "Furocoumarine",
+      "shared_cas": "3902-71-4",
+      "conflicts_with": "Furocoumarines (e. g. trioxysalen (INN), 8-methoxypsoralen, 5-methoxypsoralen) except for normal content in natural essences used. In sun protection and in bronzing products, furocoumarines shall be below 1 mg/kg"
+    },
+    {
+      "inci": "Furocoumarines (e.g.trioxtsalan,8-methoxy-psoralen, 5- methoxypsoralen) except for normal content in natural essences used . In sun protection and in bronzing products, furocoumarines shall be below 1 mg/kg (0.0001%)",
+      "shared_cas": "298-81-7",
+      "conflicts_with": "Methoxsalen; 9-Methoxyfuro[3,2-g]chromen-7-one; 8-MOP"
+    },
+    {
+      "inci": "Furocoumarines (e.g.trioxtsalan,8-methoxy-psoralen, 5- methoxypsoralen) except for normal content in natural essences used . In sun protection and in bronzing products, furocoumarines shall be below 1 mg/kg (0.0001%)",
+      "shared_cas": "3902-71-4",
+      "conflicts_with": "Trioxsalen"
+    },
+    {
+      "inci": "Hexamidine and its salts, ester",
+      "shared_cas": "3811-75-4",
+      "conflicts_with": "Benzenecarboximidamide, 4,4' -(1,6-hexanediylbis(oxy))bis-, and its salts (including isothionate and p-hydroxybenzoate)"
+    },
+    {
+      "inci": "Hydroxyisohexyl 3-Cyclohexene Carboxaldehyde",
+      "shared_cas": "31906-04-4",
+      "conflicts_with": "3- and 4-(4-Hydroxy-4-methylpentyl) cyclohex-3-ene-1-carbaldehyde (HICC)"
+    },
+    {
+      "inci": "Hydroxyisohexyl 3-Cyclohexene Carboxaldehyde",
+      "shared_cas": "31906-04-4",
+      "conflicts_with": ") HYDROXYCITRONELLAL 21. Hydroxymethylpentylcyclohexenecarboxaldehyde (CAS No"
+    },
+    {
+      "inci": "Hydroxyisohexyl 3-Cyclohexene Carboxaldehyde",
+      "shared_cas": "51414-25-6",
+      "conflicts_with": "3- and 4-(4-Hydroxy-4-methylpentyl) cyclohex-3-ene-1- carbaldehyde (HICC)"
+    },
+    {
+      "inci": "Hydroxylated Docosahexaenoic Acid",
+      "shared_cas": "578008-43-2",
+      "conflicts_with": "7,17-Dihydroxydocosahexaenoic Acid"
+    },
+    {
+      "inci": "Hydroxylated Docosahexaenoic Acid",
+      "shared_cas": "871826-47-0",
+      "conflicts_with": "Dihydroxydocosahexaenoic Acid"
+    },
+    {
+      "inci": "Juniperus Virginiana Oil",
+      "shared_cas": "8000-27-9",
+      "conflicts_with": "Cedrus Atlantica Oil"
+    },
+    {
+      "inci": "Laureth-9",
+      "shared_cas": "68439-50-9",
+      "conflicts_with": "C12-14 Alketh-3"
+    },
+    {
+      "inci": "Laureth-9",
+      "shared_cas": "68439-50-9",
+      "conflicts_with": "C12-14 Alketh-5"
+    },
+    {
+      "inci": "Laureth-9",
+      "shared_cas": "68439-50-9",
+      "conflicts_with": "C12-14 Alketh-7"
+    },
+    {
+      "inci": "Laureth-9",
+      "shared_cas": "68439-50-9",
+      "conflicts_with": "C12-14 Alketh-9"
+    },
+    {
+      "inci": "Laureth-9",
+      "shared_cas": "68439-50-9",
+      "conflicts_with": "C12-14 Alketh-12"
+    },
+    {
+      "inci": "Mixture of (1), (2) & (3) in dispersing agent (lignosulphate): (1) 9,10-Anthracenedione- 1,4-bis[(2- Hydroxyethyl)amino] (2) 9,10-Anthracenedione-1- [(2-Hydroxyethyl)amino]- 4-[(3- Hydroxypropyl)amino] (3) 9,10-anthracenedione- 1,4-bis[(3- hydroxypropyl)amino",
+      "shared_cas": "67674-26-4",
+      "conflicts_with": "Disperse Blue 377"
+    },
+    {
+      "inci": "Myristalkonium Saccharinate",
+      "shared_cas": "68989-01-5",
+      "conflicts_with": "Benzalkonium Bromide"
+    },
+    {
+      "inci": "Nickel monoxide",
+      "shared_cas": "34492-97-2",
+      "conflicts_with": "Bunsenite"
+    },
+    {
+      "inci": "Nickel Monoxide",
+      "shared_cas": "34492-97-2",
+      "conflicts_with": "Bunsenite"
+    },
+    {
+      "inci": "Nigrosine spirit soluble",
+      "shared_cas": "11099-03-9",
+      "conflicts_with": "Solvent Black 5"
+    },
+    {
+      "inci": "Nitrosamines",
+      "shared_cas": "621-64-7",
+      "conflicts_with": "Nitrosodipropylamine"
+    },
+    {
+      "inci": "Nitrosamines",
+      "shared_cas": "1116-54-7",
+      "conflicts_with": "2,2'-(Nitrosoimino)bisethanol"
+    },
+    {
+      "inci": "o-Aminotoluene/\nm-Aminotoluene/ p-Aminotoluene",
+      "shared_cas": "95-53-4",
+      "conflicts_with": "2-Toluidine"
+    },
+    {
+      "inci": "o-Aminotoluene/\nm-Aminotoluene/ p-Aminotoluene",
+      "shared_cas": "108-44-1",
+      "conflicts_with": "M-Toluidine"
+    },
+    {
+      "inci": "o-Aminotoluene/\nm-Aminotoluene/ p-Aminotoluene",
+      "shared_cas": "106-49-0",
+      "conflicts_with": "p-Toluidine"
+    },
+    {
+      "inci": "o-Phenylphenol and its salts",
+      "shared_cas": "90-43-7",
+      "conflicts_with": "Biphenyl-2-ol"
+    },
+    {
+      "inci": "o-Phenylphenol and its salts",
+      "shared_cas": "132-27-4",
+      "conflicts_with": "Sodium o-Phenylphenate"
+    },
+    {
+      "inci": "o-Phenylphenol and its salts",
+      "shared_cas": "84145-04-0",
+      "conflicts_with": "MEA o-Phenylphenate"
+    },
+    {
+      "inci": "o-Phenylphenol and its salts",
+      "shared_cas": "84145-04-0",
+      "conflicts_with": "MEA O-Phenylphenate"
+    },
+    {
+      "inci": "o-Phenylphenol and its salts",
+      "shared_cas": "13707-65-8",
+      "conflicts_with": "Potassium o-Phenylphenate"
+    },
+    {
+      "inci": "paraformaldehyde",
+      "shared_cas": "50-00-0",
+      "conflicts_with": "Formaldehyde"
+    },
+    {
+      "inci": "paraformaldehyde",
+      "shared_cas": "50-00-0",
+      "conflicts_with": "Formaldehyde（Formalin）"
+    },
+    {
+      "inci": "Pelletierine and its salts",
+      "shared_cas": "4396-01-4",
+      "conflicts_with": "Isopelletierine; 1-(2-Piperidinyl)-2-propanone"
+    },
+    {
+      "inci": "Pentachlorophenol and its alkali salts",
+      "shared_cas": "131-52-2",
+      "conflicts_with": "Sodium pentachlorophenolate"
+    },
+    {
+      "inci": "Perfluorononan-1-oic acid [1]\r\nand its sodium [2]\r\nand ammonium [3] salts",
+      "shared_cas": "375-95-1",
+      "conflicts_with": "Perfluorononanoic acid"
+    },
+    {
+      "inci": "Perfluorononan-1-oic acid [1] and its sodium [2] and ammonium [3] salts",
+      "shared_cas": "375-95-1",
+      "conflicts_with": "Perfluorononanoic acid"
+    },
+    {
+      "inci": "Petroleum, coal, tar and natural gas and their derivatives generated using distillation and/or other processing methods if they contain = 0,005 % w/w benzo[a]pyrene",
+      "shared_cas": "90640-85-0",
+      "conflicts_with": "Creosote oil, acenaphthene fraction, acenaphthene-free"
+    },
+    {
+      "inci": "Petroleum, coal, tar and natural gas and their derivatives generated using distillation and/or other processing methods if they contain = 0,005 % w/w benzo[a]pyrene",
+      "shared_cas": "90640-84-9",
+      "conflicts_with": "Creosote oil, acenaphthene fraction, wash oil"
+    },
+    {
+      "inci": "Petroleum, coal, tar and natural gas and their derivatives generated using distillation and/or other processing methods if they contain = 0,005 % w/w benzo[a]pyrene",
+      "shared_cas": "61789-28-4",
+      "conflicts_with": "Creosote oil"
+    },
+    {
+      "inci": "Petroleum, coal, tar and natural gas and their derivatives generated using distillation and/or other processing methods if they contain = 0,005 % w/w benzo[a]pyrene",
+      "shared_cas": "70321-79-8",
+      "conflicts_with": "Creosote oil, high-boiling distillate, wash oil"
+    },
+    {
+      "inci": "Petroleum, coal, tar and natural gas and their derivatives generated using distillation and/or other processing methods if they contain = 0,005 % w/w benzo[a]pyrene",
+      "shared_cas": "70321-80-1",
+      "conflicts_with": "Creosote oil, low-boiling distillate, wash oil"
+    },
+    {
+      "inci": "Petroleum, coal, tar and natural gas and their derivatives generated using distillation and/or other processing methods if they contain = 0,1 % w/w 1,3-butadiene",
+      "shared_cas": "68475-57-0",
+      "conflicts_with": "Alkanes, C1-2"
+    },
+    {
+      "inci": "Petroleum, coal, tar and natural gas and their derivatives generated using distillation and/or other processing methods if they contain = 0,1 % w/w 1,3-butadiene",
+      "shared_cas": "68475-58-1",
+      "conflicts_with": "Alkanes, C2-3"
+    },
+    {
+      "inci": "Petroleum, coal, tar and natural gas and their derivatives generated using distillation and/or other processing methods if they contain = 0,1 % w/w 1,3-butadiene",
+      "shared_cas": "68475-59-2",
+      "conflicts_with": "Alkanes, C3-4"
+    },
+    {
+      "inci": "Petroleum, coal, tar and natural gas and their derivatives generated using distillation and/or other processing methods if they contain = 0,1 % w/w 1,3-butadiene",
+      "shared_cas": "68475-60-5",
+      "conflicts_with": "Alkanes, C4-5"
+    },
+    {
+      "inci": "Petroleum, coal, tar and natural gas and their derivatives generated using distillation and/or other processing methods if they contain = 0,1 % w/w 1,3-butadiene",
+      "shared_cas": "68476-26-6",
+      "conflicts_with": "Fuel-gases"
+    },
+    {
+      "inci": "Petroleum, coal, tar and natural gas and their derivatives generated using distillation and/or other processing methods if they contain = 0,1 % w/w 1,3-butadiene",
+      "shared_cas": "68476-29-9",
+      "conflicts_with": "Fuel gases, crude oil distillates"
+    },
+    {
+      "inci": "Petroleum, coal, tar and natural gas and their derivatives generated using distillation and/or other processing methods if they contain = 0,1 % w/w 1,3-butadiene",
+      "shared_cas": "68476-40-4",
+      "conflicts_with": "Hydrocarbons, C3-4"
+    },
+    {
+      "inci": "Petroleum, coal, tar and natural gas and their derivatives generated using distillation and/or other processing methods if they contain = 0,1 % w/w 1,3-butadiene",
+      "shared_cas": "68476-42-6",
+      "conflicts_with": "Hydrocarbons, C4-5"
+    },
+    {
+      "inci": "Petroleum, coal, tar and natural gas and their derivatives generated using distillation and/or other processing methods if they contain = 0,1 % w/w 1,3-butadiene",
+      "shared_cas": "68476-49-3",
+      "conflicts_with": "Hydrocarbons, C2-4, C3-rich"
+    },
+    {
+      "inci": "Phenoxazin-5-ium, 3,7-bis(diethylamino)-",
+      "shared_cas": "33203-82-6",
+      "conflicts_with": "Basic Blue 3"
+    },
+    {
+      "inci": "Phenoxazin-5-ium, 3,7-bis(diethylamino)-, and its salts, when used as a substance in hair dye products",
+      "shared_cas": "33203-82-6",
+      "conflicts_with": "Basic Blue 3"
+    },
+    {
+      "inci": "Phenyl Mercuric Benzoate",
+      "shared_cas": "62-38-4",
+      "conflicts_with": "Phenylmercury acetate"
+    },
+    {
+      "inci": "Phenylmercuric salts (including borate)",
+      "shared_cas": "62-38-4",
+      "conflicts_with": "Phenylmercury acetate"
+    },
+    {
+      "inci": "Phloxine BK, Aka231, CI 45410",
+      "shared_cas": "18472-87-2",
+      "conflicts_with": "Acid Red 92"
+    },
+    {
+      "inci": "Propionic Acid and its salts",
+      "shared_cas": "137-40-6",
+      "conflicts_with": "Sodium Propionate"
+    },
+    {
+      "inci": "Propionic Acid and its salts",
+      "shared_cas": "17496-08-1",
+      "conflicts_with": "Ammonium Propionate"
+    },
+    {
+      "inci": "Propionic Acid and its salts",
+      "shared_cas": "4075-81-4",
+      "conflicts_with": "Calcium Propionate"
+    },
+    {
+      "inci": "Propionic Acid and its salts",
+      "shared_cas": "557-27-7",
+      "conflicts_with": "Magnesium Propionate"
+    },
+    {
+      "inci": "Propionic Acid and its salts",
+      "shared_cas": "327-62-8",
+      "conflicts_with": "Potassium Propionate"
+    },
+    {
+      "inci": "Prostaglandins, their salts and derivatives and their analogs",
+      "shared_cas": "745-65-3",
+      "conflicts_with": "Alprostadil"
+    },
+    {
+      "inci": "Prostaglandins, their salts and derivatives and their analogs",
+      "shared_cas": "155206-00-1",
+      "conflicts_with": "Bimatoprost"
+    },
+    {
+      "inci": "Prostaglandins, their salts and derivatives and their analogs",
+      "shared_cas": "40665-92-7",
+      "conflicts_with": "Cloprostenol"
+    },
+    {
+      "inci": "Prostaglandins, their salts and derivatives and their analogs",
+      "shared_cas": "363-24-6",
+      "conflicts_with": "Dinoprostone"
+    },
+    {
+      "inci": "Prostaglandins, their salts and derivatives and their analogs",
+      "shared_cas": "35121-78-9",
+      "conflicts_with": "Epoprostenol"
+    },
+    {
+      "inci": "Prostaglandins, their salts and derivatives and their analogs",
+      "shared_cas": "40666-16-8",
+      "conflicts_with": "Fluprostenol"
+    },
+    {
+      "inci": "Prostaglandins, their salts and derivatives and their analogs",
+      "shared_cas": "130209-82-4",
+      "conflicts_with": "Latanoprost"
+    },
+    {
+      "inci": "Prostaglandins, their salts and derivatives and their analogs",
+      "shared_cas": "59122-46-2",
+      "conflicts_with": "Misoprostol"
+    },
+    {
+      "inci": "Prostaglandins, their salts and derivatives and their analogs",
+      "shared_cas": "209860-87-7",
+      "conflicts_with": "Tafluprost"
+    },
+    {
+      "inci": "Prostaglandins, their salts and derivatives and their analogs",
+      "shared_cas": "157283-68-6",
+      "conflicts_with": "Travoprost"
+    },
+    {
+      "inci": "Prostaglandins, their salts and derivatives and their analogs",
+      "shared_cas": "81846-19-7",
+      "conflicts_with": "Treprostinil"
+    },
+    {
+      "inci": "Prostaglandins, their salts and derivatives and their analogs",
+      "shared_cas": "120373-36-6",
+      "conflicts_with": "Unoprostone"
+    },
+    {
+      "inci": "Prostaglandins, their salts and derivatives and their analogs",
+      "shared_cas": "130209-76-6",
+      "conflicts_with": "Dehydrolatanoprost"
+    },
+    {
+      "inci": "Prostaglandins, their salts and derivatives and their analogs",
+      "shared_cas": "1005193-64-5",
+      "conflicts_with": "Ethyl Travoprostamide"
+    },
+    {
+      "inci": "Prostaglandins, their salts and derivatives and their analogs",
+      "shared_cas": "157283-66-4",
+      "conflicts_with": "Isopropyl Cloprostenate"
+    },
+    {
+      "inci": "Quinolin-8-ol and bis (8-hydroxyquinolium) sulphate",
+      "shared_cas": "148-24-3",
+      "conflicts_with": "Oxyquinoline"
+    },
+    {
+      "inci": "Quinolin-8-ol and bis (8-hydroxyquinolium) sulphate",
+      "shared_cas": "134-31-6",
+      "conflicts_with": "Oxyquinoline Sulfate"
+    },
+    {
+      "inci": "Quinolin-8-ol and bis (8-hydroxyquinolium) sulphate",
+      "shared_cas": "134-31-6",
+      "conflicts_with": "Hydroxy-8-quinoline and its sulfate"
+    },
+    {
+      "inci": "Serum Albumin",
+      "shared_cas": "871903-86-5",
+      "conflicts_with": "Human Cord Blood Cell Conditioned Media"
+    },
+    {
+      "inci": "Tetrahydrozoline (Tetryzoline) and its salts",
+      "shared_cas": "84-22-0",
+      "conflicts_with": "Tefazoline"
+    },
+    {
+      "inci": "Trichlormethine and its salts",
+      "shared_cas": "555-77-1",
+      "conflicts_with": "2,2',2''-Trichlorotriethylamine"
+    },
+    {
+      "inci": "Trichlormethine and its salts",
+      "shared_cas": "817-09-4",
+      "conflicts_with": "2,2',2''-Trichlorotriethylamine hydrochloride; Tris(2-chloroethyl)amine hydrochloride"
+    },
+    {
+      "inci": "Trichlormethine and its salts",
+      "shared_cas": "817-09-4",
+      "conflicts_with": "2,2',2''-Trichlorotriethylamine Hydrochloride"
+    },
+    {
+      "inci": "Trichlormethine and its salts",
+      "shared_cas": "817-09-4",
+      "conflicts_with": "Tris(2-chloroethyl)Amine Hydrochloride"
+    },
+    {
+      "inci": "Trichlormethine and its salts",
+      "shared_cas": "6138-32-5",
+      "conflicts_with": "Triethylamine, 2,2',2''-trichloro-, picrate"
+    },
+    {
+      "inci": "Trioxymethylene",
+      "shared_cas": "110-88-3",
+      "conflicts_with": "1,3,5-Trioxan"
+    },
+    {
+      "inci": "Trioxymethylene",
+      "shared_cas": "30525-89-4",
+      "conflicts_with": "Paraformaldehyde"
+    },
+    {
+      "inci": "Trisodium 1-(1-naphthylazo)-2-hydroxynaphthalene-4',6,8-trisulphonate and aluminium lake (Cl 16255) (see note 17).",
+      "shared_cas": "2611-82-7",
+      "conflicts_with": "Acid Red 18"
+    },
+    {
+      "inci": "Trisodium 5-hydroxy-1-(4-sulphophenyl)-4-(4-sulphophenylazo)pyrazole-3-carboxylate and aluminium lake (see note 17). CL 19140",
+      "shared_cas": "1934-21-0",
+      "conflicts_with": "Acid Yellow 23"
+    }
+  ]
+}

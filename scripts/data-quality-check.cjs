@@ -58,6 +58,9 @@ function compute() {
   }
   let quarantinePending = 0;
   try { quarantinePending = JSON.parse(fs.readFileSync(path.join(DATA, "quarantine.json"), "utf8")).rows.filter((q) => q.status === "pending").length; } catch {}
+  // CAS 오염 의심 큐 크기 — *증가* 가 신규 오염/파서버그(cross-link 양산) 신호(절대값은 대부분 legit).
+  let casContaminationSuspects = 0;
+  try { casContaminationSuspects = JSON.parse(fs.readFileSync(path.join(DATA, "cas-contamination-suspects.json"), "utf8")).count ?? 0; } catch {}
   // 가디언 신선도/이상 리포트 — stale 은 latest 로 days 재계산(>임계).
   let staleCount = 0, staleSources = [], limitAnomalyCount = 0, postHealCorrupt = 0, postHealWhitespace = 0;
   try {
@@ -73,7 +76,7 @@ function compute() {
     postHealCorrupt = h.post_heal_corrupt_count ?? 0;
     postHealWhitespace = h.post_heal_whitespace_count ?? 0;
   } catch {}
-  return { generated_at: meta.generated_at, totalRegs, coverage, authCoverage, restrictedNoLimit, statusConflicts, quarantinePending, staleCount, staleSources, limitAnomalyCount, postHealCorrupt, postHealWhitespace };
+  return { generated_at: meta.generated_at, totalRegs, coverage, authCoverage, restrictedNoLimit, statusConflicts, quarantinePending, casContaminationSuspects, staleCount, staleSources, limitAnomalyCount, postHealCorrupt, postHealWhitespace };
 }
 
 function detectRegressions(cur, prev) {
@@ -90,6 +93,11 @@ function detectRegressions(cur, prev) {
     const a = prev.authCoverage[cc] ?? 0, b = (cur.authCoverage || {})[cc] ?? 0;
     if (a > 50 && b < a * 0.9) out.push(`${cc} 권위(1차) 커버리지 급감: ${a}→${b} (-10%↑) — 1차 파서 파손/양식변경 의심`);
   }
+  // CAS 오염 의심 큐 급증 — 신규 오염 or 파서버그(cross-link 양산). 절대값은 대부분 legit 이라
+  // *증가*만(>20% AND +30↑) 경보. 평상시 신규 성분의 대체명 추가(+1~2)는 무시.
+  // prev 에 필드가 없으면(최초 측정=baseline 확립) skip — 0→N 거짓경보 방지.
+  if (prev.casContaminationSuspects != null) { const a = prev.casContaminationSuspects, b = cur.casContaminationSuspects ?? 0;
+    if (b > a * 1.2 && b - a >= 30) out.push(`CAS 오염 의심 급증: ${a}→${b} — 파서 cross-link 양산/신규 오염 점검(cas-contamination-suspects.json)`); }
   if (cur.restrictedNoLimit > (prev.restrictedNoLimit ?? 0) * 1.1 + 50) out.push(`한도누락 restricted 증가: ${prev.restrictedNoLimit}→${cur.restrictedNoLimit}`);
   if (cur.statusConflicts > (prev.statusConflicts ?? 0) * 1.2 + 20) out.push(`status 충돌 증가: ${prev.statusConflicts}→${cur.statusConflicts}`);
   // 가디언 신선도/이상 — 신규 발생 시만 경보(스팸 방지). stale=소스 동결/fetch차단, anomaly=한도 급변.
@@ -111,6 +119,7 @@ console.log("=== 데이터 품질 지표 ===");
 console.log(`  총 규제: ${cur.totalRegs} | restricted 한도누락: ${cur.restrictedNoLimit} | status충돌: ${cur.statusConflicts} | quarantine: ${cur.quarantinePending}`);
 console.log(`  커버리지(성분수): ${Object.entries(cur.coverage).map(([k, v]) => k + ":" + v).join(" ")}`);
   console.log(`  권위(1차) 커버리지: ${Object.entries(cur.authCoverage || {}).map(([k, v]) => k + ":" + v).join(" ")}`);
+  console.log(`  CAS 오염 의심 큐(대부분 legit, *증가*가 신호): ${cur.casContaminationSuspects}`);
 if (regressions.length) {
   console.error("\n🔴 품질 회귀 감지:");
   for (const r of regressions) console.error("  - " + r);
