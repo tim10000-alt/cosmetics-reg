@@ -15,6 +15,7 @@ export interface SourceRef {
   status: "banned" | "restricted" | "allowed" | "listed" | "not_listed" | string | null;
   max_concentration: number | null;
   concentration_unit: string | null;
+  product_categories?: string[];   // 용도/제품군 — 용도별 규제를 개별 표기하기 위해 출처별 보존
   conditions: string | null;
   last_verified_at: string | null;
   confidence_score: number | null;
@@ -296,6 +297,7 @@ export async function lookupRegulation(
       status: r.status,
       max_concentration: r.max_concentration,
       concentration_unit: r.concentration_unit,
+      product_categories: r.product_categories ?? undefined,   // 용도별 개별 표기용
       conditions: r.conditions,
       last_verified_at: r.last_verified_at,
       confidence_score: r.confidence_score,

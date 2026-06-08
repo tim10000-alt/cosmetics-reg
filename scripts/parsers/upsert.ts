@@ -90,6 +90,10 @@ export function applyOutcomes(ctx: UpsertContext, outcomes: ConsensusOutcome[]):
     const reg = outcome.merged;
     const ingredient_id = findOrCreateIngredient(ctx.ingredients, ctx.byInciLower, ctx.byCas, reg);
 
+    // (성분, 국가) 단위 dedup — 파서(Gemini) 경로. 용도-변종 보존은 fetcher 경로(각국 직접 write)와
+    // display 층(all_sources 전부 표기)이 담당. 파서 경로에서 use-signature 분리를 시도했으나, 조건
+    // 텍스트 키는 버전갱신 시 near-dup 누적, 제품군+출처 키는 빈-제품군 조건변종 collapse 라는 tradeoff
+    // 가 있고 파서 경로 손실은 측정상 0(outlier-quarantine 0)이라, 위험 회피 위해 원래 단순 dedup 유지.
     const existing = ctx.regulations.find(
       (r) => r.ingredient_id === ingredient_id && r.country_code === ctx.country_code,
     );

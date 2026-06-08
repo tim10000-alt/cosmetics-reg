@@ -35,19 +35,23 @@ async function extractCards(page) {
       const cc = NAME_TO_CC[nm];
       if (!cc) return;
       const txt = art.innerText;
-      // status: 배지 <span> 의 *정확한* 텍스트로 추출. (카드 본문의 "최대 배합한도:" 와
-      // restricted 라벨 "배합한도" 가 부분일치하므로 whole-text 스캔은 오판 — 반드시 exact.)
+      // "다른 출처·용도별 규제" details 분리 — 헤드라인(primary) 추출이 추가블록 값을 잘못 잡지 않도록.
+      let addlDetails = null;
+      for (const d of art.querySelectorAll("details")) { const sm = d.querySelector("summary"); if (sm && /다른 출처·용도별 규제/.test(sm.textContent)) { addlDetails = d; break; } }
+      const headText = addlDetails ? txt.replace(addlDetails.innerText, "") : txt;
+      // status: 배지 <span> 의 *정확한* 텍스트로 추출(추가블록 제외=헤드라인 우선).
       const LAB = { "배합금지": "banned", "배합한도": "restricted", "수록 (수출 가능)": "listed", "허용": "allowed", "미수록 (수출 불가)": "not_listed", "분류 확인 필요": "unknown" };
       let status = null;
       for (const s of art.querySelectorAll("span")) {
+        if (addlDetails && addlDetails.contains(s)) continue;
         const k = LAB[s.textContent.trim()];
         if (k) { status = k; break; }
       }
-      // 최대 배합한도: 숫자형
+      // 최대 배합한도: 숫자형 (헤드라인 영역 한정)
       let max = null, unit = null;
-      const m = txt.match(/최대 배합한도:\s*([\d.]+)\s*(\S*)/);
+      const m = headText.match(/최대 배합한도:\s*([\d.]+)\s*(\S*)/);
       if (m) { max = m[1]; unit = m[2] || null; }
-      const addM = txt.match(/추가 출처 (\d+)건/);
+      const addM = txt.match(/다른 출처·용도별 규제 (\d+)건/);
       const addSources = addM ? Number(addM[1]) : 0;
       const notFound = /등재 정보 없음|미수록|확인되지 않|검색되지|규제 정보 없음/.test(txt) && status === null;
       cards[cc] = { status, max, unit, addSources, hasCard: true };

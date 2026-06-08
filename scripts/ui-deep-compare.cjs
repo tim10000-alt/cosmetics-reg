@@ -84,34 +84,38 @@ async function extract(page) {
       const cc = NAME_TO_CC[nm];
       if (!cc) return;
       const full = art.textContent;
-      // status: 배지 span exact text
+      // 다른 출처·용도별 규제 details 분리 — 헤드라인(primary) 추출이 추가 블록의 값을 잘못 잡지 않도록
+      // 헤드라인 영역(headText)을 그 details 텍스트를 뺀 부분으로 한정.
+      let addlDetails = null;
+      for (const d of art.querySelectorAll("details")) { const sm = d.querySelector("summary"); if (sm && /다른 출처·용도별 규제/.test(sm.textContent)) { addlDetails = d; break; } }
+      const headText = addlDetails ? full.replace(addlDetails.textContent, "") : full;
+      // status: 배지 span exact text (추가블록 제외 = 헤드라인 우선)
       let status = null;
-      for (const s of art.querySelectorAll("span")) { const k = Object.keys(STATUS_LABEL).find((kk) => STATUS_LABEL[kk] === s.textContent.trim()); if (k) { status = k; break; } }
-      // max
+      for (const s of art.querySelectorAll("span")) { if (addlDetails && addlDetails.contains(s)) continue; const k = Object.keys(STATUS_LABEL).find((kk) => STATUS_LABEL[kk] === s.textContent.trim()); if (k) { status = k; break; } }
+      // max (헤드라인 영역 한정)
       let max = null, unit = null;
-      const m = full.match(/최대 배합한도:\s*([\d.]+)\s*([^\s적출조]*)/);
+      const m = headText.match(/최대 배합한도:\s*([\d.]+)\s*([^\s적출조]*)/);
       if (m) { max = m[1]; unit = (m[2] || "").trim() || null; }
-      // 적용 제품
-      let pcats = null; const pm = full.match(/적용 제품:\s*([^\n]+?)(?:조건·비고|출처|추가 출처|1차 소스|관련 협회|$)/);
+      // 적용 제품 (헤드라인 영역 한정)
+      let pcats = null; const pm = headText.match(/적용 제품:\s*([^\n]+?)(?:조건·비고|출처|다른 출처|1차 소스|관련 협회|$)/);
       if (pm) pcats = pm[1].trim();
-      // 조건문 (details textContent, summary 제거)
+      // 조건문 (primary 의 "조건·비고" details; 추가블록의 ConditionBlocks 는 summary 없어 제외됨)
       let conditions = null;
-      for (const d of art.querySelectorAll("details")) { const sm = d.querySelector("summary"); if (sm && sm.textContent.includes("조건·비고")) { conditions = d.textContent.replace(sm.textContent, "").trim(); break; } }
+      for (const d of art.querySelectorAll("details")) { if (addlDetails && addlDetails.contains(d)) continue; const sm = d.querySelector("summary"); if (sm && sm.textContent.includes("조건·비고")) { conditions = d.textContent.replace(sm.textContent, "").trim(); break; } }
       // 상속 배지
       const inh = (head.textContent.match(/([A-Z]{2})\s*상속/) || [])[1] || null;
-      // 출처 자료명 + 링크 (primary = details 밖 dotted 링크 첫번째)
+      // 출처 자료명 + 링크 (primary = 추가블록 밖 dotted 링크 첫번째)
       let srcDoc = null, srcUrl = null;
-      const primaryBlock = [...art.querySelectorAll(":scope > div, :scope > div > div")].find((d) => d.textContent.includes("출처") && !d.closest("details") && !/추가 출처/.test(d.textContent));
-      // fallback: 첫 dotted-underline a, details 밖
-      const dotted = [...art.querySelectorAll("a")].filter((a) => !a.closest("details") && /decoration-dotted|underline/.test(a.className));
+      const primaryBlock = [...art.querySelectorAll(":scope > div, :scope > div > div")].find((d) => d.textContent.includes("출처") && !d.closest("details") && !/다른 출처/.test(d.textContent));
+      const dotted = [...art.querySelectorAll("a")].filter((a) => !(addlDetails && addlDetails.contains(a)) && /decoration-dotted|underline/.test(a.className));
       if (dotted[0]) { srcDoc = dotted[0].textContent.trim(); srcUrl = dotted[0].getAttribute("href"); }
       else if (primaryBlock) { const sp = [...primaryBlock.querySelectorAll("span")].pop(); if (sp) srcDoc = sp.textContent.trim(); }
-      // cascade 추가 출처
+      // 다른 출처·용도별 규제 개수 + 항목
       let casc = null;
-      const cm = full.match(/추가 출처 (\d+)건/);
+      const cm = full.match(/다른 출처·용도별 규제 (\d+)건/);
       if (cm) { casc = Number(cm[1]); }
       const cascDocs = [];
-      for (const d of art.querySelectorAll("details")) { const sm = d.querySelector("summary"); if (sm && /추가 출처/.test(sm.textContent)) { d.querySelectorAll("li").forEach((li) => cascDocs.push(li.textContent.trim())); break; } }
+      if (addlDetails) addlDetails.querySelectorAll("li").forEach((li) => cascDocs.push(li.textContent.trim()));
       out.cards[cc] = { status, max, unit, pcats, conditions, inh, srcDoc, srcUrl, casc, cascDocs, present: true };
     });
     return out;

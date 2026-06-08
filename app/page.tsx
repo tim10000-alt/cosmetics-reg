@@ -377,29 +377,42 @@ const COUNTRY_FLAG: Record<string, string> = {
   BO: "🇧🇴",
 };
 
+// 상태 배지 — ring(테두리)로 강조해 가독성·식별성↑. listed(수록)는 allowed(허용)와 의미가 달라
+// sky 색으로 구분. 색상은 위험도 직관: 금지=red·한도=amber·허용=emerald·수록=sky·미수록=slate.
 const STATUS_STYLE: Record<string, { label: string; className: string }> = {
-  banned: { label: "배합금지", className: "bg-red-100 text-red-800 dark:bg-red-950/60 dark:text-red-200" },
+  banned: { label: "배합금지", className: "bg-red-100 text-red-900 ring-1 ring-inset ring-red-300 dark:bg-red-950/60 dark:text-red-100 dark:ring-red-800/70" },
   restricted: {
     label: "배합한도",
-    className: "bg-amber-100 text-amber-800 dark:bg-amber-950/60 dark:text-amber-200",
+    className: "bg-amber-100 text-amber-900 ring-1 ring-inset ring-amber-300 dark:bg-amber-950/60 dark:text-amber-100 dark:ring-amber-800/70",
   },
   allowed: {
     label: "허용",
-    className: "bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-200",
+    className: "bg-emerald-100 text-emerald-900 ring-1 ring-inset ring-emerald-300 dark:bg-emerald-950/60 dark:text-emerald-100 dark:ring-emerald-800/70",
   },
   listed: {
     label: "수록 (수출 가능)",
-    className: "bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-200",
+    className: "bg-sky-100 text-sky-900 ring-1 ring-inset ring-sky-300 dark:bg-sky-950/60 dark:text-sky-100 dark:ring-sky-800/70",
   },
   not_listed: {
     label: "미수록 (수출 불가)",
-    className: "bg-zinc-200 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300",
+    className: "bg-slate-200 text-slate-800 ring-1 ring-inset ring-slate-300 dark:bg-slate-800 dark:text-slate-200 dark:ring-slate-600",
   },
   unknown: {
     label: "분류 확인 필요",
-    className: "bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400",
+    className: "bg-zinc-100 text-zinc-700 ring-1 ring-inset ring-zinc-300 dark:bg-zinc-800 dark:text-zinc-300 dark:ring-zinc-600",
   },
 };
+
+// 용도-변종 블록의 좌측 강조선/틴트 — 상태별 색으로 한눈에 위험도 스캔(단조로움 방지).
+const STATUS_ACCENT: Record<string, string> = {
+  banned: "border-red-400 bg-red-50/50 dark:border-red-700 dark:bg-red-950/20",
+  restricted: "border-amber-400 bg-amber-50/50 dark:border-amber-700 dark:bg-amber-950/20",
+  allowed: "border-emerald-400 bg-emerald-50/40 dark:border-emerald-700 dark:bg-emerald-950/20",
+  listed: "border-sky-400 bg-sky-50/40 dark:border-sky-700 dark:bg-sky-950/20",
+  not_listed: "border-slate-300 dark:border-slate-600",
+  unknown: "border-zinc-300 dark:border-zinc-600",
+};
+const accentFor = (s?: string | null) => STATUS_ACCENT[s ?? "unknown"] ?? STATUS_ACCENT.unknown;
 
 // cascade fallback 단계 표시 — 1안(공식)/2안(KCIA)/3안(MFDS) 시각 구분.
 // priority 100=공식 1차, 80=KCIA Gemini auto, 그 외=MFDS·기타 보조.
@@ -460,7 +473,7 @@ function CountryCard({ result }: { result: CountryLookupResult }) {
         <div className="space-y-2 text-sm">
           {result.status && (
             <span
-              className={`inline-block rounded-md px-2 py-0.5 text-xs font-medium ${STATUS_STYLE[result.status]?.className ?? ""}`}
+              className={`inline-block rounded-md px-2.5 py-1 text-sm font-semibold ${STATUS_STYLE[result.status]?.className ?? ""}`}
             >
               {STATUS_STYLE[result.status]?.label ?? result.status}
             </span>
@@ -491,7 +504,7 @@ function CountryCard({ result }: { result: CountryLookupResult }) {
           {typeof result.max_concentration === "number" ? (
             <div className="text-zinc-700 dark:text-zinc-300">
               최대 배합한도:{" "}
-              <span className="font-semibold">
+              <span className="rounded-md bg-amber-100 px-1.5 py-0.5 font-bold tabular-nums text-amber-900 dark:bg-amber-950/50 dark:text-amber-100">
                 {result.max_concentration}
                 {result.concentration_unit ?? "%"}
               </span>
@@ -556,33 +569,41 @@ function CountryCard({ result }: { result: CountryLookupResult }) {
               )}
             </div>
           )}
+          {/* 다른 출처·용도별 규제 — 같은 국가에 용도(제품 유형·사용 부위)별로 다른 한도/제한/금지가
+              존재하면 전부 동등하게 펼쳐 표기(헤드라인 하나로 축약 금지). 같은 사실의 보조 출처도
+              투명하게 노출(SourceTier 로 신뢰도 구분). 기본 펼침. */}
           {result.all_sources && result.all_sources.length > 1 && (
-            <details open={!!result.status_conflict} className="text-[11px] text-zinc-500 dark:text-zinc-400">
-              <summary className="cursor-pointer hover:text-zinc-800 dark:hover:text-zinc-200">
-                추가 출처 {result.all_sources.length - 1}건 보기 (cascade fallback)
+            <details open className="text-xs text-zinc-600 dark:text-zinc-400">
+              <summary className="cursor-pointer text-zinc-500 hover:text-zinc-800 dark:hover:text-zinc-200">
+                다른 출처·용도별 규제 {result.all_sources.length - 1}건
               </summary>
-              <ul className="mt-1.5 space-y-1 pl-2">
+              <ul className="mt-1.5 space-y-2.5 pl-1">
                 {result.all_sources.slice(1).map((s, i) => (
-                  <li key={i} className="border-l border-zinc-200 pl-2 dark:border-zinc-700">
-                    <SourceTier priority={s.source_priority} />
-                    {s.source_url ? (
-                      <a
-                        href={s.source_url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="ml-1 underline decoration-dotted hover:text-zinc-900 dark:hover:text-zinc-100"
-                      >
-                        {s.source_document ?? "(출처)"}
-                      </a>
-                    ) : (
-                      <span className="ml-1">{s.source_document ?? "(출처)"}</span>
+                  <li key={i} className={`space-y-1 rounded-r border-l-[3px] py-1.5 pl-2.5 pr-2 ${accentFor(s.status)}`}>
+                    <div className="flex flex-wrap items-center gap-1.5">
+                      {s.status && (
+                        <span className={`inline-block rounded-md px-2 py-0.5 text-xs font-semibold ${STATUS_STYLE[s.status]?.className ?? ""}`}>
+                          {STATUS_STYLE[s.status]?.label ?? s.status}
+                        </span>
+                      )}
+                      {typeof s.max_concentration === "number" && (
+                        <span className="text-zinc-700 dark:text-zinc-300">최대 배합한도: <span className="rounded bg-amber-100 px-1.5 py-0.5 font-bold tabular-nums text-amber-900 dark:bg-amber-950/50 dark:text-amber-100">{s.max_concentration}{s.concentration_unit ?? "%"}</span></span>
+                      )}
+                    </div>
+                    {s.product_categories && s.product_categories.length > 0 && (
+                      <div className="text-xs text-zinc-600 dark:text-zinc-400">적용 제품: <span className="font-medium text-zinc-800 dark:text-zinc-200">{s.product_categories.join(", ")}</span></div>
                     )}
-                    {s.status && (
-                      <span className="ml-1.5 text-zinc-400">— {STATUS_STYLE[s.status]?.label ?? s.status}</span>
-                    )}
-                    {typeof s.max_concentration === "number" && (
-                      <span className="ml-1 text-zinc-400">{s.max_concentration}{s.concentration_unit ?? "%"}</span>
-                    )}
+                    {s.conditions && <ConditionBlocks text={s.conditions} />}
+                    <div className="text-[11px] text-zinc-500 dark:text-zinc-400">
+                      <span className="text-zinc-400">출처</span> <SourceTier priority={s.source_priority} />
+                      {s.source_url ? (
+                        <a href={s.source_url} target="_blank" rel="noopener noreferrer" className="ml-1 underline decoration-dotted hover:text-zinc-900 dark:hover:text-zinc-100">
+                          {s.source_document ?? "(출처)"}
+                        </a>
+                      ) : (
+                        <span className="ml-1">{s.source_document ?? "(출처)"}</span>
+                      )}
+                    </div>
                   </li>
                 ))}
               </ul>
@@ -662,6 +683,23 @@ function CountryCard({ result }: { result: CountryLookupResult }) {
   );
 }
 
+// 조건문 내 한도 수치(%, "1,0 %" 등)를 하이라이트 — 용도별 핵심 제한값이 텍스트에 묻히지 않게.
+function highlightLimits(text: string) {
+  const parts = text.split(/(\d+(?:[.,]\d+)?\s*%)/g);
+  return parts.map((p, i) =>
+    /^\d+(?:[.,]\d+)?\s*%$/.test(p) ? (
+      <mark
+        key={i}
+        className="rounded bg-amber-200/80 px-1 font-semibold tabular-nums text-amber-900 dark:bg-amber-500/30 dark:text-amber-100"
+      >
+        {p}
+      </mark>
+    ) : (
+      <span key={i}>{p}</span>
+    ),
+  );
+}
+
 function ConditionBlocks({ text }: { text: string }) {
   // 단락 단위(\n\n)로 split. 각 단락 내부 줄바꿈은 whitespace-pre-line 로 보존하되
   // 연속 공백은 압축. "[...]" 로 시작하는 단락은 경고 강조 (banned 일부 조건 등).
@@ -670,7 +708,7 @@ function ConditionBlocks({ text }: { text: string }) {
     .map((b) => b.trim())
     .filter(Boolean);
   return (
-    <div className="mt-2 space-y-1.5 text-[11px] leading-relaxed">
+    <div className="mt-2 space-y-1.5 text-xs leading-relaxed text-zinc-700 dark:text-zinc-300">
       {blocks.map((b, i) => {
         const isWarning = /^\[/.test(b);
         return (
@@ -678,11 +716,11 @@ function ConditionBlocks({ text }: { text: string }) {
             key={i}
             className={
               isWarning
-                ? "rounded border border-amber-300 bg-amber-50 px-2 py-1 text-amber-900 dark:border-amber-800 dark:bg-amber-950/40 dark:text-amber-200 whitespace-pre-line"
+                ? "rounded border-l-2 border-amber-400 bg-amber-50 px-2 py-1 text-amber-900 dark:border-amber-600 dark:bg-amber-950/40 dark:text-amber-100 whitespace-pre-line"
                 : "whitespace-pre-line"
             }
           >
-            {b}
+            {highlightLimits(b)}
           </div>
         );
       })}
