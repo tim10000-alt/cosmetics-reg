@@ -61,7 +61,9 @@ async function main() {
   const pendingName = await findPendingOnly();
   console.log(`[setup] pending-only 원료: ${pendingName || "(없음 — T15 skip)"}`);
 
-  const browser = await chromium.launch({ headless: true });
+  // --no-sandbox: CI 의 Playwright 컨테이너는 root 로 실행되어 Chromium sandbox 가 거부됨(로컬 비-root
+  // 에선 무해). --disable-dev-shm-usage: 컨테이너의 작은 /dev/shm 으로 인한 크래시 방지.
+  const browser = await chromium.launch({ headless: true, args: ["--no-sandbox", "--disable-dev-shm-usage"] });
 
   // ========== Desktop 시나리오 ==========
   const ctx = await browser.newContext({ locale: "ko-KR", viewport: { width: 1280, height: 900 } });
