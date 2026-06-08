@@ -270,7 +270,11 @@ function HomeInner() {
           )}
           <section className="mt-6 grid gap-3 sm:grid-cols-2">
             {response.results.map((r) => (
-              <CountryCard key={r.country_code} result={r} />
+              <CountryCard
+                key={r.country_code}
+                result={r}
+                bannedElsewhere={response.results.filter((x) => x.status === "banned").map((x) => x.country_name_ko)}
+              />
             ))}
           </section>
         </>
@@ -434,7 +438,7 @@ function SourceTier({ priority }: { priority: number | null }) {
   );
 }
 
-function CountryCard({ result }: { result: CountryLookupResult }) {
+function CountryCard({ result, bannedElsewhere = [] }: { result: CountryLookupResult; bannedElsewhere?: string[] }) {
   return (
     <article className="rounded-lg border border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
       <header className="mb-3 flex items-center justify-between">
@@ -621,7 +625,7 @@ function CountryCard({ result }: { result: CountryLookupResult }) {
         </div>
       )}
 
-      {result.source === "not_found" && <NotFoundByRegType result={result} />}
+      {result.source === "not_found" && <NotFoundByRegType result={result} bannedElsewhere={bannedElsewhere} />}
 
       {result.source_pdfs && result.source_pdfs.length > 0 && (
         <details className="mt-3 text-[11px] text-zinc-600 dark:text-zinc-400">
@@ -728,7 +732,7 @@ function ConditionBlocks({ text }: { text: string }) {
   );
 }
 
-function NotFoundByRegType({ result }: { result: CountryLookupResult }) {
+function NotFoundByRegType({ result, bannedElsewhere = [] }: { result: CountryLookupResult; bannedElsewhere?: string[] }) {
   if (result.regulation_type === "positive_list") {
     const listName = result.country_code === "CN" ? "IECIC" : "Positive List";
     return (
@@ -753,6 +757,22 @@ function NotFoundByRegType({ result }: { result: CountryLookupResult }) {
         <p className="text-[11px] leading-relaxed text-zinc-600 dark:text-zinc-400">
           일반 원료는 허용되지만 <b>보존제·색소·자외선차단제</b> 등 특정 카테고리는 Annex positive
           list 등재가 필요. 해당 카테고리라면 공식 Annex 원문을 확인해야 함.
+        </p>
+      </div>
+    );
+  }
+
+  // 이 국가엔 미수록이지만 *다른 국가에선 금지*된 성분이면 — "일반 사용 가능" 안내는 오해를 부른다
+  // (소스 커버리지 한계로 미수록일 뿐 실제론 규제 대상일 수 있음). 교차국가 신호로 경고를 표면화.
+  if (bannedElsewhere.length > 0) {
+    return (
+      <div className="space-y-1">
+        <span className="inline-block rounded-md bg-amber-100 px-2 py-0.5 text-xs font-medium text-amber-800 dark:bg-amber-950/60 dark:text-amber-200">
+          ⚠ 미수록 — 단, 타 국가 금지 성분
+        </span>
+        <p className="text-[11px] leading-relaxed text-amber-700 dark:text-amber-300">
+          이 국가의 수집 데이터엔 없으나 <b>{bannedElsewhere.slice(0, 5).join(", ")}{bannedElsewhere.length > 5 ? " 등" : ""}</b>에서 배합금지된 성분입니다.
+          미수록이 곧 사용 가능을 의미하지 않으며(소스 커버리지 한계 가능), 공식 원문 확인이 반드시 필요합니다.
         </p>
       </div>
     );
