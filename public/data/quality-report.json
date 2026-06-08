@@ -46,6 +46,7 @@
   "restrictedNoLimit": 3829,
   "statusConflicts": 463,
   "quarantinePending": 0,
+  "casContaminationSuspects": 203,
   "staleCount": 0,
   "staleSources": [],
   "limitAnomalyCount": 0,

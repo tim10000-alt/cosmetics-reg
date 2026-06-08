@@ -89,6 +89,10 @@ const COMPOUND_CAS_FIX = [
   // false-allowed 무관, 식별 정확성 교정. (일반 자동분리는 식물generic/이성질/염 388건 정당병합을 깨므로
   // 금지 — 분별력. 명시적 검증된 1쌍만 교정.)
   { match: /^\s*pentachloronitrobenzene\s*$/i, wrong: "100-00-5", correct: "82-68-8" },
+  // "Residues, steam cracked, thermally treated"(석유 잔액, 98219-64-8)가 *별개 물질* Magnesium
+  // Aspartate(2068-80-6, L-form) CAS 를 오염 보유 → 형제병합으로 마그네슘 아스파테이트 중국어명
+  // (天冬氨酸镁)이 잔액 카드에 표기되던 오병합(형제 CJK명 충돌 감사서 색출). 2068-80-6 제거.
+  { match: /residues,\s*steam\s*cracked/i, wrong: "2068-80-6", correct: "98219-64-8" },
 ];
 const CAS_RE = /^\d{2,7}-\d{2}-\d$/;
 function casCheckDigit(twoGroups) {            // "7782-85" → 6
