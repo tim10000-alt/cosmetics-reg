@@ -21,6 +21,7 @@ permissions:
 
 # 독립 그룹 — crawl/enrich(data-write)·identity(identity-write) 와 분리. status-*.json 만 쓰고
 # commit 은 먼저-commit→push(실패 시 merge -X ours 재시도)라 동시 실행해도 안전.
+# (공유 그룹이면 긴 crawl/enrich 에 밀려 판단기 run 이 starvation·취소됨 — 실측. 분리 유지.)
 concurrency:
   group: status-write
   cancel-in-progress: false
