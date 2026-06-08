@@ -33,6 +33,11 @@ const hasLimitInfo = (r) => r.max_concentration != null || /최대\s*농도|배�
 function compute() {
   const meta = JSON.parse(fs.readFileSync(path.join(DATA, "meta.json"), "utf8"));
   const coverage = {};
+  // 권위(1차 원문) 커버리지 — prio≥100 비-MFDS 직접출처를 가진 성분 수. 1차 파서 확장의 진척을
+  // *관찰 가능*하게 만들고(매일 늘어야 정상), 1차 파서 파손(총 커버리지는 유지되나 권위→relayed
+  // 로 후퇴)을 총 커버리지와 별개로 조기감지. KR 은 MFDS 가 자국 1차라 의도적으로 제외(오탐 방지).
+  const authCoverage = {};
+  const isAuth = (r) => (r.source_priority ?? 0) >= 100 && !/MFDS/.test(r.source_document || "");
   let totalRegs = 0, restrictedNoLimit = 0, statusConflicts = 0;
   for (const f of fs.readdirSync(REGDIR).filter((x) => x.endsWith(".json"))) {
     const cc = f.replace(".json", "");
@@ -41,12 +46,15 @@ function compute() {
     const by = new Map();
     for (const r of rows) { if (!by.has(r.ingredient_id)) by.set(r.ingredient_id, []); by.get(r.ingredient_id).push(r); }
     coverage[cc] = by.size;
+    let auth = 0;
     for (const [, g] of by) {
       const p = pick(g);
       if (p.status === "restricted" && !hasLimitInfo(p)) restrictedNoLimit++;
       const ss = new Set(g.map((x) => x.status));
       if (ss.has("banned") && (ss.has("listed") || ss.has("allowed"))) statusConflicts++;
+      if (cc !== "KR" && g.some(isAuth)) auth++;
     }
+    authCoverage[cc] = auth;
   }
   let quarantinePending = 0;
   try { quarantinePending = JSON.parse(fs.readFileSync(path.join(DATA, "quarantine.json"), "utf8")).rows.filter((q) => q.status === "pending").length; } catch {}
@@ -65,7 +73,7 @@ function compute() {
     postHealCorrupt = h.post_heal_corrupt_count ?? 0;
     postHealWhitespace = h.post_heal_whitespace_count ?? 0;
   } catch {}
-  return { generated_at: meta.generated_at, totalRegs, coverage, restrictedNoLimit, statusConflicts, quarantinePending, staleCount, staleSources, limitAnomalyCount, postHealCorrupt, postHealWhitespace };
+  return { generated_at: meta.generated_at, totalRegs, coverage, authCoverage, restrictedNoLimit, statusConflicts, quarantinePending, staleCount, staleSources, limitAnomalyCount, postHealCorrupt, postHealWhitespace };
 }
 
 function detectRegressions(cur, prev) {
@@ -75,6 +83,12 @@ function detectRegressions(cur, prev) {
   for (const cc of Object.keys(prev.coverage || {})) {
     const a = prev.coverage[cc] ?? 0, b = cur.coverage[cc] ?? 0;
     if (a > 50 && b < a * 0.9) out.push(`${cc} 커버리지 급감: ${a}→${b} (-10%↑) — parser 파손 의심`);
+  }
+  // 권위(1차) 커버리지 급감 — 총 커버리지는 유지돼도 권위 출처가 빠지면(1차 파서 파손·양식변경)
+  // 조기경보. 확장은 점진적(증가)이라 *감소*만 회귀로 본다.
+  for (const cc of Object.keys(prev.authCoverage || {})) {
+    const a = prev.authCoverage[cc] ?? 0, b = (cur.authCoverage || {})[cc] ?? 0;
+    if (a > 50 && b < a * 0.9) out.push(`${cc} 권위(1차) 커버리지 급감: ${a}→${b} (-10%↑) — 1차 파서 파손/양식변경 의심`);
   }
   if (cur.restrictedNoLimit > (prev.restrictedNoLimit ?? 0) * 1.1 + 50) out.push(`한도누락 restricted 증가: ${prev.restrictedNoLimit}→${cur.restrictedNoLimit}`);
   if (cur.statusConflicts > (prev.statusConflicts ?? 0) * 1.2 + 20) out.push(`status 충돌 증가: ${prev.statusConflicts}→${cur.statusConflicts}`);
@@ -96,6 +110,7 @@ fs.writeFileSync(REPORT, JSON.stringify({ ...cur, checked_at_note: "matches regu
 console.log("=== 데이터 품질 지표 ===");
 console.log(`  총 규제: ${cur.totalRegs} | restricted 한도누락: ${cur.restrictedNoLimit} | status충돌: ${cur.statusConflicts} | quarantine: ${cur.quarantinePending}`);
 console.log(`  커버리지(성분수): ${Object.entries(cur.coverage).map(([k, v]) => k + ":" + v).join(" ")}`);
+  console.log(`  권위(1차) 커버리지: ${Object.entries(cur.authCoverage || {}).map(([k, v]) => k + ":" + v).join(" ")}`);
 if (regressions.length) {
   console.error("\n🔴 품질 회귀 감지:");
   for (const r of regressions) console.error("  - " + r);
