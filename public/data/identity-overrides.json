@@ -46,6 +46,24 @@
       "ko": "알파-하이드록시애씨드",
       "a": "Alpha-hydroxy acids",
       "b": "α-Hydroxy acids"
+    },
+    {
+      "ids": [
+        "187577f3-cf40-4a33-a66e-f8855dba57c8",
+        "f7d738b8-d922-4586-bd75-207010bb46d8"
+      ],
+      "ko": "O,O'-다이아세틸-N-알릴-N-노르몰핀",
+      "a": "O,O'-Diacetyl-N-allyl-N-normorphine",
+      "b": "O,O'-Diacetyl-N-allyl-N-normorphine; Diacetylnalorphine"
+    },
+    {
+      "ids": [
+        "9a6c18e4-ba28-4414-971b-349ac7dc11d6",
+        "e90fe92a-d35f-4f31-a469-61b0d2023f5f"
+      ],
+      "ko": "에스트로겐",
+      "a": "Oestrogens, Estrogens",
+      "b": "Oestrogens"
     }
   ]
 }

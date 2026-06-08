@@ -785,6 +785,91 @@
       "b": "Distillates (petroleum), acid-treated heavy paraffinic 9",
       "verdict": "different",
       "by": "cas-veto"
+    },
+    "c217f3da-b739-4831-ab5a-982b99a7d3cf|d56f67d1-bfa6-4fcb-b65e-0395e08a7951": {
+      "ko": "실버클로라이드",
+      "a": "Silver Chloride",
+      "b": "Silver Chloride deposited on titanium dioxide",
+      "m1": {
+        "verdict": "different",
+        "confidence": 1,
+        "reason": "Entry B describes a composite material where Silver Chloride is deposited on Titanium Dioxide, making it distinct from pure Silver Chloride (Entry A)."
+      },
+      "m2": {
+        "verdict": "different",
+        "confidence": 0.9,
+        "reason": "Entry A is pure Silver Chloride. Entry B is Silver Chloride deposited on Titanium Dioxide, which is a composite material and not the same chemical substance."
+      },
+      "verdict": "different",
+      "by": "gemini-consensus"
+    },
+    "451d0ec8-a91e-496f-ae3f-3f161bce24a8|ac1f2f8e-d117-40ac-a5fc-f8c1589da84a": {
+      "ko": "알칼리금속의 염소산염",
+      "a": "Alkali metal chlorate, Chlorates of alkali metals",
+      "b": "Chlorates of alkali metals",
+      "m1": {
+        "verdict": "same",
+        "confidence": 1,
+        "reason": "Both entries refer to the same chemical group 'Chlorates of alkali metals'. Entry A includes specific CAS numbers for members of this group, while Entry B does not, which falls under 'identical chemical with/without a CI/CAS annotation'."
+      },
+      "m2": {
+        "verdict": "different",
+        "confidence": 0.9,
+        "reason": "Entry A includes specific CAS numbers for alkali metal chlorates, while Entry B is a broader INCI name without specific CAS numbers, suggesting Entry B might be a general category or a less specific registration."
+      },
+      "verdict": "different",
+      "by": "gemini-consensus"
+    },
+    "187577f3-cf40-4a33-a66e-f8855dba57c8|f7d738b8-d922-4586-bd75-207010bb46d8": {
+      "ko": "O,O'-다이아세틸-N-알릴-N-노르몰핀",
+      "a": "O,O'-Diacetyl-N-allyl-N-normorphine",
+      "b": "O,O'-Diacetyl-N-allyl-N-normorphine; Diacetylnalorphine",
+      "m1": {
+        "verdict": "same",
+        "confidence": 1,
+        "reason": "Both entries share the identical primary INCI name 'O,O'-Diacetyl-N-allyl-N-normorphine'. Entry B merely includes 'Diacetylnalorphine' as a synonym, which refers to the same chemical substance."
+      },
+      "m2": {
+        "verdict": "same",
+        "confidence": 1,
+        "reason": "Both entries refer to the same chemical substance, with Entry B including a synonym (Diacetylnalorphine) in addition to the INCI name."
+      },
+      "verdict": "same",
+      "by": "gemini-consensus"
+    },
+    "9a6c18e4-ba28-4414-971b-349ac7dc11d6|e90fe92a-d35f-4f31-a469-61b0d2023f5f": {
+      "ko": "에스트로겐",
+      "a": "Oestrogens, Estrogens",
+      "b": "Oestrogens",
+      "m1": {
+        "verdict": "same",
+        "confidence": 1,
+        "reason": "Entry A includes 'Estrogens' as an alternative spelling/synonym for 'Oestrogens', which is present in both entries. This is a case of US vs INCI spelling and synonym listing for the same group of substances."
+      },
+      "m2": {
+        "verdict": "same",
+        "confidence": 1,
+        "reason": "Both entries refer to the same substance, 'Estrogens', with minor variations in spelling and inclusion of a common synonym ('Oestrogens'). The CAS number is not provided for either, and the INCI names are essentially identical."
+      },
+      "verdict": "same",
+      "by": "gemini-consensus"
+    },
+    "0b29b836-1a5d-4957-99b3-fd1ee47b7a35|21947ea8-edb6-48bc-8fca-253e47eb655f": {
+      "ko": "1,4-다이아미노-2-메톡시-9,10-안트라센다이온(분산적색11호) 및 그 염류",
+      "a": "1,4-Diamino-2-methoxy-9,10-anthracenedione (Disperse Red 11) and its salts",
+      "b": "1,4-Diamino-2-methoxy-9,10-anthracenedione (Disperse Red 11) and its salts, when used as a substance in hair dye products 1",
+      "m1": {
+        "verdict": "same",
+        "confidence": 0.95,
+        "reason": "The core chemical name '1,4-Diamino-2-methoxy-9,10-anthracenedione (Disperse Red 11) and its salts' is identical. The additional phrase in Entry B's INCI is a usage annotation, not a chemical distinction. The presence of a CAS number in B and its absence in A does not indicate different substances."
+      },
+      "m2": {
+        "verdict": "different",
+        "confidence": 0.9,
+        "reason": "Entry B specifies the substance 'when used as a substance in hair dye products 1', which implies a specific regulatory context or purity/formulation not present in Entry A. Additionally, Entry B has a CAS number while Entry A does not, suggesting a potential difference in how they are registered or identified."
+      },
+      "verdict": "different",
+      "by": "gemini-consensus"
     }
   }
 }
