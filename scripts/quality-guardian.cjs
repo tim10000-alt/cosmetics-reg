@@ -83,6 +83,12 @@ const pigNorm = (s) => String(s || "").toLowerCase().replace(/[,\s]*c\.?\s?i\.?\
 // Oxide 허용 녹색안료 CI 77288)를 보유 → 허용안료가 banned 로 병합. 매 run 치유(봇 갱신 대비 durable).
 const COMPOUND_CAS_FIX = [
   { match: /chromium\s*\(?\s*vi\s*\)?\s*trioxide|chromium trioxide|chromic (?:acid|anhydride)/i, wrong: "1308-38-9", correct: "1333-82-0" },
+  // Pentachloronitrobenzene(=Quintozene, 82-68-8)가 *별개 물질* 1-Chloro-4-nitrobenzene(100-00-5)의
+  // CAS 를 오염 보유 → CAS 병합으로 1-Chloro-4-nitrobenzene 의 중국어명(1-氯-4-硝基苯)이 PCNB 카드에
+  // 표기되던 오병합(전수 UI 대조 #142037셀 색출). 100-00-5 제거·82-68-8 유지로 분리. 둘 다 금지물질이라
+  // false-allowed 무관, 식별 정확성 교정. (일반 자동분리는 식물generic/이성질/염 388건 정당병합을 깨므로
+  // 금지 — 분별력. 명시적 검증된 1쌍만 교정.)
+  { match: /^\s*pentachloronitrobenzene\s*$/i, wrong: "100-00-5", correct: "82-68-8" },
 ];
 const CAS_RE = /^\d{2,7}-\d{2}-\d$/;
 function casCheckDigit(twoGroups) {            // "7782-85" → 6
