@@ -244,9 +244,13 @@ function main() {
     return (best && best.length >= 2 && !isCorruptName(best)) ? best : null;
   };
   for (const i of ingObj.rows) {
-    // 이름 위생: 앞뒤 공백(\r\n·\t = 파싱 잔재) 제거. 표시·매칭·중복판정 정확도↑(247건 실측).
+    // 이름 위생: 내부 불가시 문자(zero-width space·방향마크·soft hyphen·BOM = 파싱 잔재) 제거 +
+    // 앞뒤 공백(\r\n·\t) 제거. 화학명엔 무의미하나 검색 매칭·중복판정을 깨뜨림(불가시라 육안 무발견).
     for (const f of ["inci_name", "korean_name", "chinese_name", "japanese_name"]) {
-      if (typeof i[f] === "string" && i[f] !== i[f].trim()) { i[f] = i[f].trim(); nameTrimmed++; ingChanged = true; }
+      if (typeof i[f] !== "string") continue;
+      const noInvis = i[f].replace(/[​-‏‪-‮⁠﻿­]/g, "");
+      if (noInvis !== i[f]) { i[f] = noInvis; nameTrimmed++; ingChanged = true; }
+      if (i[f] !== i[f].trim()) { i[f] = i[f].trim(); nameTrimmed++; ingChanged = true; }
     }
     // 각주마커 안전 collapse(위 강한 조건 충족 시만) — "X(1)"→"X"(기존 clean base 로 병합).
     if (typeof i.inci_name === "string" && FOOT_RE.test(i.inci_name)) {
