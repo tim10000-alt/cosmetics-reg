@@ -47,12 +47,17 @@ jobs:
       - run: npm ci
       - name: Build static site (out/)
         run: npm run build
-      - name: Serve out/ on :3010 (background)
+      # serve + e2e 를 한 스텝에서 — 컨테이너에선 별도 step 의 background serve 가 step 경계(셸 종료)
+      # 에서 종료신호를 받아 테스트 중간에 죽음(라이브 run 157004b: T1~T19 통과 후 line187서
+      # ERR_CONNECTION_REFUSED). 같은 셸 안에 두면 e2e 종료까지 serve 생존. (셸이 sh 라 brace
+      # expansion 미작동 → seq 사용.)
+      - name: Serve out/ on :3010 + E2E
         run: |
           npx --yes serve out -l 3010 &
-          for i in {1..30}; do curl -sf http://localhost:3010/ >/dev/null && break; sleep 1; done
-      - name: Run E2E scenarios
-        run: npm run e2e
+          SERVE_PID=$!
+          for i in $(seq 1 30); do curl -sf http://localhost:3010/ >/dev/null && break; sleep 1; done
+          npm run e2e
+          kill $SERVE_PID 2>/dev/null || true
       - name: Upload screenshots on failure
         if: failure()
         uses: actions/upload-artifact@v4
