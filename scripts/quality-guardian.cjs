@@ -26,6 +26,10 @@ function isCorruptName(name) {
   //  - RTL 역순 헤더 쓰레기: "number/Chemical/Reference/identification" 등이 역순으로 박힘.
   //  - 단일문자 공백토큰 8+ = 역순 분해된 표 헤더(예 "reb m u n C E reb m u n S A C").
   // (%·장문·연속숫자 룰은 제거 — 정상 화학명/발효블렌드/CI번호가 그런 특징을 합법적으로 가짐.)
+  // 삭제표지/placeholder 이름 — 규제표(ASEAN/EU Annex II 등)의 "(deleted)"·"Entry deleted" 행이
+  // ingredient 로 materialize 된 것(의미 없는 이름인데 검색·UI 노출 + 스푸리어스 규제 매달림). 정확
+  // 매칭만(정상명 오탐 0). bare "-" 류는 실제 한글명 동반 가능(발효추출물)이라 제외 — 분별력.
+  if (/^\s*(?:entry\s+(?:was\s+)?deleted|deleted(?:\s+entry)?|\(\s*deleted\s*\)|n\s*\/\s*a|not\s+applicable|reserved|placeholder|no\s+longer\s+(?:used|listed))\s*$/i.test(name)) return true;
   if (/&#\d|&#x|&amp;|&lt;|&gt;/.test(name)) return true;
   if (/reb\s?m\s?u\s?n|laci\s?m\s?eh\s?c|recnerefe|noitacifitnedi|lanruoj/i.test(name)) return true;
   // 단일토큰(영문자/숫자/점) 8개+ = 표 헤더/citation 이 공백분해돼 박힌 것(RTL 역순 or 정방향).
