@@ -1,4 +1,4 @@
-import "./pdf-polyfill.ts";
+import "./pdf-polyfill";   // 환경 독립 — pdf-parse 가 구버전 Node 에서도 동작 (pdf-parse import 전 필수)
 import { loadEnv } from "../crawlers/env";
 loadEnv();
 import { randomUUID, createHash } from "node:crypto";
