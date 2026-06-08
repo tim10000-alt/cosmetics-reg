@@ -55,15 +55,18 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          CONCL=$(gh run list --workflow="PR Check" --branch main --event push --limit 1 --json conclusion --jq '.[0].conclusion // "none"')
-          echo "PR Check 최근 main(push) 결론: $CONCL"
-          if [ "$CONCL" != "success" ] && [ "$CONCL" != "none" ]; then
-            echo "alert=true" >> "$GITHUB_OUTPUT"
-            echo "body=- CI 품질게이트(PR Check) 최근 main 런 = ${CONCL} — E2E 게이트가 깨졌을 수 있음(Actions → PR Check 확인)." >> "$GITHUB_OUTPUT"
-          else
-            echo "alert=false" >> "$GITHUB_OUTPUT"
-            echo "body=" >> "$GITHUB_OUTPUT"
-          fi
+          # 최근 '완료된' main(push) PR Check 의 결론만 본다(in_progress/대기 제외). 빈값·none·null·
+          # 진행중은 전부 무경보 — *확정된 나쁜 결론*에만 경보(워치독은 모호성에 false-alarm 금지).
+          CONCL=$(gh run list --workflow="PR Check" --branch main --event push --status completed --limit 1 --json conclusion --jq '.[0].conclusion // ""' 2>/dev/null || echo "")
+          echo "PR Check 최근 완료 main(push) 결론: [${CONCL}]"
+          case "$CONCL" in
+            failure|cancelled|timed_out|startup_failure)
+              echo "alert=true" >> "$GITHUB_OUTPUT"
+              echo "body=- CI 품질게이트(PR Check) 최근 완료 main 런 = ${CONCL} — E2E 게이트가 깨졌을 수 있음(Actions → PR Check 확인)." >> "$GITHUB_OUTPUT" ;;
+            *)
+              echo "alert=false" >> "$GITHUB_OUTPUT"
+              echo "body=" >> "$GITHUB_OUTPUT" ;;
+          esac
 
       - name: Open or update alert issue
         if: steps.check.outputs.alert == 'true' || steps.ci.outputs.alert == 'true'
