@@ -13,6 +13,7 @@ on:
 permissions:
   contents: read
   issues: write
+  actions: read   # gh run list (PR Check 게이트 건강 점검)
 
 jobs:
   watchdog:
@@ -47,11 +48,28 @@ jobs:
             }
           '
 
-      - name: Open or update alert issue
-        if: steps.check.outputs.alert == 'true'
+      # CI 품질게이트 건강 점검 — PR Check(E2E) 가 조용히 깨져도(예: Playwright install
+      # 15분 hang→timeout, 2026-06-08 사례) 데이터 freshness 만 보던 워치독이 못 잡던 사각 보완.
+      - name: Check CI gate health (PR Check on main)
+        id: ci
         env:
           GH_TOKEN: ${{ github.token }}
-          BODY: ${{ steps.check.outputs.body }}
+        run: |
+          CONCL=$(gh run list --workflow="PR Check" --branch main --event push --limit 1 --json conclusion --jq '.[0].conclusion // "none"')
+          echo "PR Check 최근 main(push) 결론: $CONCL"
+          if [ "$CONCL" != "success" ] && [ "$CONCL" != "none" ]; then
+            echo "alert=true" >> "$GITHUB_OUTPUT"
+            echo "body=- CI 품질게이트(PR Check) 최근 main 런 = ${CONCL} — E2E 게이트가 깨졌을 수 있음(Actions → PR Check 확인)." >> "$GITHUB_OUTPUT"
+          else
+            echo "alert=false" >> "$GITHUB_OUTPUT"
+            echo "body=" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open or update alert issue
+        if: steps.check.outputs.alert == 'true' || steps.ci.outputs.alert == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BODY: "${{ steps.check.outputs.body }}${{ steps.ci.outputs.body }}"
         run: |
           TITLE="🚨 데이터 갱신 워치독 경보"
           STAMP="$(date -u +%Y-%m-%dT%H:%MZ)"
