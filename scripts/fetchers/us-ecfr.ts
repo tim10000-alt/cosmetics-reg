@@ -112,6 +112,28 @@ const SECTIONS: SectionMapping[] = [
   },
 ];
 
+// 21 CFR Part 700 외(外) FDA 화장품 금지 — 색소 등재 철회 등 다른 메커니즘으로 금지된 물질(Part 700
+// XML 에 없으므로 별도 curated). 안정적 권위 법령 사실이라 결정론(무 Gemini)·idempotent·매 crawl 자동.
+// 각 항목 자체 source_document/citation 보유.
+interface Supplement {
+  incis: string[];          // ingredients.json 매칭 후보(lowercase)
+  status: "banned" | "restricted";
+  source_document: string;
+  source_url: string;
+  korean_summary: string;
+}
+const SUPPLEMENT: Supplement[] = [
+  {
+    incis: ["lead acetate"],
+    status: "banned",
+    source_document: "US FDA — Lead Acetate 색소 등재 철회 (21 CFR 73.2396, 2018)",
+    source_url: "https://www.federalregister.gov/d/2018-23722",
+    korean_summary:
+      "FDA 2018 최종규칙(83 FR 53299, 2018-10-31)으로 lead acetate 의 색소 등재(21 CFR 73.2396)를 철회 — 진행성 모발염색제 등 화장품 사용 금지. 안전성 재평가 결과 더 이상 안전하다고 인정되지 않음.",
+  },
+];
+const SUPPLEMENT_DOCS = new Set(SUPPLEMENT.map((s) => s.source_document));
+
 interface CFRSection {
   number: string;
   title: string;
@@ -253,6 +275,29 @@ async function main() {
     }
   }
 
+  // SUPPLEMENT (Part 700 외 FDA 금지, 예: lead acetate 색소 철회) — eCFR XML 비의존, 항상 기록.
+  for (const s of SUPPLEMENT) {
+    const ing = findOrCreateIngredient(ingredients, byInciLower, s.incis);
+    if (!ing) continue;
+    newRegs.push({
+      ingredient_id: ing.id,
+      country_code: "US",
+      status: s.status,
+      max_concentration: null,
+      concentration_unit: "%",
+      product_categories: [],
+      conditions: s.korean_summary,
+      source_url: s.source_url,
+      source_document: s.source_document,
+      source_version: sourceVersion,
+      source_priority: 100,
+      last_verified_at: now,
+      confidence_score: 1.0,
+      override_note: null,
+    });
+    matched.push(`supplement: ${ing.inci_name}`);
+  }
+
   console.log(`  matched existing ingredients: ${matched.length}, created new: ${created.length}`);
 
   // F15+ (정품검증): 파싱 0건이면(eCFR 차단·구조변경) 기존 데이터 보존 — strip 후 빈 write 방지.
@@ -262,7 +307,7 @@ async function main() {
   }
   // 머지: 기존 source_document='US FDA 21 CFR 700' 행만 교체. 다른 source 보존.
   const existingRegs = await readRows<RegulationRow>("regulations");
-  const otherSources = existingRegs.filter((r) => r.source_document !== SOURCE_DOC);
+  const otherSources = existingRegs.filter((r) => r.source_document !== SOURCE_DOC && !SUPPLEMENT_DOCS.has(r.source_document));
   const finalRegs = [...otherSources, ...newRegs];
 
   await writeRows("ingredients", ingredients);
