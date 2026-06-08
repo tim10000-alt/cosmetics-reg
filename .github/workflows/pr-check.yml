@@ -30,6 +30,12 @@ jobs:
     timeout-minutes: 15
     needs: static
     # Phase 5b — Supabase 의존 0. public/data/*.json 가 repo 에 포함되어 자격증명 불필요.
+    # 🔴 2026-06-08: `npx playwright install --with-deps chromium` 가 ubuntu-latest 에서 매 run
+    # 15분 hang → job timeout cancel(최근 6/6 run = E2E 게이트가 조용히 죽어 있었음. watchdog 은
+    # 데이터 freshness 만 봐서 미감지). 근본 해결 = 브라우저+시스템 의존성이 baked-in 된 공식
+    # Playwright 컨테이너로 실행해 install 단계 자체를 제거(npm playwright 버전 == 컨테이너 태그 핀).
+    container:
+      image: mcr.microsoft.com/playwright:v1.59.1-jammy
     env:
       E2E_BASE: http://localhost:3010
     steps:
@@ -39,8 +45,6 @@ jobs:
           node-version: "24"
           cache: "npm"
       - run: npm ci
-      - name: Install Playwright Chromium
-        run: npx playwright install --with-deps chromium
       - name: Build static site (out/)
         run: npm run build
       - name: Serve out/ on :3010 (background)
