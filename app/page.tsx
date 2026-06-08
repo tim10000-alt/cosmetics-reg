@@ -762,9 +762,11 @@ function NotFoundByRegType({ result, bannedElsewhere = [] }: { result: CountryLo
     );
   }
 
-  // 이 국가엔 미수록이지만 *다른 국가에선 금지*된 성분이면 — "일반 사용 가능" 안내는 오해를 부른다
+  // 이 국가엔 미수록이지만 *여러 국가에서 금지*된 성분이면 — "일반 사용 가능" 안내는 오해를 부른다
   // (소스 커버리지 한계로 미수록일 뿐 실제론 규제 대상일 수 있음). 교차국가 신호로 경고를 표면화.
-  if (bannedElsewhere.length > 0) {
+  // 임계값 ≥3국 — 단일/이중국 금지(niche·단일출처 분류·예: 1국만의 헴프씨드오일 제한)는 흔한 안전
+  // 성분에 과다경보가 되므로 제외. EU+ASEAN+Andean 공유 금지목록 등 *다관할* 금지만 경고(분별력).
+  if (bannedElsewhere.length >= 3) {
     return (
       <div className="space-y-1">
         <span className="inline-block rounded-md bg-amber-100 px-2 py-0.5 text-xs font-medium text-amber-800 dark:bg-amber-950/60 dark:text-amber-200">
