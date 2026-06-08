@@ -96,16 +96,18 @@ function bucketFor(ids,code){
   return merged.filter((r)=>{const k=`${r.source_document??""}|${r.source_url??""}|${r.status}`;if(seen.has(k))return false;seen.add(k);return true;});
 }
 // lib/regulations-query.ts buildCanonical 미러 — 형제 그룹의 한국 등록 표준명 대표 선택.
+const isLeakArtifact=(s)=>{if(!s)return false;if(/[\r\n]/.test(s))return true;if(/\b\d{2,7}-\d{2}-\d\b/.test(s))return true;if(/\b\d{3}-\d{3}-\d\b/.test(s))return true;if(/\d[.,]\d+\s*%/.test(s)||/\s\d{1,3}\s*%/.test(s))return true;return false;}; // lib 미러
+const cleanDisplayName=(raw)=>{const r=(raw||"").toString();if(!r)return r;let s=r.replace(/[\r\n\t]+/g," ").replace(/\s{2,}/g," ").trim();s=s.replace(/\s*\/\s*\d{2,7}-\d{2}-\d.*$/,"").trim();s=s.replace(/\s+and a mixture of\b.*$/i,"").trim();return s||r;}; // lib 미러
 function buildCanonical(ids, resolved){
   const members=ids.map(id=>byId.get(id)).filter(Boolean);
-  if(members.length<=1)return resolved;
-  const score=(m)=>{const inci=m.inci_name||"";const allCaps=inci===inci.toUpperCase()&&/[A-Z]/.test(inci);const junk=/,?\s*C(?:AS|I)\s*[\d\-]/i.test(inci)||/\[\d\]/.test(inci)||/[,;]/.test(inci);return (m.kcia_code?2000:0)+(m.korean_name?1000:0)+(allCaps?0:100)+(junk?0:50)+(m.cas_no?10:0)-inci.length*0.01;};
+  if(members.length<=1){const cleaned=cleanDisplayName(resolved.inci_name);const syn=(resolved.synonyms||[]).filter(x=>!isLeakArtifact(x));const casClean=resolved.cas_no?resolved.cas_no.replace(/[\r\n\t]+/g," ").replace(/\s+,/g,",").replace(/\s{2,}/g," ").trim():resolved.cas_no;return (cleaned===resolved.inci_name&&syn.length===(resolved.synonyms||[]).length&&casClean===resolved.cas_no)?resolved:{...resolved,inci_name:cleaned,synonyms:syn,cas_no:casClean};}
+  const score=(m)=>{const inci=m.inci_name||"";const allCaps=inci===inci.toUpperCase()&&/[A-Z]/.test(inci);const junk=/,?\s*C(?:AS|I)\s*[\d\-]/i.test(inci)||/\[\d\]/.test(inci)||/[,;]/.test(inci)||isLeakArtifact(inci);return (m.kcia_code?2000:0)+(m.korean_name?1000:0)+(allCaps?0:100)+(junk?0:50)+(m.cas_no?10:0)-inci.length*0.01;};
   const rep=[...members].sort((a,b)=>score(b)-score(a))[0];
-  const repInci=(rep.inci_name||"").trim();
+  const repInci=cleanDisplayName(rep.inci_name);
   const firstOf=(f)=>{if(rep[f])return rep[f];for(const m of members)if(m[f])return m[f];return null;};
   const casSet=[];for(const m of members)for(const c of String(m.cas_no||"").split(/[\s,;]+/)){const t=c.trim();if(/^\d{2,7}-\d{2}-\d$/.test(t)&&!casSet.includes(t))casSet.push(t);}
   const synSet=[];const ri=repInci.toLowerCase(),rk=(rep.korean_name||"").trim().toLowerCase();
-  const addSyn=s=>{const v=(s||"").trim();if(!v)return;if(v.toLowerCase()===ri||v.toLowerCase()===rk)return;if(!synSet.some(x=>x.toLowerCase()===v.toLowerCase()))synSet.push(v);};
+  const addSyn=s=>{const v=(s||"").trim();if(!v)return;if(v.toLowerCase()===ri||v.toLowerCase()===rk)return;if(isLeakArtifact(v))return;if(!synSet.some(x=>x.toLowerCase()===v.toLowerCase()))synSet.push(v);};
   for(const m of members){(m.synonyms||[]).forEach(addSyn);if(m.id!==rep.id)addSyn(m.inci_name);}
   return {id:rep.id,inci_name:repInci,korean_name:firstOf("korean_name"),chinese_name:firstOf("chinese_name"),japanese_name:firstOf("japanese_name"),cas_no:casSet.length?casSet.join(", "):null,synonyms:synSet,description:firstOf("description"),function_category:firstOf("function_category"),function_description:firstOf("function_description"),kcia_code:firstOf("kcia_code")};
 }

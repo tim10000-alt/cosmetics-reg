@@ -127,6 +127,32 @@ function rankIngredients(
   return scored.slice(0, limit).map((x) => x.ing);
 }
 
+// 파서 누출 아티팩트 판별 — 규제 표(EU AnnexII/III 등)의 컬럼이 이름/동의어 필드에 통째로
+// 접합된 경우(개행·CAS/EC번호·한도% glue). 표시명/동의어 후보에서 이런 잔재를 후순위·제외하는 데 사용.
+// 정상 화학명/약어는 개행·CAS·EC번호·한도%를 포함하지 않으므로 false. (legit 예외 극소수[%포함 용액명]는
+// 동의어 칩에서만 빠지고 정체성·검색엔 무영향 → 분별력상 net 이득)
+function isLeakArtifact(s: string): boolean {
+  if (!s) return false;
+  if (/[\r\n]/.test(s)) return true;                       // 멀티라인 = 표 행 wrap
+  if (/\b\d{2,7}-\d{2}-\d\b/.test(s)) return true;         // 임베디드 CAS
+  if (/\b\d{3}-\d{3}-\d\b/.test(s)) return true;           // 임베디드 EC 번호
+  if (/\d[.,]\d+\s*%/.test(s) || /\s\d{1,3}\s*%/.test(s)) return true;  // 임베디드 한도%
+  return false;
+}
+
+// 표시명 위생 — 규제표(EU AnnexII/III 등)의 컬럼이 이름에 통째로 접합된 잔재를 *표시 시점*에만 제거.
+// 데이터(저장 inci_name)는 불변 → 검색 인덱스·canonName 형제그룹·정체성 무영향. 결정론·가역.
+// 제거 대상은 *명확한 경계*가 있는 것만: 개행/탭/중복공백 collapse, " / <CAS> / <EC> <각주>" 컬럼,
+// "and a mixture of if they contain >N% X" boilerplate. 화학명 본체·scope("and its salts" 등)는 보존.
+function cleanDisplayName(raw: string | null | undefined): string {
+  const r = (raw || "").toString();
+  if (!r) return r;
+  let s = r.replace(/[\r\n\t]+/g, " ").replace(/\s{2,}/g, " ").trim();
+  s = s.replace(/\s*\/\s*\d{2,7}-\d{2}-\d.*$/, "").trim();   // "/ CAS / EC / footnote" 컬럼 누출
+  s = s.replace(/\s+and a mixture of\b.*$/i, "").trim();     // "and a mixture of if they contain >N% X"
+  return s || r;
+}
+
 // 형제 그룹(이미 CAS/INCI 로 병합된 동일물질)의 *대표 표시명*을 한국 등록 표준명 우선으로 선택.
 // 같은 물질이 영문 동의어(예: "Methylene Chloride")로 resolve 돼도 한국 등록명("Dichloromethane /
 // 다이클로로메탄")을 대표로 보여주기 위함. 데이터를 새로 합치는 게 아니라 *이미 묶인 것 중 어느 이름을
@@ -137,16 +163,24 @@ function buildCanonical(
   ds: Awaited<ReturnType<typeof dataset>>,
 ): IngredientMatch {
   const members = ids.map((id) => ds.ingredientById.get(id)).filter(Boolean) as IngredientMatch[];
-  if (members.length <= 1) return resolved;
+  if (members.length <= 1) {
+    // 형제 없는 단일 레코드도 표시명 위생 + 누출 동의어 제거(standalone 코럽트 헤드라인 대응).
+    const cleaned = cleanDisplayName(resolved.inci_name);
+    const syn = (resolved.synonyms || []).filter((x) => !isLeakArtifact(x));
+    // cas_no 제어문자(\r\n\t) 위생 — 저장값 오염(예 "328-39-2(DL-)\r,61-90-5(L-)")이 표시에 새지 않게.
+    const casClean = resolved.cas_no ? resolved.cas_no.replace(/[\r\n\t]+/g, " ").replace(/\s+,/g, ",").replace(/\s{2,}/g, " ").trim() : resolved.cas_no;
+    return cleaned === resolved.inci_name && syn.length === (resolved.synonyms || []).length && casClean === resolved.cas_no
+      ? resolved : { ...resolved, inci_name: cleaned, synonyms: syn, cas_no: casClean };
+  }
   // 대표 점수: 한국등록(korean_name) > 정상케이스(외국 ALL-CAPS 후순위) > 군더더기 없음 > CAS 보유, 짧을수록 가산.
   const score = (m: IngredientMatch): number => {
     const inci = m.inci_name || "";
     const isAllCaps = inci === inci.toUpperCase() && /[A-Z]/.test(inci);
-    const hasJunk = /,?\s*C(?:AS|I)\s*[\d\-]/i.test(inci) || /\[\d\]/.test(inci) || /[,;]/.test(inci);
+    const hasJunk = /,?\s*C(?:AS|I)\s*[\d\-]/i.test(inci) || /\[\d\]/.test(inci) || /[,;]/.test(inci) || isLeakArtifact(inci);
     return (m.kcia_code ? 2000 : 0) + (m.korean_name ? 1000 : 0) + (isAllCaps ? 0 : 100) + (hasJunk ? 0 : 50) + (m.cas_no ? 10 : 0) - inci.length * 0.01;
   };
   const rep = [...members].sort((a, b) => score(b) - score(a))[0];
-  const repInci = (rep.inci_name || "").trim();   // 표시 위생(데이터 잔여 공백 방어)
+  const repInci = cleanDisplayName(rep.inci_name);   // 표시 위생(공백·규제표 컬럼 누출 제거)
   const firstOf = (f: keyof IngredientMatch): string | null => {
     if (rep[f]) return rep[f] as string;
     for (const m of members) if (m[f]) return m[f] as string;
@@ -163,6 +197,7 @@ function buildCanonical(
   const addSyn = (s: string | null | undefined) => {
     const v = (s || "").trim(); if (!v) return;
     if (v.toLowerCase() === repInciLc || v.toLowerCase() === repKorLc) return;
+    if (isLeakArtifact(v)) return;  // 파서 누출(개행·CAS/EC번호·한도% glue)을 동의어 칩으로 노출 금지
     if (!synSet.some((x) => x.toLowerCase() === v.toLowerCase())) synSet.push(v);
   };
   for (const m of members) { (m.synonyms || []).forEach(addSyn); if (m.id !== rep.id) addSyn(m.inci_name); }
