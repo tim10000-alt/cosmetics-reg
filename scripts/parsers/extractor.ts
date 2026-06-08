@@ -50,7 +50,13 @@ async function callWithRetry<T>(fn: () => Promise<T>, maxAttempts = 8): Promise<
       const msg = e instanceof Error ? e.message : String(e);
       const quota = /\b(429|RESOURCE_EXHAUSTED)\b/.test(msg);
       const transient = /\b(500|502|503|504|UNAVAILABLE)\b/.test(msg);
-      if ((!quota && !transient) || attempt === maxAttempts) throw e;
+      // 일일(RPD) quota 소진은 분당창 리셋으로 안 풀림(하루 단위 — PT 자정 리셋). 65초×8 재시도는
+      // 순수 낭비(#37 실측: 문서당 ~8.7분 헛돎) → 즉시 throw 해 run.ts circuit-breaker 를 빠르게 트립.
+      // RPM/TPM(분당) 만 65초 대기로 회복 가능. quotaId 의 "PerDay" 로 일일 한도를 구분.
+      // 정밀 신호 = quotaId 의 "PerDay"(GenerateRequestsPerDayPerProjectPerModel-FreeTier).
+      // RPM(분당)은 PerMinute quotaId 라 매칭 안 됨 → 65초 재시도 유지(분당창 회복 가능).
+      const dailyQuota = quota && /PerDay/i.test(msg);
+      if ((!quota && !transient) || dailyQuota || attempt === maxAttempts) throw e;
       // 무료 TPM/RPM 한도 초과(quota)는 분당 창이 리셋돼야 풀리므로 65초 대기.
       // 일시적 5xx 는 지수 백오프.
       const backoffMs = quota ? 65_000 : Math.min(60_000, 2_000 * 2 ** (attempt - 1));

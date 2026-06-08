@@ -241,8 +241,12 @@ jobs:
       # 회귀(커버리지 급감=parser 파손 / 충돌·한도누락 급증) 시 Issue 자동 생성 — 전자동 자가신고.
       - name: Open data-quality regression issue
         if: steps.quality.outcome == 'failure'
+        # 자가신고는 부가기능 — 실패해도 런(데이터 갱신)을 절대 죽이지 않는다.
+        continue-on-error: true
+        # GITHUB_TOKEN 사용(permissions.issues:write 보유). GH_PAT 는 Contents-only fine-grained 라
+        # Issues 쓰기 불가("Resource not accessible by personal access token") → github.token 으로 고정.
         env:
-          GH_TOKEN: ${{ secrets.GH_PAT || github.token }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           TITLE="🟠 데이터 품질 회귀 감지"
           STAMP="$(date -u +%Y-%m-%dT%H:%MZ)"
