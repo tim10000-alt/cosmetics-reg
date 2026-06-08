@@ -34,10 +34,10 @@ jobs:
       CI: "true"
       IDJUDGE_BUDGET_MS: "600000"   # 10분 하드 컷(타임아웃 전 안전 종료)
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: "24"
           cache: "npm"

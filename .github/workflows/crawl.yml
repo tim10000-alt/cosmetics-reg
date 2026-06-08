@@ -38,14 +38,14 @@ jobs:
       MFDS_API_KEY: ${{ secrets.MFDS_API_KEY }}
       CI: "true"
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           # GH_PAT 가 있으면 그 토큰으로 push → 봇 커밋이 "사람 활동"으로 집계돼
           # 60일 무활동 시 스케줄 자동 disable 을 방지. 없으면 기본 토큰으로 정상 동작.
           # ⚠️ GH_PAT 요건: fine-grained + 이 repo + **Contents: Read and write**.
           #    (read-only PAT 를 넣으면 push 가 거부되어 commit 단계 실패 — 정품검증 발견 #2.)
           token: ${{ secrets.GH_PAT || github.token }}
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: "24"
           cache: "npm"
@@ -289,7 +289,7 @@ jobs:
 
       - name: Upload raw snapshots (for audit)
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: crawl-raw-${{ github.run_id }}
           path: .crawl-raw/
