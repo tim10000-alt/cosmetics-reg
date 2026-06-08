@@ -102,7 +102,9 @@ function detectRegressions(cur, prev) {
   if (cur.statusConflicts > (prev.statusConflicts ?? 0) * 1.2 + 20) out.push(`status 충돌 증가: ${prev.statusConflicts}→${cur.statusConflicts}`);
   // 가디언 신선도/이상 — 신규 발생 시만 경보(스팸 방지). stale=소스 동결/fetch차단, anomaly=한도 급변.
   if (cur.staleCount > (prev.staleCount ?? 0)) out.push(`국가 cascade 동결 증가(>45일 전층 미갱신): ${prev.staleCount ?? 0}→${cur.staleCount} [${(cur.staleSources || []).join(", ")}] — 1·2·3차 모두 차단/실패 확인`);
-  if (cur.limitAnomalyCount > 0) out.push(`한도 5배+ 급변 ${cur.limitAnomalyCount}건 — silent 오파싱 의심, source-health.json 의 limit_anomalies 확인`);
+  // 직전 대비 *증가* 시만(스팸 방지) — 안정적으로 존재하는 알려진 anomaly(예: 같은 물질의 정당한
+  // per-use 한도차 = EU Annex III rinse-off 2.5% vs 기타 0.1%)는 매일 재발화하지 않게. 신규 유입만 경보.
+  if (cur.limitAnomalyCount > (prev.limitAnomalyCount ?? 0)) out.push(`한도 5배+ 급변 신규: ${prev.limitAnomalyCount ?? 0}→${cur.limitAnomalyCount}건 — silent 오파싱 의심, source-health.json 의 limit_anomalies 확인`);
   // 절대 경보(직전 대비 아님): 가디언 self-heal 후에도 가시 오염/공백이 남으면 = 가디언이 못 잡는
   // 새 오염 패턴 유입 → 즉시 알림(재발방지 안전망의 '감지' 축). 정상은 항상 0.
   if (cur.postHealCorrupt > 0) out.push(`🩺 self-heal 후 잔존 오염명 ${cur.postHealCorrupt}건 — 가디언 미인식 새 오염 패턴, isCorruptName/recover 로직 보강 필요`);
