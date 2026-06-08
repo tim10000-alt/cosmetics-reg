@@ -150,6 +150,8 @@ function cleanDisplayName(raw: string | null | undefined): string {
   let s = r.replace(/[\r\n\t]+/g, " ").replace(/\s{2,}/g, " ").trim();
   s = s.replace(/\s*\/\s*\d{2,7}-\d{2}-\d.*$/, "").trim();   // "/ CAS / EC / footnote" 컬럼 누출
   s = s.replace(/\s+and a mixture of\b.*$/i, "").trim();     // "and a mixture of if they contain >N% X"
+  s = s.replace(/[,;]?\s+if (?:they|it) contains?\b.*$/i, "").trim();  // EU 조건어 "X if they contain >N% Y"(화학명엔 없음)
+  s = s.replace(/[,;]?\s+except for\b.*$/i, "").trim();      // EU 조건어 "X except for normal content..."(화학명엔 없음)
   return s || r;
 }
 
