@@ -35,7 +35,7 @@ for (const i of ingredients) {
   byId.set(i.id, i);
   if (i.inci_name) byInciLower.set(i.inci_name.toLowerCase(), i);
   if (i.korean_name) byKorLower.set(i.korean_name.toLowerCase(), i);
-  if (i.cas_no) for (const cas of i.cas_no.split(/\s+/)) if (cas.trim()) byCas.set(cas.trim(), i);
+  if (i.cas_no) for (const cas of i.cas_no.split(/[\s,;]+/)) if (cas.trim()) byCas.set(cas.trim(), i);
 }
 const regsByIC = new Map();
 for (const r of regs) {
@@ -51,7 +51,7 @@ const GREEK = {"α":"alpha","β":"beta","γ":"gamma","δ":"delta","ε":"epsilon"
 const normKey = (s) => s.toLowerCase().replace(/[αβγδεζηθικλμνξοπρστυφχψω]/g,(m)=>GREEK[m]??m).replace(/[；;]/g,",").replace(/[（）]/g,(m)=>m==="（"?"(":")").replace(/\s*,\s*/g,",").replace(/\s+/g," ").trim();
 const canonName = (s) => normKey(s).replace(/[,\s]*\(\s*cas\s*(?:no\.?)?\s*[\d\-,\s/]+\)/g,"").replace(/[,\s]+c\.?i\.?\s*\d{4,6}/g,"").replace(/[,\s]+$/,"").replace(/^[,\s]+/,"").trim();
 const isValidCas = (c) => /^\d{1,7}-\d{2}-\d$/.test(c);
-const casTokens = (raw) => raw.split(/\s+/).map((c)=>c.trim()).filter(isValidCas);
+const casTokens = (raw) => raw.split(/[\s,;]+/).map((c)=>c.trim()).filter(isValidCas);  // lib 미러: 쉼표/세미콜론 분리(다중 CAS 형제링크)
 const isSynPrefix = (a,b) => { const sh=a.length<=b.length?a:b, lo=a.length<=b.length?b:a; if(!sh||sh.length<5||sh===lo||!lo.startsWith(sh))return false; return /[,;]/.test(lo[sh.length]); };
 const neKey=(s)=>s.toLowerCase().replace(/[^a-z0-9]/g,"").replace(/s$/,""); // 정규화 영문키(data-loader 미러)
 // 식별 판단기(Gemini consensus) 병합 링크 — data-loader 미러
