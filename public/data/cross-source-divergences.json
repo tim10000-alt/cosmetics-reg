@@ -1,0 +1,103 @@
+{
+  "generated": "cross-source-consistency",
+  "note": "EU-채택국/Mercosur 권위 status desync 검토큐. 대부분 정당한 관할권 차이. 신규 증가=파싱 점검.",
+  "count": 7,
+  "divergences": [
+    {
+      "inci": "Boric acid and its salts",
+      "eu": "banned",
+      "off": {
+        "ASEAN": [
+          "VN=restricted",
+          "TH=restricted",
+          "ID=restricted",
+          "MY=restricted",
+          "PH=restricted",
+          "SG=restricted"
+        ]
+      }
+    },
+    {
+      "inci": "Formaldehyde",
+      "eu": "banned",
+      "off": {
+        "ASEAN": [
+          "VN=restricted",
+          "TH=restricted",
+          "ID=restricted",
+          "MY=restricted",
+          "PH=restricted",
+          "SG=restricted"
+        ]
+      }
+    },
+    {
+      "inci": "Methyl Eugenol",
+      "eu": "restricted",
+      "off": {
+        "ASEAN": [
+          "VN=banned",
+          "TH=banned",
+          "ID=banned",
+          "MY=banned",
+          "PH=banned",
+          "SG=banned"
+        ]
+      }
+    },
+    {
+      "inci": "Thimerosal",
+      "eu": "listed",
+      "off": {
+        "ANDEAN": [
+          "CO=restricted",
+          "EC=restricted",
+          "PE=restricted",
+          "BO=restricted"
+        ]
+      }
+    },
+    {
+      "inci": "Titanium Dioxide,CI 77891",
+      "eu": "restricted",
+      "off": {
+        "ASEAN": [
+          "VN=listed",
+          "TH=listed",
+          "ID=listed",
+          "MY=listed",
+          "PH=listed",
+          "SG=listed"
+        ]
+      }
+    },
+    {
+      "inci": "Triclosan",
+      "eu": "listed",
+      "off": {
+        "ASEAN": [
+          "VN=restricted",
+          "TH=restricted",
+          "ID=restricted",
+          "MY=restricted",
+          "PH=restricted",
+          "SG=restricted"
+        ]
+      }
+    },
+    {
+      "inci": "Zinc Pyrithione",
+      "eu": "banned",
+      "off": {
+        "ASEAN": [
+          "VN=restricted",
+          "TH=restricted",
+          "ID=restricted",
+          "MY=restricted",
+          "PH=restricted",
+          "SG=restricted"
+        ]
+      }
+    }
+  ]
+}

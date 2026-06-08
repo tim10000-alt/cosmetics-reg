@@ -196,7 +196,7 @@ async function loadDataset(): Promise<Dataset> {
       if (arr) arr.push(i.id); else idsByKoreanLower.set(kl, [i.id]);
     }
     if (i.cas_no) {
-      for (const cas of i.cas_no.split(/\s+/)) {
+      for (const cas of i.cas_no.split(/[\s,;]+/)) {   // 쉼표/세미콜론 분리(다중 CAS 검색 도달)
         if (cas.trim()) ingredientByCas.set(cas.trim(), i);
       }
     }
@@ -268,7 +268,7 @@ async function loadDataset(): Promise<Dataset> {
   // CAS 는 반드시 유효 형식(예: 68-26-8)만 형제 키로 사용. cas_no 에는 "0"·"(generic)"·"Yellow"
   // 같은 파싱 아티팩트가 섞여 있어, 이를 키로 쓰면 무관한 원료가 대거 오병합됨(정품검증서 발견).
   const isValidCas = (c: string) => /^\d{1,7}-\d{2}-\d$/.test(c);
-  const casTokens = (raw: string) => raw.split(/\s+/).map((c) => c.trim()).filter(isValidCas);
+  const casTokens = (raw: string) => raw.split(/[\s,;]+/).map((c) => c.trim()).filter(isValidCas);  // 쉼표/세미콜론 분리 — 다중 CAS("A, B")의 비-마지막 토큰이 콤마로 무효화돼 형제링크 누락되던 버그 수정
   // 동의어-리스트 접두 규칙: 같은 한글명 + 한 canonName 이 다른 것의 '동의어 경계(쉼표/세미콜론)
   // 접두'. 예: "Amaranth" ⊂ "Amaranth, Acid Red 27, CI 16185". 한 소스는 기본명, 다른 소스는
   // 동의어를 덧붙여 분절되던 것을 통합. 경계를 쉼표/세미콜론으로 한정 → "Silver Chloride" 와
