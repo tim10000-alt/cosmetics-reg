@@ -35,7 +35,7 @@ jobs:
     # 데이터 freshness 만 봐서 미감지). 근본 해결 = 브라우저+시스템 의존성이 baked-in 된 공식
     # Playwright 컨테이너로 실행해 install 단계 자체를 제거(npm playwright 버전 == 컨테이너 태그 핀).
     container:
-      image: mcr.microsoft.com/playwright:v1.59.1-jammy
+      image: mcr.microsoft.com/playwright:v1.60.0-jammy
     env:
       E2E_BASE: http://localhost:3010
     steps:
