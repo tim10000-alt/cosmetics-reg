@@ -215,7 +215,7 @@ function HomeInner() {
       )}
 
       {response && response.ingredient === null && (
-        <div className="rounded-lg border border-zinc-200 bg-zinc-50 px-4 py-6 text-center text-sm text-zinc-600 dark:border-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-400">
+        <div className="rounded-lg border border-zinc-200 bg-zinc-50 px-4 py-6 text-center text-sm text-zinc-600 [overflow-wrap:anywhere] dark:border-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-400">
           &ldquo;{response.query}&rdquo; 에 대한 원료를 DB에서 찾지 못했습니다.
         </div>
       )}
