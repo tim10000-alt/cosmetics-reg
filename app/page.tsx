@@ -306,25 +306,25 @@ function IngredientHeader({ ingredient }: { ingredient: NonNullable<LookupRespon
         {ingredient.korean_name && (
           <>
             <dt className="text-zinc-400">한글명</dt>
-            <dd>{ingredient.korean_name}</dd>
+            <dd className="min-w-0 [overflow-wrap:anywhere]">{ingredient.korean_name}</dd>
           </>
         )}
         {ingredient.cas_no && (
           <>
             <dt className="text-zinc-400">CAS</dt>
-            <dd className="whitespace-pre-wrap">{ingredient.cas_no}</dd>
+            <dd className="min-w-0 whitespace-pre-wrap [overflow-wrap:anywhere]">{ingredient.cas_no}</dd>
           </>
         )}
         {ingredient.chinese_name && (
           <>
             <dt className="text-zinc-400">중국어</dt>
-            <dd>{ingredient.chinese_name}</dd>
+            <dd className="min-w-0 [overflow-wrap:anywhere]">{ingredient.chinese_name}</dd>
           </>
         )}
         {ingredient.japanese_name && (
           <>
             <dt className="text-zinc-400">일본어</dt>
-            <dd>{ingredient.japanese_name}</dd>
+            <dd className="min-w-0 [overflow-wrap:anywhere]">{ingredient.japanese_name}</dd>
           </>
         )}
       </dl>
