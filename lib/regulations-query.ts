@@ -149,6 +149,7 @@ function cleanDisplayName(raw: string | null | undefined): string {
   if (!r) return r;
   let s = r.replace(/[\r\n\t]+/g, " ").replace(/\s{2,}/g, " ").trim();
   s = s.replace(/\s*\/\s*\d{2,7}-\d{2}-\d.*$/, "").trim();   // "/ CAS / EC / footnote" 컬럼 누출
+  s = s.replace(/\s*[（(]\s*CAS\s*N[oO]\.?\s*\d{2,7}-\d{2}-\d\s*[）)]/gi, "").trim();  // "(CAS No. 65-85-0)" 주석 누출(CAS 는 카드 CAS 필드에 별도 표시 → 이름 내 중복 제거). 명확경계: "CAS No"+유효CAS+괄호
   s = s.replace(/\s+and a mixture of\b.*$/i, "").trim();     // "and a mixture of if they contain >N% X"
   s = s.replace(/[,;]?\s+if (?:they|it) contains?\b.*$/i, "").trim();  // EU 조건어 "X if they contain >N% Y"(화학명엔 없음)
   s = s.replace(/[,;]?\s+except for\b.*$/i, "").trim();      // EU 조건어 "X except for normal content..."(화학명엔 없음)
