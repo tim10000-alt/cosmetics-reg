@@ -165,12 +165,14 @@ function main() {
   // dangling reg(성분 없는 규제 = 렌더 불가·silent 손실) 자가청소용. 원인: 파서 생성 성분이
   // 교차-워크플로(enrich 등) 쓰기 경합으로 ingredients.json 에서 누락되어도 reg 는 잔존(예: JP 別表1).
   const _ingIds = new Set(JSON.parse(fs.readFileSync(path.join(DATA, "ingredients.json"), "utf8")).rows.map((i) => i.id));
+  const regBearingIds = new Set();  // 규제행이 1개라도 달린 성분 id (아래 reg 루프에서 채움) — regs=0 고아 격리 판정용
   let danglingRegs = 0, dupRegs = 0;
   for (const f of fs.readdirSync(REGDIR).filter((x) => x.endsWith(".json"))) {
     const cc = f.replace(".json", ""), p = path.join(REGDIR, f);
     const obj = JSON.parse(fs.readFileSync(p, "utf8"));
     let changed = false;
     for (const r of obj.rows) {
+      if (_ingIds.has(r.ingredient_id)) regBearingIds.add(r.ingredient_id);  // 존재 성분에 달린 규제행 → reg-bearing
       // 불가능 값 제거(%로 불가능). 이름의 값이 아니라 numeric 비교라 쉼표 무관.
       if (r.max_concentration != null && (r.max_concentration <= 0 || r.max_concentration > 100)) {
         r.max_concentration = null; overFixed++; changed = true;
@@ -215,15 +217,37 @@ function main() {
   // 때만(잘못 잘리면 매칭 안 돼 자동 skip = 분별력). base 없으면 미처리(부정확 strip 데이터 오염 방지).
   const EMBED_RE = /\s+(?:[（(]\s*[+\d]|Not to be used|Must not|\d+(?:\.\d+)?\s*%|등재\s*\(Ref|avoid contact)/i;
   const stripEmbed = (s) => { const m = s.match(EMBED_RE); return m ? s.slice(0, m.index).trim() : s; };
+  // JP 別表(보존제·살균제 등) 농도값 bleed — 영문 INCI 명 끝에 "○"·소수 농도값·(*각주) 가 셀 공백손실로
+  //   접합된 것(예 "Cetylpyridinium chloride 5.0 1.0", "Isopropylmethylphenol ○ 0.10"). 기존 JP matrix
+  //   복구는 *일본어 문자* 가 있어야 발동(isCorruptName)했어서 영문명 bleed 가 새던 클래스. → 규제 달린
+  //   clean 트윈(예 "Cetylpyridinium Chloride")이 별도 존재하나 분절(regs=0 고아). 값꼬리 strip 후 그 트윈과
+  //   병합(아래 cleanBaseIds 게이트 = strip 결과가 기존 clean 성분명과 정확일치할 때만 → 오절단 자동 skip).
+  const JP_VAL_RE = /(?:\s*\(\*\d+\))?(?:\s+(?:○|\d{1,3}\.\d+))+\s*$/;   // ○·소수 농도값(단일도 안전 — 정상명 끝에 " ○"·" 0.10" 없음)
+  // ≥2 정수/소수 컬럼(別表 rinse-off/leave-on 최대농도 "10 10"·"20 20"). 단일 정수는 변종번호("Media 3")·
+  //   각주("Furan 7")·등급("no. 2")과 모호 → 제외(분별력). cleanBaseIds 게이트로 오절단 추가 차단.
+  const JP_MULTI_RE = /(?:\s+\d{1,3}(?:\.\d+)?){2,}\s*$/;
+  const stripJpVal = (s) => s.replace(JP_VAL_RE, "").replace(JP_MULTI_RE, "").trim();
   const cleanBaseIds = new Map();
-  for (const i of ingObj.rows) if (i.inci_name && !EMBED_RE.test(i.inci_name) && !FOOT_RE.test(i.inci_name)) cleanBaseIds.set(normN(i.inci_name), i.id);
-  let embedCollapsed = 0;
+  for (const i of ingObj.rows) if (i.inci_name && !EMBED_RE.test(i.inci_name) && !FOOT_RE.test(i.inci_name) && !JP_VAL_RE.test(i.inci_name) && !JP_MULTI_RE.test(i.inci_name)) cleanBaseIds.set(normN(i.inci_name), i.id);
+  let embedCollapsed = 0, jpValCollapsed = 0;
   let recovered = 0, ingChanged = false;
   let nameFieldRecovered = 0, nameFieldNulled = 0;       // 보조 표시명(한/중/일) 정리
   let casRecovered = 0, casNulled = 0, casElementFixed = 0, casFromNameFixed = 0;   // CAS 정규화 + 원소CAS 오기교정 + 이름속 CAS 복구
   let casNameToSyn = 0;                                          // cas_no 에 박힌 *성분명*(CAS 아님) → synonyms 이전 + null
   let casConsensus = 0;                                          // 같은 정규화명 그룹 합의 CAS 를 null entry 에 backfill(분절통합)
   let nameTrimmed = 0;                                          // 이름 앞뒤 공백 제거
+  let apparatusOrphans = 0, colorantGlueOrphans = 0;            // regs=0 + CAS 0 + 한글 0 인 규제apparatus/색소표 고아 격리
+  // 규제apparatus 고아 시그니처 — 정상 INCI 명엔 절대 없는 규제문(표 캡션/각주/물질묶음 명세). regs=0 + CAS 0
+  // + 한글 0 게이트와 AND 라 트윈(regs>0)·정상원료는 안 걸림(실측: 전 DB 정확히 16건, 전부 확인된 아티팩트).
+  const APPARATUS_ORPHAN_RE = /^limitation on (the )?inclusion of ingredients\b|^\s*\d+\.\s+for use of .*\bsee annex\b|^a mixture of:|\breaction (product|products|mass) of\b|\bwith the exception of\b|\bwhen used as a substance in hair dye|\ball substances listed in (tables?|article)\b|\bderivatives obtained by substitution\b/i;
+  const APPARATUS_ORPHAN_CAS = (cas) => String(cas || "").split(/[\s,;/]+/).map((c) => c.trim().replace(/\(.*$/, "")).some((c) => /^\d{1,7}-\d{2}-\d$/.test(c));
+  // 색소표(EU AnnexIV) 고아 — IUPAC 명에 "CI번호 + 색상 + 제품용도"가 PDF 셀공백손실로 접합된 분절본
+  //   (예 "1-[(4-Methyl-2-nitrophenyl)azo]-2- naphthol 12120 Red Rinse-off products 1"). regs=0·CAS0·한글0 이고,
+  //   같은 CI번호의 *규제 달린 트윈*("CI 12120"/"Toluidine Red…CI 12120")이 존재해 색소 규제는 거기 표기됨
+  //   → 고아 격리(병합 아님=색소 오병합 위험 0). 트윈 CI번호 존재 확인(ciRegBearing)될 때만 격리(미표기 색소 숨김 방지).
+  const COLORANT_GLUE_RE = /\b(\d{5})\s+(Red|Orange|Yellow|Green|Blue|Violet|Brown|Black|White)\b/i;
+  const ciRegBearing = new Set();   // 규제 달린 성분명에 등장하는 CI번호(4~5자리) — 색소표 고아 격리 게이트
+  for (const i of ingObj.rows) { if (!regBearingIds.has(i.id) || !i.inci_name) continue; for (const m of i.inci_name.match(/\b\d{4,5}\b/g) || []) ciRegBearing.add(m); }
   const corrupt = [];
   // 이름-합의 CAS backfill 맵: 같은 정규화명(CI번호 제거)인데 한쪽은 CAS有/한쪽 null 로 분절된 동일물질
   // (예 "Titanium dioxide" null ↔ "Titanium Dioxide,CI 77891" 13463-67-7)을 통합. 그룹의 유효 CAS 가
@@ -266,11 +290,33 @@ function main() {
         i.inci_name = st; embedCollapsed++; ingChanged = true;
       }
     }
+    // JP 別表 농도값 bleed collapse(영문명 끝 "○"·소수값·(*각주) 제거) — 같은 게이트(clean 트윈 정확일치)
+    //   라 오절단 0. 일본어 포함명은 recoverJpMatrix 담당이라 제외.
+    if (typeof i.inci_name === "string" && !/[ぁ-んァ-ヶ一-龯]/.test(i.inci_name) && (JP_VAL_RE.test(i.inci_name) || JP_MULTI_RE.test(i.inci_name))) {
+      const st = stripJpVal(i.inci_name), sn = normN(st);
+      if (st && st !== i.inci_name && st.length >= 3 && cleanBaseIds.has(sn) && cleanBaseIds.get(sn) !== i.id) {
+        i.inci_name = st; jpValCollapsed++; ingChanged = true;
+      }
+    }
     // inci_name = 검색 키/제목 — 복구 실패 시 레코드 전체 격리(검색에서 제외).
     if (isCorruptName(i.inci_name)) {
       const best = recoverName(i.inci_name);
       if (best) { i.inci_name = best; recovered++; ingChanged = true; } // 실명 회복
       else corrupt.push({ id: i.id, inci: i.inci_name.slice(0, 80) });  // 회복 불가 → 격리
+    }
+    // regs=0 고아 규제apparatus 격리 — EU Annex 등의 "표 캡션/각주/물질 묶음 명세"가 ingredient 로
+    //   materialize 됐으나 *규제행 0 + CAS 0 + 한글 0* 이라 빈 카드만 띄우고 검색을 오염시킴
+    //   (예 "Limitation on inclusion of ingredients…"=표 헤더, "A mixture of: …(1:2) and …"=EU
+    //   reaction-mass 정확표현 변형). 같은 물질의 *규제 달린 트윈*(대소문자/컬리프라임/각주만 차이)이
+    //   별도 존재해 금지는 거기 표기됨 → 고아는 표시정보 0(격리해도 무손실). 게이트가 regs=0 라 트윈
+    //   (regs>0)은 절대 안 걸림. CAS/한글 없어 자동 형제병합도 불가(comma/각주 차이)→ 결정론 격리가 안전.
+    if (typeof i.inci_name === "string" && !regBearingIds.has(i.id) && !APPARATUS_ORPHAN_CAS(i.cas_no) && APPARATUS_ORPHAN_RE.test(i.inci_name) && !i.korean_name) {
+      if (!corrupt.some((c) => c.id === i.id)) { corrupt.push({ id: i.id, inci: i.inci_name.slice(0, 80) }); apparatusOrphans++; }  // 격리는 별도 파일 — ingredient row 미수정
+    }
+    // 색소표(EU AnnexIV) 고아 격리 — regs=0 + CAS 0 + 한글 0 + "CI번호 색상" 접합 + 그 CI번호의 규제트윈 존재.
+    if (typeof i.inci_name === "string" && !regBearingIds.has(i.id) && !APPARATUS_ORPHAN_CAS(i.cas_no) && !i.korean_name) {
+      const cm = i.inci_name.match(COLORANT_GLUE_RE);
+      if (cm && ciRegBearing.has(cm[1]) && !corrupt.some((c) => c.id === i.id)) { corrupt.push({ id: i.id, inci: i.inci_name.slice(0, 80) }); colorantGlueOrphans++; }
     }
     // 보조 표시명(한/중/일) — IngredientHeader 에 그대로 노출되므로 동일 복구 필요. inci_name 이
     // 이미 복구된(=깨끗한) 레코드는 위 분기를 건너뛰어 보조 필드의 matrix-bleed 잔재가 영구히
@@ -431,7 +477,8 @@ function main() {
   console.log(`  이름 앞뒤 공백 제거: ${nameTrimmed}`);
   console.log(`  각주마커 안전 collapse(X(1)→X): ${footCollapsed}`);
   console.log(`  임베디드 조건문 collapse(X 0.5%…→X): ${embedCollapsed}`);
-  console.log(`  격리(복구 불가) 성분명: ${corrupt.length}`);
+  console.log(`  JP 別表 농도값 bleed collapse(X ○ 0.10→X): ${jpValCollapsed}`);
+  console.log(`  격리(복구 불가) 성분명: ${corrupt.length} (그중 규제apparatus 고아: ${apparatusOrphans} · 색소표 고아: ${colorantGlueOrphans})`);
   console.log(`  🩺 self-heal 후 잔존 가시오염(0이어야 정상): 오염명 ${residualCorrupt} · 공백 ${residualWhitespace}`);
   console.log(`  국가 행수 급감(회귀): ${regressions.length ? regressions.join(", ") : "없음"}`);
   console.log(`  ⏳ stale 국가법령(cascade 전체 >${STALE_DAYS}일): ${stale.length ? stale.map((s) => `${s.cc}(${s.days}d)`).join(", ") : "없음"} | stale 성분사전: ${dictStale.length ? dictStale.map((d) => d.name).join(", ") : "없음"}`);

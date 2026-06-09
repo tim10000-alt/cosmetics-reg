@@ -1,10 +1,506 @@
 {
   "generated": "guardian",
-  "count": 14,
+  "count": 175,
   "items": [
+    {
+      "id": "aaee98e1-8627-4250-9abb-124cf20ac1e4",
+      "inci": "Limitation on inclusion of ingredients other than preservatives, UV absorbers an"
+    },
+    {
+      "id": "6f30ec06-0c27-4905-a9c5-33c4c5cc2fee",
+      "inci": "Barium salts, with the exception of barium sulphide under the conditions laid do"
+    },
+    {
+      "id": "f92e7292-abad-47e5-a598-cd4d74bc9b36",
+      "inci": "Esters of 4-aminobenzoic acid, with the free amino group, with the exception of "
+    },
+    {
+      "id": "43ec5ba7-4b41-40ea-8100-f9203d939aff",
+      "inci": "Narcotics, natural and synthetic: All substances listed in Tables I and II of th"
+    },
+    {
+      "id": "63c42284-162f-4360-9a71-3f1d4db77d0c",
+      "inci": "Sulphonamides (sulphanilamide and its derivatives obtained by substitution of on"
+    },
+    {
+      "id": "a29c302d-4472-440a-90b3-16589a708862",
+      "inci": "A mixture of: 4-[[bis-(4-Fluorophenyl)methylsilyl]methyl]-4H-1,2,4-triazole and "
+    },
+    {
+      "id": "37a62d8f-f00e-4a21-b9e6-3bdc7865c4b6",
+      "inci": "Mineral wool, with the exception of those specified elsewhere in this Annex; [Ma"
+    },
+    {
+      "id": "3a6f0275-3919-4aed-be63-54f20bed081f",
+      "inci": "Reaction product of acetophenone, formaldehyde, cyclohexylamine, methanol and ac"
+    },
+    {
+      "id": "3f0bdec5-7a4f-48c4-b75f-90e99a2a55ba",
+      "inci": "A mixture of: 1,3,5-tris(3-aminomethylphenyl)-1,3,5-(1H,3H,5H)-triazine-2,4,6-tr"
+    },
+    {
+      "id": "90fc0d27-06bc-42da-9162-e3798518d144",
+      "inci": "A mixture of: reaction product of 4,4′-methylenebis[2-(4-hydroxybenzyl)-3,6-dime"
+    },
+    {
+      "id": "9d4a1d92-558b-4bbf-b2a8-87e4541c5e79",
+      "inci": "N,N-Dimethyl-2,6-Pyridinediamine and its HCl salt, when used as a substance in h"
+    },
+    {
+      "id": "55618d00-300d-4bfa-9243-5517b9a4f43f",
+      "inci": "1-[(2-Chloro-4-nitrophenyl)azo]-2- naphthol and its insoluble barium, stron tium"
+    },
+    {
+      "id": "af636d45-d900-4aa7-9d32-424b7fb3961c",
+      "inci": "1-[(4-Methyl-2-nitrophenyl)azo]-2- naphthol 12120 Red Rinse-off products 1"
+    },
+    {
+      "id": "8a34d5ec-03ac-4619-be83-43005e519ccd",
+      "inci": "3-Hydroxy-N-(o-tolyl)-4-[(2,4,5- trichlorophenyl)azo]naphthalene-2- carboxamide "
+    },
+    {
+      "id": "c0411914-2e61-4a61-a179-41a5c62b8e9e",
+      "inci": "N-(4-Chloro-2-methylphenyl)-4-[(4- chloro-2-methylphenyl)azo]-3- hydroxynaphthal"
+    },
+    {
+      "id": "213bd493-9c2c-45f1-bff7-0a67eb6fd377",
+      "inci": "4-[(2,5-Dichlorophenyl)azo]-N-(2,5- dimethoxyphenyl)-3-hydroxynaphthalene- 2-car"
+    },
+    {
+      "id": "ebdc79fc-aadb-4e79-97dc-c8b88aa77cc2",
+      "inci": "N-(5-Chloro-2,4-dimethoxyphenyl)-4-[[5- [(diethylamino)sulphonyl]-2- methoxyphen"
+    },
+    {
+      "id": "06423ba7-e208-4cea-b467-22944039635a",
+      "inci": "2,4-Dihydro-5-methyl-2-phenyl-4- (phenylazo)-3H-pyrazol-3-one 12700 Yellow Rinse"
+    },
+    {
+      "id": "86a217d2-78cf-448b-8a1f-fef44f710a4b",
+      "inci": "Disodium 2-amino-5-[(4- sulphonatophenyl)azo]benzenesulphonate 13015 Yellow 1"
+    },
+    {
+      "id": "73b6d217-0fcc-4fdc-85ed-7e5dcfdeafd4",
+      "inci": "Sodium 4-(2,4- dihydroxyphenylazo)benzenesulphonate 14270 Orange 1"
+    },
+    {
+      "id": "c9412fbc-f936-480a-af93-fef15c47006f",
+      "inci": "Disodium 3-[(2,4-dimethyl-5- sulphonatophenyl)azo]-4- hydroxynaphthalene-1-sulph"
+    },
+    {
+      "id": "9265a0b5-ca90-4f3e-8f48-c6d2dc634bd0",
+      "inci": "Disodium 6-[(2,4-dimethyl-6- sulphonatophenyl)azo]-5- hydroxynaphthalene-1-sulph"
+    },
+    {
+      "id": "9f10e75c-afec-433b-9666-6b44023f76eb",
+      "inci": "Sodium 4-[(2-hydroxy-1- naphthyl)azo]benzenesulphonate and its insoluble barium,"
+    },
+    {
+      "id": "93cabf7c-9c74-4004-a923-a8643002eed4",
+      "inci": "Calcium disodium bis[2-chloro-5-[(2- hydroxy-1-naphthyl)azo]-4- sulphonatobenzoa"
+    },
+    {
+      "id": "d4f2348a-5665-48c7-aec9-c4b32b1e7431",
+      "inci": "Barium bis[4-[(2-hydroxy-1- naphthyl)azo]-2-methylbenzenesul- phonate] 15580 Red"
+    },
+    {
+      "id": "95a6809b-a3b3-494f-9fa4-1e98c39eb4f9",
+      "inci": "Sodium 4-[(2-Hydroxy-1- naphthyl)azo]naphthalenesulphonate 15620 Red Rinse-off p"
+    },
+    {
+      "id": "ed6d9cd4-c06d-4137-8233-15afea0d9211",
+      "inci": "Sodium 2-[(2- hydroxynaphthyl)azo]naphthale nesulphonate and its insoluble bariu"
+    },
+    {
+      "id": "c804b70d-5096-4ffa-8fb8-fb911120a8e5",
+      "inci": "Calcium bis[3-hydroxy-4-(phenylazo)-2- naphthoate] 15800 Red Not to be used in p"
+    },
+    {
+      "id": "2bf89a8d-72a7-4d6b-a92f-48278b341e45",
+      "inci": "Disodium 3-hydroxy-4-[(4-methyl-2- sulphonatophenyl)azo]-2-naphthoate and its in"
+    },
+    {
+      "id": "94c79e1c-4b6a-473c-8544-56096e69124a",
+      "inci": "Calcium 3-hydroxy-4-[(1-sulphonato-2- naphthyl)azo]-2-naphthoate 15880 Red 3"
+    },
+    {
+      "id": "bdeaf096-a2e2-4334-977b-1b6922df7fab",
+      "inci": "Disodium 6-hydroxy-5-[(3- sulphonatophenyl)azo]naphthalene-2- sulphonate 15980 O"
+    },
+    {
+      "id": "66ac4a9c-3d41-4c62-9323-bcd6053cfaf8",
+      "inci": "Disodium 6-hydroxy-5-[(4- sulphonatophenyl)azo]naphthalene-2- sulphonate and its"
+    },
+    {
+      "id": "19f40bb0-ee66-461b-89fb-30d1c35fd715",
+      "inci": "Disodium 6-hydroxy-5-[(2-methoxy-4- sulphonato-m-tolyl)azo]naphthalene-2- sulpho"
+    },
+    {
+      "id": "02e8b4d0-17f6-45db-a1ce-4b3189382f53",
+      "inci": "Trisodium 3-hydroxy-4-[(4’- sulphonatonaphthyl)azo]naphthalene-2,7- disulphonate"
+    },
+    {
+      "id": "19876a2d-907b-443e-a113-ad72ae2f1a12",
+      "inci": "Disodium 7-hydroxy-8- (phenylazo)naphthalene-1,3-disulphonate 16230 Orange Not t"
+    },
+    {
+      "id": "b3434a74-4646-4535-805a-ff7617a19815",
+      "inci": "Trisodium 1-(1-naphthylazo)-2- hydroxynaphthalene-4’,6,8-trisulphonate and its i"
+    },
+    {
+      "id": "e35c7698-5f5d-4711-ab4c-75e3c6144521",
+      "inci": "Tetrasodium 7-hydroxy-8-[(4-sulphonato- 1-naphthyl)azo]naphthalene-1,3,6- trisul"
+    },
+    {
+      "id": "d5a06491-5d7f-4120-8064-1bd67d13b74b",
+      "inci": "Disodium 5-acetylamino-4-hydroxy-3- (phenylazo)naphthalene-2,7-disulphonate 1805"
+    },
+    {
+      "id": "a905cd74-5de0-4ce3-a527-8685db6f3169",
+      "inci": "2,7-Naphthalenedisulfonic acid, 3-((4- cyclohexyl-2-methylphenyl)azo)-4- hydroxy"
+    },
+    {
+      "id": "db9a3e3d-ac34-432f-b905-3a331843a4b2",
+      "inci": "Hydrogen bis[2-[(4,5-dihydro-3-methyl-5- oxo-1-phenyl-1H-pyrazol-4- yl)azo]benzo"
+    },
+    {
+      "id": "f29b93e1-1e72-4ab3-9af0-5a2183bf3785",
+      "inci": "Disodium hydrogen bis[5-chloro-3-[(4,5- dihydro-3-methyl-5-oxo-1-phenyl-1H- pyra"
+    },
+    {
+      "id": "cd802c68-0146-442a-8a4b-eea75ec52d16",
+      "inci": "Sodium 4-(3-hydroxy-5-methyl-4- (phenylazo)pyrazol-2- yl)benzenesulphonate 18820"
+    },
+    {
+      "id": "c126b329-6f3a-4332-996d-95f52b23512c",
+      "inci": "Disodium 2,5-dichloro-4-(5-hydroxy-3- methyl-4-((sulphophenyl)azo)pyrazol-1- yl)"
+    },
+    {
+      "id": "79d7a70b-669a-47da-a8ea-7d16d496069f",
+      "inci": "Trisodium 5-hydroxy-1-(4-sulphophenyl)- 4-((4-sulphophenyl)azo)pyrazole-3- carbo"
+    },
+    {
+      "id": "df9aa1e7-8e83-4518-bc4f-6d91b520fafb",
+      "inci": "N,N’-(3,3’-Dimethyl[1,1’-biphenyl]-4,4’- diyl)bis[2-[(2,4-dichlorophenyl)azo]-3-"
+    },
+    {
+      "id": "8a0d54a7-3e38-479a-a836-2e2e3bd6d041",
+      "inci": "2,2’-[(3,3’-Dichloro[1,1’-biphenyl]-4,4’- diyl)bis(azo)]bis[N-(2,4-dimethylpheny"
+    },
+    {
+      "id": "60d41eef-2823-4235-8eb2-9e41447551f4",
+      "inci": "2,2’-[(3,3’-Dichloro[1,1’-biphenyl]-4,4’- diyl)bis(azo)]bis[N-(4-chloro-2,5- dim"
+    },
+    {
+      "id": "29e3fcb0-60be-4c37-b892-a2f6cdd657b5",
+      "inci": "2,2’-[Cyclohexylidenebis[(2-methyl-4,1- phenylene)azo]]bis[4-cyclohexylphenol] 2"
+    },
+    {
+      "id": "f7c7bce0-a86c-421f-ad0c-d45561e170b3",
+      "inci": "Disodium 4,6-dihydroxy-3-[[4-[1-[4-[[1- hydroxy-7-[(phenylsulphonyl)oxy]-3- sulp"
+    },
+    {
+      "id": "07515fe8-39ca-417b-8809-ffe08890862d",
+      "inci": "1-(4-(Phenylazo)phenylazo)-2-naphthol 26100 Red Not to be used in products appli"
+    },
+    {
+      "id": "ff1e8967-6a5b-4f0f-9da8-d20a3ea6b0b6",
+      "inci": "Tetrasodium 6-amino-4-hydroxy-3-[[7- sulphonato-4-[(4-sulphonatophenyl)azo]- 1-n"
+    },
+    {
+      "id": "38d28e10-2c89-41ab-b817-448c375d6bf9",
+      "inci": "Benzenesulfonic acid, 2,2’-(1,2- ethenediyl)bis[5-nitro-, disodium salt, reactio"
+    },
+    {
+      "id": "0ba6a15e-085f-4927-a126-4c7b93831afa",
+      "inci": "beta Carotene 40800 Orange Purity criteria as set out in Commission Directive 95"
+    },
+    {
+      "id": "6de6aa52-c223-418b-980b-d43ba6eaae57",
+      "inci": "8’-apo-.beta.-Caroten-8’-al 40820 Orange Purity criteria as set out in Commissio"
+    },
+    {
+      "id": "ef7f92b7-9da3-40d5-8511-5ad23590483a",
+      "inci": "Ethyl 8’-apo-.beta.-caroten-8’-oate 40825 Orange Purity criteria as set out in C"
+    },
+    {
+      "id": "05f2adc5-1935-4f6e-a783-4cf5bd81af91",
+      "inci": "Canthaxanthin 40850 Orange Purity criteria as set out in Commission Directive 95"
+    },
+    {
+      "id": "7e06b1a7-e89b-4cee-b77c-99155ecdab4d",
+      "inci": "Ammonium, (4-(alpha-(p- (diethylamino)phenyl)-2,4- disulfobenzylidene)-2,5-cyclo"
+    },
+    {
+      "id": "8f35633c-912f-429c-9174-8c3fbdca4b29",
+      "inci": "Hydrogen (benzyl)[4-[[4- [benzylethylamino]phenyl](2,4- disulphonatophenyl)methy"
+    },
+    {
+      "id": "c6a9ad46-bd1e-4d63-a766-6674f8048e5e",
+      "inci": "Benzene-methanaminium, N-ethyl-N-(4- ((4-(ethyl((3-sulfophenyl)methyl)amino) phe"
+    },
+    {
+      "id": "8d98eb78-d913-4f99-9b81-2721d767512b",
+      "inci": "Hydrogen [4-[(2-chlorophenyl)[4-[ethyl (3-sulphonatobenzyl)amino]phenyl] methyle"
+    },
+    {
+      "id": "e1762f6a-f17b-4a5f-abd2-c0503a94ed46",
+      "inci": "Hydrogen [4-[(2-chlorophenyl)[4-[ethyl(3- sulphonatobenzyl)amino]-o- tolyl]methy"
+    },
+    {
+      "id": "ac5a39a4-7878-4eaf-9ebf-6003a1cc26b7",
+      "inci": "(4-(4-Aminophenyl)(4-iminocyclohexa- 2,5-dienylidene)methyl)-2-methylaniline hyd"
+    },
+    {
+      "id": "71c2c15f-daa9-4a5e-9aae-095c2689768c",
+      "inci": "4-[(4-Amino-m-tolyl)(4-imino-3- methylcyclohexa-2,5-dien-1- ylidene)methyl]-o-to"
+    },
+    {
+      "id": "4140d991-056f-4551-95d9-d1ab31d4922a",
+      "inci": "[4-[[4-Anilino-1-naphthyl][4- (dimethylamino)phenyl]methylene] cyclohexa-2,5-die"
+    },
+    {
+      "id": "14a9eec4-f328-4c60-bdb6-c7e2a12c0f9e",
+      "inci": "Hydrogen [4-[4-(dimethylamino)-.alpha.- (2-hydroxy-3,6-disulphonato-1- naphthyl)"
+    },
+    {
+      "id": "dea91fb6-a658-4196-8b50-a97f5e7b7bab",
+      "inci": "Hydrogen 3,6-bis(diethylamino)-9-(2,4- disulphonatophenyl)xanthylium, sodium sal"
+    },
+    {
+      "id": "f70cbc8b-6e2e-4b2a-ab62-bc2deddd2db1",
+      "inci": "Hydrogen 9-(2-carboxylatophenyl)-3-(2- methylanilino)-6-(2-methyl-4- sulphoanili"
+    },
+    {
+      "id": "24733821-0d97-42fe-9d21-129dd8ffd618",
+      "inci": "Hydrogen 9-(2,4-disulphonatophenyl)- 3,6-bis(ethylamino)-2,7- dimethylxanthylium"
+    },
+    {
+      "id": "df472a13-c0d2-4f6c-a7b5-9ef9239d364e",
+      "inci": "Disodium 2-(3-oxo-6-oxidoxanthen-9- yl)benzoate 45350 Yellow 6 % 7"
+    },
+    {
+      "id": "271f39f1-dc28-430a-b7c2-6b32f501af5e",
+      "inci": "Disodium 2-(2,4,5,7-tetrabromo-6-oxido- 3-oxoxanthen-9-yl)benzoate and its insol"
+    },
+    {
+      "id": "57428019-46d9-455d-aafb-a71c0e3a2161",
+      "inci": "Dipotassium 3,6-dichloro-2-(2,4,5,7- tetrabromo-6-oxido-3-oxoxanthen-9- yl)benzo"
+    },
+    {
+      "id": "a1038af7-b086-44ab-96eb-75b746848aa2",
+      "inci": "Disodium 2-(2,4,5,7-tetraiodo-6-oxido-3- oxoxanthen-9-yl)benzoate and its insolu"
+    },
+    {
+      "id": "b0565429-8d10-4e9c-8357-deaf04ba15d6",
+      "inci": "1,3-Isobenzofurandione, reaction prod ucts with methylquinoline and quinoline 47"
+    },
+    {
+      "id": "256f4fea-b805-40d2-b2cb-3bc52a2891da",
+      "inci": "1H-Indene-1,3(2H)-dione, 2-(2- quinolinyl)-, sulfonated, sodium salts 47005 Yell"
+    },
+    {
+      "id": "4386e111-d5bc-4bda-87a8-6276c0bac95b",
+      "inci": "Hydrogen 9-[(3-methoxyphenyl)amino]- 7-phenyl-5-(phenylamino)-4,10- disulphonato"
+    },
+    {
+      "id": "c824615f-8f50-43d6-a00d-1316621f8e44",
+      "inci": "Sulfonated nigrosine color 50420 Black Not to be used in products applied on muc"
+    },
+    {
+      "id": "649d1cb0-4eb1-457d-89e9-8f046cfca155",
+      "inci": "8,18-Dichloro-5,15-diethyl-5,15- dihydrodiindolo[3,2-b:3’,2’- m]triphenodioxazin"
+    },
+    {
+      "id": "8ac8b19b-f49e-4342-8f44-2849dc0ad62a",
+      "inci": "1,2-Dihydroxyanthraquinone 58000 Red 8"
+    },
+    {
+      "id": "84dc98d3-8f08-41b6-9ccb-aaf778d97e35",
+      "inci": "1-Anilino-4-hydroxyanthraquinone 60724 Violet Rinse-off products 8"
+    },
+    {
+      "id": "cfacac5e-3ee5-40d6-ab50-bf57a22c52c8",
+      "inci": "1-Hydroxy-4-(p-toluidino)anthraquinone 60725 Violet 9"
+    },
+    {
+      "id": "b80ae9ca-b3b3-453c-87e5-eccb0479f9d9",
+      "inci": "Sodium 4-[(9,10-dihydro-4-hydroxy-9,10- dioxo-1-anthryl)amino]toluene-3- sulphon"
+    },
+    {
+      "id": "43b2429b-8130-43a2-b3f9-4cdf6c1ab5a4",
+      "inci": "1,4-bis(p-Tolylamino)anthraquinone 61565 Green 9"
+    },
+    {
+      "id": "11d789ae-dae0-40e2-84df-a1ba5954b792",
+      "inci": "Disodium 2,2’-(9,10-dioxoanthracene-1,4- diyldiimino)bis(5-methylsulphonate) 615"
+    },
+    {
+      "id": "6120241c-2237-4b56-a8e8-0d115a7da265",
+      "inci": "Sodium 3,3’-(9,10-dioxoanthracene-1,4- diyldiimino)bis(2,4,6- trimethylbenzenesu"
+    },
+    {
+      "id": "b66389e2-a1ca-453a-9e53-5b8241050510",
+      "inci": "Sodium 1-amino-4-(cyclohexylamino)- 9,10-dihydro-9,10-dioxoanthracene-2- sulphon"
+    },
+    {
+      "id": "59a90816-0207-46a3-ae33-50c27b3b6f2a",
+      "inci": "6,15-Dihydroanthrazine-5,9,14,18- tetrone 69800 Blue 9"
+    },
+    {
+      "id": "2ee32b87-0cb1-42d0-9ee1-4885032ea4f9",
+      "inci": "7,16-dichloro-6,15-dihydroanthrazine- 5,9,14,18-tetrone 69825 Blue 9"
+    },
+    {
+      "id": "1fda7163-1d82-4c20-aea0-e4f2268abc3b",
+      "inci": "Bisbenzimidazo[2,1-b:2’,1’- i]benzo[lmn][3,8]phenanthroline-8,17- dione 71105 Or"
+    },
+    {
+      "id": "f93660ce-9466-46d4-a07d-86f3c9ebd1d5",
+      "inci": "2-(1,3-Dihydro-3-oxo-2H-indazol-2- ylidene)-1,2-dihydro-3H-indol-3-one 73000 Blu"
+    },
+    {
+      "id": "dd9d0ca8-aacd-4556-a347-c255ed3baaf6",
+      "inci": "Disodium 5,5’-(2-(1,3-dihydro-3-oxo-2H- indazol-2-ylidene)-1,2-dihydro-3H-indol-"
+    },
+    {
+      "id": "5170c4cb-0283-41fc-a912-22767e6e3aed",
+      "inci": "5-Chloro-2-(5-chloro-7-methyl-3- oxobenzo[b]thien-2(3H)-ylidene)-7- methylbenzo["
+    },
+    {
+      "id": "dd06d12e-3caf-4403-820a-cc3a72379de1",
+      "inci": "5,12-Dihydroquino[2,3-b]acridine-7,14- dione 73900 Violet Rinse-off products 1"
+    },
+    {
+      "id": "27ec8b27-ff07-4b85-b0af-b70488e17860",
+      "inci": "5,12-Dihydro-2,9-dimethylquino[2,3- b]acridine-7,14-dione 73915 Red Rinse-off pr"
+    },
+    {
+      "id": "f5275e7b-7beb-4013-8343-82197c96f4de",
+      "inci": "29H,31H-Phthalocyanine 74100 Blue Rinse-off products 1"
+    },
+    {
+      "id": "d0908d9f-00ef-4bcd-b543-d37ed5181d1a",
+      "inci": "29H,31H-Phthalocyaninato(2-)- N29,N30,N31,N32 copper 74160 Blue 1"
+    },
+    {
+      "id": "6f99bf3e-6332-4b4e-b5a8-804cb3f5a8e4",
+      "inci": "Disodium [29H,31H- phthalocyaninedisulphonato (4-)- N29,N30,N31,N32] cuprate (2-"
+    },
+    {
+      "id": "2063a04f-adcb-4dfa-a7d5-5d3ff134cb83",
+      "inci": "Polychloro copper phthalocyanine 74260 Green Not to be used in eye prod ucts 1"
+    },
+    {
+      "id": "00ff41cd-bf8a-4685-b49b-654150859d9b",
+      "inci": "8,8’-diapo-.psi.,.psi.-Carotenedioic acid 75100 Yellow 1"
+    },
+    {
+      "id": "bc36b1bc-9358-45d0-b95b-4e343779ce42",
+      "inci": "CI Food Orange 5 75130 Orange Purity criteria as set out in Commission Directive"
+    },
+    {
+      "id": "326ea3f5-1ee6-47e7-9305-cc02ae083120",
+      "inci": "(3R)-beta-4-Caroten-3-ol 75135 Yellow 1"
+    },
+    {
+      "id": "18fce427-badf-490e-b8b0-c6d03e8e7ae1",
+      "inci": "Curcumins 75300 Yellow Purity criteria as set out in Commission Directive 95/45/"
+    },
+    {
+      "id": "3341c181-b8d3-4b0d-a8d6-cedc40aa0db0",
+      "inci": "Aluminium 77000 White Purity criteria as set out in Commission Directive 95/45/E"
+    },
+    {
+      "id": "6dd3b9f6-0878-44b1-8392-77f3f75d0167",
+      "inci": "Aluminium hydroxide sulphate 77002 White 1"
+    },
+    {
+      "id": "078714a4-9f60-478f-98d4-fb0146d3b0e1",
+      "inci": "Natural hydrated aluminium silicate, Al 2O 3.2SiO 2.2H 2 O, containing calcium, "
+    },
+    {
+      "id": "9911e660-25be-4d65-8cbe-93dd329cb78d",
+      "inci": "Lazurite 77007 Blue 1"
+    },
+    {
+      "id": "ee13e161-633c-49ed-8019-94fbaf02c14f",
+      "inci": "Aluminum silicate coloured with ferric oxide 77015 Red 1"
+    },
+    {
+      "id": "e2ef0050-fa9a-4b84-ade3-ba61bdf837a8",
+      "inci": "Barium sulfate 77120 White 1"
+    },
+    {
+      "id": "b2932a27-a5be-439f-b98a-a9185886c54e",
+      "inci": "Calcium sulfate 77231 White 1"
+    },
+    {
+      "id": "c34d9b65-4ab2-47be-846e-682a0b588aa4",
+      "inci": "Carbon black 77266 Black Purity criteria as set out in Commission Directive 95/4"
+    },
+    {
+      "id": "e50839fb-115d-4cdd-8f43-737024a67c2c",
+      "inci": "Charcoal, bone. A fine black powder obtained by burning animal bones in a closed"
+    },
+    {
+      "id": "0a9595fa-1489-4bc6-9dff-dabffadd6cca",
+      "inci": "Chromium (III) oxide 77288 Green free from chromate ion 1"
+    },
+    {
+      "id": "4299bb35-b1cb-4ae8-8f0f-27814d9cb00f",
+      "inci": "Chromium (III) hydroxide 77289 Green free from chromate ion 1"
+    },
+    {
+      "id": "e89a73d7-d5cc-449f-a888-69d2436aed94",
+      "inci": "Cobalt Aluminum Oxide 77346 Green 1"
+    },
+    {
+      "id": "c8cb1313-10d1-4d25-9a47-c0e215a3b5b8",
+      "inci": "Copper 77400 Brown 1"
+    },
+    {
+      "id": "2efa5e38-1210-4761-898f-7b947c249418",
+      "inci": "Gold 77480 Brown Purity criteria as set out in Commission Directive 95/45/EC (E "
+    },
+    {
+      "id": "cdf91ca8-d195-4327-b83c-9f362fdd8fe3",
+      "inci": "Iron oxide 77489 Orange 1"
+    },
+    {
+      "id": "c4d77f2a-8338-4963-8cc5-ec5fb0ff3bcb",
+      "inci": "Iron Oxide Black 77499 Black Purity criteria as set out in Commission Directive "
+    },
+    {
+      "id": "37299d0c-f96b-4ee1-b3a0-b942289b4ef7",
+      "inci": "Ferric Ammonium Ferrocyanide 77510 Blue free from cyanide ions 1"
+    },
+    {
+      "id": "7895487e-40ee-46a2-b569-35231bfa5a54",
+      "inci": "Magnesium carbonate 77713 White 1"
+    },
+    {
+      "id": "4f94a8c0-ce35-4b27-baa6-b044b2ba42dd",
+      "inci": "Ammonium manganese(3+) diphosphate 77742 Violet 1"
+    },
+    {
+      "id": "f1dbc248-92dd-4566-9a59-0ee5c94ed3ce",
+      "inci": "Trimanganese bis (orthophosphate) 77745 Red 1"
+    },
+    {
+      "id": "c1e1f432-0b97-41dc-8da9-c4eb7e681a95",
+      "inci": "Silver 77820 White Purity criteria as set out in Commission Directive 95/45/EC ("
+    },
+    {
+      "id": "d00fe2ed-a88c-4673-842e-14e1deed6d40",
+      "inci": "Zinc oxide 77947 White 1"
+    },
     {
       "id": "9d14fb29-8ef3-4fba-8100-db5b9e695beb",
       "inci": "Entry deleted"
+    },
+    {
+      "id": "9bf0535c-5b41-4569-ab8d-c9b2c4c12efd",
+      "inci": "3. For use of titanium dioxide as a colourant see Annex IV,"
     },
     {
       "id": "397aa55a-db8b-4d43-bb81-d8f3053f3800",
@@ -57,6 +553,154 @@
     {
       "id": "3ad4889e-473d-49f4-b379-793f4b7cca84",
       "inci": "ヤシ油脂肪酸ジエタノールアミド(2)42○○○○○○○○○○ヤシ油脂肪酸ショ糖エステル"
+    },
+    {
+      "id": "a4e276c5-03ce-40cc-8b88-c82cc2cc35f4",
+      "inci": "A mixture of: N-[3-Hydroxy-2-(2-methylacryloylaminomethoxy)propoxymethyl]- 2-met"
+    },
+    {
+      "id": "c1f17c1d-9c2d-4e1d-bdc2-6a696a9f6a1c",
+      "inci": "A mixture of: 4-allyl-2,6-bis(2,3-epoxypropyl)phenol, 4-allyl-6-(3-(6-(3-(6-(3-("
+    },
+    {
+      "id": "bf6a82d8-ab7e-4fcc-a51f-8bb669752b3c",
+      "inci": "A mixture of: disodium 4-(3-ethoxycarbonyl-4-(5-(3-ethoxycarbonyl- 5-hydroxy-1-("
+    },
+    {
+      "id": "eaff75e9-8aeb-4c0f-882d-7acb18df3a8a",
+      "inci": "A mixture of: 1,3,5-tris(3-aminomethylphenyl)-1,3,5-(1H,3H,5H)-triazine-2,4,6-tr"
+    },
+    {
+      "id": "f449e700-563f-4c69-8b96-3606512a18a1",
+      "inci": "A mixture of: reaction product of 4,4′-methylenebis[2-(4-hydroxybenzyl)-3,6-dime"
+    },
+    {
+      "id": "de09c978-7ed8-4ea2-93c3-dea86780d1cc",
+      "inci": "Disodium 4-hydroxy-3-[(4- sulphonatonaphthyl)azo]naphtha lenesulphonate 14720 Re"
+    },
+    {
+      "id": "ef9465d5-417d-457c-ba8b-723f05003828",
+      "inci": "Disodium 4-[(5-chloro-4-methyl-2- sulphonatophenyl)azo]-3-hydroxy-2- naphthoate "
+    },
+    {
+      "id": "84784d15-194e-4083-9983-c64b8525082a",
+      "inci": "Disodium 5-amino-4-hydroxy-3- (phenylazo)naphthalene-2,7-disulphonate and its in"
+    },
+    {
+      "id": "c8b09b43-27c2-4bd7-90ad-21c024e726db",
+      "inci": "Trisodium 5-hydroxy-1-(4-sulphophenyl)- 4-((4-sulphophenyl)azo)pyrazole-3- carbo"
+    },
+    {
+      "id": "6f4b4293-39e4-4a46-8112-e9c061a6f941",
+      "inci": "Sodium 4-amino-5-hydroxy-3-((4- nitrophenyl)azo)-6- (phenylazo)naphthalene-2,7-d"
+    },
+    {
+      "id": "01d11561-06fb-4539-a9ee-ca31fbab7601",
+      "inci": "1-(4-(Phenylazo)phenylazo)-2-naphthol 26100 Red Not to be used in products appli"
+    },
+    {
+      "id": "2d26c5e7-9709-45e9-98f4-fb7bd019f66f",
+      "inci": "Tetrasodium 1-acetamido-2-hydroxy-3-(4- ((4-sulphonatophenylazo)-7-sulphonato- 1"
+    },
+    {
+      "id": "f6b6093b-21ff-4a9f-9825-20cb3268c8bc",
+      "inci": "Benzene-methanaminium, N-ethyl-N-(4- ((4-(ethyl((3-sulfophenyl)methyl)amino) phe"
+    },
+    {
+      "id": "65c1da44-f3d9-4d63-85f2-b22b8f923c41",
+      "inci": "Benzene-methanaminium, N-ethyl-N-(4- ((4-(ethyl((3-sulfophenyl)methyl)amino) phe"
+    },
+    {
+      "id": "952a6e3c-df3e-4b1b-9ca5-68b931f184ea",
+      "inci": "Hydrogen [4-[[4-(diethylamino)phenyl][4- [ethyl[(3-sulphonatobenzyl)amino]-o- to"
+    },
+    {
+      "id": "e166db6e-b450-453a-aa72-5e742e8004a8",
+      "inci": "4’,5’-Dibromo-3’,6’- dihydroxyspiro[isobenzofuran-1(3H),9’- [9H]xanthene]-3-one "
+    },
+    {
+      "id": "1269ce8a-81fd-436d-8fe9-1db28d2a3fc9",
+      "inci": "Disodium 2-(2,4,5,7-tetrabromo-6-oxido- 3-oxoxanthen-9-yl)benzoate and its insol"
+    },
+    {
+      "id": "521560e6-872e-457f-a85e-7c5baf9a34df",
+      "inci": "3’,6’-Dihydroxy-4’,5’- dinitrospiro[isobenzofuran-1(3H),9’- [9H]xanthene]-3-one "
+    },
+    {
+      "id": "63d208d5-8794-4662-a3d1-09073103ac7e",
+      "inci": "Dipotassium 3,6-dichloro-2-(2,4,5,7- tetrabromo-6-oxido-3-oxoxanthen-9- yl)benzo"
+    },
+    {
+      "id": "3c1be9a3-4816-45ae-9507-22cde889c4ed",
+      "inci": "3,4,5,6-Tetrachloro-2-(1,4,5,8- tetrabromo-6-hydroxy-3-oxoxanthen-9- yl)benzoic "
+    },
+    {
+      "id": "d330700f-1725-4f73-8991-6d7bdcbfafa9",
+      "inci": "Trisodium 8-hydroxypyrene-1,3,6- trisulphonate 59040 Green Not to be used in pro"
+    },
+    {
+      "id": "20261968-d209-4225-a925-d4c382929b59",
+      "inci": "6-Chloro-2-(6-chloro-4-methyl-3- oxobenzo[b]thien-2(3H)-ylidene)-4- methylbenzo["
+    },
+    {
+      "id": "0f16d8a2-b641-464a-bad9-1a4749d34a4e",
+      "inci": "2-Amino-1,7-dihydro-6H-purin-6-one 75170 White NE 9002.21.22"
+    },
+    {
+      "id": "7c4bd15b-7160-4a9a-a2a5-fe13b0aed5d4",
+      "inci": "Bismuth chloride oxide 77163 White NE 881/243L"
+    },
+    {
+      "id": "62c02309-62db-4ed1-a246-42c366fd94ba",
+      "inci": "Iron Oxide Red 77491 Red Purity criteria as set out in Commission Directive 95/4"
+    },
+    {
+      "id": "9c9e5b4f-e40a-4ef1-84fc-d5576fc83ce3",
+      "inci": "Disodium 5-acetylamino-4-hydroxy-3- (phenylazo)naphthalene-2,7-disulphonate 1805"
+    },
+    {
+      "id": "47153e16-8d73-4cc8-b210-31488e9ca62e",
+      "inci": "Disodium 4,6-dihydroxy-3-[[4-[1-[4-[[1- hydroxy-7-[(phenylsulphonyl)oxy]-3- sulp"
+    },
+    {
+      "id": "5826b4e9-f023-4fa4-aef4-50aab4c550ef",
+      "inci": "beta Carotene 40800 Orange Purity criteria as set out in Commission Directive 95"
+    },
+    {
+      "id": "01131ae0-e357-45cc-9772-3d1467a29123",
+      "inci": "Hydrogen [4-[(2-chlorophenyl)[4-[ethyl(3- sulphonatobenzyl)amino]-o- tolyl]methy"
+    },
+    {
+      "id": "3c475b23-d5c0-432b-81d5-63318fc0d3f7",
+      "inci": "Disodium 2-(3-oxo-6-oxidoxanthen-9- yl)benzoate 45350 Yellow 6 % 75 4’,5’-Dibrom"
+    },
+    {
+      "id": "3f9e6e81-0c3b-460d-be5f-1c9ee32fbf39",
+      "inci": "Disodium 2-(2,4,5,7-tetraiodo-6-oxido-3- oxoxanthen-9-yl)benzoate and its insolu"
+    },
+    {
+      "id": "e20bcd3e-c0e2-4a8b-a1de-e41531cda229",
+      "inci": "Sulfonated nigrosine color 50420 Black Not to be used in products applied on muc"
+    },
+    {
+      "id": "c95e0d04-bcd4-41ea-9e51-b2ebbfba9c69",
+      "inci": "Sodium 4-[(9,10-dihydro-4-hydroxy-9,10- dioxo-1-anthryl)amino]toluene-3- sulphon"
+    },
+    {
+      "id": "aee7c338-3b61-418b-a3a5-2ef147fed47e",
+      "inci": "Sodium 1-amino-4-(cyclohexylamino)- 9,10-dihydro-9,10-dioxoanthracene-2- sulphon"
+    },
+    {
+      "id": "86ae5900-009c-43a0-a6da-37ef38264cc3",
+      "inci": "Bisbenzimidazo[2,1-b:2’,1’- i]benzo[lmn][3,8]phenanthroline-8,17- dione 71105 Or"
+    },
+    {
+      "id": "2413804e-fdfd-45e6-86f7-9fb0a254c807",
+      "inci": "Disodium 5,5’-(2-(1,3-dihydro-3-oxo-2H- indazol-2-ylidene)-1,2-dihydro-3H-indol-"
+    },
+    {
+      "id": "f917415b-df29-4bb2-a114-beea6f10639b",
+      "inci": "CI Food Orange 5 75130 Orange Purity criteria as set out in Commission Directive"
     }
   ]
 }
