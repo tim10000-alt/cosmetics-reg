@@ -79,7 +79,11 @@ const ELEMENT_BY_CAS = Object.fromEntries(Object.entries(ELEMENT_CAS).map(([e, c
 // "Titanium Dioxide,CI 77891"(CAS有) 등 변형명/CAS유무로 분절 생성 → 검색 시 색소(listed)·UV필터
 // (restricted) facet 이 다른 카드로 쪼개짐. 이름이 *정확히*(CI접미 제거 후) 안료명일 때만 CAS 부여 →
 // CAS 병합으로 한 카드 통합. 부분일치 금지("Silver chloride deposited on titanium dioxide" 오병합 방지).
-const PIGMENT_CAS = { "titanium dioxide": "13463-67-7", "zinc oxide": "1314-13-2", "mica": "12001-26-2" };
+// manganese violet(CI 77742) — "MANGANESE VIOLET"(CAS·CI 무) entry 가 CAS 10101-66-3 클러스터(같은
+// 색소 fragment 3종)서 고립돼 통용명 검색 시 6/19국만 표시(TW 배합금지 등 누락). 데이터 자체가 이
+// 색소 CAS 를 10101-66-3 으로 일관 보유 → 권위 상수 backfill 로 CAS-형제 통합. 병합은 TW:banned 등
+// *추가만*(고립 entry 는 전부 listed 라 가릴 ban 없음=false-allowed 0, 검증). 부분일치 금지(정확명만).
+const PIGMENT_CAS = { "titanium dioxide": "13463-67-7", "zinc oxide": "1314-13-2", "mica": "12001-26-2", "manganese violet": "10101-66-3" };
 const pigNorm = (s) => String(s || "").toLowerCase().replace(/[,\s]*c\.?\s?i\.?\s*\d{4,6}(:\d)?/g, "").replace(/[,\s]+$/, "").trim();
 // 화합물 CAS 오기 자가치유 — *독성 금지물질*이 *다른(허용) 물질*의 CAS 를 잘못 보유해 CAS 병합으로
 // 오병합되는 경우(분별력 사고: 발암물질↔허용안료가 한 헤드라인). 정확한 CAS 로 교정해 분리.
