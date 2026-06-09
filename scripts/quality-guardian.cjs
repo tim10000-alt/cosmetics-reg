@@ -159,8 +159,21 @@ function casFromName(name) {
 
 function loadJson(p, def) { return fs.existsSync(p) ? JSON.parse(fs.readFileSync(p, "utf8")) : def; }
 
+// HTML 엔티티 디코드 — 일부 소스(EU/TFDA)가 prime(′)·β·°·곡선따옴표·±·α 등을 HTML 인코딩한 채 저장해
+// (예 "3,4&#x2032;,5-tribromosalicylanilide") UI 에 리터럴 "&#x2032;" 로 노출되던 것(전수 렌더 sweep
+// 360px 서 garble 28건 색출). 숫자/16진 char-ref + 흔한 named 엔티티만 디코드(결정론·안전, 매 crawl 자가치유).
+const NAMED_ENT = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " " };
+function decodeEntities(s) {
+  if (s == null || String(s).indexOf("&") < 0) return s;
+  return String(s)
+    .replace(/&#x([0-9a-fA-F]+);/g, (m, h) => { const n = parseInt(h, 16); return (n > 0 && n <= 0x10ffff) ? String.fromCodePoint(n) : m; })
+    .replace(/&#(\d+);/g, (m, d) => { const n = parseInt(d, 10); return (n > 0 && n <= 0x10ffff) ? String.fromCodePoint(n) : m; })
+    .replace(/&(amp|lt|gt|quot|apos|nbsp);/g, (m, n) => NAMED_ENT[n] ?? m);
+}
+
 function main() {
   let overFixed = 0;
+  let entityDecoded = 0;
   const counts = {};
   const srcLatest = {};      // source_document → 최신 last_verified_at (진단용)
   const ccLatest = {};       // country → 최신 last_verified_at (신선도 감시 = cascade-aware)
@@ -186,6 +199,13 @@ function main() {
       if (lv > (srcLatest[src] || "")) srcLatest[src] = lv;
       if (lv > (ccLatest[cc] || "")) ccLatest[cc] = lv; // 국가별 최신(cascade 중 가장 신선한 층)
       if (r.max_concentration != null) limitNow[`${r.ingredient_id}|${cc}`] = r.max_concentration;
+      // HTML 엔티티 디코드(conditions·source_document·product_categories) — 리터럴 "&#x2032;" 등 제거.
+      for (const k of ["conditions", "source_document"]) {
+        if (typeof r[k] === "string") { const d = decodeEntities(r[k]); if (d !== r[k]) { r[k] = d; entityDecoded++; changed = true; } }
+      }
+      if (Array.isArray(r.product_categories)) {
+        for (let j = 0; j < r.product_categories.length; j++) { const d = decodeEntities(r.product_categories[j]); if (d !== r.product_categories[j]) { r.product_categories[j] = d; entityDecoded++; changed = true; } }
+      }
     }
     // dangling reg 청소: 성분 없는 규제 제거(이미 렌더 불가=UI 무영향, 무결성 유지·누적 방지).
     const beforeN = obj.rows.length;
@@ -474,7 +494,7 @@ function main() {
       ingredient_dictionaries: dicts.map((d) => ({ name: d.name, latest: d.latest })) }, null, 2));
 
   console.log("=== 품질 가디언(자가복구 + 신선도/이상 감시) ===");
-  console.log(`  불가능값(>100/≤0) 제거: ${overFixed} · dangling reg 청소: ${danglingRegs} · 완전중복 reg dedup: ${dupRegs}`);
+  console.log(`  불가능값(>100/≤0) 제거: ${overFixed} · dangling reg 청소: ${danglingRegs} · 완전중복 reg dedup: ${dupRegs} · HTML엔티티 디코드: ${entityDecoded}`);
   console.log(`  오염명 실명 복구(RTL 헤더 + JP matrix): ${recovered}`);
   console.log(`  보조 표시명(한/중/일) 정리: 복구 ${nameFieldRecovered} · null처리 ${nameFieldNulled}`);
   console.log(`  CAS 정규화: 복구 ${casRecovered} · 깨진값 null ${casNulled} · 원소/안료CAS ${casElementFixed} · 이름속CAS ${casFromNameFixed} · 이름오염→syn ${casNameToSyn} · 합의backfill ${casConsensus}`);
