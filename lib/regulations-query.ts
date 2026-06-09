@@ -167,14 +167,21 @@ function buildCanonical(
   ds: Awaited<ReturnType<typeof dataset>>,
 ): IngredientMatch {
   const members = ids.map((id) => ds.ingredientById.get(id)).filter(Boolean) as IngredientMatch[];
+  // 표시명 위생을 *모든* name 필드에 균일 적용(영문/한글/중국어/일본어). cleanDisplayName 의 strip 규칙은
+  // 영문 키워드(if they contain·CAS No·and a mixture 등) 기준이라 한글/중국어 규제문("부타디엔 0.1%를
+  // 초과하여 함유하는…")엔 매칭 안 됨 → 정당한 규제 entry명은 보존하고, 개행/탭 wrap·"(CAS No. X)" 주석만
+  // 정리(실측: korean 21건 newline/주석, chinese/japanese 0). 장기 전자동: 파이프라인이 어떤 필드에 누출을
+  // 만들어도 표시 시점에 균일 정리(누락 0). null 은 보존.
+  const cleanNm = (v: string | null): string | null => (v == null ? v : cleanDisplayName(v));
   if (members.length <= 1) {
     // 형제 없는 단일 레코드도 표시명 위생 + 누출 동의어 제거(standalone 코럽트 헤드라인 대응).
     const cleaned = cleanDisplayName(resolved.inci_name);
+    const ko = cleanNm(resolved.korean_name), zh = cleanNm(resolved.chinese_name), ja = cleanNm(resolved.japanese_name);
     const syn = (resolved.synonyms || []).filter((x) => !isLeakArtifact(x));
     // cas_no 제어문자(\r\n\t) 위생 — 저장값 오염(예 "328-39-2(DL-)\r,61-90-5(L-)")이 표시에 새지 않게.
     const casClean = resolved.cas_no ? resolved.cas_no.replace(/[\r\n\t]+/g, " ").replace(/\s+,/g, ",").replace(/\s{2,}/g, " ").trim() : resolved.cas_no;
-    return cleaned === resolved.inci_name && syn.length === (resolved.synonyms || []).length && casClean === resolved.cas_no
-      ? resolved : { ...resolved, inci_name: cleaned, synonyms: syn, cas_no: casClean };
+    return cleaned === resolved.inci_name && ko === resolved.korean_name && zh === resolved.chinese_name && ja === resolved.japanese_name && syn.length === (resolved.synonyms || []).length && casClean === resolved.cas_no
+      ? resolved : { ...resolved, inci_name: cleaned, korean_name: ko, chinese_name: zh, japanese_name: ja, synonyms: syn, cas_no: casClean };
   }
   // 대표 점수: 한국등록(korean_name) > 정상케이스(외국 ALL-CAPS 후순위) > 군더더기 없음 > CAS 보유, 짧을수록 가산.
   const score = (m: IngredientMatch): number => {
@@ -208,9 +215,9 @@ function buildCanonical(
   return {
     id: rep.id,
     inci_name: repInci,
-    korean_name: firstOf("korean_name"),
-    chinese_name: firstOf("chinese_name"),
-    japanese_name: firstOf("japanese_name"),
+    korean_name: cleanNm(firstOf("korean_name")),
+    chinese_name: cleanNm(firstOf("chinese_name")),
+    japanese_name: cleanNm(firstOf("japanese_name")),
     cas_no: casSet.length ? casSet.join(", ") : null,
     synonyms: synSet,
     description: firstOf("description"),
