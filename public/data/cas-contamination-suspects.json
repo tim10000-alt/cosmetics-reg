@@ -1,7 +1,7 @@
 {
   "generated": "cas-contamination-audit",
   "note": "다중CAS↔다른이름 단일CAS 0토큰겹침 검토큐. 대부분 같은물질 다른명명(legit). 자동수정 금지(분별력). 검토 후 guardian COMPOUND_CAS_FIX 명시교정. 위험방향(다른status)은 false-allowed 스캔이 별도 보증. 큐 *증가* = 신규오염/파서버그 점검.",
-  "count": 222,
+  "count": 223,
   "suspects": [
     {
       "inci": "[(p-Tolyloxy)methyl]Oxirane",
@@ -767,6 +767,11 @@
       "inci": "o-Phenylphenol and its salts",
       "shared_cas": "132-27-4",
       "conflicts_with": "Sodium o-Phenylphenate"
+    },
+    {
+      "inci": "o-Phenylphenol and its salts",
+      "shared_cas": "132-27-4",
+      "conflicts_with": "Sodium o-phenylphenate"
     },
     {
       "inci": "o-Phenylphenol and its salts",

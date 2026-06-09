@@ -136,5 +136,35 @@
     "parsed_at": "2026-06-03T23:33:05.301Z",
     "entry_count": 0,
     "article_no": "16933"
+  },
+  "public/data/raw-attach/kcia-17666/(국문) 중검원 재시험 재검사 시료제출 안내.pdf": {
+    "sha256": "763c77c69e0567ec4f8c342e5bbcd4455daf184335a08b00c64715b5dfc130b1",
+    "parsed_at": "2026-06-09T20:25:24.805Z",
+    "entry_count": 0,
+    "article_no": "17666"
+  },
+  "public/data/raw-attach/kcia-17665/(국문) 「화장품 중 3가 크롬 및 6가 크롬의 시험방법」 등 8개 방법을 「화장품안전기술규범」에 편입하는 것에 관한 공고 및 개요표.pdf": {
+    "sha256": "f1f05dce7f48612f046c2170abaf40bc778c1efee47d4065e9d90d55f33a0ffe",
+    "parsed_at": "2026-06-09T20:25:24.805Z",
+    "entry_count": 0,
+    "article_no": "17665"
+  },
+  "public/data/raw-attach/kcia-17665/(국문) 「화장품 중 3가 크롬 및 6가 크롬의 시험방법」 등 8개 방법 관련 질의응답.pdf": {
+    "sha256": "2ec67edce875841091dcc0a69002dc0df1ef370bd3edb9f65fe4771f73303b62",
+    "parsed_at": "2026-06-09T20:25:24.805Z",
+    "entry_count": 0,
+    "article_no": "17665"
+  },
+  "public/data/raw-attach/kcia-17489/(붙임1) 화장품 안전기준 등에 관한 규정 일부개정고시.hwpx": {
+    "sha256": "7b3cdcbfc9757cf0774222b1bb8aa888992bd28938469093c752d7b245c0ad3d",
+    "parsed_at": "2026-06-09T20:25:24.805Z",
+    "entry_count": 200,
+    "article_no": "17489"
+  },
+  "public/data/raw-attach/kcia-17489/(붙임2) 화장품 안전기준 등에 관한 규정 고시(전문).hwpx": {
+    "sha256": "e835e3aeaa1aea3742a21154a8948ef052473eb959412ae0e37c8369a3cc14a1",
+    "parsed_at": "2026-06-09T20:25:24.805Z",
+    "entry_count": 0,
+    "article_no": "17489"
   }
 }
