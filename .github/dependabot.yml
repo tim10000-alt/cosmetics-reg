@@ -7,6 +7,13 @@ updates:
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 5
+    ignore:
+      # eslint 10 보류: eslint-config-next@16.2.7(최신 stable)가 번들한
+      # eslint-plugin-react@7.37.5(최신)의 peer 가 eslint "...||^9.7" 로 capped —
+      # eslint 10 에서 rule 로드 시 contextOrFilename.getFilename 크래시(upstream 미지원).
+      # 생태계(plugin-react/config-next)가 eslint 10 지원 시 이 ignore 제거 후 재시도.
+      - dependency-name: "eslint"
+        update-types: ["version-update:semver-major"]
     groups:
       # 자잘한 patch/minor 는 묶어서 PR 수 줄임.
       minor-and-patch:
