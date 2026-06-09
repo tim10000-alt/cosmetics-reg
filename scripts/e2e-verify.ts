@@ -8,8 +8,11 @@ interface QuarRow { ingredient_name_raw: string | null; country_code: string | n
 interface IngRow { id: string; inci_name: string }
 interface RegRow { ingredient_id: string; country_code: string }
 
-// BASE는 E2E_BASE 환경변수 또는 기본 prod URL. localhost 정적 검증 시 E2E_BASE=http://localhost:3010.
-const BASE = process.env.E2E_BASE ?? "https://cosmetics-reg-tim10000.netlify.app";
+// BASE는 E2E_BASE 환경변수 또는 *로컬 정적 서버 기본값*. 이 프로젝트는 100% 로컬 모드(Phase 5b)이고
+// Netlify 는 미사용 결정(2026-06)되어, 기본값을 localhost:3010 으로 둠 — 과거 기본이 stale 한 netlify
+// prod URL 이라 E2E_BASE 미설정 수동 실행이 죽은 사이트를 검증하던 footgun 제거. 외부 호스트 스모크가
+// 필요하면 E2E_BASE=https://… 로 명시. (pr-check.yml 은 이미 E2E_BASE=http://localhost:3010 설정.)
+const BASE = process.env.E2E_BASE ?? "http://localhost:3010";
 const SHOT_DIR = ".e2e-shots";
 // Static export 후엔 /api/* 와 middleware 가 없음. 헤더 검증은 호스팅 레이어 몫.
 // localhost 정적 서버(npx serve)는 보안 헤더를 부여하지 않으므로 prod 호스트일 때만 확인.
