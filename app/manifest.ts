@@ -7,6 +7,7 @@ export const dynamic = "force-static";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
+    id: `${BASE_PATH}/`,
     name: "화장품 원료 규제 검색",
     short_name: "규제검색",
     description:

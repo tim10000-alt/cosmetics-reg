@@ -63,6 +63,14 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        {/* beforeinstallprompt 를 React hydration 전에 캡처(레이스 방지) — '앱 설치' 버튼이
+            실제 네이티브 설치창을 확실히 띄우게. 안 하면 이벤트를 놓쳐 설치 안 되고 아이콘도 안 생김. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "window.addEventListener('beforeinstallprompt',function(e){e.preventDefault();window.__bip=e;window.dispatchEvent(new Event('bip-ready'));});window.addEventListener('appinstalled',function(){window.__bip=null;});",
+          }}
+        />
         <RegisterSW />
         <InstallButton />
         {children}
