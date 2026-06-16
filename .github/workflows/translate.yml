@@ -29,8 +29,9 @@ jobs:
     env:
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       CI: "true"
-      TRANSLATE_MAX: "400"            # 한 run 최대 400건(무료 quota 안에서 지속가능 배치). 캐시 멱등.
-      TRANSLATE_BUDGET_MS: "600000"   # 10분 하드 컷
+      TRANSLATE_MAX: "3000"           # 한 run 최대 번역 건수(배치 번역이라 요청수는 ~1/15). 캐시 멱등.
+      TRANSLATE_BATCH_ITEMS: "15"     # 1요청당 문자열 수 — 무료 quota(요청단위) 절감의 핵심
+      TRANSLATE_BUDGET_MS: "900000"   # 15분 하드 컷
       TRANSLATE_QUOTA_STOP: "3"       # quota 3연속 = 오늘 소진 → 즉시 종료(CI 분 낭비 방지)
     steps:
       - uses: actions/checkout@v6

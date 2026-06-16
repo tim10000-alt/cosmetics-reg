@@ -19,6 +19,8 @@ export default function InstallButton() {
   const [dismissed, setDismissed] = useState(false);
   const [isIOS, setIsIOS] = useState(false);
 
+  // 브라우저 전용 API(matchMedia·navigator) 로 마운트 후 1회 판정 → setState 필요.
+  /* eslint-disable react-hooks/set-state-in-effect */
   useEffect(() => {
     const inStandalone =
       window.matchMedia?.("(display-mode: standalone)").matches ||
@@ -39,6 +41,7 @@ export default function InstallButton() {
       window.removeEventListener("appinstalled", onInstalled);
     };
   }, []);
+  /* eslint-enable react-hooks/set-state-in-effect */
 
   if (standalone || dismissed) return null;
 
