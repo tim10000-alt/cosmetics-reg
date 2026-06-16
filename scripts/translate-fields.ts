@@ -31,6 +31,16 @@ const HANGUL_G = /[가-힣]/g;
 const BILINGUAL_LABEL = /중문\s*(명칭|명)?\s*[:：]/;
 const needsTranslation = (s: unknown): s is string =>
   typeof s === "string" && s.length > 0 && FOREIGN.test(s) && !BILINGUAL_LABEL.test(s);
+// 영어전용 조건문 — 한글이 *전혀* 없고 영문 보일러플레이트인 conditions(예 EU CosIng "Field of
+// application: …", "except …", "with the exception of …"). 사용자: 한글을 기본값으로(영어 병기는 허용,
+// 한글 0 은 불가). conditions 필드에만 적용(source_document 의 출처 citation 은 영문 보존). CAS/Ref/CI
+// 식별자만인 줄은 제외. Gemini 가 한글 번역을 붙여 캐시 → 표시 시 한글화. accept 게이트(숫자 보존·외국어
+// 잔존)가 안전 보장.
+const HANGUL = /[가-힣]/;
+const isEnglishOnlyCondition = (s: unknown): s is string =>
+  typeof s === "string" && s.length >= 8 && /[A-Za-z]{4,}/.test(s)
+  && !HANGUL.test(s) && !FOREIGN.test(s)
+  && !/^\s*(CAS|Ref(\s*No)?|EC|CI|순번|Color)\b\s*[:：]/i.test(s);
 function priority(s: string): number {
   const f = (s.match(FOREIGN_G) || []).length;
   const h = (s.match(HANGUL_G) || []).length;
@@ -74,7 +84,8 @@ function prompt(batch: string[]): string {
   return `다음은 화장품 규제 공식 문서 텍스트들의 번호 목록입니다. 각 항목을 한국 화장품 연구원이 읽도록 자연스럽고 완전한 한국어로 번역하세요.
 
 규칙:
-1) 중국어·일본어 등 외국어 규제 텍스트(각주·비고·단서·사용조건)를 빠짐없이 한국어로 번역.
+1) 중국어·일본어·영어 등 외국어 규제 텍스트(각주·비고·단서·사용조건)를 빠짐없이 한국어로 번역.
+   (영문 보일러플레이트 예: "Field of application: …", "except …", "with the exception of …" → 한국어로.)
 2) 숫자·백분율(%)·단위·CAS 번호·CI 색소번호·화학명/INCI명(로마자)은 그대로 두세요.
 3) 줄바꿈·머리표("*","※","순번","(a)") 구조를 보존하세요.
 4) 이미 한국어인 부분은 그대로 두세요. 설명을 덧붙이지 말고 번역 본문만.
@@ -147,6 +158,8 @@ function collectCandidates(): string[] {
       for (const field of ["conditions", "source_document", "override_note"]) {
         const v = r[field];
         if (needsTranslation(v)) set.add(v);
+        // conditions 만: 영어전용(한글 0)도 한글 번역 대상에 추가(출처 citation 은 영문 보존).
+        else if (field === "conditions" && isEnglishOnlyCondition(v)) set.add(v as string);
       }
       const pc = r["product_categories"];
       if (Array.isArray(pc)) for (const x of pc) if (needsTranslation(x)) set.add(x as string);

@@ -83,6 +83,33 @@ const PHRASE: [string, string][] = [
   ["所有化粧品均可使用", "모든 화장품에 사용 가능"], ["限用於用後立即洗去之化粧品", "사용 후 즉시 씻어내는 화장품에 한함"],
   ["氧化性", "산화성"], ["非氧化性", "비산화성"], ["限量", "한도"], ["含釋出", "방출되는"],
   ["禁止使用", "사용 금지"], ["得使用", "사용 가능"],
+  // ── TW 잔여 번체 단편(명확한 복합어 경계 — word-salad 위험 낮음). 대부분 한글 번역이 옆에
+  //   이미 있고 중문 원문만 남은 케이스 → 한글로 치환하면 중문 제거(사용자: 다른 언어 불가). ──
+  ["染髮產品", "염모 제품"], ["染髮、燙髮", "염모·퍼머넌트"], ["燙髮產品", "퍼머넌트 제품"],
+  ["限用於非接觸黏膜之化粧品", "점막 비접촉 화장품에 한함"],
+  ["限用於非接觸眼部周圍之化粧品", "눈 주위 비접촉 화장품에 한함"],
+  ["限用於用後立即洗去之化粧品", "사용 후 즉시 씻어내는 화장품에 한함"],
+  ["可能引起失明", "실명을 유발할 수 있음"], ["含強鹼", "강염기 함유"],
+  ["以acid 計", "산으로서 계산"], ["以 acid 計", "산으로서 계산"], ["以acid計", "산으로서 계산"],
+  ["以free base 計", "유리 염기로서 계산"], ["以 free base 計", "유리 염기로서 계산"],
+  ["以 free SO", "유리 SO"], ["以 sulfate 計", "황산염으로서 계산"], ["以單一", "단일"],
+  ["以重量計", "중량 기준"], ["總量", "총량"], ["注", "주"], ["備註", "비고"],
+  // 위 "未列載…" 문장 꼬리(별도 분절로 자주 잔존, 237회) — 검사등록 첨부 의무.
+  ["，惟於申請查驗登記時，應同時檢附該等地區之准許使用基準證明文件。", ", 단 검사등록 신청 시 해당 지역의 허가 사용기준 증명문서를 함께 첨부해야 함."],
+  ["惟於申請查驗登記時，應同時檢附該等地區之准許使用基準證明文件", "단 검사등록 신청 시 해당 지역의 허가 사용기준 증명문서를 함께 첨부해야 함"],
+  ["化粧品防腐劑成分名稱及使用限制表中另有規定者除外", "화장품 보존제 성분 명칭 및 사용제한표에 별도 규정이 있는 경우는 제외"],
+  ["化粧品成分使用限制表中另有規定者除外", "화장품 성분 사용제한표에 별도 규정이 있는 경우는 제외"],
+  ["立即沖洗產品", "즉시 씻어내는 제품"], ["髮類產品", "두발용 제품"], ["香皂", "비누"],
+  ["口腔製劑", "구강제제"], ["於噴霧類產品", "분무(스프레이)류 제품에서"], ["避免兒童接觸", "아동의 접촉을 피할 것"],
+  ["使用前請先作皮膚敏感性測試", "사용 전 피부 감작성 테스트를 먼저 실시할 것"], ["皮膚敏感者", "피부 민감자"],
+  // "以 X 計"(X=영문 화학명) — 양 끝이 명확한 다글자 구. 한글 번역이 옆에 병기된 경우 많아 중복돼도
+  //   한글화 목적(중문 제거). 단일 글자(計·以·含 등)는 合計→salad 위험이라 제외(Gemini 파이프라인이 처리).
+  ["以 tetrahydrochloride 計", "(테트라하이드로클로라이드로서 계산)"],
+  ["以thioglycollic acid 計", "(치오글라이콜릭애씨드로서 계산)"], ["以 thioglycollic acid 計", "(치오글라이콜릭애씨드로서 계산)"],
+  ["以 free SO2 計", "(유리 SO2로서 계산)"], ["以free SO2 計", "(유리 SO2로서 계산)"],
+  // 안전 제거/치환 — 之(중국어 소유격 조사, 한국어엔 없음)는 삭제. JP 용어.
+  ["之", ""], ["配合不可", "배합 불가"], ["国際単位", "국제단위"], ["力価", "역가"], ["油溶性", "유용성"],
+  ["ショウキョウチンキ", "생강 팅크"], ["トウガラシチンキ", "고추 팅크"], ["歯磨", "치약"],
 ];
 const PHRASE_SORTED = [...PHRASE].sort((a, b) => b[0].length - a[0].length);
 const HAS_CJK = /[぀-ヿ一-鿿]/;
@@ -113,22 +140,38 @@ import { strKey } from "./strhash";
 //  ① Gemini 번역 캐시(translations.json — 해시키, 전수·장기 자동 누적)
 //  ② 결정론 seed(위 MAP — 출처명·핵심 조건은 CI 없이도 즉시 한글)
 //  ③ 없으면 원문 그대로(부분 오역 0). null/undefined 보존.
+// MFDS 공공데이터(식약처가 정리한 EU·ASEAN·중국 등 해외법령)는 조건문을 "원문^한국어번역"
+// 이중언어로 제공한다(전수 9,838건·14개국). UI 에 "english^korean" 가 그대로 노출되던 문제 →
+// 표시 시점에 한국어(보통 ^ 뒤) 측만 보이게 정리한다. 줄 단위(한 줄에 ^ 있을 때만)로, ^-분절 중
+// 한글 포함 분절 우선(없으면 마지막=번역측). 결정론·가역(데이터 불변)·자가치유(daily refresh 무관).
+function stripBilingual(s: string): string {
+  if (s.indexOf("^") === -1) return s;
+  return s.split("\n").map((line) => {
+    if (line.indexOf("^") === -1) return line;
+    const parts = line.split("^");
+    const ko = parts.find((p) => /[가-힣]/.test(p));
+    return (ko ?? parts[parts.length - 1]).trim();
+  }).join("\n");
+}
+
 export function translateDisplay<T extends string | null | undefined>(
   s: T,
   cache?: Map<string, string> | null,
 ): T {
   if (s == null) return s;
-  const str = s as string;
+  const str0 = s as string;
   if (cache) {
-    const hit = cache.get(strKey(str));
-    if (hit) return hit as T;
+    const hit = cache.get(strKey(str0));
+    if (hit) return stripBilingual(hit) as T;
   }
-  const direct = MAP[str];
+  // MFDS 이중언어("원문^한글") → 한글 측만. 이후 MAP/PHRASE 는 정리된 한글에 적용.
+  const str = stripBilingual(str0);
+  const direct = MAP[str] ?? MAP[str0];
   if (direct) return direct as T;
-  const n = NORM_MAP[norm(str)];
+  const n = NORM_MAP[norm(str)] ?? NORM_MAP[norm(str0)];
   if (n) return n as T;
   // 전체-문자열 미스 → 박힌 외국어 boilerplate 구절 치환(조건문 한도 박힘으로 유니크할 때).
   const ph = phraseTranslate(str);
   if (ph !== str) return ph as T;
-  return s;
+  return str as T;
 }
