@@ -47,7 +47,8 @@
     "status:judge": "tsx scripts/status-judge.ts",
     "translate": "tsx scripts/translate-fields.ts",
     "translate:cn": "tsx scripts/translate-cn-deterministic.ts",
-    "translate:verify": "tsx scripts/verify-translations.ts"
+    "translate:verify": "tsx scripts/verify-translations.ts",
+    "audit:cells": "tsx scripts/audit-cells-gemini.ts"
   },
   "dependencies": {
     "@google/genai": "^2.8.0",

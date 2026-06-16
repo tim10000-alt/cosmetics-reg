@@ -1,0 +1,66 @@
+name: Audit Cells (Gemini ground-truth)
+
+# 전 성분 × 전 국가 헤드라인 셀(86K)을 무료 Gemini 듀얼합의로 각국 실제 규제와 전수 대조.
+# 자기일관성 감사가 못 잡는 데이터-진실 오류(false-allowed/false-banned/wrong-limit)를 색출 →
+# audit-findings.json(검토큐, 자동수정 안 함). 멱등 캐시·quota circuit-breaker 로 며칠에 걸쳐
+# 전 셀 점진 커버(장기 전자동). 변경 셀만 이후 재판정. 사람은 finding 을 원문확인 후 limit-overrides 로 교정.
+
+on:
+  schedule:
+    - cron: "0 17 * * *"   # 매일 KST 02:00 (status 01:00 / identity 00:00 / crawl 03:17 과 분리 = fresh quota)
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/audit-cells.yml'
+      - 'scripts/audit-cells-gemini.ts'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: audit-cells-write
+  cancel-in-progress: false
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      CI: "true"
+      # 한 run 최대 판정 수 — 무료 quota 독식 방지, 며칠에 나눠 전 셀 점진 커버. 캐시 멱등.
+      AUDITCELL_MAX: "600"
+      AUDITCELL_BATCH: "8"
+      AUDITCELL_BUDGET_MS: "1200000"   # 20분 하드컷
+      AUDITCELL_QUOTA_STOP: "3"        # quota 3연속 실패 = 오늘 소진 → 즉시 종료(내일 재개)
+      # 중요시장 먼저 소진(KR/CN/EU/JP/US…). 점진 커버.
+      AUDITCELL_COUNTRIES: "KR,CN,EU,JP,US,TW,BR,ID,MY,PH,SG,TH,VN,BO,CO,EC,PE,AR,CA"
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+          cache: "npm"
+      - run: npm ci
+
+      - name: Audit cells (Gemini dual-consensus ground-truth)
+        run: npm run audit:cells
+        continue-on-error: true
+
+      - name: Commit audit findings
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/audit-findings.json public/data/audit-cache.json
+          if git diff --cached --quiet; then echo "no audit changes"; exit 0; fi
+          git commit -m "chore(audit): Gemini ground-truth 셀 감사 $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3 4 5 6; do
+            if git push; then echo "pushed"; exit 0; fi
+            git fetch origin main
+            git merge -X ours --no-edit origin/main || { git merge --abort || true; git reset --hard HEAD; }
+            sleep 4
+          done
+          echo "::error::push 6회 실패"; exit 1
