@@ -57,187 +57,101 @@ interface RegulationRow {
 interface AnnexEntry {
   japanese_name: string;
   code: string;            // "1" | "31" | "41" | "42" | "72" | "73"
-  cells: string[];         // ["○", "5.0", "", ...] up to 12 columns
+  cells: string[];         // 12 컬럼 정확히 — ["○", "5.0", "", ...]. ""=사용 금지(blank), "○"=제한없음, 숫자=최대%
   max_concentration: number | null;
-  allowed_categories: number;  // count of non-empty cells
+  allowed_categories: number;  // count of non-blank cells (사용 가능 제품군 수)
+  footnote: string;        // 각주(집계·환산·특례 규정) — 12번째 셀/추가 컬럼에서 추출
 }
 
+// 제품군(제형) 한글명 — 별표1 12개 카테고리 고정 구조. 사용자 직관(씻어내는/씻지않는 등) 위해 한글.
 const CATEGORY_NAMES = [
-  "(1)清浄用 cleansing",
-  "(2)頭髪用 hair",
-  "(3)基礎 basic",
-  "(4)メークアップ makeup",
-  "(5)芳香 fragrance",
-  "(6)日焼け sun",
-  "(7)爪 nail",
-  "(8)アイライナー eyeliner",
-  "(9)口唇 lip",
-  "(10)口腔 oral",
-  "(11)入浴 bath",
-  "その他 other",
+  "세정용(씻어내는 제품)",
+  "두발용",
+  "기초화장품(스킨케어)",
+  "메이크업",
+  "방향용(향수)",
+  "선케어·자외선차단",
+  "손발톱(네일)",
+  "아이라이너",
+  "입술",
+  "구강용",
+  "입욕용",
+  "기타",
 ];
 
+// 각주 보일러플레이트 결정론 한글화 — 별표1 각주는 집계·환산·특례 규정의 정형구. 성분명(고유)은
+// 보존하고 문법 골격만 한글화(무Gemini·무인·결정론). 양식 신설 footnote 는 골격만 부분 한글화돼도
+// 의미 전달(자외선합계·치약특례·IU 정의 등 핵심구는 완역). translateDisplay 는 한글우세 텍스트를
+// 안 건드리므로 여기서 결정론 한글화가 정확·안정.
+function footnoteKo(s: string): string {
+  let t = (s || "").trim();
+  if (!t) return t;
+  t = t.replace(/紫外線吸収剤の合計は\s*10\s*以下とする。?/g, "자외선흡수제 합계는 10% 이하로 한다.");
+  t = t.replace(/ＩＵは[、,]?\s*100ｇに対して配合する当該成分の国際単位を表す。?/g, "IU는 100g당 배합하는 해당 성분의 국제단위(IU)를 나타낸다.");
+  t = t.replace(/Ｕは[、,]?\s*100ｇに対して配合する当該成分の力価を表す。?/g, "U는 100g당 배합하는 해당 성분의 역가를 나타낸다.");
+  t = t.replace(/歯磨きの目的で使用されるもので薄める用法のものは０．60と?し、かつ使用時０．10以下となる?こと。?/g, "치약 목적으로 사용되어 희석하는 용법은 0.60%로 하고, 사용 시 0.10% 이하가 되어야 한다.");
+  t = t.replace(/すべての|すベての/g, "모든 ");
+  t = t.replace(/誘導体を/g, " 유도체를 ");
+  t = t.replace(/に換算して[、,]?/g, "(으)로 환산하여 ");
+  t = t.replace(/及びその塩類並びに/g, " 및 그 염류와 ");
+  t = t.replace(/及びその塩類/g, " 및 그 염류");
+  t = t.replace(/及びその誘導体/g, " 및 그 유도체");
+  t = t.replace(/及びそのエステル/g, " 및 그 에스테르");
+  t = t.replace(/として合計。?/g, "(으)로서 합계. ");
+  t = t.replace(/として。/g, "(으)로서 산정. ");
+  t = t.replace(/及び/g, " 및 ");
+  t = t.replace(/コード/g, "코드");
+  t = t.replace(/（/g, "(").replace(/）/g, ")");
+  t = t.replace(/\s{2,}/g, " ").trim();
+  t = t.replace(/\.\s*$/, ".");
+  return t;
+}
+// 셀이 값(○/숫자/blank)이 아니라 각주 텍스트인지 — 12번째 컬럼에 각주가 병합되는 케이스 탐지.
+const isFootnoteCell = (c: string): boolean =>
+  /[。]|として|に換算|以下とする|当該成分|国際単位|力価|歯磨き/.test(c) || (/[ぁ-んァ-ヶ一-龠]/.test(c) && c.length >= 6);
+
 const CODE_DESCRIPTIONS: Record<string, string> = {
-  "1": "일본약국방 (JP Pharmacopoeia)",
-  "31": "JIS — 일본공업규격",
-  "41": "화장품원료기준 (1967, 厚生省 告示 322)",
-  "42": "種別配합성분규격 (별표 별기)",
-  "72": "식품첨가물 공정서 (식품위생법 13조)",
-  "73": "타르색소 (1966 厚生省令 30, 別表 1/2/3)",
+  "1": "일본약국방(일본약전, JP Pharmacopoeia)",
+  "31": "JIS 일본공업규격",
+  "41": "화장품원료기준 (1967, 후생성 고시 제322호)",
+  "42": "종별 배합성분 규격 (별표 별기)",
+  "72": "식품첨가물 공정서 (식품위생법 제13조)",
+  "73": "타르색소 (1966, 후생성령 제30호, 별표 1/2/3)",
 };
 
-// 페이지 헤더로 인식되는 fixed 줄 (skip 대상). 매 페이지 반복됨.
-const PAGE_HEADER_LINES = new Set([
-  "成分名 コード (1)清浄用",
-  "成分名", "コード",
-  "(1)清浄用", "化粧品",
-  "(2)頭髪用",
-  "(3)基礎化", "粧品",
-  "(4)メーク", "アップ化",
-  "(5)芳香化",
-  "(6)日焼", "け・日焼", "け止め化",
-  "(7)爪化粧", "品",
-  "(8)アイラ", "イナー化",
-  "(9)口唇化",
-  "（10）口", "腔化粧品",
-  "（11）入", "浴用化粧",
-  "その他",
-]);
-
-function isPageHeaderLine(line: string): boolean {
-  if (PAGE_HEADER_LINES.has(line)) return true;
-  if (/^-- \d+ of \d+ --$/.test(line)) return true;
-  if (/^最終改正：/.test(line)) return true;
-  if (/^別表$/.test(line)) return true;
-  if (/^昭和三十六年/.test(line)) return true;
-  if (/^は以下のとおり。$/.test(line)) return true;
-  return false;
-}
-
-function parseValueCells(remainder: string): { cells: string[]; max: number | null; allowed: number } {
-  // 셀 토큰: ○ 또는 숫자 (소수점 포함). split by whitespace.
-  const tokens = remainder.trim().split(/\s+/).filter(Boolean);
-  const cells: string[] = [];
-  let max: number | null = null;
-  let allowed = 0;
-  for (const tok of tokens) {
-    if (tok === "○") {
-      cells.push("○");
-      allowed++;
-    } else if (/^\d+(\.\d+)?$/.test(tok)) {
-      cells.push(tok);
-      const n = Number(tok);
-      if (max === null || n > max) max = n;
-      allowed++;
-    } else {
-      // unknown token — skip
-    }
-  }
-  return { cells, max, allowed };
-}
-
-function parseAnnex1(text: string): AnnexEntry[] {
-  // 마지막 페이지 "（注意）" 이후는 description — 절단.
-  const cutIdx = text.indexOf("（注意）");
-  const body = cutIdx > 0 ? text.slice(0, cutIdx) : text;
-  const lines = body.split(/\r?\n/);
+// getTable() 표 추출 결과(페이지×표×행, 각 행=셀 배열)에서 성분 행만 골라 구조화.
+// 셀 0=성분명, 1=코드, 2~13=12개 제품군(○/숫자/blank). 14+=각주(가끔 12번째 셀에 병합).
+// 이 방식은 PDF 텍스트 추출 *순서 교란*에 영향받지 않아(표 셀 단위 복원) garble 0 + 빈칸(금지)
+// 위치를 정확히 보존 → 정확한 제형별 한도·금지 표기 가능. 전 결정론·무Gemini.
+function parseAnnex1FromTable(table: { pages: Array<{ tables: string[][][] }> }): AnnexEntry[] {
+  const CODES = new Set(["1", "31", "41", "42", "72", "73"]);
   const out: AnnexEntry[] = [];
-  let nameBuf: string[] = [];
-  for (let i = 0; i < lines.length; i++) {
-    const raw = lines[i].trim();
-    if (!raw) continue;
-    if (isPageHeaderLine(raw)) continue;
-
-    // case A: 라인 내부에 code + values — "<name fragment> CODE val val val..."
-    const inlineM = raw.match(/^(.+?)\s+(1|31|41|42|72|73)\s+([○\d. ]+)$/);
-    if (inlineM) {
-      nameBuf.push(inlineM[1]);
-      const fullName = nameBuf.join("").replace(/\s+/g, "");
-      const { cells, max, allowed } = parseValueCells(inlineM[3]);
-      if (fullName.length >= 2 && cells.length > 0) {
-        out.push({ japanese_name: fullName, code: inlineM[2], cells, max_concentration: max, allowed_categories: allowed });
+  for (const pg of table.pages || []) {
+    for (const tbl of pg.tables || []) {
+      for (const row0 of tbl) {
+        const row = row0.map((c) => (c || "").replace(/\n/g, "").trim());
+        // 성분 행: 셀1=코드, 셀0=성분명(있음), 헤더행 제외.
+        if (row.length < 13 || !CODES.has(row[1]) || !row[0] || /成分名/.test(row[0])) continue;
+        const name = row[0];
+        if (name.length < 2) continue;
+        const code = row[1];
+        const cells = row.slice(2, 14);                  // 12개 제품군 셀
+        while (cells.length < 12) cells.push("");         // 누락 컬럼은 blank(금지)로
+        // 각주 추출 — 12번째 셀(기타)에 각주가 병합되거나 14열 이후에 잔여.
+        let footnote = "";
+        if (cells[11] && isFootnoteCell(cells[11])) { footnote = cells[11]; cells[11] = ""; }
+        if (row.length > 14) { const extra = row.slice(14).filter(Boolean).join(" "); if (extra) footnote = (footnote ? footnote + " " : "") + extra; }
+        // 정규화: ○/숫자만 유효 셀, 그 외(각주잔재 등)는 blank 처리.
+        let max: number | null = null, allowed = 0;
+        for (let i = 0; i < 12; i++) {
+          const c = (cells[i] || "").trim();
+          if (c === "○") { allowed++; }
+          else if (/^\d+(\.\d+)?$/.test(c)) { allowed++; const n = Number(c); if (max === null || n > max) max = n; }
+          else { cells[i] = ""; }                          // blank = 사용 금지
+        }
+        out.push({ japanese_name: name.replace(/\s+/g, ""), code, cells, max_concentration: max, allowed_categories: allowed, footnote });
       }
-      nameBuf = [];
-      continue;
     }
-    // case B: 라인이 단독 code (다음 line 이 values)
-    const standaloneCode = raw.match(/^(1|31|41|42|72|73)$/);
-    if (standaloneCode) {
-      // 다음 줄 = values
-      let valuesLine = "";
-      while (++i < lines.length) {
-        const next = lines[i].trim();
-        if (!next) continue;
-        if (isPageHeaderLine(next)) continue;
-        valuesLine = next;
-        break;
-      }
-      const fullName = nameBuf.join("").replace(/\s+/g, "");
-      const { cells, max, allowed } = parseValueCells(valuesLine);
-      if (fullName.length >= 2 && cells.length > 0) {
-        out.push({ japanese_name: fullName, code: standaloneCode[1], cells, max_concentration: max, allowed_categories: allowed });
-      }
-      nameBuf = [];
-      continue;
-    }
-    // case C: code + values 가 같은 라인에 있는데 위 inlineM regex 가 못 잡은 경우 (이름 비어있음)
-    const codeOnlyValues = raw.match(/^(1|31|41|42|72|73)\s+([○\d. ]+)$/);
-    if (codeOnlyValues) {
-      const fullName = nameBuf.join("").replace(/\s+/g, "");
-      const { cells, max, allowed } = parseValueCells(codeOnlyValues[2]);
-      if (fullName.length >= 2 && cells.length > 0) {
-        out.push({ japanese_name: fullName, code: codeOnlyValues[1], cells, max_concentration: max, allowed_categories: allowed });
-      }
-      nameBuf = [];
-      continue;
-    }
-    // case D: "<name fragment> CODE" (값이 다음 줄로 밀린 양식 — 긴 각주로 PDF 가 줄바꿈).
-    // 위 case A 는 같은 줄 값을 요구해 못 잡고, 결과적으로 "name CODE" 가 nameBuf 로 떨어져
-    // 다음 성분과 병합(garble)되던 핵심 결함. nameCodeM 매칭 시 *항상* 발행(다음 값 줄을 읽고,
-    // 없으면[페이지 경계 등] 빈 셀)해 "name CODE" 가 절대 bleed 되지 않게 한다. (실측 #JP별표1 garble)
-    const nameCodeM = raw.match(/^(.+?)\s+(1|31|41|42|72|73)\s*$/);
-    if (nameCodeM && /[ぁ-んァ-ヶ一-龠ー]/.test(nameCodeM[1]) && !/。/.test(raw)) {
-      let vi = i, valuesLine = "";
-      while (++vi < lines.length) {
-        const next = lines[vi].trim();
-        if (!next) continue;
-        if (isPageHeaderLine(next)) continue;
-        valuesLine = next;
-        break;
-      }
-      const pc = parseValueCells(valuesLine);
-      const hasVals = pc.cells.length > 0 && /^[○\d]/.test(valuesLine);
-      nameBuf.push(nameCodeM[1]);
-      const fullName = nameBuf.join("").replace(/\s+/g, "");
-      if (fullName.length >= 2) {
-        out.push({ japanese_name: fullName, code: nameCodeM[2], cells: hasVals ? pc.cells : [], max_concentration: hasVals ? pc.max : null, allowed_categories: hasVals ? pc.allowed : 0 });
-      }
-      nameBuf = [];
-      i = hasVals ? vi : i;
-      continue;
-    }
-    // codeless 행: "<name> ○ ○ ○ …"(코드 없이 ○ 셀만 = 전 카테고리 허용, 예 香料) → listed 발행.
-    // 코드를 요구하던 기존 파서가 이런 행을 nameBuf 로 흘려 다음 성분명과 병합시키던 결함 보정.
-    const codelessM = raw.match(/^(.+?[ぁ-んァ-ヶ一-龠ー].*?)\s+(○(?:\s+○){3,})\s*$/);
-    if (codelessM) {
-      const fullName = (nameBuf.join("") + codelessM[1]).replace(/\s+/g, "");
-      const pc = parseValueCells(codelessM[2]);
-      if (fullName.length >= 2 && pc.cells.length > 0) {
-        out.push({ japanese_name: fullName, code: "", cells: pc.cells, max_concentration: pc.max, allowed_categories: pc.allowed });
-      }
-      nameBuf = [];
-      continue;
-    }
-    // 떠도는 값 단편 라인(이름 문자 0, 셀 토큰 ○·소수·콤마 천단위·IU 단위만) → skip.
-    // 다단·크로스페이지로 분리된 2차 값 행/IU 행이 nameBuf 에 누적돼 이름 앞에 "4.04.0…"·"IUIU…"
-    // 로 새던 것 차단. 정상 성분명은 항상 일본어/라틴 문자를 포함하므로 무영향.
-    if (/^[○\d.,\sIUＩＵ]+$/.test(raw) && /[○\dIＩ]/.test(raw)) continue;
-    // 각주(집계 주석) 종료 라인 — 일본어 성분명엔 전각 마침표 "。" 가 없다. "。" 포함 라인은
-    // 각주("…として合計。"·"…に換算して。" 등)이므로 skip + nameBuf 비움(누적 각주 단편 폐기).
-    // 각주가 값 줄에 붙은 경우(parseValueCells 가 셀만 추출)와 별도 줄로 이어지는 경우 모두 차단.
-    if (/。/.test(raw)) { nameBuf = []; continue; }
-    // 그 외 → ingredient name 누적
-    nameBuf.push(raw);
   }
   return out;
 }
@@ -247,10 +161,11 @@ async function main() {
   console.log(`▶ JP MHLW 別表 1 PDF 파싱 (${PDF_PATH})...`);
   const buf = readFileSync(PDF_PATH);
   const { PDFParse } = await import("pdf-parse");
-  const r = await new PDFParse({ data: buf }).getText();
-  console.log(`  text length: ${r.text.length}`);
+  // getTable() — 표 셀 단위 복원(텍스트 순서 교란 무관) → garble 0 + 빈칸(금지) 위치 정확 보존.
+  const table = await new PDFParse({ data: buf }).getTable();
+  console.log(`  table pages: ${(table.pages || []).length}`);
 
-  const entries = parseAnnex1(r.text);
+  const entries = parseAnnex1FromTable(table as { pages: Array<{ tables: string[][][] }> });
   console.log(`  parsed entries: ${entries.length}`);
 
   const ingredients = await readRows<IngredientRow>("ingredients");
@@ -305,22 +220,34 @@ async function main() {
       matched++;
     }
 
-    // status 결정: 모든 cell ○ → "listed", 어떤 cell 에 숫자 → "restricted".
-    const hasNumeric = e.cells.some((c) => c !== "○");
-    const status = hasNumeric ? "restricted" : "listed";
+    // status 결정: 모든 12개 제품군이 ○(제한없음) → "listed", 일부라도 숫자(농도제한) 또는
+    // blank(금지) → "restricted"(제형별 제한 존재). 빈칸=금지를 status 에 반영(사용자 안전).
+    const hasLimitOrBan = e.cells.some((c) => c !== "○");
+    const status = hasLimitOrBan ? "restricted" : "listed";
 
-    const cellSummary = e.cells
-      .map((c, idx) => `${CATEGORY_NAMES[idx] ?? `col${idx}`}: ${c === "○" ? "허용" : c === "" ? "불가" : c + "%"}`)
-      .filter((s) => !s.endsWith("불가"))
-      .slice(0, 6)
-      .join(" / ");
-
+    // 제형별(제품군) 한도 — 12개 제품군 각각 한글명 + 한도/금지를 *전부* 표기(사용자 직접 요청:
+    // "씻어내는/씻지않는/유아용 등 제형별로 함량 제한·금지 따로 표기"). ConditionBlocks 가
+    // <…> 헤더·∙ 불릿·[비고] 경고블록으로 렌더 → KR(MFDS) 수준 가독성. 같은 한도끼리 묶어 압축.
+    const fmtCell = (c: string): string => (c === "○" ? "제한 없음" : /^\d/.test(c) ? `${c}%` : "사용 금지");
+    const groups = new Map<string, string[]>();
+    for (let i = 0; i < 12; i++) { const v = fmtCell((e.cells[i] || "").trim()); if (!groups.has(v)) groups.set(v, []); groups.get(v)!.push(CATEGORY_NAMES[i]); }
+    // 표기 순서: 허용/한도 먼저, 금지 마지막. 한 한도가 모든 제품군이면 단일 줄.
+    const order = (v: string) => (v === "사용 금지" ? 2 : v === "제한 없음" ? 0 : 1);
+    const catLines = [...groups.entries()].sort((a, b) => order(a[0]) - order(b[0]))
+      .map(([v, cats]) => cats.length === 12 ? `∙ 전 제품군: ${v}` : `∙ ${cats.join(", ")}: ${v}`);
     const conditionsText = [
-      `JP MHLW 化粧品基準 別表 1 (품목별 承認対象成分 positive list) 등재.`,
-      `코드 ${e.code}: ${CODE_DESCRIPTIONS[e.code] ?? "기타"}.`,
-      `사용 가능 카테고리: ${e.allowed_categories}/12 (${cellSummary}${e.allowed_categories > 6 ? " ..." : ""}).`,
-      e.max_concentration !== null ? `최대 농도: ${e.max_concentration}%.` : null,
-    ].filter(Boolean).join("\n");
+      `JP MHLW 化粧品基準 別表1 (품목별 승인대상 성분 positive list) 등재.`,
+      `근거: 코드 ${e.code} — ${CODE_DESCRIPTIONS[e.code] ?? "기타"}.`,
+      ``,
+      `<제형별(제품군) 배합한도 — 12개 제품군>`,
+      ...catLines,
+      e.footnote ? `` : null,
+      e.footnote ? `[비고] ${footnoteKo(e.footnote)}` : null,
+    ].filter((l) => l !== null).join("\n");
+
+    // 적용 제품(헤드라인 칩) — 허용/한도 제품군 한글명(금지 제외). 전 제품군 허용이면 "전 제품군".
+    const allowedCats = e.cells.map((c, i) => ((c || "").trim() !== "" ? CATEGORY_NAMES[i] : null)).filter(Boolean) as string[];
+    const productCategories = allowedCats.length === 12 ? ["전 제품군"] : allowedCats;
 
     newRegs.push({
       ingredient_id: ing.id,
@@ -328,7 +255,7 @@ async function main() {
       status,
       max_concentration: e.max_concentration,
       concentration_unit: "%",
-      product_categories: [],
+      product_categories: productCategories,
       conditions: conditionsText,
       source_url: SOURCE_URL,
       source_document: SOURCE_DOC,
