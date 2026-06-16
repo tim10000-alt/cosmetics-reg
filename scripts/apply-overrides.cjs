@@ -46,7 +46,10 @@ for (const f of fs.readdirSync(REGDIR).filter((x) => x.endsWith(".json"))) {
       max_concentration: o.max ?? null, concentration_unit: o.unit || "%",
       product_categories: o.categories || [], conditions: o.note || null,
       source_url: o.src_url || null, source_document: MARK,
-      source_version: now.slice(0, 10), source_priority: 90,
+      // priority 110 > 자국 1차(MFDS 100): override 는 원문 직접대조 권위 교정이라 헤드라인 status·
+      // 한도를 결정해야 함. (예: MFDS TiO2 행이 status=unknown 이라 헤드라인이 "분류 확인 필요"로
+      // 잘못 뜨던 것 — override restricted/25% 가 우선해야 정상. 원본 MFDS 행은 "다른 출처"로 보존.)
+      source_version: now.slice(0, 10), source_priority: 110,
       last_verified_at: now, confidence_score: 0.9,
       override_note: o.ref || "원문 PDF 직접 대조(Claude)",
     });
