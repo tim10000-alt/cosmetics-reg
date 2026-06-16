@@ -48,7 +48,7 @@ const queries = [...new Set([...names.slice(0, N - sample.length), ...sample])].
     const res = await page.evaluate(() => {
       const docOver = document.documentElement.scrollWidth - document.documentElement.clientWidth;
       const cards = document.querySelectorAll("details[data-country-card]");
-      let openByDefault = 0, noBadge = 0, cardOver = 0;
+      let openByDefault = 0, noBadge = 0;
       for (const c of cards) {
         if (c.open) openByDefault++;
         if (!c.querySelector("summary span.rounded-md")) noBadge++;

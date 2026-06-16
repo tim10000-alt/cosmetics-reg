@@ -20,7 +20,7 @@ try {
 
 type Stat = { rows: number; condForeign: number; condBilingual: number; condRemaining: number; srcForeign: number; srcRemaining: number };
 const per: Record<string, Stat> = {};
-let worstSamples: { cc: string; field: string; text: string }[] = [];
+const worstSamples: { cc: string; field: string; text: string }[] = [];
 
 for (const f of readdirSync(REG).filter((x) => x.endsWith(".json"))) {
   const cc = f.slice(0, -5);
@@ -51,7 +51,7 @@ for (const f of readdirSync(REG).filter((x) => x.endsWith(".json"))) {
 }
 
 console.log("국가 | 행 | 조건外 | (CN이중) | 조건잔존 | 출처外 | 출처잔존");
-let R = { cond: 0, src: 0, bil: 0 };
+const R = { cond: 0, src: 0, bil: 0 };
 for (const [cc, s] of Object.entries(per).sort((a, b) => b[1].condRemaining - a[1].condRemaining)) {
   if (s.condForeign || s.srcForeign)
     console.log(`${cc} | ${s.rows} | ${s.condForeign} | ${s.condBilingual} | ${s.condRemaining} | ${s.srcForeign} | ${s.srcRemaining}`);
