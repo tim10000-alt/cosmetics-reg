@@ -24,7 +24,13 @@ const OUT = join(DATA, "translations.json");
 const FOREIGN = /[㐀-鿿぀-ヿ฀-๿Ѐ-ӿ]/;
 const FOREIGN_G = /[㐀-鿿぀-ヿ฀-๿Ѐ-ӿ]/g;
 const HANGUL_G = /[가-힣]/g;
-const needsTranslation = (s: unknown): s is string => typeof s === "string" && s.length > 0 && FOREIGN.test(s);
+// 의도된 이중표기(한국어 완비 + 원문 참조) — 중국 NMPA/IECIC 데이터는 "국문:… 중문:…",
+// "중문명칭:…" 처럼 한국어 번역과 *라벨 달린* 중국어 원문을 함께 둔다(연구원 원문 대조용 = 가치).
+// 이미 한국어가 있으므로 번역 대상에서 제외 — 재번역은 무료 quota 낭비 + 중문 참조 유실 + accept
+// 게이트가 매 run 거부·재시도(실측). 라벨 없는 외국어(대만 미완성 조건문 등)만 번역 대상.
+const BILINGUAL_LABEL = /중문\s*(명칭|명)?\s*[:：]/;
+const needsTranslation = (s: unknown): s is string =>
+  typeof s === "string" && s.length > 0 && FOREIGN.test(s) && !BILINGUAL_LABEL.test(s);
 function priority(s: string): number {
   const f = (s.match(FOREIGN_G) || []).length;
   const h = (s.match(HANGUL_G) || []).length;
