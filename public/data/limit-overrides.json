@@ -317,6 +317,17 @@
       ],
       "note": "<사용금지 물질>\n∙ 화장품 사용금지 물질 (안전기술규범 표1)",
       "ref": "중국 화장품안전기술규범(2015) 표1 화장품 사용금지 물질(테트라하이드로-6-나이트로퀴노살린 및 그 염류) — kcia-14208 원료 xlsx 직접 대조. CN 데이터에 금지행 없어 검색 시 규제 미표시(false-allowed) → 금지 보강"
+    },
+    {
+      "cas": "73855-45-5",
+      "cc": "EU",
+      "status": "banned",
+      "unit": "%",
+      "categories": [
+        "사용금지 원료"
+      ],
+      "note": "<사용금지 원료>\n∙ EU 화장품규정 1223/2009 Annex II 금지물질",
+      "ref": "EU Regulation 1223/2009 Annex II(Tetrahydro-6-nitroquinoxaline and its salts) — eu_eurlex 1223 consolidated PDF 직접 대조. EU 데이터에 금지행 없어 false-allowed → 보강"
     }
   ]
 }
