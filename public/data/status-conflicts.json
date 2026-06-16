@@ -3817,7 +3817,7 @@
       "allowed": [
         {
           "name": "Diethylene Glycol",
-          "status": "listed",
+          "status": "restricted",
           "prio": 100
         }
       ]
