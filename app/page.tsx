@@ -780,8 +780,9 @@ function highlightLimits(text: string) {
 }
 
 function ConditionBlocks({ text }: { text: string }) {
-  // 단락 단위(\n\n)로 split. 각 단락 내부 줄바꿈은 whitespace-pre-line 로 보존하되
-  // 연속 공백은 압축. "[...]" 로 시작하는 단락은 경고 강조 (banned 일부 조건 등).
+  // 단락 단위(\n\n)로 split. "[...]" 단락은 경고 강조. 용도 구분(<보존제> 등)·항목 불릿(∙)이
+  // 있는 단락(특히 한국 MFDS 용도별 한도)은 *제품 용도별로 분리 렌더* — 각 용도 = 칩 헤더,
+  // 각 항목 = 불릿 + 한도(%) 강조. 그래야 "씻어내는/영유아/세정용…별 한도"가 한눈에 구분됨.
   const blocks = text
     .split(/\n{2,}/)
     .map((b) => b.trim())
@@ -789,17 +790,41 @@ function ConditionBlocks({ text }: { text: string }) {
   return (
     <div className="mt-2 space-y-1.5 text-xs leading-relaxed text-zinc-700 dark:text-zinc-300">
       {blocks.map((b, i) => {
-        const isWarning = /^\[/.test(b);
+        if (/^\[/.test(b)) {
+          return (
+            <div key={i} className="rounded border-l-2 border-amber-400 bg-amber-50 px-2 py-1 text-amber-900 dark:border-amber-600 dark:bg-amber-950/40 dark:text-amber-100 whitespace-pre-line">
+              {highlightLimits(b)}
+            </div>
+          );
+        }
+        const lines = b.split(/\n/).map((l) => l.trim()).filter(Boolean);
+        const structured = lines.some((l) => /<[^>]+>/.test(l) || /^[∙•·▪◦]/.test(l));
+        if (!structured) {
+          return <div key={i} className="whitespace-pre-line">{highlightLimits(b)}</div>;
+        }
         return (
-          <div
-            key={i}
-            className={
-              isWarning
-                ? "rounded border-l-2 border-amber-400 bg-amber-50 px-2 py-1 text-amber-900 dark:border-amber-600 dark:bg-amber-950/40 dark:text-amber-100 whitespace-pre-line"
-                : "whitespace-pre-line"
-            }
-          >
-            {highlightLimits(b)}
+          <div key={i} className="space-y-1">
+            {lines.map((ln, j) => {
+              const cat = ln.match(/<([^>]+)>/);
+              if (cat) {
+                // "<용도>" = 제품 용도 구분 → 칩 헤더(라벨 "* 배합한도 :" 등 잔여는 생략).
+                return (
+                  <div key={j} className="mt-1.5">
+                    <span className="inline-block rounded bg-zinc-200 px-1.5 py-0.5 text-[11px] font-semibold text-zinc-800 dark:bg-zinc-700 dark:text-zinc-100">
+                      {cat[1].trim()}
+                    </span>
+                  </div>
+                );
+              }
+              const bullet = /^[∙•·▪◦]\s*/.test(ln);
+              const content = ln.replace(/^[∙•·▪◦]\s*/, "").replace(/^\*\s*/, "");
+              return (
+                <div key={j} className={bullet ? "flex gap-1.5 pl-2.5" : ""}>
+                  {bullet && <span aria-hidden className="select-none text-zinc-400">•</span>}
+                  <span className="min-w-0">{highlightLimits(content)}</span>
+                </div>
+              );
+            })}
           </div>
         );
       })}

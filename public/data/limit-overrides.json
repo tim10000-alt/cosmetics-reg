@@ -1,4 +1,15 @@
 {
-  "_note": "Claude 가 원문 규제 PDF 를 직접 대조해 추출한 한도/조건 — 초기 백로그용. apply-overrides 가 매 run 마지막에 반영(durable). 증분은 추가/수정분만 쌓으면 됨. 항목: {inci 또는 cas, cc, status, max, unit?, note?, ref?}. 다중값은 max=null + note 서술.",
-  "overrides": []
+  "_note": "Claude 가 원문 규제(한국 화장품 안전기준 등에 관한 규정 별표 등)를 직접 대조해 추출한 한도/조건 — MFDS 자동 파싱이 용도별 한도 숫자를 누락한 경우 보강. apply-overrides 가 매 run 마지막에 반영(durable·전자동). 항목: {inci 또는 cas, cc, status, max, unit?, categories?, note?, ref?}. note 가 <용도>∙항목 형식이면 UI 가 용도별로 분리 렌더. 다중값은 max=null + note 서술.",
+  "overrides": [
+    {
+      "cas": "1314-13-2",
+      "cc": "KR",
+      "status": "restricted",
+      "max": 25,
+      "unit": "%",
+      "categories": ["자외선차단성분"],
+      "note": "<자외선차단성분>\n∙ 산화아연으로서 25%\n<착색제(비타르색소)>\n∙ CI 77947 로 착색 목적 사용 가능",
+      "ref": "화장품 안전기준 등에 관한 규정 별표(자외선차단성분 25% · 비타르색소 CI 77947) — MFDS 자동데이터 용도별 한도 숫자 누락 보강"
+    }
+  ]
 }
