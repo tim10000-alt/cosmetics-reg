@@ -204,6 +204,13 @@ jobs:
         run: node scripts/apply-overrides.cjs
         continue-on-error: true
 
+      # 3-a-0.5) Gemini 자동교정 baking(법령변경 자가치유) — audit-cells.yml 이 무료 Gemini 듀얼합의로
+      # 만든 gemini-overrides.json 을 regulations 에 prio105 로 반영(MFDS100<Gemini105<내 원문110).
+      # 사람 개입 0·결정론·멱등. un-ban 은 권위 annex veto 거친 것만(감사기에서). 매 daily 재반영(durable).
+      - name: Apply Gemini auto-corrections
+        run: node scripts/apply-gemini-overrides.cjs
+        continue-on-error: true
+
       # 3-a-1.5) 색소 identity 병합(결정론·자가치유) — us:colors(21 CFR)·andean fetcher 가 만든
       # 단독 색소명 orphan(예 "D&C Red No. 34")을 같은 designation 의 검색가능 colorant(복합명·CI번호)에
       # 병합. 권위 US/Andean 허용표가 검색카드·foreign-permit 검증에 보이게 함(유일매칭만, 멱등).

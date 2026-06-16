@@ -49,17 +49,22 @@ jobs:
           cache: "npm"
       - run: npm ci
 
-      - name: Audit cells (Gemini dual-consensus ground-truth)
+      - name: Audit cells (Gemini dual-consensus auto-correct)
         run: npm run audit:cells
         continue-on-error: true
 
-      - name: Commit audit findings
+      # Gemini 자동교정을 regulations 에 즉시 baking(라이브 반영) — 다음 daily crawl 까지 안 기다림.
+      - name: Apply Gemini auto-corrections
+        run: node scripts/apply-gemini-overrides.cjs
+        continue-on-error: true
+
+      - name: Commit audit corrections
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add public/data/audit-findings.json public/data/audit-cache.json
+          git add public/data/audit-findings.json public/data/audit-cache.json public/data/gemini-overrides.json public/data/regulations/*.json
           if git diff --cached --quiet; then echo "no audit changes"; exit 0; fi
-          git commit -m "chore(audit): Gemini ground-truth 셀 감사 $(date -u +%Y-%m-%dT%H:%MZ)"
+          git commit -m "chore(audit): Gemini 자동교정 $(date -u +%Y-%m-%dT%H:%MZ)"
           for i in 1 2 3 4 5 6; do
             if git push; then echo "pushed"; exit 0; fi
             git fetch origin main

@@ -1,5 +1,5 @@
 {
-  "note": "Gemini 듀얼합의 ground-truth 감사 — 검토 후 limit-overrides 로 교정(자동수정 안 함)",
+  "note": "veto/저신뢰로 자동교정 보류분(가시성용)",
   "total": 0,
   "findings": {}
 }
