@@ -1,0 +1,5829 @@
+{
+  "total": 429,
+  "note": "같은 CAS 분절 카드 간 banned↔허용 충돌(false-banned/allowed 후보). limit-overrides 로 검토 교정.",
+  "conflicts": [
+    {
+      "cc": "AR",
+      "cas": "93-15-2",
+      "banned": [
+        {
+          "name": "1,2-Dimethoxy-4-(2- propenyl)-benzene Methyl eugenol",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Methyl Eugenol",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "AR",
+      "cas": "14807-96-6",
+      "banned": [
+        {
+          "name": "Talc",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Talc: Hydrated magnesium silicate",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "AR",
+      "cas": "64742-46-7",
+      "banned": [
+        {
+          "name": "C15-19 Alkane",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Distillates (petroleum), hydrotreated middle, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Distillates (petroleum), hydrotreated middle",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "AR",
+      "cas": "148-24-3",
+      "banned": [
+        {
+          "name": "Quinolin-8-ol and bis (8-hydroxy- quinolium) sulphate Oxyquinoline and oxyquinoline sulfate",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Oxyquinoline",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Quinolin-8-ol and bis (8-hydroxyquinolium) sulphate",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Oxyquinoline(Hydroxy-8-Quinoline or Quinoline-8-ol) and its sulfate",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "AR",
+      "cas": "30525-89-4",
+      "banned": [
+        {
+          "name": "Trioxymethylene",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "paraformaldehyde",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "AR",
+      "cas": "1330-38-7",
+      "banned": [
+        {
+          "name": "Disodium [29H,31H-phthalocyaninedisulphonato(4-)-N29,N30,N31,N32]cuprate(2-) (Direct Blue 86; CI 74180) when used as a substance in hair dye products",
+          "prio": 50
+        },
+        {
+          "name": "Direct Blue 86",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 74180",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "AR",
+      "cas": "8005-03-6",
+      "banned": [
+        {
+          "name": "Nigrosine (CI 50420) when used as a substance in hair dye products",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 50420",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "AR",
+      "cas": "2118-39-0",
+      "banned": [
+        {
+          "name": "Tetrasodium 6-amino-4-hydroxy-3-[[7-sulphonato-4-[(4-sulphonatophenyl)azo]-1-naphthyl]azo]naphthalene-2,7-disulphonate (Food Black 2; CI 27755) when used as a substance in hair dye products",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 27755",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "AR",
+      "cas": "4548-53-2",
+      "banned": [
+        {
+          "name": "Disodium 3-[(2,4-dimethyl-5-sulphonatophenyl)azo]-4-hydroxynaphthalene-1-sulphonate (Ponceaux SX; CI 14700) when used as a substance in hair dye products",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 14700",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "AR",
+      "cas": "19381-50-1",
+      "banned": [
+        {
+          "name": "Trisodium tris[5,6-dihydro-5-(hydroxyimino)-6-oxonaphthalene-2-sulphonate(2-)-N5,O6]ferrate(3-); (Acid Green 1; CI 10020) when used as a substance in hair dye products",
+          "prio": 50
+        },
+        {
+          "name": "Acid Green 1",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Naphthol Green B, Midori401, CI 10020",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "CI 10020",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "AR",
+      "cas": "33239-19-9",
+      "banned": [
+        {
+          "name": "3',6'-Dihydroxy-4',5'-diiodospiro(isobenzofuran-1(3H),9'-[9H]xanthene)-3-one; (Solvent Red 73) and its sodium salt (Acid Red 95; CI 45425) when used as a substance in hair dye products",
+          "prio": 50
+        },
+        {
+          "name": "Acid Red 95",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Erythrosine Yellowish NA, D&C Orange No. 11, Daidai207, CI 45425",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "CI 45425",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "AR",
+      "cas": "123-31-9",
+      "banned": [
+        {
+          "name": "Hydroquinone",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "1,4-Dihydroxybenzene (Hydroquinone), with the exception of entry 14 in Annex III",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "AR",
+      "cas": "163879-69-4",
+      "banned": [
+        {
+          "name": "5-[(4-[(7-Amino-1-hydroxy-3-sulfo-2-naphthyl)azo]-2,5-diethoxyphenyl)azo]-2-[(3-phosphonophenyl)azo]benzoicacid and 5-[(4-[(7-Amino-1-hydroxy-3-sulfo-2-naphthyl)azo]-2,5-diethoxyphenyl)azo]-3-[(3-phosphonophenyl)azo]benzoicacid",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Benzoates of 4-hydroxy-3-methoxycinnamyl alcohol except for normal content in natural essences used",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "BO",
+      "cas": "148-24-3",
+      "banned": [
+        {
+          "name": "Quinolin-8-ol and bis (8-hydroxy- quinolium) sulphate Oxyquinoline and oxyquinoline sulfate",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Hydroxy-8-quinoline and its sulfate",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "BO",
+      "cas": "596-03-2",
+      "banned": [
+        {
+          "name": "4',5'-Dibromo-3',6'-dihydroxyspiro[isobenzofuran-1(3H),9'- [9H]xanthene]-3-one; 4',5'-Dibromofluorescein; (Solvent Red 72) /4372- 02-5",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Dibromofluorescein, D&C Orange No. 5, Daidai201, CI 45370:1",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "BO",
+      "cas": "1320-07-6",
+      "banned": [
+        {
+          "name": "Acid Orange 24 (CI 20170), when used as a substance in hair dye products 1",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Brown 1",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "BO",
+      "cas": "15086-94-9",
+      "banned": [
+        {
+          "name": "Solvent Red 43",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Tetrabromofluorescein, D&C Red No. 21, Red 21 Lake, Aka223, CI 45380:2",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "BO",
+      "cas": "38577-97-8",
+      "banned": [
+        {
+          "name": "Solvent Red 73",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Diiodofluorescein, D&C Orange No. 10, Daidai206, CI 45425:1",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "BO",
+      "cas": "518-40-1",
+      "banned": [
+        {
+          "name": "Solvent Red 73",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Diiodofluorescein, D&C Orange No. 10, Daidai206, CI 45425:1",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "BR",
+      "cas": "93-15-2",
+      "banned": [
+        {
+          "name": "1,2-Dimethoxy-4-(2- propenyl)-benzene Methyl eugenol",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Methyl Eugenol",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "BR",
+      "cas": "14807-96-6",
+      "banned": [
+        {
+          "name": "Talc",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Talc: Hydrated magnesium silicate",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "BR",
+      "cas": "64742-46-7",
+      "banned": [
+        {
+          "name": "C15-19 Alkane",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Distillates (petroleum), hydrotreated middle, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Distillates (petroleum), hydrotreated middle",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "BR",
+      "cas": "148-24-3",
+      "banned": [
+        {
+          "name": "Quinolin-8-ol and bis (8-hydroxy- quinolium) sulphate Oxyquinoline and oxyquinoline sulfate",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Oxyquinoline",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Quinolin-8-ol and bis (8-hydroxyquinolium) sulphate",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Oxyquinoline(Hydroxy-8-Quinoline or Quinoline-8-ol) and its sulfate",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "BR",
+      "cas": "30525-89-4",
+      "banned": [
+        {
+          "name": "Trioxymethylene",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "paraformaldehyde",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "BR",
+      "cas": "1330-38-7",
+      "banned": [
+        {
+          "name": "Disodium [29H,31H-phthalocyaninedisulphonato(4-)-N29,N30,N31,N32]cuprate(2-) (Direct Blue 86; CI 74180) when used as a substance in hair dye products",
+          "prio": 50
+        },
+        {
+          "name": "Direct Blue 86",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 74180",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "BR",
+      "cas": "8005-03-6",
+      "banned": [
+        {
+          "name": "Nigrosine (CI 50420) when used as a substance in hair dye products",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 50420",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "BR",
+      "cas": "2118-39-0",
+      "banned": [
+        {
+          "name": "Tetrasodium 6-amino-4-hydroxy-3-[[7-sulphonato-4-[(4-sulphonatophenyl)azo]-1-naphthyl]azo]naphthalene-2,7-disulphonate (Food Black 2; CI 27755) when used as a substance in hair dye products",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 27755",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "BR",
+      "cas": "4548-53-2",
+      "banned": [
+        {
+          "name": "Disodium 3-[(2,4-dimethyl-5-sulphonatophenyl)azo]-4-hydroxynaphthalene-1-sulphonate (Ponceaux SX; CI 14700) when used as a substance in hair dye products",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 14700",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "BR",
+      "cas": "19381-50-1",
+      "banned": [
+        {
+          "name": "Trisodium tris[5,6-dihydro-5-(hydroxyimino)-6-oxonaphthalene-2-sulphonate(2-)-N5,O6]ferrate(3-); (Acid Green 1; CI 10020) when used as a substance in hair dye products",
+          "prio": 50
+        },
+        {
+          "name": "Acid Green 1",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Naphthol Green B, Midori401, CI 10020",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "CI 10020",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "BR",
+      "cas": "33239-19-9",
+      "banned": [
+        {
+          "name": "3',6'-Dihydroxy-4',5'-diiodospiro(isobenzofuran-1(3H),9'-[9H]xanthene)-3-one; (Solvent Red 73) and its sodium salt (Acid Red 95; CI 45425) when used as a substance in hair dye products",
+          "prio": 50
+        },
+        {
+          "name": "Acid Red 95",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Erythrosine Yellowish NA, D&C Orange No. 11, Daidai207, CI 45425",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "CI 45425",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "BR",
+      "cas": "123-31-9",
+      "banned": [
+        {
+          "name": "Hydroquinone",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "1,4-Dihydroxybenzene (Hydroquinone), with the exception of entry 14 in Annex III",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "BR",
+      "cas": "163879-69-4",
+      "banned": [
+        {
+          "name": "5-[(4-[(7-Amino-1-hydroxy-3-sulfo-2-naphthyl)azo]-2,5-diethoxyphenyl)azo]-2-[(3-phosphonophenyl)azo]benzoicacid and 5-[(4-[(7-Amino-1-hydroxy-3-sulfo-2-naphthyl)azo]-2,5-diethoxyphenyl)azo]-3-[(3-phosphonophenyl)azo]benzoicacid",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Benzoates of 4-hydroxy-3-methoxycinnamyl alcohol except for normal content in natural essences used",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "CA",
+      "cas": "68-11-1",
+      "banned": [
+        {
+          "name": "Thioglycolic acid esters",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Thioglycolic Acid",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Thioglycolic acid and its salts",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CA",
+      "cas": "73049-73-7",
+      "banned": [
+        {
+          "name": "Hydrolyzed Hair Keratin",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Hydrolyzed Human Placental Protein",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CA",
+      "cas": "67-56-1",
+      "banned": [
+        {
+          "name": "Methyl Alcohol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Methyl alcohol",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CA",
+      "cas": "95-70-5",
+      "banned": [
+        {
+          "name": "Toluene-2,5-Diamine",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Coal tar dye",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CA",
+      "cas": "75-09-2",
+      "banned": [
+        {
+          "name": "Dichloromethane",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Methylene Chloride",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "68989-01-5",
+      "banned": [
+        {
+          "name": "Myristalkonium Saccharinate",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Benzalkonium Bromide",
+          "status": "listed",
+          "prio": 100
+        },
+        {
+          "name": "Benzalkonium Saccharinate",
+          "status": "listed",
+          "prio": 100
+        },
+        {
+          "name": "Benzalkonium chloride, bromide and saccharinate",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "65072-01-7",
+      "banned": [
+        {
+          "name": "Hair Keratin Amino Acids",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Wheat Amino Acids",
+          "status": "listed",
+          "prio": 100
+        },
+        {
+          "name": "Oat Amino Acids",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "68391-01-5",
+      "banned": [
+        {
+          "name": "Benzalkonium Chloride",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Benzalkonium Bromide",
+          "status": "listed",
+          "prio": 100
+        },
+        {
+          "name": "Benzalkonium Saccharinate",
+          "status": "listed",
+          "prio": 100
+        },
+        {
+          "name": "Benzalkonium chloride, bromide and saccharinate",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "68424-85-1",
+      "banned": [
+        {
+          "name": "Benzalkonium Chloride",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Benzalkonium Bromide",
+          "status": "listed",
+          "prio": 100
+        },
+        {
+          "name": "Benzalkonium Saccharinate",
+          "status": "listed",
+          "prio": 100
+        },
+        {
+          "name": "Benzalkonium chloride, bromide and saccharinate",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "8001-54-5",
+      "banned": [
+        {
+          "name": "Benzalkonium Chloride",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Benzalkonium chloride",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "85409-22-9",
+      "banned": [
+        {
+          "name": "Benzalkonium Chloride",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Benzalkonium Bromide",
+          "status": "listed",
+          "prio": 100
+        },
+        {
+          "name": "Benzalkonium Saccharinate",
+          "status": "listed",
+          "prio": 100
+        },
+        {
+          "name": "Benzalkonium chloride, bromide and saccharinate",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "106-97-8",
+      "banned": [
+        {
+          "name": "Butane, if it contains = >0,1 % w/w Butadiene",
+          "prio": 50
+        },
+        {
+          "name": "Butane, if it contains ≥ 0,1 % w/w Butadiene",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Butane",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "871903-86-5",
+      "banned": [
+        {
+          "name": "Human Cord Blood Cell Conditioned Media",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Serum Albumin",
+          "status": "listed",
+          "prio": 100
+        },
+        {
+          "name": "Serum Protein",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "1303-96-4",
+      "banned": [
+        {
+          "name": "Sodium Borate",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Sodium borate",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "1330-43-4",
+      "banned": [
+        {
+          "name": "Sodium Borate",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Sodium borate",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "75-28-5",
+      "banned": [
+        {
+          "name": "Isobutane, if it contains = >0,1% w/w Butadiene",
+          "prio": 50
+        },
+        {
+          "name": "Isobutane, if it contains ≥ 0,1 % w/w Butadiene",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Isobutane",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "2353-45-9",
+      "banned": [
+        {
+          "name": "Fast Green FCF, FD&C Green No. 3, Green 3 Lake, Midori3, CI 42053",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 42053",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "68-11-1",
+      "banned": [
+        {
+          "name": "Thioglycolic acid esters",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Thioglycolic Acid",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "73049-73-7",
+      "banned": [
+        {
+          "name": "Hydrolyzed Hair Keratin",
+          "prio": 50
+        },
+        {
+          "name": "Hydrolyzed Human Placental Protein",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Hydrolyzed Keratin",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "8007-00-9",
+      "banned": [
+        {
+          "name": "Myroxylon Pereirae (Balsam Peru) Resin",
+          "prio": 100
+        },
+        {
+          "name": "Peru balsam",
+          "prio": 50
+        },
+        {
+          "name": "Exudation of Myroxylon pereirae （Royle） Klotzch （Peru balsam, crude） when used as a fragrance ingredient  （CAS No. 8007-00-9）",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Myroxylon Pereirae (Balsam Peru) Oil",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "1333-86-4",
+      "banned": [
+        {
+          "name": "Carbon Black, D&C Black No. 2, CI 77266",
+          "prio": 50
+        },
+        {
+          "name": "Carbon Black, D&C Black No. 2, CI 77266",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Carbon Black",
+          "status": "listed",
+          "prio": 100
+        },
+        {
+          "name": "CI 77266",
+          "status": "listed",
+          "prio": 100
+        },
+        {
+          "name": "CI 77266",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "64741-76-0",
+      "banned": [
+        {
+          "name": "Distillates (petroleum), heavy hydrocracked, if they contain > 3 % w/w DMSO extract",
+          "prio": 50
+        },
+        {
+          "name": "Distillates (petroleum), heavy hydrocracked, if they contain > 3 % w/w DMSO extract 7",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "C15-19 Alkane",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "8002-41-3",
+      "banned": [
+        {
+          "name": "Laurus Nobilis Oil",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Laurus Nobilis Leaf Oil",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "8007-48-5",
+      "banned": [
+        {
+          "name": "Laurus Nobilis Oil",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Laurus Nobilis Leaf Oil",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "84603-73-6",
+      "banned": [
+        {
+          "name": "Oil from the seeds of Laurus nobilis L.",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Laurus Nobilis Leaf Oil",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "108-05-4",
+      "banned": [
+        {
+          "name": "Vinyl Acetate",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Vinyl acetate",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "83732-72-3",
+      "banned": [
+        {
+          "name": "2-Methoxymethyl-p-Aminophenol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "6-Methoxy-2-methylamino-3-aminopyridine HCL",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "90817-34-8",
+      "banned": [
+        {
+          "name": "2-Methoxymethyl-p-Aminophenol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "6-Methoxy-2-methylamino-3-aminopyridine HCL",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "15087-24-8",
+      "banned": [
+        {
+          "name": "3-Benzylidene Camphor",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "3-Benzylidene camphor",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "5307-14-2",
+      "banned": [
+        {
+          "name": "2-Nitro-p-phenylenediamine and its salts(e.g. : Nitro-p-phenylenediamine Sulfate)",
+          "prio": 50
+        },
+        {
+          "name": "2-Nitro-1,4-Benzenediamine",
+          "prio": 50
+        },
+        {
+          "name": "2-Nitro-p-phenylenediamine and its salts, when used as a substance in hair dye products / 18266-52-9 / 242-144-9 1",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "2-Nitro-p-Phenylenediamine",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "61702-44-1",
+      "banned": [
+        {
+          "name": "2-Chloro-p-Phenylenediamine Sulfate",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "2-Chloro-p-phenylenediamine sulfate",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "6219-71-2",
+      "banned": [
+        {
+          "name": "2-Chloro-p-Phenylenediamine Sulfate",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "2-Chloro-p-phenylenediamine sulfate",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "89958-21-4",
+      "banned": [
+        {
+          "name": "Cannabis and Cannabis resin; Cannabis sativa, ext.",
+          "prio": 50
+        },
+        {
+          "name": "Cannabis",
+          "prio": 50
+        },
+        {
+          "name": "Cannabis sativa Extract",
+          "prio": 50
+        },
+        {
+          "name": "Cannabis Resin",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Cannabis Sativa Leaf Extract",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "148-24-3",
+      "banned": [
+        {
+          "name": "Quinolin-8-ol and bis (8-hydroxy- quinolium) sulphate Oxyquinoline and oxyquinoline sulfate",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Oxyquinoline",
+          "status": "listed",
+          "prio": 100
+        },
+        {
+          "name": "Quinolin-8-ol and bis (8-hydroxyquinolium) sulphate",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "62-56-6",
+      "banned": [
+        {
+          "name": "Thiourea (Thiocarbamide)",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Thiourea and its derivatives",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Thiourea",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "300-62-9",
+      "banned": [
+        {
+          "name": "Sympathicomimetic amines acting on the central nervous system: any substance contained in the first list of medicaments which are subject to medical prescription and are referred to in resolution AP (69) 2 of the Council of Europe",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Sympathicomimetic amines acting on the central nervous system; the medicins , medicinal and non-medicinal, controlled by the Law of China (except caffien (CAS No. 300-62-9))",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Amfetamine",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "60687-93-6",
+      "banned": [
+        {
+          "name": "Laccaic acid (CI Natural Red 25) and its salts",
+          "prio": 50
+        },
+        {
+          "name": "Aluminum Laccate",
+          "prio": 50
+        },
+        {
+          "name": "Laccaic Acid (CI Natural Red 25) and its salts, when used as a substance in hair dye products 1",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Laccaic Acid",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "7492-31-1",
+      "banned": [
+        {
+          "name": "Isometheptene mucate; Galactaric acid, compound with N,1,5-trimethylhex-4-en-1-ylamine (1:2)",
+          "prio": 50
+        },
+        {
+          "name": "Isometheptene mucate",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Galactaric acid, compound with N,1,5-trimethylhex-4-en-1-ylamine (1:2)",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "50-00-0",
+      "banned": [
+        {
+          "name": "Formaldehyde and p-Formaldehyde",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Formaldehyde",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "90131-43-4",
+      "banned": [
+        {
+          "name": "Tagetes Erecta Flower Oil",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Tagetes Erecta Flower Extract",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "515-74-2",
+      "banned": [
+        {
+          "name": "4-Aminobenzenesulfonic acid",
+          "prio": 50
+        },
+        {
+          "name": "4-Aminobenzenesulfonic acid and its salts",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Sodium Sulfanilate",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "12136-58-2",
+      "banned": [
+        {
+          "name": "Lithium Sulfide",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Alkali sulfides",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "64742-14-9",
+      "banned": [
+        {
+          "name": "Distillates (petroleum), acid-treated light",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Distillates (petroleum), acid-treated light, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "6065-27-6",
+      "banned": [
+        {
+          "name": "N,N-Diethyl-p-phenylenediamine",
+          "prio": 50
+        },
+        {
+          "name": "N,N-Diethyl-p-phenylenediamine and its salts",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "N,N-Diethyl-p-Phenylenediamine Sulfate",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "6283-63-2",
+      "banned": [
+        {
+          "name": "N,N-Diethyl-p-phenylenediamine",
+          "prio": 50
+        },
+        {
+          "name": "N,N-Diethyl-p-phenylenediamine and its salts",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "N,N-Diethyl-p-Phenylenediamine Sulfate",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "7488-56-4",
+      "banned": [
+        {
+          "name": "Selenium Sulfide",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "SELENIUM DISULPHIDE",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "19381-50-1",
+      "banned": [
+        {
+          "name": "Naphthol Green B, Midori401, CI 10020",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 10020",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "33239-19-9",
+      "banned": [
+        {
+          "name": "Erythrosine Yellowish NA, D&C Orange No. 11, Daidai207, CI 45425",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 45425",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "113715-27-8",
+      "banned": [
+        {
+          "name": "2,4-Diamino-5-methylphenoxyethanol",
+          "prio": 50
+        },
+        {
+          "name": "2,4-Diamino-5-methylphenoxyethanol and its salts",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "2,4-Diamino-5-Methylphenoxyethanol HCL",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "97675-85-9",
+      "banned": [
+        {
+          "name": "Hydrocarbons, C16-20, hydrotreated middle distillate, distn. Lights",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Hydrocarbons, C16-20, hydrotreated middle distillate, distn. Lights, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "163879-69-4",
+      "banned": [
+        {
+          "name": "5-[(4-[(7-Amino-1-hydroxy-3-sulfo-2-naphthyl)azo]-2,5-diethoxyphenyl)azo]-2-[(3-phosphonophenyl)azo]benzoicacid and 5-[(4-[(7-Amino-1-hydroxy-3-sulfo-2-naphthyl)azo]-2,5-diethoxyphenyl)azo]-3-[(3-phosphonophenyl)azo]benzoicacid",
+          "prio": 50
+        },
+        {
+          "name": "A mixture of: 5-[(4-[(7-amino-1-hydroxy-3-sulfo-2-naphthyl)azo]- 2,5-diethoxyphenyl)azo]-2-[(3-phosphonophenyl)azo]benzoic acid and 5-[(4-[(7-amino-1-hydroxy-3-sulfo-2-naphthyl)azo]- 2,5-diethoxyphenyl)azo]-3-[(3-phosphonophenyl)azo]benzoic acid",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Benzoates of 4-hydroxy-3-methoxycinnamyl alcohol except for normal content in natural essences used",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "149591-38-8",
+      "banned": [
+        {
+          "name": "N,N'-Dihexadecyl-N,N'-bis(2-hydroxyethyl)propanediamide; Bishydroxyethyl Biscetyl Malonamide",
+          "prio": 50
+        },
+        {
+          "name": "N,N′-dihexadecyl-N,N′-bis(2-hydroxyethyl)propanediamide Bishydroxyethyl Biscetyl Malonamide",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Bishydroxyethyl Biscetyl Malonamide",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "158571-57-4",
+      "banned": [
+        {
+          "name": "HC Blue No 4",
+          "prio": 50
+        },
+        {
+          "name": "N-Methyl-1,4-Diaminoanthraquinone, reaction products with epichlorohydrin and monoethanolamine (HC Blue No 4) and its salts",
+          "prio": 50
+        },
+        {
+          "name": "N-Methyl-1,4-diaminoanthraquinone, reaction products with epichlo rohydrin and monoethanolamine (HC Blue No. 4) and its salts, when used as a substance in hair dye products",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "HC BLUE NO. 4",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CO",
+      "cas": "148-24-3",
+      "banned": [
+        {
+          "name": "Quinolin-8-ol and bis (8-hydroxy- quinolium) sulphate Oxyquinoline and oxyquinoline sulfate",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Hydroxy-8-quinoline and its sulfate",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CO",
+      "cas": "596-03-2",
+      "banned": [
+        {
+          "name": "4',5'-Dibromo-3',6'-dihydroxyspiro[isobenzofuran-1(3H),9'- [9H]xanthene]-3-one; 4',5'-Dibromofluorescein; (Solvent Red 72) /4372- 02-5",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Dibromofluorescein, D&C Orange No. 5, Daidai201, CI 45370:1",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CO",
+      "cas": "1320-07-6",
+      "banned": [
+        {
+          "name": "Acid Orange 24 (CI 20170), when used as a substance in hair dye products 1",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Brown 1",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CO",
+      "cas": "15086-94-9",
+      "banned": [
+        {
+          "name": "Solvent Red 43",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Tetrabromofluorescein, D&C Red No. 21, Red 21 Lake, Aka223, CI 45380:2",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CO",
+      "cas": "38577-97-8",
+      "banned": [
+        {
+          "name": "Solvent Red 73",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Diiodofluorescein, D&C Orange No. 10, Daidai206, CI 45425:1",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CO",
+      "cas": "518-40-1",
+      "banned": [
+        {
+          "name": "Solvent Red 73",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Diiodofluorescein, D&C Orange No. 10, Daidai206, CI 45425:1",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EC",
+      "cas": "148-24-3",
+      "banned": [
+        {
+          "name": "Quinolin-8-ol and bis (8-hydroxy- quinolium) sulphate Oxyquinoline and oxyquinoline sulfate",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Hydroxy-8-quinoline and its sulfate",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EC",
+      "cas": "596-03-2",
+      "banned": [
+        {
+          "name": "4',5'-Dibromo-3',6'-dihydroxyspiro[isobenzofuran-1(3H),9'- [9H]xanthene]-3-one; 4',5'-Dibromofluorescein; (Solvent Red 72) /4372- 02-5",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Dibromofluorescein, D&C Orange No. 5, Daidai201, CI 45370:1",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EC",
+      "cas": "1320-07-6",
+      "banned": [
+        {
+          "name": "Acid Orange 24 (CI 20170), when used as a substance in hair dye products 1",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Brown 1",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EC",
+      "cas": "15086-94-9",
+      "banned": [
+        {
+          "name": "Solvent Red 43",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Tetrabromofluorescein, D&C Red No. 21, Red 21 Lake, Aka223, CI 45380:2",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EC",
+      "cas": "38577-97-8",
+      "banned": [
+        {
+          "name": "Solvent Red 73",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Diiodofluorescein, D&C Orange No. 10, Daidai206, CI 45425:1",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EC",
+      "cas": "518-40-1",
+      "banned": [
+        {
+          "name": "Solvent Red 73",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Diiodofluorescein, D&C Orange No. 10, Daidai206, CI 45425:1",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "38102-62-4",
+      "banned": [
+        {
+          "name": "4-Methylbenzylidene Camphor",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "3-(4-Methylbenzylidene)-d1 camphor/Enzacamene 4-Methylbenzylidene Camphor",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "84012-35-1",
+      "banned": [
+        {
+          "name": "Pinus Sylvestris Leaf Extract",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Pinus sylvestris oil and extract",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Pinus Sylvestris Leaf/Twig Extract",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "93-15-2",
+      "banned": [
+        {
+          "name": "Methyl Eugenol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "1,2-Dimethoxy-4-(2- propenyl)-benzene Methyl eugenol",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "100-97-0",
+      "banned": [
+        {
+          "name": "Methenamine",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Methenamine Methenamine",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "94-26-8",
+      "banned": [
+        {
+          "name": "Butylparaben",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Butyl 4-hydroxybenzoate and its salts Propyl 4-hydroxybenzoate and its salts",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "36457-20-2",
+      "banned": [
+        {
+          "name": "Sodium Butylparaben",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Butyl 4-hydroxybenzoate and its salts Propyl 4-hydroxybenzoate and its salts",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "7440-50-8",
+      "banned": [
+        {
+          "name": "Sodium Styrene/Acrylates Copolymer",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Copper",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "35285-69-9",
+      "banned": [
+        {
+          "name": "Sodium Propylparaben",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Butyl 4-hydroxybenzoate and its salts Propyl 4-hydroxybenzoate and its salts",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "70161-44-3",
+      "banned": [
+        {
+          "name": "Sodium Hydroxymethylglycinate",
+          "prio": 50
+        },
+        {
+          "name": "Sodium N-(hydroxymethyl)glycinate; [formaldehyde released from sodium N-(hydroxymethyl)glycinate] if the maximum theoretical concentration of releasable formaldehyde, irrespective of the source, in the mixture as placed on the market is ≥ 0,1 % w/w",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Sodium hydroxymethylamino acetate Sodium Hydroxymethylglycinate",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "84696-07-1",
+      "banned": [
+        {
+          "name": "Cupressus Sempervirens Leaf/Stem Extract",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Cupressus Sempervirens Cone Extract",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Cupressus Sempervirens Seed Extract",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Cupressus Sempervirens Fruit Extract",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Cupressus sempervirens oil and extract",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "7440-22-4",
+      "banned": [
+        {
+          "name": "Colloidal Silver",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Silver,CI 77820",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "SILVER",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "7783-90-6",
+      "banned": [
+        {
+          "name": "Silver Chloride",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Silver chloride deposited on titanium dioxide Silver chloride",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "92201-55-3",
+      "banned": [
+        {
+          "name": "Cedrus Atlantica Bark Oil",
+          "prio": 50
+        },
+        {
+          "name": "Cedrus Atlantica Bark Extract",
+          "prio": 50
+        },
+        {
+          "name": "Cedrus Atlantica Wood Oil",
+          "prio": 50
+        },
+        {
+          "name": "Cedrus Atlantica Wood Extract",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Cedrus atlantica oil and extract",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "8000-27-9",
+      "banned": [
+        {
+          "name": "Cedrus Atlantica Bark Oil",
+          "prio": 50
+        },
+        {
+          "name": "Cedrus Atlantica Wood Oil",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Juniperus Virginiana Oil",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "57-15-8",
+      "banned": [
+        {
+          "name": "Chlorobutanol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Chlorobutanol Chlorobutanol",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "14807-96-6",
+      "banned": [
+        {
+          "name": "Talc",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Talc: Hydrated magnesium silicate",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Talc: Hydrated mag nesium silicate Talc",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "8002-09-3",
+      "banned": [
+        {
+          "name": "Pinus Palustris Oil",
+          "prio": 50
+        },
+        {
+          "name": "Pinus Palustris Twig Leaf Oil",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Pinus palustris oil and extract",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "520-45-6",
+      "banned": [
+        {
+          "name": "Dehydroacetic Acid",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "3-Acetyl-6-methylpyran-2,4 (3H)-dione and its salts Dehydroacetic acid, sodium dehydroacetate",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "94-13-3",
+      "banned": [
+        {
+          "name": "Propylparaben",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Butyl 4-hydroxybenzoate and its salts Propyl 4-hydroxybenzoate and its salts",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "111-46-6",
+      "banned": [
+        {
+          "name": "diethylene glycol",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Diethylene Glycol",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Diethylene glycol (DEG); 2,2'-oxydiethanol for traces level, see Annex III",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "7440-57-5",
+      "banned": [
+        {
+          "name": "Colloidal Gold",
+          "prio": 50
+        },
+        {
+          "name": "Gold",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Gold, CI 77480",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "111-30-8",
+      "banned": [
+        {
+          "name": "Glutaral",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Glutaraldehyde (Pentane-1,5-dial)",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "8007-00-9",
+      "banned": [
+        {
+          "name": "Myroxylon Pereirae (Balsam Peru) Resin",
+          "prio": 50
+        },
+        {
+          "name": "Peru balsam",
+          "prio": 50
+        },
+        {
+          "name": "Peru balsam (INCI name: Myroxylon pereirae), when used as a fragrance ingredient",
+          "prio": 50
+        },
+        {
+          "name": "Peru balsam (INCI name: Myroxylon pereirae), when used as a fragrance ingredient 1",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Myroxylon Pereirae (Balsam Peru) Oil",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Myroxylon Pereirae (Balsam Peru) Resin Extract",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Myroxylon balsamum var. pereirae; extracts and distillates; Balsam Peru oil, absolute and anhydrol (Balsam Oil Peru)",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "127-65-1",
+      "banned": [
+        {
+          "name": "Chloramine T",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Tosylchloramide sodium (INN)",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Tosylchloramide sodium",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "90028-76-5",
+      "banned": [
+        {
+          "name": "Abies Alba Leaf Oil,ABIES ALBA NEEDLE OIL",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Abies alba oil and extract",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Abies Alba Leaf Oil, Abies Alba Needle Oil",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "91697-89-1",
+      "banned": [
+        {
+          "name": "Abies Sibirica Needle Extract",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Abies sibirica oil and extract",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Abies sibirica needle oil and extract, if its peroxide value is more than 10 mmoles/L..",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "84603-73-6",
+      "banned": [
+        {
+          "name": "Oil from the seeds of Laurus nobilis L.",
+          "prio": 50
+        },
+        {
+          "name": "Oil from the seeds of Laurus nobilis L. 3",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Laurus Nobilis Leaf Oil",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "92952-81-3",
+      "banned": [
+        {
+          "name": "4-Hydroxypropylamino-3-Nitrophenol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "1-Hydroxy-3-nitro-4-(3-hydroxypropylamino)benzene",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "9005-90-7",
+      "banned": [
+        {
+          "name": "Turpentine",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Turpentine Gum",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "38566-94-8",
+      "banned": [
+        {
+          "name": "Potassium Butylparaben",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Butyl 4-hydroxybenzoate and its salts Propyl 4-hydroxybenzoate and its salts",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "84930-16-5",
+      "banned": [
+        {
+          "name": "Potassium Propylparaben",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Butyl 4-hydroxybenzoate and its salts Propyl 4-hydroxybenzoate and its salts",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "94158-14-2",
+      "banned": [
+        {
+          "name": "Hydroxyethyl-3,4-Methylenedioxyaniline HCl",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Hydroxyethyl-3,4-Methylenedioxyaniline and its Hydrochloide (e.g. Hydroxyethyl-3,4-Methylenedioxyaniline HCl) (with the exception of the hair dye substance that maximum concentration applied to hair does not exceed 1.5 % in oxidative hair dyes products)",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "83732-72-3",
+      "banned": [
+        {
+          "name": "2-Methoxymethyl-p-Aminophenol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "6-Methoxy-2-methylamino-3-aminopyridine HCL",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "90817-34-8",
+      "banned": [
+        {
+          "name": "2-Methoxymethyl-p-Aminophenol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "6-Methoxy-2-methylamino-3-aminopyridine HCL",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "(203) 6-Methoxy-N2- methyl-2,3- pyridinediamine hydrochloride and dihydrochloride salt 6-Methoxy-2-Methylamino-3- Aminopyridine HCl",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "7747-35-5",
+      "banned": [
+        {
+          "name": "7-Ethylbicyclooxazolidine",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "5-Ethyl-3,7-dioxa-1-azabicyclo [3.3.0] octane 7-Ethylbicyclooxazolidine",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "59-50-7",
+      "banned": [
+        {
+          "name": "p-Chloro-m-Cresol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Chlorocresol p-Chloro-m-Cresol",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "67-56-1",
+      "banned": [
+        {
+          "name": "Methyl Alcohol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Methyl alcohol",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "92202-04-5",
+      "banned": [
+        {
+          "name": "Pinus Cembra Leaf/Twig Oil",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Pinus cembra oil and extract",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Pinus Cembra Leaf and Twig Oil and Extract (limitations and requirements: Peroxide value less than 10 mmoles/L)",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "90-15-3",
+      "banned": [
+        {
+          "name": "1-Naphthol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "1-Naphthol And Its Salts",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "1-Naphthol and its salts 1-Naphtol",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "6358-09-4",
+      "banned": [
+        {
+          "name": "2-Amino-6-Chloro-4-Nitrophenol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "2-Amino-6-chloro-4-nitrophenol 2-Amino-6-chloro-4-nitrophenol",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "90082-74-9",
+      "banned": [
+        {
+          "name": "Pinus Nigra Twig Leaf Extract",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Pinus nigra oil and extract",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Pinus Nigra Twig Leaf Oil",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "97435-14-8",
+      "banned": [
+        {
+          "name": "Pinus Palustris Twig Leaf Oil",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Pinus palustris oil and extract",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Pinus Palustris Twig Leaf Extract",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "90082-72-7",
+      "banned": [
+        {
+          "name": "Pinus Mugo Twig Oil",
+          "prio": 50
+        },
+        {
+          "name": "Pinus Mugo Twig Leaf Extract",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Pinus mugo oil and extract",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Pinus mugo leaf and twig oil and extract",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Pinus Pumila Leaf/Twig Oil",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "13466-78-9",
+      "banned": [
+        {
+          "name": "Isodiprene",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "3-Carene; 3,7,7-Trimethylbicyclo[4.1.0]hept-3-ene (isodiprene)",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "3-Carene; 3,7,7-Trimethylbicyclo[4.1.0]hept-3-ene (Isodiprene)",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "95576-92-4",
+      "banned": [
+        {
+          "name": "HC Red No. 11",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "1-Amino-2-nitro-4-(2', 3'-dihydroxypropyl)amino-5-chloro-benzene + 1,4-bis-(2',3'-dihydroxypropyl)amino-2-nitro-5-chlorobenzene",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "586-62-9",
+      "banned": [
+        {
+          "name": "Terpinolene",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Terpinolene; p-Mentha-1,4(8)-diene",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "26021-57-8",
+      "banned": [
+        {
+          "name": "Hydroxybenzomorpholine",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "2.3-Dihydro-2H-1,4-benzoxazin-6-ol and its salts (e.g. : Hydroxybenzomorpholine) (with the exception of Hydroxybenzomorpholine as the hair dye substance that maximum concentration applied to hair does not exceed 1.0 % in oxidative hair dye products)",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "148-24-3",
+      "banned": [
+        {
+          "name": "Oxyquinoline",
+          "prio": 50
+        },
+        {
+          "name": "Quinolin-8-ol and bis (8-hydroxy- quinolium) sulphate Oxyquinoline and oxyquinoline sulfate",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Oxyquinoline(Hydroxy-8-Quinoline or Quinoline-8-ol) and its sulfate",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Hydroxy-8-quinoline and its sulfate",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "357-57-3",
+      "banned": [
+        {
+          "name": "Brucine 6",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Brucine except denaturant of Ethanol",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Brucine",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "134-31-6",
+      "banned": [
+        {
+          "name": "Oxyquinoline Sulfate",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Oxyquinoline(Hydroxy-8-Quinoline or Quinoline-8-ol) and its sulfate",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Hydroxy-8-quinoline and its sulfate",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "68956-56-9",
+      "banned": [
+        {
+          "name": "Terpene Hydrocarbons",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Terpene Hydrocarbons (limitations and requirements: Peroxide value less than 10 mmoles/L)",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "88-85-7",
+      "banned": [
+        {
+          "name": "Dinoseb",
+          "prio": 50
+        },
+        {
+          "name": "Dinoseb, its salts and esters with the exception of those specified elsewhere in this list 6",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Dinoseb, its salts and esters with the exception of those specified elsewhere in this list",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "94158-13-1",
+      "banned": [
+        {
+          "name": "HC Red No. 13",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "2,2'-[(4-Amino-3-nitrophenyl)imino]bisethanol hydrochloride and its salts",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "64742-14-9",
+      "banned": [
+        {
+          "name": "Distillates (petroleum), acid-treated light",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Distillates (petroleum), acid-treated light, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "100418-33-5",
+      "banned": [
+        {
+          "name": "Hydroxyethyl-2-Nitro-p-Toluidine",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "1-Methyl-3-Nitro-4-(β-hydroxy ethyl)aminobenzene and its salts(e.g : Hydroxyethyl-2-Nitro-p-Toluidine) (with the exception of Hydroxyethyl-2-Nitro-p-Toluidinel as the hair dye substance under the mixing conditions that maximum concentration applied to hair does not exceed 1.0 %)",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "7440-67-7",
+      "banned": [
+        {
+          "name": "Zirconium",
+          "prio": 50
+        },
+        {
+          "name": "Zirconium Powder",
+          "prio": 50
+        },
+        {
+          "name": "Zirconium and its compounds, with the exception of the substances listed under reference number 50 in Annex III, and the zirconium lakes, pigments or salts of the colouring agents when listed in Annex IV",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Zirconium and its compounds, with the exception of the substances listed under reference number 50 in Annex III, and the zirconium lakes, pigments or salts of the colouring agents when listed Annex IV",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "8024-12-2",
+      "banned": [
+        {
+          "name": "Lippia Citriodora Flower/Leaf/Stem Oil",
+          "prio": 50
+        },
+        {
+          "name": "Lippia Citriodora Leaf Oil",
+          "prio": 50
+        },
+        {
+          "name": "Lippia Citriodora Leaf/Flower Oil",
+          "prio": 50
+        },
+        {
+          "name": "Verbena essential oils (Lippia citriodora Kunth.)\n(Verbena absolute (Lippia citriodora Kunth.)除外)",
+          "prio": 50
+        },
+        {
+          "name": "Verbena essential oils (Lippia citriodora Kunth.) (馬鞭草油)",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Lippia Citriodora Absolute",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "123-31-9",
+      "banned": [
+        {
+          "name": "Hydroquinone",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "1,4-Dihydroxybenzene (Hydroquinone), with the exception of entry 14 in Annex III",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "90082-73-8",
+      "banned": [
+        {
+          "name": "Pinus Mugo Pumilio Twig Leaf Oil",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Pinus mugo pumilio oil and extract",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Pinus Mugo Pumilio Twig Leaf Extract",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "582-17-2",
+      "banned": [
+        {
+          "name": "2,7-Naphthalenediol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "2,7-Naphthalenediol and its salts (with the exception of 2,7-Naphthalenediol as the hair dye substance under the mixing conditions that maximum concentration applied to hair does not exceed 1.0 %)",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "75-52-5",
+      "banned": [
+        {
+          "name": "Nitromethane",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Nitromethane Nitromethane",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "163879-69-4",
+      "banned": [
+        {
+          "name": "5-[(4-[(7-Amino-1-hydroxy-3-sulfo-2-naphthyl)azo]-2,5-diethoxyphenyl)azo]-2-[(3-phosphonophenyl)azo]benzoicacid and 5-[(4-[(7-Amino-1-hydroxy-3-sulfo-2-naphthyl)azo]-2,5-diethoxyphenyl)azo]-3-[(3-phosphonophenyl)azo]benzoicacid",
+          "prio": 50
+        },
+        {
+          "name": "Reaction mass of: triammonium 6-amino-3-((2,5-diethoxy-4-(3-phosphonophenyl)azo)phenyl)azo-4-hydroxy-2-naphthalenesulfonate; diammonium 3-((4-((7-amino-1-hydroxy-3-sulfo-naphthalen-2-yl)azo)-2,5-diethoxyphenyl)azo)benzoate",
+          "prio": 50
+        },
+        {
+          "name": "A mixture of: 5-[(4-[(7-amino-1-hydroxy-3-sulfo-2-naphthyl)azo]- 2,5-diethoxyphenyl)azo]-2-[(3-phosphonophenyl)azo]benzoic acid and 5-[(4-[(7-amino-1-hydroxy-3-sulfo-2-naphthyl)azo]- 2,5-diethoxyphenyl)azo]-3-[(3-phosphonophenyl)azo]benzoic acid",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Benzoates of 4-hydroxy-3-methoxycinnamyl alcohol except for normal content in natural essences used",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "65235-31-6",
+      "banned": [
+        {
+          "name": "3-Nitro-p-Hydroxyethylaminophenol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "4-[(2-Hydroxyethyl)Amino-3-Nitrophenol and its salt (e.g. 3-Nitro-p-Hydroxyethylaminophenol) (with the exception of 3-Nitro-p-Hydroxyethylaminophenol as the hair dye substance under the mixing under oxidative conditions the maximum concentration applied to hair must not exceed 3.0% (1.85% as non-oxidative conditions))",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "92-48-8",
+      "banned": [
+        {
+          "name": "6-Methyl Coumarin",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "6-Methylcoumarin",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "6-Methylcoumarin 6-Methylcoumarin",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "97-23-4",
+      "banned": [
+        {
+          "name": "Dichlorophene",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Dichlorophen Dichlorophen",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "ID",
+      "cas": "2353-45-9",
+      "banned": [
+        {
+          "name": "Fast Green FCF, FD&C Green No. 3, Green 3 Lake, Midori3, CI 42053",
+          "prio": 50
+        },
+        {
+          "name": "Benzenemethanaminium, N-ethyl-N-(4-((4-(ethyl((3-sulfophenyl)methyl)amino)phenyl)(4-hydroxy-2-sulfophenyl)methylene)-2,5-cyclohexadien-1-ylidene)-3-sulfo-, hydroxide, inner salt, disodium salt (Fast Green FCF; CI 42053)",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 42053",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "ID",
+      "cas": "14807-96-6",
+      "banned": [
+        {
+          "name": "Talc",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Talc: Hydrated magnesium silicate",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "ID",
+      "cas": "73049-73-7",
+      "banned": [
+        {
+          "name": "Hydrolyzed Hair Keratin",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Hydrolyzed Human Placental Protein",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "ID",
+      "cas": "111-46-6",
+      "banned": [
+        {
+          "name": "diethylene glycol",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Diethylene Glycol",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Diethylene Glycol(with exception of those substances If they contain ≤ 0.1% as a residues)",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "ID",
+      "cas": "8007-00-9",
+      "banned": [
+        {
+          "name": "Peru balsam (INCI name: Myroxylon pereirae), when used as a fragrance ingredient 1",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Myroxylon Pereirae (Balsam Peru) Resin",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Peru Balsam(Resin of Myroxylon pereirae), except equal or less than 0.4% as extracts or distillates",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Peru balsam",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "ID",
+      "cas": "64742-46-7",
+      "banned": [
+        {
+          "name": "C15-19 Alkane",
+          "prio": 50
+        },
+        {
+          "name": "Distillates (petroleum), hydrotreated middle, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Distillates (petroleum), hydrotreated middle",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "ID",
+      "cas": "94158-14-2",
+      "banned": [
+        {
+          "name": "Hydroxyethyl-3,4-Methylenedioxyaniline HCl",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Hydroxyethyl-3,4-Methylenedioxyaniline and its Hydrochloide (e.g. Hydroxyethyl-3,4-Methylenedioxyaniline HCl) (with the exception of the hair dye substance that maximum concentration applied to hair does not exceed 1.5 % in oxidative hair dyes products)",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "ID",
+      "cas": "89-25-8",
+      "banned": [
+        {
+          "name": "Phenyl Methyl Pyrazolone",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "3-Methyl-1-phenyl-5-pyrazolone",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "ID",
+      "cas": "1603-02-7",
+      "banned": [
+        {
+          "name": "2,5,6-Triamino-4-Pyrimidinol Sulfate",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "(301) 4-Hydroxy-2,5,6- triaminopyrimidine sulfate 2,5,6-Triamino- 4-Pyrimidinol sulfate",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "ID",
+      "cas": "83732-72-3",
+      "banned": [
+        {
+          "name": "2-Methoxymethyl-p-Aminophenol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "6-Methoxy-2-methylamino-3-aminopyridine HCL",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "ID",
+      "cas": "90817-34-8",
+      "banned": [
+        {
+          "name": "2-Methoxymethyl-p-Aminophenol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "6-Methoxy-2-methylamino-3-aminopyridine HCL",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "(203) 6-Methoxy-N2- methyl-2,3- pyridinediamine hydrochloride and dihydrochloride salt 6-Methoxy-2-Methylamino-3- Aminopyridine HCl",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "ID",
+      "cas": "120-32-1",
+      "banned": [
+        {
+          "name": "Clorofene; chlorophene; 2-benzyl-4-chlorophenol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Chlorophene",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "ID",
+      "cas": "90-15-3",
+      "banned": [
+        {
+          "name": "1-Naphthol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "1-Naphthol and its salts 1-Naphtol Oxidising colouring agents for hair dyeing 2,0 % In combination with hydrogen peroxide the maximum use concen tration upon application is 1,0 % Can cause an allergic reaction 1",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "ID",
+      "cas": "591-27-5",
+      "banned": [
+        {
+          "name": "m-Aminophenol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "m-Aminophenol and its salts",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "ID",
+      "cas": "150-75-4",
+      "banned": [
+        {
+          "name": "p-Methylaminophenol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "p-Methylaminophenol (CAS No 150-75-4) and its sulphate",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "ID",
+      "cas": "55302-96-0",
+      "banned": [
+        {
+          "name": "2-Methyl-5-Hydroxyethylaminophenol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "5-[(2-hydroxyethyl)amino]-o-cresol",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "ID",
+      "cas": "16867-03-1",
+      "banned": [
+        {
+          "name": "2-Amino-3-hydroxypyridine",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "2-Amino-3-Hydroxypyridine",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "ID",
+      "cas": "2835-99-6",
+      "banned": [
+        {
+          "name": "4-Amino-m-cresol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "4-Amino-m-cresol and its salts (with the exception of 4-Amino-m-cresol as the hair dye substance that maximum concentration applied to hair does not exceed 1.5 % in oxidative hair dye products)",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "ID",
+      "cas": "26021-57-8",
+      "banned": [
+        {
+          "name": "Hydroxybenzomorpholine",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "2.3-Dihydro-2H-1,4-benzoxazin-6-ol and its salts (e.g. : Hydroxybenzomorpholine) (with the exception of Hydroxybenzomorpholine as the hair dye substance that maximum concentration applied to hair does not exceed 1.0 % in oxidative hair dye products)",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "ID",
+      "cas": "148-24-3",
+      "banned": [
+        {
+          "name": "Quinolin-8-ol and bis (8-hydroxy- quinolium) sulphate Oxyquinoline and oxyquinoline sulfate /134-31-6 / 205-137-1 Stabilizer for hydrogen peroxide in rinse-off hair- products 0,3 % (as base) Stabilizer for hydrogen peroxide in leave-on hair products 0,03 % (as base) 5",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Oxyquinoline",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Quinolin-8-ol and bis (8-hydroxyquinolium) sulphate",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Oxyquinoline(Hydroxy-8-Quinoline or Quinoline-8-ol) and its sulfate",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "ID",
+      "cas": "357-57-3",
+      "banned": [
+        {
+          "name": "Brucine",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Brucine except denaturant of Ethanol",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "ID",
+      "cas": "1330-38-7",
+      "banned": [
+        {
+          "name": "Disodium [29H,31H-phthalocyaninedisulphonato(4-)-N29,N30,N31,N32]cuprate(2-) (Direct Blue 86; CI 74180) when used as a substance in hair dye products",
+          "prio": 50
+        },
+        {
+          "name": "Direct Blue 86",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 74180",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "ID",
+      "cas": "8005-03-6",
+      "banned": [
+        {
+          "name": "Nigrosine (CI 50420) when used as a substance in hair dye products",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 50420",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "ID",
+      "cas": "2118-39-0",
+      "banned": [
+        {
+          "name": "Tetrasodium 6-amino-4-hydroxy-3-[[7-sulphonato-4-[(4-sulphonatophenyl)azo]-1-naphthyl]azo]naphthalene-2,7-disulphonate (Food Black 2; CI 27755) when used as a substance in hair dye products",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 27755",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "ID",
+      "cas": "4548-53-2",
+      "banned": [
+        {
+          "name": "Disodium 3-[(2,4-dimethyl-5-sulphonatophenyl)azo]-4-hydroxynaphthalene-1-sulphonate (Ponceaux SX; CI 14700) when used as a substance in hair dye products",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 14700",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "ID",
+      "cas": "19381-50-1",
+      "banned": [
+        {
+          "name": "Trisodium tris[5,6-dihydro-5-(hydroxyimino)-6-oxonaphthalene-2-sulphonate(2-)-N5,O6]ferrate(3-); (Acid Green 1; CI 10020) when used as a substance in hair dye products",
+          "prio": 50
+        },
+        {
+          "name": "Acid Green 1",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 10020",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "ID",
+      "cas": "8024-12-2",
+      "banned": [
+        {
+          "name": "Lippia Citriodora Flower/Leaf/Stem Oil",
+          "prio": 50
+        },
+        {
+          "name": "Lippia Citriodora Leaf Oil",
+          "prio": 50
+        },
+        {
+          "name": "Lippia Citriodora Leaf/Flower Oil",
+          "prio": 50
+        },
+        {
+          "name": "Verbena oil (Lippia citriodora Kunth.), when used as a fragrance ingredient 4",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Verbena essential oils (Lippia citriodora Kunth.)\n(Verbena absolute (Lippia citriodora Kunth.)除外)",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "ID",
+      "cas": "84540-47-6",
+      "banned": [
+        {
+          "name": "2,6-Dihydroxy-3,4-dimethylpyridine",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "2,6-Dihydroxy-3,4-Dimethyl-Pyridine and its salts",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "ID",
+      "cas": "337906-36-2",
+      "banned": [
+        {
+          "name": "2-Methoxymethyl-p-Phenylenediamine Sulfate",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "2-Methoxymethyl-p-Phenylenediamine",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "ID",
+      "cas": "223398-02-5",
+      "banned": [
+        {
+          "name": "4-FORMYL-1-METHYLQUINOLINIUM-P-TOLUENESULFONATE",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "4-Formyl-1-methylquinolinium-p-toluenesulfonate",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "JP",
+      "cas": "13682-92-3",
+      "banned": [
+        {
+          "name": "Isopropyl Methoxycinnamate",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Aluminum Glycinate",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Dihydroxyaluminum Aminoacetate",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "JP",
+      "cas": "111-46-6",
+      "banned": [
+        {
+          "name": "diethylene glycol",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Diethylene Glycol",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "JP",
+      "cas": "7782-49-2",
+      "banned": [
+        {
+          "name": "Colloidal Selenium",
+          "prio": 50
+        },
+        {
+          "name": "CI 77805",
+          "prio": 50
+        },
+        {
+          "name": "Selenium",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Selenium and its compounds with the exception of selenium disulphide",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "JP",
+      "cas": "70-30-4",
+      "banned": [
+        {
+          "name": "Hexachlorophene",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "2,2'-Dihydroxy-3,3',5,5',6,6'-hexachlorodiphenylmethane (Hexachlorophene)",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "KR",
+      "cas": "8002-09-3",
+      "banned": [
+        {
+          "name": "Pinus Palustris Oil",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Pinus Palustris Twig Leaf Oil",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "KR",
+      "cas": "132885-85-9",
+      "banned": [
+        {
+          "name": "1-(beta-hydroxyethyl)amino-2-nitro-4-N-ethyl-N-(beta-hydroxyethyl)aminobenzene",
+          "prio": 100
+        },
+        {
+          "name": "1-(Beta-Hydroxy)amino-2-nitro-4-N-ethyl-N-(beta-Hydroxyethyl)amino benzene and its salts (e.g. HC BLUE NO. 13)",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "HC Blue No. 12",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "KR",
+      "cas": "69227-24-3",
+      "banned": [
+        {
+          "name": "Babassuamide MEA",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Peanutamide MEA",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "KR",
+      "cas": "83732-72-3",
+      "banned": [
+        {
+          "name": "2-Methoxymethyl-p-Aminophenol",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "6-Methoxy-2-methylamino-3-aminopyridine HCL",
+          "status": "restricted",
+          "prio": 100
+        },
+        {
+          "name": "6-Methoxy-N2-Methyl-2,3-Pyridinediamine Hydrochloride and Dihydrochloride salt (with the exception that the maximum use concentration applied to hair must not exceed 0.68% calculated as free base (1.0% as dihydrochloride)",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "KR",
+      "cas": "90817-34-8",
+      "banned": [
+        {
+          "name": "2-Methoxymethyl-p-Aminophenol",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "6-Methoxy-2-methylamino-3-aminopyridine HCL",
+          "status": "restricted",
+          "prio": 100
+        },
+        {
+          "name": "6-Methoxy-N2-Methyl-2,3-Pyridinediamine Hydrochloride and Dihydrochloride salt (with the exception that the maximum use concentration applied to hair must not exceed 0.68% calculated as free base (1.0% as dihydrochloride)",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "KR",
+      "cas": "66422-95-5",
+      "banned": [
+        {
+          "name": "2,4-Diaminophenoxyethanol HCl",
+          "prio": 80
+        }
+      ],
+      "allowed": [
+        {
+          "name": "2,4-Diaminophenoxyethanol HCL",
+          "status": "restricted",
+          "prio": 100
+        },
+        {
+          "name": "2,4-Diaminophenoxyethanol and its salts (with the exception of 2,4-Diaminophenoxyethanol HCl as the hair dye substance that maximum concentration applied to hair does not exceed 0.5 % in oxidative hair dye products)",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "KR",
+      "cas": "25376-45-8",
+      "banned": [
+        {
+          "name": "Diaminotoluene, [4-methyl-m-phenylene diamine]",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Methylphenylenediamines, their N-substituted derivatives and their salts(e.g. : 2,6-Dihydroxyethylaminotoluene) (with the exception of hair dye substance used in hair dyes products)",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "KR",
+      "cas": "163879-69-4",
+      "banned": [
+        {
+          "name": "5-[(4-[(7-Amino-1-hydroxy-3-sulfo-2-naphthyl)azo]-2,5-diethoxyphenyl)azo]-2-[(3-phosphonophenyl)azo]benzoicacid and 5-[(4-[(7-Amino-1-hydroxy-3-sulfo-2-naphthyl)azo]-2,5-diethoxyphenyl)azo]-3-[(3-phosphonophenyl)azo]benzoicacid",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Benzoates of 4-hydroxy-3-methoxycinnamyl alcohol except for normal content in natural essences used",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "KR",
+      "cas": "1639-60-7",
+      "banned": [
+        {
+          "name": "Dextropropoxyphene Hydrochloride",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Propoxyphene Hydrochloride",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "MY",
+      "cas": "2353-45-9",
+      "banned": [
+        {
+          "name": "Fast Green FCF, FD&C Green No. 3, Green 3 Lake, Midori3, CI 42053",
+          "prio": 50
+        },
+        {
+          "name": "Benzenemethanaminium, N-ethyl-N-(4-((4-(ethyl((3-sulfophenyl)methyl)amino)phenyl)(4-hydroxy-2-sulfophenyl)methylene)-2,5-cyclohexadien-1-ylidene)-3-sulfo-, hydroxide, inner salt, disodium salt (Fast Green FCF; CI 42053)",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 42053",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "MY",
+      "cas": "14807-96-6",
+      "banned": [
+        {
+          "name": "Talc",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Talc: Hydrated magnesium silicate",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "MY",
+      "cas": "73049-73-7",
+      "banned": [
+        {
+          "name": "Hydrolyzed Hair Keratin",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Hydrolyzed Human Placental Protein",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "MY",
+      "cas": "111-46-6",
+      "banned": [
+        {
+          "name": "diethylene glycol",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Diethylene Glycol",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Diethylene Glycol(with exception of those substances If they contain ≤ 0.1% as a residues)",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "MY",
+      "cas": "8007-00-9",
+      "banned": [
+        {
+          "name": "Peru balsam (INCI name: Myroxylon pereirae), when used as a fragrance ingredient 1",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Myroxylon Pereirae (Balsam Peru) Resin",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Peru Balsam(Resin of Myroxylon pereirae), except equal or less than 0.4% as extracts or distillates",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Peru balsam",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "MY",
+      "cas": "64742-46-7",
+      "banned": [
+        {
+          "name": "C15-19 Alkane",
+          "prio": 50
+        },
+        {
+          "name": "Distillates (petroleum), hydrotreated middle, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Distillates (petroleum), hydrotreated middle",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "MY",
+      "cas": "94158-14-2",
+      "banned": [
+        {
+          "name": "Hydroxyethyl-3,4-Methylenedioxyaniline HCl",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Hydroxyethyl-3,4-Methylenedioxyaniline and its Hydrochloide (e.g. Hydroxyethyl-3,4-Methylenedioxyaniline HCl) (with the exception of the hair dye substance that maximum concentration applied to hair does not exceed 1.5 % in oxidative hair dyes products)",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "MY",
+      "cas": "89-25-8",
+      "banned": [
+        {
+          "name": "Phenyl Methyl Pyrazolone",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "3-Methyl-1-phenyl-5-pyrazolone",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "MY",
+      "cas": "1603-02-7",
+      "banned": [
+        {
+          "name": "2,5,6-Triamino-4-Pyrimidinol Sulfate",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "(301) 4-Hydroxy-2,5,6- triaminopyrimidine sulfate 2,5,6-Triamino- 4-Pyrimidinol sulfate",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "MY",
+      "cas": "83732-72-3",
+      "banned": [
+        {
+          "name": "2-Methoxymethyl-p-Aminophenol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "6-Methoxy-2-methylamino-3-aminopyridine HCL",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "MY",
+      "cas": "90817-34-8",
+      "banned": [
+        {
+          "name": "2-Methoxymethyl-p-Aminophenol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "6-Methoxy-2-methylamino-3-aminopyridine HCL",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "(203) 6-Methoxy-N2- methyl-2,3- pyridinediamine hydrochloride and dihydrochloride salt 6-Methoxy-2-Methylamino-3- Aminopyridine HCl",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "MY",
+      "cas": "120-32-1",
+      "banned": [
+        {
+          "name": "Clorofene; chlorophene; 2-benzyl-4-chlorophenol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Chlorophene",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "MY",
+      "cas": "90-15-3",
+      "banned": [
+        {
+          "name": "1-Naphthol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "1-Naphthol and its salts 1-Naphtol Oxidising colouring agents for hair dyeing 2,0 % In combination with hydrogen peroxide the maximum use concen tration upon application is 1,0 % Can cause an allergic reaction 1",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "MY",
+      "cas": "591-27-5",
+      "banned": [
+        {
+          "name": "m-Aminophenol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "m-Aminophenol and its salts",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "MY",
+      "cas": "150-75-4",
+      "banned": [
+        {
+          "name": "p-Methylaminophenol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "p-Methylaminophenol (CAS No 150-75-4) and its sulphate",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "MY",
+      "cas": "55302-96-0",
+      "banned": [
+        {
+          "name": "2-Methyl-5-Hydroxyethylaminophenol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "5-[(2-hydroxyethyl)amino]-o-cresol",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "MY",
+      "cas": "16867-03-1",
+      "banned": [
+        {
+          "name": "2-Amino-3-hydroxypyridine",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "2-Amino-3-Hydroxypyridine",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "MY",
+      "cas": "2835-99-6",
+      "banned": [
+        {
+          "name": "4-Amino-m-cresol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "4-Amino-m-cresol and its salts (with the exception of 4-Amino-m-cresol as the hair dye substance that maximum concentration applied to hair does not exceed 1.5 % in oxidative hair dye products)",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "MY",
+      "cas": "26021-57-8",
+      "banned": [
+        {
+          "name": "Hydroxybenzomorpholine",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "2.3-Dihydro-2H-1,4-benzoxazin-6-ol and its salts (e.g. : Hydroxybenzomorpholine) (with the exception of Hydroxybenzomorpholine as the hair dye substance that maximum concentration applied to hair does not exceed 1.0 % in oxidative hair dye products)",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "MY",
+      "cas": "148-24-3",
+      "banned": [
+        {
+          "name": "Quinolin-8-ol and bis (8-hydroxy- quinolium) sulphate Oxyquinoline and oxyquinoline sulfate /134-31-6 / 205-137-1 Stabilizer for hydrogen peroxide in rinse-off hair- products 0,3 % (as base) Stabilizer for hydrogen peroxide in leave-on hair products 0,03 % (as base) 5",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Oxyquinoline",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Quinolin-8-ol and bis (8-hydroxyquinolium) sulphate",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Oxyquinoline(Hydroxy-8-Quinoline or Quinoline-8-ol) and its sulfate",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "MY",
+      "cas": "357-57-3",
+      "banned": [
+        {
+          "name": "Brucine",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Brucine except denaturant of Ethanol",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "MY",
+      "cas": "1330-38-7",
+      "banned": [
+        {
+          "name": "Disodium [29H,31H-phthalocyaninedisulphonato(4-)-N29,N30,N31,N32]cuprate(2-) (Direct Blue 86; CI 74180) when used as a substance in hair dye products",
+          "prio": 50
+        },
+        {
+          "name": "Direct Blue 86",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 74180",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "MY",
+      "cas": "8005-03-6",
+      "banned": [
+        {
+          "name": "Nigrosine (CI 50420) when used as a substance in hair dye products",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 50420",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "MY",
+      "cas": "2118-39-0",
+      "banned": [
+        {
+          "name": "Tetrasodium 6-amino-4-hydroxy-3-[[7-sulphonato-4-[(4-sulphonatophenyl)azo]-1-naphthyl]azo]naphthalene-2,7-disulphonate (Food Black 2; CI 27755) when used as a substance in hair dye products",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 27755",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "MY",
+      "cas": "4548-53-2",
+      "banned": [
+        {
+          "name": "Disodium 3-[(2,4-dimethyl-5-sulphonatophenyl)azo]-4-hydroxynaphthalene-1-sulphonate (Ponceaux SX; CI 14700) when used as a substance in hair dye products",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 14700",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "MY",
+      "cas": "19381-50-1",
+      "banned": [
+        {
+          "name": "Trisodium tris[5,6-dihydro-5-(hydroxyimino)-6-oxonaphthalene-2-sulphonate(2-)-N5,O6]ferrate(3-); (Acid Green 1; CI 10020) when used as a substance in hair dye products",
+          "prio": 50
+        },
+        {
+          "name": "Acid Green 1",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 10020",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "MY",
+      "cas": "8024-12-2",
+      "banned": [
+        {
+          "name": "Lippia Citriodora Flower/Leaf/Stem Oil",
+          "prio": 50
+        },
+        {
+          "name": "Lippia Citriodora Leaf Oil",
+          "prio": 50
+        },
+        {
+          "name": "Lippia Citriodora Leaf/Flower Oil",
+          "prio": 50
+        },
+        {
+          "name": "Verbena oil (Lippia citriodora Kunth.), when used as a fragrance ingredient 4",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Verbena essential oils (Lippia citriodora Kunth.)\n(Verbena absolute (Lippia citriodora Kunth.)除外)",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "MY",
+      "cas": "84540-47-6",
+      "banned": [
+        {
+          "name": "2,6-Dihydroxy-3,4-dimethylpyridine",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "2,6-Dihydroxy-3,4-Dimethyl-Pyridine and its salts",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "MY",
+      "cas": "337906-36-2",
+      "banned": [
+        {
+          "name": "2-Methoxymethyl-p-Phenylenediamine Sulfate",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "2-Methoxymethyl-p-Phenylenediamine",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "MY",
+      "cas": "223398-02-5",
+      "banned": [
+        {
+          "name": "4-FORMYL-1-METHYLQUINOLINIUM-P-TOLUENESULFONATE",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "4-Formyl-1-methylquinolinium-p-toluenesulfonate",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "PE",
+      "cas": "148-24-3",
+      "banned": [
+        {
+          "name": "Quinolin-8-ol and bis (8-hydroxy- quinolium) sulphate Oxyquinoline and oxyquinoline sulfate",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Hydroxy-8-quinoline and its sulfate",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "PE",
+      "cas": "596-03-2",
+      "banned": [
+        {
+          "name": "4',5'-Dibromo-3',6'-dihydroxyspiro[isobenzofuran-1(3H),9'- [9H]xanthene]-3-one; 4',5'-Dibromofluorescein; (Solvent Red 72) /4372- 02-5",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Dibromofluorescein, D&C Orange No. 5, Daidai201, CI 45370:1",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "PE",
+      "cas": "1320-07-6",
+      "banned": [
+        {
+          "name": "Acid Orange 24 (CI 20170), when used as a substance in hair dye products 1",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Brown 1",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "PE",
+      "cas": "15086-94-9",
+      "banned": [
+        {
+          "name": "Solvent Red 43",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Tetrabromofluorescein, D&C Red No. 21, Red 21 Lake, Aka223, CI 45380:2",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "PE",
+      "cas": "38577-97-8",
+      "banned": [
+        {
+          "name": "Solvent Red 73",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Diiodofluorescein, D&C Orange No. 10, Daidai206, CI 45425:1",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "PE",
+      "cas": "518-40-1",
+      "banned": [
+        {
+          "name": "Solvent Red 73",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Diiodofluorescein, D&C Orange No. 10, Daidai206, CI 45425:1",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "PH",
+      "cas": "2353-45-9",
+      "banned": [
+        {
+          "name": "Fast Green FCF, FD&C Green No. 3, Green 3 Lake, Midori3, CI 42053",
+          "prio": 50
+        },
+        {
+          "name": "Benzenemethanaminium, N-ethyl-N-(4-((4-(ethyl((3-sulfophenyl)methyl)amino)phenyl)(4-hydroxy-2-sulfophenyl)methylene)-2,5-cyclohexadien-1-ylidene)-3-sulfo-, hydroxide, inner salt, disodium salt (Fast Green FCF; CI 42053)",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 42053",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "PH",
+      "cas": "14807-96-6",
+      "banned": [
+        {
+          "name": "Talc",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Talc: Hydrated magnesium silicate",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "PH",
+      "cas": "73049-73-7",
+      "banned": [
+        {
+          "name": "Hydrolyzed Hair Keratin",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Hydrolyzed Human Placental Protein",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "PH",
+      "cas": "111-46-6",
+      "banned": [
+        {
+          "name": "diethylene glycol",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Diethylene Glycol",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Diethylene Glycol(with exception of those substances If they contain ≤ 0.1% as a residues)",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "PH",
+      "cas": "8007-00-9",
+      "banned": [
+        {
+          "name": "Peru balsam (INCI name: Myroxylon pereirae), when used as a fragrance ingredient 1",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Myroxylon Pereirae (Balsam Peru) Resin",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Peru Balsam(Resin of Myroxylon pereirae), except equal or less than 0.4% as extracts or distillates",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Peru balsam",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "PH",
+      "cas": "64742-46-7",
+      "banned": [
+        {
+          "name": "C15-19 Alkane",
+          "prio": 50
+        },
+        {
+          "name": "Distillates (petroleum), hydrotreated middle, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Distillates (petroleum), hydrotreated middle",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "PH",
+      "cas": "94158-14-2",
+      "banned": [
+        {
+          "name": "Hydroxyethyl-3,4-Methylenedioxyaniline HCl",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Hydroxyethyl-3,4-Methylenedioxyaniline and its Hydrochloide (e.g. Hydroxyethyl-3,4-Methylenedioxyaniline HCl) (with the exception of the hair dye substance that maximum concentration applied to hair does not exceed 1.5 % in oxidative hair dyes products)",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "PH",
+      "cas": "89-25-8",
+      "banned": [
+        {
+          "name": "Phenyl Methyl Pyrazolone",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "3-Methyl-1-phenyl-5-pyrazolone",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "PH",
+      "cas": "1603-02-7",
+      "banned": [
+        {
+          "name": "2,5,6-Triamino-4-Pyrimidinol Sulfate",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "(301) 4-Hydroxy-2,5,6- triaminopyrimidine sulfate 2,5,6-Triamino- 4-Pyrimidinol sulfate",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "PH",
+      "cas": "83732-72-3",
+      "banned": [
+        {
+          "name": "2-Methoxymethyl-p-Aminophenol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "6-Methoxy-2-methylamino-3-aminopyridine HCL",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "PH",
+      "cas": "90817-34-8",
+      "banned": [
+        {
+          "name": "2-Methoxymethyl-p-Aminophenol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "6-Methoxy-2-methylamino-3-aminopyridine HCL",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "(203) 6-Methoxy-N2- methyl-2,3- pyridinediamine hydrochloride and dihydrochloride salt 6-Methoxy-2-Methylamino-3- Aminopyridine HCl",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "PH",
+      "cas": "120-32-1",
+      "banned": [
+        {
+          "name": "Clorofene; chlorophene; 2-benzyl-4-chlorophenol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Chlorophene",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "PH",
+      "cas": "90-15-3",
+      "banned": [
+        {
+          "name": "1-Naphthol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "1-Naphthol and its salts 1-Naphtol Oxidising colouring agents for hair dyeing 2,0 % In combination with hydrogen peroxide the maximum use concen tration upon application is 1,0 % Can cause an allergic reaction 1",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "PH",
+      "cas": "591-27-5",
+      "banned": [
+        {
+          "name": "m-Aminophenol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "m-Aminophenol and its salts",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "PH",
+      "cas": "150-75-4",
+      "banned": [
+        {
+          "name": "p-Methylaminophenol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "p-Methylaminophenol (CAS No 150-75-4) and its sulphate",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "PH",
+      "cas": "55302-96-0",
+      "banned": [
+        {
+          "name": "2-Methyl-5-Hydroxyethylaminophenol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "5-[(2-hydroxyethyl)amino]-o-cresol",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "PH",
+      "cas": "16867-03-1",
+      "banned": [
+        {
+          "name": "2-Amino-3-hydroxypyridine",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "2-Amino-3-Hydroxypyridine",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "PH",
+      "cas": "2835-99-6",
+      "banned": [
+        {
+          "name": "4-Amino-m-cresol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "4-Amino-m-cresol and its salts (with the exception of 4-Amino-m-cresol as the hair dye substance that maximum concentration applied to hair does not exceed 1.5 % in oxidative hair dye products)",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "PH",
+      "cas": "26021-57-8",
+      "banned": [
+        {
+          "name": "Hydroxybenzomorpholine",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "2.3-Dihydro-2H-1,4-benzoxazin-6-ol and its salts (e.g. : Hydroxybenzomorpholine) (with the exception of Hydroxybenzomorpholine as the hair dye substance that maximum concentration applied to hair does not exceed 1.0 % in oxidative hair dye products)",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "PH",
+      "cas": "148-24-3",
+      "banned": [
+        {
+          "name": "Quinolin-8-ol and bis (8-hydroxy- quinolium) sulphate Oxyquinoline and oxyquinoline sulfate /134-31-6 / 205-137-1 Stabilizer for hydrogen peroxide in rinse-off hair- products 0,3 % (as base) Stabilizer for hydrogen peroxide in leave-on hair products 0,03 % (as base) 5",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Oxyquinoline",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Quinolin-8-ol and bis (8-hydroxyquinolium) sulphate",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Oxyquinoline(Hydroxy-8-Quinoline or Quinoline-8-ol) and its sulfate",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "PH",
+      "cas": "357-57-3",
+      "banned": [
+        {
+          "name": "Brucine",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Brucine except denaturant of Ethanol",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "PH",
+      "cas": "1330-38-7",
+      "banned": [
+        {
+          "name": "Disodium [29H,31H-phthalocyaninedisulphonato(4-)-N29,N30,N31,N32]cuprate(2-) (Direct Blue 86; CI 74180) when used as a substance in hair dye products",
+          "prio": 50
+        },
+        {
+          "name": "Direct Blue 86",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 74180",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "PH",
+      "cas": "8005-03-6",
+      "banned": [
+        {
+          "name": "Nigrosine (CI 50420) when used as a substance in hair dye products",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 50420",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "PH",
+      "cas": "2118-39-0",
+      "banned": [
+        {
+          "name": "Tetrasodium 6-amino-4-hydroxy-3-[[7-sulphonato-4-[(4-sulphonatophenyl)azo]-1-naphthyl]azo]naphthalene-2,7-disulphonate (Food Black 2; CI 27755) when used as a substance in hair dye products",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 27755",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "PH",
+      "cas": "4548-53-2",
+      "banned": [
+        {
+          "name": "Disodium 3-[(2,4-dimethyl-5-sulphonatophenyl)azo]-4-hydroxynaphthalene-1-sulphonate (Ponceaux SX; CI 14700) when used as a substance in hair dye products",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 14700",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "PH",
+      "cas": "19381-50-1",
+      "banned": [
+        {
+          "name": "Trisodium tris[5,6-dihydro-5-(hydroxyimino)-6-oxonaphthalene-2-sulphonate(2-)-N5,O6]ferrate(3-); (Acid Green 1; CI 10020) when used as a substance in hair dye products",
+          "prio": 50
+        },
+        {
+          "name": "Acid Green 1",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 10020",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "PH",
+      "cas": "8024-12-2",
+      "banned": [
+        {
+          "name": "Lippia Citriodora Flower/Leaf/Stem Oil",
+          "prio": 50
+        },
+        {
+          "name": "Lippia Citriodora Leaf Oil",
+          "prio": 50
+        },
+        {
+          "name": "Lippia Citriodora Leaf/Flower Oil",
+          "prio": 50
+        },
+        {
+          "name": "Verbena oil (Lippia citriodora Kunth.), when used as a fragrance ingredient 4",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Verbena essential oils (Lippia citriodora Kunth.)\n(Verbena absolute (Lippia citriodora Kunth.)除外)",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "PH",
+      "cas": "84540-47-6",
+      "banned": [
+        {
+          "name": "2,6-Dihydroxy-3,4-dimethylpyridine",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "2,6-Dihydroxy-3,4-Dimethyl-Pyridine and its salts",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "PH",
+      "cas": "337906-36-2",
+      "banned": [
+        {
+          "name": "2-Methoxymethyl-p-Phenylenediamine Sulfate",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "2-Methoxymethyl-p-Phenylenediamine",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "PH",
+      "cas": "223398-02-5",
+      "banned": [
+        {
+          "name": "4-FORMYL-1-METHYLQUINOLINIUM-P-TOLUENESULFONATE",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "4-Formyl-1-methylquinolinium-p-toluenesulfonate",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "2353-45-9",
+      "banned": [
+        {
+          "name": "Fast Green FCF, FD&C Green No. 3, Green 3 Lake, Midori3, CI 42053",
+          "prio": 50
+        },
+        {
+          "name": "Benzenemethanaminium, N-ethyl-N-(4-((4-(ethyl((3-sulfophenyl)methyl)amino)phenyl)(4-hydroxy-2-sulfophenyl)methylene)-2,5-cyclohexadien-1-ylidene)-3-sulfo-, hydroxide, inner salt, disodium salt (Fast Green FCF; CI 42053)",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 42053",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "14807-96-6",
+      "banned": [
+        {
+          "name": "Talc",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Talc: Hydrated magnesium silicate",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "73049-73-7",
+      "banned": [
+        {
+          "name": "Hydrolyzed Hair Keratin",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Hydrolyzed Human Placental Protein",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "111-46-6",
+      "banned": [
+        {
+          "name": "diethylene glycol",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Diethylene Glycol",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Diethylene Glycol(with exception of those substances If they contain ≤ 0.1% as a residues)",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "8007-00-9",
+      "banned": [
+        {
+          "name": "Peru balsam (INCI name: Myroxylon pereirae), when used as a fragrance ingredient 1",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Myroxylon Pereirae (Balsam Peru) Resin",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Peru Balsam(Resin of Myroxylon pereirae), except equal or less than 0.4% as extracts or distillates",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Peru balsam",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "64742-46-7",
+      "banned": [
+        {
+          "name": "C15-19 Alkane",
+          "prio": 50
+        },
+        {
+          "name": "Distillates (petroleum), hydrotreated middle, except if the full refining history is known and it can be shown that the substance from which it is produced is not a carcinogen",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Distillates (petroleum), hydrotreated middle",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "94158-14-2",
+      "banned": [
+        {
+          "name": "Hydroxyethyl-3,4-Methylenedioxyaniline HCl",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Hydroxyethyl-3,4-Methylenedioxyaniline and its Hydrochloide (e.g. Hydroxyethyl-3,4-Methylenedioxyaniline HCl) (with the exception of the hair dye substance that maximum concentration applied to hair does not exceed 1.5 % in oxidative hair dyes products)",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "89-25-8",
+      "banned": [
+        {
+          "name": "Phenyl Methyl Pyrazolone",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "3-Methyl-1-phenyl-5-pyrazolone",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "1603-02-7",
+      "banned": [
+        {
+          "name": "2,5,6-Triamino-4-Pyrimidinol Sulfate",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "(301) 4-Hydroxy-2,5,6- triaminopyrimidine sulfate 2,5,6-Triamino- 4-Pyrimidinol sulfate",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "83732-72-3",
+      "banned": [
+        {
+          "name": "2-Methoxymethyl-p-Aminophenol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "6-Methoxy-2-methylamino-3-aminopyridine HCL",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "90817-34-8",
+      "banned": [
+        {
+          "name": "2-Methoxymethyl-p-Aminophenol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "6-Methoxy-2-methylamino-3-aminopyridine HCL",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "(203) 6-Methoxy-N2- methyl-2,3- pyridinediamine hydrochloride and dihydrochloride salt 6-Methoxy-2-Methylamino-3- Aminopyridine HCl",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "120-32-1",
+      "banned": [
+        {
+          "name": "Clorofene; chlorophene; 2-benzyl-4-chlorophenol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Chlorophene",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "90-15-3",
+      "banned": [
+        {
+          "name": "1-Naphthol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "1-Naphthol and its salts 1-Naphtol Oxidising colouring agents for hair dyeing 2,0 % In combination with hydrogen peroxide the maximum use concen tration upon application is 1,0 % Can cause an allergic reaction 1",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "591-27-5",
+      "banned": [
+        {
+          "name": "m-Aminophenol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "m-Aminophenol and its salts",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "150-75-4",
+      "banned": [
+        {
+          "name": "p-Methylaminophenol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "p-Methylaminophenol (CAS No 150-75-4) and its sulphate",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "55302-96-0",
+      "banned": [
+        {
+          "name": "2-Methyl-5-Hydroxyethylaminophenol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "5-[(2-hydroxyethyl)amino]-o-cresol",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "16867-03-1",
+      "banned": [
+        {
+          "name": "2-Amino-3-hydroxypyridine",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "2-Amino-3-Hydroxypyridine",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "2835-99-6",
+      "banned": [
+        {
+          "name": "4-Amino-m-cresol",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "4-Amino-m-cresol and its salts (with the exception of 4-Amino-m-cresol as the hair dye substance that maximum concentration applied to hair does not exceed 1.5 % in oxidative hair dye products)",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "26021-57-8",
+      "banned": [
+        {
+          "name": "Hydroxybenzomorpholine",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "2.3-Dihydro-2H-1,4-benzoxazin-6-ol and its salts (e.g. : Hydroxybenzomorpholine) (with the exception of Hydroxybenzomorpholine as the hair dye substance that maximum concentration applied to hair does not exceed 1.0 % in oxidative hair dye products)",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "148-24-3",
+      "banned": [
+        {
+          "name": "Quinolin-8-ol and bis (8-hydroxy- quinolium) sulphate Oxyquinoline and oxyquinoline sulfate /134-31-6 / 205-137-1 Stabilizer for hydrogen peroxide in rinse-off hair- products 0,3 % (as base) Stabilizer for hydrogen peroxide in leave-on hair products 0,03 % (as base) 5",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Oxyquinoline",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Quinolin-8-ol and bis (8-hydroxyquinolium) sulphate",
+          "status": "restricted",
+          "prio": 50
+        },
+        {
+          "name": "Oxyquinoline(Hydroxy-8-Quinoline or Quinoline-8-ol) and its sulfate",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "357-57-3",
+      "banned": [
+        {
+          "name": "Brucine",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Brucine except denaturant of Ethanol",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "1330-38-7",
+      "banned": [
+        {
+          "name": "Disodium [29H,31H-phthalocyaninedisulphonato(4-)-N29,N30,N31,N32]cuprate(2-) (Direct Blue 86; CI 74180) when used as a substance in hair dye products",
+          "prio": 50
+        },
+        {
+          "name": "Direct Blue 86",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 74180",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "8005-03-6",
+      "banned": [
+        {
+          "name": "Nigrosine (CI 50420) when used as a substance in hair dye products",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 50420",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "2118-39-0",
+      "banned": [
+        {
+          "name": "Tetrasodium 6-amino-4-hydroxy-3-[[7-sulphonato-4-[(4-sulphonatophenyl)azo]-1-naphthyl]azo]naphthalene-2,7-disulphonate (Food Black 2; CI 27755) when used as a substance in hair dye products",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 27755",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "4548-53-2",
+      "banned": [
+        {
+          "name": "Disodium 3-[(2,4-dimethyl-5-sulphonatophenyl)azo]-4-hydroxynaphthalene-1-sulphonate (Ponceaux SX; CI 14700) when used as a substance in hair dye products",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 14700",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "19381-50-1",
+      "banned": [
+        {
+          "name": "Trisodium tris[5,6-dihydro-5-(hydroxyimino)-6-oxonaphthalene-2-sulphonate(2-)-N5,O6]ferrate(3-); (Acid Green 1; CI 10020) when used as a substance in hair dye products",
+          "prio": 50
+        },
+        {
+          "name": "Acid Green 1",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 10020",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "8024-12-2",
+      "banned": [
+        {
+          "name": "Lippia Citriodora Flower/Leaf/Stem Oil",
+          "prio": 50
+        },
+        {
+          "name": "Lippia Citriodora Leaf Oil",
+          "prio": 50
+        },
+        {
+          "name": "Lippia Citriodora Leaf/Flower Oil",
+          "prio": 50
+        },
+        {
+          "name": "Verbena oil (Lippia citriodora Kunth.), when used as a fragrance ingredient 4",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Verbena essential oils (Lippia citriodora Kunth.)\n(Verbena absolute (Lippia citriodora Kunth.)除外)",
+          "status": "restricted",
+          "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "84540-47-6",
+      "banned": [
+        {
+          "name": "2,6-Dihydroxy-3,4-dimethylpyridine",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "2,6-Dihydroxy-3,4-Dimethyl-Pyridine and its salts",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "337906-36-2",
+      "banned": [
+        {
+          "name": "2-Methoxymethyl-p-Phenylenediamine Sulfate",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "2-Methoxymethyl-p-Phenylenediamine",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    }
+  ]
+}
