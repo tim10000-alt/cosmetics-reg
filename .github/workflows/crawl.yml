@@ -245,6 +245,14 @@ jobs:
         run: node scripts/audit-limit-completeness.cjs --write
         continue-on-error: true
 
+      # 3-a-6) 고시 대조 게이트(재발방지·결정론·無Gemini) — 「화장품 안전기준」 별표2 자외선차단성분·
+      # 보존제 한도를 고시 전문(kcia-16933 붙임2)에서 직접 전사한 레퍼런스(86종)와 대조. MFDS 일일
+      # 재인입이 용도별 한도 숫자를 다시 누락시키면(징크·티타늄·벤조페논-3·TEA살리실레이트·트리스
+      # 바이페닐·트리클로카반 형) 검출 → limit-overrides 보강 유도. baseline 대비 신규누락 시 비0 종료.
+      - name: Verify KR 고시 별표2 limits (recurrence guard)
+        run: node scripts/verify-kr-gosi.cjs --strict
+        continue-on-error: true
+
       # 3-b) 데이터 품질 자동 점검 — 지표 계산 + 직전(quality-report.json) 대비 회귀 감지.
       # quality-report.json 갱신은 아래 commit 에 포함되어 추이가 장기 추적됨.
       - name: Data quality check
