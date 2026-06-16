@@ -7,7 +7,10 @@ name: Audit Cells (Gemini ground-truth)
 
 on:
   schedule:
-    - cron: "0 17 * * *"   # 매일 KST 02:00 (status 01:00 / identity 00:00 / crawl 03:17 과 분리 = fresh quota)
+    # PT 자정(무료 Gemini 일일 quota 리셋) 직후 = 07:30 UTC(여름 PDT). 다른 Gemini 잡(identity
+    # 00:00·status 01:00·enrich 04:00 KST = 15~19 UTC)보다 먼저 실행돼 신선한 일일 quota 를 선점
+    # → audit 가 실제로 셀을 판정(이전 KST새벽 스케줄은 quota 이미 소진돼 0건이었음, 실측).
+    - cron: "30 7 * * *"
   workflow_dispatch:
   push:
     branches: [main]
