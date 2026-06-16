@@ -1,7 +1,7 @@
 import { loadEnv } from "./crawlers/env";
 loadEnv();
 import { GoogleGenAI } from "@google/genai";
-import { readFileSync, writeFileSync, existsSync, readdirSync } from "node:fs";
+import { readFileSync, writeFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { createHash } from "node:crypto";
 import { GEMINI_PRIMARY, GEMINI_SECONDARY } from "./gemini-models";
@@ -131,7 +131,7 @@ async function main() {
   console.log(`  대상 셀(미판정/변경): ${todo.length} / 전체 ${cellRows.size}`);
 
   const START = Date.now();
-  let judged = 0, autoFixed = 0, vetoed = 0, queued = 0, quotaFail = 0;
+  let judged = 0, autoFixed = 0, vetoed = 0, quotaFail = 0;
   for (let b = 0; b < todo.length; b += BATCH) {
     if (judged >= MAX_NEW) { console.log(`  ✔ 배치 상한(${MAX_NEW})`); break; }
     if (Date.now() - START > BUDGET_MS) { console.log("  ⏱ 시간예산"); break; }
