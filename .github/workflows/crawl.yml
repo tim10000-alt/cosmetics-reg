@@ -238,6 +238,13 @@ jobs:
         run: node scripts/cas-contamination-audit.cjs --write
         continue-on-error: true
 
+      # 3-a-5) 한도 완전성 audit(재발방지) — 배합한도/용도구조는 있는데 한도 숫자가 어디에도 없는
+      # 행(징크옥사이드형 데이터 누락) 검출 + baseline 회귀 경보. limit-overrides 로 보강 유도.
+      # 질적 제한(염모용에만·표 위임)·비-% 한도(과산화물가)는 제외(분별력). --write 로 baseline 갱신.
+      - name: Limit completeness audit (missing numeric limit)
+        run: node scripts/audit-limit-completeness.cjs --write
+        continue-on-error: true
+
       # 3-b) 데이터 품질 자동 점검 — 지표 계산 + 직전(quality-report.json) 대비 회귀 감지.
       # quality-report.json 갱신은 아래 commit 에 포함되어 추이가 장기 추적됨.
       - name: Data quality check
