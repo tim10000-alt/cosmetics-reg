@@ -260,6 +260,13 @@ jobs:
         run: node scripts/verify-overrides.cjs --strict
         continue-on-error: true
 
+      # 3-a-8) status 충돌 탐지(예방·review-queue·결정론·無Gemini·자동수정 안 함) — 같은 CAS 분절
+      # 카드 간 banned↔허용 충돌(false-banned/allowed 씨앗, 이번 JP 징크피리치온형) 조기 표면화.
+      # 카테고리·조건부·색소 제외. baseline 대비 급증 시 경보(신규 분절/파서 regression).
+      - name: Detect status conflicts (review queue)
+        run: node scripts/detect-status-conflicts.cjs --write
+        continue-on-error: true
+
       # 3-b) 데이터 품질 자동 점검 — 지표 계산 + 직전(quality-report.json) 대비 회귀 감지.
       # quality-report.json 갱신은 아래 commit 에 포함되어 추이가 장기 추적됨.
       - name: Data quality check

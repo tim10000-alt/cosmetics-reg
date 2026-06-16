@@ -15,23 +15,33 @@ if (!fs.existsSync(OV)) { console.log("limit-overrides.json 없음 — skip"); p
 const overrides = (JSON.parse(fs.readFileSync(OV, "utf8")).overrides) || [];
 
 const ings = JSON.parse(fs.readFileSync(path.join(DATA, "ingredients.json"), "utf8")).rows;
-// CAS·INCI → id "목록"(분절 동일물질 다중 entry 전부 커버). 같은 CAS 의 모든 ingredient 에
-// override 를 적용해야 분절된 변종(예: "Zinc Pyrithione" 대문자 MFDS행 vs "Zinc pyrithione"
-// 소문자 MHLW행)이 모두 교정됨 — 한쪽만 고치면 다른 카드가 잘못된 status 로 남음.
-const byInci = new Map(), byCas = new Map();
+// CAS·INCI → id "목록"(분절 동일물질 다중 entry 커버). 단, override CAS 가 그 ingredient 의
+// "주(첫) CAS 이거나 단일 CAS" 인 경우에만 매칭(byCas) — 분절 변종(예 "Zinc Pyrithione"
+// 대문자 MFDS행 vs "Zinc pyrithione" 소문자, 각각 단일 CAS)은 잡되, 보조 CAS 로만 끼어있는
+// 복합항목(예 "o-페닐페놀 및 그 염류"[90-43-7, 132-27-4...] — 주성분 o-phenylphenol 0.30 인데
+// 소듐염 132-27-4 override 0.15 가 잘못 씌워지던 over-restriction)을 배제(분별력).
+// 보조 CAS 까지 넓게 매칭하는 byCasAny 는 status=banned(그룹 전체 금지=안전)에만 사용.
+const byInci = new Map(), byCas = new Map(), byCasAny = new Map();
 const push = (m, k, id) => { if (!k) return; const a = m.get(k) || m.set(k, []).get(k); if (!a.includes(id)) a.push(id); };
 for (const i of ings) {
   push(byInci, (i.inci_name || "").toLowerCase(), i.id);
-  if (i.cas_no) for (const c of String(i.cas_no).split(/[\s,;/]+/)) { const t = c.trim().replace(/\(.*$/, ""); push(byCas, t, i.id); }  // 쉼표/세미콜론/슬래시 분리 + 주석 strip(다중 CAS 매칭, lib 미러)
+  const toks = String(i.cas_no || "").split(/[\s,;/]+/).map((c) => c.trim().replace(/\(.*$/, "")).filter(Boolean);
+  toks.forEach((t, idx) => {
+    push(byCasAny, t, i.id);                       // 보조 포함 전체(banned 그룹용)
+    if (idx === 0 || toks.length === 1) push(byCas, t, i.id);  // 주(첫)/단일 CAS 만(한도 교정용)
+  });
 }
 
 const now = new Date().toISOString();
 const byCc = {};
 let resolved = 0, unmatched = 0;
 for (const o of overrides) {
-  const ids = o.id ? [o.id] : (o.cas && byCas.get(String(o.cas).trim())) || (o.inci && byInci.get(o.inci.toLowerCase())) || [];
+  // banned 는 그룹 전체 금지가 안전 → 보조 CAS 포함(byCasAny). 한도 교정(restricted 등)은 주 CAS 만
+  // (byCas) — 복합 "및 그 염류" 항목에 좁은 염 한도가 오적용되는 over-restriction 방지(분별력).
+  const casMap = o.status === "banned" ? byCasAny : byCas;
+  const ids = o.id ? [o.id] : (o.cas && casMap.get(String(o.cas).trim())) || (o.inci && byInci.get(o.inci.toLowerCase())) || [];
   if (!ids.length) { unmatched++; console.warn(`  ⚠ 미매칭 override: ${o.inci || o.cas} (${o.cc})`); continue; }
-  for (const id of ids) (byCc[o.cc] ??= []).push({ ...o, id });  // 분절 동일물질 전부에 적용
+  for (const id of ids) (byCc[o.cc] ??= []).push({ ...o, id });  // 분절 동일물질에 적용
   resolved++;
 }
 
