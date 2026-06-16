@@ -15,19 +15,23 @@ if (!fs.existsSync(OV)) { console.log("limit-overrides.json 없음 — skip"); p
 const overrides = (JSON.parse(fs.readFileSync(OV, "utf8")).overrides) || [];
 
 const ings = JSON.parse(fs.readFileSync(path.join(DATA, "ingredients.json"), "utf8")).rows;
+// CAS·INCI → id "목록"(분절 동일물질 다중 entry 전부 커버). 같은 CAS 의 모든 ingredient 에
+// override 를 적용해야 분절된 변종(예: "Zinc Pyrithione" 대문자 MFDS행 vs "Zinc pyrithione"
+// 소문자 MHLW행)이 모두 교정됨 — 한쪽만 고치면 다른 카드가 잘못된 status 로 남음.
 const byInci = new Map(), byCas = new Map();
+const push = (m, k, id) => { if (!k) return; const a = m.get(k) || m.set(k, []).get(k); if (!a.includes(id)) a.push(id); };
 for (const i of ings) {
-  byInci.set((i.inci_name || "").toLowerCase(), i.id);
-  if (i.cas_no) for (const c of String(i.cas_no).split(/[\s,;/]+/)) { const t = c.trim().replace(/\(.*$/, ""); if (t) byCas.set(t, i.id); }  // 쉼표/세미콜론/슬래시 분리 + 주석 strip(다중 CAS 매칭, lib 미러)
+  push(byInci, (i.inci_name || "").toLowerCase(), i.id);
+  if (i.cas_no) for (const c of String(i.cas_no).split(/[\s,;/]+/)) { const t = c.trim().replace(/\(.*$/, ""); push(byCas, t, i.id); }  // 쉼표/세미콜론/슬래시 분리 + 주석 strip(다중 CAS 매칭, lib 미러)
 }
 
 const now = new Date().toISOString();
 const byCc = {};
 let resolved = 0, unmatched = 0;
 for (const o of overrides) {
-  const id = o.id || (o.cas && byCas.get(String(o.cas).trim())) || (o.inci && byInci.get(o.inci.toLowerCase()));
-  if (!id) { unmatched++; console.warn(`  ⚠ 미매칭 override: ${o.inci || o.cas} (${o.cc})`); continue; }
-  (byCc[o.cc] ??= []).push({ ...o, id });
+  const ids = o.id ? [o.id] : (o.cas && byCas.get(String(o.cas).trim())) || (o.inci && byInci.get(o.inci.toLowerCase())) || [];
+  if (!ids.length) { unmatched++; console.warn(`  ⚠ 미매칭 override: ${o.inci || o.cas} (${o.cc})`); continue; }
+  for (const id of ids) (byCc[o.cc] ??= []).push({ ...o, id });  // 분절 동일물질 전부에 적용
   resolved++;
 }
 

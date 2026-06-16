@@ -253,6 +253,13 @@ jobs:
         run: node scripts/verify-kr-gosi.cjs --strict
         continue-on-error: true
 
+      # 3-a-7) override 반영 검증(재발방지·일반·결정론·無Gemini) — limit-overrides 의 모든 원문대조
+      # 교정(KR/CN/EU/JP 금지·한도·false-banned)이 실제 헤드라인에 반영되는지 매 run 확인. identity
+      # 분절·상위 prio 오행·CAS 변형으로 교정이 무력화되면(=사용자에게 안 보이면) 회귀로 검출.
+      - name: Verify override effectiveness (recurrence guard)
+        run: node scripts/verify-overrides.cjs --strict
+        continue-on-error: true
+
       # 3-b) 데이터 품질 자동 점검 — 지표 계산 + 직전(quality-report.json) 대비 회귀 감지.
       # quality-report.json 갱신은 아래 commit 에 포함되어 추이가 장기 추적됨.
       - name: Data quality check

@@ -328,6 +328,90 @@
       ],
       "note": "<사용금지 원료>\n∙ EU 화장품규정 1223/2009 Annex II 금지물질",
       "ref": "EU Regulation 1223/2009 Annex II(Tetrahydro-6-nitroquinoxaline and its salts) — eu_eurlex 1223 consolidated PDF 직접 대조. EU 데이터에 금지행 없어 false-allowed → 보강"
+    },
+    {
+      "cas": "13463-41-7",
+      "cc": "JP",
+      "status": "restricted",
+      "max": 0.1,
+      "unit": "%",
+      "categories": [
+        "보존제"
+      ],
+      "note": "<보존제>\n∙ 0.1% (제품 유형별 한도 — 점막용 등 일부 카테고리 제한)",
+      "ref": "일본 화장품기준(MHLW Notification No.331) 별표3 positive-list(징크피리치온 0.1%) — jp_mhlw_cosmetic_standards_en PDF 직접 대조. MFDS 중계 분절행이 banned로 오표기(실제 일본 허용)된 것 교정"
+    },
+    {
+      "cas": "155633-54-8",
+      "cc": "JP",
+      "status": "restricted",
+      "max": 15,
+      "unit": "%",
+      "categories": [
+        "자외선차단"
+      ],
+      "note": "<자외선차단>\n∙ 15% (제품 유형별 한도 — 점막용 등 일부 카테고리 제한)",
+      "ref": "일본 화장품기준(MHLW Notification No.331) 별표4 positive-list(드로메트리졸트리실록산 15%) — jp_mhlw_cosmetic_standards_en PDF 직접 대조. MFDS 중계 분절행이 banned로 오표기(실제 일본 허용)된 것 교정"
+    },
+    {
+      "cas": "27503-81-7",
+      "cc": "JP",
+      "status": "restricted",
+      "max": 3,
+      "unit": "%",
+      "categories": [
+        "자외선차단"
+      ],
+      "note": "<자외선차단>\n∙ 3% (제품 유형별 한도 — 점막용 등 일부 카테고리 제한)",
+      "ref": "일본 화장품기준(MHLW Notification No.331) 별표4 positive-list(페닐벤즈이미다졸설포닉애씨드 3%) — jp_mhlw_cosmetic_standards_en PDF 직접 대조. MFDS 중계 분절행이 banned로 오표기(실제 일본 허용)된 것 교정"
+    },
+    {
+      "cas": "68890-66-4",
+      "cc": "JP",
+      "status": "restricted",
+      "max": 0.05,
+      "unit": "%",
+      "categories": [
+        "보존제"
+      ],
+      "note": "<보존제>\n∙ 0.05% (제품 유형별 한도 — 점막용 등 일부 카테고리 제한)",
+      "ref": "일본 화장품기준(MHLW Notification No.331) 별표3 positive-list(피록톤올아민 0.05%) — jp_mhlw_cosmetic_standards_en PDF 직접 대조. MFDS 중계 분절행이 banned로 오표기(실제 일본 허용)된 것 교정"
+    },
+    {
+      "cas": "121-54-0",
+      "cc": "JP",
+      "status": "restricted",
+      "max": 0.5,
+      "unit": "%",
+      "categories": [
+        "보존제"
+      ],
+      "note": "<보존제>\n∙ 0.5% (제품 유형별 한도 — 점막용 등 일부 카테고리 제한)",
+      "ref": "일본 화장품기준(MHLW Notification No.331) 별표3 positive-list(벤제토늄클로라이드 0.5%) — jp_mhlw_cosmetic_standards_en PDF 직접 대조. MFDS 중계 분절행이 banned로 오표기(실제 일본 허용)된 것 교정"
+    },
+    {
+      "cas": "132-27-4",
+      "cc": "JP",
+      "status": "restricted",
+      "max": 0.15,
+      "unit": "%",
+      "categories": [
+        "보존제"
+      ],
+      "note": "<보존제>\n∙ 0.15% (제품 유형별 한도 — 점막용 등 일부 카테고리 제한)",
+      "ref": "일본 화장품기준(MHLW Notification No.331) 별표3 positive-list(소듐o-페닐페네이트 0.15%) — jp_mhlw_cosmetic_standards_en PDF 직접 대조. MFDS 중계 분절행이 banned로 오표기(실제 일본 허용)된 것 교정"
+    },
+    {
+      "cas": "369-77-7",
+      "cc": "JP",
+      "status": "restricted",
+      "max": 0.3,
+      "unit": "%",
+      "categories": [
+        "보존제"
+      ],
+      "note": "<보존제>\n∙ 0.3% (제품 유형별 한도 — 점막용 등 일부 카테고리 제한)",
+      "ref": "일본 화장품기준(MHLW Notification No.331) 별표3 positive-list(클로플루카반(할로카반) 0.3%) — jp_mhlw_cosmetic_standards_en PDF 직접 대조. MFDS 중계 분절행이 banned로 오표기(실제 일본 허용)된 것 교정"
     }
   ]
 }
