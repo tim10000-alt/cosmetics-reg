@@ -44,7 +44,8 @@
     "kcia:names": "tsx scripts/fetchers/kcia-cid-names.ts",
     "guardian": "node scripts/quality-guardian.cjs",
     "identity:judge": "tsx scripts/identity-judge.ts",
-    "status:judge": "tsx scripts/status-judge.ts"
+    "status:judge": "tsx scripts/status-judge.ts",
+    "translate": "tsx scripts/translate-fields.ts"
   },
   "dependencies": {
     "@google/genai": "^2.8.0",

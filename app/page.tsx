@@ -269,7 +269,11 @@ function HomeInner() {
               </ul>
             </div>
           )}
-          <section className="mt-6 grid gap-3 sm:grid-cols-2">
+          <div className="mt-6 mb-2 flex items-center justify-between">
+            <span className="text-xs text-zinc-500">국가 {response.results.length}곳 — 항목을 눌러 상세 보기</span>
+            <ExpandAllToggle />
+          </div>
+          <section className="space-y-2">
             {response.results.map((r) => (
               <CountryCard
                 key={r.country_code}
@@ -441,23 +445,62 @@ function SourceTier({ priority }: { priority: number | null }) {
   );
 }
 
+// 요약행(접힘 상태)에 보일 상태 배지 — verified/pending/not_found 전부 한눈에. 펼치지 않아도
+// 국가별 위험도(배합금지 빨강·배합한도 노랑 등)를 색으로 스캔 가능.
+function briefBadge(
+  result: CountryLookupResult,
+  bannedElsewhere: string[],
+): { label: string; className: string; limit: string | null } {
+  if (result.source === "verified" && result.status) {
+    const st = STATUS_STYLE[result.status];
+    const limit =
+      result.status === "restricted" && typeof result.max_concentration === "number"
+        ? `${result.max_concentration}${result.concentration_unit ?? "%"}`
+        : null;
+    return { label: st?.label ?? result.status, className: st?.className ?? STATUS_STYLE.unknown.className, limit };
+  }
+  if (result.source === "pending")
+    return { label: "검토 중", className: "bg-orange-100 text-orange-900 ring-1 ring-inset ring-orange-300 dark:bg-orange-950/60 dark:text-orange-100 dark:ring-orange-800/70", limit: null };
+  if (result.regulation_type === "positive_list")
+    return { label: "확인 필요", className: STATUS_STYLE.banned.className, limit: null };
+  if (result.regulation_type === "hybrid")
+    return { label: "조건부 허용", className: STATUS_STYLE.restricted.className, limit: null };
+  if ((bannedElsewhere?.length ?? 0) >= 3)
+    return { label: "미수록 ⚠", className: STATUS_STYLE.restricted.className, limit: null };
+  return { label: "미수록", className: STATUS_STYLE.not_listed.className, limit: null };
+}
+
 function CountryCard({ result, bannedElsewhere = [] }: { result: CountryLookupResult; bannedElsewhere?: string[] }) {
+  const brief = briefBadge(result, bannedElsewhere);
   return (
-    <article className="rounded-lg border border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
-      <header className="mb-3 flex items-center justify-between">
-        <div className="flex items-center gap-2 text-sm font-medium text-zinc-900 dark:text-zinc-50">
+    <details
+      data-country-card
+      className="group overflow-hidden rounded-lg border border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-900 [&>summary]:list-none [&>summary::-webkit-details-marker]:hidden"
+    >
+      <summary className="flex cursor-pointer items-center justify-between gap-2 px-4 py-3 select-none hover:bg-zinc-50 dark:hover:bg-zinc-800/40">
+        <span className="flex min-w-0 items-center gap-2">
           <span className="text-lg leading-none">{COUNTRY_FLAG[result.country_code] ?? "🏳️"}</span>
-          {result.country_name_ko}
+          <span className="truncate text-sm font-medium text-zinc-900 dark:text-zinc-50">{result.country_name_ko}</span>
           {result.inherits_from && (
-            <span className="rounded bg-zinc-100 px-1.5 py-0.5 text-xs font-normal text-zinc-500 dark:bg-zinc-800">
+            <span className="shrink-0 rounded bg-zinc-100 px-1.5 py-0.5 text-[10px] font-normal text-zinc-500 dark:bg-zinc-800">
               {result.inherits_from} 상속
             </span>
           )}
-        </div>
+        </span>
+        <span className="flex shrink-0 items-center gap-1.5">
+          {brief.limit && (
+            <span className="rounded bg-amber-100 px-1.5 py-0.5 text-xs font-bold tabular-nums text-amber-900 dark:bg-amber-950/50 dark:text-amber-100">{brief.limit}</span>
+          )}
+          <span className={`rounded-md px-2 py-0.5 text-xs font-semibold ${brief.className}`}>{brief.label}</span>
+          <svg className="size-4 shrink-0 text-zinc-400 transition-transform group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
+            <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 0 1 1.06.02L10 11.17l3.71-3.94a.75.75 0 1 1 1.08 1.04l-4.25 4.5a.75.75 0 0 1-1.08 0l-4.25-4.5a.75.75 0 0 1 .02-1.06Z" clipRule="evenodd" />
+          </svg>
+        </span>
+      </summary>
+      <div className="border-t border-zinc-100 px-4 py-3 dark:border-zinc-800/80">
         {result.source === "verified" && result.last_verified_at && (
-          <span className="text-xs text-zinc-400">🤖 {daysAgo(result.last_verified_at)}</span>
+          <div className="mb-2 text-right text-xs text-zinc-400">🤖 {daysAgo(result.last_verified_at)}</div>
         )}
-      </header>
 
       {/* positive_list / hybrid 국가는 등록 원료 검색 가능 공식 사이트 link 노출.
           예: CN IECIC, EU CosIng, JP PMDA, ASEAN Cosmetic Directive 등.
@@ -686,7 +729,29 @@ function CountryCard({ result, bannedElsewhere = [] }: { result: CountryLookupRe
           </p>
         </details>
       )}
-    </article>
+      </div>
+    </details>
+  );
+}
+
+// 모두 펼치기/접기 — 네이티브 <details> 를 DOM 으로 일괄 토글.
+function ExpandAllToggle() {
+  const [expanded, setExpanded] = useState(false);
+  const toggle = () => {
+    const next = !expanded;
+    setExpanded(next);
+    document.querySelectorAll<HTMLDetailsElement>("details[data-country-card]").forEach((d) => {
+      d.open = next;
+    });
+  };
+  return (
+    <button
+      type="button"
+      onClick={toggle}
+      className="rounded-md border border-zinc-300 px-2.5 py-1 text-xs font-medium text-zinc-600 hover:bg-zinc-100 dark:border-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-800"
+    >
+      {expanded ? "모두 접기" : "모두 펼치기"}
+    </button>
   );
 }
 

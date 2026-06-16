@@ -1,4 +1,5 @@
 import { dataset, type Ingredient, type Regulation, type KciaArticle, type SourcePdf } from "./data-loader";
+import { translateDisplay } from "./translate-display";
 
 // 인메모리 검색 — Phase 5: Supabase 의존 제거.
 // public/data/*.json (브라우저 ETag 자동 비교) 의 인덱스만 사용.
@@ -337,14 +338,14 @@ export async function lookupRegulation(
     }
 
     const allSources: SourceRef[] | undefined = allBucket?.map((r) => ({
-      source_document: r.source_document,
+      source_document: translateDisplay(r.source_document, ds.translations),
       source_url: r.source_url,
       source_priority: r.source_priority,
       status: r.status,
       max_concentration: r.max_concentration,
       concentration_unit: r.concentration_unit,
       product_categories: r.product_categories ?? undefined,   // 용도별 개별 표기용
-      conditions: r.conditions,
+      conditions: translateDisplay(r.conditions, ds.translations),
       last_verified_at: r.last_verified_at,
       confidence_score: r.confidence_score,
     }));
@@ -359,7 +360,7 @@ export async function lookupRegulation(
       const stricter = allBucket.filter((r) => sev(r.status) > headSev);
       if (stricter.length) {
         const byStatus = new Map<string, string | null>();
-        for (const r of stricter) if (r.status && !byStatus.has(r.status)) byStatus.set(r.status, r.source_document);
+        for (const r of stricter) if (r.status && !byStatus.has(r.status)) byStatus.set(r.status, translateDisplay(r.source_document, ds.translations));
         statusConflict = {
           statuses: [...byStatus.keys()],
           sources: [...byStatus.entries()].map(([status, source_document]) => ({ status, source_document })),
@@ -384,9 +385,9 @@ export async function lookupRegulation(
         max_concentration: row.max_concentration,
         concentration_unit: row.concentration_unit,
         product_categories: row.product_categories ?? [],
-        conditions: row.conditions,
+        conditions: translateDisplay(row.conditions, ds.translations),
         source_url: row.source_url,
-        source_document: row.source_document,
+        source_document: translateDisplay(row.source_document, ds.translations),
         source_priority: row.source_priority,
         confidence_score: row.confidence_score,
         last_verified_at: row.last_verified_at,

@@ -1,0 +1,63 @@
+name: Translate Fields
+
+# 표시 텍스트(conditions·source_document)의 미번역 외국어(대만 TFDA·중국 NMPA·일본 MHLW 등)를
+# 무료 Gemini 로 한국어 번역해 translations.json 에 캐시. data-loader 가 표시 시점에 치환(데이터 불변).
+# 배치+캐시로 매일 누적(멱등) → 결국 전수 한국어화. crawl/enrich/status/identity 와 다른 시간대.
+
+on:
+  schedule:
+    - cron: "0 17 * * *"   # 매일 KST 02:00 (status 01:00 / identity 00:00 / crawl 03:17 / enrich 04:00 과 분리)
+  workflow_dispatch:
+  push:                    # 워크플로/스크립트 변경 시 즉시 1회(백로그 소진 시작)
+    branches: [main]
+    paths:
+      - '.github/workflows/translate.yml'
+      - 'scripts/translate-fields.ts'
+
+permissions:
+  contents: write
+
+# 독립 그룹 — translations.json 만 쓰고 commit 은 먼저-commit→push(충돌 시 merge -X ours)라 안전.
+concurrency:
+  group: translate-write
+  cancel-in-progress: false
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      CI: "true"
+      TRANSLATE_MAX: "400"            # 한 run 최대 400건(무료 quota 안에서 지속가능 배치). 캐시 멱등.
+      TRANSLATE_BUDGET_MS: "600000"   # 10분 하드 컷
+      TRANSLATE_QUOTA_STOP: "3"       # quota 3연속 = 오늘 소진 → 즉시 종료(CI 분 낭비 방지)
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+          cache: "npm"
+      - run: npm ci
+
+      - name: Translate untranslated fields (Gemini, cached)
+        run: npm run translate
+        continue-on-error: true
+
+      - name: Commit translations
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data/translations.json
+          if git diff --cached --quiet; then echo "no translation changes"; exit 0; fi
+          git commit -m "chore(i18n): 표시 텍스트 한국어 번역 누적 $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3 4 5 6; do
+            if git push; then echo "pushed"; exit 0; fi
+            echo "push 충돌 — fetch+merge(-X ours) 재시도 $i"
+            git fetch origin main
+            git merge -X ours --no-edit origin/main || { git merge --abort || true; git reset --hard HEAD; }
+            sleep 4
+          done
+          echo "::error::push 6회 실패"; exit 1

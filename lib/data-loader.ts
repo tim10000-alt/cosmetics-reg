@@ -110,6 +110,9 @@ export interface Dataset {
   kciaByCountry: Map<string, KciaArticle[]>;
   // 1차 소스 PDF (자동 다운로드 — link 만 사용자에 노출)
   sourcePdfsByCountry: Map<string, SourcePdf[]>;
+  // 표시 텍스트 번역 캐시(translations.json) — strKey(원문) → 한국어. 출처명·조건문의 외국어를
+  // 표시 시점에 한글로 치환(데이터 불변). Gemini 파이프라인이 장기 누적, 결정론 seed 가 즉시 보강.
+  translations: Map<string, string>;
 }
 
 let cached: Promise<Dataset> | null = null;
@@ -153,6 +156,14 @@ async function loadDataset(): Promise<Dataset> {
   }
   const countries = ctyPayload.rows;
   const quarantine = quarPayload.rows;
+
+  // 번역 캐시 — strKey(원문) → 한국어. 없으면 빈 맵(결정론 seed 만으로도 동작).
+  const translations = new Map<string, string>();
+  {
+    const tj = await fetchJson<{ translations?: Record<string, string> }>("/data/translations.json").catch(() => ({ translations: {} as Record<string, string> }));
+    const tobj: Record<string, string> = tj.translations ?? {};
+    for (const k of Object.keys(tobj)) translations.set(k, tobj[k]);
+  }
 
   const regPayloads = await Promise.all(
     countries.map((c) =>
@@ -383,6 +394,7 @@ async function loadDataset(): Promise<Dataset> {
     quarantineByCountryName,
     kciaByCountry,
     sourcePdfsByCountry,
+    translations,
   };
 }
 
