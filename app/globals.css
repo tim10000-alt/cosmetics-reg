@@ -1,8 +1,19 @@
 @import "tailwindcss";
 
+/* 다크모드를 클래스(.dark) 기반으로 — 시스템 설정뿐 아니라 사용자 토글로도 제어 가능하게.
+   (기본값은 layout 인라인 스크립트가 저장된 선택 or 시스템 설정으로 .dark 를 붙인다.) */
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  color-scheme: light;
+}
+
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  color-scheme: dark;
 }
 
 @theme inline {
@@ -10,13 +21,6 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {

@@ -5,6 +5,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { lookupRegulation, type LookupResponse, type CountryLookupResult } from "@/lib/regulations-query";
 import { fetchSuggestions, type Suggestion } from "@/lib/autocomplete-query";
 import { asset } from "@/lib/base-path";
+import ThemeToggle from "./theme-toggle";
 
 export default function Home() {
   return (
@@ -135,9 +136,12 @@ function HomeInner() {
   return (
     <main className="mx-auto w-full max-w-4xl px-6 py-12">
       <header className="mb-8">
-        <h1 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-50">
-          화장품 원료 규제 검색
-        </h1>
+        <div className="flex items-start justify-between gap-3">
+          <h1 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-50">
+            화장품 원료 규제 검색
+          </h1>
+          <ThemeToggle />
+        </div>
         <p className="mt-1 text-sm text-zinc-500">
           식약처 공공데이터 API (4종) + 각국 공식 법령 · 총 원료 {counts ? `${Math.round(counts.ingredients / 1000)}K` : "35K"}·규제 {counts ? `${Math.round(counts.regulations / 1000)}K` : "94K"}건 (19개국: 한국·중국·EU·미국·일본·ASEAN 6국·대만·브라질·아르헨티나·캐나다·안데안공동체 4국)
         </p>

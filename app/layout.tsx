@@ -63,6 +63,14 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        {/* 테마 무깜빡임 초기화 — 저장된 선택(localStorage.theme) 우선, 없으면 시스템 설정.
+            paint 전에 <html>.dark 를 설정해야 라이트→다크 플래시가 안 생긴다. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "try{var t=localStorage.getItem('theme');var d=t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.classList.toggle('dark',d);}catch(e){}",
+          }}
+        />
         {/* beforeinstallprompt 를 React hydration 전에 캡처(레이스 방지) — '앱 설치' 버튼이
             실제 네이티브 설치창을 확실히 띄우게. 안 하면 이벤트를 놓쳐 설치 안 되고 아이콘도 안 생김. */}
         <script
