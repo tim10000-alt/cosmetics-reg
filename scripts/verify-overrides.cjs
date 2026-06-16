@@ -27,10 +27,16 @@ function main() {
   const ings = JSON.parse(fs.readFileSync(path.join(DATA, "ingredients.json"), "utf8")).rows;
   const overrides = (JSON.parse(fs.readFileSync(OV, "utf8")).overrides) || [];
 
-  const casToIds = new Map();
-  const byInci = new Map();
+  // apply-overrides 와 동일 해석: banned 는 보조 CAS 포함(byCasAny), 한도 교정은 주(첫)/단일 CAS 만
+  // (byCas) — 복합 "및 그 염류" 항목 over-restriction 방지 로직과 정합(아니면 게이트가 의도적
+  // 스킵분을 "규제행 없음" 으로 오판).
+  const byCas = new Map(), byCasAny = new Map(), byInci = new Map();
   for (const i of ings) {
-    for (const c of normCas(i.cas_no)) (casToIds.get(c) || casToIds.set(c, []).get(c)).push(i.id);
+    const toks = normCas(i.cas_no);
+    toks.forEach((t, idx) => {
+      (byCasAny.get(t) || byCasAny.set(t, []).get(t)).push(i.id);
+      if (idx === 0 || toks.length === 1) (byCas.get(t) || byCas.set(t, []).get(t)).push(i.id);
+    });
     const k = (i.inci_name || "").toLowerCase();
     if (k) (byInci.get(k) || byInci.set(k, []).get(k)).push(i.id);
   }
@@ -48,7 +54,8 @@ function main() {
 
   const misses = [];
   for (const o of overrides) {
-    const ids = o.id ? [o.id] : (o.cas && casToIds.get(String(o.cas).trim())) || (o.inci && byInci.get(o.inci.toLowerCase())) || [];
+    const casMap = o.status === "banned" ? byCasAny : byCas;
+    const ids = o.id ? [o.id] : (o.cas && casMap.get(String(o.cas).trim())) || (o.inci && byInci.get(o.inci.toLowerCase())) || [];
     if (!ids.length) { misses.push({ override: o.cas || o.inci, cc: o.cc, reason: "성분 매칭 없음" }); continue; }
     const want = o.status || "restricted";
     for (const id of ids) {
