@@ -102,6 +102,13 @@ const COMPOUND_CAS_FIX = [
   // (天冬氨酸镁)이 잔액 카드에 표기되던 오병합(형제 CJK명 충돌 감사서 색출). 2068-80-6 제거.
   { match: /residues,\s*steam\s*cracked/i, wrong: "2068-80-6", correct: "98219-64-8" },
 ];
+// 검증된 korean_name 오기 교정(명시·결정론·매 run 재적용=봇 갱신 대비 durable). 등급숫자가 *정체성*인
+// 화합물에서 INCI 등급숫자와 한국어 등급숫자가 어긋난 데이터 오기만(전수 스캔=유일 1건). INCI 가 권위.
+// (일반 한·영 숫자차이는 명명체계 차이[酸性黄23=황색4호·CI번호↔한국색소번호]라 절대 건드리지 않음=분별력.)
+const KOREAN_NAME_FIX = [
+  // Meroxapol 등급에 106 없음(105/108/171/251…) → "메록사폴106" 은 데이터 오기, 105 가 정답.
+  { match: /^\s*meroxapol\s*105\s*$/i, wrong: "메록사폴106", correct: "메록사폴105" },
+];
 const CAS_RE = /^\d{2,7}-\d{2}-\d$/;
 function casCheckDigit(twoGroups) {            // "7782-85" → 6
   const d = twoGroups.replace(/-/g, "").split("").map(Number);
@@ -260,6 +267,7 @@ function main() {
   let casNameToSyn = 0;                                          // cas_no 에 박힌 *성분명*(CAS 아님) → synonyms 이전 + null
   let casConsensus = 0;                                          // 같은 정규화명 그룹 합의 CAS 를 null entry 에 backfill(분절통합)
   let nameTrimmed = 0;                                          // 이름 앞뒤 공백 제거
+  let korNameFixed = 0;                                         // 검증된 korean_name 오기 교정(등급숫자 정체성 화합물)
   let apparatusOrphans = 0, colorantGlueOrphans = 0;            // regs=0 + CAS 0 + 한글 0 인 규제apparatus/색소표 고아 격리
   // 규제apparatus 고아 시그니처 — 정상 INCI 명엔 절대 없는 규제문(표 캡션/각주/물질묶음 명세). regs=0 + CAS 0
   // + 한글 0 게이트와 AND 라 트윈(regs>0)·정상원료는 안 걸림(실측: 전 DB 정확히 16건, 전부 확인된 아티팩트).
@@ -378,6 +386,11 @@ function main() {
           casElementFixed++; ingChanged = true;
         }
       }
+    }
+    // 검증된 korean_name 오기 교정(등급숫자 정체성 화합물의 데이터 오기 — INCI 가 권위. 분별력: 명시 1건만).
+    if (typeof i.korean_name === "string") {
+      const kf = KOREAN_NAME_FIX.find((f) => f.match.test(i.inci_name || "") && i.korean_name === f.wrong);
+      if (kf) { i.korean_name = kf.correct; korNameFixed++; ingChanged = true; }
     }
     // CAS 부여(분절 통합) — 유효 CAS 없는 entry 에: ① 같은 정규화명 그룹 합의 CAS(1개) backfill
     // ② 그래도 없으면 PIGMENT_CAS 권위 상수(TiO2/ZnO/Mica). 둘 다 같은물질 확증 시에만(분별력).
@@ -498,7 +511,7 @@ function main() {
   console.log(`  오염명 실명 복구(RTL 헤더 + JP matrix): ${recovered}`);
   console.log(`  보조 표시명(한/중/일) 정리: 복구 ${nameFieldRecovered} · null처리 ${nameFieldNulled}`);
   console.log(`  CAS 정규화: 복구 ${casRecovered} · 깨진값 null ${casNulled} · 원소/안료CAS ${casElementFixed} · 이름속CAS ${casFromNameFixed} · 이름오염→syn ${casNameToSyn} · 합의backfill ${casConsensus}`);
-  console.log(`  이름 앞뒤 공백 제거: ${nameTrimmed}`);
+  console.log(`  이름 앞뒤 공백 제거: ${nameTrimmed} · korean_name 등급숫자 오기 교정: ${korNameFixed}`);
   console.log(`  각주마커 안전 collapse(X(1)→X): ${footCollapsed}`);
   console.log(`  임베디드 조건문 collapse(X 0.5%…→X): ${embedCollapsed}`);
   console.log(`  JP 別表 농도값 bleed collapse(X ○ 0.10→X): ${jpValCollapsed}`);
