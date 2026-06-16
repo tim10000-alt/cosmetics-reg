@@ -75,6 +75,8 @@ function richLookup(query) {
 // 전 성분 대상(무규제 포함 — 헤더/not-found 표기까지 검증). 환경변수 CARDS_ONLY=1 이면 규제보유만.
 const targets = process.env.CARDS_ONLY ? gt.ingredients.filter((i) => { const m = gt.regsByIC.get(i.id); return m && m.size; }) : gt.ingredients.slice();
 const slice = targets.slice(OFFSET, OFFSET + LIMIT);
+const START = Date.now();
+console.log(`대상 ${slice.length}성분 (CARDS_ONLY=${!!process.env.CARDS_ONLY}) 전수 대조 시작…`);
 
 const mismatches = [];
 let checkedIng = 0, checkedCells = 0, skipped = 0;
@@ -166,6 +168,7 @@ async function worker(page, items) {
     if (!ok) { add(`${ing.inci_name} :: RENDER-TITLE-FAIL`); continue; }
     const ui = await extract(page);
     checkedIng++;
+    if (checkedIng % 500 === 0) console.log(`  …진행 ${checkedIng}/${slice.length} (불일치 ${mismatches.length}, ${((Date.now() - START) / 1000).toFixed(0)}s)`);
     const I = ing.inci_name.slice(0, 30);
     // 헤더 대조
     if (g.ing.korean_name) cov.kr++;
