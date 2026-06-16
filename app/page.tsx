@@ -473,6 +473,8 @@ function briefBadge(
 function CountryCard({ result, bannedElsewhere = [] }: { result: CountryLookupResult; bannedElsewhere?: string[] }) {
   const brief = briefBadge(result, bannedElsewhere);
   return (
+    // <article> 래퍼 유지 — 검증/e2e 스크립트가 국가 카드를 article 로 셀렉트(구조 호환).
+    <article>
     <details
       data-country-card
       className="group overflow-hidden rounded-lg border border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-900 [&>summary]:list-none [&>summary::-webkit-details-marker]:hidden"
@@ -731,6 +733,7 @@ function CountryCard({ result, bannedElsewhere = [] }: { result: CountryLookupRe
       )}
       </div>
     </details>
+    </article>
   );
 }
 

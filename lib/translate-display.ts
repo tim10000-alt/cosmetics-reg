@@ -24,6 +24,10 @@ const MAP: Record<string, string> = {
     "색소로 사용되는 지르코늄(zirconium) 레이크·염·안료, 및 화장품 성분 사용제한표에 별도 규정이 있는 경우는 제외.",
   // ── 중국 NMPA 출처 ──
   "NMPA IECIC (已使用化妆品原料目录)": "NMPA IECIC (사용된 화장품 원료 목록)",
+  // ── 등록 원료 목록(registry_name) 표 이름 ──
+  "TFDA 化粧品禁限用成分管理規定": "TFDA 화장품 사용금지·제한 성분 관리규정",
+  "NMPA 已使用化妆品原料目录 (IECIC)": "NMPA 사용된 화장품 원료 목록 (IECIC)",
+  "PMDA 標準成分 검색": "PMDA 표준성분 검색",
   // ── 일본 MHLW 출처 (化粧品基準 = 화장품기준) ──
   "JP MHLW 化粧品基準 (Standards for Cosmetics, Notification 331)":
     "JP MHLW 화장품기준 (Standards for Cosmetics, 고시 제331호)",
