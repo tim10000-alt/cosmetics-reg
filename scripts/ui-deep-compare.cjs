@@ -4,7 +4,31 @@
 // 숫자/단위·조건문 텍스트·적용제품·출처 자료명·출처 링크·상속 배지·cascade 추가출처 상세.
 // 사용: node scripts/ui-deep-compare.cjs [limit] [conc] [offset]
 const { chromium } = require("playwright");
+const fs = require("fs");
+const path = require("path");
 const gt = require("./verify-groundtruth.cjs");
+
+// 표시층 번역 미러 — UI 가 translateDisplay(원문→한국어) 로 치환하므로 oracle 도 동일 적용해야
+// deep-compare 가 *진짜* 표시버그만 잡는다(번역 거짓불일치 제거). lib/translate-display.ts·strhash.ts 미러.
+function strKey(s) { let h = 0x811c9dc5; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193); } return (h >>> 0).toString(36) + "." + s.length.toString(36); }
+const TMAP = {
+  "TFDA 化粧品禁限用成分管理規定 — 化粧品禁止使用成分表": "TFDA 화장품 사용금지·제한 성분 관리규정 — 화장품 사용금지 성분표",
+  "TFDA 化粧品禁限用成分管理規定 — 化粧品防腐劑成分使用限制表": "TFDA 화장품 사용금지·제한 성분 관리규정 — 화장품 보존제 성분 사용제한표",
+  "TFDA 化粧品禁限用成分管理規定 — 化粧品色素成分使用限制表": "TFDA 화장품 사용금지·제한 성분 관리규정 — 화장품 색소 성분 사용제한표",
+  "TFDA 化粧品禁限用成分管理規定 — 化粧品成分使用限制表": "TFDA 화장품 사용금지·제한 성분 관리규정 — 화장품 성분 사용제한표",
+  "TFDA 化粧品禁限用成分管理規定 — 化粧品防曬劑成分使用限制表": "TFDA 화장품 사용금지·제한 성분 관리규정 — 화장품 자외선차단제 성분 사용제한표",
+  "不得使用於染髮用途化粧品": "염모(헤어 염색)용 화장품에는 사용할 수 없음",
+  "用 作 色 素 之 zirconium lakes, salts, pigments 及化粧品成分使用限制表中另有規定者除外。": "색소로 사용되는 지르코늄(zirconium) 레이크·염·안료, 및 화장품 성분 사용제한표에 별도 규정이 있는 경우는 제외.",
+  "NMPA IECIC (已使用化妆品原料目录)": "NMPA IECIC (사용된 화장품 원료 목록)",
+  "TFDA 化粧品禁限用成分管理規定": "TFDA 화장품 사용금지·제한 성분 관리규정",
+  "NMPA 已使用化妆品原料目录 (IECIC)": "NMPA 사용된 화장품 원료 목록 (IECIC)",
+  "PMDA 標準成分 검색": "PMDA 표준성분 검색",
+  "JP MHLW 化粧品基準 (Standards for Cosmetics, Notification 331)": "JP MHLW 화장품기준 (Standards for Cosmetics, 고시 제331호)",
+  "JP MHLW 化粧品基準 別表 1 (品目ごと承認対象成分 positive list)": "JP MHLW 화장품기준 별표1 (품목별 승인대상 성분 positive list)",
+};
+const TNORM = {}; for (const k of Object.keys(TMAP)) TNORM[k.replace(/\s+/g, " ").trim()] = TMAP[k];
+const TCACHE = (() => { try { const t = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "public", "data", "translations.json"), "utf8")).translations || {}; return t; } catch { return {}; } })();
+function tr(s) { if (s == null) return s; const c = TCACHE[strKey(s)]; if (c) return c; if (TMAP[s]) return TMAP[s]; const n = TNORM[String(s).replace(/\s+/g, " ").trim()]; if (n) return n; return s; }
 
 const BASE = process.env.UI_BASE || "http://localhost:3010";
 const LIMIT = Number(process.argv[2] || 200);
@@ -29,7 +53,7 @@ function richLookup(query) {
   for (const c of gt.countries) {
     let b = gt.bucketFor(ids, c.code), inh = null;
     if ((!b || !b.length) && c.inherits_from) { const ib = gt.bucketFor(ids, c.inherits_from); if (ib && ib.length) { b = ib; inh = c.inherits_from; } }
-    if (b && b.length) { const r = b[0]; results[c.code] = { status: r.status, max: r.max_concentration, unit: r.concentration_unit, conditions: r.conditions, pcats: r.product_categories || [], src: r.source_document, url: r.source_url, inh, all: b }; }
+    if (b && b.length) { const r = b[0]; results[c.code] = { status: r.status, max: r.max_concentration, unit: r.concentration_unit, conditions: tr(r.conditions), pcats: r.product_categories || [], src: tr(r.source_document), url: r.source_url, inh, all: b }; }
   }
   // production EU-채택 한도 보강 미러: EU 채택국 자국한도 없으면 EU 한도 채택(표시).
   const limRe = /최대\s*농도|배합\s*한도|\d+(\.\d+)?\s*%|\d+,\d+\s*%/;
@@ -77,10 +101,11 @@ async function extract(page) {
     }
     // 카드
     document.querySelectorAll("article").forEach((art) => {
-      const head = art.querySelector("header");
+      // 접기 UI: 카드 = <article><details data-country-card><summary>(국기+국가명+상속배지+상태칩)…
+      // 헤더는 이제 summary(이전 <header> 아님). 국가명은 summary 첫 span.
+      const head = art.querySelector(":scope > details > summary") || art.querySelector("summary");
       if (!head) return;
-      // 상속 카드 헤더는 "베트남EU 상속"(공백없이 배지 연접) → "EU 상속"만 제거(국가명 보존).
-      let nm = (head.querySelector("div")?.textContent || "").replace(/🤖.*$/, "").trim().replace(/[A-Z]{2}\s*상속$/, "").replace(/^[^가-힣A-Za-z]+/, "").trim();
+      let nm = (head.querySelector("span")?.textContent || head.textContent || "").replace(/🤖.*$/, "").trim().replace(/[A-Z]{2}\s*상속$/, "").replace(/^[^가-힣A-Za-z]+/, "").trim();
       const cc = NAME_TO_CC[nm];
       if (!cc) return;
       const full = art.textContent;

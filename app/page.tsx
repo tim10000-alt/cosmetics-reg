@@ -802,26 +802,25 @@ function ConditionBlocks({ text }: { text: string }) {
         if (!structured) {
           return <div key={i} className="whitespace-pre-line">{highlightLimits(b)}</div>;
         }
+        // 용도 구분(<…>)·항목 불릿(∙)을 줄 단위로 *스타일만* 적용해 시각 분리. 텍스트(괄호·∙·
+        // 접두)는 데이터 그대로 보존 → ground-truth 와 1:1 대조(deep-compare) 정합 유지.
         return (
           <div key={i} className="space-y-1">
             {lines.map((ln, j) => {
-              const cat = ln.match(/<([^>]+)>/);
-              if (cat) {
-                // "<용도>" = 제품 용도 구분 → 칩 헤더(라벨 "* 배합한도 :" 등 잔여는 생략).
-                return (
-                  <div key={j} className="mt-1.5">
-                    <span className="inline-block rounded bg-zinc-200 px-1.5 py-0.5 text-[11px] font-semibold text-zinc-800 dark:bg-zinc-700 dark:text-zinc-100">
-                      {cat[1].trim()}
-                    </span>
-                  </div>
-                );
-              }
-              const bullet = /^[∙•·▪◦]\s*/.test(ln);
-              const content = ln.replace(/^[∙•·▪◦]\s*/, "").replace(/^\*\s*/, "");
+              const isCat = /<[^>]+>/.test(ln);
+              const isBullet = /^[∙•·▪◦]/.test(ln);
               return (
-                <div key={j} className={bullet ? "flex gap-1.5 pl-2.5" : ""}>
-                  {bullet && <span aria-hidden className="select-none text-zinc-400">•</span>}
-                  <span className="min-w-0">{highlightLimits(content)}</span>
+                <div
+                  key={j}
+                  className={
+                    isCat
+                      ? "mt-1.5 border-l-2 border-zinc-400 pl-2 font-semibold text-zinc-900 dark:border-zinc-500 dark:text-zinc-100"
+                      : isBullet
+                      ? "pl-3"
+                      : ""
+                  }
+                >
+                  {highlightLimits(ln)}
                 </div>
               );
             })}

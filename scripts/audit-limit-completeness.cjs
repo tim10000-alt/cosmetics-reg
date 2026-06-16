@@ -14,9 +14,10 @@ const BASELINE = path.join(DATA, "limit-completeness-baseline.json");
 const ing = new Map(JSON.parse(fs.readFileSync(path.join(DATA, "ingredients.json"), "utf8")).rows.map((i) => [i.id, i]));
 // 어떤 단위든 정량 값(유럽식 콤마 소수 "0,1 %" 포함 — 미포함 시 향료/잔류한도 거짓 누락).
 const NUM_UNIT = /\d+(?:[.,]\d+)?\s*(%|ppm|ppb|mmol|mg|µg|g\/|mL|nm|배)/i;
-// 징크형 정밀 패턴: 한국 배합한도 라벨 + <용도> 구조(정량 한도가 있어야 마땅). 일반 "<제한>"·향료
-// 알레르겐 라벨링 제한 등은 제외(질적 제한=정상).
-const CAT_OR_LIMIT = /배합한도\s*[:：][^\n]*<[^>]+>|최대사용농도/;
+// 정량 한도가 *있어야 마땅한* 용도 구조: 배합한도+<용도>(징크형), 또는 <자외선차단성분/제>·
+// <보존제>(이 용도는 항상 % 한도 보유 — TiO2 형: 배합한도 라벨 없이 <자외선차단제>만 있는 경우도 포착).
+// 일반 "<제한>"·<색소>(질적 용도제한 가능)·향료 알레르겐 라벨링은 제외(분별력).
+const CAT_OR_LIMIT = /배합한도\s*[:：][^\n]*<[^>]+>|최대사용농도|<\s*자외선차단|<\s*보존제\s*>/;
 
 const flagged = [];
 for (const f of fs.readdirSync(REG).filter((x) => x.endsWith(".json"))) {
