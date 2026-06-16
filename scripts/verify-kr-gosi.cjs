@@ -170,12 +170,29 @@ function main() {
       misses.push({ cas, name, cat, reason: `한도 ${limits[0]}% 미표면화`, need: limits, present: [...present].slice(0, 10) });
   }
 
-  const report = { generated_for: "KR 화장품 안전기준 별표2(자외선차단·보존제) 고시 대조", total: GOSI.length, missing: misses.length, misses };
+  // ── 별표1 사용금지 원료 검증 ── MFDS 자동데이터가 KR 금지행을 누락했던(검색 시 false-allowed)
+  // 무조건 금지물질. 고시 별표1 직접 대조로 확정·override 보강한 건들이 banned 로 표면화되는지 확인.
+  // (조건부 금지[염모제 제외·과산화물가 초과]는 restricted 가 정당하므로 제외 — 분별력)
+  const GOSI_BANNED = [
+    "110-71-4", "112-34-5", "1150-90-9", "1404-88-2", "1480-19-9", "2451-62-9",
+    "24828-38-4", "2748-74-5", "57-63-6", "5934-19-0", "8023-88-9", "84777-06-0",
+    "84961-56-8", "89997-54-6", "90106-13-1", "97-77-8",
+  ];
+  for (const cas of GOSI_BANNED) {
+    const ids = new Set();
+    for (const c of normCas(cas)) for (const id of casToIds.get(c) || []) ids.add(id);
+    if (!ids.size) { misses.push({ cas, name: "(별표1 금지)", cat: "사용금지", reason: "성분 없음" }); continue; }
+    let banned = false;
+    for (const id of ids) for (const r of rowsById.get(id) || []) if (r.status === "banned") banned = true;
+    if (!banned) misses.push({ cas, name: "(별표1 금지)", cat: "사용금지", reason: "banned 미표면화(false-allowed)" });
+  }
+
+  const report = { generated_for: "KR 화장품 안전기준 별표1(금지)·별표2(자외선차단·보존제) 고시 대조", total: GOSI.length + GOSI_BANNED.length, missing: misses.length, misses };
   let prev = null;
   try { prev = JSON.parse(fs.readFileSync(REPORT, "utf8")); } catch {}
   fs.writeFileSync(REPORT, JSON.stringify(report, null, 2), "utf8");
 
-  console.log(`verify-kr-gosi: ${GOSI.length}종 검사, 누락 ${misses.length}건`);
+  console.log(`verify-kr-gosi: ${GOSI.length + GOSI_BANNED.length}종 검사(별표2 한도 ${GOSI.length} + 별표1 금지 ${GOSI_BANNED.length}), 누락 ${misses.length}건`);
   for (const m of misses) console.log(`  ⚠ [${m.cat}] ${m.name} (${m.cas}) — ${m.reason}`);
 
   const prevN = prev ? prev.missing : 0;
