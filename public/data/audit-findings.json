@@ -1,1 +1,5 @@
-{"note":"Gemini 듀얼합의 ground-truth 감사 — 검토 후 limit-overrides 로 교정(자동수정 안 함)","total":0,"findings":{}}
+{
+  "note": "Gemini 듀얼합의 ground-truth 감사 — 검토 후 limit-overrides 로 교정(자동수정 안 함)",
+  "total": 0,
+  "findings": {}
+}
