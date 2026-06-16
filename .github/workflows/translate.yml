@@ -43,9 +43,18 @@ jobs:
           cache: "npm"
       - run: npm ci
 
+      # CN IECIC 성분명은 *데이터의 권위 한국어명*으로 결정론 매핑(Gemini 추측 오역 차단·무료).
+      - name: Translate CN names deterministically (data dict, no Gemini)
+        run: npm run translate:cn
+        continue-on-error: true
+
       - name: Translate untranslated fields (Gemini, cached)
         run: npm run translate
         continue-on-error: true
+
+      # 재발방지 QA — 캐시 번역의 상태뒤집힘·한도손실 검출. 위반 시 실패(경보).
+      - name: Verify translations (no flip / no limit loss)
+        run: npm run translate:verify
 
       - name: Commit translations
         run: |
