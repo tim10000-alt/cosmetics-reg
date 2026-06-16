@@ -184,7 +184,8 @@ function main() {
   const counts = {};
   const srcLatest = {};      // source_document → 최신 last_verified_at (진단용)
   const ccLatest = {};       // country → 최신 last_verified_at (신선도 감시 = cascade-aware)
-  const limitNow = {};       // ingredient_id|cc → max_concentration (한도 급변 이상탐지)
+  const limitNow = {};       // ingredient_id|cc → 1차(최고우선순위)행 max_concentration (한도 급변 이상탐지)
+  const limitPickPr = {};    // 위 키의 채택 행 source_priority — 결정론적 1차행 선택용(아래 참조)
   // 존재하는 성분 id 집합(가디언은 성분을 추가·삭제하지 않고 필드만 수정 → id 집합 안정).
   // dangling reg(성분 없는 규제 = 렌더 불가·silent 손실) 자가청소용. 원인: 파서 생성 성분이
   // 교차-워크플로(enrich 등) 쓰기 경합으로 ingredients.json 에서 누락되어도 reg 는 잔존(예: JP 別表1).
@@ -205,7 +206,16 @@ function main() {
       const lv = r.last_verified_at || "";
       if (lv > (srcLatest[src] || "")) srcLatest[src] = lv;
       if (lv > (ccLatest[cc] || "")) ccLatest[cc] = lv; // 국가별 최신(cascade 중 가장 신선한 층)
-      if (r.max_concentration != null) limitNow[`${r.ingredient_id}|${cc}`] = r.max_concentration;
+      // 한도 스냅샷 = 성분|국가별 *1차행*(최고 source_priority) max. 단순 마지막-순회-행 덮어쓰기는
+      // 다중행 성분(예: 트리클로카반 KR — 보존제 0.2% vs 씻어내는 1.5%, 둘 다 정당)에서 행 순서 churn 시
+      // 1.5↔0.2 로 진동해 가짜 '5배 급변' anomaly 를 간헐 발화시킴(실측 #15, ≥5배 스프레드 37쌍 잠재).
+      // 우선순위 동률이면 더 큰 값(결정론) → 순서 무관 + 사용자가 보는 1차값 추적(진짜 오파싱은 여전히 포착).
+      if (r.max_concentration != null) {
+        const key = `${r.ingredient_id}|${cc}`, pr = r.source_priority ?? 0, cur = limitPickPr[key];
+        if (cur == null || pr > cur || (pr === cur && r.max_concentration > limitNow[key])) {
+          limitNow[key] = r.max_concentration; limitPickPr[key] = pr;
+        }
+      }
       // HTML 엔티티 디코드(conditions·source_document·product_categories) — 리터럴 "&#x2032;" 등 제거.
       for (const k of ["conditions", "source_document"]) {
         if (typeof r[k] === "string") { const d = decodeEntities(r[k]); if (d !== r[k]) { r[k] = d; entityDecoded++; changed = true; } }
