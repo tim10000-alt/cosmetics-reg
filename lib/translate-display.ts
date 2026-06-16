@@ -79,15 +79,31 @@ const PHRASE: [string, string][] = [
   //   전체-구절 매칭 또는 Gemini whole-string 번역(translations.json)으로만 처리(자연스러운 한글).
   ["項次", "항목"], ["備註", "비고"],
   ["品目ごと", "품목별"], ["医薬部外品", "의약외품"],
+  // 한도 라벨/짧은 표준어구(값 옆 단독어 — salad 위험 낮음)
+  ["所有化粧品均可使用", "모든 화장품에 사용 가능"], ["限用於用後立即洗去之化粧品", "사용 후 즉시 씻어내는 화장품에 한함"],
+  ["氧化性", "산화성"], ["非氧化性", "비산화성"], ["限量", "한도"], ["含釋出", "방출되는"],
+  ["禁止使用", "사용 금지"], ["得使用", "사용 가능"],
 ];
 const PHRASE_SORTED = [...PHRASE].sort((a, b) => b[0].length - a[0].length);
 const HAS_CJK = /[぀-ヿ一-鿿]/;
+const CJK_G = /[぀-ヿ一-鿿]/g;
+const HANGUL_G = /[가-힣]/g;
 function phraseTranslate(s: string): string {
   if (!HAS_CJK.test(s)) return s;
   let out = s;
   // CN: "국문: [한국어]. 중문: [중국어 원문]" — 중복 원문(중문 tail) 표시 strip.
   out = out.replace(/\s*중문\s*[:：][\s\S]*$/u, "");
   for (const [cjk, ko] of PHRASE_SORTED) if (out.includes(cjk)) out = out.split(cjk).join(ko);
+  // 병기형(중국어 원문 줄 + 한국어 번역 줄) 데이터: 한국어 번역이 함께 있을 때만 중국어-우세 줄을
+  // 제거(원문 잔재 제거 → 한국어만 표시). 안전: 결과에 한글이 사라지면 원복(중국어-only 필드 보존).
+  if (HAS_CJK.test(out) && out.includes("\n") && HANGUL_G.test(out)) {
+    const kept = out.split("\n").filter((line) => {
+      const cjk = (line.match(CJK_G) || []).length;
+      const kr = (line.match(HANGUL_G) || []).length;
+      return !(cjk >= 3 && cjk > kr); // 중국어-우세(한글보다 많고 CJK 3+) 줄 = 원문 잔재 → 제거
+    }).join("\n");
+    if ((kept.match(HANGUL_G) || []).length >= 3) out = kept; // 한글이 남을 때만 채택
+  }
   return out;
 }
 
