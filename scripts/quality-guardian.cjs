@@ -441,6 +441,28 @@ function main() {
       }
     }
   }
+  // regs=0 JP 別表1 garble 고아 *삭제* — 別表1 파서가 다단/각주 분리에 실패한 과거 run 들이 누적시킨
+  //   분절본(농도셀 "○"·소수, 각주문 "…として合計。"·"…に換算して"·"（コードNN）" 이 이름에 접합).
+  //   정상 INCI/일본어 성분명엔 이 마커가 *절대* 없다. regs=0(규제 0=정보 0) + 일본어문자 게이트라
+  //   라틴 색소/apparatus 고아(별도 격리정책)·규제 보유행은 안 걸린다. 파서 수정 후 *깨끗한 트윈*
+  //   (예 "ハッカ油"·"塩化ラウリルピリジニウム"·"酢酸レチノール")이 규제를 들고 별도 존재(전수 56/56 확인)
+  //   → garble 은 죽은 중복. 일반 격리는 '숨김'에 그쳐 일부(과거 비격리분)는 검색에 garbage 로 노출되고
+  //   raw ingredients.json·sweep 에 잔재가 남으므로, 이 클래스만 결정론 *삭제*로 잔여 0(전자동 self-heal).
+  const JP_GARBLE_ORPHAN_RE = /[○。]|として|に換算|（コード|\d+\.\d+\d+\.\d/;
+  const isJpScript = (s) => /[ぁ-んァ-ヶ一-龠ー]/.test(s || "");
+  let jpGarbleDeleted = 0;
+  const deletedIds = new Set();
+  ingObj.rows = ingObj.rows.filter((i) => {
+    const nm = i.inci_name || i.japanese_name || "";
+    if (!regBearingIds.has(i.id) && isJpScript(nm) && JP_GARBLE_ORPHAN_RE.test(nm)) { jpGarbleDeleted++; deletedIds.add(i.id); return false; }
+    return true;
+  });
+  if (jpGarbleDeleted) {
+    ingChanged = true;
+    // 삭제된 id 가 격리목록(corrupt→quarantine-names.json)에 있으면 함께 제거 — dangling 참조 방지.
+    for (let k = corrupt.length - 1; k >= 0; k--) if (deletedIds.has(corrupt[k].id)) corrupt.splice(k, 1);
+  }
+
   if (ingChanged) fs.writeFileSync(path.join(DATA, "ingredients.json"), JSON.stringify(ingObj));
 
   // self-heal 후 *잔존 가시 오염* 카운트 — 가디언 로직이 못 잡은 새 오염 패턴 조기경보용(0이어야 정상).
@@ -525,6 +547,7 @@ function main() {
   console.log(`  각주마커 안전 collapse(X(1)→X): ${footCollapsed}`);
   console.log(`  임베디드 조건문 collapse(X 0.5%…→X): ${embedCollapsed}`);
   console.log(`  JP 別表 농도값 bleed collapse(X ○ 0.10→X): ${jpValCollapsed}`);
+  console.log(`  JP 別表1 garble 고아 삭제(regs=0 분절 죽은중복, 깨끗한 트윈 존재): ${jpGarbleDeleted}`);
   console.log(`  격리(복구 불가) 성분명: ${corrupt.length} (그중 규제apparatus 고아: ${apparatusOrphans} · 색소표 고아: ${colorantGlueOrphans})`);
   console.log(`  🩺 self-heal 후 잔존 가시오염(0이어야 정상): 오염명 ${residualCorrupt} · 공백 ${residualWhitespace}`);
   console.log(`  국가 행수 급감(회귀): ${regressions.length ? regressions.join(", ") : "없음"}`);

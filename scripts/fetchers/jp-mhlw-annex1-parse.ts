@@ -191,6 +191,51 @@ function parseAnnex1(text: string): AnnexEntry[] {
       nameBuf = [];
       continue;
     }
+    // case D: "<name fragment> CODE" (값이 다음 줄로 밀린 양식 — 긴 각주로 PDF 가 줄바꿈).
+    // 위 case A 는 같은 줄 값을 요구해 못 잡고, 결과적으로 "name CODE" 가 nameBuf 로 떨어져
+    // 다음 성분과 병합(garble)되던 핵심 결함. nameCodeM 매칭 시 *항상* 발행(다음 값 줄을 읽고,
+    // 없으면[페이지 경계 등] 빈 셀)해 "name CODE" 가 절대 bleed 되지 않게 한다. (실측 #JP별표1 garble)
+    const nameCodeM = raw.match(/^(.+?)\s+(1|31|41|42|72|73)\s*$/);
+    if (nameCodeM && /[ぁ-んァ-ヶ一-龠ー]/.test(nameCodeM[1]) && !/。/.test(raw)) {
+      let vi = i, valuesLine = "";
+      while (++vi < lines.length) {
+        const next = lines[vi].trim();
+        if (!next) continue;
+        if (isPageHeaderLine(next)) continue;
+        valuesLine = next;
+        break;
+      }
+      const pc = parseValueCells(valuesLine);
+      const hasVals = pc.cells.length > 0 && /^[○\d]/.test(valuesLine);
+      nameBuf.push(nameCodeM[1]);
+      const fullName = nameBuf.join("").replace(/\s+/g, "");
+      if (fullName.length >= 2) {
+        out.push({ japanese_name: fullName, code: nameCodeM[2], cells: hasVals ? pc.cells : [], max_concentration: hasVals ? pc.max : null, allowed_categories: hasVals ? pc.allowed : 0 });
+      }
+      nameBuf = [];
+      i = hasVals ? vi : i;
+      continue;
+    }
+    // codeless 행: "<name> ○ ○ ○ …"(코드 없이 ○ 셀만 = 전 카테고리 허용, 예 香料) → listed 발행.
+    // 코드를 요구하던 기존 파서가 이런 행을 nameBuf 로 흘려 다음 성분명과 병합시키던 결함 보정.
+    const codelessM = raw.match(/^(.+?[ぁ-んァ-ヶ一-龠ー].*?)\s+(○(?:\s+○){3,})\s*$/);
+    if (codelessM) {
+      const fullName = (nameBuf.join("") + codelessM[1]).replace(/\s+/g, "");
+      const pc = parseValueCells(codelessM[2]);
+      if (fullName.length >= 2 && pc.cells.length > 0) {
+        out.push({ japanese_name: fullName, code: "", cells: pc.cells, max_concentration: pc.max, allowed_categories: pc.allowed });
+      }
+      nameBuf = [];
+      continue;
+    }
+    // 떠도는 값 단편 라인(이름 문자 0, 셀 토큰 ○·소수·콤마 천단위·IU 단위만) → skip.
+    // 다단·크로스페이지로 분리된 2차 값 행/IU 행이 nameBuf 에 누적돼 이름 앞에 "4.04.0…"·"IUIU…"
+    // 로 새던 것 차단. 정상 성분명은 항상 일본어/라틴 문자를 포함하므로 무영향.
+    if (/^[○\d.,\sIUＩＵ]+$/.test(raw) && /[○\dIＩ]/.test(raw)) continue;
+    // 각주(집계 주석) 종료 라인 — 일본어 성분명엔 전각 마침표 "。" 가 없다. "。" 포함 라인은
+    // 각주("…として合計。"·"…に換算して。" 등)이므로 skip + nameBuf 비움(누적 각주 단편 폐기).
+    // 각주가 값 줄에 붙은 경우(parseValueCells 가 셀만 추출)와 별도 줄로 이어지는 경우 모두 차단.
+    if (/。/.test(raw)) { nameBuf = []; continue; }
     // 그 외 → ingredient name 누적
     nameBuf.push(raw);
   }

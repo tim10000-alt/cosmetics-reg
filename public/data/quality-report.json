@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-16T17:24:23.185Z",
-  "totalRegs": 94760,
+  "generated_at": "2026-06-16T20:44:50.378Z",
+  "totalRegs": 94854,
   "coverage": {
     "AR": 4832,
     "BO": 2181,
@@ -11,7 +11,7 @@
     "EC": 2181,
     "EU": 6776,
     "ID": 5881,
-    "JP": 3090,
+    "JP": 3177,
     "KR": 4134,
     "MY": 5881,
     "PE": 2181,
@@ -32,7 +32,7 @@
     "EC": 2181,
     "EU": 2082,
     "ID": 1815,
-    "JP": 2755,
+    "JP": 2847,
     "KR": 0,
     "MY": 1815,
     "PE": 2181,
@@ -43,7 +43,7 @@
     "US": 114,
     "VN": 1815
   },
-  "restrictedNoLimit": 3837,
+  "restrictedNoLimit": 3834,
   "statusConflicts": 462,
   "quarantinePending": 3,
   "casContaminationSuspects": 223,
