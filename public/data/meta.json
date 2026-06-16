@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-06-16T12:24:05.618Z",
+  "generated_at": "2026-06-16T14:42:20.928Z",
   "counts": {
     "countries": 19,
-    "ingredients": 35197,
-    "regulations": 94697,
+    "ingredients": 35199,
+    "regulations": 94702,
     "quarantine_pending": 3,
     "regulation_sources": 19,
-    "detected_changes_pending": 224
+    "detected_changes_pending": 230
   }
 }
