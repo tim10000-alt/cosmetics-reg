@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-16T16:33:00.331Z",
-  "totalRegs": 94762,
+  "generated_at": "2026-06-16T16:55:53.103Z",
+  "totalRegs": 94760,
   "coverage": {
     "AR": 4832,
     "BO": 2181,
@@ -12,7 +12,7 @@
     "EU": 6776,
     "ID": 5881,
     "JP": 3091,
-    "KR": 4135,
+    "KR": 4134,
     "MY": 5881,
     "PE": 2181,
     "PH": 5881,
@@ -49,7 +49,7 @@
   "casContaminationSuspects": 223,
   "staleCount": 0,
   "staleSources": [],
-  "limitAnomalyCount": 1,
+  "limitAnomalyCount": 0,
   "postHealCorrupt": 0,
   "postHealWhitespace": 0,
   "checked_at_note": "matches regulations-query primary-row logic"
