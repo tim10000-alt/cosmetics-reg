@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import RegisterSW from "./register-sw";
+import InstallButton from "./install-button";
 import { BASE_PATH } from "@/lib/base-path";
 
 const geistSans = Geist({
@@ -63,6 +64,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <RegisterSW />
+        <InstallButton />
         {children}
       </body>
     </html>
