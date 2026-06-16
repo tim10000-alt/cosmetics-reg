@@ -124,12 +124,19 @@ function clean(out: string): string {
   if (s.startsWith('"""') && s.endsWith('"""')) s = s.slice(3, -3).trim();
   return s;
 }
-// 번역 결과 수용 기준 — 외국어가 거의 안 남아야(원문 대비). 미달이면 캐시 안 함(다음 run 재시도).
+// 번역 결과 수용 기준 — 미달이면 캐시 안 함(다음 run 재시도·품질 게이트).
+const numsOf = (s: string): string[] => s.match(/\d+(?:[.,]\d+)?/g) ?? [];
 function accept(src: string, ko: string): boolean {
   if (!ko || !ko.trim()) return false;
+  // ① 외국어가 거의 안 남아야(원문 대비).
   const left = (ko.match(FOREIGN_G) || []).length;
   const srcF = (src.match(FOREIGN_G) || []).length;
-  return left <= Math.max(2, srcF * 0.15);
+  if (left > Math.max(2, srcF * 0.15)) return false;
+  // ② 한도/숫자 보존(치명) — 원문의 *모든 고유 숫자값*이 번역에 존재해야 함. 한도(%)가 사라지거나
+  //    바뀐 번역은 거부(규제 도구 안전 게이트). 중복(이중표기) 축약은 허용(고유값 기준).
+  const koNums = new Set(numsOf(ko));
+  for (const n of new Set(numsOf(src))) if (!koNums.has(n)) return false;
+  return true;
 }
 
 function collectCandidates(): string[] {
