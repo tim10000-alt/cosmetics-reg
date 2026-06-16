@@ -267,6 +267,15 @@ jobs:
         run: node scripts/detect-status-conflicts.cjs --write
         continue-on-error: true
 
+      # 3-a-9) 전수 차분 모니터("다른 방법"·결정론·無Gemini) — 전 성분×국가 헤드라인(status,max) 전수
+      # 스냅샷을 직전 baseline 과 비교해 status-flip(banned↔허용) 로그 후 baseline 갱신. 자기일관성
+      # 감사가 못 잡는 "변경의 부작용·데이터 진실"을 차분으로 표면화. 일일 재인입이 대량 flip 시 경보.
+      - name: Headline differential snapshot (flips log + baseline)
+        run: |
+          node scripts/headline-snapshot.cjs --diff --flips || true
+          node scripts/headline-snapshot.cjs --write
+        continue-on-error: true
+
       # 3-b) 데이터 품질 자동 점검 — 지표 계산 + 직전(quality-report.json) 대비 회귀 감지.
       # quality-report.json 갱신은 아래 commit 에 포함되어 추이가 장기 추적됨.
       - name: Data quality check
