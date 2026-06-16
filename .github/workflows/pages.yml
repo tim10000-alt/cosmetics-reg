@@ -1,0 +1,49 @@
+name: Deploy to GitHub Pages
+
+# main 에 push 될 때마다(데이터 일일 갱신 커밋 포함) 정적 사이트를 빌드해 Pages 에 배포.
+# 폰에서 https://tim10000-alt.github.io/cosmetics-reg/ 로 접속 → PWA 설치 가능.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Pages 배포에 필요한 권한.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 동시 배포 1개로 제한(앞선 실행 진행 중이면 취소하지 않고 큐).
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - name: Build static export (with base path)
+        env:
+          NEXT_PUBLIC_BASE_PATH: /cosmetics-reg
+        run: npm run build
+      # GitHub Pages 의 Jekyll 이 _next 같은 underscore 디렉터리를 무시하지 않도록.
+      - run: touch out/.nojekyll
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

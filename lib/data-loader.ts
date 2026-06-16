@@ -114,8 +114,11 @@ export interface Dataset {
 
 let cached: Promise<Dataset> | null = null;
 
+import { asset } from "./base-path";
+
 async function fetchJson<T>(path: string): Promise<T> {
-  const res = await fetch(path);
+  // 하위경로 배포(GitHub Pages) 대응: 절대경로에 base path prefix. 로컬은 무변경.
+  const res = await fetch(asset(path));
   if (!res.ok) throw new Error(`${path}: HTTP ${res.status}`);
   return res.json() as Promise<T>;
 }

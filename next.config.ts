@@ -6,8 +6,13 @@ import type { NextConfig } from "next";
 //
 // 보안 헤더는 정적 export에서 next.config.headers()가 무시되므로 호스팅 측
 // (Netlify의 [[headers]] / public/_headers)에서 적용한다.
+// GitHub Pages 프로젝트 사이트(/cosmetics-reg 하위경로) 배포 시 빌드 env 로 주입.
+// 미설정(로컬 npm start·루트 호스팅)이면 basePath 없음 → 기존 루트 동작 그대로.
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const nextConfig: NextConfig = {
   output: "export",
+  ...(basePath ? { basePath, assetPrefix: basePath } : {}),
   images: {
     unoptimized: true,
   },

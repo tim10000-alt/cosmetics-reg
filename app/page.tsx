@@ -4,6 +4,7 @@ import { Suspense, useEffect, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { lookupRegulation, type LookupResponse, type CountryLookupResult } from "@/lib/regulations-query";
 import { fetchSuggestions, type Suggestion } from "@/lib/autocomplete-query";
+import { asset } from "@/lib/base-path";
 
 export default function Home() {
   return (
@@ -26,7 +27,7 @@ function HomeInner() {
   const [counts, setCounts] = useState<{ ingredients: number; regulations: number } | null>(null);
   useEffect(() => {
     let alive = true;
-    fetch("/data/meta.json")
+    fetch(asset("/data/meta.json"))
       .then((r) => r.json())
       .then((m) => { if (alive && m?.counts) setCounts({ ingredients: m.counts.ingredients, regulations: m.counts.regulations }); })
       .catch(() => {});
