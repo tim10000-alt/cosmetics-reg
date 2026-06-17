@@ -191,11 +191,13 @@ function buildCanonical(
   //   아닌 *로마자 일본어*가 제목 노출(육안 발견). koreanize 는 CJK 만 잡아 로마자는 통과 → 별도 처리.
   //   chinese_name 의 라틴 학명("…（CAMELLIA SINENSIS）提取物")을 INCI 앵커로(보편 식별자).
   const romajiJpDisplay = (m: IngredientMatch): string | null => {
-    if (!/EKISU/i.test(m.inci_name) || CJK_NAME.test(m.inci_name)) return null;
+    if (CJK_NAME.test(m.inci_name)) return null;
+    const ek = /EKISU/i.test(m.inci_name), yu = /(^|[ -])YU($|[ -])/i.test(m.inci_name);  // エキス=추출물, 油=오일
+    if (!ek && !yu) return null;
     const bino = (m.chinese_name || "").match(/([A-Z]{2,}(?:\s+[A-Z][A-Za-z.\-]+)+)/);
     if (!bino) return null;
     const tc = bino[1].toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase()).trim();
-    return tc.length >= 4 ? tc + " 추출물" : null;
+    return tc.length >= 4 ? tc + (ek ? " 추출물" : " 오일") : null;
   };
   const koDisplay = (m: IngredientMatch): IngredientMatch => {
     const rj = romajiJpDisplay(m);
