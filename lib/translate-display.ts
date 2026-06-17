@@ -7,6 +7,11 @@
 // 새로운 원문이 생기면 여기에 한 줄 추가하면 된다(검출: 비ASCII·비한글 잔존 감사).
 
 const MAP: Record<string, string> = {
+  // ── 영어전용 조건문(전수 감사로 발견 — 한글0·영어만) 한글화 ──
+  "For case review, the applicant should submit relevant documents or information, including the qualifications of the exosome donor, preparation processes and inspection reports, stability tests, safety tests, as well as absorption, distribution, metabolism, and excretion tests.":
+    "심사를 위해 신청자는 엑소좀 공여자의 자격, 제조 공정 및 검사 보고서, 안정성 시험, 안전성 시험, 그리고 흡수·분포·대사·배설 시험을 포함한 관련 서류 또는 정보를 제출해야 한다.",
+  "The use of chloroform in cosmetic products is prohibited because it causes cancer in animals and is likely to be harmful to human health, too. The regulation makes an exception for residual amounts from its use as a processing solvent during manufacture, or as a byproduct from the synthesis of an ingredient":
+    "클로로폼은 동물에서 암을 유발하고 인체 건강에도 유해할 가능성이 있어 화장품에 사용이 금지된다. 다만 제조 중 가공 용제로 사용되어 잔류하는 양, 또는 성분 합성 과정의 부산물로서 존재하는 양은 예외로 한다.",
   // ── 대만 TFDA 출처 표 이름 (化粧品禁限用成分管理規定 = 화장품 사용금지·제한 성분 관리규정) ──
   "TFDA 化粧品禁限用成分管理規定 — 化粧品禁止使用成分表":
     "TFDA 화장품 사용금지·제한 성분 관리규정 — 화장품 사용금지 성분표",

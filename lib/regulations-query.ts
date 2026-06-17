@@ -186,7 +186,9 @@ function buildCanonical(
     if (!CJK_NAME.test(m.inci_name)) return m;
     const kn = koreanizeName(m.inci_name);
     if (kn.name === m.inci_name) return m;
-    const ja = m.japanese_name || (kn.isKorean ? m.inci_name : m.japanese_name);
+    const HAS_KANA = /[ぁ-ヾ]/;
+    // 원문 보존은 *가나가 든 진짜 일본어명*에만(중문/라틴 한약재를 "일본어"로 오라벨 방지).
+    const ja = m.japanese_name || (HAS_KANA.test(m.inci_name) ? m.inci_name : m.japanese_name);
     return { ...m, inci_display: kn.name, japanese_name: ja };
   };
   if (members.length <= 1) {
