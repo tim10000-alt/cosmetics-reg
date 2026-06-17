@@ -167,6 +167,34 @@ function cleanDisplayName(raw: string | null | undefined): string {
   return s || r;
 }
 
+// CAS 표시 위생 — 다중 CAS 접합 잔재 정리(표시 시점만, 저장값·검색인덱스 불변·결정론).
+//  · '^'(개행/제어문자가 ^로 치환된 접합 "64742-48-9^90622-57-4") → 쉼표 구분(유효 CAS 손실 방지)
+//  · "9[1]37244"(EU 다구성성분 인덱스 마커 글루드) → "9[1], 37244"(마커 [n] 은 보존 = 이름의 [1][2] 상관 유지)
+//  · 중복 토큰 제거(같은 CAS 가 ^/쉼표 양쪽에 중복되던 케이스). 끝 쉼표/이중공백 정리.
+// '?'(출처 불확실 표기)는 보존 — 누출이 아니라 출처 신뢰도 신호(strip 시 거짓 확신 위험).
+function cleanCas(raw: string | null | undefined): string | null {
+  if (raw == null) return raw as null;
+  const r = String(raw);
+  if (!r) return r;
+  let s = r
+    .replace(/[\r\n\t]+/g, " ")
+    .replace(/\s*\^\s*/g, ", ")        // ^ 접합 → 쉼표
+    .replace(/\](?=\d)/g, "], ")       // "]" 뒤 숫자 글루드 → 분리(마커 보존)
+    .replace(/\s+,/g, ",")
+    .replace(/,(?=\S)/g, ", ")
+    .replace(/\s{2,}/g, " ")
+    .trim()
+    .replace(/[,\s]+$/, "");
+  const seen = new Set<string>();
+  const out: string[] = [];
+  for (const p of s.split(/\s*,\s*/)) {
+    const t = p.trim(); if (!t) continue;
+    const k = t.toLowerCase(); if (seen.has(k)) continue;
+    seen.add(k); out.push(t);
+  }
+  return out.join(", ");
+}
+
 // 형제 그룹(이미 CAS/INCI 로 병합된 동일물질)의 *대표 표시명*을 한국 등록 표준명 우선으로 선택.
 // 같은 물질이 영문 동의어(예: "Methylene Chloride")로 resolve 돼도 한국 등록명("Dichloromethane /
 // 다이클로로메탄")을 대표로 보여주기 위함. 데이터를 새로 합치는 게 아니라 *이미 묶인 것 중 어느 이름을
@@ -223,7 +251,7 @@ function buildCanonical(
     const ko = langNm(resolved.korean_name), zh = langNm(resolved.chinese_name), ja = langNm(resolved.japanese_name);
     const syn = (resolved.synonyms || []).filter((x) => { const t = (x || "").trim(); return t.length > 1 && !/^[\d.\-()[\]{}]+$/.test(t) && !isLeakArtifact(x); });  // 단일레코드도 무의미 단편(단일문자·순숫자) 제거
     // cas_no 제어문자(\r\n\t) 위생 — 저장값 오염(예 "328-39-2(DL-)\r,61-90-5(L-)")이 표시에 새지 않게.
-    const casClean = resolved.cas_no ? resolved.cas_no.replace(/[\r\n\t]+/g, " ").replace(/\s+,/g, ",").replace(/\s{2,}/g, " ").trim() : resolved.cas_no;
+    const casClean = cleanCas(resolved.cas_no);
     const base = cleaned === resolved.inci_name && ko === resolved.korean_name && zh === resolved.chinese_name && ja === resolved.japanese_name && syn.length === (resolved.synonyms || []).length && casClean === resolved.cas_no
       ? resolved : { ...resolved, inci_name: cleaned, korean_name: ko, chinese_name: zh, japanese_name: ja, synonyms: syn, cas_no: casClean };
     return koDisplay(base);
@@ -250,8 +278,8 @@ function buildCanonical(
   };
   // CAS union (유효 형식만, 중복 제거)
   const casSet: string[] = [];
-  for (const m of members) for (const c of String(m.cas_no || "").split(/[\s,;]+/)) {
-    const t = c.trim(); if (/^\d{2,7}-\d{2}-\d$/.test(t) && !casSet.includes(t)) casSet.push(t);
+  for (const m of members) for (const c of String(cleanCas(m.cas_no) || "").split(/[\s,;]+/)) {
+    const t = c.trim().replace(/\[\d+\]$/, ""); if (/^\d{2,7}-\d{2}-\d$/.test(t) && !casSet.includes(t)) casSet.push(t);  // ^/[n] 접합 해소 후 유효 CAS 회수
   }
   // synonyms union + 형제들의 다른 표기(inci)도 동의어로 노출(검색·"왜 이게 떴나" 투명성)
   const synSet: string[] = [];
