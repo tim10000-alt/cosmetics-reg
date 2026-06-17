@@ -30,6 +30,12 @@ function isCorruptName(name) {
   // ingredient 로 materialize 된 것(의미 없는 이름인데 검색·UI 노출 + 스푸리어스 규제 매달림). 정확
   // 매칭만(정상명 오탐 0). bare "-" 류는 실제 한글명 동반 가능(발효추출물)이라 제외 — 분별력.
   if (/^\s*(?:entry\s+(?:was\s+)?deleted|deleted(?:\s+entry)?|\(\s*deleted\s*\)|n\s*\/\s*a|not\s+applicable|reserved|placeholder|no\s+longer\s+(?:used|listed))\s*$/i.test(name)) return true;
+  // 규제표(Health Canada Hotlist 등) 제품군 sub-row 가 ingredient 로 materialize 된 잔재
+  // ("b) Other cosmetics"·"a) Fine fragrances"·"c) 0.20% calculated as …"). ca-hotlist 파서가 rowspan
+  // 연속행을 부모 conditions 에 병합하도록 수정(commit fc8448e) → 신규 생성 0. 단 upsert 로 남은 *고아*
+  // 레코드(규제 0, 조건은 이미 부모 CA 에 병합완료=데이터손실 0)를 결정론 격리. 정상 화학명은 단일소문자
+  // +")"+공백으로 시작하지 않음(전 35K 성분 전수 오탐 0; "calculated as" mid-name 정식명은 비매칭).
+  if (/^[a-z]\)\s/.test(name)) return true;
   if (/&#\d|&#x|&amp;|&lt;|&gt;/.test(name)) return true;
   if (/reb\s?m\s?u\s?n|laci\s?m\s?eh\s?c|recnerefe|noitacifitnedi|lanruoj/i.test(name)) return true;
   // 단일토큰(영문자/숫자/점) 8개+ = 표 헤더/citation 이 공백분해돼 박힌 것(RTL 역순 or 정방향).
