@@ -199,7 +199,7 @@ function buildCanonical(
   if (members.length <= 1) {
     // 형제 없는 단일 레코드도 표시명 위생 + 누출 동의어 제거(standalone 코럽트 헤드라인 대응).
     const cleaned = cleanDisplayName(resolved.inci_name);
-    const ko = cleanNm(resolved.korean_name), zh = langNm(resolved.chinese_name), ja = langNm(resolved.japanese_name);
+    const ko = langNm(resolved.korean_name), zh = langNm(resolved.chinese_name), ja = langNm(resolved.japanese_name);
     const syn = (resolved.synonyms || []).filter((x) => !isLeakArtifact(x));
     // cas_no 제어문자(\r\n\t) 위생 — 저장값 오염(예 "328-39-2(DL-)\r,61-90-5(L-)")이 표시에 새지 않게.
     const casClean = resolved.cas_no ? resolved.cas_no.replace(/[\r\n\t]+/g, " ").replace(/\s+,/g, ",").replace(/\s{2,}/g, " ").trim() : resolved.cas_no;
@@ -222,7 +222,7 @@ function buildCanonical(
     return null;
   };
   // 중/일명: 형제 중 코드(CI번호 등)가 아닌 *진짜 이름* 우선. 전부 코드뿐이면 null.
-  const firstRealName = (f: "chinese_name" | "japanese_name"): string | null => {
+  const firstRealName = (f: "chinese_name" | "japanese_name" | "korean_name"): string | null => {
     const cands = [rep[f], ...members.map((m) => m[f])].filter(Boolean) as string[];
     const real = cands.find((v) => !isBareCode(cleanDisplayName(v)));
     return real ?? null;
@@ -246,7 +246,7 @@ function buildCanonical(
   return koDisplay({
     id: rep.id,
     inci_name: repInci,
-    korean_name: cleanNm(firstOf("korean_name")),
+    korean_name: langNm(firstRealName("korean_name")),
     chinese_name: langNm(firstRealName("chinese_name")),
     japanese_name: langNm(firstRealName("japanese_name")),
     cas_no: casSet.length ? casSet.join(", ") : null,
