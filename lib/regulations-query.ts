@@ -250,6 +250,8 @@ function buildCanonical(
   const addSyn = (s: string | null | undefined) => {
     let v = (s || "").trim(); if (!v) return;
     if (CJK_NAME.test(v)) v = koreanizeName(v).name;  // 일/중 형제 표기 동의어 칩도 한글화(다른언어 불가)
+    // 무의미 단편 제거 — 단일문자("잎"·"꽃"·"N") 또는 순숫자/기호("0"). 긴 이름에서 잘린 잔재(육안 발견).
+    if (v.length <= 1 || /^[\d.\-()[\]{}]+$/.test(v)) return;
     if (v.toLowerCase() === repInciLc || v.toLowerCase() === repKorLc) return;
     if (isLeakArtifact(v)) return;  // 파서 누출(개행·CAS/EC번호·한도% glue)을 동의어 칩으로 노출 금지
     if (!synSet.some((x) => x.toLowerCase() === v.toLowerCase())) synSet.push(v);
