@@ -85,13 +85,21 @@ async function parseGosi(buf: Buffer): Promise<{ cas: string; name: string; stat
   // 기반 분류는 제5조의 "별표 2" 참조를 오인해 금지물질을 restricted 로 오분류(=false-allowed 방향, 위험)
   // 했다(dry-test 발견). 모호하면 banned(과제한=안전방향, under-warn 0). 한도값이 별도 컬럼이라도
   // 같은 행 셀에 들어오므로 hasPct 로 포착.
+  // 성분명 셀 선택: 별표 2(restricted) 행은 *제품유형/사용한도/비고* 셀(조건문)이 성분명보다 길어,
+  // 단순 "최장 한글 셀"이 조건문을 성분명으로 오추출했다(실측: IPBC→"입술에 사용되는…사용금지", 자일렌
+  // →"자일렌(다만,…)"). → 조건문 마커가 없는 한글 셀을 우선(그 중 최장), 그것도 없으면 최단 한글 셀.
+  // 추가로 "(다만…"·" 다만," 이하 조건절은 성분명에서 절단.
+  const COND = /제품|사용\s*금지|사용\s*한도|다만|제외|이하|경우|농도|함량|에어로졸|영유아|스프레이|로션|크림|씻어|두발|체취|구강|치약/;
   const out: { cas: string; name: string; status: string }[] = [];
   for (const tr of xml.matchAll(/<hp:tr\b[\s\S]*?<\/hp:tr>/g)) {
     const cells = [...tr[0].matchAll(/<hp:tc\b[\s\S]*?<\/hp:tc>/g)].map((m) => cellText(m[0]));
     const casCell = cells.find((c) => CAS_RE.test(c.trim()));
     if (!casCell) continue;
     const cas = casCell.trim();
-    const name = (cells.filter((c) => c !== casCell && /[가-힣]/.test(c)).sort((a, b) => b.length - a.length)[0] || "").slice(0, 80);
+    const ko = cells.filter((c) => c !== casCell && /[가-힣]/.test(c));
+    const clean = ko.filter((c) => !COND.test(c));
+    let name = (clean.sort((a, b) => b.length - a.length)[0] || ko.sort((a, b) => a.length - b.length)[0] || "")
+      .replace(/\s*[(（]\s*다만[\s\S]*$/, "").replace(/\s*다만[,，][\s\S]*$/, "").trim().slice(0, 80);
     if (!name || name.length < 2) continue;  // 이름 없는 행 skip(정확성)
     const hasPct = cells.some((c) => /\d+(?:\.\d+)?\s*(?:%|퍼센트|ppm)/.test(c));
     out.push({ cas, name, status: hasPct ? "restricted" : "banned" });
@@ -152,10 +160,20 @@ async function main() {
   if (newRegs.length) {
     const have = new Set(ingredients.map((i) => i.id));
     const addIng = newIng.filter((i) => !have.has(i.id));
-    if (addIng.length) await writeRows("ingredients", [...ingredients, ...addIng]);
+    // krgosi-* 는 이 fetcher 소유 → *기존* krgosi 성분의 이름도 매 run 재도출(멱등 갱신). 파서 개선(조건문
+    // 오추출 수정 등)이 이미 생성된 성분에도 반영되게. 비-krgosi(기존 영문 INCI)는 절대 불변(보존).
+    const freshById = new Map(newIng.map((i) => [i.id, i]));
+    let renamed = 0;
+    const mergedIng = ingredients.map((i) => {
+      if (!String(i.id).startsWith("krgosi-")) return i;
+      const f = freshById.get(i.id);
+      if (f && (f.inci_name !== i.inci_name || f.korean_name !== i.korean_name)) { renamed++; return { ...i, inci_name: f.inci_name, korean_name: f.korean_name }; }
+      return i;
+    });
+    if (addIng.length || renamed) await writeRows("ingredients", [...mergedIng, ...addIng]);
     const other = existingRegs.filter((r) => r.source_document !== SOURCE_DOC);  // 이 소스 기존 행 교체(멱등) + 타 소스 보존
     await writeRows("regulations", [...other, ...newRegs]);
-    console.log(`✓ KCIA 고시: 성분 +${addIng.length}, KR 규제 ${newRegs.length}(생성 ${created}+보강 ${attached}) 멱등`);
+    console.log(`✓ KCIA 고시: 성분 +${addIng.length}(기존 krgosi 이름 갱신 ${renamed}), KR 규제 ${newRegs.length}(생성 ${created}+보강 ${attached}) 멱등`);
   } else {
     console.log("  신규/보강 없음 — 멱등");
   }
