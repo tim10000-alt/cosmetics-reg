@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-17T22:54:52.338Z",
-  "totalRegs": 95033,
+  "generated_at": "2026-06-17T23:38:28.936Z",
+  "totalRegs": 95111,
   "coverage": {
     "AR": 4832,
     "BO": 2226,
@@ -11,8 +11,8 @@
     "EC": 2226,
     "EU": 6813,
     "ID": 5881,
-    "JP": 3173,
-    "KR": 4134,
+    "JP": 3172,
+    "KR": 4212,
     "MY": 5881,
     "PE": 2226,
     "PH": 5881,
@@ -32,7 +32,7 @@
     "EC": 2226,
     "EU": 2128,
     "ID": 1815,
-    "JP": 2843,
+    "JP": 2842,
     "KR": 0,
     "MY": 1815,
     "PE": 2226,
@@ -43,7 +43,7 @@
     "US": 114,
     "VN": 1815
   },
-  "restrictedNoLimit": 3804,
+  "restrictedNoLimit": 3808,
   "statusConflicts": 470,
   "quarantinePending": 3,
   "casContaminationSuspects": 223,
@@ -52,15 +52,14 @@
   "limitAnomalyCount": 0,
   "postHealCorrupt": 0,
   "postHealWhitespace": 0,
-  "sourceFailCount": 7,
+  "sourceFailCount": 6,
   "sourceFailList": [
     "CN:cn_nmpa",
     "US:us_fda_cosmetics_announcements",
     "VN:vn_vietnam_dav",
     "ID:id_indonesia_bpom_cosmetic",
-    "BR:br_anvisa_cosm_ticos",
     "CA:ca_health_canada_cosmetic_ingredient_hotlis",
-    "KR:kr_mfds"
+    "PH:ph_philippines_fda_cosmetic"
   ],
   "checked_at_note": "matches regulations-query primary-row logic"
 }
