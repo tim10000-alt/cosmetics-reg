@@ -487,6 +487,9 @@ const EN_PHRASE: [string, string][] = [
   ["also known as", "또한 다음으로 알려진:"], ["mad cow disease", "광우병"],
   ["used by children under the age of", "다음 연령 미만 어린이 사용:"],
   ["coated with the", "다음으로 코팅:"], ["coated with", "다음으로 코팅:"],
+  // JP MFDS 영어 주석(한국어 라벨 뒤 중복 gloss) 제거 + "as total" 한글화.
+  ["(types or intended purposes of cosmetics)", ""], ["(Maximum amount of ingredient per 100 g)", ""],
+  ["(Maximum amount of ingredient per 100g)", ""], [" as total", " 합계량으로"], ["as total", "합계량으로"],
 ];
 const EN_PHRASE_SORTED = [...EN_PHRASE].sort((a, b) => b[0].length - a[0].length);
 const HAS_LATIN = /[A-Za-z]{3,}/;
@@ -503,6 +506,10 @@ function enPhraseTranslate(s: string): string {
   if (!HAS_LATIN.test(s)) return s;
   let out = s;
   for (const [re, ko] of EN_PHRASE_RE) out = out.replace(re, ko);
+  // JP MFDS 중복 표기 dedup: "1.0 합계량으로(합계량으로 1.0 g)" → "1.0 (합계량으로 1.0 g)".
+  out = out.replace(/\(합계량으로[\d.]+\)(?=\s*\(합계량으로)/g, "");
+  out = out.replace(/합계량으로\s*(?=\(합계량으로)/g, "");
+  out = out.replace(/\s{2,}/g, " ");
   return out;
 }
 const HAS_CJK = /[぀-ヿ一-鿿]/;
