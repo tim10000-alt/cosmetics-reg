@@ -1,5 +1,5 @@
 {
-  "total": 432,
+  "total": 433,
   "note": "같은 CAS 분절 카드 간 banned↔허용 충돌(false-banned/allowed 후보). limit-overrides 로 검토 교정.",
   "conflicts": [
     {
@@ -3918,6 +3918,33 @@
     },
     {
       "cc": "KR",
+      "cas": "5989-27-5",
+      "banned": [
+        {
+          "name": "Limonene",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "d-Limonene",
+          "status": "restricted",
+          "prio": 100
+        },
+        {
+          "name": "dl-Limonene",
+          "status": "restricted",
+          "prio": 100
+        },
+        {
+          "name": "d-Limonene (limitations and requirements: Peroxide value less than 20 mmoles/L)",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "KR",
       "cas": "8002-09-3",
       "banned": [
         {
@@ -5810,27 +5837,6 @@
       "allowed": [
         {
           "name": "CI 14700",
-          "status": "listed",
-          "prio": 100
-        }
-      ]
-    },
-    {
-      "cc": "SG",
-      "cas": "19381-50-1",
-      "banned": [
-        {
-          "name": "Trisodium tris[5,6-dihydro-5-(hydroxyimino)-6-oxonaphthalene-2-sulphonate(2-)-N5,O6]ferrate(3-); (Acid Green 1; CI 10020) when used as a substance in hair dye products",
-          "prio": 50
-        },
-        {
-          "name": "Acid Green 1",
-          "prio": 100
-        }
-      ],
-      "allowed": [
-        {
-          "name": "CI 10020",
           "status": "listed",
           "prio": 100
         }
