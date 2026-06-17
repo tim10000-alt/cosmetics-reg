@@ -101,6 +101,13 @@ jobs:
         run: npm run kcia:articles
         continue-on-error: true
 
+      # KR 「화장품 안전기준」 고시 전문(KCIA HWPX) 별표 1(금지)·2(제한). MFDS data.go.kr API(401/quota
+      # 취약)가 누락한 별표1 의약 금지물질 등을 보강(실측 ~74 banned). KCIA 는 식약처 고시 전문을 IP차단
+      # 없이 현행 게시 → 표 셀 단위 결정론 파싱. 추가전용(중복 CAS 생성 0)·멱등.
+      - name: Parse KR 안전기준 고시 (KCIA HWPX 별표)
+        run: npm run kcia:gosi
+        continue-on-error: true
+
       # CN NMPA 안전기술규범 — KCIA 14208 한국어 번역본 Excel(7표) 파싱.
       # 사용금지 + 사용제한 + 준용(positive list 4종) 1733 entries → CN 규제.
       # KCIA 첨부 자동 다운로드 step 직후 실행.

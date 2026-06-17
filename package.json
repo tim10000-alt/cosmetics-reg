@@ -29,6 +29,7 @@
     "eu:parse": "tsx scripts/fetchers/eu-eurlex-parse.ts",
     "andean:fanout": "tsx scripts/fetchers/andean-community.ts",
     "kcia:articles": "tsx scripts/fetchers/kcia-articles.ts",
+    "kcia:gosi": "tsx scripts/fetchers/kcia-gosi-kr.ts",
     "cn:safety": "tsx scripts/fetchers/cn-nmpa-safety.ts",
     "kcia:parse": "tsx scripts/parsers/kcia-attach.ts",
     "asean:acd": "tsx scripts/fetchers/asean-acd.ts",
