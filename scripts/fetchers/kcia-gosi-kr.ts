@@ -11,8 +11,9 @@ import { randomUUID } from "node:crypto";
 // 고시에 있으나 DB 에 없는(CAS 기준) 물질을 **결정론 생성**(id=krgosi-<CAS>, 멱등)하고 KR 규제(별표1=banned,
 // 별표2=restricted)를 단다. 기존 MFDS/KCIA 소스는 보존(추가만, 중복 CAS 는 생성 안 함). 무AI·무 API키.
 
-const POST_URL = "https://kcia.or.kr/home/law/law_01.php?type=view&no=17489";  // 최신 안전기준 개정 게시물
 const BASE = "https://kcia.or.kr/home/law/law_01.php";
+// ⚠ 게시물 번호 하드코딩 금지(EU date-URL 과 동일 stale 함정) — KCIA 에 새 개정 고시가 올라오면 *새
+// 번호*가 되므로, law_01 에서 "안전기준 … 개정" 게시물 중 **최대 no(=최신)** 를 매 run 동적 탐색한다.
 const SOURCE_DOC = "KCIA 게시 식약처 「화장품 안전기준 등에 관한 규정」 고시 전문(별표)";
 
 interface IngredientRow {
@@ -29,20 +30,31 @@ interface RegulationRow {
 
 const CAS_RE = /^\d{1,7}-\d{2}-\d$/;
 
-async function fetchHwpx(): Promise<Buffer | null> {
+// law_01 에서 "안전기준 … 개정" 게시물 중 최대 no(최신 개정) 를 동적 탐색. 하드코딩 0(미래 개정 자동추종).
+function latestGosiPostNo(listHtml: string): number | null {
+  const posts = [...listHtml.matchAll(/no=(\d+)[^>]*>\s*([^<]*안전기준[^<]*개정[^<]*)</gi)].map((m) => +m[1]);
+  return posts.length ? Math.max(...posts) : null;
+}
+
+async function fetchHwpx(): Promise<{ buf: Buffer; postUrl: string } | null> {
   const sess = await fetch(BASE, { headers: { "User-Agent": "Mozilla/5.0" } });
   const cookie = (sess.headers.get("set-cookie") || "").split(";")[0];
-  const v = await (await fetch(POST_URL, { headers: { "User-Agent": "Mozilla/5.0", Cookie: cookie } })).text();
+  const listHtml = await (await fetch(BASE, { headers: { "User-Agent": "Mozilla/5.0", Cookie: cookie } })).text();
+  const no = latestGosiPostNo(listHtml);
+  if (!no) { console.error("✗ 안전기준 개정 게시물 못 찾음"); return null; }
+  const postUrl = `${BASE}?type=view&no=${no}`;
+  console.log(`  최신 안전기준 개정 게시물: no=${no}`);
+  const v = await (await fetch(postUrl, { headers: { "User-Agent": "Mozilla/5.0", Cookie: cookie } })).text();
   const links = [...v.matchAll(/(inc\/down\.php\?[^"'<> ]+)/gi)].map((m) => m[1].replace(/&amp;/g, "&"));
   // 붙임2(전문) = rename 에 전문(%EC%A0%84%EB%AC%B8) 포함, 없으면 마지막 첨부
   const target = links.find((l) => /%EC%A0%84%EB%AC%B8/.test(l)) || links[links.length - 1];
   if (!target) return null;
   const r = await fetch("https://kcia.or.kr/" + target, {
-    headers: { "User-Agent": "Mozilla/5.0", Cookie: cookie, Referer: POST_URL },
+    headers: { "User-Agent": "Mozilla/5.0", Cookie: cookie, Referer: postUrl },
     signal: AbortSignal.timeout(60_000),
   });
   const buf = Buffer.from(await r.arrayBuffer());
-  return buf.subarray(0, 2).toString("hex") === "504b" ? buf : null;
+  return buf.subarray(0, 2).toString("hex") === "504b" ? { buf, postUrl } : null;
 }
 
 function cellText(tc: string): string {
@@ -89,8 +101,9 @@ async function parseGosi(buf: Buffer): Promise<{ cas: string; name: string; stat
 
 async function main() {
   console.log("▶ KCIA 게시 식약처 안전기준 고시(HWPX) 파싱 — 별표 1/2...");
-  const buf = await fetchHwpx();
-  if (!buf) { console.error("✗ 고시 HWPX 못 받음 — 보존(write 생략)"); process.exit(1); }
+  const fetched = await fetchHwpx();
+  if (!fetched) { console.error("✗ 고시 HWPX 못 받음 — 보존(write 생략)"); process.exit(1); }
+  const { buf, postUrl } = fetched;
   const subs = await parseGosi(buf);
   console.log(`  고시 별표 물질(CAS+이름): ${subs.length} (금지 ${subs.filter((s) => s.status === "banned").length} · 제한 ${subs.filter((s) => s.status === "restricted").length})`);
   if (subs.length < 500) { console.error(`✗ ${subs.length}행 — 파싱 이상(양식 변경?) 보존 위해 중단`); process.exit(1); }
@@ -116,7 +129,7 @@ async function main() {
       ingredient_id: id, country_code: "KR", status: s.status,
       max_concentration: null, concentration_unit: "%", product_categories: [],
       conditions: `「화장품 안전기준 등에 관한 규정」 ${s.status === "banned" ? "별표 1 사용할 수 없는 원료" : "별표 2 사용상의 제한이 필요한 원료"} 등재.\nCAS: ${s.cas}`,
-      source_url: POST_URL, source_document: SOURCE_DOC, source_version: `gosi-${now.slice(0, 10)}`,
+      source_url: postUrl, source_document: SOURCE_DOC, source_version: `gosi-${now.slice(0, 10)}`,
       source_priority: 100, last_verified_at: now, confidence_score: 1.0, override_note: null,
     });
   }
