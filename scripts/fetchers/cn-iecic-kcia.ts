@@ -80,6 +80,14 @@ async function parseXlsx(): Promise<IecicEntry[]> {
 async function main() {
   const startedAt = Date.now();
   console.log(`▶ CN IECIC 2025 xlsx 파싱 (${XLSX_PATH})`);
+  // 첨부 xlsx(KCIA 16818)가 다운로드 안 됐으면 *graceful skip* — 이건 CN IECIC 의 *한국어 번역 보조*
+  // 소스다. CN 본체 IECIC(cn-nmpa-iecic, ~8,900행)는 별도로 정상 인입되므로 누락돼도 CN 데이터 보존.
+  // 기존엔 ENOENT 로 throw→exit(1) 해서 매 crawl 에러스팸 + 첨부 미존재(KCIA 게시물 회전)에 취약했다.
+  const fsmod = await import("node:fs");
+  if (!fsmod.existsSync(XLSX_PATH)) {
+    console.warn(`  ⚠ 첨부 xlsx 없음 — CN IECIC 한국어 번역보조 skip(CN 본체는 cn-nmpa-iecic 가 인입). 보존.`);
+    return;
+  }
   const entries = await parseXlsx();
   console.log(`  parsed ${entries.length} entries`);
 
