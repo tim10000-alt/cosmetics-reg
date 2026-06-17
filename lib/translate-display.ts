@@ -523,8 +523,17 @@ const HANGUL_G = /[가-힣]/g;
 function phraseTranslate(s: string): string {
   if (!HAS_CJK.test(s)) return s;
   let out = s;
-  // CN: "국문: [한국어]. 중문: [중국어 원문]" — 중복 원문(중문 tail) 표시 strip.
-  out = out.replace(/\s*중문\s*[:：][\s\S]*$/u, "");
+  // CN: "국문: [한국어] / 중문: [중국어 원문]" — 중복 원문(중문) *줄만* strip. ⚠[\s\S]*$(끝까지)는
+  //   중문 줄 *뒤*의 한도값 줄(적용/농도·사용범위 5%·18%·8% 등)까지 통째로 삭제(실측 실데이터 손실).
+  //   중문은 성분명 1줄이므로 그 줄([^\n]*)만 제거하고 이후 한국어 한도 줄은 보존.
+  //   단, 중문 줄에 한도/범위 수치(%·含量大于 등)가 있으면(금지물질의 범위 한정자 — 예 미네랄울
+  //   ">18% 알칼리산화물") 국문에 없을 수 있어 *보존*(이후 PHRASE/POST 가 한글화). 數値 없는 중문만 제거.
+  out = out.replace(/\n?[ \t]*중문\s*[:：][^\n]*/gu, (m) => /\d+(?:\.\d+)?\s*%|含量|大于|超過/.test(m) ? m : "");
+  // CN/TW 금지물질 정의 내 범위 한정구(중문) 한글화.
+  out = out.replace(/含量大于\s*/g, "함량이 ").replace(/[（(]以重量[計计][）)]/g, "(중량 기준)").replace(/以重量[計计]/g, "중량 기준");
+  out = out.replace(/人造玻璃[质質]\s*[（(]?[硅矽]酸[盐鹽][）)]?纤[维維]/g, "인조 유리질(규산염) 섬유").replace(/[矿礦]石棉/g, "광석면");
+  out = out.replace(/不[规規][则則]晶体排列/g, "불규칙 결정 배열").replace(/在本[规規]范中[别別][处處][详詳][细細][说說]明的那些除外/g, "본 규범의 다른 곳에 상세 규정된 것은 제외");
+  out = out.replace(/[碱鹼]金属氧化物和[碱鹼]土金属氧化物/g, "알칼리금속산화물 및 알칼리토금속산화물");
   // 다중 패스(stable까지) — 1-pass 는 부분번역 상태(예 "三歲以下孩童→3세 이하 아동" 후 남은 "…產品")에
   // 혼합 entry 가 매칭 안 되는 순서 의존이 있다. 값은 전부 한글(CJK 키 없음)이라 cascade 없이 수렴.
   for (let pass = 0; pass < 4; pass++) {
@@ -538,6 +547,10 @@ function phraseTranslate(s: string): string {
   // 제거(원문 잔재 제거 → 한국어만 표시). 안전: 결과에 한글이 사라지면 원복(중국어-only 필드 보존).
   if (HAS_CJK.test(out) && out.includes("\n") && HANGUL_G.test(out)) {
     const kept = out.split("\n").filter((line) => {
+      // ⚠ 한도값(N% / 농도) 또는 限量/배합한도 가 있는 줄은 *절대* 제거 안 함 — 그 한도가 이 줄에만
+      //   있을 수 있어(예 TW "非藥用牙膏及漱口水 : 0.1%(以 boric acid 計)") 제거 시 한도 손실(실측).
+      //   데이터 보존 우선. 남은 중국어 product-type 는 이후 POST/catch-all 이 한글화/정리.
+      if (/\d+(?:\.\d+)?\s*%|限量|배합\s*한도|最大|max/i.test(line)) return true;
       const cjk = (line.match(CJK_G) || []).length;
       const kr = (line.match(HANGUL_G) || []).length;
       return !(cjk >= 3 && cjk > kr); // 중국어-우세(한글보다 많고 CJK 3+) 줄 = 원문 잔재 → 제거
@@ -604,8 +617,14 @@ function stripBilingual(s: string): string {
   return s.split("\n").map((line) => {
     if (line.indexOf("^") === -1) return line;
     const parts = line.split("^");
-    const ko = parts.find((p) => /[가-힣]/.test(p));
-    return (ko ?? parts[parts.length - 1]).trim();
+    // ⚠ "^"는 MFDS 데이터에서 *두 용도*: (1)"원문^한국어번역"(EU 조건문 등) (2)*항목/줄 구분자*
+    //   (예 "(a)^1. 8%, pH 7~9.5^2. 11%^(b) 5%" — 여러 한도 항목). (1)만 한글측 채택하고 (2)는 *전
+    //   분절 보존*해야 한다. 무조건 '첫 한글 분절만'은 (2)에서 8%·11%·5% 같은 한도값을 파괴(실측 버그).
+    //   판별: 정확히 2분절 + 앞=외국어(한글 없음, 라틴/CJK 有) + 뒤=한글 → 번역쌍 → 한글측. 그 외 → 구분자.
+    if (parts.length === 2 && /[A-Za-z一-鿿぀-ヿ]/.test(parts[0]) && !/[가-힣]/.test(parts[0]) && /[가-힣]/.test(parts[1])) {
+      return parts[1].trim();
+    }
+    return parts.map((p) => p.trim()).filter(Boolean).join(" ");  // 항목 구분자 — 전 분절 보존(공백 결합).
   }).join("\n");
 }
 
