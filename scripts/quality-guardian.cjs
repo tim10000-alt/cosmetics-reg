@@ -447,6 +447,39 @@ function main() {
       }
     }
   }
+  // 교차물질 동의어 제거 — 동의어가 *다른 CAS의 별개 성분* primary inci_name 과 정확히 일치하면 제거.
+  //   실측(사용자 발견): Retinyl Palmitate(79-81-2) 의 동의어 "Retinol"=별개물질(68-26-8); 파라벤·에스터
+  //   의 동의어 "Benzoic Acid"·"Salicylic Acid"=가수분해 구성산(별개 CAS); Limonene→d/l-Limonene(이성질).
+  //   동의어로 표기 시 동일물질 오인 + 검색오염("Benzoic Acid"→파라벤 다수). 동일물질 다른표기는 CAS 공유라
+  //   안 걸림(분별력: CAS 교집합 0 일 때만 제거). 한쪽이라도 유효 CAS 없으면 판정 불가→보존(보수). 표시·검색
+  //   양쪽 정정(데이터 수정). 멱등(매 run 소스 재유입 시 재제거).
+  const validCasSet = (v) => {
+    const out = new Set();
+    for (const c of String(v || "").split(/[\s,;/^]+/)) { const t = c.trim().replace(/\[\d+\].*$/, "").replace(/\(.*$/, ""); if (casValid(t)) out.add(t); }
+    return out;
+  };
+  const nameToCas = new Map();   // normN(inci_name) → 유효 CAS union
+  for (const i of ingObj.rows) {
+    if (!i.inci_name) continue;
+    const cs = validCasSet(i.cas_no); if (!cs.size) continue;
+    const k = normN(i.inci_name); let s = nameToCas.get(k); if (!s) { s = new Set(); nameToCas.set(k, s); }
+    for (const c of cs) s.add(c);
+  }
+  let crossSynStripped = 0;
+  for (const i of ingObj.rows) {
+    if (!Array.isArray(i.synonyms) || !i.synonyms.length) continue;
+    const myCas = validCasSet(i.cas_no); if (!myCas.size) continue;
+    const myName = normN(i.inci_name || "");
+    const before = i.synonyms.length;
+    i.synonyms = i.synonyms.filter((syn) => {
+      const k = normN(syn || ""); if (!k || k === myName) return true;
+      const oc = nameToCas.get(k); if (!oc || !oc.size) return true;        // 다른 성분 이름 아님/CAS 불명 → 보존
+      for (const c of myCas) if (oc.has(c)) return true;                     // CAS 공유 = 동일물질 표기 → 보존
+      return false;                                                          // CAS 교집합 0 = 교차물질 → 제거
+    });
+    if (i.synonyms.length !== before) { crossSynStripped += before - i.synonyms.length; ingChanged = true; }
+  }
+
   // regs=0 JP 別表1 garble 고아 *삭제* — 別表1 파서가 다단/각주 분리에 실패한 과거 run 들이 누적시킨
   //   분절본(농도셀 "○"·소수, 각주문 "…として合計。"·"…に換算して"·"（コードNN）" 이 이름에 접합).
   //   정상 INCI/일본어 성분명엔 이 마커가 *절대* 없다. regs=0(규제 0=정보 0) + 일본어문자 게이트라
@@ -554,6 +587,7 @@ function main() {
   console.log(`  임베디드 조건문 collapse(X 0.5%…→X): ${embedCollapsed}`);
   console.log(`  JP 別表 농도값 bleed collapse(X ○ 0.10→X): ${jpValCollapsed}`);
   console.log(`  JP 別表1 garble 고아 삭제(regs=0 분절 죽은중복, 깨끗한 트윈 존재): ${jpGarbleDeleted}`);
+  console.log(`  교차물질 동의어 제거(별개 CAS 성분명을 동의어로): ${crossSynStripped}`);
   console.log(`  격리(복구 불가) 성분명: ${corrupt.length} (그중 규제apparatus 고아: ${apparatusOrphans} · 색소표 고아: ${colorantGlueOrphans})`);
   console.log(`  🩺 self-heal 후 잔존 가시오염(0이어야 정상): 오염명 ${residualCorrupt} · 공백 ${residualWhitespace}`);
   console.log(`  국가 행수 급감(회귀): ${regressions.length ? regressions.join(", ") : "없음"}`);
