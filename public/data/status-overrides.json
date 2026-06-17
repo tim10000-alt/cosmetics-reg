@@ -6251,6 +6251,46 @@
       "inci": "Alizurine Purple SS, D&C Violet No. 2, Murasaki201, CI 60725",
       "ko": "자색201호",
       "reason": "claude-color: 허용색소표 오태깅·외국허용확증"
+    },
+    {
+      "ingredient_id": "40b557df-eee1-498c-bce4-069e11796fc7",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Chloramine T",
+      "ko": "클로라민T",
+      "reason": "deterministic-eu-restricted: EU 권위가 제한(Annex III/V/VI)으로 확증한 제한물질 — MFDS banned 오매핑 교정"
+    },
+    {
+      "ingredient_id": "10138630-3386-4f48-b1cb-50e8712130f3",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Methenamine",
+      "ko": "메텐아민",
+      "reason": "deterministic-eu-restricted: EU 권위가 제한(Annex III/V/VI)으로 확증한 제한물질 — MFDS banned 오매핑 교정"
+    },
+    {
+      "ingredient_id": "40b557df-eee1-498c-bce4-069e11796fc7",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Chloramine T",
+      "ko": "클로라민T",
+      "reason": "deterministic-eu-restricted: EU 권위가 제한(Annex III/V/VI)으로 확증한 제한물질 — MFDS banned 오매핑 교정"
+    },
+    {
+      "ingredient_id": "40b557df-eee1-498c-bce4-069e11796fc7",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Chloramine T",
+      "ko": "클로라민T",
+      "reason": "deterministic-eu-restricted: EU 권위가 제한(Annex III/V/VI)으로 확증한 제한물질 — MFDS banned 오매핑 교정"
     }
   ]
 }

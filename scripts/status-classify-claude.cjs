@@ -40,6 +40,9 @@ const CONTAM_BAN = /함유하는 경우에 한함|contain[s]?\s*[>=]|초과하�
 // 비듬약 restricted)·strontium(Thioglycolate 제모제)·zirconium(Al-Zr 발한억제)·naphthalene
 // (naphthalenediol 염모제)·benzene 은 restricted 용도 있거나 CAS-annex veto 가 처리하므로 제외(오veto 방지).
 const TOXIC = /mercur|수은|水銀|thimerosal|치메로살|thallium|탈륨|arsenic|비소|砷|cadmium|카드뮴|鎘|lead acetate|연\s*아세|beryll|베릴/i;
+// 헤어염료/제형특정 = 별도 카테고리(이 결정론 EU-제한 교정에서 제외 — 보수). 일반/특정사용 제한물질만.
+const HAIRDYE = /염색제|염모|산화염|두발|모발|탈[색염]|hair dye|oxidiz/i;
+const CONC_RE = /\d+(?:\.\d+)?\s*%|\d+(?:\.\d+)?\s*(?:g|mg|ppm)\b/;
 
 function load() {
   const ing = J("ingredients.json").rows;
@@ -65,7 +68,32 @@ function load() {
     const sib = siblings(id);
     return all.some((r) => sib.has(r.ingredient_id) && r.country_code === cc && r.status === "banned" && (r.source_priority || 0) > 50 && !(r.source_document || "").includes("MFDS"));
   };
-  return { ing, byId, all, vetoed, authBanned };
+  // 권위(prio>=80=EUR-Lex/공식 1차) 가 *제한/등재*(Annex III/V/VI 등, 농도한도 보유)로 분류한 물질
+  // 인덱스(형제 id·CAS·canonName). 이게 있으면 그 물질은 *진짜 제한물질*(금지 아님) → MFDS banned
+  // 오매핑을 안전하게 restricted 로 교정 가능. 단 vetoed(권위 금지annex·독성)면 우선=교정 안 함.
+  const arId = new Set(), arCas = new Set(), arName = new Set();
+  for (const r of all) {
+    if (!(r.status === "restricted" || r.status === "listed")) continue;
+    if ((r.source_priority || 0) < 80) continue;
+    if (r.max_concentration == null && !CONC_RE.test(r.conditions || "")) continue;
+    arId.add(r.ingredient_id);
+    const ig = byId.get(r.ingredient_id);
+    if (ig) { for (const c of validCas(ig.cas_no)) arCas.add(c); if (ig.inci_name) arName.add(canon(ig.inci_name)); }
+  }
+  const authRestricted = (ig) => arId.has(ig.id) || validCas(ig.cas_no).some((c) => arCas.has(c)) || (ig.inci_name && arName.has(canon(ig.inci_name)));
+  // *EU* 권위 금지(Annex II/EUR-Lex) 인덱스 — EU 가 *금지*한 물질(파라벤·Quaternium-15·DCM 등)은
+  // EU-restricted 교정에서 절대 제외(EU 는 KR/CN/TW 정합 기준). 타국 단독 금지(예 CA)는 관할권차라
+  // EU-제한 물질(예 Chloramine T=EU AnnexV)을 막지 않음 — global veto 보다 정밀. TOXIC 은 별도 전역.
+  const euBanId = new Set(), euBanCas = new Set(), euBanName = new Set();
+  for (const r of all) {
+    if (r.country_code !== "EU" || r.status !== "banned") continue;
+    if (!PROHIB.test(`${r.source_document || ""} ${r.conditions || ""}`)) continue;
+    euBanId.add(r.ingredient_id);
+    const ig = byId.get(r.ingredient_id);
+    if (ig) { for (const c of validCas(ig.cas_no)) euBanCas.add(c); if (ig.inci_name) euBanName.add(canon(ig.inci_name)); }
+  }
+  const euProhibited = (ig) => euBanId.has(ig.id) || validCas(ig.cas_no).some((c) => euBanCas.has(c)) || (ig.inci_name && euBanName.has(canon(ig.inci_name))) || (ig.inci_name && TOXIC.test(ig.inci_name));
+  return { ing, byId, all, vetoed, authBanned, authRestricted, euProhibited };
 }
 
 function candidates(all, countries) {
@@ -74,7 +102,7 @@ function candidates(all, countries) {
 
 if (require.main === module) {
   const mode = process.argv[2] || "--validate";
-  const { byId, all, vetoed, authBanned } = load();
+  const { byId, all, vetoed, authBanned, authRestricted, euProhibited } = load();
   const dec = (() => { try { return J("status-decisions.json").decisions; } catch { return {}; } })();
 
   if (mode === "--validate") {
@@ -102,9 +130,25 @@ if (require.main === module) {
     const existing = new Set(ov.corrections.map((c) => `${c.ingredient_id}:${c.country_code}`));
     const decFile = path.join(DATA, "status-decisions.json");
     const decObj = JSON.parse(fs.readFileSync(decFile, "utf8"));
-    let added = 0, vetoSkip = 0, keptBanned = 0, alreadyDec = 0;
+    let added = 0, vetoSkip = 0, keptBanned = 0, alreadyDec = 0, euAdded = 0;
     for (const r of candidates(all, countries)) {
       const key = `${r.ingredient_id}:${r.country_code}`;
+      const ig0 = byId.get(r.ingredient_id);
+      // ── 결정론 EU-제한 교정(규제상태 직접 확인 결과) ──────────────────────────────────────
+      // MFDS 사용제한 API 의 banned 행 중, EU 권위(EUR-Lex)가 *제한*(Annex III/V/VI)으로 분류한
+      // 일반/특정사용 제한물질(보존제·UV필터·제모제·데오 등)은 mapRegulateType 오매핑 → restricted.
+      // 안전: vetoed(권위 금지annex·독성) 또는 same-country authBanned 또는 헤어염료면 제외(보수).
+      // 별표1 충돌 0 실증·파라벤/Quaternium-15(EU AnnexII 금지)는 vetoed 로 차단 → false-allowed 0.
+      // 캐시된 uncertain/prohibition-veto 도 *덮어씀*(이 안전셋은 결정론 확정). by 로 추적.
+      if (ig0 && !euProhibited(ig0) && !authBanned(r.ingredient_id, r.country_code) && !HAIRDYE.test(r.conditions)
+          && authRestricted(ig0) && classify(r.conditions).v === "restricted") {
+        if (!existing.has(key)) {
+          ov.corrections.push({ ingredient_id: r.ingredient_id, country_code: r.country_code, from: "banned", to: "restricted", source_match: "MFDS", inci: ig0.inci_name, ko: ig0.korean_name, reason: "deterministic-eu-restricted: EU 권위가 제한(Annex III/V/VI)으로 확증한 제한물질 — MFDS banned 오매핑 교정" });
+          existing.add(key);
+        }
+        decObj.decisions[key] = { inci: ig0.inci_name, ko: ig0.korean_name, country: r.country_code, verdict: "restricted", by: "deterministic-eu-restricted", source_match: "MFDS" };
+        euAdded++; continue;
+      }
       if (dec[key] || existing.has(key)) { alreadyDec++; continue; }
       const ig = byId.get(r.ingredient_id);
       if (!ig) continue;
@@ -123,7 +167,7 @@ if (require.main === module) {
     }
     fs.writeFileSync(ovFile, JSON.stringify(ov, null, 2));
     fs.writeFileSync(decFile, JSON.stringify({ generated: "status-judge", decisions: decObj.decisions }, null, 2));
-    console.log(`적용 — 교정추가(restricted) ${added} · banned유지 ${keptBanned} · veto ${vetoSkip} · 기존 ${alreadyDec}`);
+    console.log(`적용 — EU제한교정 ${euAdded} · 교정추가(restricted) ${added} · banned유지 ${keptBanned} · veto ${vetoSkip} · 기존 ${alreadyDec}`);
     console.log(`총 교정: ${ov.corrections.length}`);
   }
 }
