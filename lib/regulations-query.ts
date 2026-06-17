@@ -1,5 +1,6 @@
 import { dataset, type Ingredient, type Regulation, type KciaArticle, type SourcePdf } from "./data-loader";
 import { translateDisplay } from "./translate-display";
+import { koreanizeName } from "./jp-name-koreanize";
 
 // 인메모리 검색 — Phase 5: Supabase 의존 제거.
 // public/data/*.json (브라우저 ETag 자동 비교) 의 인덱스만 사용.
@@ -67,6 +68,8 @@ export interface IngredientMatch {
   function_category: string | null;
   function_description: string | null;
   kcia_code?: string | null;
+  // 표시 전용 한글화 제목(inci_name 이 일본어/중국어일 때). 검색·클릭은 inci_name(원본) 유지.
+  inci_display?: string;
 }
 
 // 예외(확인 필요) — 같은 한글명이나 표기/CAS 차이로 자동통합되지 않은 '동일 물질 추정' 레코드.
@@ -74,6 +77,7 @@ export interface IngredientMatch {
 export interface RelatedVariant {
   inci_name: string;
   extra_country_names: string[];   // 이 표기 레코드에만 있는(현재 결과엔 없는) 국가 규제
+  inci_display?: string;           // 일/중 표기 한글화(검색은 inci_name 원본 유지)
 }
 
 export interface LookupResponse {
@@ -174,6 +178,16 @@ function buildCanonical(
   // 정리(실측: korean 21건 newline/주석, chinese/japanese 0). 장기 전자동: 파이프라인이 어떤 필드에 누출을
   // 만들어도 표시 시점에 균일 정리(누락 0). null 은 보존.
   const cleanNm = (v: string | null): string | null => (v == null ? v : cleanDisplayName(v));
+  // inci_name 이 일본어/중국어면 표시용 한글 제목(inci_display)을 채우고, 원본 CJK는 japanese_name
+  // 으로 보존(라벨된 참조). 검색·클릭은 inci_name(원본) 유지 → 검색 인덱스 무영향.
+  const CJK_NAME = /[぀-ヿ㐀-鿿豈-﫿]/;
+  const koDisplay = (m: IngredientMatch): IngredientMatch => {
+    if (!CJK_NAME.test(m.inci_name)) return m;
+    const kn = koreanizeName(m.inci_name);
+    if (kn.name === m.inci_name) return m;
+    const ja = m.japanese_name || (kn.isKorean ? m.inci_name : m.japanese_name);
+    return { ...m, inci_display: kn.name, japanese_name: ja };
+  };
   if (members.length <= 1) {
     // 형제 없는 단일 레코드도 표시명 위생 + 누출 동의어 제거(standalone 코럽트 헤드라인 대응).
     const cleaned = cleanDisplayName(resolved.inci_name);
@@ -181,8 +195,9 @@ function buildCanonical(
     const syn = (resolved.synonyms || []).filter((x) => !isLeakArtifact(x));
     // cas_no 제어문자(\r\n\t) 위생 — 저장값 오염(예 "328-39-2(DL-)\r,61-90-5(L-)")이 표시에 새지 않게.
     const casClean = resolved.cas_no ? resolved.cas_no.replace(/[\r\n\t]+/g, " ").replace(/\s+,/g, ",").replace(/\s{2,}/g, " ").trim() : resolved.cas_no;
-    return cleaned === resolved.inci_name && ko === resolved.korean_name && zh === resolved.chinese_name && ja === resolved.japanese_name && syn.length === (resolved.synonyms || []).length && casClean === resolved.cas_no
+    const base = cleaned === resolved.inci_name && ko === resolved.korean_name && zh === resolved.chinese_name && ja === resolved.japanese_name && syn.length === (resolved.synonyms || []).length && casClean === resolved.cas_no
       ? resolved : { ...resolved, inci_name: cleaned, korean_name: ko, chinese_name: zh, japanese_name: ja, synonyms: syn, cas_no: casClean };
+    return koDisplay(base);
   }
   // 대표 점수: 한국등록(korean_name) > 정상케이스(외국 ALL-CAPS 후순위) > 군더더기 없음 > CAS 보유, 짧을수록 가산.
   const score = (m: IngredientMatch): number => {
@@ -207,13 +222,14 @@ function buildCanonical(
   const synSet: string[] = [];
   const repInciLc = repInci.toLowerCase(), repKorLc = (rep.korean_name || "").trim().toLowerCase();
   const addSyn = (s: string | null | undefined) => {
-    const v = (s || "").trim(); if (!v) return;
+    let v = (s || "").trim(); if (!v) return;
+    if (CJK_NAME.test(v)) v = koreanizeName(v).name;  // 일/중 형제 표기 동의어 칩도 한글화(다른언어 불가)
     if (v.toLowerCase() === repInciLc || v.toLowerCase() === repKorLc) return;
     if (isLeakArtifact(v)) return;  // 파서 누출(개행·CAS/EC번호·한도% glue)을 동의어 칩으로 노출 금지
     if (!synSet.some((x) => x.toLowerCase() === v.toLowerCase())) synSet.push(v);
   };
   for (const m of members) { (m.synonyms || []).forEach(addSyn); if (m.id !== rep.id) addSyn(m.inci_name); }
-  return {
+  return koDisplay({
     id: rep.id,
     inci_name: repInci,
     korean_name: cleanNm(firstOf("korean_name")),
@@ -225,7 +241,7 @@ function buildCanonical(
     function_category: firstOf("function_category"),
     function_description: firstOf("function_description"),
     kcia_code: firstOf("kcia_code"),
-  };
+  });
 }
 
 export async function lookupRegulation(
@@ -476,6 +492,7 @@ export async function lookupRegulation(
           related_variants.push({
             inci_name: other.inci_name,
             extra_country_names: extra.map((cc) => ds.countryByCode.get(cc)?.name_ko ?? cc),
+            inci_display: /[぀-ヿ㐀-鿿豈-﫿]/.test(other.inci_name) ? koreanizeName(other.inci_name).name : undefined,
           });
         }
       }

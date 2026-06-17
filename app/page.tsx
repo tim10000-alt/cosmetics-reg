@@ -194,9 +194,9 @@ function HomeInner() {
                       : "hover:bg-zinc-50 dark:hover:bg-zinc-800/50"
                   }`}
                 >
-                  <div className="text-zinc-900 dark:text-zinc-50">{s.korean_name ?? s.inci_name}</div>
+                  <div className="text-zinc-900 dark:text-zinc-50">{s.korean_name ?? s.inci_display ?? s.inci_name}</div>
                   <div className="text-xs text-zinc-500">
-                    {s.inci_name}
+                    {s.inci_display ?? s.inci_name}
                     {s.cas_no ? ` · CAS ${s.cas_no.split(/\s/)[0]}` : ""}
                   </div>
                 </li>
@@ -243,7 +243,7 @@ function HomeInner() {
                       onClick={() => { setQuery(m.inci_name); setShowSuggestions(false); runSearch(m.inci_name); }}
                       className="w-full rounded px-2 py-1 text-left text-xs [overflow-wrap:anywhere] hover:bg-zinc-200 dark:hover:bg-zinc-800"
                     >
-                      <span className="font-medium text-zinc-800 dark:text-zinc-100">{m.inci_name}</span>
+                      <span className="font-medium text-zinc-800 dark:text-zinc-100">{m.inci_display ?? m.inci_name}</span>
                       {m.korean_name && <span className="text-zinc-500 dark:text-zinc-400"> · {m.korean_name}</span>}
                       {m.cas_no && <span className="text-zinc-400"> · CAS {m.cas_no}</span>}
                     </button>
@@ -264,7 +264,7 @@ function HomeInner() {
               <ul className="mt-2 space-y-1.5">
                 {response.related_variants.map((v, i) => (
                   <li key={i} className="text-xs text-amber-900 [overflow-wrap:anywhere] dark:text-amber-200">
-                    <span className="font-mono">{v.inci_name}</span>
+                    <span className="font-mono">{v.inci_display ?? v.inci_name}</span>
                     <span className="text-amber-700 dark:text-amber-400">
                       {" "}— 이 표기에만 규제 있는 국가: {v.extra_country_names.join(", ")}
                     </span>
@@ -309,7 +309,7 @@ function IngredientHeader({ ingredient }: { ingredient: NonNullable<LookupRespon
       {/* overflow-wrap:anywhere — 복합 발효명 등 공백 없는 긴 "/"-연결 토큰(예 388자)이 CSS 기본
           줄바꿈("/"는 break point 아님)에 안 걸려 가로 오버플로우하던 것 방지(전수 sweep 30,397중 1건). */}
       <div className="text-lg font-semibold text-zinc-900 dark:text-zinc-50 [overflow-wrap:anywhere]">
-        {ingredient.inci_name}
+        {ingredient.inci_display ?? ingredient.inci_name}
       </div>
       <dl className="mt-2 grid grid-cols-2 gap-x-4 gap-y-1 text-xs text-zinc-600 dark:text-zinc-400 sm:grid-cols-4">
         {ingredient.korean_name && (

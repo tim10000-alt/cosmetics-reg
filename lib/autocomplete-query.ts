@@ -1,10 +1,14 @@
 import { dataset } from "./data-loader";
+import { koreanizeName } from "./jp-name-koreanize";
 
 export interface Suggestion {
   inci_name: string;
   korean_name: string | null;
   cas_no: string | null;
+  inci_display?: string;  // 일/중 inci_name 표시용 한글화(검색은 inci_name 원본 유지)
 }
+
+const CJK_NAME = /[぀-ヿ㐀-鿿豈-﫿]/;
 
 function sanitize(s: string): string {
   return s.replace(/[,()%_\\"]/g, " ").replace(/\s+/g, " ").trim();
@@ -24,7 +28,8 @@ export async function fetchSuggestions(rawQuery: string, signal?: AbortSignal): 
   const add = (ing: { inci_name: string; korean_name: string | null; cas_no: string | null }) => {
     if (results.length >= 8 || seen.has(ing.inci_name)) return;
     seen.add(ing.inci_name);
-    results.push({ inci_name: ing.inci_name, korean_name: ing.korean_name, cas_no: ing.cas_no });
+    const disp = CJK_NAME.test(ing.inci_name) ? koreanizeName(ing.inci_name).name : undefined;
+    results.push({ inci_name: ing.inci_name, korean_name: ing.korean_name, cas_no: ing.cas_no, inci_display: disp });
   };
   // CAS 질의(숫자-대시) 여부 — 검색(lookupRegulation)이 CAS 를 해석하므로 자동완성도 지원(F7).
   const isCasQuery = /^\d{1,7}-?\d{0,2}-?\d?$/.test(raw.replace(/\s/g, ""));
