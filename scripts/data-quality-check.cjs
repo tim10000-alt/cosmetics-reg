@@ -76,7 +76,21 @@ function compute() {
     postHealCorrupt = h.post_heal_corrupt_count ?? 0;
     postHealWhitespace = h.post_heal_whitespace_count ?? 0;
   } catch {}
-  return { generated_at: meta.generated_at, totalRegs, coverage, authCoverage, restrictedNoLimit, statusConflicts, quarantinePending, casContaminationSuspects, staleCount, staleSources, limitAnomalyCount, postHealCorrupt, postHealWhitespace };
+  // 🎯 소스 fetch 실패 감시 — source-status.json 의 check_status=failed(403/404/timeout 등). 기존
+  // staleness(45일 임계)·전체 freshness(워치독 3일)는 *데이터 나이*만 봐서, fetch 가 조용히 실패해도
+  // 옛 데이터가 보존되면 "fresh"로 보였다(실측: EU EUR-Lex 가 CI IP 403 차단으로 死였는데 아무도 못
+  // 잡음 → 수동발견까지 stale). check_status 직접 집계로 silent fetch 실패를 표면화.
+  let sourceFailCount = 0, sourceFailList = [];
+  try {
+    const ss = JSON.parse(fs.readFileSync(path.join(DATA, "source-status.json"), "utf8"));
+    const rows = ss.rows || (Array.isArray(ss) ? ss : Object.values(ss));
+    for (const r of rows) {
+      if (["failed", "error", "blocked"].includes(r.check_status) || /\b(fail|block|denied|403|404|abort)/i.test(r.notes || "")) {
+        sourceFailCount++; sourceFailList.push(`${r.country_code}:${r.doc_key}`);
+      }
+    }
+  } catch {}
+  return { generated_at: meta.generated_at, totalRegs, coverage, authCoverage, restrictedNoLimit, statusConflicts, quarantinePending, casContaminationSuspects, staleCount, staleSources, limitAnomalyCount, postHealCorrupt, postHealWhitespace, sourceFailCount, sourceFailList };
 }
 
 function detectRegressions(cur, prev) {
@@ -105,6 +119,9 @@ function detectRegressions(cur, prev) {
   // 직전 대비 *증가* 시만(스팸 방지) — 안정적으로 존재하는 알려진 anomaly(예: 같은 물질의 정당한
   // per-use 한도차 = EU Annex III rinse-off 2.5% vs 기타 0.1%)는 매일 재발화하지 않게. 신규 유입만 경보.
   if (cur.limitAnomalyCount > (prev.limitAnomalyCount ?? 0)) out.push(`한도 5배+ 급변 신규: ${prev.limitAnomalyCount ?? 0}→${cur.limitAnomalyCount}건 — silent 오파싱 의심, source-health.json 의 limit_anomalies 확인`);
+  // 소스 fetch 실패 *증가* — 신규 차단/양식변경(403/404/timeout) 조기경보. silent fetch 실패가 옛
+  // 데이터 보존으로 "fresh"처럼 보이던 사각(EU EUR-Lex 403 死 사례) 표면화. 증가만(스팸 방지).
+  if ((cur.sourceFailCount ?? 0) > (prev.sourceFailCount ?? 0)) out.push(`소스 fetch 실패 증가: ${prev.sourceFailCount ?? 0}→${cur.sourceFailCount} [${(cur.sourceFailList || []).join(", ")}] — 신규 차단(403/404/timeout)·archive.org 폴백 검토(source-status.json)`);
   // 절대 경보(직전 대비 아님): 가디언 self-heal 후에도 가시 오염/공백이 남으면 = 가디언이 못 잡는
   // 새 오염 패턴 유입 → 즉시 알림(재발방지 안전망의 '감지' 축). 정상은 항상 0.
   if (cur.postHealCorrupt > 0) out.push(`🩺 self-heal 후 잔존 오염명 ${cur.postHealCorrupt}건 — 가디언 미인식 새 오염 패턴, isCorruptName/recover 로직 보강 필요`);
