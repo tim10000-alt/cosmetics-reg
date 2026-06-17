@@ -94,10 +94,26 @@ async function main() {
   for (const u of HTML_URLS) {
     try {
       const res = await fetch(u, { headers: { "User-Agent": "Mozilla/5.0", "Accept-Language": "en" }, redirect: "follow" });
-      if (res.ok) { const t = await res.text(); if (t.length > 1_000_000) { html = t; console.log(`  사용: ${u.split("uri=")[1]} (${(t.length / 1e6).toFixed(1)}MB)`); break; } }
+      if (res.ok) { const t = await res.text(); if (t.length > 1_000_000) { html = t; console.log(`  사용: ${u} (${(t.length / 1e6).toFixed(1)}MB)`); break; } }
     } catch { /* 다음 후보 */ }
   }
-  if (!html) { console.error("✗ 통합본 HTML 못 받음 — 보존(write 생략)"); process.exit(1); }
+  // 🎯 archive.org Wayback 폴백 — EUR-Lex(CloudFront)가 **GitHub Actions IP 를 403 차단**(로컬 IP 는 통과)
+  // 해서 CI 에선 직접 fetch 가 전부 막혀 EU 갱신이 멈췄다(실측: CI 캐시=403 "Request blocked"). Wayback
+  // 은 IP 차단 없고 현행 스냅샷 보유(실측 2026-05 스냅샷=Homosalate 7.34% 현행) → 차단 우회. availability
+  // API 로 최신 스냅샷 찾고 `id_`(raw, Wayback 툴바 미주입) 로 본문 취득. 결정론·무AI.
+  if (!html) {
+    try {
+      const api = "https://archive.org/wayback/available?url=eur-lex.europa.eu/eli/reg/2009/1223";
+      const j = await (await fetch(api, { signal: AbortSignal.timeout(30_000) })).json();
+      const snap = j?.archived_snapshots?.closest;
+      if (snap?.url) {
+        const raw = snap.url.replace(/(\/web\/\d+)\//, "$1id_/").replace(/^http:/, "https:");
+        const res = await fetch(raw, { headers: { "User-Agent": "Mozilla/5.0" }, redirect: "follow", signal: AbortSignal.timeout(60_000) });
+        if (res.ok) { const t = await res.text(); if (t.length > 1_000_000) { html = t; console.log(`  사용: archive.org Wayback ${snap.timestamp} (${(t.length / 1e6).toFixed(1)}MB)`); } }
+      }
+    } catch { /* Wayback 도 실패 */ }
+  }
+  if (!html) { console.error("✗ 통합본 HTML 못 받음(직접+Wayback) — 보존(write 생략)"); process.exit(1); }
 
   const rows: AnnexRow[] = [];
   for (const a of ANNEXES) {
