@@ -34,7 +34,7 @@ jobs:
         run: npm run build
       # GitHub Pages 의 Jekyll 이 _next 같은 underscore 디렉터리를 무시하지 않도록.
       - run: touch out/.nojekyll
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: out
 
