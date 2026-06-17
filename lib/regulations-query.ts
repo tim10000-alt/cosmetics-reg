@@ -195,9 +195,12 @@ function buildCanonical(
     const ek = /EKISU/i.test(m.inci_name), yu = /(^|[ -])YU($|[ -])/i.test(m.inci_name);  // エキス=추출물, 油=오일
     if (!ek && !yu) return null;
     const bino = (m.chinese_name || "").match(/([A-Z]{2,}(?:\s+[A-Z][A-Za-z.\-]+)+)/);
-    if (!bino) return null;
-    const tc = bino[1].toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase()).trim();
-    return tc.length >= 4 ? tc + (ek ? " 추출물" : " 오일") : null;
+    if (bino) {
+      const tc = bino[1].toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase()).trim();
+      if (tc.length >= 4) return tc + (ek ? " 추출물" : " 오일");
+    }
+    // 학명 없으면 korean_name 으로 제목(로마자 일본어 제목 회피 — 한글명 존재 시).
+    return m.korean_name && /[가-힣]/.test(m.korean_name) ? m.korean_name : null;
   };
   const koDisplay = (m: IngredientMatch): IngredientMatch => {
     const rj = romajiJpDisplay(m);
@@ -214,7 +217,7 @@ function buildCanonical(
     // 형제 없는 단일 레코드도 표시명 위생 + 누출 동의어 제거(standalone 코럽트 헤드라인 대응).
     const cleaned = cleanDisplayName(resolved.inci_name);
     const ko = langNm(resolved.korean_name), zh = langNm(resolved.chinese_name), ja = langNm(resolved.japanese_name);
-    const syn = (resolved.synonyms || []).filter((x) => !isLeakArtifact(x));
+    const syn = (resolved.synonyms || []).filter((x) => { const t = (x || "").trim(); return t.length > 1 && !/^[\d.\-()[\]{}]+$/.test(t) && !isLeakArtifact(x); });  // 단일레코드도 무의미 단편(단일문자·순숫자) 제거
     // cas_no 제어문자(\r\n\t) 위생 — 저장값 오염(예 "328-39-2(DL-)\r,61-90-5(L-)")이 표시에 새지 않게.
     const casClean = resolved.cas_no ? resolved.cas_no.replace(/[\r\n\t]+/g, " ").replace(/\s+,/g, ",").replace(/\s{2,}/g, " ").trim() : resolved.cas_no;
     const base = cleaned === resolved.inci_name && ko === resolved.korean_name && zh === resolved.chinese_name && ja === resolved.japanese_name && syn.length === (resolved.synonyms || []).length && casClean === resolved.cas_no
