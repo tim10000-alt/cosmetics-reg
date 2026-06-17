@@ -483,16 +483,26 @@ const EN_PHRASE: [string, string][] = [
   ["powder form containing 1 % or more of particles with aerodynamic dia", "공기역학 직경 기준 입자를 1% 이상 함유한 분말 형태"],
   ["For use as Verbena essential oils (Lippia citriodora Kunth.) and", "버베나 에센셜 오일(Lippia citriodora Kunth.) 용도로 사용"],
   ["The use of bithionol is prohibited because it may cause photocontact", "비티오놀은 광접촉 반응을 유발할 수 있어 사용이 금지됨"],
-  ["To protect against bovine spongiform encephalopathy (BSE), also know", "소해면상뇌증(BSE)을 예방하기 위해"],
+  ["To protect against bovine spongiform encephalopathy (BSE)", "소해면상뇌증(BSE)을 예방하기 위해"],
+  ["also known as", "또한 다음으로 알려진:"], ["mad cow disease", "광우병"],
   ["used by children under the age of", "다음 연령 미만 어린이 사용:"],
   ["coated with the", "다음으로 코팅:"], ["coated with", "다음으로 코팅:"],
 ];
 const EN_PHRASE_SORTED = [...EN_PHRASE].sort((a, b) => b[0].length - a[0].length);
 const HAS_LATIN = /[A-Za-z]{3,}/;
+// 단어 경계(\b)+대소문자 무시 regex 선컴파일 — literal substring 은 "except"가 "exception" 내부에
+// 발화해 "제외:ion" 처럼 단어를 깨고(실측), 대소문자 불일치("With" vs "with")로 긴 항목이 미스돼
+// 짧은 항목이 오발화했다. \b 로 단어 단위 매칭, i 로 케이스 무관. 영문 시작/끝일 때만 \b 부착.
+const EN_PHRASE_RE: [RegExp, string][] = EN_PHRASE_SORTED.map(([en, ko]) => {
+  const esc = en.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const pre = /^[A-Za-z0-9]/.test(en) ? "\\b" : "";
+  const post = /[A-Za-z0-9]$/.test(en) ? "\\b" : "";
+  return [new RegExp(pre + esc + post, "gi"), ko] as [RegExp, string];
+});
 function enPhraseTranslate(s: string): string {
   if (!HAS_LATIN.test(s)) return s;
   let out = s;
-  for (const [en, ko] of EN_PHRASE_SORTED) if (out.includes(en)) out = out.split(en).join(ko);
+  for (const [re, ko] of EN_PHRASE_RE) out = out.replace(re, ko);
   return out;
 }
 const HAS_CJK = /[぀-ヿ一-鿿]/;
