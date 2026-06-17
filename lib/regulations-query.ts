@@ -187,7 +187,19 @@ function buildCanonical(
   // inci_name 이 일본어/중국어면 표시용 한글 제목(inci_display)을 채우고, 원본 CJK는 japanese_name
   // 으로 보존(라벨된 참조). 검색·클릭은 inci_name(원본) 유지 → 검색 인덱스 무영향.
   const CJK_NAME = /[぀-ヿ㐀-鿿豈-﫿]/;
+  // 로마자-일본어 추출물명("RYOKU-CHA EKISU"=ウーロン茶エキス 류) → 학명+추출물. 영어 INCI 도 한글도
+  //   아닌 *로마자 일본어*가 제목 노출(육안 발견). koreanize 는 CJK 만 잡아 로마자는 통과 → 별도 처리.
+  //   chinese_name 의 라틴 학명("…（CAMELLIA SINENSIS）提取物")을 INCI 앵커로(보편 식별자).
+  const romajiJpDisplay = (m: IngredientMatch): string | null => {
+    if (!/EKISU/i.test(m.inci_name) || CJK_NAME.test(m.inci_name)) return null;
+    const bino = (m.chinese_name || "").match(/([A-Z]{2,}(?:\s+[A-Z][A-Za-z.\-]+)+)/);
+    if (!bino) return null;
+    const tc = bino[1].toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase()).trim();
+    return tc.length >= 4 ? tc + " 추출물" : null;
+  };
   const koDisplay = (m: IngredientMatch): IngredientMatch => {
+    const rj = romajiJpDisplay(m);
+    if (rj) return { ...m, inci_display: rj };
     if (!CJK_NAME.test(m.inci_name)) return m;
     const kn = koreanizeName(m.inci_name);
     if (kn.name === m.inci_name) return m;
