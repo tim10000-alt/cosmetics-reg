@@ -137,6 +137,17 @@ function parseHotlist(html: string): HotlistEntry[] {
         if (!name || name.length < 2) continue;
         // 헤더 row skip ("Ingredient", "Restriction" 등)
         if (/^(Ingredient|Substance|Name|Numbered|Note|CAS)$/i.test(name)) continue;
+        // rowspan 연속행 병합: Hotlist 는 한 물질이 제품군별 한도("a)…b)…c)…")로 여러 <tr> 에 걸칠 때
+        // 성분명 칸을 rowspan 으로 첫 행에만 둔다. 이름칸이 생략된 연속행은 cellRe 가 제품군 셀을 cells[0]
+        // 으로 잡아 "b) Other cosmetics" 같은 가짜 성분(phantom)을 만들었다(전수: CA 55건, 직접검색 노출).
+        // → 새 성분이 아니라 *직전 물질*의 추가 제품군·조건이므로 직전 entry conditions 에 병합(데이터 보존,
+        // 한도 "b) 1%" 유지). 정상 화학명은 "x) " 로 시작하지 않으므로 오탐 0(전수 검증).
+        if (/^[a-z]\)\s/.test(name) && out.length) {
+          const prev = out[out.length - 1];
+          const extra = cells.filter(Boolean).join("\n").trim();
+          if (extra) prev.conditions = (prev.conditions ? prev.conditions + "\n" : "") + extra;
+          continue;
+        }
         const cas = cells.slice(1).join(" ").match(/(\d{1,7}-\d{2}-\d)/)?.[1] ?? null;
         const conditions = cells.slice(1).filter(Boolean).join("\n").trim() || null;
         out.push({ name, cas, conditions, status: sec.status });
