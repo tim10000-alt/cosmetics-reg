@@ -486,8 +486,7 @@
       "ko": "알루미늄지르코늄옥타클로로하이드레이트",
       "country": "CN",
       "verdict": "restricted",
-      "by": "claude-judge",
-      "why": "제품/용도별 허용농도 명시",
+      "by": "deterministic-eu-restricted",
       "source_match": "MFDS"
     },
     "724def46-37c2-45da-8609-b2aaa2ccc492:CN": {

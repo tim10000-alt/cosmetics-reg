@@ -70,7 +70,7 @@
       "source_match": "MFDS",
       "inci": "Benzalkonium Saccharinate",
       "ko": "벤잘코늄사카리네이트",
-      "reason": "The regulatory text specifies concentration limits for use in rinse-off and other product types, indicating conditional allowance. It also explicitly prohibits use in spray products, which is a specific restriction rather than a general ban."
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "a83bc83d-04e4-4f7d-b02a-968e9c64cbab",
@@ -81,6 +81,16 @@
       "inci": "2-Chloro-p-Phenylenediamine Sulfate",
       "ko": "황산o-클로로-p-페닐렌디아민",
       "reason": "The ingredient is allowed in oxidative hair dyes up to 1.5%, but prohibited in all other product types."
+    },
+    {
+      "ingredient_id": "10138630-3386-4f48-b1cb-50e8712130f3",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Methenamine",
+      "ko": "메텐아민",
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "fd77cc76-789d-4b22-aa2a-e38b35c84193",
@@ -130,7 +140,7 @@
       "source_match": "MFDS",
       "inci": "Sodium Hydroxymethylglycinate",
       "ko": "소듐하이드록시메칠글리시네이트",
-      "reason": "The regulatory text specifies a '배합한도' (concentration limit) of 0.5%. In Korean cosmetic regulations, the presence of a concentration limit indicates that the ingredient is allowed up to that concentration, rather than being prohibited. This is a typical condition for a restricted ingredient, not a banned one."
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "a1645817-7a02-4f91-8d92-78936abb9892",
@@ -180,7 +190,7 @@
       "source_match": "MFDS",
       "inci": "7-Ethylbicyclooxazolidine",
       "ko": "7-에틸바이사이클로옥사졸리딘",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "01f61240-e33c-4e8e-928b-eb723b0fc72d",
@@ -200,7 +210,7 @@
       "source_match": "MFDS",
       "inci": "Sodium Hydroxymethylglycinate",
       "ko": "소듐하이드록시메칠글리시네이트",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "c628aaf3-4f69-40fe-b18f-d8a3c8999f57",
@@ -220,7 +230,7 @@
       "source_match": "MFDS",
       "inci": "Benzalkonium Saccharinate",
       "ko": "벤잘코늄사카리네이트",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "a83bc83d-04e4-4f7d-b02a-968e9c64cbab",
@@ -240,7 +250,7 @@
       "source_match": "MFDS",
       "inci": "Alkali sulfides",
       "ko": "알칼리설파이드류",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "d56f67d1-bfa6-4fcb-b65e-0395e08a7951",
@@ -250,7 +260,7 @@
       "source_match": "MFDS",
       "inci": "Silver Chloride",
       "ko": "실버클로라이드",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "3ca8947a-998c-4e28-bf26-d2df0d8d8511",
@@ -290,7 +300,7 @@
       "source_match": "MFDS",
       "inci": "Selenium Sulfide",
       "ko": "셀레늄설파이드",
-      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "cd90f232-8db0-4f54-9c70-45513f293c46",
@@ -310,7 +320,7 @@
       "source_match": "MFDS",
       "inci": "Benzalkonium chloride, bromide and saccharinate",
       "ko": "벤잘코늄클로라이드, 브로마이드 및 사카리네이트",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "5f1b1d14-4057-4a01-91b8-432e5f48b80c",
@@ -320,7 +330,7 @@
       "source_match": "MFDS",
       "inci": "4-Methylbenzylidene Camphor",
       "ko": "4-메칠벤질리덴캠퍼",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "eb7659e0-99de-431e-b043-9d6712731fc5",
@@ -340,7 +350,7 @@
       "source_match": "MFDS",
       "inci": "Lithium Sulfide",
       "ko": "리튬설파이드",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "bb52a597-b04b-4dcd-a7dd-65f83a95f303",
@@ -350,7 +360,7 @@
       "source_match": "MFDS",
       "inci": "p-Chloro-m-Cresol",
       "ko": "p-클로로-m-크레졸",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "18c2a585-2d5a-4ac7-8616-a8efe3d190b4",
@@ -380,7 +390,7 @@
       "source_match": "MFDS",
       "inci": "Aluminum Zirconium Octachlorohydrate",
       "ko": "알루미늄지르코늄옥타클로로하이드레이트",
-      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "724def46-37c2-45da-8609-b2aaa2ccc492",
@@ -390,7 +400,7 @@
       "source_match": "MFDS",
       "inci": "Sodium Dehydroacetate",
       "ko": "소듐데하이드로아세테이트",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "ce3ad912-d95d-4598-9627-bcece36732c4",
@@ -460,7 +470,7 @@
       "source_match": "MFDS",
       "inci": "Nitromethane",
       "ko": "니트로메탄",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "aa95b26d-7554-43dd-ac64-41f251ab987a",
@@ -480,7 +490,7 @@
       "source_match": "MFDS",
       "inci": "MEA-Benzoate",
       "ko": "엠이에이-벤조에이트",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "46985eaf-8c51-461f-80dd-ede6bc6f693d",
@@ -490,7 +500,7 @@
       "source_match": "MFDS",
       "inci": "Complexes of zirconium and aluminium hydroxides AlxZr(OH)yClz and its complexes with glycine",
       "ko": "지르코늄 및 알루미늄 및 그 글라이신 화합물",
-      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "fdf7df9f-78ac-430a-93a8-e57b889d8a85",
@@ -530,7 +540,7 @@
       "source_match": "MFDS",
       "inci": "Glutaral",
       "ko": "글루타랄",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "73b96345-5cf6-40f7-a332-219477a853b3",
@@ -540,7 +550,7 @@
       "source_match": "MFDS",
       "inci": "Myristalkonium Saccharinate",
       "ko": "미리스탈코늄사카리네이트",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "f0aa757a-4ac4-4b02-bb1a-1bba497398cb",
@@ -593,6 +603,16 @@
       "reason": "claude-judge: 허용 배합한도(농도) 명시"
     },
     {
+      "ingredient_id": "40b557df-eee1-498c-bce4-069e11796fc7",
+      "country_code": "CN",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Chloramine T",
+      "ko": "클로라민T",
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
+    },
+    {
       "ingredient_id": "8f9b30b0-a7fa-4e7c-9229-9c80ae8d57eb",
       "country_code": "CN",
       "from": "banned",
@@ -610,7 +630,7 @@
       "source_match": "MFDS",
       "inci": "Benzalkonium Chloride",
       "ko": "벤잘코늄클로라이드",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "8db24f41-6488-4cf5-bd65-a40a59f4f92a",
@@ -630,7 +650,7 @@
       "source_match": "MFDS",
       "inci": "Silver Nitrate",
       "ko": "실버나이트레이트",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "dc5bf7b8-2f5a-4416-9781-9f12f386f89d",
@@ -820,7 +840,7 @@
       "source_match": "MFDS",
       "inci": "Dehydroacetic Acid",
       "ko": "데하이드로아세틱애씨드",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "f39904f9-6f4f-490b-adf1-1d0c4b056cee",
@@ -920,7 +940,7 @@
       "source_match": "MFDS",
       "inci": "Zinc Phenolsulfonate",
       "ko": "징크페놀설포네이트",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "357c0887-710b-4bfe-a145-48ea97d3aded",
@@ -930,7 +950,7 @@
       "source_match": "MFDS",
       "inci": "Sodium Nitrite",
       "ko": "소듐나이트라이트",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "a7cda4f5-a062-42df-a566-ffe938cbeb78",
@@ -960,7 +980,7 @@
       "source_match": "MFDS",
       "inci": "Benzalkonium Bromide",
       "ko": "벤잘코늄브로마이드",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "e1d3adf9-aa32-4461-b677-3f72c1d6d912",
@@ -1030,7 +1050,7 @@
       "source_match": "MFDS",
       "inci": "Chlorobutanol",
       "ko": "클로로부탄올",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "b40100af-26da-46da-a135-5cf001815fb6",
@@ -1040,7 +1060,7 @@
       "source_match": "MFDS",
       "inci": "Dichlorophene",
       "ko": "다이클로로펜",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "056de540-c6ff-4726-9694-ab2b32b1a261",
@@ -1120,7 +1140,7 @@
       "source_match": "MFDS",
       "inci": "Benzalkonium chloride, bromide and saccharinate",
       "ko": "벤잘코늄클로라이드, 브로마이드 및 사카리네이트",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "5f1b1d14-4057-4a01-91b8-432e5f48b80c",
@@ -1130,7 +1150,7 @@
       "source_match": "MFDS",
       "inci": "4-Methylbenzylidene Camphor",
       "ko": "4-메칠벤질리덴캠퍼",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "57e75712-dbea-498b-bd63-9bd985178b3b",
@@ -1180,7 +1200,7 @@
       "source_match": "MFDS",
       "inci": "Piroctone Olamine",
       "ko": "피록톤올아민",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "bb52a597-b04b-4dcd-a7dd-65f83a95f303",
@@ -1190,7 +1210,7 @@
       "source_match": "MFDS",
       "inci": "p-Chloro-m-Cresol",
       "ko": "p-클로로-m-크레졸",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "fbfaf3ee-556d-4ae7-9442-05947cf44b93",
@@ -1220,7 +1240,7 @@
       "source_match": "MFDS",
       "inci": "Tagetes minuta Flower Extract",
       "ko": "만수국아재비꽃추출물",
-      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "39975d4a-7f6f-4139-8902-1b6ad7801fc5",
@@ -1260,7 +1280,7 @@
       "source_match": "MFDS",
       "inci": "Sodium Dehydroacetate",
       "ko": "소듐데하이드로아세테이트",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "f41e7668-b43c-4d41-adb1-c17ea6d1fde6",
@@ -1270,7 +1290,7 @@
       "source_match": "MFDS",
       "inci": "Phenoxyisopropanol",
       "ko": "페녹시이소프로판올",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "5c837bba-e300-4316-8afe-cc4107abff47",
@@ -1380,7 +1400,7 @@
       "source_match": "MFDS",
       "inci": "Polyaminopropyl Biguanide",
       "ko": "폴리아미노프로필바이구아나이드",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "5a81e4bd-554e-43ca-936a-9afc2f201931",
@@ -1400,7 +1420,7 @@
       "source_match": "MFDS",
       "inci": "Glutaral",
       "ko": "글루타랄",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "f35fac61-efd9-4662-b254-b208e55382ec",
@@ -1420,7 +1440,7 @@
       "source_match": "MFDS",
       "inci": "Myristalkonium Saccharinate",
       "ko": "미리스탈코늄사카리네이트",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "73134c54-53f2-435d-a3bd-4fddae5809e4",
@@ -1430,7 +1450,7 @@
       "source_match": "MFDS",
       "inci": "Quinine and its salts",
       "ko": "퀴닌 및 그 염류",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "5b522c4e-d566-460f-8848-10d1ebea400c",
@@ -1480,7 +1500,7 @@
       "source_match": "MFDS",
       "inci": "Benzylhemiformal",
       "ko": "벤질헤미포름알",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "cec13efc-8459-492f-9893-bb023ff4fabc",
@@ -1510,7 +1530,7 @@
       "source_match": "MFDS",
       "inci": "2-Bromo-2-Nitropropane-1,3-Diol",
       "ko": "2-브로모-2-나이트로프로판-1,3-디올",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "259e8f67-62dc-403c-bfb8-3968e97831b5",
@@ -1560,7 +1580,7 @@
       "source_match": "MFDS",
       "inci": "Tagetes patula flower extract",
       "ko": "만수국꽃추출물",
-      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "05493128-8a48-4bf9-adcd-b14ce176e949",
@@ -1581,6 +1601,16 @@
       "inci": "2-Methylresorcinol",
       "ko": "2-메틸레조시놀",
       "reason": "claude-judge: 제품/용도별 허용농도 명시"
+    },
+    {
+      "ingredient_id": "40b557df-eee1-498c-bce4-069e11796fc7",
+      "country_code": "KR",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Chloramine T",
+      "ko": "클로라민T",
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "deee5fdd-ce27-4d6c-90c6-f9c81a25c2c5",
@@ -1610,7 +1640,7 @@
       "source_match": "MFDS",
       "inci": "Tagetes patula flower oil",
       "ko": "만수국꽃오일",
-      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "a7fe2be8-83bc-41e9-9c73-1ffe149a49af",
@@ -1640,7 +1670,7 @@
       "source_match": "MFDS",
       "inci": "Tagetes Minuta Flower Oil",
       "ko": "만수국아재비꽃오일",
-      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "a9a727a8-eec8-43a1-a38d-7984484838ed",
@@ -1660,7 +1690,7 @@
       "source_match": "MFDS",
       "inci": "Benzalkonium Chloride",
       "ko": "벤잘코늄클로라이드",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "d0f30dc4-1ef7-4f99-a1b8-7b8e81b91232",
@@ -1690,7 +1720,7 @@
       "source_match": "MFDS",
       "inci": "Silver Nitrate",
       "ko": "실버나이트레이트",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "55759db0-71e8-4151-8a90-cc298d1e738f",
@@ -1750,7 +1780,7 @@
       "source_match": "MFDS",
       "inci": "Hexetidine",
       "ko": "헥세티딘",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "22acb37f-762e-40e1-93b6-22086db6221f",
@@ -1810,7 +1840,7 @@
       "source_match": "MFDS",
       "inci": "Benzethonium Chloride",
       "ko": "벤제토늄클로라이드",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "66738be8-e3f4-457d-bc4e-617db3a8a4e6",
@@ -1820,7 +1850,7 @@
       "source_match": "MFDS",
       "inci": "Allyl Heptine Carbonate",
       "ko": "아릴헵틴카보네이트",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "80efe8d6-ec86-4887-be65-241fb1250d3e",
@@ -1840,7 +1870,7 @@
       "source_match": "MFDS",
       "inci": "Undecylenic acid, its salts and monoethanolamide",
       "ko": "운데실레닉애씨드 및 그 염류 및 모노에탄올아마이드",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "100d8189-971b-4d56-be3f-3d9d65d3add5",
@@ -1850,7 +1880,7 @@
       "source_match": "MFDS",
       "inci": "Toluene",
       "ko": "톨루엔",
-      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "7b1a7c39-fe9d-4847-bf99-28cde17f8bdc",
@@ -1870,7 +1900,7 @@
       "source_match": "MFDS",
       "inci": "Ethyl Lauroyl Arginate HCl",
       "ko": "에칠라우로일알지네이트하이드로클로라이드",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "4814e61a-6795-46c1-aea6-0a04c6a98148",
@@ -1880,7 +1910,7 @@
       "source_match": "MFDS",
       "inci": "Dehydroacetic Acid",
       "ko": "데하이드로아세틱애씨드",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "cad15409-1b3e-4b74-9113-98ffb0f86c64",
@@ -1890,7 +1920,7 @@
       "source_match": "MFDS",
       "inci": "Calcium Hydroxide",
       "ko": "칼슘하이드록사이드",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "75a35b4f-4d3d-491d-b70f-e20c8c2ee391",
@@ -1900,7 +1930,7 @@
       "source_match": "MFDS",
       "inci": "Lithium Hydroxide",
       "ko": "리튬하이드록사이드",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "75d839bb-a827-4cbe-8790-a90d930f3a1c",
@@ -1960,7 +1990,7 @@
       "source_match": "MFDS",
       "inci": "Quinine",
       "ko": "퀴닌",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "8c5336ba-2598-401b-9d70-9cf629a7769b",
@@ -2000,7 +2030,7 @@
       "source_match": "MFDS",
       "inci": "Methylchloroisothiazolinone",
       "ko": "메칠클로로이소치아졸리논",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "7dababca-e2e0-497a-bf0b-d580d34a1346",
@@ -2030,7 +2060,7 @@
       "source_match": "MFDS",
       "inci": "Sodium Nitrite",
       "ko": "소듐나이트라이트",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "1066817d-4dd8-4b47-b0be-8d89b22699b0",
@@ -2080,7 +2110,7 @@
       "source_match": "MFDS",
       "inci": "Undecylenic Acid",
       "ko": "운데실레닉애씨드",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "ad0991ab-3fcd-4d00-b0de-72e0b907305f",
@@ -2110,7 +2140,7 @@
       "source_match": "MFDS",
       "inci": "Benzalkonium Bromide",
       "ko": "벤잘코늄브로마이드",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "e320f23e-8e76-4262-845e-b9ae98a9602f",
@@ -2180,7 +2210,7 @@
       "source_match": "MFDS",
       "inci": "Methoxypropylamino Cyclohexenylidene Ethoxyethylcyanoacetate",
       "ko": "메톡시프로필아미노사이클로헥세닐리덴에톡시에틸사이아노아세테이트",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "c102663c-f813-44a4-b89f-373505cd52b2",
@@ -2210,7 +2240,7 @@
       "source_match": "MFDS",
       "inci": "Chlorobutanol",
       "ko": "클로로부탄올",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "b5c03837-fc20-4ab8-8a2b-d640761cbe44",
@@ -2220,7 +2250,7 @@
       "source_match": "MFDS",
       "inci": "Lithol Red, Aka205, CI 15630",
       "ko": "적색205호",
-      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "b80bde5b-61a5-4934-99a4-2e560057b4cd",
@@ -2230,7 +2260,7 @@
       "source_match": "MFDS",
       "inci": "Carbon Black, D&C Black No. 2, CI 77266",
       "ko": "카본블랙",
-      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "0afebd58-d487-4bb7-8f5c-f675d2704430",
@@ -2270,7 +2300,7 @@
       "source_match": "MFDS",
       "inci": "CI 15630",
       "ko": "CI 15630",
-      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "c1942c88-0fe9-4d60-bdb5-b5a2324943b8",
@@ -2290,7 +2320,7 @@
       "source_match": "MFDS",
       "inci": "Sodium Hydroxymethylglycinate",
       "ko": "소듐하이드록시메칠글리시네이트",
-      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "10138630-3386-4f48-b1cb-50e8712130f3",
@@ -2300,7 +2330,7 @@
       "source_match": "MFDS",
       "inci": "Methenamine",
       "ko": "메텐아민",
-      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "5f1b1d14-4057-4a01-91b8-432e5f48b80c",
@@ -2310,7 +2340,7 @@
       "source_match": "MFDS",
       "inci": "4-Methylbenzylidene Camphor",
       "ko": "4-메칠벤질리덴캠퍼",
-      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "1e28ae3b-25e0-4300-a695-ead3077009b3",
@@ -2330,7 +2360,7 @@
       "source_match": "MFDS",
       "inci": "Piroctone Olamine",
       "ko": "피록톤올아민",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "8ba06f2b-84dc-47f8-ae9c-55056008295c",
@@ -2340,7 +2370,7 @@
       "source_match": "MFDS",
       "inci": "MEA-Benzoate",
       "ko": "엠이에이-벤조에이트",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "89d6c4d0-2e71-4f32-b5e5-1c6c69e62a86",
@@ -2363,6 +2393,16 @@
       "reason": "claude-color: 허용색소표 오태깅·외국허용확증"
     },
     {
+      "ingredient_id": "40b557df-eee1-498c-bce4-069e11796fc7",
+      "country_code": "TW",
+      "from": "banned",
+      "to": "restricted",
+      "source_match": "MFDS",
+      "inci": "Chloramine T",
+      "ko": "클로라민T",
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
+    },
+    {
       "ingredient_id": "f5db8f89-2ca3-4262-94bc-73c9555a6bf3",
       "country_code": "TW",
       "from": "banned",
@@ -2370,7 +2410,7 @@
       "source_match": "MFDS",
       "inci": "Strontium",
       "ko": "스트론튬",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "e492a4e1-ea0a-422f-8a83-69fc66c9dd6a",
@@ -2380,7 +2420,7 @@
       "source_match": "MFDS",
       "inci": "Uranine, D&C Yellow No. 8, Acid Yellow 73 Sodium Salt, Ki202(2), CI 45350",
       "ko": "황색202호의(1)",
-      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "1e662c35-f39d-4570-bab0-89a606946138",
@@ -2390,7 +2430,7 @@
       "source_match": "MFDS",
       "inci": "Fluorescein, D&C Yellow No. 7, Ki201, CI 45350:1",
       "ko": "황색201호",
-      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "e1828cd2-38ec-4dd9-b1e3-a2e359c9799d",
@@ -2400,7 +2440,7 @@
       "source_match": "MFDS",
       "inci": "Permaton Red, D&C Red No. 36, Red 36 Lake, Aka228, PIGMENT RED 4, CI 12085",
       "ko": "적색228호",
-      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "ed25197b-d4b1-4c6a-822e-2080f8227abe",
@@ -2430,7 +2470,7 @@
       "source_match": "MFDS",
       "inci": "Uranine K, Ki202(2), CI 45350",
       "ko": "황색202호의(2)",
-      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "ca2ac2bd-a963-42be-85b4-45b97008e924",
@@ -2440,7 +2480,7 @@
       "source_match": "MFDS",
       "inci": "CI 77266",
       "ko": "CI 77266",
-      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "1b5236cb-40e4-40f7-a0d3-084c1cf0a482",
@@ -2460,7 +2500,7 @@
       "source_match": "MFDS",
       "inci": "Strontium hydroxide",
       "ko": "스트론튬하이드록사이드",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "4dbae469-da49-4b02-879a-2b286ed45ad1",
@@ -2470,7 +2510,7 @@
       "source_match": "MFDS",
       "inci": "7-Ethylbicyclooxazolidine",
       "ko": "7-에틸바이사이클로옥사졸리딘",
-      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "98ec2cb0-995d-4d24-90de-3e9ed61efded",
@@ -2480,7 +2520,7 @@
       "source_match": "MFDS",
       "inci": "Butyl 4-hydroxybenzoate and its salts Propyl 4-hydroxybenzoate and its salts",
       "ko": "부틸4-하이드록시벤조에이트 및 그 염류\n프로필4-하이드록시벤조에이트 및 그염류",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "3f7c71a6-5bab-4335-8ce7-3a209d1e6977",
@@ -2490,7 +2530,7 @@
       "source_match": "MFDS",
       "inci": "Turpentine",
       "ko": "터펜틴",
-      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "4db1cf5b-24ef-42d5-86b6-c0c68df9e410",
@@ -2500,7 +2540,7 @@
       "source_match": "MFDS",
       "inci": "Pinus Mugo Twig Oil",
       "ko": "무고소나무잔가지오일",
-      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "9a901cb9-002f-4ec7-b933-b7947149b42a",
@@ -2520,7 +2560,7 @@
       "source_match": "MFDS",
       "inci": "Propylparaben",
       "ko": "프로필파라벤",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "da7134cf-e570-49b4-9420-c7f6972f783b",
@@ -2550,7 +2590,7 @@
       "source_match": "MFDS",
       "inci": "Pinus Mugo Twig Leaf Extract",
       "ko": "무고소나무잔가지잎추출물",
-      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "72bae0d1-cb2a-41ba-bafe-2dd6c256cc8a",
@@ -2560,7 +2600,7 @@
       "source_match": "MFDS",
       "inci": "Sodium Butylparaben",
       "ko": "소듐부틸파라벤",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "ba619501-7fbd-4633-af2a-f905b83cbf6e",
@@ -2600,7 +2640,7 @@
       "source_match": "MFDS",
       "inci": "Cedrus Atlantica Wood Extract",
       "ko": "아틀라스시다목부추출물",
-      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "fc891914-bc5f-4950-b9d8-1df4ebe8619d",
@@ -2620,7 +2660,7 @@
       "source_match": "MFDS",
       "inci": "Butylparaben",
       "ko": "부틸파라벤",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "7c1ade80-5f49-4ece-ba41-8eab49d4f029",
@@ -2650,7 +2690,7 @@
       "source_match": "MFDS",
       "inci": "Cedrus Atlantica Bark Extract",
       "ko": "아틀라스시다껍질추출물",
-      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "dc5bf7b8-2f5a-4416-9781-9f12f386f89d",
@@ -2670,7 +2710,7 @@
       "source_match": "MFDS",
       "inci": "Cedrus Atlantica Bark Oil",
       "ko": "아틀라스시다나무껍질오일",
-      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "9a553bcb-9ae9-4850-87da-68ba27eabf3c",
@@ -2680,7 +2720,7 @@
       "source_match": "MFDS",
       "inci": "Potassium Propylparaben",
       "ko": "포타슘프로필파라벤",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "825df8f5-6ed4-454c-af78-6f3f630cd112",
@@ -2700,7 +2740,7 @@
       "source_match": "MFDS",
       "inci": "Cedrus Atlantica Wood Oil",
       "ko": "아틀라스시다목부오일",
-      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "1de299e4-825c-4da2-bf71-40a4273a5583",
@@ -2750,7 +2790,7 @@
       "source_match": "MFDS",
       "inci": "6-Methyl Coumarin",
       "ko": "6-메틸쿠마린",
-      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "db7a4a06-8de2-4f6e-9342-5c1f1afe5aaf",
@@ -2780,7 +2820,7 @@
       "source_match": "MFDS",
       "inci": "Potassium Butylparaben",
       "ko": "포타슘부틸파라벤",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "218b3fc2-0da2-441a-9d1f-d7a3bcd1a71f",
@@ -2790,7 +2830,7 @@
       "source_match": "MFDS",
       "inci": "Sodium Propylparaben",
       "ko": "소듐프로필파라벤",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "91526c9c-6d98-4593-8470-ec0daf12e91d",
@@ -2830,7 +2870,7 @@
       "source_match": "MFDS",
       "inci": "Terpinolene",
       "ko": "터피놀렌",
-      "reason": "claude-judge: 제품/용도별 허용농도 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "c94a44c7-f5eb-4f1f-842e-6c96148a9d3c",
@@ -6251,46 +6291,6 @@
       "inci": "Alizurine Purple SS, D&C Violet No. 2, Murasaki201, CI 60725",
       "ko": "자색201호",
       "reason": "claude-color: 허용색소표 오태깅·외국허용확증"
-    },
-    {
-      "ingredient_id": "40b557df-eee1-498c-bce4-069e11796fc7",
-      "country_code": "CN",
-      "from": "banned",
-      "to": "restricted",
-      "source_match": "MFDS",
-      "inci": "Chloramine T",
-      "ko": "클로라민T",
-      "reason": "deterministic-eu-restricted: EU 권위가 제한(Annex III/V/VI)으로 확증한 제한물질 — MFDS banned 오매핑 교정"
-    },
-    {
-      "ingredient_id": "10138630-3386-4f48-b1cb-50e8712130f3",
-      "country_code": "KR",
-      "from": "banned",
-      "to": "restricted",
-      "source_match": "MFDS",
-      "inci": "Methenamine",
-      "ko": "메텐아민",
-      "reason": "deterministic-eu-restricted: EU 권위가 제한(Annex III/V/VI)으로 확증한 제한물질 — MFDS banned 오매핑 교정"
-    },
-    {
-      "ingredient_id": "40b557df-eee1-498c-bce4-069e11796fc7",
-      "country_code": "KR",
-      "from": "banned",
-      "to": "restricted",
-      "source_match": "MFDS",
-      "inci": "Chloramine T",
-      "ko": "클로라민T",
-      "reason": "deterministic-eu-restricted: EU 권위가 제한(Annex III/V/VI)으로 확증한 제한물질 — MFDS banned 오매핑 교정"
-    },
-    {
-      "ingredient_id": "40b557df-eee1-498c-bce4-069e11796fc7",
-      "country_code": "TW",
-      "from": "banned",
-      "to": "restricted",
-      "source_match": "MFDS",
-      "inci": "Chloramine T",
-      "ko": "클로라민T",
-      "reason": "deterministic-eu-restricted: EU 권위가 제한(Annex III/V/VI)으로 확증한 제한물질 — MFDS banned 오매핑 교정"
     }
   ]
 }
