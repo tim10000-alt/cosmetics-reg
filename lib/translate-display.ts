@@ -647,25 +647,32 @@ function stripBilingual(s: string): string {
   }).join("\n");
 }
 
+// 유럽식 쉼표 소수점(EU·채택블록 "0,1%" → "0.1%") → 한국 표기(마침표). 공백없는 "숫자,숫자%"만
+// (% 앵커로 CAS 리스트 "100-97-0,127-65-1"·리스트 "5, 10%"·천단위 보호). 값 불변·가독성만.
+function decimalFix(v: string): string {
+  return v.indexOf(",") === -1 ? v : v.replace(/(\d),(\d{1,3})(\s*%)/g, "$1.$2$3");
+}
+
 export function translateDisplay<T extends string | null | undefined>(
   s: T,
   cache?: Map<string, string> | null,
 ): T {
   if (s == null) return s;
   const str0 = s as string;
+  const fin = (v: string): T => decimalFix(v) as T;
   if (cache) {
     const hit = cache.get(strKey(str0));
     // 캐시(Gemini 번역)에도 잔존 외국어가 있을 수 있어 동일 정리 파이프 적용(이중언어·CJK·영문 boilerplate).
-    if (hit) return enPhraseTranslate(phraseTranslate(stripBilingual(hit))) as T;
+    if (hit) return fin(enPhraseTranslate(phraseTranslate(stripBilingual(hit))));
   }
   // MFDS 이중언어("원문^한글") → 한글 측만. 이후 MAP/PHRASE 는 정리된 한글에 적용.
   const str = stripBilingual(str0);
   const direct = MAP[str] ?? MAP[str0];
-  if (direct) return direct as T;
+  if (direct) return fin(direct);
   const n = NORM_MAP[norm(str)] ?? NORM_MAP[norm(str0)];
-  if (n) return n as T;
+  if (n) return fin(n);
   // CJK boilerplate 구절 치환 + 영문 CosIng boilerplate 한글화(영어전용 조건문 = 한글 0 해소).
   const ph = enPhraseTranslate(phraseTranslate(str));
-  if (ph !== str) return ph as T;
-  return str as T;
+  if (ph !== str) return fin(ph);
+  return fin(str);
 }
