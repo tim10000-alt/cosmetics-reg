@@ -117,10 +117,33 @@ async function main() {
   const now = new Date().toISOString();
   const version = `1223-HTML-${now.slice(0, 10)}`;
   const newRegs: RegulationRow[] = [];
-  let matched = 0, skipped = 0;
+  // Annex II(금지) 인데 DB 에 없는 *유효 CAS·실명* 물질은 **생성**(전수 완비). 최근 CLP Omnibus 로
+  // Annex II 에 추가된 CMR 살충제·공업화학물(예 Metaldehyde·Clothianidin·dibutyltin)이 DB 부재라
+  // "검색 미도달"이던 것 — 금지 누락은 완전성 손실. 결정론 ID(euban-<CAS>)=멱등(매 crawl 재생성 0).
+  // 안전조건: Annex II + 유효 CAS + 실 화학명(카테고리/placeholder 제외) + DB 에 그 CAS 부재. 생성물은
+  // 영문 화학명(금지 CMR 라 한글표준명 불필요)·banned·EU 출처. dedup: 기존 CAS 보유시 생성 안 함.
+  const createdIng: IngredientRow[] = [];
+  const cleanBanName = (s: string): string =>
+    s.replace(/\s*\((?:ISO|INN|EC)\)/gi, "").replace(/;.*$/, "").replace(/\s{2,}/g, " ").trim();
+  const isRealName = (s: string): boolean =>
+    s.length >= 3 && !/^(moved|deleted|reserved)\b/i.test(s) &&
+    !/^(salts?|esters?|derivatives?|compounds?|substances?|materials?|narcotics?|vaccines?|toxins?)\b/i.test(s) &&
+    /[a-z]{3}/i.test(s);
+  let matched = 0, skipped = 0, created = 0;
   for (const r of rows) {
-    const ing = (r.cas && byCas.get(r.cas)) || byInci.get(r.name.toLowerCase());
-    if (!ing) { skipped++; continue; }
+    let ing = (r.cas && byCas.get(r.cas)) || byInci.get(r.name.toLowerCase());
+    if (!ing) {
+      // 미매칭 Annex II 금지 + 유효 CAS + 실명 → 생성(완전성). 그 외(제한/허용·CAS無·카테고리)는 skip 유지.
+      const nm = cleanBanName(r.name);
+      if (r.annex === "II" && r.cas && /^\d{2,7}-\d{2}-\d$/.test(r.cas) && isRealName(nm) && !byCas.has(r.cas)) {
+        ing = {
+          id: `euban-${r.cas}`, inci_name: nm, korean_name: null, chinese_name: null, japanese_name: null,
+          cas_no: r.cas, synonyms: [], description: null, function_category: null, function_description: null,
+        };
+        byCas.set(r.cas, ing); byInci.set(nm.toLowerCase(), ing);
+        createdIng.push(ing); created++;
+      } else { skipped++; continue; }
+    }
     matched++;
     const cond = [
       `EU 1223/2009 Annex ${r.annex} (Ref ${r.ref}) — ${r.status === "banned" ? "사용 금지" : r.status === "restricted" ? "사용 제한" : "positive list(허용)"}.`,
@@ -137,7 +160,15 @@ async function main() {
       source_priority: 100, last_verified_at: now, confidence_score: 1.0, override_note: null,
     });
   }
-  console.log(`  매칭 ${matched}, 미매칭 skip ${skipped}, 규제행 ${newRegs.length}`);
+  console.log(`  매칭 ${matched}, 미매칭 skip ${skipped}, 신규 금지물질 생성 ${created}, 규제행 ${newRegs.length}`);
+
+  // 신규 생성 금지물질을 ingredients.json 에 멱등 추가(id=euban-<CAS> 중복시 skip). 결정론·완전성.
+  if (createdIng.length) {
+    const allIng = await readRows<IngredientRow>("ingredients");
+    const have = new Set(allIng.map((i) => i.id));
+    const toAdd = createdIng.filter((i) => !have.has(i.id));
+    if (toAdd.length) { await writeRows("ingredients", [...allIng, ...toAdd]); console.log(`  ✓ 신규 금지물질 ${toAdd.length} 성분 생성(euban-<CAS>, 멱등)`); }
+  }
 
   const existing = await readRows<RegulationRow>("regulations");
   // 기존 EU EUR-Lex 소스 행(깨진 PDF "Cosmetic Products" + 이전 HTML 포함) 전부 교체 →
