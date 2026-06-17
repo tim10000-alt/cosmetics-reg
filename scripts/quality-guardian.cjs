@@ -466,16 +466,33 @@ function main() {
     for (const c of cs) s.add(c);
   }
   let crossSynStripped = 0;
+  // host 에 유효 CAS 가 없어 위 disjoint 판정이 불가한 경우의 *확실한* 교차물질만 추가 제거(분별력):
+  //  (a) 구성산 패턴 — 동의어가 "… Acid"(별개 성분으로 등재·CAS 보유)인데 host 명은 acid 로 끝나지 않음
+  //      = host 가 그 산의 염/에스터(예 Calcium Benzoate→"Benzoic Acid"·TEA-Sorbate→"Sorbic Acid").
+  //      염/에스터는 모산과 *정의상* 다른 물질 → 안전. (host 가 acid 면 동일 산의 별칭일 수 있어 제외).
+  //  (b) 단일 원소명("Calcium"·"Sodium" 등)만인 동의어 = 무의미(화합물의 동의어가 원소일 수 없음).
+  //  나머지 모호분(동일물질 분절 가능: Mercury Dichloride↔Mercuric Chloride·TEA-Carbomer↔Carbomer)은
+  //  보존 — 맹목 제거 시 동일물질 관계를 숨김(분별력, 자동 병합/분리 위험은 별도 식별판단기 영역).
+  const BARE_ELEMENT = /^(calcium|sodium|potassium|magnesium|zinc|mercury|aluminum|aluminium|iron|copper|silver|barium|lead|tin|nickel|chromium|cobalt|manganese)$/;
+  const isCrossSubstanceNoCas = (syn, hostName) => {
+    const k = normN(syn || ""); if (!k || k === hostName) return false;
+    if (BARE_ELEMENT.test(k)) return nameToCas.has(k);                       // 원소명 junk(별개 성분으로 존재)
+    if (!/\bacid$/.test(k) || /\bacid$/.test(hostName)) return false;        // 산 패턴 + host 는 비-산(염/에스터)
+    const oc = nameToCas.get(k); return !!(oc && oc.size);                   // 그 산이 별개 성분으로 CAS 보유 = 확실 cross
+  };
   for (const i of ingObj.rows) {
     if (!Array.isArray(i.synonyms) || !i.synonyms.length) continue;
-    const myCas = validCasSet(i.cas_no); if (!myCas.size) continue;
+    const myCas = validCasSet(i.cas_no);
     const myName = normN(i.inci_name || "");
     const before = i.synonyms.length;
     i.synonyms = i.synonyms.filter((syn) => {
       const k = normN(syn || ""); if (!k || k === myName) return true;
-      const oc = nameToCas.get(k); if (!oc || !oc.size) return true;        // 다른 성분 이름 아님/CAS 불명 → 보존
-      for (const c of myCas) if (oc.has(c)) return true;                     // CAS 공유 = 동일물질 표기 → 보존
-      return false;                                                          // CAS 교집합 0 = 교차물질 → 제거
+      if (myCas.size) {
+        const oc = nameToCas.get(k); if (!oc || !oc.size) return true;      // 다른 성분 이름 아님/CAS 불명 → 보존
+        for (const c of myCas) if (oc.has(c)) return true;                   // CAS 공유 = 동일물질 표기 → 보존
+        return false;                                                        // CAS 교집합 0 = 교차물질 → 제거
+      }
+      return !isCrossSubstanceNoCas(syn, myName);                            // host CAS 無 → 확실 cross 만 제거
     });
     if (i.synonyms.length !== before) { crossSynStripped += before - i.synonyms.length; ingChanged = true; }
   }
