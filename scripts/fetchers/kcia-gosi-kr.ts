@@ -98,7 +98,7 @@ async function parseGosi(buf: Buffer): Promise<{ cas: string; name: string; stat
     const cas = casCell.trim();
     const ko = cells.filter((c) => c !== casCell && /[가-힣]/.test(c));
     const clean = ko.filter((c) => !COND.test(c));
-    let name = (clean.sort((a, b) => b.length - a.length)[0] || ko.sort((a, b) => a.length - b.length)[0] || "")
+    const name = (clean.sort((a, b) => b.length - a.length)[0] || ko.sort((a, b) => a.length - b.length)[0] || "")
       .replace(/\s*[(（]\s*다만[\s\S]*$/, "").replace(/\s*다만[,，][\s\S]*$/, "").trim().slice(0, 80);
     if (!name || name.length < 2) continue;  // 이름 없는 행 skip(정확성)
     const hasPct = cells.some((c) => /\d+(?:\.\d+)?\s*(?:%|퍼센트|ppm)/.test(c));
