@@ -179,6 +179,11 @@ function buildCanonical(
   // 정리(실측: korean 21건 newline/주석, chinese/japanese 0). 장기 전자동: 파이프라인이 어떤 필드에 누출을
   // 만들어도 표시 시점에 균일 정리(누락 0). null 은 보존.
   const cleanNm = (v: string | null): string | null => (v == null ? v : cleanDisplayName(v));
+  // 중/일 *언어 참조* 필드가 코드(CI 색인번호·CAS·EC번호)뿐이면 = 실제 중/일명 아님 → 표시 null
+  //   (육안 발견: 색소가 chinese_name="CI 77491"·japanese_name="CI 77015"로 오표시. CJK검사 사각=코드엔
+  //   한자 없음). firstRealName 은 형제 중 *진짜 이름*(코드 아님)을 우선 선택, 없으면 null.
+  const isBareCode = (v: string): boolean => /^(C\.?\s*I\.?\s*\d{3,6}|\d{2,7}-\d{2}-\d|EC\s*\d[\d\s-]*|\d{3}-\d{3}-\d)$/i.test(v.trim());
+  const langNm = (v: string | null): string | null => { const c = cleanNm(v); return c && isBareCode(c) ? null : c; };
   // inci_name 이 일본어/중국어면 표시용 한글 제목(inci_display)을 채우고, 원본 CJK는 japanese_name
   // 으로 보존(라벨된 참조). 검색·클릭은 inci_name(원본) 유지 → 검색 인덱스 무영향.
   const CJK_NAME = /[぀-ヿ㐀-鿿豈-﫿]/;
@@ -194,7 +199,7 @@ function buildCanonical(
   if (members.length <= 1) {
     // 형제 없는 단일 레코드도 표시명 위생 + 누출 동의어 제거(standalone 코럽트 헤드라인 대응).
     const cleaned = cleanDisplayName(resolved.inci_name);
-    const ko = cleanNm(resolved.korean_name), zh = cleanNm(resolved.chinese_name), ja = cleanNm(resolved.japanese_name);
+    const ko = cleanNm(resolved.korean_name), zh = langNm(resolved.chinese_name), ja = langNm(resolved.japanese_name);
     const syn = (resolved.synonyms || []).filter((x) => !isLeakArtifact(x));
     // cas_no 제어문자(\r\n\t) 위생 — 저장값 오염(예 "328-39-2(DL-)\r,61-90-5(L-)")이 표시에 새지 않게.
     const casClean = resolved.cas_no ? resolved.cas_no.replace(/[\r\n\t]+/g, " ").replace(/\s+,/g, ",").replace(/\s{2,}/g, " ").trim() : resolved.cas_no;
@@ -216,6 +221,12 @@ function buildCanonical(
     for (const m of members) if (m[f]) return m[f] as string;
     return null;
   };
+  // 중/일명: 형제 중 코드(CI번호 등)가 아닌 *진짜 이름* 우선. 전부 코드뿐이면 null.
+  const firstRealName = (f: "chinese_name" | "japanese_name"): string | null => {
+    const cands = [rep[f], ...members.map((m) => m[f])].filter(Boolean) as string[];
+    const real = cands.find((v) => !isBareCode(cleanDisplayName(v)));
+    return real ?? null;
+  };
   // CAS union (유효 형식만, 중복 제거)
   const casSet: string[] = [];
   for (const m of members) for (const c of String(m.cas_no || "").split(/[\s,;]+/)) {
@@ -236,8 +247,8 @@ function buildCanonical(
     id: rep.id,
     inci_name: repInci,
     korean_name: cleanNm(firstOf("korean_name")),
-    chinese_name: cleanNm(firstOf("chinese_name")),
-    japanese_name: cleanNm(firstOf("japanese_name")),
+    chinese_name: langNm(firstRealName("chinese_name")),
+    japanese_name: langNm(firstRealName("japanese_name")),
     cas_no: casSet.length ? casSet.join(", ") : null,
     synonyms: synSet,
     description: firstOf("description"),
