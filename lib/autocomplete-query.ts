@@ -8,7 +8,7 @@ export interface Suggestion {
   inci_display?: string;  // 일/중 inci_name 표시용 한글화(검색은 inci_name 원본 유지)
 }
 
-const CJK_NAME = /[぀-ヿ㐀-鿿豈-﫿]/;
+const CJK_NAME = /[぀-ヿ㐀-鿿豈-﫿]/;
 
 function sanitize(s: string): string {
   return s.replace(/[,()%_\\"]/g, " ").replace(/\s+/g, " ").trim();
@@ -39,7 +39,7 @@ export async function fetchSuggestions(rawQuery: string, signal?: AbortSignal): 
   for (const ing of ds.ingredients) {
     if (results.length >= 8) break;
     if (signal?.aborted) return [];
-    if (ing.korean_name && ing.korean_name.toLowerCase().startsWith(safe)) add(ing);
+    if (((ing.korean_name || ing.koreanized) || "").toLowerCase().startsWith(safe)) add(ing);
   }
   for (const ing of ds.ingredients) {
     if (results.length >= 8) break;

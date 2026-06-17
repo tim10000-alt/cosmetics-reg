@@ -112,7 +112,8 @@ function rankIngredients(
     // 질의(safe)와 동일 정규화(쉼표/괄호→공백·공백압축) 한 이름으로 비교 — 비대칭으로 인해
     // 전체명("Borates (Sodium borate, tetraborate)" 등 쉼표/괄호 포함)이 검색 미도달이던 버그 수정.
     const inci = ing.inci_name ? sanitize(ing.inci_name.toLowerCase()) : null;
-    const kor = ing.korean_name ? sanitize(ing.korean_name.toLowerCase()) : null;
+    // 한글명 또는 한글화 별칭(koreanized) — 화면에 보이는 한글로 검색해도 도달(findability).
+    const kor = (ing.korean_name || ing.koreanized) ? sanitize((ing.korean_name || ing.koreanized)!.toLowerCase()) : null;
     let score = Infinity;
     if (inci && inci.includes(safe)) score = Math.min(score, (inci === safe ? 0 : inci.startsWith(safe) ? 1 : 1000) + inci.length);
     if (kor && kor.includes(safe)) score = Math.min(score, (kor === safe ? 0 : kor.startsWith(safe) ? 1 : 1000) + kor.length);
@@ -492,7 +493,7 @@ export async function lookupRegulation(
           related_variants.push({
             inci_name: other.inci_name,
             extra_country_names: extra.map((cc) => ds.countryByCode.get(cc)?.name_ko ?? cc),
-            inci_display: /[぀-ヿ㐀-鿿豈-﫿]/.test(other.inci_name) ? koreanizeName(other.inci_name).name : undefined,
+            inci_display: /[぀-ヿ㐀-鿿豈-﫿]/.test(other.inci_name) ? koreanizeName(other.inci_name).name : undefined,
           });
         }
       }

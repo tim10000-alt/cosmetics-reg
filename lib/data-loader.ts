@@ -5,6 +5,8 @@
 // 페이지 로드 시점에 즉시 prefetch 시작 (모듈 평가 시). 검색·자동완성은 await dataset()
 // 으로 준비를 보장.
 
+import { koreanizeName } from "./jp-name-koreanize";
+
 export interface Ingredient {
   id: string;
   inci_name: string;
@@ -17,6 +19,7 @@ export interface Ingredient {
   function_category: string | null;
   function_description: string | null;
   kcia_code?: string | null;   // KCIA 표준화명칭 코드 = 권위 동일성 키(같은 코드=같은 성분)
+  koreanized?: string;         // inci_name 이 일/중일 때 표시·검색용 한글화(로드 시 1회 계산, 인메모리)
 }
 
 export interface Regulation {
@@ -203,6 +206,15 @@ async function loadDataset(): Promise<Dataset> {
     const i = ingredients[idx];
     ingredientById.set(i.id, i);
     if (i.inci_name) ingredientByInciLower.set(i.inci_name.toLowerCase(), i);
+    // 일/중 inci_name + 한글명 無 → koreanize 결과를 표시·검색에 쓰도록 1회 계산해 부착.
+    //   사용자가 *화면에 보이는* 한글명(예 "동충하초추출물")으로 검색해도 찾히게(findability).
+    if (!i.korean_name && i.inci_name && /[぀-ヿ㐀-鿿豈-﫿]/.test(i.inci_name)) {
+      const kn = koreanizeName(i.inci_name);
+      if (kn.isKorean && kn.name && !/[぀-ヿ㐀-鿿豈-﫿]/.test(kn.name)) i.koreanized = kn.name;
+    }
+    // ⚠ idsByKoreanLower(=related_variants "동일물질 추정" 인덱스)에는 koreanized 를 넣지 않음
+    //   — 서로 다른 폴리머가 같은 한글로 음역되면 거짓 동일물질 링크(오병합 경고와 모순). 검색은
+    //   ing.koreanized 필드로 직접(rankIngredients/autocomplete) → findability 유지. 변이탐지는 실 korean_name만.
     if (i.korean_name) {
       const kl = i.korean_name.toLowerCase();
       ingredientByKoreanLower.set(kl, i);

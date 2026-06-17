@@ -111,7 +111,7 @@ function HomeInner() {
   }
 
   function pickSuggestion(s: Suggestion) {
-    const pick = s.korean_name ?? s.inci_name;
+    const pick = s.korean_name ?? s.inci_display ?? s.inci_name;
     setQuery(pick);
     setShowSuggestions(false);
     runSearch(pick);
