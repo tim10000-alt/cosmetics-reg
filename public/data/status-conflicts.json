@@ -1,5 +1,5 @@
 {
-  "total": 429,
+  "total": 432,
   "note": "같은 CAS 분절 카드 간 banned↔허용 충돌(false-banned/allowed 후보). limit-overrides 로 검토 교정.",
   "conflicts": [
     {
@@ -257,6 +257,28 @@
           "name": "Benzoates of 4-hydroxy-3-methoxycinnamyl alcohol except for normal content in natural essences used",
           "status": "restricted",
           "prio": 50
+        }
+      ]
+    },
+    {
+      "cc": "BO",
+      "cas": "7440-50-8",
+      "banned": [
+        {
+          "name": "COPPER POWDER",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Bronze Powder",
+          "status": "listed",
+          "prio": 100
+        },
+        {
+          "name": "Copper",
+          "status": "listed",
+          "prio": 100
         }
       ]
     },
@@ -1695,6 +1717,28 @@
     },
     {
       "cc": "CO",
+      "cas": "7440-50-8",
+      "banned": [
+        {
+          "name": "COPPER POWDER",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Bronze Powder",
+          "status": "listed",
+          "prio": 100
+        },
+        {
+          "name": "Copper",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CO",
       "cas": "148-24-3",
       "banned": [
         {
@@ -1797,6 +1841,28 @@
     },
     {
       "cc": "EC",
+      "cas": "7440-50-8",
+      "banned": [
+        {
+          "name": "COPPER POWDER",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Bronze Powder",
+          "status": "listed",
+          "prio": 100
+        },
+        {
+          "name": "Copper",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EC",
       "cas": "148-24-3",
       "banned": [
         {
@@ -1892,23 +1958,6 @@
       "allowed": [
         {
           "name": "Diiodofluorescein, D&C Orange No. 10, Daidai206, CI 45425:1",
-          "status": "listed",
-          "prio": 100
-        }
-      ]
-    },
-    {
-      "cc": "EU",
-      "cas": "38102-62-4",
-      "banned": [
-        {
-          "name": "4-Methylbenzylidene Camphor",
-          "prio": 50
-        }
-      ],
-      "allowed": [
-        {
-          "name": "3-(4-Methylbenzylidene)-d1 camphor/Enzacamene 4-Methylbenzylidene Camphor",
           "status": "listed",
           "prio": 100
         }
@@ -2011,6 +2060,10 @@
         {
           "name": "Sodium Styrene/Acrylates Copolymer",
           "prio": 50
+        },
+        {
+          "name": "COPPER POWDER",
+          "prio": 100
         }
       ],
       "allowed": [
@@ -2098,6 +2151,10 @@
         {
           "name": "Colloidal Silver",
           "prio": 50
+        },
+        {
+          "name": "SILVER",
+          "prio": 100
         }
       ],
       "allowed": [
@@ -2105,11 +2162,6 @@
           "name": "Silver,CI 77820",
           "status": "restricted",
           "prio": 50
-        },
-        {
-          "name": "SILVER",
-          "status": "listed",
-          "prio": 100
         }
       ]
     },
@@ -2306,7 +2358,7 @@
         },
         {
           "name": "Gold",
-          "prio": 50
+          "prio": 100
         }
       ],
       "allowed": [
@@ -4606,6 +4658,28 @@
     },
     {
       "cc": "PE",
+      "cas": "7440-50-8",
+      "banned": [
+        {
+          "name": "COPPER POWDER",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Bronze Powder",
+          "status": "listed",
+          "prio": 100
+        },
+        {
+          "name": "Copper",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "PE",
       "cas": "148-24-3",
       "banned": [
         {
@@ -5758,69 +5832,6 @@
         {
           "name": "CI 10020",
           "status": "listed",
-          "prio": 100
-        }
-      ]
-    },
-    {
-      "cc": "SG",
-      "cas": "8024-12-2",
-      "banned": [
-        {
-          "name": "Lippia Citriodora Flower/Leaf/Stem Oil",
-          "prio": 50
-        },
-        {
-          "name": "Lippia Citriodora Leaf Oil",
-          "prio": 50
-        },
-        {
-          "name": "Lippia Citriodora Leaf/Flower Oil",
-          "prio": 50
-        },
-        {
-          "name": "Verbena oil (Lippia citriodora Kunth.), when used as a fragrance ingredient 4",
-          "prio": 100
-        }
-      ],
-      "allowed": [
-        {
-          "name": "Verbena essential oils (Lippia citriodora Kunth.)\n(Verbena absolute (Lippia citriodora Kunth.)除外)",
-          "status": "restricted",
-          "prio": 50
-        }
-      ]
-    },
-    {
-      "cc": "SG",
-      "cas": "84540-47-6",
-      "banned": [
-        {
-          "name": "2,6-Dihydroxy-3,4-dimethylpyridine",
-          "prio": 50
-        }
-      ],
-      "allowed": [
-        {
-          "name": "2,6-Dihydroxy-3,4-Dimethyl-Pyridine and its salts",
-          "status": "restricted",
-          "prio": 100
-        }
-      ]
-    },
-    {
-      "cc": "SG",
-      "cas": "337906-36-2",
-      "banned": [
-        {
-          "name": "2-Methoxymethyl-p-Phenylenediamine Sulfate",
-          "prio": 50
-        }
-      ],
-      "allowed": [
-        {
-          "name": "2-Methoxymethyl-p-Phenylenediamine",
-          "status": "restricted",
           "prio": 100
         }
       ]
