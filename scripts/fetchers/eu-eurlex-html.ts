@@ -9,7 +9,12 @@ import { readRows, writeRows } from "../../lib/json-store";
 
 const SOURCE_DOC = "EU EUR-Lex 1223/2009 (HTML consolidated)";
 const SOURCE_REF = "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02009R1223";
+// 🎯 ELI URL 1순위 — *날짜 없는* ELI 가 EUR-Lex 에서 항상 **최신 통합본**으로 자동 resolve(naive fetch
+// 200·4.1MB·현행). 날짜 박힌 CELEX URL 들은 통합 시점이 지나면 404 가 되어(원문 재추출 감사로 실측:
+// 02009R1223-20250401 등 전부 404 → 파서가 현행 fetch 실패·보존만 → EUR-Lex 데이터 stale, 2024 나노
+// 실버·2023 향료알레르겐 등 최신개정 누락) 갱신이 멈췄다. ELI 는 하드코딩 날짜가 없어 영구 현행 유지.
 const HTML_URLS = [
+  "https://eur-lex.europa.eu/eli/reg/2009/1223",
   "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02009R1223-20250401",
   "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02009R1223-20240601",
   "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02009R1223-20231201",
