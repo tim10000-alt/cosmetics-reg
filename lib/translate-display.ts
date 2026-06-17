@@ -653,13 +653,33 @@ function decimalFix(v: string): string {
   return v.indexOf(",") === -1 ? v : v.replace(/(\d),(\d{1,3})(\s*%)/g, "$1.$2$3");
 }
 
+// 조건문/출처명 표시 위생 — 파서/인코딩 잔재를 *표시 시점*에 정리(데이터 불변·결정론·가역).
+//  · 모지바케: UTF-8 바이트를 CP1252 오해독한 곱은따옴표(\u00e2\u20ac + C1 종결바이트 \u0080~\u009f)
+//  · HTML 태그 잔재(<em> 등), prime(\u2032)→아포스트로피, 값없는 한도라벨 제거.
+function sanitizeCond(s: string): string {
+  if (!s) return s;
+  if (!/[\u00e2\u00c2<\u2032\u2033]/.test(s) && !/(?:배합\s*한도|최대\s*농도)\s*[:\uff1a]\s*$/.test(s)) return s;
+  let out = s
+    .replace(/\u00e2\u20ac[\u2122\u0099\u0098\u201a]/g, "'")
+    .replace(/\u00e2\u20ac[\u0153\u201c\u201d\u009c\u009d\u0093]/g, '"')
+    .replace(/\u00e2\u20ac[\u2014\u0094]/g, "\u2014")
+    .replace(/\u00e2\u20ac[\u2013]/g, "\u2013")
+    .replace(/\u00e2\u20ac[\u0080-\u009f]?/g, '"')
+    .replace(/[\u0080-\u009f]/g, "")
+    .replace(/\u00c2(?=[\s\u00a0])/g, "");
+  out = out.replace(/<\/?(?:em|strong|b|i|u|span|sup|sub|br|p|mark)\b[^>]*>/gi, "");
+  out = out.replace(/[\u2032\u2035]/g, "'").replace(/[\u2033\u2036]/g, '"');
+  out = out.replace(/\n?[ \t]*\*?\s*(?:배합\s*한도|최대\s*농도)\s*[:\uff1a]\s*$/g, "").trimEnd();
+  return out;
+}
+
 export function translateDisplay<T extends string | null | undefined>(
   s: T,
   cache?: Map<string, string> | null,
 ): T {
   if (s == null) return s;
   const str0 = s as string;
-  const fin = (v: string): T => decimalFix(v) as T;
+  const fin = (v: string): T => decimalFix(sanitizeCond(v)) as T;
   if (cache) {
     const hit = cache.get(strKey(str0));
     // 캐시(Gemini 번역)에도 잔존 외국어가 있을 수 있어 동일 정리 파이프 적용(이중언어·CJK·영문 boilerplate).
