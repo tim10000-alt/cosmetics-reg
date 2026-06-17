@@ -109,43 +109,55 @@ async function main() {
   if (subs.length < 500) { console.error(`✗ ${subs.length}행 — 파싱 이상(양식 변경?) 보존 위해 중단`); process.exit(1); }
 
   const ingredients = await readRows<IngredientRow>("ingredients");
+  const existingRegs = await readRows<RegulationRow>("regulations");
+  const byId = new Map(ingredients.map((i) => [i.id, i]));
+  const casOf = (v: string | null) => String(v || "").split(/[\s,;/^]+/).map((c) => c.trim().replace(/\[.*/, "").replace(/\(.*/, "")).filter((c) => CAS_RE.test(c));
+  // CAS → 기존 성분(첫 매칭). DB 에 있는 CAS 집합.
+  const ingByCas = new Map<string, IngredientRow>();
   const dbCas = new Set<string>();
-  for (const i of ingredients) for (const c of String(i.cas_no || "").split(/[\s,;/^]+/)) { const t = c.trim().replace(/\[.*/, "").replace(/\(.*/, ""); if (CAS_RE.test(t)) dbCas.add(t); }
+  for (const i of ingredients) for (const c of casOf(i.cas_no)) { dbCas.add(c); if (!ingByCas.has(c)) ingByCas.set(c, i); }
+  // 이미 *타 소스* KR 규제가 있는 CAS — 중복 KR 추가 방지(이 소스 자신의 기존 행은 제외 → 멱등 재생성).
+  const krRegCasOther = new Set<string>();
+  for (const r of existingRegs) { if (r.country_code !== "KR" || r.source_document === SOURCE_DOC) continue; const i = byId.get(r.ingredient_id); if (i) for (const c of casOf(i.cas_no)) krRegCasOther.add(c); }
 
-  // 고시에 있으나 DB 에 없는 CAS → 생성. 중복 dedup.
   const now = new Date().toISOString();
   const seen = new Set<string>();
   const newIng: IngredientRow[] = [];
   const newRegs: RegulationRow[] = [];
+  let created = 0, attached = 0;
+  const mkReg = (id: string, s: { cas: string; status: string }): RegulationRow => ({
+    ingredient_id: id, country_code: "KR", status: s.status,
+    max_concentration: null, concentration_unit: "%", product_categories: [],
+    conditions: `「화장품 안전기준 등에 관한 규정」 ${s.status === "banned" ? "별표 1 사용할 수 없는 원료" : "별표 2 사용상의 제한이 필요한 원료"} 등재.\nCAS: ${s.cas}`,
+    source_url: postUrl, source_document: SOURCE_DOC, source_version: `gosi-${now.slice(0, 10)}`,
+    source_priority: 100, last_verified_at: now, confidence_score: 1.0, override_note: null,
+  });
   for (const s of subs) {
-    if (dbCas.has(s.cas) || seen.has(s.cas)) continue;
+    if (seen.has(s.cas)) continue;
     seen.add(s.cas);
+    if (dbCas.has(s.cas)) {
+      // 기존 성분 — *타 소스* KR 규제가 이미 있으면 보존(충돌/중복 회피). 없으면 그 성분에 KR 규제 추가
+      // (실측 갭: Biphenamine 금지·IPBC 제한 등 기존 성분이 고시규제인데 KR status 없던 것 보강).
+      if (!krRegCasOther.has(s.cas)) { const ex = ingByCas.get(s.cas); if (ex) { newRegs.push(mkReg(ex.id, s)); attached++; } }
+      continue;
+    }
+    // 고시에 있으나 DB 에 없는 CAS → 성분 생성 + KR 규제.
     const id = `krgosi-${s.cas}`;
-    newIng.push({
-      id, inci_name: s.name, korean_name: s.name, chinese_name: null, japanese_name: null,
-      cas_no: s.cas, synonyms: [], description: null, function_category: null, function_description: null,
-    });
-    newRegs.push({
-      ingredient_id: id, country_code: "KR", status: s.status,
-      max_concentration: null, concentration_unit: "%", product_categories: [],
-      conditions: `「화장품 안전기준 등에 관한 규정」 ${s.status === "banned" ? "별표 1 사용할 수 없는 원료" : "별표 2 사용상의 제한이 필요한 원료"} 등재.\nCAS: ${s.cas}`,
-      source_url: postUrl, source_document: SOURCE_DOC, source_version: `gosi-${now.slice(0, 10)}`,
-      source_priority: 100, last_verified_at: now, confidence_score: 1.0, override_note: null,
-    });
+    newIng.push({ id, inci_name: s.name, korean_name: s.name, chinese_name: null, japanese_name: null, cas_no: s.cas, synonyms: [], description: null, function_category: null, function_description: null });
+    newRegs.push(mkReg(id, s));
+    created++;
   }
-  console.log(`  DB 누락 → 신규 생성: ${newIng.length} 성분 (banned ${newRegs.filter((r) => r.status === "banned").length} · restricted ${newRegs.filter((r) => r.status === "restricted").length})`);
+  console.log(`  신규 생성 ${created} 성분 · 기존 성분 KR 보강 ${attached} · KR 규제 총 ${newRegs.length} (banned ${newRegs.filter((r) => r.status === "banned").length} · restricted ${newRegs.filter((r) => r.status === "restricted").length})`);
 
-  if (newIng.length) {
+  if (newRegs.length) {
     const have = new Set(ingredients.map((i) => i.id));
     const addIng = newIng.filter((i) => !have.has(i.id));
     if (addIng.length) await writeRows("ingredients", [...ingredients, ...addIng]);
-    const existing = await readRows<RegulationRow>("regulations");
-    // 이 소스 기존 행 교체(멱등) + 타 소스 보존.
-    const other = existing.filter((r) => r.source_document !== SOURCE_DOC);
+    const other = existingRegs.filter((r) => r.source_document !== SOURCE_DOC);  // 이 소스 기존 행 교체(멱등) + 타 소스 보존
     await writeRows("regulations", [...other, ...newRegs]);
-    console.log(`✓ KCIA 고시: 성분 +${addIng.length}, KR 규제 ${newRegs.length} (krgosi-<CAS>, 멱등·추가전용)`);
+    console.log(`✓ KCIA 고시: 성분 +${addIng.length}, KR 규제 ${newRegs.length}(생성 ${created}+보강 ${attached}) 멱등`);
   } else {
-    console.log("  신규 없음(모두 기존 DB 보유) — 멱등");
+    console.log("  신규/보강 없음 — 멱등");
   }
 }
 

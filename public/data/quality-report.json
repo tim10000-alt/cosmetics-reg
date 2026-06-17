@@ -59,7 +59,7 @@
     "VN:vn_vietnam_dav",
     "ID:id_indonesia_bpom_cosmetic",
     "CA:ca_health_canada_cosmetic_ingredient_hotlis",
-    "KR:kr_mfds"
+    "PH:ph_philippines_fda_cosmetic"
   ],
   "checked_at_note": "matches regulations-query primary-row logic"
 }
