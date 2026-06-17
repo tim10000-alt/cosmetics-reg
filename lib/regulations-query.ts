@@ -142,7 +142,8 @@ function isLeakArtifact(s: string): boolean {
   if (/[\r\n]/.test(s)) return true;                       // 멀티라인 = 표 행 wrap
   if (/\b\d{2,7}-\d{2}-\d\b/.test(s)) return true;         // 임베디드 CAS
   if (/\b\d{3}-\d{3}-\d\b/.test(s)) return true;           // 임베디드 EC 번호
-  if (/\d[.,]\d+\s*%/.test(s) || /\s\d{1,3}\s*%/.test(s)) return true;  // 임베디드 한도%
+  if (/\d[.,]\d+\s*%/.test(s) || /[\s>=]\d{1,3}\s*%/.test(s)) return true;  // 임베디드 한도%(>20% 포함)
+  if (/\bwith exception of\b/i.test(s)) return true;  // 조건문 bleed("Methanol(with exception of those…")
   return false;
 }
 
@@ -153,7 +154,10 @@ function isLeakArtifact(s: string): boolean {
 function cleanDisplayName(raw: string | null | undefined): string {
   const r = (raw || "").toString();
   if (!r) return r;
-  let s = r.replace(/[\r\n\t]+/g, " ").replace(/\s{2,}/g, " ").trim();
+  // 타이포 정규화: prime(′ U+2032)·double-prime(″)·전각 따옴표 → ASCII(화학명 N,N′ → N,N'). conditions
+  // 는 가디언이 디코드하나 이름필드는 raw 였음(전수 스캔 발견).
+  let s = r.replace(/‴/g, "'''").replace(/[′‵]/g, "'").replace(/[″‶]/g, '"').replace(/[“”]/g, '"').replace(/[‘’]/g, "'");
+  s = s.replace(/[\r\n\t]+/g, " ").replace(/\s{2,}/g, " ").trim();
   s = s.replace(/\s*\/\s*\d{2,7}-\d{2}-\d.*$/, "").trim();   // "/ CAS / EC / footnote" 컬럼 누출
   s = s.replace(/\s*[（(]\s*CAS\s*N[oO]\.?\s*\d{2,7}-\d{2}-\d\s*[）)]/gi, "").trim();  // "(CAS No. 65-85-0)" 주석 누출(CAS 는 카드 CAS 필드에 별도 표시 → 이름 내 중복 제거). 명확경계: "CAS No"+유효CAS+괄호
   s = s.replace(/\s+and a mixture of\b.*$/i, "").trim();     // "and a mixture of if they contain >N% X"
