@@ -176,7 +176,7 @@ function cleanCas(raw: string | null | undefined): string | null {
   if (raw == null) return raw as null;
   const r = String(raw);
   if (!r) return r;
-  let s = r
+  const s = r
     .replace(/[\r\n\t]+/g, " ")
     .replace(/\s*\^\s*/g, ", ")        // ^ 접합 → 쉼표
     .replace(/\](?=\d)/g, "], ")       // "]" 뒤 숫자 글루드 → 분리(마커 보존)
