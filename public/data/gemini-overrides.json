@@ -1,5 +1,94 @@
 {
   "note": "Gemini 듀얼합의 자동교정(법령변경 자가치유) — apply-gemini-overrides 가 prio105 로 baking. un-ban 은 권위 annex veto. 사람 개입 0.",
-  "total": 0,
-  "corrections": {}
+  "total": 8,
+  "corrections": {
+    "f40e47e7-b374-4c3f-b263-ac2e0984693e:KR": {
+      "ingredient_id": "f40e47e7-b374-4c3f-b263-ac2e0984693e",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 0.9,
+      "reason": "도부타민하이드로클로라이드는 의약품 성분으로 화장품에 사용이 허용되지 않습니다.",
+      "by": "gemini-consensus",
+      "name": "도부타민하이드로클로라이드"
+    },
+    "4f405ef6-ccd7-47a2-b374-7fd3daa229fd:KR": {
+      "ingredient_id": "4f405ef6-ccd7-47a2-b374-7fd3daa229fd",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 0.9,
+      "reason": "미녹시딜은 의약품 또는 의약외품 성분으로 화장품에 사용이 허용되지 않습니다.",
+      "by": "gemini-consensus",
+      "name": "미녹시딜"
+    },
+    "6a5b8c14-cf29-45b3-ba00-a053b15d99ac:KR": {
+      "ingredient_id": "6a5b8c14-cf29-45b3-ba00-a053b15d99ac",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 1] 사용금지 원료에 명시되어 있습니다.",
+      "by": "gemini-consensus",
+      "name": "1,3-부타디엔"
+    },
+    "1b554641-2cf0-4811-8b52-efb0396943f7:KR": {
+      "ingredient_id": "1b554641-2cf0-4811-8b52-efb0396943f7",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 1] 사용금지 원료에 명시되어 있습니다.",
+      "by": "gemini-consensus",
+      "name": "2,3,4-트라이클로로부트-1-엔"
+    },
+    "c94a44c7-f5eb-4f1f-842e-6c96148a9d3c:KR": {
+      "ingredient_id": "c94a44c7-f5eb-4f1f-842e-6c96148a9d3c",
+      "country_code": "KR",
+      "status": "restricted",
+      "max": 0.5,
+      "from": "restricted",
+      "confidence": 1,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 2] 염모제 성분으로 0.5%까지 허용됩니다.",
+      "by": "gemini-consensus",
+      "name": "2-메칠-5-하이드록시에칠아미노페놀"
+    },
+    "49ad872b-bb25-4585-84b4-60df61af0d06:KR": {
+      "ingredient_id": "49ad872b-bb25-4585-84b4-60df61af0d06",
+      "country_code": "KR",
+      "status": "restricted",
+      "max": 4,
+      "from": "restricted",
+      "confidence": 1,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 2] 자외선 차단 성분으로 4%까지 허용됩니다.",
+      "by": "gemini-consensus",
+      "name": "페닐벤즈이미다졸설포닉애씨드"
+    },
+    "68cbdb49-b7c0-4c08-99c1-bc154c8bd213:KR": {
+      "ingredient_id": "68cbdb49-b7c0-4c08-99c1-bc154c8bd213",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 1] 사용금지 원료에 명시되어 있습니다.",
+      "by": "gemini-consensus",
+      "name": "1,4-다이클로로벤젠(p-다이클로로벤젠)"
+    },
+    "84e2dc9b-aac6-4c15-b955-86dd7573ec28:KR": {
+      "ingredient_id": "84e2dc9b-aac6-4c15-b955-86dd7573ec28",
+      "country_code": "KR",
+      "status": "restricted",
+      "max": null,
+      "from": "restricted",
+      "confidence": 1,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 3] 색소의 종류와 사용기준에 따라 불순물 함량 제한이 있습니다.",
+      "by": "gemini-consensus",
+      "name": "카본블랙(다만, 불순물 중 벤조피렌과 디벤즈(a,h)안트라센이 각각 5ppb 이하이고 총 다환방향족탄화수소류(PAHs)가 0.5ppm 이하인 경우에는 제외)"
+    }
+  }
 }
