@@ -465,7 +465,7 @@ function main() {
     const k = normN(i.inci_name); let s = nameToCas.get(k); if (!s) { s = new Set(); nameToCas.set(k, s); }
     for (const c of cs) s.add(c);
   }
-  let crossSynStripped = 0;
+  let crossSynStripped = 0, synFragStripped = 0;
   // host 에 유효 CAS 가 없어 위 disjoint 판정이 불가한 경우의 *확실한* 교차물질만 추가 제거(분별력):
   //  (a) 구성산 패턴 — 동의어가 "… Acid"(별개 성분으로 등재·CAS 보유)인데 host 명은 acid 로 끝나지 않음
   //      = host 가 그 산의 염/에스터(예 Calcium Benzoate→"Benzoic Acid"·TEA-Sorbate→"Sorbic Acid").
@@ -473,6 +473,10 @@ function main() {
   //  (b) 단일 원소명("Calcium"·"Sodium" 등)만인 동의어 = 무의미(화합물의 동의어가 원소일 수 없음).
   //  나머지 모호분(동일물질 분절 가능: Mercury Dichloride↔Mercuric Chloride·TEA-Carbomer↔Carbomer)은
   //  보존 — 맹목 제거 시 동일물질 관계를 숨김(분별력, 자동 병합/분리 위험은 별도 식별판단기 영역).
+  // 동의어 fragment — 긴 이름이 분해돼 박힌 단독 일반토큰(음이온/그룹·수식어·물질군어). 동의어로 무의미
+  //  (예 "Benzethonium Chloride"→syn "Chloride"·"Corrosive Sublimate"→"Corrosive","Sublimate"). 원소명은
+  //  보수적 보존(드물게 깨끗한 통용명 — "Silver"). 표시 칩·검색 오염 제거.
+  const SYN_FRAGMENT = /^(chlorides?|bromides?|iodides?|fluorides?|sulfates?|sulphates?|sulfites?|nitrates?|nitrites?|oxides?|hydroxides?|phosphates?|carbonates?|acetates?|citrates?|stearates?|benzoates?|salts?|acid|base|ester|isomer|mixture|anhydrous|hydrate|solution|powder|conc|corrosive|sublimate|mercuric|perchloride|bichloride|dichloride)$/i;
   const BARE_ELEMENT = /^(calcium|sodium|potassium|magnesium|zinc|mercury|aluminum|aluminium|iron|copper|silver|barium|lead|tin|nickel|chromium|cobalt|manganese)$/;
   const isCrossSubstanceNoCas = (syn, hostName) => {
     const k = normN(syn || ""); if (!k || k === hostName) return false;
@@ -485,8 +489,10 @@ function main() {
     const myCas = validCasSet(i.cas_no);
     const myName = normN(i.inci_name || "");
     const before = i.synonyms.length;
+    let fragHit = 0;
     i.synonyms = i.synonyms.filter((syn) => {
       const k = normN(syn || ""); if (!k || k === myName) return true;
+      if (SYN_FRAGMENT.test(k)) { fragHit++; return false; }                 // 단독 일반토큰 fragment 제거
       if (myCas.size) {
         const oc = nameToCas.get(k); if (!oc || !oc.size) return true;      // 다른 성분 이름 아님/CAS 불명 → 보존
         for (const c of myCas) if (oc.has(c)) return true;                   // CAS 공유 = 동일물질 표기 → 보존
@@ -494,7 +500,7 @@ function main() {
       }
       return !isCrossSubstanceNoCas(syn, myName);                            // host CAS 無 → 확실 cross 만 제거
     });
-    if (i.synonyms.length !== before) { crossSynStripped += before - i.synonyms.length; ingChanged = true; }
+    if (i.synonyms.length !== before) { crossSynStripped += before - i.synonyms.length - fragHit; synFragStripped += fragHit; ingChanged = true; }
   }
 
   // regs=0 JP 別表1 garble 고아 *삭제* — 別表1 파서가 다단/각주 분리에 실패한 과거 run 들이 누적시킨
@@ -605,6 +611,7 @@ function main() {
   console.log(`  JP 別表 농도값 bleed collapse(X ○ 0.10→X): ${jpValCollapsed}`);
   console.log(`  JP 別表1 garble 고아 삭제(regs=0 분절 죽은중복, 깨끗한 트윈 존재): ${jpGarbleDeleted}`);
   console.log(`  교차물질 동의어 제거(별개 CAS 성분명을 동의어로): ${crossSynStripped}`);
+  console.log(`  동의어 fragment 제거(단독 일반토큰): ${synFragStripped}`);
   console.log(`  격리(복구 불가) 성분명: ${corrupt.length} (그중 규제apparatus 고아: ${apparatusOrphans} · 색소표 고아: ${colorantGlueOrphans})`);
   console.log(`  🩺 self-heal 후 잔존 가시오염(0이어야 정상): 오염명 ${residualCorrupt} · 공백 ${residualWhitespace}`);
   console.log(`  국가 행수 급감(회귀): ${regressions.length ? regressions.join(", ") : "없음"}`);
