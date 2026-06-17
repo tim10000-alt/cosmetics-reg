@@ -370,8 +370,9 @@ export async function lookupRegulation(
 
     // KCIA 보조 자료 — country별 최근 5건만 전달 (협회 회원 자료 link)
     const kciaArticles = ds.kciaByCountry.get(code)?.slice(0, 5);
-    // 자동 다운로드된 1차 소스 PDF — 사용자가 원본 PDF 직접 다운 link
-    const sourcePdfs = ds.sourcePdfsByCountry.get(code);
+    // 자동 다운로드된 1차 소스 PDF — 사용자가 원본 PDF 직접 다운 link. 제목(原 정부문서명)도 한글화.
+    const sourcePdfsRaw = ds.sourcePdfsByCountry.get(code);
+    const sourcePdfs = sourcePdfsRaw?.map((p) => ({ ...p, title: translateDisplay(p.title, ds.translations) }));
 
     if (row) {
       results.push({

@@ -33,6 +33,11 @@ const MAP: Record<string, string> = {
     "JP MHLW 화장품기준 (Standards for Cosmetics, 고시 제331호)",
   "JP MHLW 化粧品基準 別表 1 (品目ごと承認対象成分 positive list)":
     "JP MHLW 화장품기준 별표1 (품목별 승인대상 성분 positive list)",
+  // ── JP 1차 소스 PDF 제목(原 정부문서명) ──
+  "化粧品基準 (Standards for Cosmetics) — 平成12年厚生省告示第331号":
+    "화장품기준 (Standards for Cosmetics) — 헤이세이12년 후생성고시 제331호",
+  "化粧品基準 別表 1 — 品目ごと承認対象成分 (Schedule 1: Approval-required ingredients per category)":
+    "화장품기준 별표1 — 품목별 승인대상 성분 (Schedule 1: Approval-required ingredients per category)",
 };
 
 // 공백 변형(연속/엣지 공백)에도 매칭되도록 정규화 키 인덱스도 둔다.
