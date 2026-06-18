@@ -14,6 +14,27 @@ import { geminiRescue, buildRegsFromExtracted } from "../parsers/gemini-fallback
 const BASE_DOC = "TFDA 化粧品禁限用成分管理規定";
 const SOURCE_URL = "https://consumer.fda.gov.tw/LAW/Cosmetic1.aspx?nodeID=1068";
 
+// 데이터 fetch 실패(실측: consumer.fda.gov.tw 가 TLS 핸드셰이크 거부 — node·curl·CI 전부)를 모니터링이
+// 잡도록 source-status 에 이 fetcher 자신의 결과를 별도 doc_key 로 기록한다. 제너릭 크롤러는 www.fda.gov.tw
+// (도달 O)를 체크해 TW 를 'ok' 로 표시하지만, 실데이터는 consumer 도메인(차단)에서 와서 침묵 stale 이 됐다
+// (육안 발견: TFDA 데이터 10일 stale 인데 source-status='ok'). 성공=ok / 실패=failed 로 남기면
+// data-quality-check 의 sourceFail 집계·회귀경보가 표면화한다. write 실패는 무시(모니터링은 부가 — 본 작업 우선).
+async function recordFetchStatus(status: "ok" | "failed", notes: string): Promise<void> {
+  try {
+    const all = await readRows<Record<string, unknown>>("source-status");
+    const i = all.findIndex((r) => r.country_code === "TW" && r.doc_key === "tw_tfda_data");
+    const prev = i >= 0 ? (all[i] as { last_changed_at?: string | null }).last_changed_at ?? null : null;
+    const row = {
+      country_code: "TW", doc_key: "tw_tfda_data",
+      title: "TFDA 化粧品禁限用成分表 (데이터 fetcher 실작동)", source_url: SOURCE_URL,
+      content_hash: null, last_checked_at: new Date().toISOString(), last_changed_at: prev,
+      check_status: status, notes, regulation_source_id: null,
+    };
+    if (i >= 0) all[i] = { ...all[i], ...row }; else all.push(row);
+    await writeRows("source-status", all);
+  } catch { /* 모니터링 기록 실패는 무시 — 본 데이터 작업이 우선 */ }
+}
+
 interface TwCategory {
   t: number;
   status: "banned" | "restricted" | "listed";
@@ -227,4 +248,11 @@ async function main() {
   console.log(`  ingredients: ${ingredients.length}, regulations: ${finalRegs.length}`);
 }
 
-main().catch((e) => { console.error(e); process.exit(1); });
+main()
+  .then(() => recordFetchStatus("ok", "TFDA fetch 성공"))
+  .catch(async (e) => {
+    console.error(e);
+    // 침묵 stale 방지 — 네트워크/사이트 실패를 모니터링에 표면화(데이터는 fetcher 가 보존, write 안 함).
+    await recordFetchStatus("failed", `fetch 실패: ${String(e?.message || e).slice(0, 200)}`);
+    process.exit(1);
+  });
