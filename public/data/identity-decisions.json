@@ -877,6 +877,86 @@
       "b": "1,3,5-Tris(oxiranylmethyl)-1,3,5-triazine-2,4,6(1H,3H,5H)-trione (TGIC) 7",
       "verdict": "different",
       "by": "cas-veto"
+    },
+    "eb483da6-8ead-4262-84d0-3e9f477ad583|krgosi-4468-02-4": {
+      "ko": "징크글루코네이트",
+      "a": "Zinc Gluconate",
+      "b": "징크글루코네이트",
+      "m1": {
+        "verdict": "same",
+        "confidence": 1,
+        "reason": "Both entries refer to Zinc Gluconate. Entry A uses the standard English INCI name, while Entry B uses the Korean name as its INCI and provides the correct CAS number (4468-02-4) for Zinc Gluconate. The absence of a CAS number in Entry A does not indicate a different substance."
+      },
+      "m2": {
+        "verdict": "same",
+        "confidence": 1,
+        "reason": "Both entries refer to the same chemical substance, Zinc Gluconate. Entry B uses the Korean standardized name which is identical to the INCI name in Entry A. The CAS number provided for Entry B confirms it is Zinc Gluconate."
+      },
+      "verdict": "same",
+      "by": "gemini-consensus"
+    },
+    "fd6cd94d-13a5-402e-b118-c0f2a3d2ea2d|krgosi-7646-85-7": {
+      "ko": "징크클로라이드",
+      "a": "Zinc Chloride",
+      "b": "징크클로라이드",
+      "m1": {
+        "verdict": "same",
+        "confidence": 1,
+        "reason": "Both entries refer to Zinc Chloride. Entry A uses the English INCI name, while Entry B uses the Korean INCI name and provides the correct CAS number for Zinc Chloride (7646-85-7). The absence of a CAS in Entry A does not indicate a different substance."
+      },
+      "m2": {
+        "verdict": "same",
+        "confidence": 1,
+        "reason": "Both entries refer to Zinc Chloride. Entry B provides the Korean standardized name and CAS number, while Entry A provides the INCI name. They are the same substance."
+      },
+      "verdict": "same",
+      "by": "gemini-consensus"
+    },
+    "bfb99eea-d8fe-4b03-be87-9a94459bac0a|krgosi-1949-15-1": {
+      "ko": "징크글루타메이트",
+      "a": "Zinc Glutamate",
+      "b": "징크글루타메이트",
+      "m1": {
+        "verdict": "same",
+        "confidence": 1,
+        "reason": "The English INCI 'Zinc Glutamate' is the direct translation of the Korean INCI '징크글루타메이트'. The CAS number 1949-15-1 for Entry B corresponds to Zinc Glutamate, confirming the identity. The absence of a CAS in Entry A does not make it a different substance."
+      },
+      "m2": null,
+      "verdict": "uncertain",
+      "by": "gemini-consensus"
+    },
+    "144a27c5-604b-4469-bb08-135e0a6063d8|krgosi-26571-11-9": {
+      "ko": "노녹시놀-9",
+      "a": "Nonoxynol-9",
+      "b": "노녹시놀-9",
+      "m1": null,
+      "m2": {
+        "verdict": "same",
+        "confidence": 1,
+        "reason": "Nonoxynol-9 is the INCI name for 노녹시놀-9. The CAS number is associated with Entry B, but the INCI name is the same."
+      },
+      "verdict": "uncertain",
+      "by": "gemini-consensus"
+    },
+    "a2cdca52-20c9-4ded-9ed3-233808698da6|krgosi-1332-21-4": {
+      "ko": "석면",
+      "a": "Asbestos",
+      "b": "석면",
+      "verdict": "different",
+      "by": "cas-veto"
+    },
+    "aa64a5c3-d004-4b54-b5ef-0024f36f03c8|krgosi-104987-11-3": {
+      "ko": "타크로리무스(tacrolimus), 그 염류 및 유도체",
+      "a": "tacrolimus, its salts and derivatives",
+      "b": "타크로리무스(tacrolimus), 그 염류 및 유도체",
+      "m1": null,
+      "m2": {
+        "verdict": "same",
+        "confidence": 0.9,
+        "reason": "Entry B is the Korean translation of Entry A's INCI name. The CAS number in Entry B is for Tacrolimus, which is the primary substance described by both entries. The INCI name explicitly includes 'its salts and derivatives', covering the scope of the CAS number."
+      },
+      "verdict": "uncertain",
+      "by": "gemini-consensus"
     }
   }
 }

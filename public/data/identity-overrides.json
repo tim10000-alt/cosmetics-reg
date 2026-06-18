@@ -64,6 +64,24 @@
       "ko": "에스트로겐",
       "a": "Oestrogens, Estrogens",
       "b": "Oestrogens"
+    },
+    {
+      "ids": [
+        "eb483da6-8ead-4262-84d0-3e9f477ad583",
+        "krgosi-4468-02-4"
+      ],
+      "ko": "징크글루코네이트",
+      "a": "Zinc Gluconate",
+      "b": "징크글루코네이트"
+    },
+    {
+      "ids": [
+        "fd6cd94d-13a5-402e-b118-c0f2a3d2ea2d",
+        "krgosi-7646-85-7"
+      ],
+      "ko": "징크클로라이드",
+      "a": "Zinc Chloride",
+      "b": "징크클로라이드"
     }
   ]
 }
