@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-17T23:45:34.504Z",
-  "totalRegs": 95111,
+  "generated_at": "2026-06-18T00:02:11.042Z",
+  "totalRegs": 95122,
   "coverage": {
     "AR": 4832,
     "BO": 2226,
@@ -11,8 +11,8 @@
     "EC": 2226,
     "EU": 6813,
     "ID": 5881,
-    "JP": 3172,
-    "KR": 4212,
+    "JP": 3173,
+    "KR": 4223,
     "MY": 5881,
     "PE": 2226,
     "PH": 5881,
@@ -32,7 +32,7 @@
     "EC": 2226,
     "EU": 2128,
     "ID": 1815,
-    "JP": 2842,
+    "JP": 2843,
     "KR": 0,
     "MY": 1815,
     "PE": 2226,
@@ -43,7 +43,7 @@
     "US": 114,
     "VN": 1815
   },
-  "restrictedNoLimit": 3808,
+  "restrictedNoLimit": 3813,
   "statusConflicts": 470,
   "quarantinePending": 3,
   "casContaminationSuspects": 223,
@@ -59,7 +59,7 @@
     "VN:vn_vietnam_dav",
     "ID:id_indonesia_bpom_cosmetic",
     "CA:ca_health_canada_cosmetic_ingredient_hotlis",
-    "PH:ph_philippines_fda_cosmetic"
+    "KR:kr_mfds"
   ],
   "checked_at_note": "matches regulations-query primary-row logic"
 }
