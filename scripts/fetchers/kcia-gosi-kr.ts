@@ -162,12 +162,17 @@ async function main() {
     const addIng = newIng.filter((i) => !have.has(i.id));
     // krgosi-* 는 이 fetcher 소유 → *기존* krgosi 성분의 이름도 매 run 재도출(멱등 갱신). 파서 개선(조건문
     // 오추출 수정 등)이 이미 생성된 성분에도 반영되게. 비-krgosi(기존 영문 INCI)는 절대 불변(보존).
-    const freshById = new Map(newIng.map((i) => [i.id, i]));
+    // ⚠ 기존 krgosi 는 CAS 가 DB 에 있어 위 루프의 dbCas 분기로 가 newIng 에 없다 → newIng 만 보면 영원히
+    // 갱신 안 됨(회차3 실측 버그). 그래서 *전체 파싱결과 subs* 를 CAS→이름 으로 인덱싱해 id(=krgosi-<CAS>)
+    // 로 재도출한다.
+    const freshNameByCas = new Map<string, string>();
+    for (const s of subs) if (!freshNameByCas.has(s.cas)) freshNameByCas.set(s.cas, s.name);
     let renamed = 0;
     const mergedIng = ingredients.map((i) => {
       if (!String(i.id).startsWith("krgosi-")) return i;
-      const f = freshById.get(i.id);
-      if (f && (f.inci_name !== i.inci_name || f.korean_name !== i.korean_name)) { renamed++; return { ...i, inci_name: f.inci_name, korean_name: f.korean_name }; }
+      const cas = String(i.id).slice("krgosi-".length);
+      const nm = freshNameByCas.get(cas);
+      if (nm && nm !== i.inci_name) { renamed++; return { ...i, inci_name: nm, korean_name: nm }; }
       return i;
     });
     if (addIng.length || renamed) await writeRows("ingredients", [...mergedIng, ...addIng]);
