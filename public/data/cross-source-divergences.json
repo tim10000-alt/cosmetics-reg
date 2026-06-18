@@ -1,7 +1,7 @@
 {
   "generated": "cross-source-consistency",
   "note": "EU-채택국/Mercosur 권위 status desync 검토큐. 대부분 정당한 관할권 차이. 신규 증가=파싱 점검.",
-  "count": 12,
+  "count": 11,
   "divergences": [
     {
       "inci": "Boric acid and its salts",
@@ -14,20 +14,6 @@
           "MY=restricted",
           "PH=restricted",
           "SG=restricted"
-        ]
-      }
-    },
-    {
-      "inci": "Cetrimonium Bromide",
-      "eu": "restricted",
-      "off": {
-        "ASEAN": [
-          "VN=listed",
-          "TH=listed",
-          "ID=listed",
-          "MY=listed",
-          "PH=listed",
-          "SG=listed"
         ]
       }
     },
