@@ -4,10 +4,8 @@
   "stale_count": 0,
   "stale_countries": [],
   "stale_dictionaries": [],
-  "limit_anomaly_count": 1,
-  "limit_anomalies": [
-    "4a5848d5-29d8-4b8d-b8f9-fd0efeadf5bf|EU: 2.5→0.1"
-  ],
+  "limit_anomaly_count": 0,
+  "limit_anomalies": [],
   "post_heal_corrupt_count": 0,
   "post_heal_whitespace_count": 0,
   "regulations_by_country": [
