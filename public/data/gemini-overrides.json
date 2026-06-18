@@ -1,6 +1,6 @@
 {
   "note": "Gemini 듀얼합의 자동교정(법령변경 자가치유) — apply-gemini-overrides 가 prio105 로 baking. un-ban 은 권위 annex veto. 사람 개입 0.",
-  "total": 8,
+  "total": 17,
   "corrections": {
     "f40e47e7-b374-4c3f-b263-ac2e0984693e:KR": {
       "ingredient_id": "f40e47e7-b374-4c3f-b263-ac2e0984693e",
@@ -89,6 +89,105 @@
       "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 3] 색소의 종류와 사용기준에 따라 불순물 함량 제한이 있습니다.",
       "by": "gemini-consensus",
       "name": "카본블랙(다만, 불순물 중 벤조피렌과 디벤즈(a,h)안트라센이 각각 5ppb 이하이고 총 다환방향족탄화수소류(PAHs)가 0.5ppm 이하인 경우에는 제외)"
+    },
+    "93184357-bd67-43c2-a227-b7b471e60b97:KR": {
+      "ingredient_id": "93184357-bd67-43c2-a227-b7b471e60b97",
+      "country_code": "KR",
+      "status": "restricted",
+      "max": null,
+      "from": "restricted",
+      "confidence": 1,
+      "reason": "Methyl Octynoate is restricted to 0.002% in KR, with a combined limit of 0.01% with Methyl 2-Octynoate.",
+      "by": "gemini-consensus",
+      "name": "메틸옥틴카보네이트"
+    },
+    "465db7af-c4a6-444d-8de3-e5f3a4deddd9:KR": {
+      "ingredient_id": "465db7af-c4a6-444d-8de3-e5f3a4deddd9",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "'4-클로로아닐린'은 대한민국 화장품 안전기준 등에 관한 규정 [별표 1]에 따라 사용할 수 없는 원료입니다.",
+      "by": "gemini-consensus",
+      "name": "4-클로로아닐린"
+    },
+    "62c50b54-df36-4459-bf81-ddb2df1d24f4:KR": {
+      "ingredient_id": "62c50b54-df36-4459-bf81-ddb2df1d24f4",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "'다이페닐에터'는 대한민국 화장품 안전기준 등에 관한 규정 [별표 1]에 따라 사용할 수 없는 원료입니다.",
+      "by": "gemini-consensus",
+      "name": "다이페닐에터"
+    },
+    "e47935f3-dd7e-409c-b047-f690f86cabab:KR": {
+      "ingredient_id": "e47935f3-dd7e-409c-b047-f690f86cabab",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "'N1-(2-하이드록시에틸)-4-나이트로-o-페닐렌디아민(에치씨황색5호) 및 그 염류'는 대한민국 화장품 안전기준 등에 관한 규정 [별표 1]에 따라 사용할 수 없는 원료입니다.",
+      "by": "gemini-consensus",
+      "name": "N1-(2-하이드록시에틸)-4-나이트로-o-페닐렌디아민(에치씨황색5호) 및 그 염류"
+    },
+    "f69b20a4-0e2a-4acb-92a7-54f4026ce1e5:KR": {
+      "ingredient_id": "f69b20a4-0e2a-4acb-92a7-54f4026ce1e5",
+      "country_code": "KR",
+      "status": "restricted",
+      "max": 2.5,
+      "from": "restricted",
+      "confidence": 1,
+      "reason": "'티이에이-코코일사코시네이트'는 대한민국 화장품 안전기준 등에 관한 규정 [별표 2]에 따라 사용 후 씻어내지 않는 제품에 2.5% (단, pH 6.0 이상인 제품에 한함)로 제한됩니다. 현재 표기가 올바릅니다.",
+      "by": "gemini-consensus",
+      "name": "티이에이-코코일사코시네이트"
+    },
+    "f248381b-14f0-4e29-9bfb-982bbdbaf9d0:KR": {
+      "ingredient_id": "f248381b-14f0-4e29-9bfb-982bbdbaf9d0",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "'폼아마이드'는 대한민국 화장품 안전기준 등에 관한 규정 [별표 1]에 따라 사용할 수 없는 원료입니다.",
+      "by": "gemini-consensus",
+      "name": "폼아마이드"
+    },
+    "e848c8db-719c-4b39-94a6-33efeffcada9:KR": {
+      "ingredient_id": "e848c8db-719c-4b39-94a6-33efeffcada9",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "'토근'은 대한민국 화장품 안전기준 등에 관한 규정 [별표 1]에 따라 사용할 수 없는 원료입니다.",
+      "by": "gemini-consensus",
+      "name": "토근"
+    },
+    "c25d9161-20c2-462e-8035-dd5ad1cb36a3:KR": {
+      "ingredient_id": "c25d9161-20c2-462e-8035-dd5ad1cb36a3",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "'2,5-다이나이트로페놀'은 대한민국 화장품 안전기준 등에 관한 규정 [별표 1]에 따라 사용할 수 없는 원료입니다.",
+      "by": "gemini-consensus",
+      "name": "2,5-다이나이트로페놀"
+    },
+    "a2f06154-1655-4e21-a04b-5a58faa5ac79:KR": {
+      "ingredient_id": "a2f06154-1655-4e21-a04b-5a58faa5ac79",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "'다이클로로벤젠'은 대한민국 화장품 안전기준 등에 관한 규정 [별표 1]에 따라 사용할 수 없는 원료입니다.",
+      "by": "gemini-consensus",
+      "name": "다이클로로벤젠"
     }
   }
 }
