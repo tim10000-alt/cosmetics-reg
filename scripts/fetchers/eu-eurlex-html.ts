@@ -127,7 +127,10 @@ async function main() {
   const byCas = new Map<string, IngredientRow>(), byInci = new Map<string, IngredientRow>();
   for (const i of ingredients) {
     byInci.set(i.inci_name.toLowerCase(), i);
-    if (i.cas_no) for (const c of String(i.cas_no).split(/[\s,;]+/)) if (c.trim()) byCas.set(c.trim(), i);  // 쉼표/세미콜론 분리(다중 CAS 매칭, lib 미러)
+    // 🔴 CAS 토큰화 = lib/data-loader 정규형 미러: 슬래시/캐럿도 구분자 + [n]·(주석) strip. 기존엔
+    // split(/[\s,;]+/)+무strip 이라 "13138-45-9[1]"(EU 다구성성분 마커)·"a/b" 형식을 못 잡아, euban
+    // 생성 시 이미 DB 에 있는 물질(Nickel 4종·Fluopicolide 등)을 중복 생성했다(정품검증 회차5 실측).
+    if (i.cas_no) for (const c of String(i.cas_no).split(/[\s,;/^]+/)) { const t = c.trim().replace(/\[.*/, "").replace(/\(.*/, ""); if (t) byCas.set(t, i); }
   }
 
   const now = new Date().toISOString();
@@ -178,12 +181,22 @@ async function main() {
   }
   console.log(`  매칭 ${matched}, 미매칭 skip ${skipped}, 신규 금지물질 생성 ${created}, 규제행 ${newRegs.length}`);
 
-  // 신규 생성 금지물질을 ingredients.json 에 멱등 추가(id=euban-<CAS> 중복시 skip). 결정론·완전성.
-  if (createdIng.length) {
+  // 신규 생성 금지물질 멱등 추가 + 기존 euban-* 중복 정리. 정품검증 회차5: CAS 토큰화 개선으로 이제
+  // 기존 비-euban 성분에 같은 CAS 가 있는 euban-*(과거 토큰화 버그로 중복생성된 Nickel 4종·Fluopicolide
+  // 등)은 중복 → 제거(그 물질의 EU 금지는 위 루프에서 기존 성분에 attach 됨). 비-euban 성분은 절대 불변.
+  {
     const allIng = await readRows<IngredientRow>("ingredients");
     const have = new Set(allIng.map((i) => i.id));
     const toAdd = createdIng.filter((i) => !have.has(i.id));
-    if (toAdd.length) { await writeRows("ingredients", [...allIng, ...toAdd]); console.log(`  ✓ 신규 금지물질 ${toAdd.length} 성분 생성(euban-<CAS>, 멱등)`); }
+    const nonEubanCas = new Set<string>();
+    for (const i of allIng) if (!String(i.id).startsWith("euban-")) for (const c of String(i.cas_no || "").split(/[\s,;/^]+/)) { const t = c.trim().replace(/\[.*/, "").replace(/\(.*/, ""); if (t) nonEubanCas.add(t); }
+    let removedDup = 0;
+    const kept = allIng.filter((i) => {
+      if (!String(i.id).startsWith("euban-")) return true;
+      if (nonEubanCas.has(String(i.id).slice("euban-".length))) { removedDup++; return false; }  // 기존 성분에 같은 CAS = 중복
+      return true;
+    });
+    if (toAdd.length || removedDup) { await writeRows("ingredients", [...kept, ...toAdd]); console.log(`  ✓ euban 신규 ${toAdd.length} · 중복정리 ${removedDup}`); }
   }
 
   const existing = await readRows<RegulationRow>("regulations");
