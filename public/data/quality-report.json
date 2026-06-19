@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-18T20:47:45.367Z",
-  "totalRegs": 95136,
+  "generated_at": "2026-06-19T20:11:16.551Z",
+  "totalRegs": 95158,
   "coverage": {
     "AR": 4832,
     "BO": 2227,
@@ -43,7 +43,7 @@
     "US": 114,
     "VN": 1815
   },
-  "restrictedNoLimit": 3813,
+  "restrictedNoLimit": 3812,
   "statusConflicts": 470,
   "quarantinePending": 3,
   "casContaminationSuspects": 223,
@@ -58,8 +58,8 @@
     "US:us_fda_cosmetics_announcements",
     "VN:vn_vietnam_dav",
     "ID:id_indonesia_bpom_cosmetic",
+    "BR:br_anvisa_cosm_ticos",
     "CA:ca_health_canada_cosmetic_ingredient_hotlis",
-    "PH:ph_philippines_fda_cosmetic",
     "KR:kr_mfds",
     "TW:tw_tfda_data"
   ],
