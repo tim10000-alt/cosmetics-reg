@@ -957,6 +957,40 @@
       },
       "verdict": "uncertain",
       "by": "gemini-consensus"
+    },
+    "9a6c18e4-ba28-4414-971b-349ac7dc11d6|krgosi-56-53-1": {
+      "ko": "에스트로겐",
+      "a": "Oestrogens, Estrogens",
+      "b": "에스트로겐",
+      "m1": {
+        "verdict": "different",
+        "confidence": 1,
+        "reason": "Entry A refers to a group of substances (Oestrogens/Estrogens), while Entry B refers to a specific substance (Estradiol, CAS 56-53-1), which is one type of estrogen."
+      },
+      "m2": {
+        "verdict": "different",
+        "confidence": 0.9,
+        "reason": "Entry A refers to a general group of hormones (Oestrogens, Estrogens) without a specific CAS number, while Entry B specifically identifies Estradiol (CAS 56-53-1), a particular type of estrogen."
+      },
+      "verdict": "different",
+      "by": "gemini-consensus"
+    },
+    "bef03a8c-0d4c-40d8-83cc-c44d597b7cf9|krgosi-2438-72-4": {
+      "ko": "부펙사막",
+      "a": "Bufexamac",
+      "b": "부펙사막",
+      "m1": {
+        "verdict": "same",
+        "confidence": 1,
+        "reason": "Entry A's INCI 'Bufexamac' is the English equivalent of the Korean name '부펙사막'. Entry B lists '부펙사막' as its INCI and provides the CAS number 2438-72-4, which is the correct CAS for Bufexamac. The substances are identical, with Entry A merely lacking the CAS annotation."
+      },
+      "m2": {
+        "verdict": "same",
+        "confidence": 1,
+        "reason": "Bufexamac is the INCI name for the substance also known as 부펙사막. The CAS number is associated with Bufexamac."
+      },
+      "verdict": "same",
+      "by": "gemini-consensus"
     }
   }
 }
