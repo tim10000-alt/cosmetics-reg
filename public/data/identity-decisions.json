@@ -991,6 +991,23 @@
       },
       "verdict": "same",
       "by": "gemini-consensus"
+    },
+    "e90fe92a-d35f-4f31-a469-61b0d2023f5f|krgosi-56-53-1": {
+      "ko": "에스트로겐",
+      "a": "Oestrogens",
+      "b": "에스트로겐",
+      "m1": {
+        "verdict": "different",
+        "confidence": 1,
+        "reason": "Entry A refers to a group of substances (Oestrogens), while Entry B refers to a specific chemical substance (Diethylstilbestrol, CAS 56-53-1) which is a type of estrogen."
+      },
+      "m2": {
+        "verdict": "different",
+        "confidence": 0.9,
+        "reason": "Entry A 'Oestrogens' is a general term for estrogenic substances, while Entry B '에스트로겐' with CAS 56-53-1 refers to Diethylstilbestrol, a specific synthetic estrogen."
+      },
+      "verdict": "different",
+      "by": "gemini-consensus"
     }
   }
 }
