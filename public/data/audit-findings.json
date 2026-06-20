@@ -1,6 +1,6 @@
 {
   "note": "veto/저신뢰로 자동교정 보류분(가시성용)",
-  "total": 2,
+  "total": 4,
   "findings": {
     "347e91c2-8abd-4fe6-8363-e05138042f97:KR": {
       "country": "KR",
@@ -13,6 +13,18 @@
       "name": "과붕산나트륨",
       "verdict": "un-ban 차단(권위금지)",
       "reason": "식품의약품안전처 화장품 안전기준 등에 관한 규정 별표 2(사용상의 제한이 필요한 원료)에 따라 제품 유형별로 과산화수소로서 최대 7.0%까지 허용됩니다."
+    },
+    "fd77cc76-789d-4b22-aa2a-e38b35c84193:KR": {
+      "country": "KR",
+      "name": "하이드로젠퍼옥사이드",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "The ingredient is restricted with specific maximum concentrations depending on the product type, not banned."
+    },
+    "40fd3dfc-a8f3-46da-8f67-d73a05490936:KR": {
+      "country": "KR",
+      "name": "다이리튬옥살레이트",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "The ingredient is restricted to 5% in hair products, not banned."
     }
   }
 }
