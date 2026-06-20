@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-06-19T20:11:16.551Z",
-  "totalRegs": 95158,
+  "generated_at": "2026-06-20T20:04:42.636Z",
+  "totalRegs": 95164,
   "coverage": {
     "AR": 4832,
     "BO": 2227,
@@ -43,7 +43,7 @@
     "US": 114,
     "VN": 1815
   },
-  "restrictedNoLimit": 3812,
+  "restrictedNoLimit": 3813,
   "statusConflicts": 470,
   "quarantinePending": 3,
   "casContaminationSuspects": 223,
@@ -52,7 +52,7 @@
   "limitAnomalyCount": 0,
   "postHealCorrupt": 0,
   "postHealWhitespace": 0,
-  "sourceFailCount": 8,
+  "sourceFailCount": 9,
   "sourceFailList": [
     "CN:cn_nmpa",
     "US:us_fda_cosmetics_announcements",
@@ -60,6 +60,7 @@
     "ID:id_indonesia_bpom_cosmetic",
     "BR:br_anvisa_cosm_ticos",
     "CA:ca_health_canada_cosmetic_ingredient_hotlis",
+    "PH:ph_philippines_fda_cosmetic",
     "KR:kr_mfds",
     "TW:tw_tfda_data"
   ],
