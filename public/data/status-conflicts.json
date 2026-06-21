@@ -1,5 +1,5 @@
 {
-  "total": 433,
+  "total": 434,
   "note": "같은 CAS 분절 카드 간 banned↔허용 충돌(false-banned/allowed 후보). limit-overrides 로 검토 교정.",
   "conflicts": [
     {
@@ -4066,6 +4066,23 @@
     },
     {
       "cc": "KR",
+      "cas": "50-00-0",
+      "banned": [
+        {
+          "name": "Formaldehyde and p-Formaldehyde",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Formaldehyde",
+          "status": "restricted",
+          "prio": 105
+        }
+      ]
+    },
+    {
+      "cc": "KR",
       "cas": "25376-45-8",
       "banned": [
         {
@@ -5820,23 +5837,6 @@
       "allowed": [
         {
           "name": "CI 27755",
-          "status": "listed",
-          "prio": 100
-        }
-      ]
-    },
-    {
-      "cc": "SG",
-      "cas": "4548-53-2",
-      "banned": [
-        {
-          "name": "Disodium 3-[(2,4-dimethyl-5-sulphonatophenyl)azo]-4-hydroxynaphthalene-1-sulphonate (Ponceaux SX; CI 14700) when used as a substance in hair dye products",
-          "prio": 100
-        }
-      ],
-      "allowed": [
-        {
-          "name": "CI 14700",
           "status": "listed",
           "prio": 100
         }
