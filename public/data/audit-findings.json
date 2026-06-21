@@ -1,6 +1,6 @@
 {
   "note": "veto/저신뢰로 자동교정 보류분(가시성용)",
-  "total": 4,
+  "total": 7,
   "findings": {
     "347e91c2-8abd-4fe6-8363-e05138042f97:KR": {
       "country": "KR",
@@ -25,6 +25,24 @@
       "name": "다이리튬옥살레이트",
       "verdict": "un-ban 차단(권위금지)",
       "reason": "The ingredient is restricted to 5% in hair products, not banned."
+    },
+    "657343dc-0547-4c24-940d-88e1ee2df2f8:KR": {
+      "country": "KR",
+      "name": "염산p-페닐렌디아민",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 2] 사용제한 원료 목록에 산화염모제에 3.3%로 명시되어 있습니다."
+    },
+    "01f61240-e33c-4e8e-928b-eb723b0fc72d:KR": {
+      "country": "KR",
+      "name": "소듐카보네이트퍼옥사이드",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "화장품 안전기준 등에 관한 규정 별표 2에 따라 사용상 제한이 있는 원료임. 과산화수소로서 최대 12.0% 허용."
+    },
+    "3b99ceec-e747-4033-8689-e53cb8a1a70f:KR": {
+      "country": "KR",
+      "name": "다이포타슘옥살레이트",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "화장품 안전기준 등에 관한 규정 별표 2에 따라 사용상 제한이 있는 원료임. 두발용 제품류에 5% 허용."
     }
   }
 }
