@@ -1008,6 +1008,23 @@
       },
       "verdict": "different",
       "by": "gemini-consensus"
+    },
+    "4f1c4c9f-5d03-419c-b7f7-f146a968cae1|krgosi-98319-26-7": {
+      "ko": "피나스테리드, 그 염류 및 유도체",
+      "a": "Finasteride, its salts and derivatives",
+      "b": "피나스테리드, 그 염류 및 유도체",
+      "m1": {
+        "verdict": "same",
+        "confidence": 0.9,
+        "reason": "Both entries refer to the same group of substances, 'Finasteride, its salts and derivatives', with Entry A providing the English INCI and Entry B the Korean INCI. The CAS number in Entry B refers to the parent compound within this defined group, and its absence in Entry A does not alter the identity of the group itself."
+      },
+      "m2": {
+        "verdict": "same",
+        "confidence": 1,
+        "reason": "Entry A is the English INCI name and Entry B is the Korean INCI name for the same substance. The CAS number is missing in Entry A, but this does not indicate a different substance."
+      },
+      "verdict": "same",
+      "by": "gemini-consensus"
     }
   }
 }
