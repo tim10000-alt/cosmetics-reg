@@ -1,5 +1,5 @@
 {
-  "total": 434,
+  "total": 436,
   "note": "같은 CAS 분절 카드 간 banned↔허용 충돌(false-banned/allowed 후보). limit-overrides 로 검토 교정.",
   "conflicts": [
     {
