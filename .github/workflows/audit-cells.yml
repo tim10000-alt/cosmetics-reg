@@ -40,7 +40,7 @@ jobs:
       # 중요시장 먼저 소진(KR/CN/EU/JP/US…). 점진 커버.
       AUDITCELL_COUNTRIES: "KR,CN,EU,JP,US,TW,BR,ID,MY,PH,SG,TH,VN,BO,CO,EC,PE,AR,CA"
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - uses: actions/setup-node@v6

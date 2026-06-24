@@ -34,7 +34,7 @@ jobs:
       TRANSLATE_BUDGET_MS: "900000"   # 15분 하드 컷
       TRANSLATE_QUOTA_STOP: "3"       # quota 3연속 = 오늘 소진 → 즉시 종료(CI 분 낭비 방지)
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - uses: actions/setup-node@v6
