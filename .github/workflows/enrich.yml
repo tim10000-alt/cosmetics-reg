@@ -36,7 +36,7 @@ jobs:
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       CI: "true"
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           # commit 후 push 시 latest 위에 rebase 위해 fetch-depth 충분히
           fetch-depth: 0

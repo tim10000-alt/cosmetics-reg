@@ -39,7 +39,7 @@ jobs:
       STATUSJUDGE_BUDGET_MS: "600000"   # 10분 하드 컷(타임아웃 전 안전 종료)
       STATUSJUDGE_QUOTA_STOP: "3"     # quota 3연속 실패 = 오늘 소진 → 즉시 종료(무의미한 spin·CI 분 낭비 방지)
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - uses: actions/setup-node@v6
