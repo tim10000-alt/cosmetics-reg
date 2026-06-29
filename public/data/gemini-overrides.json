@@ -1,6 +1,6 @@
 {
   "note": "Gemini 듀얼합의 자동교정(법령변경 자가치유) — apply-gemini-overrides 가 prio105 로 baking. un-ban 은 권위 annex veto. 사람 개입 0.",
-  "total": 41,
+  "total": 39,
   "corrections": {
     "38629385-37bc-4757-85de-6fba8806a583:KR": {
       "ingredient_id": "38629385-37bc-4757-85de-6fba8806a583",
@@ -123,39 +123,6 @@
       "by": "gemini-consensus",
       "name": "5-tert-부틸-1,2,3-트라이메틸-4.6-다이니트로벤젠"
     },
-    "8fc08435-9e9f-4c67-a471-549f43840ba9:KR": {
-      "ingredient_id": "8fc08435-9e9f-4c67-a471-549f43840ba9",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "CI 12150 (Solvent Red 23) is a prohibited raw material in South Korea.",
-      "by": "gemini-consensus",
-      "name": "CI 12150"
-    },
-    "42c8ca8e-b63d-454b-b72b-e43915d6910b:KR": {
-      "ingredient_id": "42c8ca8e-b63d-454b-b72b-e43915d6910b",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "CI 20170 (Solvent Yellow 14) is a prohibited raw material in South Korea.",
-      "by": "gemini-consensus",
-      "name": "CI 20170"
-    },
-    "00ad67b4-6992-4d41-a65f-8972e673feb0:KR": {
-      "ingredient_id": "00ad67b4-6992-4d41-a65f-8972e673feb0",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "CI 27290 (Solvent Red 49) is a prohibited raw material in South Korea.",
-      "by": "gemini-consensus",
-      "name": "CI 27290"
-    },
     "770e0844-b13d-4995-a9ce-02275cf31121:KR": {
       "ingredient_id": "770e0844-b13d-4995-a9ce-02275cf31121",
       "country_code": "KR",
@@ -243,94 +210,6 @@
       "reason": "화장품 안전기준 등에 관한 규정 별표 2에 따라 사용 후 씻어내지 않는 제품에 2.5%로 제한됩니다.",
       "by": "gemini-consensus",
       "name": "다이스테아릴다이메틸아민다이리놀리에이트"
-    },
-    "93184357-bd67-43c2-a227-b7b471e60b97:KR": {
-      "ingredient_id": "93184357-bd67-43c2-a227-b7b471e60b97",
-      "country_code": "KR",
-      "status": "restricted",
-      "max": 0.002,
-      "from": "restricted",
-      "confidence": 1,
-      "reason": "메틸옥틴카보네이트는 한국 화장품 안전기준 등에 관한 규정에서 0.002%로 배합한도가 명시되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "메틸옥틴카보네이트"
-    },
-    "1a09141d-d2eb-4084-977a-9ce9eac2d2cc:KR": {
-      "ingredient_id": "1a09141d-d2eb-4084-977a-9ce9eac2d2cc",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "아세닉펜타옥사이드는 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "아세닉펜타옥사이드"
-    },
-    "4a387b9a-a702-4022-93cc-aa12b59003e4:KR": {
-      "ingredient_id": "4a387b9a-a702-4022-93cc-aa12b59003e4",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "메탈포스파이드는 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "메탈포스파이드"
-    },
-    "bc4a55b3-d997-484c-af66-0b19ed614944:KR": {
-      "ingredient_id": "bc4a55b3-d997-484c-af66-0b19ed614944",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "하이드록시에틸-2,6-다이나이트로-p-아니시딘 및 그 염류는 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "하이드록시에틸-2,6-다이나이트로-p-아니시딘 및 그 염류"
-    },
-    "10c6f7a7-a0ef-4372-8f84-99cf0c3edf1e:KR": {
-      "ingredient_id": "10c6f7a7-a0ef-4372-8f84-99cf0c3edf1e",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "마부테롤은 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "마부테롤"
-    },
-    "7c85a0a7-ac65-44c0-be56-226f56ad833a:KR": {
-      "ingredient_id": "7c85a0a7-ac65-44c0-be56-226f56ad833a",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "파라티온-메틸은 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "파라티온-메틸"
-    },
-    "cd18f3ff-b537-42ea-a574-5daf65b05ad1:KR": {
-      "ingredient_id": "cd18f3ff-b537-42ea-a574-5daf65b05ad1",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "디이에이-세테아레스-2포스페이트는 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "디이에이-세테아레스-2포스페이트"
-    },
-    "8e0ec212-dc8b-40d5-b857-cff8255165ce:KR": {
-      "ingredient_id": "8e0ec212-dc8b-40d5-b857-cff8255165ce",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "다이옥세테드린 및 그 염류는 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "다이옥세테드린 및 그 염류"
     },
     "b6f042bb-ff41-48f8-b262-cefc14f00d7e:KR": {
       "ingredient_id": "b6f042bb-ff41-48f8-b262-cefc14f00d7e",
@@ -452,6 +331,105 @@
       "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 1]에 따라 화장품에 사용할 수 없는 원료로 지정되어 있습니다.",
       "by": "gemini-consensus",
       "name": "노페네프린하이드로클로라이드"
+    },
+    "90210d9d-976a-4bcd-be87-e5c73ddbcd46:KR": {
+      "ingredient_id": "90210d9d-976a-4bcd-be87-e5c73ddbcd46",
+      "country_code": "KR",
+      "status": "restricted",
+      "max": null,
+      "from": "restricted",
+      "confidence": 1,
+      "reason": "CI 77805 (셀레늄 및 그 화합물)은 대한민국 화장품 안전기준 등에 관한 규정 [별표 2]에 따라 셀레늄설파이드에 한하여 1.0%까지 사용이 제한적으로 허용됩니다.",
+      "by": "gemini-consensus",
+      "name": "CI 77805"
+    },
+    "10138630-3386-4f48-b1cb-50e8712130f3:KR": {
+      "ingredient_id": "10138630-3386-4f48-b1cb-50e8712130f3",
+      "country_code": "KR",
+      "status": "restricted",
+      "max": 0.15,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "메텐아민은 화장품에 0.15%까지 배합이 허용되는 제한 원료입니다.",
+      "by": "gemini-consensus",
+      "name": "메텐아민"
+    },
+    "96ffe96a-5bdf-4453-9637-9efb80d241c6:KR": {
+      "ingredient_id": "96ffe96a-5bdf-4453-9637-9efb80d241c6",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 1]에 따라 화장품에 사용할 수 없는 원료로 지정되어 있습니다.",
+      "by": "gemini-consensus",
+      "name": "테파졸린"
+    },
+    "e1b9d744-318a-4765-af9b-bc6a526fa268:KR": {
+      "ingredient_id": "e1b9d744-318a-4765-af9b-bc6a526fa268",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 4]에 명시되지 않은 색소는 사용할 수 없습니다.",
+      "by": "gemini-consensus",
+      "name": "솔벤트적색1호"
+    },
+    "771cb7a7-9393-48f8-98f9-766084a50992:KR": {
+      "ingredient_id": "771cb7a7-9393-48f8-98f9-766084a50992",
+      "country_code": "KR",
+      "status": "restricted",
+      "max": null,
+      "from": "restricted",
+      "confidence": 1,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 4]에 따라 눈 주위에 사용할 수 없는 색소로 지정되어 있습니다.",
+      "by": "gemini-consensus",
+      "name": "적색223호"
+    },
+    "8b67893f-149d-45a6-91b7-594277469675:KR": {
+      "ingredient_id": "8b67893f-149d-45a6-91b7-594277469675",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 1]에 따라 화장품에 사용할 수 없는 원료로 지정되어 있습니다.",
+      "by": "gemini-consensus",
+      "name": "두타스테리드, 그 염류 및 유도체"
+    },
+    "3f52de70-f9c8-45ae-8e01-76cccea2a8bb:KR": {
+      "ingredient_id": "3f52de70-f9c8-45ae-8e01-76cccea2a8bb",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 1]에 따라 화장품에 사용할 수 없는 원료로 지정되어 있습니다.",
+      "by": "gemini-consensus",
+      "name": "아조벤젠"
+    },
+    "9a018eed-6b43-4493-951e-ccedd0bf2138:KR": {
+      "ingredient_id": "9a018eed-6b43-4493-951e-ccedd0bf2138",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 4]에 명시되지 않은 색소는 사용할 수 없습니다.",
+      "by": "gemini-consensus",
+      "name": "피그먼트적색53:1호(레이크적색C바륨)"
+    },
+    "83b345eb-d093-40c7-8f25-d9b7604aca30:KR": {
+      "ingredient_id": "83b345eb-d093-40c7-8f25-d9b7604aca30",
+      "country_code": "KR",
+      "status": "restricted",
+      "max": 0.5,
+      "from": "restricted",
+      "confidence": 1,
+      "reason": "메틸벤조에이트는 화장품 안전기준에 따라 산으로서 0.5%의 배합한도가 있습니다.",
+      "by": "gemini-consensus",
+      "name": "메틸벤조에이트"
     }
   }
 }
