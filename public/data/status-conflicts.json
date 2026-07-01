@@ -1,5 +1,5 @@
 {
-  "total": 435,
+  "total": 436,
   "note": "같은 CAS 분절 카드 간 banned↔허용 충돌(false-banned/allowed 후보). limit-overrides 로 검토 교정.",
   "conflicts": [
     {
@@ -1027,6 +1027,31 @@
       "allowed": [
         {
           "name": "Hydrolyzed Keratin",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "111-46-6",
+      "banned": [
+        {
+          "name": "Diethylene Glycol",
+          "prio": 50
+        },
+        {
+          "name": "Diethylene Glycol(with exception of those substances If they contain ≤ 0.1% as a residues)",
+          "prio": 50
+        },
+        {
+          "name": "diethylene glycol",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "diethylene glycol",
           "status": "listed",
           "prio": 100
         }
@@ -5820,23 +5845,6 @@
       "allowed": [
         {
           "name": "CI 27755",
-          "status": "listed",
-          "prio": 100
-        }
-      ]
-    },
-    {
-      "cc": "SG",
-      "cas": "4548-53-2",
-      "banned": [
-        {
-          "name": "Disodium 3-[(2,4-dimethyl-5-sulphonatophenyl)azo]-4-hydroxynaphthalene-1-sulphonate (Ponceaux SX; CI 14700) when used as a substance in hair dye products",
-          "prio": 100
-        }
-      ],
-      "allowed": [
-        {
-          "name": "CI 14700",
           "status": "listed",
           "prio": 100
         }
