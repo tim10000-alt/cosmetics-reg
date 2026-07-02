@@ -310,17 +310,6 @@
       "by": "gemini-consensus",
       "name": "적색223호"
     },
-    "83b345eb-d093-40c7-8f25-d9b7604aca30:KR": {
-      "ingredient_id": "83b345eb-d093-40c7-8f25-d9b7604aca30",
-      "country_code": "KR",
-      "status": "restricted",
-      "max": 0.5,
-      "from": "restricted",
-      "confidence": 1,
-      "reason": "메틸벤조에이트는 화장품 안전기준에 따라 산으로서 0.5%의 배합한도가 있습니다.",
-      "by": "gemini-consensus",
-      "name": "메틸벤조에이트"
-    },
     "1b45eb3a-088a-44c1-aaef-54a347747f1c:KR": {
       "ingredient_id": "1b45eb3a-088a-44c1-aaef-54a347747f1c",
       "country_code": "KR",
@@ -551,6 +540,17 @@
       "reason": "화장품 안전기준 등에 관한 규정 (별표1) 사용금지 원료 목록에 명시된 성분입니다.",
       "by": "gemini-consensus",
       "name": "다이메틸설페이트"
+    },
+    "5f1b1d14-4057-4a01-91b8-432e5f48b80c:KR": {
+      "ingredient_id": "5f1b1d14-4057-4a01-91b8-432e5f48b80c",
+      "country_code": "KR",
+      "status": "restricted",
+      "max": 4,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "4-메칠벤질리덴캠퍼는 화장품 안전기준 등에 관한 규정 [별표 2] 사용상의 제한이 있는 원료(자외선 차단성분)에 배합한도 4%로 명시되어 있습니다.",
+      "by": "gemini-consensus",
+      "name": "4-메칠벤질리덴캠퍼"
     }
   }
 }
