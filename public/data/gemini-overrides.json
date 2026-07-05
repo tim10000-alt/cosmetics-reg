@@ -1,6 +1,6 @@
 {
   "note": "Gemini 듀얼합의 자동교정(법령변경 자가치유) — apply-gemini-overrides 가 prio105 로 baking. un-ban 은 권위 annex veto. 사람 개입 0.",
-  "total": 49,
+  "total": 50,
   "corrections": {
     "38629385-37bc-4757-85de-6fba8806a583:KR": {
       "ingredient_id": "38629385-37bc-4757-85de-6fba8806a583",
@@ -405,7 +405,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료 100번으로 지정되어 있습니다.",
+      "reason": "비나프아크릴은 대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료 100번으로 지정되어 있습니다.",
       "by": "gemini-consensus",
       "name": "비나프아크릴"
     },
@@ -416,7 +416,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료 101번으로 지정되어 있습니다.",
+      "reason": "크리소이딘은 대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료 101번으로 지정되어 있습니다.",
       "by": "gemini-consensus",
       "name": "크리소이딘;4-(페닐아조)벤젠-1,3-다이아민"
     },
@@ -427,7 +427,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료 102번으로 지정되어 있습니다.",
+      "reason": "1-[(2-하이드록시에틸)아미노]-4-(메틸아미노-9,10-안트라센다이온 및 그 염류는 대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료 102번으로 지정되어 있습니다.",
       "by": "gemini-consensus",
       "name": "1-[(2-하이드록시에틸)아미노]-4-(메틸아미노-9,10-안트라센다이온 및 그 염류"
     },
@@ -438,7 +438,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료 103번으로 지정되어 있습니다.",
+      "reason": "옥산드론은 대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료 103번으로 지정되어 있습니다.",
       "by": "gemini-consensus",
       "name": "옥산드론"
     },
@@ -449,7 +449,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료 104번으로 지정되어 있습니다.",
+      "reason": "디메토에이트는 대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료 104번으로 지정되어 있습니다.",
       "by": "gemini-consensus",
       "name": "디메토에이트[Dimethoate; 60-51-5] 및 이를 1%이상 함유한 혼합물"
     },
@@ -460,7 +460,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료 106번으로 지정되어 있습니다.",
+      "reason": "다이노터브는 대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료 106번으로 지정되어 있습니다.",
       "by": "gemini-consensus",
       "name": "다이노터브"
     },
@@ -530,16 +530,27 @@
       "by": "gemini-consensus",
       "name": "다이아미노톨루엔, [4-메틸-m-페닐렌다이아민]"
     },
-    "3c6ba286-b246-4c1d-a5f5-a95e6cc63fe7:KR": {
-      "ingredient_id": "3c6ba286-b246-4c1d-a5f5-a95e6cc63fe7",
+    "48139f6f-7b15-4747-a8df-9f618ae53947:KR": {
+      "ingredient_id": "48139f6f-7b15-4747-a8df-9f618ae53947",
+      "country_code": "KR",
+      "status": "restricted",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "포름알데하이드는 일반 화장품 2000㎍/g(0.2%), 물휴지 20㎍/g 이하로 사용이 제한된 원료입니다.",
+      "by": "gemini-consensus",
+      "name": "포름알데하이드"
+    },
+    "f5c6e56f-d99f-4fd2-b430-657c351afd9b:KR": {
+      "ingredient_id": "f5c6e56f-d99f-4fd2-b430-657c351afd9b",
       "country_code": "KR",
       "status": "banned",
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "화장품 안전기준 등에 관한 규정 별표 1에 따라 사용금지 원료임.",
+      "reason": "광우병 발병이 보고된 지역의 특정위험물질 유래성분은 대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료로 지정되어 있습니다.",
       "by": "gemini-consensus",
-      "name": "1,2,3,4,5,6-헥사클로로사이클로헥산 (예 : 린단)"
+      "name": "광우병 발병이 보고된 지역의 다음의 특정위험물질(specified risk material) 유래성분(소․양․염소 등 반추동물의 18개 부위)"
     }
   }
 }
