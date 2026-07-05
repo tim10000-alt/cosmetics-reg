@@ -1,5 +1,5 @@
 {
-  "total": 436,
+  "total": 434,
   "note": "같은 CAS 분절 카드 간 banned↔허용 충돌(false-banned/allowed 후보). limit-overrides 로 검토 교정.",
   "conflicts": [
     {
@@ -257,28 +257,6 @@
           "name": "Benzoates of 4-hydroxy-3-methoxycinnamyl alcohol except for normal content in natural essences used",
           "status": "restricted",
           "prio": 50
-        }
-      ]
-    },
-    {
-      "cc": "BO",
-      "cas": "7440-50-8",
-      "banned": [
-        {
-          "name": "COPPER POWDER",
-          "prio": 100
-        }
-      ],
-      "allowed": [
-        {
-          "name": "Bronze Powder",
-          "status": "listed",
-          "prio": 100
-        },
-        {
-          "name": "Copper",
-          "status": "listed",
-          "prio": 100
         }
       ]
     },
@@ -1742,28 +1720,6 @@
     },
     {
       "cc": "CO",
-      "cas": "7440-50-8",
-      "banned": [
-        {
-          "name": "COPPER POWDER",
-          "prio": 100
-        }
-      ],
-      "allowed": [
-        {
-          "name": "Bronze Powder",
-          "status": "listed",
-          "prio": 100
-        },
-        {
-          "name": "Copper",
-          "status": "listed",
-          "prio": 100
-        }
-      ]
-    },
-    {
-      "cc": "CO",
       "cas": "148-24-3",
       "banned": [
         {
@@ -1866,28 +1822,6 @@
     },
     {
       "cc": "EC",
-      "cas": "7440-50-8",
-      "banned": [
-        {
-          "name": "COPPER POWDER",
-          "prio": 100
-        }
-      ],
-      "allowed": [
-        {
-          "name": "Bronze Powder",
-          "status": "listed",
-          "prio": 100
-        },
-        {
-          "name": "Copper",
-          "status": "listed",
-          "prio": 100
-        }
-      ]
-    },
-    {
-      "cc": "EC",
       "cas": "148-24-3",
       "banned": [
         {
@@ -1983,6 +1917,23 @@
       "allowed": [
         {
           "name": "Diiodofluorescein, D&C Orange No. 10, Daidai206, CI 45425:1",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "EU",
+      "cas": "38102-62-4",
+      "banned": [
+        {
+          "name": "4-Methylbenzylidene Camphor",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "3-(4-Methylbenzylidene)-d1 camphor/Enzacamene 4-Methylbenzylidene Camphor",
           "status": "listed",
           "prio": 100
         }
@@ -2085,10 +2036,6 @@
         {
           "name": "Sodium Styrene/Acrylates Copolymer",
           "prio": 50
-        },
-        {
-          "name": "COPPER POWDER",
-          "prio": 100
         }
       ],
       "allowed": [
@@ -2176,10 +2123,6 @@
         {
           "name": "Colloidal Silver",
           "prio": 50
-        },
-        {
-          "name": "SILVER",
-          "prio": 100
         }
       ],
       "allowed": [
@@ -2187,6 +2130,11 @@
           "name": "Silver,CI 77820",
           "status": "restricted",
           "prio": 50
+        },
+        {
+          "name": "SILVER",
+          "status": "listed",
+          "prio": 100
         }
       ]
     },
@@ -2383,7 +2331,7 @@
         },
         {
           "name": "Gold",
-          "prio": 100
+          "prio": 50
         }
       ],
       "allowed": [
@@ -4091,6 +4039,23 @@
     },
     {
       "cc": "KR",
+      "cas": "50-00-0",
+      "banned": [
+        {
+          "name": "Formaldehyde and p-Formaldehyde",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Formaldehyde",
+          "status": "restricted",
+          "prio": 105
+        }
+      ]
+    },
+    {
+      "cc": "KR",
       "cas": "25376-45-8",
       "banned": [
         {
@@ -4704,28 +4669,6 @@
         {
           "name": "4-Formyl-1-methylquinolinium-p-toluenesulfonate",
           "status": "restricted",
-          "prio": 100
-        }
-      ]
-    },
-    {
-      "cc": "PE",
-      "cas": "7440-50-8",
-      "banned": [
-        {
-          "name": "COPPER POWDER",
-          "prio": 100
-        }
-      ],
-      "allowed": [
-        {
-          "name": "Bronze Powder",
-          "status": "listed",
-          "prio": 100
-        },
-        {
-          "name": "Copper",
-          "status": "listed",
           "prio": 100
         }
       ]
@@ -5845,6 +5788,44 @@
       "allowed": [
         {
           "name": "CI 27755",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "4548-53-2",
+      "banned": [
+        {
+          "name": "Disodium 3-[(2,4-dimethyl-5-sulphonatophenyl)azo]-4-hydroxynaphthalene-1-sulphonate (Ponceaux SX; CI 14700) when used as a substance in hair dye products",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 14700",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "19381-50-1",
+      "banned": [
+        {
+          "name": "Trisodium tris[5,6-dihydro-5-(hydroxyimino)-6-oxonaphthalene-2-sulphonate(2-)-N5,O6]ferrate(3-); (Acid Green 1; CI 10020) when used as a substance in hair dye products",
+          "prio": 50
+        },
+        {
+          "name": "Acid Green 1",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 10020",
           "status": "listed",
           "prio": 100
         }
