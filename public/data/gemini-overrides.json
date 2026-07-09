@@ -1,6 +1,6 @@
 {
   "note": "Gemini 듀얼합의 자동교정(법령변경 자가치유) — apply-gemini-overrides 가 prio105 로 baking. un-ban 은 권위 annex veto. 사람 개입 0.",
-  "total": 57,
+  "total": 65,
   "corrections": {
     "38629385-37bc-4757-85de-6fba8806a583:KR": {
       "ingredient_id": "38629385-37bc-4757-85de-6fba8806a583",
@@ -281,10 +281,10 @@
       "ingredient_id": "48139f6f-7b15-4747-a8df-9f618ae53947",
       "country_code": "KR",
       "status": "restricted",
-      "max": null,
+      "max": 0.2,
       "from": "restricted",
       "confidence": 0.9,
-      "reason": "물휴지 0.002%, 그 외 제품 0.2%로 사용이 제한됩니다.",
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 2]에 따라 물휴지 0.002%, 그 외 제품 0.2%로 사용이 제한됩니다.",
       "by": "gemini-consensus",
       "name": "포름알데하이드"
     },
@@ -383,7 +383,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "화장품에 사용할 수 없는 원료로 지정되어 있습니다.",
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 1]에 따라 화장품에 사용할 수 없는 원료입니다.",
       "by": "gemini-consensus",
       "name": "아이소니코티닉애씨드하이드라자이드"
     },
@@ -394,7 +394,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "화장품에 사용할 수 없는 원료로 지정되어 있습니다.",
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 1]에 따라 화장품에 사용할 수 없는 원료입니다.",
       "by": "gemini-consensus",
       "name": "퍼트레토토늄아이오다이드"
     },
@@ -405,7 +405,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "화장품에 사용할 수 없는 원료로 지정되어 있습니다.",
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 1]에 따라 화장품에 사용할 수 없는 원료입니다.",
       "by": "gemini-consensus",
       "name": "2-메틸-4-나이트로아니솔"
     },
@@ -416,7 +416,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "화장품에 사용할 수 없는 원료로 지정되어 있습니다.",
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 1]에 따라 화장품에 사용할 수 없는 원료입니다.",
       "by": "gemini-consensus",
       "name": "페네투라이드"
     },
@@ -427,7 +427,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "화장품에 사용할 수 없는 원료로 지정되어 있습니다.",
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 1]에 따라 화장품에 사용할 수 없는 원료입니다.",
       "by": "gemini-consensus",
       "name": "카르벤다짐"
     },
@@ -438,7 +438,7 @@
       "max": 0.9,
       "from": "restricted",
       "confidence": 1,
-      "reason": "프로피오닉애씨드 및 그 염류로서 0.9%까지 사용이 제한됩니다.",
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 2]에 따라 프로피오닉애씨드 및 그 염류로서 0.9%까지 사용이 제한됩니다.",
       "by": "gemini-consensus",
       "name": "마그네슘프로피오네이트"
     },
@@ -449,7 +449,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "화장품에 사용할 수 없는 원료로 지정되어 있습니다.",
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 1]에 따라 화장품에 사용할 수 없는 원료입니다.",
       "by": "gemini-consensus",
       "name": "투구꽃속"
     },
@@ -623,11 +623,99 @@
       "country_code": "KR",
       "status": "restricted",
       "max": 1,
-      "from": "banned",
+      "from": "restricted",
       "confidence": 1,
-      "reason": "피록톤올아민은 화장품 배합한도 지정 원료로, 사용 후 씻어내는 제품에 1.0%, 기타 제품에 0.5%까지 허용됩니다.",
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 2]에 따라 사용 후 씻어내는 제품에 1.0%, 기타 제품에 0.5%까지 허용되는 보존제입니다.",
       "by": "gemini-consensus",
       "name": "피록톤올아민"
+    },
+    "f33d454c-f118-41f5-9174-a2a8cdb5c6ff:KR": {
+      "ingredient_id": "f33d454c-f118-41f5-9174-a2a8cdb5c6ff",
+      "country_code": "KR",
+      "status": "restricted",
+      "max": null,
+      "from": "restricted",
+      "confidence": 1,
+      "reason": "프소랄렌은 한국 화장품 안전기준 등에 관한 규정 [별표 2] 사용제한 원료로, 자외선차단제품 및 인공선탠제품에서 1ppm(0.0001%) 이하로 제한됩니다.",
+      "by": "gemini-consensus",
+      "name": "피쿠신;7H-푸로[3,2-g][1]벤조피란-7-온;싸이오라엔"
+    },
+    "8076e8bb-b23a-4dea-a855-74e6ed087916:KR": {
+      "ingredient_id": "8076e8bb-b23a-4dea-a855-74e6ed087916",
+      "country_code": "KR",
+      "status": "restricted",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 4]에 따라 적용 후 바로 씻어내는 제품 및 염모용 화장품에만 사용 가능한 색소입니다.",
+      "by": "gemini-consensus",
+      "name": "적색221호"
+    },
+    "c825255b-cc6c-4ddf-b4bd-3065868fa2c1:KR": {
+      "ingredient_id": "c825255b-cc6c-4ddf-b4bd-3065868fa2c1",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료.",
+      "by": "gemini-consensus",
+      "name": "리누론"
+    },
+    "8e91b78a-4083-4a2d-b3eb-a374468ee47b:KR": {
+      "ingredient_id": "8e91b78a-4083-4a2d-b3eb-a374468ee47b",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료.",
+      "by": "gemini-consensus",
+      "name": "N,N-비스(2-클로로에틸)메틸아민-N-옥사이드"
+    },
+    "c04621c0-da03-4fe2-91cf-6938202dc400:KR": {
+      "ingredient_id": "c04621c0-da03-4fe2-91cf-6938202dc400",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료.",
+      "by": "gemini-consensus",
+      "name": "1,2,4-트라이아졸"
+    },
+    "aff2a590-e5cb-4bdb-8131-f7f222dea264:KR": {
+      "ingredient_id": "aff2a590-e5cb-4bdb-8131-f7f222dea264",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료.",
+      "by": "gemini-consensus",
+      "name": "o-아미노페놀"
+    },
+    "cf3611ef-9dbc-423a-8c23-962b58b26fed:KR": {
+      "ingredient_id": "cf3611ef-9dbc-423a-8c23-962b58b26fed",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료.",
+      "by": "gemini-consensus",
+      "name": "납 및 그 화합물"
+    },
+    "4da64e0c-ecaf-4e6f-8ef7-19f1c0eb1423:KR": {
+      "ingredient_id": "4da64e0c-ecaf-4e6f-8ef7-19f1c0eb1423",
+      "country_code": "KR",
+      "status": "restricted",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "현행 화장품 안전기준 사용상의 제한이 필요한 원료 목록에 2급 아민함량 5% 초과 시 금지 조건으로 명시되어 있습니다.",
+      "by": "gemini-consensus",
+      "name": "콘아마이드/코카마이드디이에이"
     }
   }
 }
