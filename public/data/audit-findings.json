@@ -1,6 +1,6 @@
 {
   "note": "veto/저신뢰로 자동교정 보류분(가시성용)",
-  "total": 23,
+  "total": 24,
   "findings": {
     "347e91c2-8abd-4fe6-8363-e05138042f97:KR": {
       "country": "KR",
@@ -139,6 +139,12 @@
       "name": "p-클로로-m-크레졸",
       "verdict": "un-ban 차단(권위금지)",
       "reason": "p-클로로-m-크레졸은 한국 화장품 안전기준에 따라 0.04%의 배합한도 및 점막 사용 금지 조건이 있는 제한적 허용 원료입니다."
+    },
+    "bacdc969-d9e3-4167-b641-02dc35230844:KR": {
+      "country": "KR",
+      "name": "소듐옥살레이트",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "The ingredient is restricted to 5% in hair products and banned in other products, not universally banned."
     }
   }
 }
