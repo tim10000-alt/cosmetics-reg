@@ -4112,7 +4112,7 @@
       "banned": [
         {
           "name": "Diaminotoluene, [4-methyl-m-phenylene diamine]",
-          "prio": 100
+          "prio": 105
         }
       ],
       "allowed": [
