@@ -52,8 +52,8 @@
     "audit:cells": "tsx scripts/audit-cells-gemini.ts"
   },
   "dependencies": {
-    "@google/genai": "^2.8.0",
-    "next": "16.2.7",
+    "@google/genai": "^2.11.0",
+    "next": "16.2.10",
     "pdf-parse": "^2.4.5",
     "react": "19.2.7",
     "react-dom": "19.2.7",
@@ -68,13 +68,13 @@
     "@types/react-dom": "^19",
     "chrome-launcher": "^1.2.1",
     "dotenv": "^17.4.2",
-    "eslint": "^9.39.4",
-    "eslint-config-next": "16.2.7",
-    "lighthouse": "^13.3.0",
-    "playwright": "^1.60.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "16.2.10",
+    "lighthouse": "^13.4.0",
+    "playwright": "^1.61.1",
     "serve": "^14.2.4",
     "tailwindcss": "^4",
-    "tsx": "^4.22.4",
+    "tsx": "^4.23.1",
     "typescript": "^6.0.3"
   }
 }
