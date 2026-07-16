@@ -1,6 +1,6 @@
 {
   "note": "veto/저신뢰로 자동교정 보류분(가시성용)",
-  "total": 35,
+  "total": 37,
   "findings": {
     "347e91c2-8abd-4fe6-8363-e05138042f97:KR": {
       "country": "KR",
@@ -211,6 +211,18 @@
       "name": "세탈코늄클로라이드",
       "verdict": "un-ban 차단(권위금지)",
       "reason": "세탈코늄클로라이드는 사용 후 씻어내는 제품에 0.1%, 기타 제품에 0.05%까지 허용되는 제한적 사용 원료입니다."
+    },
+    "5a81e4bd-554e-43ca-936a-9afc2f201931:KR": {
+      "country": "KR",
+      "name": "만수국꽃 추출물 또는 오일",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "The ingredient has specific mixing limits and conditions, indicating it is restricted, not banned."
+    },
+    "73b96345-5cf6-40f7-a332-219477a853b3:KR": {
+      "country": "KR",
+      "name": "미리스탈코늄사카리네이트",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "현재 표기된 조건에 따라 사용 후 씻어내는 제품에 0.1%, 기타 제품에 0.05%로 제한되어 있어 'restricted'에 해당합니다. 분사형 제품은 금지됩니다."
     }
   }
 }
