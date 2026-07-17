@@ -1,6 +1,6 @@
 {
   "note": "Gemini 듀얼합의 자동교정(법령변경 자가치유) — apply-gemini-overrides 가 prio105 로 baking. un-ban 은 권위 annex veto. 사람 개입 0.",
-  "total": 76,
+  "total": 84,
   "corrections": {
     "38629385-37bc-4757-85de-6fba8806a583:KR": {
       "ingredient_id": "38629385-37bc-4757-85de-6fba8806a583",
@@ -486,17 +486,6 @@
       "by": "gemini-consensus",
       "name": "티이에이-아크릴레이트/에틸헥실아크릴레이트코폴리머"
     },
-    "68821a4d-3b50-47ea-a74e-b19e77931abd:KR": {
-      "ingredient_id": "68821a4d-3b50-47ea-a74e-b19e77931abd",
-      "country_code": "KR",
-      "status": "restricted",
-      "max": 1,
-      "from": "restricted",
-      "confidence": 1,
-      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 2]에 따라 자외선차단제품 및 인공선탠제품에서 푸로쿠마린류 함량이 1 ppm을 초과할 수 없습니다.",
-      "by": "gemini-consensus",
-      "name": "라임즙"
-    },
     "7819dfdb-1ea4-43ee-8aed-6a0078c5f6c6:KR": {
       "ingredient_id": "7819dfdb-1ea4-43ee-8aed-6a0078c5f6c6",
       "country_code": "KR",
@@ -837,6 +826,105 @@
       "reason": "대한민국 화장품 안전기준 등에 관한 규정에서 석면(청석면 포함)은 사용금지 원료로 지정되어 있습니다.",
       "by": "gemini-consensus",
       "name": "청석면"
+    },
+    "806707ca-55aa-4d38-9b59-73f319b714dd:KR": {
+      "ingredient_id": "806707ca-55aa-4d38-9b59-73f319b714dd",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1에 따라 사용금지 원료입니다.",
+      "by": "gemini-consensus",
+      "name": "소듐다이크로메이트,다이하이드레이트"
+    },
+    "4f3ed9e2-cff9-4908-962c-a1f7e6b9b172:KR": {
+      "ingredient_id": "4f3ed9e2-cff9-4908-962c-a1f7e6b9b172",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 1] 사용금지 원료에 명시되어 있습니다.",
+      "by": "gemini-consensus",
+      "name": "사바딜라 Schoenocaulon officinale Lind.(씨 및 그 생약제제)"
+    },
+    "b3440c62-57d0-4f88-8c1b-f73922e69933:KR": {
+      "ingredient_id": "b3440c62-57d0-4f88-8c1b-f73922e69933",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 1] 사용금지 원료(염화비닐)에 해당합니다.",
+      "by": "gemini-consensus",
+      "name": "아세틸렌클로라이드"
+    },
+    "f40d6b76-7d96-4ba8-88c2-59cdb60d5bce:KR": {
+      "ingredient_id": "f40d6b76-7d96-4ba8-88c2-59cdb60d5bce",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 1] 사용금지 원료(C.I. 27290)에 해당합니다.",
+      "by": "gemini-consensus",
+      "name": "3-[(4-(아세틸아미노)페닐)아조]-4-하이드록시-7-[[[[5-하이드록시-6-(페닐아조)-7-설포-2-나프탈레닐]아미노]카보닐]아미노]-2-나프탈렌설포닉애씨드"
+    },
+    "a1317ebb-d656-4991-8ac5-91de97992acc:KR": {
+      "ingredient_id": "a1317ebb-d656-4991-8ac5-91de97992acc",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 1] 사용금지 원료에 명시되어 있습니다.",
+      "by": "gemini-consensus",
+      "name": "날로핀하이드로클로라이드;모르피난-3,6-알파-다이올,17-알릴-7,8-다이데하이드로-4,5-알파-에폭시-,하이드로클로라이드;N-알릴노모르핀하이드로클로라이드"
+    },
+    "45392412-9f0a-498c-a61d-529e5358dbbb:KR": {
+      "ingredient_id": "45392412-9f0a-498c-a61d-529e5358dbbb",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 0.9,
+      "reason": "백신은 의약품으로 화장품에 사용이 금지되는 원료에 해당합니다.",
+      "by": "gemini-consensus",
+      "name": "아캄2000(천연두백신)"
+    },
+    "4215e7bd-fda7-4656-b149-80ded77bd533:KR": {
+      "ingredient_id": "4215e7bd-fda7-4656-b149-80ded77bd533",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 1] 사용금지 원료에 명시되어 있습니다.",
+      "by": "gemini-consensus",
+      "name": "펜토바비탈"
+    },
+    "04dd8d0f-d0f1-403a-a431-abe57f8f49fb:KR": {
+      "ingredient_id": "04dd8d0f-d0f1-403a-a431-abe57f8f49fb",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 1] 사용금지 원료(C.I. 11055)에 해당합니다.",
+      "by": "gemini-consensus",
+      "name": "2-[[(4-메톡시페닐)메틸하이드라조노]메틸]-1,3,3-트라이메틸-3H-인돌륨"
+    },
+    "66473bcf-9d1b-4929-896e-67d34add1b80:KR": {
+      "ingredient_id": "66473bcf-9d1b-4929-896e-67d34add1b80",
+      "country_code": "KR",
+      "status": "restricted",
+      "max": 1,
+      "from": "restricted",
+      "confidence": 1,
+      "reason": "벤질알코올은 화장품 안전기준 등에 관한 규정 [별표 2] 사용상 제한이 필요한 원료로, 일반 제품의 배합한도는 1.0%입니다 (염모용 제품은 10%).",
+      "by": "gemini-consensus",
+      "name": "벤질알코올"
     }
   }
 }
