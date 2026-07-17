@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-16T19:41:15.017Z",
-  "totalRegs": 95195,
+  "generated_at": "2026-07-17T19:42:58.672Z",
+  "totalRegs": 95203,
   "coverage": {
     "AR": 4832,
     "BO": 2227,
@@ -43,18 +43,28 @@
     "US": 114,
     "VN": 1815
   },
-  "restrictedNoLimit": 3812,
+  "restrictedNoLimit": 3813,
   "statusConflicts": 469,
   "quarantinePending": 3,
   "casContaminationSuspects": 223,
-  "staleCount": 0,
-  "staleSources": [],
+  "staleCount": 8,
+  "staleSources": [
+    "AR",
+    "BR",
+    "ID",
+    "MY",
+    "PH",
+    "SG",
+    "TH",
+    "VN"
+  ],
   "limitAnomalyCount": 0,
   "postHealCorrupt": 0,
   "postHealWhitespace": 0,
-  "sourceFailCount": 8,
+  "sourceFailCount": 9,
   "sourceFailList": [
     "CN:cn_nmpa",
+    "TW:tw_tfda",
     "US:us_fda_cosmetics_announcements",
     "VN:vn_vietnam_dav",
     "ID:id_indonesia_bpom_cosmetic",
