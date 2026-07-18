@@ -1,6 +1,6 @@
 {
   "note": "veto/저신뢰로 자동교정 보류분(가시성용)",
-  "total": 38,
+  "total": 41,
   "findings": {
     "347e91c2-8abd-4fe6-8363-e05138042f97:KR": {
       "country": "KR",
@@ -229,6 +229,24 @@
       "name": "다이아미노피리미딘옥사이드",
       "verdict": "un-ban 차단(권위금지)",
       "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 2에 따라 두발용 제품류에 1.5%까지 사용이 제한되는 원료입니다. 현재 표기(banned)는 올바르지 않습니다."
+    },
+    "73134c54-53f2-435d-a3bd-4fddae5809e4:KR": {
+      "country": "KR",
+      "name": "퀴닌 및 그 염류",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 2] 사용상의 제한이 있는 원료에 샴푸 0.5%, 헤어로션 0.2%로 명시되어 있음."
+    },
+    "5b522c4e-d566-460f-8848-10d1ebea400c:KR": {
+      "country": "KR",
+      "name": "테트라포타슘에티드로네이트",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "It is restricted with specific maximum concentrations for certain product types, not universally banned."
+    },
+    "d6ed8967-1af6-45a9-99ad-dc8b29d78d99:KR": {
+      "country": "KR",
+      "name": "m-아미노페놀",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "It is restricted with a maximum concentration of 2.0% for oxidative hair dyes, not universally banned."
     }
   }
 }
