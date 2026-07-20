@@ -1,6 +1,6 @@
 {
   "note": "veto/저신뢰로 자동교정 보류분(가시성용)",
-  "total": 41,
+  "total": 42,
   "findings": {
     "347e91c2-8abd-4fe6-8363-e05138042f97:KR": {
       "country": "KR",
@@ -247,6 +247,12 @@
       "name": "m-아미노페놀",
       "verdict": "un-ban 차단(권위금지)",
       "reason": "It is restricted with a maximum concentration of 2.0% for oxidative hair dyes, not universally banned."
+    },
+    "283f157d-d8d1-4440-9b5f-88db1a9665d8:KR": {
+      "country": "KR",
+      "name": "N-페닐-p-페닐렌디아민",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 2] 사용상의 제한이 있는 원료 목록에 포함되어 있으며, 산화염모제에 2.0%까지 허용됩니다."
     }
   }
 }
