@@ -1,6 +1,6 @@
 {
   "note": "veto/저신뢰로 자동교정 보류분(가시성용)",
-  "total": 43,
+  "total": 45,
   "findings": {
     "347e91c2-8abd-4fe6-8363-e05138042f97:KR": {
       "country": "KR",
@@ -259,6 +259,18 @@
       "name": "소이아민",
       "verdict": "un-ban 차단(권위금지)",
       "reason": "2급 아민함량이 0.5%를 초과하는 경우에 한하여 금지되므로 제한 원료에 해당합니다."
+    },
+    "49176d9f-f957-4423-bdad-9c3dd082608d:KR": {
+      "country": "KR",
+      "name": "6-히드록시인돌",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "6-히드록시인돌은 산화염모제에 0.5%로 제한되며, 기타 제품에는 사용금지되어 있어 '제한적 허용'에 해당합니다."
+    },
+    "7f712caf-6b61-4f7e-9a42-50eb9c45425d:KR": {
+      "country": "KR",
+      "name": "2-메틸레조시놀",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "It is restricted to 0.5% in oxidative hair dyes and banned in other products."
     }
   }
 }
