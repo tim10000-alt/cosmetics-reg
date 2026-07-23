@@ -1,6 +1,6 @@
 {
   "note": "veto/저신뢰로 자동교정 보류분(가시성용)",
-  "total": 45,
+  "total": 48,
   "findings": {
     "347e91c2-8abd-4fe6-8363-e05138042f97:KR": {
       "country": "KR",
@@ -271,6 +271,24 @@
       "name": "2-메틸레조시놀",
       "verdict": "un-ban 차단(권위금지)",
       "reason": "It is restricted to 0.5% in oxidative hair dyes and banned in other products."
+    },
+    "a5d33985-2fbc-4769-a3ff-01e53185e144:KR": {
+      "country": "KR",
+      "name": "2-브로모-2-나이트로프로판-1,3-디올",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 2] 사용상의 제한이 필요한 원료에 사용한도 0.1%로 명시되어 있음."
+    },
+    "4b4474d2-07fe-4d3d-beb0-c284916e4e7b:KR": {
+      "country": "KR",
+      "name": "만수국꽃오일",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "사용 후 씻어내는 제품에 0.1%, 씻어내지 않는 제품에 0.01% 허용되므로 제한적 사용 성분임."
+    },
+    "a9a727a8-eec8-43a1-a38d-7984484838ed:KR": {
+      "country": "KR",
+      "name": "p-메칠아미노페놀설페이트",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "p-메칠아미노페놀설페이트는 한국 화장품 안전기준 등에 관한 규정 별표 2(사용제한 원료)에 따라 산화염모제에 0.68% (유리염기 기준)까지 사용이 제한됩니다. 기타 제품에는 사용금지입니다."
     }
   }
 }
