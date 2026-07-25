@@ -1,6 +1,6 @@
 {
   "note": "veto/저신뢰로 자동교정 보류분(가시성용)",
-  "total": 51,
+  "total": 54,
   "findings": {
     "347e91c2-8abd-4fe6-8363-e05138042f97:KR": {
       "country": "KR",
@@ -307,6 +307,24 @@
       "name": "벤잘코늄클로라이드",
       "verdict": "un-ban 차단(권위금지)",
       "reason": "벤잘코늄클로라이드는 대한민국 화장품 안전기준 등에 관한 규정 [별표 2] 사용상의 제한이 필요한 원료로, 사용 후 씻어내는 제품에 0.1%, 기타 제품에 0.05%까지 허용됩니다."
+    },
+    "deee5fdd-ce27-4d6c-90c6-f9c81a25c2c5:KR": {
+      "country": "KR",
+      "name": "2,6-디아미노피리딘",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "산화염모제에 0.15%까지 배합 가능하며, 기타 제품에는 사용 금지되는 제한적 허용 원료입니다."
+    },
+    "46caeba2-e18c-4abc-8a62-f4e18c6ea826:KR": {
+      "country": "KR",
+      "name": "징크피리치온",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "Zinc Pyrithione is restricted with specific maximum concentrations (0.5% as preservative, 1.0% for anti-dandruff) in rinse-off products, not banned."
+    },
+    "55759db0-71e8-4151-8a90-cc298d1e738f:KR": {
+      "country": "KR",
+      "name": "티이에이-운데실레네이트",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "사용 후 씻어내는 제품에 산으로서 0.2% 허용, 기타 제품 금지로 제한적 사용 가능."
     }
   }
 }
