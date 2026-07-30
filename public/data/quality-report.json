@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-29T19:51:19.619Z",
-  "totalRegs": 95202,
+  "generated_at": "2026-07-30T20:00:27.376Z",
+  "totalRegs": 95222,
   "coverage": {
     "AR": 4832,
     "BO": 2227,
@@ -43,7 +43,7 @@
     "US": 114,
     "VN": 1815
   },
-  "restrictedNoLimit": 3813,
+  "restrictedNoLimit": 3812,
   "statusConflicts": 469,
   "quarantinePending": 3,
   "casContaminationSuspects": 223,
@@ -58,7 +58,7 @@
     "TH",
     "VN"
   ],
-  "limitAnomalyCount": 1,
+  "limitAnomalyCount": 0,
   "postHealCorrupt": 0,
   "postHealWhitespace": 0,
   "sourceFailCount": 7,

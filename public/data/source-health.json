@@ -13,10 +13,8 @@
     "VN"
   ],
   "stale_dictionaries": [],
-  "limit_anomaly_count": 1,
-  "limit_anomalies": [
-    "ac497e55-0091-4878-8967-dc7a73ef3991|KR: 0.5→2.5"
-  ],
+  "limit_anomaly_count": 0,
+  "limit_anomalies": [],
   "post_heal_corrupt_count": 0,
   "post_heal_whitespace_count": 0,
   "regulations_by_country": [
@@ -58,43 +56,43 @@
     },
     {
       "cc": "BO",
-      "latest": "2026-07-29"
+      "latest": "2026-07-30"
     },
     {
       "cc": "CA",
-      "latest": "2026-07-29"
+      "latest": "2026-07-30"
     },
     {
       "cc": "CN",
-      "latest": "2026-07-29"
+      "latest": "2026-07-30"
     },
     {
       "cc": "CO",
-      "latest": "2026-07-29"
+      "latest": "2026-07-30"
     },
     {
       "cc": "EC",
-      "latest": "2026-07-29"
+      "latest": "2026-07-30"
     },
     {
       "cc": "EU",
-      "latest": "2026-07-29"
+      "latest": "2026-07-30"
     },
     {
       "cc": "JP",
-      "latest": "2026-07-29"
+      "latest": "2026-07-30"
     },
     {
       "cc": "KR",
-      "latest": "2026-07-29"
+      "latest": "2026-07-30"
     },
     {
       "cc": "PE",
-      "latest": "2026-07-29"
+      "latest": "2026-07-30"
     },
     {
       "cc": "US",
-      "latest": "2026-07-29"
+      "latest": "2026-07-30"
     }
   ],
   "ingredient_dictionaries": [
