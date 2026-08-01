@@ -1,6 +1,6 @@
 {
   "note": "veto/저신뢰로 자동교정 보류분(가시성용)",
-  "total": 63,
+  "total": 69,
   "findings": {
     "347e91c2-8abd-4fe6-8363-e05138042f97:KR": {
       "country": "KR",
@@ -379,6 +379,42 @@
       "name": "톨루엔",
       "verdict": "un-ban 차단(권위금지)",
       "reason": "화장품 안전기준 등에 관한 규정 별표2 사용제한 원료 101번 항목에 해당. 손발톱용 제품류에 25%까지 허용."
+    },
+    "b48c7a1f-5cc9-454b-91a2-0b3f11d5c8fc:KR": {
+      "country": "KR",
+      "name": "운데실레닉애씨드 및 그 염류 및 모노에탄올아마이드",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "화장품 안전기준 등에 관한 규정 별표 2에 따라 사용 후 씻어내는 제품에 산으로서 0.2%까지 허용됩니다."
+    },
+    "7b1a7c39-fe9d-4847-bf99-28cde17f8bdc:KR": {
+      "country": "KR",
+      "name": "세탈코늄브로마이드",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "The ingredient is restricted with specific concentration limits for different product types, not entirely banned. Max is 0.1% for rinse-off products."
+    },
+    "ab511864-ddb3-4f7c-b226-a4eaec84d242:KR": {
+      "country": "KR",
+      "name": "에칠라우로일알지네이트하이드로클로라이드",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "The ingredient is restricted with specific concentration limits for certain product types, not entirely banned. Max is 0.8% for anti-dandruff shampoos."
+    },
+    "4814e61a-6795-46c1-aea6-0a04c6a98148:KR": {
+      "country": "KR",
+      "name": "데하이드로아세틱애씨드",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "It is a restricted ingredient with a maximum allowed concentration of 0.6% and specific conditions, not banned."
+    },
+    "cad15409-1b3e-4b74-9113-98ffb0f86c64:KR": {
+      "country": "KR",
+      "name": "칼슘하이드록사이드",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "칼슘하이드록사이드는 대한민국 화장품 안전기준 등에 관한 규정 [별표 2] 사용상의 제한이 있는 원료로, 헤어스트레이트너 7% 등 조건부 허용됩니다."
+    },
+    "75a35b4f-4d3d-491d-b70f-e20c8c2ee391:KR": {
+      "country": "KR",
+      "name": "리튬하이드록사이드",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "현행 화장품 안전기준 등에 관한 규정상 특정 제품에 한해 배합한도가 있는 배합제한 성분임."
     }
   }
 }
