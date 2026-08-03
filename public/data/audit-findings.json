@@ -1,6 +1,6 @@
 {
   "note": "veto/저신뢰로 자동교정 보류분(가시성용)",
-  "total": 71,
+  "total": 75,
   "findings": {
     "347e91c2-8abd-4fe6-8363-e05138042f97:KR": {
       "country": "KR",
@@ -427,6 +427,30 @@
       "name": "징크퍼옥사이드",
       "verdict": "un-ban 차단(권위금지)",
       "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 2에 따라 두발용 제품류에 과산화수소로서 3% 이하, 손톱경화용 제품에 과산화수소로서 2% 이하로 제한됨."
+    },
+    "8128a8a1-9618-4ef3-bbd2-e80db802d667:KR": {
+      "country": "KR",
+      "name": "소듐메타바이설파이트",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "Allowed as a preservative (0.2% as free SO2) and in oxidative hair dyes (0.67% as free SO2), but prohibited in other products."
+    },
+    "9e3a4c48-02d3-427e-beca-f7dbc8969337:KR": {
+      "country": "KR",
+      "name": "1-하이드록시에틸4,5-다이아미노피라졸설페이트",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "한국 화장품 안전기준 등에 관한 규정 [별표 2] 사용상의 제한이 필요한 원료에 해당하며, 산화염모에 3.0%까지 배합 가능함."
+    },
+    "9250bcd6-679c-4601-815f-ea5fd8bc34b4:KR": {
+      "country": "KR",
+      "name": "퀴닌",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "MFDS 규정 [별표 1]에 따라 샴푸 및 헤어로션에 특정 농도 이하로 사용이 제한됩니다."
+    },
+    "8c5336ba-2598-401b-9d70-9cf629a7769b:KR": {
+      "country": "KR",
+      "name": "소듐운데실레네이트",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "소듐운데실레네이트는 현행 화장품 안전기준 등에 관한 규정 [별표 2]에 따라 사용 후 씻어내는 제품에 산으로서 0.2%까지 허용되는 보존제입니다."
     }
   }
 }
