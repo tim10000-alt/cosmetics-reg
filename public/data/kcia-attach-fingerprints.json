@@ -166,5 +166,23 @@
     "parsed_at": "2026-06-09T20:25:24.805Z",
     "entry_count": 0,
     "article_no": "17489"
+  },
+  "public/data/raw-attach/kcia-17779/붙임1. 화장품 허가·등록 관련 사항에 관한 공고_국문.pdf": {
+    "sha256": "d406ba570bf6699c9e62157584561b2a571e268f20b6e939a9d96eea478fae2f",
+    "parsed_at": "2026-08-04T20:00:10.088Z",
+    "entry_count": 0,
+    "article_no": "17779"
+  },
+  "public/data/raw-attach/kcia-17779/붙임2. 화장품 허가·등록 관련 사항에 관한 공고 정책해설_국문.pdf": {
+    "sha256": "9d923c3aee004a6d9c06ad5f9e9e318ae479f96f74c93b1e3fd53bb68d23c0f1",
+    "parsed_at": "2026-08-04T20:00:10.088Z",
+    "entry_count": 0,
+    "article_no": "17779"
+  },
+  "public/data/raw-attach/kcia-17779/붙임3. 화장품 허가·등록 관련 사항에 관한 공고 질의응답_국문.pdf": {
+    "sha256": "073dbb2bf15113bd52e2da664bce3a362bf802353b2eb2bf56a0c2127ce7d6d5",
+    "parsed_at": "2026-08-04T20:00:10.088Z",
+    "entry_count": 0,
+    "article_no": "17779"
   }
 }
