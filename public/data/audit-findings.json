@@ -1,6 +1,6 @@
 {
   "note": "veto/저신뢰로 자동교정 보류분(가시성용)",
-  "total": 75,
+  "total": 78,
   "findings": {
     "347e91c2-8abd-4fe6-8363-e05138042f97:KR": {
       "country": "KR",
@@ -451,6 +451,24 @@
       "name": "소듐운데실레네이트",
       "verdict": "un-ban 차단(권위금지)",
       "reason": "소듐운데실레네이트는 현행 화장품 안전기준 등에 관한 규정 [별표 2]에 따라 사용 후 씻어내는 제품에 산으로서 0.2%까지 허용되는 보존제입니다."
+    },
+    "1619e842-87cd-4a8e-8253-fa4f2681a12d:KR": {
+      "country": "KR",
+      "name": "포타슘설파이트",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 2] 사용상의 제한이 필요한 원료로, 산화염모제에서 유리 SO2로 0.67%까지 사용 가능합니다."
+    },
+    "ebee6a7b-7289-4b1a-95fd-a01351ca20ec:KR": {
+      "country": "KR",
+      "name": "메칠클로로이소치아졸리논과 메칠이소치아졸리논 혼합물(염화마그네슘과 질산마그네슘 포함)",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "메칠클로로이소치아졸리논과 메칠이소치아졸리논 혼합물은 화장품 안전기준 등에 관한 규정 별표 4 사용가능 보존제에 따라 사용 후 씻어내는 제품에 0.0015%까지 허용됩니다."
+    },
+    "bc28ccf7-97db-4a9c-aef1-14d46a5c1195:KR": {
+      "country": "KR",
+      "name": "메칠클로로이소치아졸리논",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "The ingredient is allowed up to 0.0015% in rinse-off products (as a mixture), indicating a restricted status, not a universal ban."
     }
   }
 }
