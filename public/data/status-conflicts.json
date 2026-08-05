@@ -1,5 +1,5 @@
 {
-  "total": 435,
+  "total": 436,
   "note": "같은 CAS 분절 카드 간 banned↔허용 충돌(false-banned/allowed 후보). limit-overrides 로 검토 교정.",
   "conflicts": [
     {
@@ -3970,6 +3970,23 @@
     },
     {
       "cc": "KR",
+      "cas": "84696-07-1",
+      "banned": [
+        {
+          "name": "Cupressus sempervirens leaf oil and extract (limitations and requirements:Peroxide value less than 10 mmoles/L)",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Cupressus Sempervirens Leaf/Stem Extract",
+          "status": "restricted",
+          "prio": 105
+        }
+      ]
+    },
+    {
+      "cc": "KR",
       "cas": "8002-09-3",
       "banned": [
         {
@@ -5828,23 +5845,6 @@
       "allowed": [
         {
           "name": "CI 74180",
-          "status": "listed",
-          "prio": 100
-        }
-      ]
-    },
-    {
-      "cc": "SG",
-      "cas": "8005-03-6",
-      "banned": [
-        {
-          "name": "Nigrosine (CI 50420) when used as a substance in hair dye products",
-          "prio": 100
-        }
-      ],
-      "allowed": [
-        {
-          "name": "CI 50420",
           "status": "listed",
           "prio": 100
         }
