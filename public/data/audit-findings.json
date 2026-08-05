@@ -1,6 +1,6 @@
 {
   "note": "veto/저신뢰로 자동교정 보류분(가시성용)",
-  "total": 78,
+  "total": 80,
   "findings": {
     "347e91c2-8abd-4fe6-8363-e05138042f97:KR": {
       "country": "KR",
@@ -469,6 +469,18 @@
       "name": "메칠클로로이소치아졸리논",
       "verdict": "un-ban 차단(권위금지)",
       "reason": "The ingredient is allowed up to 0.0015% in rinse-off products (as a mixture), indicating a restricted status, not a universal ban."
+    },
+    "7dababca-e2e0-497a-bf0b-d580d34a1346:KR": {
+      "country": "KR",
+      "name": "5-아미노-6-클로로-o-크레솔",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "산화염모제에 1.0%, 비산화염모제에 0.5%로 배합한도가 있어 제한적으로 허용됩니다."
+    },
+    "3b338de9-22da-4785-9555-fa383b1c04af:KR": {
+      "country": "KR",
+      "name": "황산2-아미노-5-니트로페놀",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "황산2-아미노-5-니트로페놀은 대한민국 화장품 안전기준 등에 관한 규정 별표 3 '염모제 성분'에 따라 산화염모제에 1.5%까지 배합 가능하며, 기타 제품에는 사용이 금지됩니다."
     }
   }
 }
