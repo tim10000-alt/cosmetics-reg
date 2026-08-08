@@ -4091,16 +4091,20 @@
     },
     {
       "cc": "KR",
-      "cas": "50-00-0",
+      "cas": "30525-89-4",
       "banned": [
         {
-          "name": "Formaldehyde and p-Formaldehyde",
+          "name": "Trioxymethylene",
+          "prio": 100
+        },
+        {
+          "name": "Paraformaldehyde",
           "prio": 100
         }
       ],
       "allowed": [
         {
-          "name": "Formaldehyde",
+          "name": "Formaldehyde and p-Formaldehyde",
           "status": "restricted",
           "prio": 105
         }
