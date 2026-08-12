@@ -1,6 +1,6 @@
 {
   "note": "Gemini 듀얼합의 자동교정(법령변경 자가치유) — apply-gemini-overrides 가 prio105 로 baking. un-ban 은 권위 annex veto. 사람 개입 0.",
-  "total": 202,
+  "total": 193,
   "corrections": {
     "38629385-37bc-4757-85de-6fba8806a583:KR": {
       "ingredient_id": "38629385-37bc-4757-85de-6fba8806a583",
@@ -1201,28 +1201,6 @@
       "by": "gemini-consensus",
       "name": "크로믹애씨드"
     },
-    "63480bb5-e3c0-40f2-b7a6-cdce6a47db52:KR": {
-      "ingredient_id": "63480bb5-e3c0-40f2-b7a6-cdce6a47db52",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "'화장품 안전기준 등에 관한 규정' 별표 1(화장품에 사용할 수 없는 원료)의 엔도설판(모든 이성질체) 항목에 해당하는 이성질체입니다.",
-      "by": "gemini-consensus",
-      "name": "베타-엔도술판"
-    },
-    "4dbd47df-bf81-4886-ae63-379cb8641ad8:KR": {
-      "ingredient_id": "4dbd47df-bf81-4886-ae63-379cb8641ad8",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "'화장품 안전기준 등에 관한 규정' 별표 1(화장품에 사용할 수 없는 원료)의 과불화화합물 항목에 해당합니다.",
-      "by": "gemini-consensus",
-      "name": "알킬아이오다이드, C6-18, 퍼플루오로"
-    },
     "b847b82b-3f88-46d0-9874-ada155aeeb46:KR": {
       "ingredient_id": "b847b82b-3f88-46d0-9874-ada155aeeb46",
       "country_code": "KR",
@@ -1230,97 +1208,9 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "'화장품 안전기준 등에 관한 규정' 별표 1(화장품에 사용할 수 없는 원료)의 과불화화합물 항목에 해당합니다.",
+      "reason": "대한민국 '화장품 안전기준 등에 관한 규정' 별표 1(화장품에 사용할 수 없는 원료)의 과불화화합물 항목에 해당합니다.",
       "by": "gemini-consensus",
       "name": "3,4,4,5,5,5-헥사플루오로-2,2,3-트리스(트라이플루오로메틸)펜타노익애씨드"
-    },
-    "93184357-bd67-43c2-a227-b7b471e60b97:KR": {
-      "ingredient_id": "93184357-bd67-43c2-a227-b7b471e60b97",
-      "country_code": "KR",
-      "status": "restricted",
-      "max": 0.002,
-      "from": "restricted",
-      "confidence": 1,
-      "reason": "메틸옥틴카보네이트는 한국 화장품 안전기준 등에 관한 규정에서 0.002%로 배합한도가 명시되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "메틸옥틴카보네이트"
-    },
-    "1a09141d-d2eb-4084-977a-9ce9eac2d2cc:KR": {
-      "ingredient_id": "1a09141d-d2eb-4084-977a-9ce9eac2d2cc",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "아세닉펜타옥사이드는 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "아세닉펜타옥사이드"
-    },
-    "4a387b9a-a702-4022-93cc-aa12b59003e4:KR": {
-      "ingredient_id": "4a387b9a-a702-4022-93cc-aa12b59003e4",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "메탈포스파이드는 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "메탈포스파이드"
-    },
-    "bc4a55b3-d997-484c-af66-0b19ed614944:KR": {
-      "ingredient_id": "bc4a55b3-d997-484c-af66-0b19ed614944",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "하이드록시에틸-2,6-다이나이트로-p-아니시딘 및 그 염류는 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "하이드록시에틸-2,6-다이나이트로-p-아니시딘 및 그 염류"
-    },
-    "10c6f7a7-a0ef-4372-8f84-99cf0c3edf1e:KR": {
-      "ingredient_id": "10c6f7a7-a0ef-4372-8f84-99cf0c3edf1e",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "마부테롤은 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "마부테롤"
-    },
-    "7c85a0a7-ac65-44c0-be56-226f56ad833a:KR": {
-      "ingredient_id": "7c85a0a7-ac65-44c0-be56-226f56ad833a",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "파라티온-메틸은 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "파라티온-메틸"
-    },
-    "cd18f3ff-b537-42ea-a574-5daf65b05ad1:KR": {
-      "ingredient_id": "cd18f3ff-b537-42ea-a574-5daf65b05ad1",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "디이에이-세테아레스-2포스페이트는 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "디이에이-세테아레스-2포스페이트"
-    },
-    "8e0ec212-dc8b-40d5-b857-cff8255165ce:KR": {
-      "ingredient_id": "8e0ec212-dc8b-40d5-b857-cff8255165ce",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "다이옥세테드린 및 그 염류는 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "다이옥세테드린 및 그 염류"
     },
     "02df6aff-9adb-4577-bdfe-bd9821a3ce3c:KR": {
       "ingredient_id": "02df6aff-9adb-4577-bdfe-bd9821a3ce3c",
@@ -1417,7 +1307,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료로 명시되어 있습니다.",
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료입니다.",
       "by": "gemini-consensus",
       "name": "플루오레센트브라이트너230"
     },
@@ -1428,7 +1318,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료로 명시되어 있습니다.",
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료입니다.",
       "by": "gemini-consensus",
       "name": "플루오레센트브라이트너236"
     },
@@ -1439,7 +1329,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료로 명시되어 있습니다.",
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료입니다.",
       "by": "gemini-consensus",
       "name": "피나스테리드, 그 염류 및 유도체"
     },
@@ -1450,7 +1340,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료로 명시되어 있습니다.",
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료입니다.",
       "by": "gemini-consensus",
       "name": "N-메틸-3-나이트로-p-페닐린다이아민 및 그 염류"
     },
@@ -1461,7 +1351,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료로 명시되어 있습니다.",
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료입니다.",
       "by": "gemini-consensus",
       "name": "퍼트레토토늄;2-퍼란메탄아미늄,N,N,N-트라이메틸-"
     },
@@ -1472,7 +1362,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료로 명시되어 있습니다.",
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료입니다.",
       "by": "gemini-consensus",
       "name": "2,6-다이메톡시-3,5-피리딘다이아민"
     },
@@ -1505,7 +1395,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "엔도설판 및 그 이성체는 한국 화장품 안전기준 등에 관한 규정 상 사용금지 원료입니다.",
+      "reason": "한국 화장품 안전기준 등에 관한 규정 상 사용금지 원료입니다.",
       "by": "gemini-consensus",
       "name": "엔도술판 및 그 이성체"
     },
@@ -1516,7 +1406,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "CAS 90622-99-4는 한국 화장품 안전기준 등에 관한 규정 상 사용금지 원료인 PFAS(퍼플루오로알킬 및 폴리플루오로알킬 화합물)에 해당합니다.",
+      "reason": "한국 화장품 안전기준 등에 관한 규정 상 사용금지 원료인 PFAS에 해당합니다.",
       "by": "gemini-consensus",
       "name": "아마이드, C7-19, α-ω-퍼플루오로-N,N-비스(하이드록시에틸)"
     },
@@ -1527,7 +1417,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "CAS 18017-22-6은 한국 화장품 안전기준 등에 관한 규정 상 사용금지 원료인 PFAS(퍼플루오로알킬 및 폴리플루오로알킬 화합물)에 해당합니다.",
+      "reason": "한국 화장품 안전기준 등에 관한 규정 상 사용금지 원료인 PFAS에 해당합니다.",
       "by": "gemini-consensus",
       "name": "소듐2,2,3,3,4,4,5,5,6,7,7,7-도데카플루오로-6-(트라이플루오로메틸)헵타노에이트"
     },
@@ -1538,7 +1428,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "CAS 98241-25-9는 한국 화장품 안전기준 등에 관한 규정 상 사용금지 원료인 PFAS(퍼플루오로알킬 및 폴리플루오로알킬 화합물)에 해당합니다.",
+      "reason": "한국 화장품 안전기준 등에 관한 규정 상 사용금지 원료인 PFAS에 해당합니다.",
       "by": "gemini-consensus",
       "name": "N,N,N-트라이에틸에탄아미늄펜타데카플루오로옥타노에이트"
     },
@@ -1549,7 +1439,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "CAS 610800-34-5는 한국 화장품 안전기준 등에 관한 규정 상 사용금지 원료인 PFAS(퍼플루오로알킬 및 폴리플루오로알킬 화합물)에 해당합니다.",
+      "reason": "한국 화장품 안전기준 등에 관한 규정 상 사용금지 원료인 PFAS에 해당합니다.",
       "by": "gemini-consensus",
       "name": "퍼플루오로헥실퍼플루오로옥틸 포스피네이트"
     },
@@ -1560,7 +1450,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "CAS 1882109-65-0은 한국 화장품 안전기준 등에 관한 규정 상 사용금지 원료인 PFAS(퍼플루오로알킬 및 폴리플루오로알킬 화합물)에 해당합니다.",
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 상 사용금지 원료인 PFAS에 해당합니다.",
       "by": "gemini-consensus",
       "name": "2,3,3,4,5,5,5-헵타플루오로-2-(펜타플루오로에틸)-4-(트라이플루오로메틸)펜타노익애씨드"
     },
@@ -1571,7 +1461,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "헥사브로모비페닐은 한국 화장품 안전기준 등에 관한 규정 상 사용금지 원료입니다.",
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 상 사용금지 원료입니다.",
       "by": "gemini-consensus",
       "name": "헥사브로모비페닐"
     },
@@ -1582,7 +1472,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "CAS 1144512-36-6은 한국 화장품 안전기준 등에 관한 규정 상 사용금지 원료인 PFAS(퍼플루오로알킬 및 폴리플루오로알킬 화합물)에 해당합니다.",
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 상 사용금지 원료인 PFAS에 해당합니다.",
       "by": "gemini-consensus",
       "name": "2,2,3,3,4,5,6,6,6-노나플루오로-4,5-비스(트라이플루오로메틸)헥사노익애씨드"
     },
@@ -1592,8 +1482,8 @@
       "status": "banned",
       "max": null,
       "from": "banned",
-      "confidence": 0.95,
-      "reason": "해당 성분은 과불화화합물(PFAS)에 해당하며, 대한민국 식약처의 화장품 사용금지 원료 목록에 포함되어 있습니다.",
+      "confidence": 1,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 상 사용금지 원료인 PFAS에 해당합니다.",
       "by": "gemini-consensus",
       "name": "2-프로피오닉애씨드, 3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12,12-헨아이코사플루오로도데실 에스터, 3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,10-헵타데카플루오로데실 2-프로페노에이트, 알파-(2-메틸-1-옥소-2-프로펜일)-오메가-[(2-메틸-1-옥소-2-프로펜일)옥시]폴리(옥시-1,2-에테인다일), 3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12,13,13,14,14,15,15,16,16,16-노나코사플루오로헥사데실 2-프로페노에이트, 옥타데실 2-프로페노에이트, 3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12,13,13,14,14,14-펜타코사플루오로테트라데실 2-프로페노에이트와 3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12,13,13,14,14,15,15,16,16,17,17,18,18,18-트라이트라이아콘타플루오로옥타데실 2-프로페노에이트 폴리머"
     },
@@ -1603,8 +1493,8 @@
       "status": "banned",
       "max": null,
       "from": "banned",
-      "confidence": 0.95,
-      "reason": "알파-헥사클로로사이클로헥산은 잔류성 유기오염물질(POP)로, 대한민국 식약처의 화장품 사용금지 원료 목록에 포함되어 있습니다.",
+      "confidence": 1,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 상 사용금지 원료인 POPs에 해당합니다.",
       "by": "gemini-consensus",
       "name": "알파-헥사클로로사이클로헥산"
     },
@@ -1614,8 +1504,8 @@
       "status": "banned",
       "max": null,
       "from": "banned",
-      "confidence": 0.95,
-      "reason": "해당 성분은 과불화화합물(PFAS)에 해당하며, 대한민국 식약처의 화장품 사용금지 원료 목록에 포함되어 있습니다.",
+      "confidence": 1,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 상 사용금지 원료인 PFAS에 해당합니다.",
       "by": "gemini-consensus",
       "name": "2,3,4,4,4-펜타플루오로-2-(1,1,1,2,3,3,3-헵타플루오로프로판-2-일)-3-(트라이플루오로메틸)부타노익애씨드"
     },
@@ -1625,8 +1515,8 @@
       "status": "banned",
       "max": null,
       "from": "banned",
-      "confidence": 0.95,
-      "reason": "데카브로모다이페닐옥사이드는 잔류성 유기오염물질(POP)로, 대한민국 식약처의 화장품 사용금지 원료 목록에 포함되어 있습니다.",
+      "confidence": 1,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 상 사용금지 원료인 POPs에 해당합니다.",
       "by": "gemini-consensus",
       "name": "데카브로모다이페닐옥사이드"
     },
@@ -1636,76 +1526,10 @@
       "status": "banned",
       "max": null,
       "from": "banned",
-      "confidence": 0.95,
-      "reason": "해당 성분은 과불화화합물(PFAS)에 해당하며, 대한민국 식약처의 화장품 사용금지 원료 목록에 포함되어 있습니다.",
+      "confidence": 1,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 상 사용금지 원료인 PFAS에 해당합니다.",
       "by": "gemini-consensus",
       "name": "펜타데카플루오로옥타노에이트"
-    },
-    "a386de69-792e-4d44-aee4-54c5ee882438:KR": {
-      "ingredient_id": "a386de69-792e-4d44-aee4-54c5ee882438",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 0.95,
-      "reason": "해당 성분은 과불화화합물(PFAS)에 해당하며, 대한민국 식약처의 화장품 사용금지 원료 목록에 포함되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "2-(퍼플루오로데실)에탄올"
-    },
-    "b166ea4b-77a5-4eac-a8fd-299b19e795b2:KR": {
-      "ingredient_id": "b166ea4b-77a5-4eac-a8fd-299b19e795b2",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 0.95,
-      "reason": "카리소프로돌은 의약품 성분으로, 대한민국 식약처의 화장품 사용금지 원료 목록에 포함되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "카리소프로돌"
-    },
-    "d7b7dbcb-afb9-4632-92b8-83eed9a917b1:KR": {
-      "ingredient_id": "d7b7dbcb-afb9-4632-92b8-83eed9a917b1",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "'화장품 안전기준 등에 관한 규정' 별표 1(화장품에 사용할 수 없는 원료)의 과불화화합물 항목에 해당합니다.",
-      "by": "gemini-consensus",
-      "name": "알루미늄펜타플루오로-6-메틸헵타노에이트"
-    },
-    "0d433024-1bc9-4c46-952f-b64327c499af:KR": {
-      "ingredient_id": "0d433024-1bc9-4c46-952f-b64327c499af",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "'화장품 안전기준 등에 관한 규정' 별표 1(화장품에 사용할 수 없는 원료)의 클로로나프탈렌(모든 이성질체) 항목에 해당합니다.",
-      "by": "gemini-consensus",
-      "name": "1,2,4,5,7-펜타클로로나프탈렌"
-    },
-    "4b077af9-706e-4d30-9c4f-aec870119249:KR": {
-      "ingredient_id": "4b077af9-706e-4d30-9c4f-aec870119249",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "'화장품 안전기준 등에 관한 규정' 별표 1(화장품에 사용할 수 없는 원료)의 과불화화합물 항목에 해당합니다.",
-      "by": "gemini-consensus",
-      "name": "4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12,13,13,13-헨아이코사플루오로-2-하이드록시트라이데실다이하이드로젠포스페이트"
-    },
-    "28378550-a19b-461c-be22-be6901ead5d5:KR": {
-      "ingredient_id": "28378550-a19b-461c-be22-be6901ead5d5",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "'화장품 안전기준 등에 관한 규정' 별표 1(화장품에 사용할 수 없는 원료)의 엔도설판(모든 이성질체) 항목에 해당합니다.",
-      "by": "gemini-consensus",
-      "name": "엔도술판설페이트"
     },
     "f5fba51b-4ecc-42c3-a884-8d73d7dbe946:KR": {
       "ingredient_id": "f5fba51b-4ecc-42c3-a884-8d73d7dbe946",
@@ -1714,7 +1538,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "'화장품 안전기준 등에 관한 규정' 별표 1(화장품에 사용할 수 없는 원료)의 과불화화합물 항목에 해당합니다.",
+      "reason": "대한민국 '화장품 안전기준 등에 관한 규정' 별표 1(화장품에 사용할 수 없는 원료)의 과불화화합물 항목에 해당합니다.",
       "by": "gemini-consensus",
       "name": "3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,10-헵타데카플루오로데실아크릴레이트"
     },
@@ -1725,7 +1549,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료 목록에 명시되어 있습니다.",
+      "reason": "대한민국 '화장품 안전기준 등에 관한 규정' 별표 1(화장품에 사용할 수 없는 원료)의 폴리브롬화바이페닐(PBBs) 항목에 해당합니다.",
       "by": "gemini-consensus",
       "name": "2,2’,4,4’,5-펜타브로모다이페닐에터"
     },
@@ -1736,7 +1560,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료 목록에 명시되어 있습니다.",
+      "reason": "대한민국 '화장품 안전기준 등에 관한 규정' 별표 1(화장품에 사용할 수 없는 원료)의 과불화화합물 항목에 해당합니다.",
       "by": "gemini-consensus",
       "name": "1,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8-헵타데카플루오로-10-아이오도데케인"
     },
@@ -1747,7 +1571,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료 목록에 명시되어 있습니다.",
+      "reason": "대한민국 '화장품 안전기준 등에 관한 규정' 별표 1(화장품에 사용할 수 없는 원료)의 폴리염화나프탈렌(PCNs) 항목에 해당합니다.",
       "by": "gemini-consensus",
       "name": "1,2,3,4-테트라클로로나프탈렌"
     },
@@ -1758,7 +1582,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료 목록에 명시되어 있습니다.",
+      "reason": "대한민국 '화장품 안전기준 등에 관한 규정' 별표 1(화장품에 사용할 수 없는 원료)에 노르아드레날린 및 그 염류가 명시적으로 금지되어 있습니다.",
       "by": "gemini-consensus",
       "name": "노르아드레날린"
     },
@@ -1769,7 +1593,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료 목록에 명시되어 있습니다.",
+      "reason": "대한민국 '화장품 안전기준 등에 관한 규정' 별표 1(화장품에 사용할 수 없는 원료)의 과불화화합물 항목에 해당합니다.",
       "by": "gemini-consensus",
       "name": "3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,10-헵타데카플루오로데실메타크릴레이트"
     },
@@ -1780,7 +1604,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료 목록에 명시되어 있습니다.",
+      "reason": "대한민국 '화장품 안전기준 등에 관한 규정' 별표 1(화장품에 사용할 수 없는 원료)의 과불화화합물 항목에 해당합니다.",
       "by": "gemini-consensus",
       "name": "노나코사플루오로-1-아이오도데트라데케인"
     },
@@ -1790,8 +1614,8 @@
       "status": "banned",
       "max": null,
       "from": "banned",
-      "confidence": 1,
-      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료 목록에 명시되어 있습니다.",
+      "confidence": 0.99,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1에 따라 퍼플루오로알킬 및 폴리플루오로알킬 물질(PFAS)로 분류되어 사용 금지됩니다.",
       "by": "gemini-consensus",
       "name": "1,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12-펜타코사플루오로-14-아이오도테트라데케인"
     },
@@ -1801,8 +1625,8 @@
       "status": "banned",
       "max": null,
       "from": "banned",
-      "confidence": 1,
-      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1 사용금지 원료 목록에 명시되어 있습니다.",
+      "confidence": 0.99,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1에 따라 퍼플루오로알킬 및 폴리플루오로알킬 물질(PFAS)로 분류되어 사용 금지됩니다.",
       "by": "gemini-consensus",
       "name": "아이코사플루오로-10-아이오도-2-(트라이플루오로메틸)데케인"
     },
@@ -1812,8 +1636,8 @@
       "status": "banned",
       "max": null,
       "from": "banned",
-      "confidence": 1,
-      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1에 따라 탄소수 9개 이상 14개 이하의 퍼플루오로카복실산으로 분류되어 사용 금지됨.",
+      "confidence": 0.99,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1에 따라 퍼플루오로알킬 및 폴리플루오로알킬 물질(PFAS)로 분류되어 사용 금지됩니다.",
       "by": "gemini-consensus",
       "name": "2,2,3,4,4,5,6,6,6-노나플루오로-3,5-비스(트라이플루오로메틸)헥사노익애씨드"
     },
@@ -1823,8 +1647,8 @@
       "status": "banned",
       "max": null,
       "from": "banned",
-      "confidence": 1,
-      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1에 따라 퍼플루오로옥탄산(PFOA) 관련 물질로 분류되어 사용 금지됨.",
+      "confidence": 0.99,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1에 따라 퍼플루오로옥탄산(PFOA) 관련 물질 및 퍼플루오로알킬 및 폴리플루오로알킬 물질(PFAS)로 분류되어 사용 금지됩니다.",
       "by": "gemini-consensus",
       "name": "N-(3-아미노프로필)-2,2,3,3,4,4,5,5,6,6,7,7,8,8,8-펜타데카플루오로옥탄아마이드"
     },
@@ -1834,8 +1658,8 @@
       "status": "banned",
       "max": null,
       "from": "banned",
-      "confidence": 1,
-      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1에 따라 퍼플루오로알킬 및 폴리플루오로알킬 물질(PFAS)로 분류되어 사용 금지됨.",
+      "confidence": 0.99,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1에 따라 퍼플루오로알킬 및 폴리플루오로알킬 물질(PFAS)로 분류되어 사용 금지됩니다.",
       "by": "gemini-consensus",
       "name": "펜탄다이오익애씨드, 3-[2-[(3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,10-헵타데카플루오로데실)옥시]-2-옥소에틸]-3-하이드록시-, 1,5-비스(3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,10-헵타데카플루오로데실)에스터"
     },
@@ -1845,8 +1669,8 @@
       "status": "banned",
       "max": null,
       "from": "banned",
-      "confidence": 1,
-      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1에 따라 퍼플루오로알킬 및 폴리플루오로알킬 물질(PFAS)로 분류되어 사용 금지됨.",
+      "confidence": 0.99,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1에 따라 퍼플루오로알킬 및 폴리플루오로알킬 물질(PFAS)로 분류되어 사용 금지됩니다.",
       "by": "gemini-consensus",
       "name": "카르바믹애씨드, [2-(설포싸이오)에틸]-, C-(γ-ω-퍼플루오로-C6–9-알킬) 에스터, 모노소듐염"
     },
@@ -1856,8 +1680,8 @@
       "status": "banned",
       "max": null,
       "from": "banned",
-      "confidence": 1,
-      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1에 따라 퍼플루오로알킬 및 폴리플루오로알킬 물질(PFAS)로 분류되어 사용 금지됨.",
+      "confidence": 0.99,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1에 따라 퍼플루오로알킬 및 폴리플루오로알킬 물질(PFAS)로 분류되어 사용 금지됩니다.",
       "by": "gemini-consensus",
       "name": "2,2,3,5,5,5-헥사플루오로-3,4,4-트리스(트라이플루오로메틸)펜타노익애씨드"
     },
@@ -1867,8 +1691,8 @@
       "status": "banned",
       "max": null,
       "from": "banned",
-      "confidence": 1,
-      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1에 따라 퍼플루오로옥탄 설폰산(PFOS) 관련 물질로 분류되어 사용 금지됨.",
+      "confidence": 0.99,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1에 따라 퍼플루오로옥탄 설폰산(PFOS) 관련 물질 및 퍼플루오로알킬 및 폴리플루오로알킬 물질(PFAS)로 분류되어 사용 금지됩니다.",
       "by": "gemini-consensus",
       "name": "테트라에틸암모늄퍼플루오로옥탄설포네이트"
     },
@@ -1879,7 +1703,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1에 따라 사용 금지 원료로 명시되어 있음.",
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1에 따라 사용 금지 원료로 명시되어 있습니다.",
       "by": "gemini-consensus",
       "name": "아리스토로킥애씨드"
     },
@@ -1890,7 +1714,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 1에 따라 퍼플루오로알킬 및 폴리플루오로알킬 물질(PFAS)로 분류되어 사용 금지됨.",
+      "reason": "C12 퍼플루오로알킬 물질로, 대한민국 화장품 안전기준 등에 관한 규정 별표 1의 PFAS 사용 금지 목록에 해당합니다.",
       "by": "gemini-consensus",
       "name": "3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12,12-헨아이코사플루오로도데실아크릴레이트"
     },
@@ -1900,8 +1724,8 @@
       "status": "banned",
       "max": null,
       "from": "banned",
-      "confidence": 0.9,
-      "reason": "Contains perfluoro-C8-14-alkyl acrylate, falling under KR's ban on long-chain PFAS and related compounds.",
+      "confidence": 1,
+      "reason": "퍼플루오로-C8-14-알킬 아크릴레이트 폴리머를 포함하며, 대한민국 화장품 안전기준 등에 관한 규정 별표 1의 PFAS 사용 금지 목록에 해당합니다.",
       "by": "gemini-consensus",
       "name": "2-프로피오닉애씨드, 2-메틸-, C10-16-알킬 에스터, 2-하이드록시에틸메타크릴레이트, 메틸 메타크릴레이트와 퍼플루오로-C8-14-알킬 아크릴레이트 폴리머"
     },
@@ -1912,7 +1736,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "It is a salt of Perfluorooctanoic acid (PFOA), which is banned in KR cosmetics.",
+      "reason": "퍼플루오로옥탄산(PFOA)의 염으로, 대한민국 화장품 안전기준 등에 관한 규정 별표 1의 PFAS 사용 금지 목록에 해당합니다.",
       "by": "gemini-consensus",
       "name": "크로뮴(3+)퍼플루오로옥타노에이트"
     },
@@ -1923,7 +1747,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "It is an ester of Perfluorooctanoic acid (PFOA), falling under KR's ban on PFOA-related compounds.",
+      "reason": "퍼플루오로옥탄산(PFOA)의 에스터로, 대한민국 화장품 안전기준 등에 관한 규정 별표 1의 PFAS 사용 금지 목록에 해당합니다.",
       "by": "gemini-consensus",
       "name": "메틸퍼플루오로옥타노에이트"
     },
@@ -1933,8 +1757,8 @@
       "status": "banned",
       "max": null,
       "from": "banned",
-      "confidence": 0.95,
-      "reason": "It is a C15 perfluorinated compound, falling under KR's ban on long-chain PFAS and related compounds.",
+      "confidence": 1,
+      "reason": "C15 퍼플루오로알킬 물질로, 대한민국 화장품 안전기준 등에 관한 규정 별표 1의 PFAS 사용 금지 목록에 해당합니다.",
       "by": "gemini-consensus",
       "name": "다이암모늄4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12,13,13,14,15,15,15-테트라코사플루오로-2-하이드록시-14-트라이플루오로메틸)펜타데실포스페이트"
     },
@@ -1945,7 +1769,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "It is a C10 perfluorinated compound (PFDA-related), which is banned in KR cosmetics.",
+      "reason": "C10 퍼플루오로알킬 물질로, 대한민국 화장품 안전기준 등에 관한 규정 별표 1의 PFAS 사용 금지 목록에 해당합니다.",
       "by": "gemini-consensus",
       "name": "퍼플루오로데실포스페이트"
     },
@@ -1956,7 +1780,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "It is a C10 perfluorinated compound (PFDA-related), which is banned in KR cosmetics.",
+      "reason": "C10 퍼플루오로알킬 물질로, 대한민국 화장품 안전기준 등에 관한 규정 별표 1의 PFAS 사용 금지 목록에 해당합니다.",
       "by": "gemini-consensus",
       "name": "2-퍼플루오로데실에타노익애씨드"
     },
@@ -1967,7 +1791,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "MFDS \"화장품 안전기준 등에 관한 규정\" 별표2 사용금지 원료로 지정됨.",
+      "reason": "MFDS \"화장품 안전기준 등에 관한 규정\" 별표2 사용금지 원료(PFAS)에 해당함.",
       "by": "gemini-consensus",
       "name": "3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12,13,13,14,14,15,15,16,16,17,18,18,18-도트라이아콘타플루오로-17-(트라이플루오로메틸)옥타데실메타크릴레이트"
     },
@@ -1978,7 +1802,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "MFDS \"화장품 안전기준 등에 관한 규정\" 별표2 사용금지 원료로 지정됨.",
+      "reason": "MFDS \"화장품 안전기준 등에 관한 규정\" 별표2 사용금지 원료(PFAS)에 해당함.",
       "by": "gemini-consensus",
       "name": "2,3,3,4,4,5,5,5-옥타플루오로-2-(1,1,1,2,3,3,3-헵타플루오로프로판-2-일)펜타노익애씨드"
     },
@@ -1989,7 +1813,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "MFDS \"화장품 안전기준 등에 관한 규정\" 별표2 사용금지 원료로 지정됨.",
+      "reason": "MFDS \"화장품 안전기준 등에 관한 규정\" 별표2 사용금지 원료(PFAS)에 해당함.",
       "by": "gemini-consensus",
       "name": "2,2,3,4,4,5,5,6,6,6-데카플루오로-3-(펜타플루오로에틸)헥사노익애씨드"
     },
@@ -2000,7 +1824,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "MFDS \"화장품 안전기준 등에 관한 규정\" 별표2 사용금지 원료로 지정됨.",
+      "reason": "MFDS \"화장품 안전기준 등에 관한 규정\" 별표2 사용금지 원료(PFAS)에 해당함.",
       "by": "gemini-consensus",
       "name": "플루오로옥타노익안하이드라이드"
     },
@@ -2011,7 +1835,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "MFDS \"화장품 안전기준 등에 관한 규정\" 별표2 사용금지 원료로 지정됨.",
+      "reason": "MFDS \"화장품 안전기준 등에 관한 규정\" 별표2 사용금지 원료(PFAS)에 해당함.",
       "by": "gemini-consensus",
       "name": "헨트라이아콘타플루오로펜타데실아이오다이드"
     },
@@ -2033,7 +1857,7 @@
       "max": 0.001,
       "from": "restricted",
       "confidence": 1,
-      "reason": "MFDS \"화장품 안전기준 등에 관한 규정\" 별표1 사용상의 제한이 필요한 원료로 지정됨.",
+      "reason": "MFDS \"화장품 안전기준 등에 관한 규정\" 별표1 사용상의 제한이 필요한 원료로 0.001%로 지정됨.",
       "by": "gemini-consensus",
       "name": "알에이치(또는 에스에이치) 올리고펩타이드-1(상피세포성장인자)"
     },
@@ -2044,7 +1868,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "MFDS \"화장품 안전기준 등에 관한 규정\" 별표2 사용금지 원료로 지정됨.",
+      "reason": "MFDS \"화장품 안전기준 등에 관한 규정\" 별표2 사용금지 원료(PFAS)에 해당함.",
       "by": "gemini-consensus",
       "name": "2,4,4,5,5,5-헥사플루오로-2,3,3-트리스(트라이플루오로메틸)펜타노익애씨드"
     },
@@ -2136,93 +1960,170 @@
       "by": "gemini-consensus",
       "name": "퍼플루오로옥타노일플루오라이드"
     },
-    "f5864dfd-f92b-4e99-bf2d-3072e423da3d:KR": {
-      "ingredient_id": "f5864dfd-f92b-4e99-bf2d-3072e423da3d",
+    "688eba02-71ea-4cd7-beb6-895c14039d87:KR": {
+      "ingredient_id": "688eba02-71ea-4cd7-beb6-895c14039d87",
       "country_code": "KR",
-      "status": "banned",
-      "max": null,
+      "status": "restricted",
+      "max": 1,
       "from": "banned",
-      "confidence": 1,
-      "reason": "알파-헥사브로모사이클로도데칸(CAS 134237-50-6)은 식품의약품안전처 '화장품 안전기준 등에 관한 규정' 별표1에 명시된 사용금지 원료입니다.",
+      "confidence": 0.9,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 2에 따라 사용 후 씻어내는 제품 1.0%, 기타 제품 0.5%로 제한됩니다.",
       "by": "gemini-consensus",
-      "name": "알파-헥사브로모사이클로도데칸"
+      "name": "피록톤올아민"
     },
-    "38b6580e-c8ff-43f7-a606-b3c6b1b23b1d:KR": {
-      "ingredient_id": "38b6580e-c8ff-43f7-a606-b3c6b1b23b1d",
+    "40b557df-eee1-498c-bce4-069e11796fc7:KR": {
+      "ingredient_id": "40b557df-eee1-498c-bce4-069e11796fc7",
       "country_code": "KR",
-      "status": "banned",
-      "max": null,
+      "status": "restricted",
+      "max": 0.2,
       "from": "banned",
-      "confidence": 1,
-      "reason": "3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12,12-헨아이코사플루오로도데케인(CAS 30389-25-4)은 식품의약품안전처 '화장품 안전기준 등에 관한 규정' 별표1에 명시된 과불화화합물(PFAS) 금지 원료입니다.",
+      "confidence": 0.9,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 별표 2에 따라 0.2%로 제한됩니다.",
       "by": "gemini-consensus",
-      "name": "3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12,12-헨아이코사플루오로도데케인"
+      "name": "클로라민T"
     },
-    "65d44c8b-d28d-465b-a5a2-558e4d09a24c:KR": {
-      "ingredient_id": "65d44c8b-d28d-465b-a5a2-558e4d09a24c",
+    "b0f1a53d-0cfa-469b-b9d7-516f2c8cfd7c:KR": {
+      "ingredient_id": "b0f1a53d-0cfa-469b-b9d7-516f2c8cfd7c",
       "country_code": "KR",
-      "status": "banned",
+      "status": "restricted",
       "max": null,
-      "from": "banned",
+      "from": "restricted",
       "confidence": 1,
-      "reason": "3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12,13,13,14,14,15,16,16-옥타코사플루오로-15-(트라이플루오로메틸)헥사데실아크릴레이트(CAS 91615-22-4)는 식품의약품안전처 '화장품 안전기준 등에 관한 규정' 별표1에 명시된 과불화화합물(PFAS) 금지 원료입니다.",
+      "reason": "자외선차단제품 및 인공선탠제품에서는 1ppm 이하로 제한됩니다.",
       "by": "gemini-consensus",
-      "name": "3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,12,12,13,13,14,14,15,16,16-옥타코사플루오로-15-(트라이플루오로메틸)헥사데실아크릴레이트"
+      "name": "라임꽃/구즈그라스추출물"
     },
-    "5d648007-70a7-4b25-946d-7a541d76b03b:KR": {
-      "ingredient_id": "5d648007-70a7-4b25-946d-7a541d76b03b",
+    "a2d76496-3648-4ee7-9b51-18498677e19e:KR": {
+      "ingredient_id": "a2d76496-3648-4ee7-9b51-18498677e19e",
       "country_code": "KR",
       "status": "banned",
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "3,3,4,4,4-펜타플루오로-2-(1,1,1,2,3,3,3-헵타플루오로프로판-2-일)-2-(트라이플루오로메틸)부타노익애씨드(CAS 1882109-59-2)는 식품의약품안전처 '화장품 안전기준 등에 관한 규정' 별표1에 명시된 과불화화합물(PFAS) 금지 원료입니다.",
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 1] 사용금지 원료에 명시되어 있습니다.",
       "by": "gemini-consensus",
-      "name": "3,3,4,4,4-펜타플루오로-2-(1,1,1,2,3,3,3-헵타플루오로프로판-2-일)-2-(트라이플루오로메틸)부타노익애씨드"
+      "name": "메틸부틸케톤"
     },
-    "5662b245-7a0a-4656-b05f-d7a49e81e2bb:KR": {
-      "ingredient_id": "5662b245-7a0a-4656-b05f-d7a49e81e2bb",
+    "061ea9c0-5c73-4139-bd6b-29509afff983:KR": {
+      "ingredient_id": "061ea9c0-5c73-4139-bd6b-29509afff983",
       "country_code": "KR",
-      "status": "banned",
+      "status": "restricted",
       "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "1-브로모헨아이코사플루오로데케인(CAS 307-43-7)은 식품의약품안전처 '화장품 안전기준 등에 관한 규정' 별표1에 명시된 과불화화합물(PFAS) 금지 원료입니다.",
+      "from": "restricted",
+      "confidence": 0.9,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 2] 사용상의 제한이 필요한 원료에 \"시스테아민 또는 그 염류\"로 명시되어 있으며, 퍼머넌트웨이브용 및 헤어스트레이트너 제품에 시스테아민으로서 11% (가온2욕식 5%) 허용됩니다.",
       "by": "gemini-consensus",
-      "name": "1-브로모헨아이코사플루오로데케인"
+      "name": "시스테아민티오글라이콜레이트"
     },
-    "bd5a52e8-fec9-48fb-b221-dfdb8386ae3b:KR": {
-      "ingredient_id": "bd5a52e8-fec9-48fb-b221-dfdb8386ae3b",
+    "e4fa523e-1662-4aa9-b940-a73f9ba88ce7:KR": {
+      "ingredient_id": "e4fa523e-1662-4aa9-b940-a73f9ba88ce7",
       "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
+      "status": "restricted",
+      "max": 1,
+      "from": "restricted",
       "confidence": 1,
-      "reason": "퍼플루오로옥탄설포닐플루오라이드(CAS 307-35-7)는 식품의약품안전처 '화장품 안전기준 등에 관한 규정' 별표1에 명시된 과불화화합물(PFAS) 금지 원료입니다.",
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 2] 사용상의 제한이 필요한 원료에 \"징크디티오옥탄아마이드의 염류\"로 명시되어 있으며, 징크로서 1%까지 허용됩니다.",
       "by": "gemini-consensus",
-      "name": "퍼플루오로옥탄설포닐플루오라이드"
+      "name": "소듐징크타우린다이티오옥탄아마이드"
     },
-    "f8dcab94-106f-47e9-857f-67cc46008598:KR": {
-      "ingredient_id": "f8dcab94-106f-47e9-857f-67cc46008598",
+    "c08ab51f-d699-4d28-ad46-b8ec6a019cee:KR": {
+      "ingredient_id": "c08ab51f-d699-4d28-ad46-b8ec6a019cee",
       "country_code": "KR",
       "status": "banned",
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "p,p’-디코폴(CAS 115-32-2)은 식품의약품안전처 '화장품 안전기준 등에 관한 규정' 별표1에 명시된 사용금지 원료입니다.",
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 1] 사용금지 원료에 명시되어 있습니다.",
       "by": "gemini-consensus",
-      "name": "p,p’-디코폴"
+      "name": "플루제스톤"
     },
-    "a6f4f795-5c4b-4e30-8b7d-782d3b558c55:KR": {
-      "ingredient_id": "a6f4f795-5c4b-4e30-8b7d-782d3b558c55",
+    "e08757b1-1a2d-4a8d-ad51-55cb7c5adf92:KR": {
+      "ingredient_id": "e08757b1-1a2d-4a8d-ad51-55cb7c5adf92",
       "country_code": "KR",
       "status": "banned",
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "암모늄2,3,3,4,4,5,5,6,6,6-데카플루오로-2-(펜타플루오로에틸)헥사노에이트(CAS 13058-06-5)는 식품의약품안전처 '화장품 안전기준 등에 관한 규정' 별표1에 명시된 과불화화합물(PFAS) 금지 원료입니다.",
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 1] 사용금지 원료에 명시되어 있습니다.",
       "by": "gemini-consensus",
-      "name": "암모늄2,3,3,4,4,5,5,6,6,6-데카플루오로-2-(펜타플루오로에틸)헥사노에이트"
+      "name": "산성갈색13호"
+    },
+    "c0b4655e-9e82-475b-a988-29f08e03e0f0:KR": {
+      "ingredient_id": "c0b4655e-9e82-475b-a988-29f08e03e0f0",
+      "country_code": "KR",
+      "status": "restricted",
+      "max": null,
+      "from": "restricted",
+      "confidence": 1,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 2] 사용상의 제한이 필요한 원료에 명시되어 있으며, 과산화물가가 10mmol/L을 초과하는 경우에 한하여 금지됩니다.",
+      "by": "gemini-consensus",
+      "name": "터피놀렌"
+    },
+    "815b8e66-0eb3-42ed-b332-c6495e75e7b0:KR": {
+      "ingredient_id": "815b8e66-0eb3-42ed-b332-c6495e75e7b0",
+      "country_code": "KR",
+      "status": "restricted",
+      "max": 2.5,
+      "from": "restricted",
+      "confidence": 1,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 2] 사용상의 제한이 필요한 원료에 \"라우로일사코신 및 그 염류\"로 명시되어 있으며, 사용 후 씻어내지 않는 제품에 2.5%까지 허용됩니다.",
+      "by": "gemini-consensus",
+      "name": "티이에이-라우로일사코시네이트"
+    },
+    "0d0cffae-451d-403b-a191-b3eb77d24fcc:KR": {
+      "ingredient_id": "0d0cffae-451d-403b-a191-b3eb77d24fcc",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "스타노졸롤은 대한민국 화장품 안전기준 등에 관한 규정 별표 1에 따라 사용금지 원료입니다.",
+      "by": "gemini-consensus",
+      "name": "스타노졸롤"
+    },
+    "931a52f3-1f65-45a0-a3bd-2942a1ec7b16:KR": {
+      "ingredient_id": "931a52f3-1f65-45a0-a3bd-2942a1ec7b16",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "콜치쿰은 대한민국 화장품 안전기준 등에 관한 규정 별표 1에 따라 사용금지 원료입니다.",
+      "by": "gemini-consensus",
+      "name": "콜치쿰"
+    },
+    "4db89646-9d84-4243-9151-0d6a4c010ed4:KR": {
+      "ingredient_id": "4db89646-9d84-4243-9151-0d6a4c010ed4",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "펜토렉스는 대한민국 화장품 안전기준 등에 관한 규정 별표 1에 따라 사용금지 원료입니다.",
+      "by": "gemini-consensus",
+      "name": "펜토렉스"
+    },
+    "543a73c2-e921-4c8a-8c45-177879e1b318:KR": {
+      "ingredient_id": "543a73c2-e921-4c8a-8c45-177879e1b318",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "네오디뮴플루오라이드는 대한민국 화장품 안전기준 등에 관한 규정 별표 1에 따라 사용금지 원료입니다.",
+      "by": "gemini-consensus",
+      "name": "네오디뮴플루오라이드"
+    },
+    "a7147253-48c4-405f-819c-1153fc5f3065:KR": {
+      "ingredient_id": "a7147253-48c4-405f-819c-1153fc5f3065",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "구아네티딘하이드로클로라이드는 대한민국 화장품 안전기준 등에 관한 규정 별표 1에 따라 사용금지 원료입니다.",
+      "by": "gemini-consensus",
+      "name": "구아네티딘하이드로클로라이드"
     }
   }
 }
