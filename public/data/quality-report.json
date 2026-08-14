@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-13T19:28:03.766Z",
-  "totalRegs": 95299,
+  "generated_at": "2026-08-14T19:22:16.171Z",
+  "totalRegs": 95327,
   "coverage": {
     "AR": 4832,
     "BO": 2227,
@@ -47,7 +47,7 @@
   "statusConflicts": 469,
   "quarantinePending": 3,
   "casContaminationSuspects": 223,
-  "staleCount": 8,
+  "staleCount": 9,
   "staleSources": [
     "AR",
     "BR",
@@ -56,7 +56,8 @@
     "PH",
     "SG",
     "TH",
-    "VN"
+    "VN",
+    "KCIA 성분사전(표준화명칭)"
   ],
   "limitAnomalyCount": 0,
   "postHealCorrupt": 0,
