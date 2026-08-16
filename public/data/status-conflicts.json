@@ -4073,7 +4073,7 @@
       "banned": [
         {
           "name": "2,4-Diaminophenoxyethanol HCl",
-          "prio": 105
+          "prio": 80
         }
       ],
       "allowed": [
