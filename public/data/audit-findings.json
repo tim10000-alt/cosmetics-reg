@@ -1,6 +1,6 @@
 {
   "note": "veto/저신뢰로 자동교정 보류분(가시성용)",
-  "total": 86,
+  "total": 87,
   "findings": {
     "347e91c2-8abd-4fe6-8363-e05138042f97:KR": {
       "country": "KR",
@@ -517,6 +517,12 @@
       "name": "소듐다이설파이트",
       "verdict": "un-ban 차단(권위금지)",
       "reason": "소듐다이설파이트는 산화염모제에 0.67%까지 허용되는 제한 원료입니다."
+    },
+    "ed6d8a5c-7e19-4f95-991a-6c9adf49c814:CN": {
+      "country": "CN",
+      "name": "아이소프로필티오글라이콜레이트",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "The condition explicitly states it is restricted for hair perming products with a maximum concentration of 11% (calculated as thioglycolic acid), contradicting the current banned status."
     }
   }
 }
