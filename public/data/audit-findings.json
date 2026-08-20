@@ -1,6 +1,6 @@
 {
   "note": "veto/저신뢰로 자동교정 보류분(가시성용)",
-  "total": 87,
+  "total": 88,
   "findings": {
     "347e91c2-8abd-4fe6-8363-e05138042f97:KR": {
       "country": "KR",
@@ -523,6 +523,12 @@
       "name": "아이소프로필티오글라이콜레이트",
       "verdict": "un-ban 차단(권위금지)",
       "reason": "The condition explicitly states it is restricted for hair perming products with a maximum concentration of 11% (calculated as thioglycolic acid), contradicting the current banned status."
+    },
+    "5b6a48f1-69d6-4be5-8caf-05811d15798a:CN": {
+      "country": "CN",
+      "name": "석유 유래물질 (Gases (petroleum), dehexanizer off)",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "부타디엔 0.1%w/w 초과 함유 시 금지되는 조건부 규제이므로 'restricted'가 더 정확합니다."
     }
   }
 }
