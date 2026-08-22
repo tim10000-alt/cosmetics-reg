@@ -1466,7 +1466,7 @@
         {
           "name": "Formaldehyde",
           "status": "restricted",
-          "prio": 100
+          "prio": 105
         }
       ]
     },
