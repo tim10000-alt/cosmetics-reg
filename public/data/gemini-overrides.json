@@ -1,6 +1,6 @@
 {
   "note": "Gemini 듀얼합의 자동교정(법령변경 자가치유) — apply-gemini-overrides 가 prio105 로 baking. un-ban 은 권위 annex veto. 사람 개입 0.",
-  "total": 246,
+  "total": 219,
   "corrections": {
     "38629385-37bc-4757-85de-6fba8806a583:KR": {
       "ingredient_id": "38629385-37bc-4757-85de-6fba8806a583",
@@ -1971,94 +1971,6 @@
       "by": "gemini-consensus",
       "name": "디아놀아세글루메이트"
     },
-    "ca097290-46cc-4b87-90b5-a810efcab8f3:CN": {
-      "ingredient_id": "ca097290-46cc-4b87-90b5-a810efcab8f3",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "Explicitly listed as a prohibited ingredient in China's Cosmetic Safety Technical Standard (Table 1).",
-      "by": "gemini-consensus",
-      "name": "R-2,3-에폭시-1-프로판올"
-    },
-    "78160161-3e36-4ec0-b201-d16bb531c9bc:CN": {
-      "ingredient_id": "78160161-3e36-4ec0-b201-d16bb531c9bc",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "Explicitly listed as a prohibited ingredient in China's Cosmetic Safety Technical Standards for Cosmetics.",
-      "by": "gemini-consensus",
-      "name": "4'-에톡시-2-벤즈이미다졸아닐라이드"
-    },
-    "09ee281d-00e5-4de4-8c7b-0eed3637679c:CN": {
-      "ingredient_id": "09ee281d-00e5-4de4-8c7b-0eed3637679c",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 0.9,
-      "reason": "Not explicitly listed as permitted in NMPA STSC and likely prohibited due to potential impurities.",
-      "by": "gemini-consensus",
-      "name": "석유 유래물질 (Residual oils (petroleum), hydrocracked acid-treated solvent-dewaxed)"
-    },
-    "67161962-afb1-4c08-9d22-9474271fbd17:CN": {
-      "ingredient_id": "67161962-afb1-4c08-9d22-9474271fbd17",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "Coal tar and its derivatives are explicitly prohibited in cosmetics by NMPA due to carcinogenicity.",
-      "by": "gemini-consensus",
-      "name": "석유 유래물질 (Pitch, coal tar-petroleum)"
-    },
-    "cd4fe6dc-746f-4f72-9b6a-e5ef95732dcd:CN": {
-      "ingredient_id": "cd4fe6dc-746f-4f72-9b6a-e5ef95732dcd",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "Highly toxic cardiac glycoside with strong pharmacological activity, prohibited in cosmetics.",
-      "by": "gemini-consensus",
-      "name": "스트로판틴K;콤베-스트로판틴"
-    },
-    "a510ae02-c0e1-459a-b58b-aa7f899895cb:CN": {
-      "ingredient_id": "a510ae02-c0e1-459a-b58b-aa7f899895cb",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "Alkaloid with significant pharmacological activity, prohibited in cosmetics by NMPA.",
-      "by": "gemini-consensus",
-      "name": "7,14-메타노-2H,6H-다이피리도(1,2-a:1',2'-e)(1,5)다이아조신, 도데카하이드로-, (7S-(7alpha,7aalpha,14alpha,14abeta))- ; 스파르테인"
-    },
-    "ff0bc53b-7aa4-4fe5-877b-a4ca280faed8:CN": {
-      "ingredient_id": "ff0bc53b-7aa4-4fe5-877b-a4ca280faed8",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "Stimulant drug with pharmacological effects, prohibited for use in cosmetics by NMPA.",
-      "by": "gemini-consensus",
-      "name": "피프라드롤"
-    },
-    "715c98ed-5149-489d-9c2d-c9bd7304bb07:CN": {
-      "ingredient_id": "715c98ed-5149-489d-9c2d-c9bd7304bb07",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "NMPA Safety and Technical Standards for Cosmetics (2015 edition) Table 1 lists Oxanamide (CAS 126-93-2) as a prohibited ingredient.",
-      "by": "gemini-consensus",
-      "name": "옥산아마이드 및 그 유도체"
-    },
     "a815e198-c8a0-4aad-9e4b-64b0619dfe17:CN": {
       "ingredient_id": "a815e198-c8a0-4aad-9e4b-64b0619dfe17",
       "country_code": "CN",
@@ -2066,7 +1978,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "NMPA Safety and Technical Standards for Cosmetics, Table 2, lists Catharanthus roseus as a prohibited plant.",
+      "reason": "NMPA CSST Table 2 lists Catharanthus roseus as a prohibited plant.",
       "by": "gemini-consensus",
       "name": "일일초"
     },
@@ -2077,7 +1989,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "It is a pharmaceutical substance not found in NMPA permitted lists for cosmetic ingredients, thus effectively banned.",
+      "reason": "Etoheptazine is a pharmaceutical substance not permitted for cosmetic use in China.",
       "by": "gemini-consensus",
       "name": "에토헵타진"
     },
@@ -2088,7 +2000,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "CAS 700-38-9 is listed in China's CSST Table 1 (prohibited substances list) at item 100.",
+      "reason": "CAS 700-38-9 is listed in China's CSST Table 1 as a prohibited substance.",
       "by": "gemini-consensus",
       "name": "6-나이트로-m-크레솔;페놀,5-메틸-2-나이트로-"
     },
@@ -2099,7 +2011,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "CAS 518-20-7 is listed in China's CSST Table 1 (prohibited substances list) at item 101.",
+      "reason": "CAS 518-20-7 is listed in China's CSST Table 1 as a prohibited substance.",
       "by": "gemini-consensus",
       "name": "3,4-다이하이드로-2-메톡시-2-메틸-4-페닐-2H,5H,피라노(3,2-c)-(1)벤조피란-5-온(사이클로코우마롤)"
     },
@@ -2110,7 +2022,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "CAS 673-31-4 is listed in China's CSST Table 1 (prohibited substances list) at item 102.",
+      "reason": "CAS 673-31-4 is listed in China's CSST Table 1 as a prohibited substance.",
       "by": "gemini-consensus",
       "name": "펜프로바메이트"
     },
@@ -2121,7 +2033,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "CAS 68-22-4 is listed in China's CSST Table 1 (prohibited substances list) at item 103.",
+      "reason": "CAS 68-22-4 is listed in China's CSST Table 1 as a prohibited substance.",
       "by": "gemini-consensus",
       "name": "노레티스테론"
     },
@@ -2132,7 +2044,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "CAS 68477-94-1 is listed in China's CSST Table 1 (prohibited substances list) at item 104.",
+      "reason": "CAS 68477-94-1 is listed in China's CSST Table 1 as a prohibited substance.",
       "by": "gemini-consensus",
       "name": "부타디엔 0.1%를 초과하여 함유하는 석유 유래물질 (Gases (petroleum), gas recovery plant depropanizer overheads)"
     },
@@ -2143,7 +2055,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "CAS 68478-04-6 is listed in China's CSST Table 1 (prohibited substances list) at item 104.",
+      "reason": "CAS 68478-04-6 is listed in China's CSST Table 1 as a prohibited substance.",
       "by": "gemini-consensus",
       "name": "부타디엔 0.1%를 초과하여 함유하는 석유 유래물질 (Gases (petroleum), reforming hydrotreater make-up, hydrogen-rich)"
     },
@@ -2154,7 +2066,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "NMPA 화장품안전기술규범(2015년판) 표1 — 화장품 사용 금지 물질에 2-에톡시에탄올(CAS 110-80-5) 및 2-에톡시에틸아세테이트(CAS 111-15-9)가 명시되어 있습니다.",
+      "reason": "NMPA 화장품안전기술규범(2015년판) 표1에 화장품 사용 금지 물질로 명시되어 있습니다.",
       "by": "gemini-consensus",
       "name": "2-에톡시에탄올 및 그 아세테이트(2-에톡시에틸아세테이트)"
     },
@@ -2165,97 +2077,9 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "NMPA 화장품안전기술규범(2015년판) 표1 — 화장품 사용 금지 물질에 3,5-다이클로로살리실아닐리드(CAS 4214-48-6)가 명시되어 있습니다.",
+      "reason": "NMPA 화장품안전기술규범(2015년판) 표1에 화장품 사용 금지 물질로 명시되어 있습니다.",
       "by": "gemini-consensus",
       "name": "3,5-다이클로로살리실아닐리드"
-    },
-    "93184357-bd67-43c2-a227-b7b471e60b97:KR": {
-      "ingredient_id": "93184357-bd67-43c2-a227-b7b471e60b97",
-      "country_code": "KR",
-      "status": "restricted",
-      "max": 0.002,
-      "from": "restricted",
-      "confidence": 1,
-      "reason": "메틸옥틴카보네이트는 한국 화장품 안전기준 등에 관한 규정에서 0.002%로 배합한도가 명시되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "메틸옥틴카보네이트"
-    },
-    "1a09141d-d2eb-4084-977a-9ce9eac2d2cc:KR": {
-      "ingredient_id": "1a09141d-d2eb-4084-977a-9ce9eac2d2cc",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "아세닉펜타옥사이드는 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "아세닉펜타옥사이드"
-    },
-    "4a387b9a-a702-4022-93cc-aa12b59003e4:KR": {
-      "ingredient_id": "4a387b9a-a702-4022-93cc-aa12b59003e4",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "메탈포스파이드는 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "메탈포스파이드"
-    },
-    "bc4a55b3-d997-484c-af66-0b19ed614944:KR": {
-      "ingredient_id": "bc4a55b3-d997-484c-af66-0b19ed614944",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "하이드록시에틸-2,6-다이나이트로-p-아니시딘 및 그 염류는 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "하이드록시에틸-2,6-다이나이트로-p-아니시딘 및 그 염류"
-    },
-    "10c6f7a7-a0ef-4372-8f84-99cf0c3edf1e:KR": {
-      "ingredient_id": "10c6f7a7-a0ef-4372-8f84-99cf0c3edf1e",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "마부테롤은 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "마부테롤"
-    },
-    "7c85a0a7-ac65-44c0-be56-226f56ad833a:KR": {
-      "ingredient_id": "7c85a0a7-ac65-44c0-be56-226f56ad833a",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "파라티온-메틸은 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "파라티온-메틸"
-    },
-    "cd18f3ff-b537-42ea-a574-5daf65b05ad1:KR": {
-      "ingredient_id": "cd18f3ff-b537-42ea-a574-5daf65b05ad1",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "디이에이-세테아레스-2포스페이트는 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "디이에이-세테아레스-2포스페이트"
-    },
-    "8e0ec212-dc8b-40d5-b857-cff8255165ce:KR": {
-      "ingredient_id": "8e0ec212-dc8b-40d5-b857-cff8255165ce",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "다이옥세테드린 및 그 염류는 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "다이옥세테드린 및 그 염류"
     },
     "b36c8810-592b-4a6e-90fb-f5fc32247156:CN": {
       "ingredient_id": "b36c8810-592b-4a6e-90fb-f5fc32247156",
@@ -2264,7 +2088,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "Nicotine and its salts are prohibited substances in cosmetics under China's STSC 2015.",
+      "reason": "중국 화장품 안전기술규범(STSC 2015)에 따라 금지된 물질임.",
       "by": "gemini-consensus",
       "name": "니코틴 및 그 염류"
     },
@@ -2275,7 +2099,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "Chlormethine is a prohibited substance in cosmetics under China's STSC 2015 due to its toxicity.",
+      "reason": "중국 화장품 안전기술규범(STSC 2015)에 따라 독성으로 인해 금지된 물질임.",
       "by": "gemini-consensus",
       "name": "클로르메틴"
     },
@@ -2286,7 +2110,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "Materials derived from specified risk materials (SRM) of bovine, ovine, and caprine animals, including spinal cord, are prohibited in cosmetics in China due to TSE/BSE concerns.",
+      "reason": "중국 화장품 안전기술규범(STSC 2015)에 따라 소, 양, 염소의 특정위험물질(SRM) 유래 성분으로 금지됨.",
       "by": "gemini-consensus",
       "name": "척수지질"
     },
@@ -2297,7 +2121,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "Costus Root Oil is a prohibited substance in cosmetics under China's STSC 2015 due to its allergenic potential.",
+      "reason": "중국 화장품 안전기술규범(STSC 2015)에 따라 알레르기 유발 가능성으로 인해 금지된 물질임.",
       "by": "gemini-consensus",
       "name": "목향뿌리오일 (착향제로 사용될 때)"
     },
@@ -2308,7 +2132,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "Octodrine is not an approved cosmetic ingredient and is considered a prohibited substance in China due to its pharmacological activity.",
+      "reason": "중국에서 승인되지 않은 화장품 성분이며 약리학적 특성으로 인해 금지된 물질임.",
       "by": "gemini-consensus",
       "name": "옥토드린"
     },
@@ -2319,86 +2143,9 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "This specific petroleum extract, when containing more than 3% of DMSO-extracted substances, is prohibited in cosmetics under China's STSC 2015.",
+      "reason": "중국 화장품 안전기술규범에 따라 DMSO 추출 성분을 3% 초과 함유하는 경우 금지된 물질임.",
       "by": "gemini-consensus",
       "name": "디메칠설폭사이드(DMSO)로 추출한 성분을 3% 초과하여 함유하는 석유 유래물질 (Extracts (petroleum), heavy naphthenic distillate solvent, arom. conc.)"
-    },
-    "e91b1f6f-d18c-4a1c-9857-4dcaaf9f0ec2:CN": {
-      "ingredient_id": "e91b1f6f-d18c-4a1c-9857-4dcaaf9f0ec2",
-      "country_code": "CN",
-      "status": "restricted",
-      "max": null,
-      "from": "restricted",
-      "confidence": 1,
-      "reason": "This substance is restricted in China's STSC 2015, permitted only if its full refining history is known and it can be shown that the source substance is not a carcinogen.",
-      "by": "gemini-consensus",
-      "name": "석유 슬랙왁스, low-melting, clay-treated, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외"
-    },
-    "4d162278-1483-4b94-968f-1513948b6d4c:CN": {
-      "ingredient_id": "4d162278-1483-4b94-968f-1513948b6d4c",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "Ethyl Urocanate is a prohibited substance in cosmetics under China's STSC 2015.",
-      "by": "gemini-consensus",
-      "name": "에틸우로카네이트"
-    },
-    "4fed7c26-5aa2-4423-9428-cfe98321e33f:CN": {
-      "ingredient_id": "4fed7c26-5aa2-4423-9428-cfe98321e33f",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "NMPA Safety and Technical Standards for Cosmetics (2015 edition) Table 1 lists Musk Tibetene (CAS 145-39-1) as a prohibited ingredient.",
-      "by": "gemini-consensus",
-      "name": "5-tert-부틸-1,2,3-트라이메틸-4.6-다이니트로벤젠(머스크티베텐)"
-    },
-    "6da764d7-bcf4-4728-ad2f-18621f5acb88:CN": {
-      "ingredient_id": "6da764d7-bcf4-4728-ad2f-18621f5acb88",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "NMPA Safety and Technical Standards for Cosmetics (2015 edition) Table 2 lists Lytta caraganae Pallas (청가뢰) as a prohibited animal material.",
-      "by": "gemini-consensus",
-      "name": "청가뢰"
-    },
-    "bd206171-d054-4bae-a9a5-468ed9c03772:CN": {
-      "ingredient_id": "bd206171-d054-4bae-a9a5-468ed9c03772",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "NMPA Safety and Technical Standards for Cosmetics (2015 edition) Appendix 3, Table 1 does not list N-(2-methoxyethyl)-p-phenylenediamine as an allowed hair dye ingredient.",
-      "by": "gemini-consensus",
-      "name": "N-(2-메톡시에틸)-p-페닐렌다이아민"
-    },
-    "37e15460-cdce-4f15-9483-9aa3b8cc7fa4:CN": {
-      "ingredient_id": "37e15460-cdce-4f15-9483-9aa3b8cc7fa4",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "NMPA Safety and Technical Standards for Cosmetics (2015 edition) Table 2 lists Chelidonium majus L. (애기똥풀) as a prohibited plant material.",
-      "by": "gemini-consensus",
-      "name": "애기똥풀"
-    },
-    "3c11b128-454a-47bf-924c-376f736e9a28:CN": {
-      "ingredient_id": "3c11b128-454a-47bf-924c-376f736e9a28",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "NMPA Safety and Technical Standards for Cosmetics (2015 edition) Table 1 lists Phenmetrazine and its salts as prohibited ingredients.",
-      "by": "gemini-consensus",
-      "name": "펜메트라진하이드로클로라이드"
     },
     "d5ec8b4a-ea13-4751-8fc0-f2816a5d1b0d:CN": {
       "ingredient_id": "d5ec8b4a-ea13-4751-8fc0-f2816a5d1b0d",
@@ -2407,7 +2154,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "NMPA 화장품안전기술규범(2015년판) 표1 — 화장품 사용 금지 물질에 부틸벤질프탈레이트(CAS 85-68-7)가 명시되어 있습니다.",
+      "reason": "NMPA 화장품안전기술규범(2015년판) 표1에 화장품 사용 금지 물질로 명시되어 있습니다.",
       "by": "gemini-consensus",
       "name": "부틸벤질프탈레이트"
     },
@@ -2418,7 +2165,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "NMPA 화장품안전기술규범(2015년판) 표1 — 화장품 사용 금지 물질에 염기성적색22호(CAS 12221-52-2)가 명시되어 있습니다.",
+      "reason": "NMPA 화장품안전기술규범(2015년판) 표1에 화장품 사용 금지 물질로 명시되어 있습니다.",
       "by": "gemini-consensus",
       "name": "염기성적색22호"
     },
@@ -2429,7 +2176,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "NMPA 화장품안전기술규범(2015년판) 표1 — 화장품 사용 금지 물질에 제스토놀온카프로에이트(CAS 1253-28-7)가 명시되어 있습니다.",
+      "reason": "NMPA 화장품안전기술규범(2015년판) 표1에 화장품 사용 금지 물질로 명시되어 있습니다.",
       "by": "gemini-consensus",
       "name": "제스토놀온카프로에이트"
     },
@@ -2440,7 +2187,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "NMPA 화장품안전기술규범(2015년판) 표1 — 화장품 사용 금지 물질에 [(p-톨일옥시)메틸]옥시란(CAS 2186-24-5)이 명시되어 있습니다.",
+      "reason": "NMPA 화장품안전기술규범(2015년판) 표1에 화장품 사용 금지 물질로 명시되어 있습니다.",
       "by": "gemini-consensus",
       "name": "[(p-톨일옥시)메틸]옥시란"
     },
@@ -2451,42 +2198,9 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "NMPA 화장품안전기술규범(2015년판) 표1 — 화장품 사용 금지 물질에 5-에톡시-3-트라이클로로메틸-1,2,4-티아다이아졸(CAS 2593-15-9)이 명시되어 있습니다.",
+      "reason": "NMPA 화장품안전기술규범(2015년판) 표1에 화장품 사용 금지 물질로 명시되어 있습니다.",
       "by": "gemini-consensus",
       "name": "5-에톡시-3-트라이클로로메틸-1,2,4-티아다이아졸"
-    },
-    "5df61604-98ba-4e1c-99cc-b1914e2f6245:CN": {
-      "ingredient_id": "5df61604-98ba-4e1c-99cc-b1914e2f6245",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "NMPA Safety and Technical Standards for Cosmetics (2015 edition, Table 1, Prohibited Substances, No. 309) lists Chromium trioxide (三氧化铬) as prohibited.",
-      "by": "gemini-consensus",
-      "name": "크로뮴(VI)트라이옥사이드"
-    },
-    "9234e530-321c-4dfe-9f8f-aa919017047c:CN": {
-      "ingredient_id": "9234e530-321c-4dfe-9f8f-aa919017047c",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "NMPA Safety and Technical Standards for Cosmetics (2015 edition, Table 1, Prohibited Substances, No. 1000) lists this substance as prohibited.",
-      "by": "gemini-consensus",
-      "name": "석유 유래물질 (Tail gas (petroleum), catalytic cracked clarified oil and thermal cracked vacuum residue fractionation reflux drum)"
-    },
-    "ebdfcefa-578e-4979-97de-acc12bc18eef:CN": {
-      "ingredient_id": "ebdfcefa-578e-4979-97de-acc12bc18eef",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "NMPA Safety and Technical Standards for Cosmetics (2015 edition, Table 1, Prohibited Substances, No. 1020) lists 2-Methoxypropanol as prohibited.",
-      "by": "gemini-consensus",
-      "name": "2-메톡시프로판올"
     },
     "fa6824ad-8a0c-429a-9837-6c8d2664278a:CN": {
       "ingredient_id": "fa6824ad-8a0c-429a-9837-6c8d2664278a",
@@ -2494,8 +2208,8 @@
       "status": "banned",
       "max": null,
       "from": "banned",
-      "confidence": 0.9,
-      "reason": "Basic Blue 6 (CAS 7057-57-0) is not listed in the NMPA Safety and Technical Standards for Cosmetics (2015 edition) as a permitted colorant or hair dye.",
+      "confidence": 1,
+      "reason": "Basic Blue 6 (CAS 7057-57-0) is not listed as a permitted colorant in China's NMPA STSC (2015).",
       "by": "gemini-consensus",
       "name": "염기성청색6호"
     },
@@ -2506,7 +2220,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "NMPA issued a notice in 2021 explicitly prohibiting the use of cannabis-related ingredients, including extracts, in cosmetics.",
+      "reason": "NMPA explicitly prohibited cannabis-related ingredients, including extracts, in cosmetics in 2021.",
       "by": "gemini-consensus",
       "name": "대마 및 대마수지; 대마추출물"
     },
@@ -2517,7 +2231,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "NMPA Safety and Technical Standards for Cosmetics (2015 edition, Table 1, Prohibited Substances, No. 332) lists Benzidine acetate as prohibited.",
+      "reason": "Benzidine acetate (CAS 36341-27-2) is listed in NMPA STSC (2015) Table 1 as a prohibited substance.",
       "by": "gemini-consensus",
       "name": "벤지딘아세테이트"
     },
@@ -2528,7 +2242,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "NMPA Safety and Technical Standards for Cosmetics (2015 edition, Table 1, Prohibited Substances, No. 1277) lists Valinamide (a-氨基异戊酰胺) as prohibited.",
+      "reason": "Valinamide (CAS 20108-78-5) is listed in NMPA STSC (2015) Table 1 as a prohibited substance.",
       "by": "gemini-consensus",
       "name": "발린아마이드"
     },
@@ -2539,7 +2253,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "NMPA 화장품안전기술규범 표1에 콜타르 유래 물질은 금지되어 있습니다.",
+      "reason": "Coal tar derived substances, including Distillates (coal tar), pitch, pyrene fraction (CAS 91995-52-7), are prohibited in NMPA STSC Table 1.",
       "by": "gemini-consensus",
       "name": "증류액(콜타르), 피치, 피렌분체"
     },
@@ -2549,8 +2263,8 @@
       "status": "banned",
       "max": null,
       "from": "banned",
-      "confidence": 0.9,
-      "reason": "유카인은 마약류 또는 의약품 성분으로 화장품에 사용이 금지됩니다.",
+      "confidence": 1,
+      "reason": "Yucaine is classified as a narcotic or medicinal ingredient and is prohibited for use in cosmetics in China.",
       "by": "gemini-consensus",
       "name": "유카인"
     },
@@ -2560,8 +2274,8 @@
       "status": "banned",
       "max": null,
       "from": "banned",
-      "confidence": 0.9,
-      "reason": "에토르핀은 강력한 마약성 진통제로 화장품에 사용이 금지됩니다.",
+      "confidence": 1,
+      "reason": "Etorphine (CAS 14521-96-1) is a powerful narcotic analgesic and is prohibited for use in cosmetics in China.",
       "by": "gemini-consensus",
       "name": "에토르핀"
     },
@@ -2572,141 +2286,130 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "STSC Table 1 (Prohibited Substances) lists Phenylindanedione (CAS 83-12-5).",
+      "reason": "2-Phenylindan-1,3-dione (Phenindione) (CAS 83-12-5) is listed in NMPA STSC Table 1 as a prohibited substance.",
       "by": "gemini-consensus",
       "name": "2-페닐인단-1,3-다이온(페닌다이온)"
     },
-    "fa032010-771d-424b-bc3f-4a9b56e36578:CN": {
-      "ingredient_id": "fa032010-771d-424b-bc3f-4a9b56e36578",
+    "688eba02-71ea-4cd7-beb6-895c14039d87:KR": {
+      "ingredient_id": "688eba02-71ea-4cd7-beb6-895c14039d87",
+      "country_code": "KR",
+      "status": "restricted",
+      "max": 1,
+      "from": "banned",
+      "confidence": 0.9,
+      "reason": "한국 화장품 안전기준 등에 관한 규정에서 배합한도가 명시된 제한물질임.",
+      "by": "gemini-consensus",
+      "name": "피록톤올아민"
+    },
+    "40b557df-eee1-498c-bce4-069e11796fc7:KR": {
+      "ingredient_id": "40b557df-eee1-498c-bce4-069e11796fc7",
+      "country_code": "KR",
+      "status": "restricted",
+      "max": 0.2,
+      "from": "banned",
+      "confidence": 0.9,
+      "reason": "한국 화장품 안전기준 등에 관한 규정에서 배합한도가 명시된 제한물질임.",
+      "by": "gemini-consensus",
+      "name": "클로라민T"
+    },
+    "b4c15c4a-93a2-424f-8176-3000edd70194:CN": {
+      "ingredient_id": "b4c15c4a-93a2-424f-8176-3000edd70194",
+      "country_code": "CN",
+      "status": "restricted",
+      "max": 0.25,
+      "from": "restricted",
+      "confidence": 0.9,
+      "reason": "사용제한성분으로, 씻어내지 않는 제품에 대해 최대 0.25% 허용됩니다.",
+      "by": "gemini-consensus",
+      "name": "하이드로제네이티드팜트라이모늄클로라이드"
+    },
+    "5f4e33b8-108b-432b-8c43-53baf460fd4c:CN": {
+      "ingredient_id": "5f4e33b8-108b-432b-8c43-53baf460fd4c",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA 화장품안전기술규범 표1에 사용 금지 물질로 등재되어 있습니다.",
+      "by": "gemini-consensus",
+      "name": "메트헵타진"
+    },
+    "ff6f96d6-7755-4b9b-a873-22e21a91d65d:CN": {
+      "ingredient_id": "ff6f96d6-7755-4b9b-a873-22e21a91d65d",
       "country_code": "CN",
       "status": "restricted",
       "max": null,
       "from": "restricted",
-      "confidence": 0.9,
-      "reason": "China's STSC restricts petroleum-derived substances based on purity and refining history, consistent with the provided condition.",
+      "confidence": 1,
+      "reason": "NMPA 화장품안전기술규범 표3에 사용제한 물질로 등재되어 있으며, 셀레늄다이설파이드는 별도 조건으로 허용됩니다.",
       "by": "gemini-consensus",
-      "name": "석유 유래물질 (Distillates (petroleum), sweetened middle)"
+      "name": "셀레늄 및 그 화합물(셀레늄다이설파이드는 제외)"
     },
-    "4e82eb9a-739c-4274-b059-5d451a27347f:CN": {
-      "ingredient_id": "4e82eb9a-739c-4274-b059-5d451a27347f",
+    "490ca9fd-b798-4db3-9acb-31cdae1ef926:CN": {
+      "ingredient_id": "490ca9fd-b798-4db3-9acb-31cdae1ef926",
       "country_code": "CN",
       "status": "banned",
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "STSC Table 1 (Prohibited Substances) lists Cyclophosphamide (CAS 50-18-0).",
+      "reason": "NMPA 화장품안전기술규범 표1에 사용 금지 물질로 등재되어 있습니다.",
       "by": "gemini-consensus",
-      "name": "사이클로포스파미드 및 그 염류"
+      "name": "다이렉트적색23호"
     },
-    "2fc7e0d2-020d-4994-ae92-20214b19851f:CN": {
-      "ingredient_id": "2fc7e0d2-020d-4994-ae92-20214b19851f",
+    "d412f550-8e02-4edc-9fe5-956c2be5412b:CN": {
+      "ingredient_id": "d412f550-8e02-4edc-9fe5-956c2be5412b",
       "country_code": "CN",
       "status": "banned",
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "Explicitly listed as a prohibited substance in NMPA STSC Table 1 (No. 209).",
+      "reason": "NMPA 화장품안전기술규범 표1에 사용 금지 물질로 명확히 등재되어 있습니다.",
       "by": "gemini-consensus",
-      "name": "4-하이드록시인돌"
+      "name": "나이트로스틸벤, 그 동족체 및 유도체"
     },
-    "2a5f650e-639e-4e35-9b25-0c3dc669b41c:CN": {
-      "ingredient_id": "2a5f650e-639e-4e35-9b25-0c3dc669b41c",
-      "country_code": "CN",
-      "status": "listed",
-      "max": null,
-      "from": "unknown",
-      "confidence": 1,
-      "reason": "Permitted as a colorant in China's STSC Table 4 (Permitted Colorants).",
-      "by": "gemini-consensus",
-      "name": "흑색산화철"
-    },
-    "02745f8b-13e3-463e-b0e4-8fec136026e4:CN": {
-      "ingredient_id": "02745f8b-13e3-463e-b0e4-8fec136026e4",
-      "country_code": "CN",
-      "status": "listed",
-      "max": null,
-      "from": "listed",
-      "confidence": 1,
-      "reason": "Explicitly listed in IECIC (Inventory of Existing Cosmetic Ingredients in China) as a usable ingredient.",
-      "by": "gemini-consensus",
-      "name": "소이트라이모늄클로라이드"
-    },
-    "73291ee4-5abb-4a52-957c-a1bf9658d03b:CN": {
-      "ingredient_id": "73291ee4-5abb-4a52-957c-a1bf9658d03b",
+    "0674250d-04ba-4343-b876-88ec9f8b7046:CN": {
+      "ingredient_id": "0674250d-04ba-4343-b876-88ec9f8b7046",
       "country_code": "CN",
       "status": "banned",
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "STSC Table 1 (Prohibited Substances) lists Meprobamate (CAS 57-53-4).",
+      "reason": "NMPA 화장품안전기술규범 표1에 사용 금지 물질로 등재되어 있습니다.",
       "by": "gemini-consensus",
-      "name": "메프로바메이트"
+      "name": "콜타르"
     },
-    "31bbfee9-5942-47ff-843c-1f73910cc788:CN": {
-      "ingredient_id": "31bbfee9-5942-47ff-843c-1f73910cc788",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "중국 화장품 안전 기술 규범(CSAR)의 금지 성분 목록에 등재되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "아이소메트헵텐하이드로클로라이드"
-    },
-    "608c41ba-7a5c-4cc3-80f0-d3f108d4f5ee:CN": {
-      "ingredient_id": "608c41ba-7a5c-4cc3-80f0-d3f108d4f5ee",
+    "6250b654-4647-436f-aa83-ba54420a746c:CN": {
+      "ingredient_id": "6250b654-4647-436f-aa83-ba54420a746c",
       "country_code": "CN",
       "status": "restricted",
       "max": null,
       "from": "restricted",
-      "confidence": 0.9,
-      "reason": "정제 이력 및 비발암성 증명 조건부 허용으로, 현재 표기가 올바릅니다.",
+      "confidence": 1,
+      "reason": "NMPA 화장품안전기술규범 표3에 사용제한 물질로 등재되어 있으며, 땀 억제 제품에 지르코늄으로 5.0%까지 허용됩니다.",
       "by": "gemini-consensus",
-      "name": "석유 유래물질 (Distillates (petroleum), acid-treated middle)"
+      "name": "지르코늄다이옥사이드"
     },
-    "afb19809-43b2-4517-9f23-431f2dc7b3ae:CN": {
-      "ingredient_id": "afb19809-43b2-4517-9f23-431f2dc7b3ae",
+    "2a456a01-0c3f-4bb7-abbd-bbac1ca2f714:CN": {
+      "ingredient_id": "2a456a01-0c3f-4bb7-abbd-bbac1ca2f714",
       "country_code": "CN",
       "status": "banned",
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "중국 화장품 안전 기술 규범(CSAR)의 금지 성분 목록에 등재되어 있습니다.",
+      "reason": "NMPA 화장품안전기술규범 표1에 부타디엔 0.1% 초과 함유 석유 유래 물질로 사용 금지되어 있습니다.",
       "by": "gemini-consensus",
-      "name": "2,2',2''-트라이클로로에틸아민하이드로클로라이드;트리스(2-클로로에틸)아민하이드로클로라이드"
+      "name": "부타디엔 0.1%를 초과하여 함유하는 석유 유래물질 (Gases (petroleum), reformer effluent high-pressure flash drum off)"
     },
-    "08379eed-77a8-40c0-8f46-83e252ea9c54:CN": {
-      "ingredient_id": "08379eed-77a8-40c0-8f46-83e252ea9c54",
+    "48139f6f-7b15-4747-a8df-9f618ae53947:CN": {
+      "ingredient_id": "48139f6f-7b15-4747-a8df-9f618ae53947",
       "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
+      "status": "restricted",
+      "max": 5,
+      "from": "restricted",
       "confidence": 1,
-      "reason": "마약성 진통제로, 중국 화장품 안전 기술 규범(CSAR)의 금지 성분 목록에 등재되어 있습니다.",
+      "reason": "NMPA 화장품안전기술규범 표3에 손(발)톱 강화 제품에 5%까지 사용제한 물질로 등재되어 있습니다.",
       "by": "gemini-consensus",
-      "name": "베타메프로딘"
-    },
-    "17b619fe-e970-495f-b6e1-e778d5e9939e:CN": {
-      "ingredient_id": "17b619fe-e970-495f-b6e1-e778d5e9939e",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "발암성 물질인 부타디엔을 0.1% 초과 함유하는 탄화수소류는 중국 화장품에서 금지됩니다.",
-      "by": "gemini-consensus",
-      "name": "부타디엔 0.1%를 초과하여 함유하는 탄화수소류 (Hydrocarbons, C4-5)"
-    },
-    "e36cca9f-cb35-4331-9db3-05f8daeb6578:CN": {
-      "ingredient_id": "e36cca9f-cb35-4331-9db3-05f8daeb6578",
-      "country_code": "CN",
-      "status": "listed",
-      "max": null,
-      "from": "listed",
-      "confidence": 1,
-      "reason": "중국 기사용 화장품 원료 목록(IECIC)에 등재된 성분으로, 현재 표기가 올바릅니다.",
-      "by": "gemini-consensus",
-      "name": "다이메틸팔미타민"
+      "name": "포름알데하이드"
     }
   }
 }
