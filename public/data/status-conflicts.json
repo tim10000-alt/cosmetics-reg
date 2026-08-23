@@ -1318,7 +1318,7 @@
       "banned": [
         {
           "name": "Cannabis and Cannabis resin; Cannabis sativa, ext.",
-          "prio": 105
+          "prio": 50
         },
         {
           "name": "Cannabis",
