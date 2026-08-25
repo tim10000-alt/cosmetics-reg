@@ -1,6 +1,6 @@
 {
   "note": "veto/저신뢰로 자동교정 보류분(가시성용)",
-  "total": 88,
+  "total": 89,
   "findings": {
     "347e91c2-8abd-4fe6-8363-e05138042f97:KR": {
       "country": "KR",
@@ -529,6 +529,12 @@
       "name": "석유 유래물질 (Gases (petroleum), dehexanizer off)",
       "verdict": "un-ban 차단(권위금지)",
       "reason": "부타디엔 0.1%w/w 초과 함유 시 금지되는 조건부 규제이므로 'restricted'가 더 정확합니다."
+    },
+    "406106d7-e79e-410a-9c77-878afe3b2db7:CN": {
+      "country": "CN",
+      "name": "치오글라이콜릭애씨드 에스터류",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "Ingredient is restricted for hair perming products with specific maximum concentrations (8% or 11% as thioglycolic acid)."
     }
   }
 }
