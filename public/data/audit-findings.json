@@ -1,6 +1,6 @@
 {
   "note": "veto/저신뢰로 자동교정 보류분(가시성용)",
-  "total": 92,
+  "total": 94,
   "findings": {
     "347e91c2-8abd-4fe6-8363-e05138042f97:KR": {
       "country": "KR",
@@ -553,6 +553,18 @@
       "name": "메틸티오글라이콜레이트",
       "verdict": "un-ban 차단(권위금지)",
       "reason": "두발퍼머제에 대해 최대 11% (티오글라이콜산으로 계산)까지 허용되는 제한 물질입니다."
+    },
+    "a6bda78f-bda1-4cf8-9e5e-84d02c51c53b:CN": {
+      "country": "CN",
+      "name": "셀레늄설파이드",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "NMPA regulations restrict Selenium Sulfide for use in anti-dandruff shampoos with a maximum concentration of 1% and specific labeling requirements."
+    },
+    "cd90f232-8db0-4f54-9c70-45513f293c46:CN": {
+      "country": "CN",
+      "name": "알루미늄지르코늄테트라클로로하이드레이트",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "The ingredient is restricted for use in antiperspirants with a maximum concentration of 20% (as water-soluble aluminum zirconium chloride hydroxide)."
     }
   }
 }
