@@ -1,6 +1,6 @@
 {
   "note": "veto/저신뢰로 자동교정 보류분(가시성용)",
-  "total": 94,
+  "total": 95,
   "findings": {
     "347e91c2-8abd-4fe6-8363-e05138042f97:KR": {
       "country": "KR",
@@ -565,6 +565,12 @@
       "name": "알루미늄지르코늄테트라클로로하이드레이트",
       "verdict": "un-ban 차단(권위금지)",
       "reason": "The ingredient is restricted for use in antiperspirants with a maximum concentration of 20% (as water-soluble aluminum zirconium chloride hydroxide)."
+    },
+    "eb7659e0-99de-431e-b043-9d6712731fc5:CN": {
+      "country": "CN",
+      "name": "알칼리토금속설파이드류",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "The ingredient is restricted for depilatory products with a maximum concentration of 6% (as sulfur) and pH conditions."
     }
   }
 }
