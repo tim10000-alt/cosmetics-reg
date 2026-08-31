@@ -1,6 +1,6 @@
 {
   "note": "veto/저신뢰로 자동교정 보류분(가시성용)",
-  "total": 96,
+  "total": 99,
   "findings": {
     "347e91c2-8abd-4fe6-8363-e05138042f97:KR": {
       "country": "KR",
@@ -577,6 +577,24 @@
       "name": "리튬설파이드",
       "verdict": "un-ban 차단(권위금지)",
       "reason": "It is restricted for depilatory products with a maximum concentration of 2% (as sulfur) and pH <= 12.7."
+    },
+    "18c2a585-2d5a-4ac7-8616-a8efe3d190b4:CN": {
+      "country": "CN",
+      "name": "테트라보레이트",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "중국 화장품안전기술규범에 따라 목욕용품 18%, 퍼머제품 8%로 제한적으로 사용 가능합니다."
+    },
+    "85bdecf2-8c8b-40fe-8279-586166fb2fc2:CN": {
+      "country": "CN",
+      "name": "석유 유래물질 (Gases (petroleum), C6-8 catalytic reformer)",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "부타디엔 0.1%w/w를 초과하여 함유하는 경우에만 금지되므로, 조건부 허용(restricted)으로 분류됩니다."
+    },
+    "561b9b0c-a24b-4e47-89df-e6e57c60c80f:CN": {
+      "country": "CN",
+      "name": "부틸티오글라이콜레이트",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "부틸티오글라이콜레이트는 중국 화장품안전기술규범(2015/2021) 표3에 두발퍼머제에 제한적으로 허용되는 성분으로 명시되어 있습니다."
     }
   }
 }
