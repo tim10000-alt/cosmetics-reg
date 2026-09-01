@@ -1,6 +1,6 @@
 {
   "note": "veto/저신뢰로 자동교정 보류분(가시성용)",
-  "total": 99,
+  "total": 101,
   "findings": {
     "347e91c2-8abd-4fe6-8363-e05138042f97:KR": {
       "country": "KR",
@@ -595,6 +595,18 @@
       "name": "부틸티오글라이콜레이트",
       "verdict": "un-ban 차단(권위금지)",
       "reason": "부틸티오글라이콜레이트는 중국 화장품안전기술규범(2015/2021) 표3에 두발퍼머제에 제한적으로 허용되는 성분으로 명시되어 있습니다."
+    },
+    "9b5df999-0c50-44e1-8387-9d743a627f88:CN": {
+      "country": "CN",
+      "name": "알루미늄지르코늄옥타클로로하이드레이트",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "Aluminum zirconium octachlorohydrate is restricted for use in antiperspirants with a maximum concentration of 20% (as aluminum zirconium chloride hydroxide) or 5.4% (as zirconium) in China."
+    },
+    "bd12aa5c-e28f-4b8f-a8ed-3836e3e29c41:CN": {
+      "country": "CN",
+      "name": "석유 유래물질 (Gases (petroleum), catalytic reformed naphtha stripper overhead)",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "부타디엔 함량에 따라 금지 여부가 결정되므로, 'banned'가 아닌 'restricted'가 올바른 표기임."
     }
   }
 }
