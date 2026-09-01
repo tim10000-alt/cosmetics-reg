@@ -1,5 +1,5 @@
 {
-  "total": 435,
+  "total": 432,
   "note": "같은 CAS 분절 카드 간 banned↔허용 충돌(false-banned/allowed 후보). limit-overrides 로 검토 교정.",
   "conflicts": [
     {
@@ -1280,40 +1280,6 @@
     },
     {
       "cc": "CN",
-      "cas": "61702-44-1",
-      "banned": [
-        {
-          "name": "2-Chloro-p-Phenylenediamine Sulfate",
-          "prio": 50
-        }
-      ],
-      "allowed": [
-        {
-          "name": "2-Chloro-p-phenylenediamine sulfate",
-          "status": "listed",
-          "prio": 100
-        }
-      ]
-    },
-    {
-      "cc": "CN",
-      "cas": "6219-71-2",
-      "banned": [
-        {
-          "name": "2-Chloro-p-Phenylenediamine Sulfate",
-          "prio": 50
-        }
-      ],
-      "allowed": [
-        {
-          "name": "2-Chloro-p-phenylenediamine sulfate",
-          "status": "listed",
-          "prio": 100
-        }
-      ]
-    },
-    {
-      "cc": "CN",
       "cas": "89958-21-4",
       "banned": [
         {
@@ -1630,27 +1596,6 @@
       "allowed": [
         {
           "name": "CI 45425",
-          "status": "listed",
-          "prio": 100
-        }
-      ]
-    },
-    {
-      "cc": "CN",
-      "cas": "113715-27-8",
-      "banned": [
-        {
-          "name": "2,4-Diamino-5-methylphenoxyethanol",
-          "prio": 50
-        },
-        {
-          "name": "2,4-Diamino-5-methylphenoxyethanol and its salts",
-          "prio": 50
-        }
-      ],
-      "allowed": [
-        {
-          "name": "2,4-Diamino-5-Methylphenoxyethanol HCL",
           "status": "listed",
           "prio": 100
         }
@@ -5845,6 +5790,61 @@
       "allowed": [
         {
           "name": "CI 50420",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "2118-39-0",
+      "banned": [
+        {
+          "name": "Tetrasodium 6-amino-4-hydroxy-3-[[7-sulphonato-4-[(4-sulphonatophenyl)azo]-1-naphthyl]azo]naphthalene-2,7-disulphonate (Food Black 2; CI 27755) when used as a substance in hair dye products",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 27755",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "4548-53-2",
+      "banned": [
+        {
+          "name": "Disodium 3-[(2,4-dimethyl-5-sulphonatophenyl)azo]-4-hydroxynaphthalene-1-sulphonate (Ponceaux SX; CI 14700) when used as a substance in hair dye products",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 14700",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "19381-50-1",
+      "banned": [
+        {
+          "name": "Trisodium tris[5,6-dihydro-5-(hydroxyimino)-6-oxonaphthalene-2-sulphonate(2-)-N5,O6]ferrate(3-); (Acid Green 1; CI 10020) when used as a substance in hair dye products",
+          "prio": 50
+        },
+        {
+          "name": "Acid Green 1",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 10020",
           "status": "listed",
           "prio": 100
         }
