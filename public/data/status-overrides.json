@@ -450,7 +450,7 @@
       "source_match": "MFDS",
       "inci": "Lauralkonium Bromide",
       "ko": "라우랄코늄브로마이드",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "951d565d-eaec-4e56-bafe-ff5634505660",
@@ -1330,7 +1330,7 @@
       "source_match": "MFDS",
       "inci": "Lauralkonium Bromide",
       "ko": "라우랄코늄브로마이드",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "dba92452-f840-45ee-b78b-2ef91e46ee7d",

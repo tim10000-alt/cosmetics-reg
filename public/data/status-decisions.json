@@ -538,8 +538,7 @@
       "ko": "라우랄코늄브로마이드",
       "country": "CN",
       "verdict": "restricted",
-      "by": "claude-judge",
-      "why": "허용 배합한도(농도) 명시",
+      "by": "deterministic-eu-restricted",
       "source_match": "MFDS"
     },
     "61d831e5-e13d-48a7-b988-6f9b53024ff9:CN": {
@@ -1437,8 +1436,7 @@
       "ko": "라우랄코늄브로마이드",
       "country": "KR",
       "verdict": "restricted",
-      "by": "claude-judge",
-      "why": "허용 배합한도(농도) 명시",
+      "by": "deterministic-eu-restricted",
       "source_match": "MFDS"
     },
     "1f09854a-c485-4948-add6-ac730805b2b5:KR": {
