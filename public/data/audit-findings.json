@@ -1,6 +1,6 @@
 {
   "note": "veto/저신뢰로 자동교정 보류분(가시성용)",
-  "total": 101,
+  "total": 102,
   "findings": {
     "347e91c2-8abd-4fe6-8363-e05138042f97:KR": {
       "country": "KR",
@@ -607,6 +607,12 @@
       "name": "석유 유래물질 (Gases (petroleum), catalytic reformed naphtha stripper overhead)",
       "verdict": "un-ban 차단(권위금지)",
       "reason": "부타디엔 함량에 따라 금지 여부가 결정되므로, 'banned'가 아닌 'restricted'가 올바른 표기임."
+    },
+    "21c5bc5a-02be-4b75-a474-d453b74f91c2:CN": {
+      "country": "CN",
+      "name": "석유 유래물질 (Extracts (petroleum), heavy naphthenic distillate solvent, hydrodesulfurised)",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "NMPA regulations restrict petroleum-derived substances (CAS 93763-10-1) if they contain >3% w/w DMSO extract."
     }
   }
 }
