@@ -510,7 +510,7 @@
       "source_match": "MFDS",
       "inci": "Cetalkonium Chloride",
       "ko": "세탈코늄클로라이드",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "0ea81c0f-15ac-4175-b270-433377cf212b",
@@ -1380,7 +1380,7 @@
       "source_match": "MFDS",
       "inci": "Cetalkonium Chloride",
       "ko": "세탈코늄클로라이드",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "0ea81c0f-15ac-4175-b270-433377cf212b",

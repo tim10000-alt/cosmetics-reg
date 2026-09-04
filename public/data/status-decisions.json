@@ -595,8 +595,7 @@
       "ko": "세탈코늄클로라이드",
       "country": "CN",
       "verdict": "restricted",
-      "by": "claude-judge",
-      "why": "허용 배합한도(농도) 명시",
+      "by": "deterministic-eu-restricted",
       "source_match": "MFDS"
     },
     "0ea81c0f-15ac-4175-b270-433377cf212b:CN": {
@@ -1487,8 +1486,7 @@
       "ko": "세탈코늄클로라이드",
       "country": "KR",
       "verdict": "restricted",
-      "by": "claude-judge",
-      "why": "허용 배합한도(농도) 명시",
+      "by": "deterministic-eu-restricted",
       "source_match": "MFDS"
     },
     "0ea81c0f-15ac-4175-b270-433377cf212b:KR": {
