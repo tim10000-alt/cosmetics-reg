@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-03T21:11:00.200Z",
-  "totalRegs": 95368,
+  "generated_at": "2026-09-04T20:53:28.158Z",
+  "totalRegs": 95366,
   "coverage": {
     "AR": 4832,
     "BO": 2229,
@@ -27,7 +27,7 @@
     "BO": 2229,
     "BR": 1037,
     "CA": 582,
-    "CN": 10448,
+    "CN": 10450,
     "CO": 2229,
     "EC": 2229,
     "EU": 2131,
@@ -68,8 +68,8 @@
     "US:us_fda_cosmetics_announcements",
     "VN:vn_vietnam_dav",
     "CA:ca_health_canada_cosmetic_ingredient_hotlis",
-    "MY:my_malaysia_npra_cosmetic",
     "PH:ph_philippines_fda_cosmetic",
+    "KR:kr_mfds",
     "TW:tw_tfda_data"
   ],
   "checked_at_note": "matches regulations-query primary-row logic"
