@@ -1,5 +1,5 @@
 {
-  "total": 435,
+  "total": 434,
   "note": "같은 CAS 분절 카드 간 banned↔허용 충돌(false-banned/allowed 후보). limit-overrides 로 검토 교정.",
   "conflicts": [
     {
@@ -734,33 +734,6 @@
     },
     {
       "cc": "CN",
-      "cas": "68989-01-5",
-      "banned": [
-        {
-          "name": "Myristalkonium Saccharinate",
-          "prio": 50
-        }
-      ],
-      "allowed": [
-        {
-          "name": "Benzalkonium Bromide",
-          "status": "listed",
-          "prio": 100
-        },
-        {
-          "name": "Benzalkonium Saccharinate",
-          "status": "listed",
-          "prio": 100
-        },
-        {
-          "name": "Benzalkonium chloride, bromide and saccharinate",
-          "status": "restricted",
-          "prio": 100
-        }
-      ]
-    },
-    {
-      "cc": "CN",
       "cas": "65072-01-7",
       "banned": [
         {
@@ -1263,7 +1236,7 @@
         },
         {
           "name": "2-Nitro-1,4-Benzenediamine",
-          "prio": 50
+          "prio": 105
         },
         {
           "name": "2-Nitro-p-phenylenediamine and its salts, when used as a substance in hair dye products / 18266-52-9 / 242-144-9 1",
@@ -5845,6 +5818,23 @@
       "allowed": [
         {
           "name": "CI 50420",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "2118-39-0",
+      "banned": [
+        {
+          "name": "Tetrasodium 6-amino-4-hydroxy-3-[[7-sulphonato-4-[(4-sulphonatophenyl)azo]-1-naphthyl]azo]naphthalene-2,7-disulphonate (Food Black 2; CI 27755) when used as a substance in hair dye products",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 27755",
           "status": "listed",
           "prio": 100
         }
