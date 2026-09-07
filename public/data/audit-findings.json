@@ -1,6 +1,6 @@
 {
   "note": "veto/저신뢰로 자동교정 보류분(가시성용)",
-  "total": 103,
+  "total": 104,
   "findings": {
     "347e91c2-8abd-4fe6-8363-e05138042f97:KR": {
       "country": "KR",
@@ -619,6 +619,12 @@
       "name": "알루미늄지르코늄펜타클로로하이드렉스글라이신",
       "verdict": "un-ban 차단(권위금지)",
       "reason": "The provided condition explicitly states it is restricted for antiperspirants with a maximum concentration of 20% (calculated as aluminum zirconium chloride hydroxide)."
+    },
+    "f0aa757a-4ac4-4b02-bb1a-1bba497398cb:CN": {
+      "country": "CN",
+      "name": "알루미늄지르코늄테트라클로로하이드렉스피지",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "알루미늄지르코늄테트라클로로하이드렉스피지는 중국에서 땀억제제에 한해 최대 20%(물수 알루미늄 지르코늄 클로라이드 히드록사이드로 계산)까지 허용되는 제한물질입니다."
     }
   }
 }
