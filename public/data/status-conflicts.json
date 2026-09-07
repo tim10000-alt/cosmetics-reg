@@ -1,5 +1,5 @@
 {
-  "total": 434,
+  "total": 433,
   "note": "같은 CAS 분절 카드 간 banned↔허용 충돌(false-banned/allowed 후보). limit-overrides 로 검토 교정.",
   "conflicts": [
     {
@@ -734,6 +734,33 @@
     },
     {
       "cc": "CN",
+      "cas": "68989-01-5",
+      "banned": [
+        {
+          "name": "Myristalkonium Saccharinate",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Benzalkonium Bromide",
+          "status": "listed",
+          "prio": 100
+        },
+        {
+          "name": "Benzalkonium Saccharinate",
+          "status": "listed",
+          "prio": 100
+        },
+        {
+          "name": "Benzalkonium chloride, bromide and saccharinate",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
       "cas": "65072-01-7",
       "banned": [
         {
@@ -1236,7 +1263,7 @@
         },
         {
           "name": "2-Nitro-1,4-Benzenediamine",
-          "prio": 105
+          "prio": 50
         },
         {
           "name": "2-Nitro-p-phenylenediamine and its salts, when used as a substance in hair dye products / 18266-52-9 / 242-144-9 1",
@@ -1246,40 +1273,6 @@
       "allowed": [
         {
           "name": "2-Nitro-p-Phenylenediamine",
-          "status": "listed",
-          "prio": 100
-        }
-      ]
-    },
-    {
-      "cc": "CN",
-      "cas": "61702-44-1",
-      "banned": [
-        {
-          "name": "2-Chloro-p-Phenylenediamine Sulfate",
-          "prio": 50
-        }
-      ],
-      "allowed": [
-        {
-          "name": "2-Chloro-p-phenylenediamine sulfate",
-          "status": "listed",
-          "prio": 100
-        }
-      ]
-    },
-    {
-      "cc": "CN",
-      "cas": "6219-71-2",
-      "banned": [
-        {
-          "name": "2-Chloro-p-Phenylenediamine Sulfate",
-          "prio": 50
-        }
-      ],
-      "allowed": [
-        {
-          "name": "2-Chloro-p-phenylenediamine sulfate",
           "status": "listed",
           "prio": 100
         }
@@ -5835,6 +5828,23 @@
       "allowed": [
         {
           "name": "CI 27755",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "4548-53-2",
+      "banned": [
+        {
+          "name": "Disodium 3-[(2,4-dimethyl-5-sulphonatophenyl)azo]-4-hydroxynaphthalene-1-sulphonate (Ponceaux SX; CI 14700) when used as a substance in hair dye products",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 14700",
           "status": "listed",
           "prio": 100
         }
