@@ -1,5 +1,5 @@
 {
-  "total": 433,
+  "total": 436,
   "note": "같은 CAS 분절 카드 간 banned↔허용 충돌(false-banned/allowed 후보). limit-overrides 로 검토 교정.",
   "conflicts": [
     {
@@ -734,33 +734,6 @@
     },
     {
       "cc": "CN",
-      "cas": "68989-01-5",
-      "banned": [
-        {
-          "name": "Myristalkonium Saccharinate",
-          "prio": 50
-        }
-      ],
-      "allowed": [
-        {
-          "name": "Benzalkonium Bromide",
-          "status": "listed",
-          "prio": 100
-        },
-        {
-          "name": "Benzalkonium Saccharinate",
-          "status": "listed",
-          "prio": 100
-        },
-        {
-          "name": "Benzalkonium chloride, bromide and saccharinate",
-          "status": "restricted",
-          "prio": 100
-        }
-      ]
-    },
-    {
-      "cc": "CN",
       "cas": "65072-01-7",
       "banned": [
         {
@@ -1204,6 +1177,40 @@
     },
     {
       "cc": "CN",
+      "cas": "62-38-4",
+      "banned": [
+        {
+          "name": "Phenyl Mercuric Acetate",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Phenyl Mercuric Benzoate",
+          "status": "restricted",
+          "prio": 105
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "94-43-9",
+      "banned": [
+        {
+          "name": "Phenyl Mercuric Acetate",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Phenyl Mercuric Benzoate",
+          "status": "restricted",
+          "prio": 105
+        }
+      ]
+    },
+    {
+      "cc": "CN",
       "cas": "83732-72-3",
       "banned": [
         {
@@ -1273,6 +1280,40 @@
       "allowed": [
         {
           "name": "2-Nitro-p-Phenylenediamine",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "61702-44-1",
+      "banned": [
+        {
+          "name": "2-Chloro-p-Phenylenediamine Sulfate",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "2-Chloro-p-phenylenediamine sulfate",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "6219-71-2",
+      "banned": [
+        {
+          "name": "2-Chloro-p-Phenylenediamine Sulfate",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "2-Chloro-p-phenylenediamine sulfate",
           "status": "listed",
           "prio": 100
         }
@@ -5794,57 +5835,6 @@
       "allowed": [
         {
           "name": "CI 74180",
-          "status": "listed",
-          "prio": 100
-        }
-      ]
-    },
-    {
-      "cc": "SG",
-      "cas": "8005-03-6",
-      "banned": [
-        {
-          "name": "Nigrosine (CI 50420) when used as a substance in hair dye products",
-          "prio": 100
-        }
-      ],
-      "allowed": [
-        {
-          "name": "CI 50420",
-          "status": "listed",
-          "prio": 100
-        }
-      ]
-    },
-    {
-      "cc": "SG",
-      "cas": "2118-39-0",
-      "banned": [
-        {
-          "name": "Tetrasodium 6-amino-4-hydroxy-3-[[7-sulphonato-4-[(4-sulphonatophenyl)azo]-1-naphthyl]azo]naphthalene-2,7-disulphonate (Food Black 2; CI 27755) when used as a substance in hair dye products",
-          "prio": 100
-        }
-      ],
-      "allowed": [
-        {
-          "name": "CI 27755",
-          "status": "listed",
-          "prio": 100
-        }
-      ]
-    },
-    {
-      "cc": "SG",
-      "cas": "4548-53-2",
-      "banned": [
-        {
-          "name": "Disodium 3-[(2,4-dimethyl-5-sulphonatophenyl)azo]-4-hydroxynaphthalene-1-sulphonate (Ponceaux SX; CI 14700) when used as a substance in hair dye products",
-          "prio": 100
-        }
-      ],
-      "allowed": [
-        {
-          "name": "CI 14700",
           "status": "listed",
           "prio": 100
         }
