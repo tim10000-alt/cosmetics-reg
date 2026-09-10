@@ -1,5 +1,5 @@
 {
-  "total": 436,
+  "total": 434,
   "note": "같은 CAS 분절 카드 간 banned↔허용 충돌(false-banned/allowed 후보). limit-overrides 로 검토 교정.",
   "conflicts": [
     {
@@ -1177,40 +1177,6 @@
     },
     {
       "cc": "CN",
-      "cas": "62-38-4",
-      "banned": [
-        {
-          "name": "Phenyl Mercuric Acetate",
-          "prio": 50
-        }
-      ],
-      "allowed": [
-        {
-          "name": "Phenyl Mercuric Benzoate",
-          "status": "restricted",
-          "prio": 105
-        }
-      ]
-    },
-    {
-      "cc": "CN",
-      "cas": "94-43-9",
-      "banned": [
-        {
-          "name": "Phenyl Mercuric Acetate",
-          "prio": 50
-        }
-      ],
-      "allowed": [
-        {
-          "name": "Phenyl Mercuric Benzoate",
-          "status": "restricted",
-          "prio": 105
-        }
-      ]
-    },
-    {
-      "cc": "CN",
       "cas": "83732-72-3",
       "banned": [
         {
@@ -1388,7 +1354,7 @@
         {
           "name": "Thiourea",
           "status": "restricted",
-          "prio": 50
+          "prio": 105
         }
       ]
     },
@@ -5835,6 +5801,40 @@
       "allowed": [
         {
           "name": "CI 74180",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "8005-03-6",
+      "banned": [
+        {
+          "name": "Nigrosine (CI 50420) when used as a substance in hair dye products",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 50420",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "2118-39-0",
+      "banned": [
+        {
+          "name": "Tetrasodium 6-amino-4-hydroxy-3-[[7-sulphonato-4-[(4-sulphonatophenyl)azo]-1-naphthyl]azo]naphthalene-2,7-disulphonate (Food Black 2; CI 27755) when used as a substance in hair dye products",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 27755",
           "status": "listed",
           "prio": 100
         }
