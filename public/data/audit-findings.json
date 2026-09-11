@@ -1,6 +1,6 @@
 {
   "note": "veto/저신뢰로 자동교정 보류분(가시성용)",
-  "total": 105,
+  "total": 106,
   "findings": {
     "347e91c2-8abd-4fe6-8363-e05138042f97:KR": {
       "country": "KR",
@@ -631,6 +631,12 @@
       "name": "포름알데하이드 및 p-폼알데하이드",
       "verdict": "un-ban 차단(권위금지)",
       "reason": "중국 화장품안전기술규범에 따라 손톱강화제에 5%까지 사용이 제한적으로 허용됩니다."
+    },
+    "774e7c8b-8950-40a3-9892-307869319669:CN": {
+      "country": "CN",
+      "name": "석유 유래물질 (Distillates (petroleum), hydrotreated light naphthenic)",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "This petroleum distillate (CAS 64742-53-6) is prohibited in China only if it contains > 3% w/w DMSO extract."
     }
   }
 }
