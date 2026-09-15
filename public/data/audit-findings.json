@@ -1,6 +1,6 @@
 {
   "note": "veto/저신뢰로 자동교정 보류분(가시성용)",
-  "total": 106,
+  "total": 107,
   "findings": {
     "347e91c2-8abd-4fe6-8363-e05138042f97:KR": {
       "country": "KR",
@@ -637,6 +637,12 @@
       "name": "석유 유래물질 (Distillates (petroleum), hydrotreated light naphthenic)",
       "verdict": "un-ban 차단(권위금지)",
       "reason": "This petroleum distillate (CAS 64742-53-6) is prohibited in China only if it contains > 3% w/w DMSO extract."
+    },
+    "46c2a3fb-6dd8-4167-8ef0-6b995a4f5468:CN": {
+      "country": "CN",
+      "name": "탄화수소류 (Hydrocarbons, C20-50, solvent dewaxed heavy paraffinic, hydrotreated)",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "This ingredient is restricted in China, allowed if DMSO extract content is not more than 3% w/w."
     }
   }
 }
