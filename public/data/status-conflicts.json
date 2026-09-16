@@ -1,5 +1,5 @@
 {
-  "total": 430,
+  "total": 429,
   "note": "같은 CAS 분절 카드 간 banned↔허용 충돌(false-banned/allowed 후보). limit-overrides 로 검토 교정.",
   "conflicts": [
     {
@@ -727,33 +727,6 @@
       "allowed": [
         {
           "name": "Methylene Chloride",
-          "status": "restricted",
-          "prio": 100
-        }
-      ]
-    },
-    {
-      "cc": "CN",
-      "cas": "68989-01-5",
-      "banned": [
-        {
-          "name": "Myristalkonium Saccharinate",
-          "prio": 50
-        }
-      ],
-      "allowed": [
-        {
-          "name": "Benzalkonium Bromide",
-          "status": "listed",
-          "prio": 100
-        },
-        {
-          "name": "Benzalkonium Saccharinate",
-          "status": "listed",
-          "prio": 100
-        },
-        {
-          "name": "Benzalkonium chloride, bromide and saccharinate",
           "status": "restricted",
           "prio": 100
         }
@@ -5827,6 +5800,23 @@
       "allowed": [
         {
           "name": "2,6-Dihydroxy-3,4-Dimethyl-Pyridine and its salts",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "337906-36-2",
+      "banned": [
+        {
+          "name": "2-Methoxymethyl-p-Phenylenediamine Sulfate",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "2-Methoxymethyl-p-Phenylenediamine",
           "status": "restricted",
           "prio": 100
         }
