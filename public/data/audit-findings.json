@@ -1,6 +1,6 @@
 {
   "note": "veto/저신뢰로 자동교정 보류분(가시성용)",
-  "total": 107,
+  "total": 110,
   "findings": {
     "347e91c2-8abd-4fe6-8363-e05138042f97:KR": {
       "country": "KR",
@@ -643,6 +643,24 @@
       "name": "탄화수소류 (Hydrocarbons, C20-50, solvent dewaxed heavy paraffinic, hydrotreated)",
       "verdict": "un-ban 차단(권위금지)",
       "reason": "This ingredient is restricted in China, allowed if DMSO extract content is not more than 3% w/w."
+    },
+    "be5e9286-63e1-4ee8-ac60-eb59b21e5a29:CN": {
+      "country": "CN",
+      "name": "석유 유래물질 (Coal liquids, liq. solvent extn.)",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "The substance is restricted based on its benzo[a]pyrene content, with a maximum allowed concentration of 0.005% for benzo[a]pyrene."
+    },
+    "8402b3db-20aa-4b02-aa6d-4ff9599d2464:CN": {
+      "country": "CN",
+      "name": "소듐티오글라이콜레이트",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "중국 화장품안전기술규범에 따라 퍼머제품, 탈모제품 등에 최대 8% (티오글리콜산 기준)까지 제한적으로 사용 가능합니다."
+    },
+    "ee195b3e-07de-4ffc-9834-407c129a0aa7:CN": {
+      "country": "CN",
+      "name": "크레오소트",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "Banned only if benzo[a]pyrene content exceeds 0.005% w/w, indicating a restricted status."
     }
   }
 }
