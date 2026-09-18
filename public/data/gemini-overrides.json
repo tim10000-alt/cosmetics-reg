@@ -1,6 +1,6 @@
 {
   "note": "Gemini 듀얼합의 자동교정(법령변경 자가치유) — apply-gemini-overrides 가 prio105 로 baking. un-ban 은 권위 annex veto. 사람 개입 0.",
-  "total": 234,
+  "total": 235,
   "corrections": {
     "38629385-37bc-4757-85de-6fba8806a583:KR": {
       "ingredient_id": "38629385-37bc-4757-85de-6fba8806a583",
@@ -2575,6 +2575,17 @@
       "reason": "제공된 조건에 '착색제 사용허가 범위: 각종 화장품'으로 명시되어 있어, 'unknown'이 아닌 'listed' 성분입니다.",
       "by": "gemini-consensus",
       "name": "적색산화철"
+    },
+    "42fa96fc-a051-488b-a58e-a2b82f50595c:CN": {
+      "ingredient_id": "42fa96fc-a051-488b-a58e-a2b82f50595c",
+      "country_code": "CN",
+      "status": "restricted",
+      "max": 3,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "벤잘코늄클로라이드는 중국에서 씻어내는 제품에 최대 3%, 기타 제품에 최대 0.1%까지 사용이 제한적으로 허용됩니다.",
+      "by": "gemini-consensus",
+      "name": "벤잘코늄클로라이드"
     }
   }
 }
