@@ -1,6 +1,6 @@
 {
   "note": "veto/저신뢰로 자동교정 보류분(가시성용)",
-  "total": 110,
+  "total": 111,
   "findings": {
     "347e91c2-8abd-4fe6-8363-e05138042f97:KR": {
       "country": "KR",
@@ -661,6 +661,12 @@
       "name": "크레오소트",
       "verdict": "un-ban 차단(권위금지)",
       "reason": "Banned only if benzo[a]pyrene content exceeds 0.005% w/w, indicating a restricted status."
+    },
+    "ea360cfe-e56c-4581-aadb-c7dfea86f4cc:CN": {
+      "country": "CN",
+      "name": "포타슘설파이드",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "Conditions clearly indicate it is restricted for depilatory use with a maximum concentration of 2% and pH≤12.7."
     }
   }
 }
