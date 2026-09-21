@@ -1,6 +1,6 @@
 {
   "note": "Gemini 듀얼합의 자동교정(법령변경 자가치유) — apply-gemini-overrides 가 prio105 로 baking. un-ban 은 권위 annex veto. 사람 개입 0.",
-  "total": 255,
+  "total": 266,
   "corrections": {
     "38629385-37bc-4757-85de-6fba8806a583:KR": {
       "ingredient_id": "38629385-37bc-4757-85de-6fba8806a583",
@@ -2494,8 +2494,8 @@
       "status": "restricted",
       "max": null,
       "from": "restricted",
-      "confidence": 0.9,
-      "reason": "The ingredient is restricted due to furocoumarin content, which must not exceed 1 mg/kg in leave-on products in China.",
+      "confidence": 1,
+      "reason": "Restricted due to furocoumarin content, which must not exceed 1 mg/kg in leave-on products.",
       "by": "gemini-consensus",
       "name": "왕귤/자몽수"
     },
@@ -2506,7 +2506,7 @@
       "max": null,
       "from": "banned",
       "confidence": 0.9,
-      "reason": "This industrial-grade fuel oil is not suitable for cosmetic use and is implicitly banned.",
+      "reason": "This industrial-grade fuel oil is implicitly banned for cosmetic use due to its nature.",
       "by": "gemini-consensus",
       "name": "연료 오일, heavy, high-sulfur"
     },
@@ -2517,7 +2517,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "Cadmium and its compounds are explicitly listed as prohibited substances in China's cosmetic regulations.",
+      "reason": "Cadmium and its compounds, including Cadmium formate, are explicitly prohibited in China's cosmetic regulations.",
       "by": "gemini-consensus",
       "name": "카드뮴포메이트"
     },
@@ -2528,7 +2528,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "Benzo[j]fluoranthene is a PAH, which are explicitly listed as prohibited substances in China's cosmetic regulations.",
+      "reason": "Benzo[j]fluoranthene is a PAH, and PAHs are explicitly prohibited in China's cosmetic regulations.",
       "by": "gemini-consensus",
       "name": "벤조[j]플루오란텐"
     },
@@ -2550,7 +2550,7 @@
       "max": null,
       "from": "banned",
       "confidence": 0.9,
-      "reason": "Many complex azo dyes are prohibited in cosmetics due to safety concerns; no information suggests otherwise for this substance.",
+      "reason": "Many complex azo dyes are prohibited in cosmetics in China due to safety concerns, and this substance falls into that category.",
       "by": "gemini-consensus",
       "name": "3-[(4-(아세틸아미노)페닐)아조]-4-하이드록시-7-[[[[5-하이드록시-6-(페닐아조)-7-설포-2-나프탈레닐]아미노]카보닐]아미노]-2-나프탈렌설포닉애씨드 및 그 염류"
     },
@@ -2571,8 +2571,8 @@
       "status": "restricted",
       "max": 3,
       "from": "restricted",
-      "confidence": 0.9,
-      "reason": "Cocoalkonium Chloride is restricted in China, with a maximum concentration of 3% for rinse-off hair products.",
+      "confidence": 1,
+      "reason": "Cocoalkonium Chloride is restricted in China with a maximum concentration of 3% for rinse-off hair products.",
       "by": "gemini-consensus",
       "name": "코코알코늄클로라이드"
     },
@@ -2583,7 +2583,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "Vaccines are medical products and not permitted in cosmetics.",
+      "reason": "Vaccines are medical products and are not permitted as cosmetic ingredients in China.",
       "by": "gemini-consensus",
       "name": "소아마비바이러스백신"
     },
@@ -2616,7 +2616,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "Tributyl phosphate is listed as a prohibited substance in China's Safety and Technical Standards for Cosmetics (STSC) Table 1.",
+      "reason": "Tributyl phosphate is explicitly listed as a prohibited substance in China's Safety and Technical Standards for Cosmetics (STSC) Table 1.",
       "by": "gemini-consensus",
       "name": "트라이부틸포스페이트"
     },
@@ -2627,7 +2627,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "DNOC (4,6-dinitro-o-cresol) is listed as a prohibited substance in China's Safety and Technical Standards for Cosmetics (STSC) Table 1.",
+      "reason": "DNOC (4,6-dinitro-o-cresol) is explicitly listed as a prohibited substance in China's Safety and Technical Standards for Cosmetics (STSC).",
       "by": "gemini-consensus",
       "name": "디엔오씨(4,6-다이나이트로-o-크레솔)"
     },
@@ -2637,8 +2637,8 @@
       "status": "banned",
       "max": null,
       "from": "banned",
-      "confidence": 0.9,
-      "reason": "Petroleum gas oil, heavy vacuum (CAS 64741-57-7) is listed as a prohibited substance in China's Safety and Technical Standards for Cosmetics (STSC) Table 1.",
+      "confidence": 1,
+      "reason": "Petroleum gas oil, heavy vacuum (CAS 64741-57-7) is explicitly listed as a prohibited substance in China's Safety and Technical Standards for Cosmetics.",
       "by": "gemini-consensus",
       "name": "석유 가스 오일, heavy vacuum"
     },
@@ -2806,6 +2806,127 @@
       "reason": "NMPA Cosmetic Safety Technical Standard Table 1 lists it as a prohibited substance (No. 472).",
       "by": "gemini-consensus",
       "name": "다이클로로살리실아닐리드"
+    },
+    "93184357-bd67-43c2-a227-b7b471e60b97:KR": {
+      "ingredient_id": "93184357-bd67-43c2-a227-b7b471e60b97",
+      "country_code": "KR",
+      "status": "restricted",
+      "max": 0.002,
+      "from": "restricted",
+      "confidence": 1,
+      "reason": "메틸옥틴카보네이트는 한국 화장품 안전기준 등에 관한 규정에서 0.002%로 배합한도가 명시되어 있습니다.",
+      "by": "gemini-consensus",
+      "name": "메틸옥틴카보네이트"
+    },
+    "1a09141d-d2eb-4084-977a-9ce9eac2d2cc:KR": {
+      "ingredient_id": "1a09141d-d2eb-4084-977a-9ce9eac2d2cc",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "아세닉펜타옥사이드는 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
+      "by": "gemini-consensus",
+      "name": "아세닉펜타옥사이드"
+    },
+    "4a387b9a-a702-4022-93cc-aa12b59003e4:KR": {
+      "ingredient_id": "4a387b9a-a702-4022-93cc-aa12b59003e4",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "메탈포스파이드는 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
+      "by": "gemini-consensus",
+      "name": "메탈포스파이드"
+    },
+    "bc4a55b3-d997-484c-af66-0b19ed614944:KR": {
+      "ingredient_id": "bc4a55b3-d997-484c-af66-0b19ed614944",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "하이드록시에틸-2,6-다이나이트로-p-아니시딘 및 그 염류는 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
+      "by": "gemini-consensus",
+      "name": "하이드록시에틸-2,6-다이나이트로-p-아니시딘 및 그 염류"
+    },
+    "10c6f7a7-a0ef-4372-8f84-99cf0c3edf1e:KR": {
+      "ingredient_id": "10c6f7a7-a0ef-4372-8f84-99cf0c3edf1e",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "마부테롤은 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
+      "by": "gemini-consensus",
+      "name": "마부테롤"
+    },
+    "7c85a0a7-ac65-44c0-be56-226f56ad833a:KR": {
+      "ingredient_id": "7c85a0a7-ac65-44c0-be56-226f56ad833a",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "파라티온-메틸은 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
+      "by": "gemini-consensus",
+      "name": "파라티온-메틸"
+    },
+    "cd18f3ff-b537-42ea-a574-5daf65b05ad1:KR": {
+      "ingredient_id": "cd18f3ff-b537-42ea-a574-5daf65b05ad1",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "디이에이-세테아레스-2포스페이트는 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
+      "by": "gemini-consensus",
+      "name": "디이에이-세테아레스-2포스페이트"
+    },
+    "8e0ec212-dc8b-40d5-b857-cff8255165ce:KR": {
+      "ingredient_id": "8e0ec212-dc8b-40d5-b857-cff8255165ce",
+      "country_code": "KR",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "다이옥세테드린 및 그 염류는 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
+      "by": "gemini-consensus",
+      "name": "다이옥세테드린 및 그 염류"
+    },
+    "b29a8a31-c559-4375-bda5-3ce50feaf58d:CN": {
+      "ingredient_id": "b29a8a31-c559-4375-bda5-3ce50feaf58d",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA Cosmetic Safety Technical Standard Table 2 explicitly lists Prunus laurocerasus L. as a prohibited plant.",
+      "by": "gemini-consensus",
+      "name": "월계수귀룽"
+    },
+    "8d76a1a8-21d8-4820-8b89-93b3c310d6c1:CN": {
+      "ingredient_id": "8d76a1a8-21d8-4820-8b89-93b3c310d6c1",
+      "country_code": "CN",
+      "status": "restricted",
+      "max": null,
+      "from": "restricted",
+      "confidence": 1,
+      "reason": "The substance is restricted with specific conditions regarding refining history and carcinogen absence.",
+      "by": "gemini-consensus",
+      "name": "석유 페트롤라툼 oxidised, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외"
+    },
+    "c8f5a7ac-1467-4cb6-9be3-47a64cd087ba:CN": {
+      "ingredient_id": "c8f5a7ac-1467-4cb6-9be3-47a64cd087ba",
+      "country_code": "CN",
+      "status": "listed",
+      "max": null,
+      "from": "unknown",
+      "confidence": 0.9,
+      "reason": "Red Iron Oxide is listed as a permitted colorant for various cosmetics in China.",
+      "by": "gemini-consensus",
+      "name": "적색산화철"
     }
   }
 }
