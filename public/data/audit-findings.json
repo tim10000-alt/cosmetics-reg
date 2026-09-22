@@ -1,6 +1,6 @@
 {
   "note": "veto/저신뢰로 자동교정 보류분(가시성용)",
-  "total": 111,
+  "total": 113,
   "findings": {
     "347e91c2-8abd-4fe6-8363-e05138042f97:KR": {
       "country": "KR",
@@ -667,6 +667,18 @@
       "name": "포타슘설파이드",
       "verdict": "un-ban 차단(권위금지)",
       "reason": "Conditions clearly indicate it is restricted for depilatory use with a maximum concentration of 2% and pH≤12.7."
+    },
+    "4919d909-db6d-4a72-a5ef-39a3293f7e9d:CN": {
+      "country": "CN",
+      "name": "알루미늄지르코늄테트라클로로하이드렉스피이지",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "NMPA regulations restrict its use as an antiperspirant with a maximum concentration of 20% (calculated as aluminum zirconium chloride hydroxide)."
+    },
+    "a78330a1-b885-4a2d-bf8b-6cea2c92cc24:CN": {
+      "country": "CN",
+      "name": "마그네슘티오글라이콜레이트",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "The ingredient is restricted with specific maximum use concentrations for various hair products, not banned."
     }
   }
 }
