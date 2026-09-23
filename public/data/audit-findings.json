@@ -1,6 +1,6 @@
 {
   "note": "veto/저신뢰로 자동교정 보류분(가시성용)",
-  "total": 113,
+  "total": 114,
   "findings": {
     "347e91c2-8abd-4fe6-8363-e05138042f97:KR": {
       "country": "KR",
@@ -679,6 +679,12 @@
       "name": "마그네슘티오글라이콜레이트",
       "verdict": "un-ban 차단(권위금지)",
       "reason": "The ingredient is restricted with specific maximum use concentrations for various hair products, not banned."
+    },
+    "0b66ea87-2587-44b1-a581-9c8d6aabbceb:CN": {
+      "country": "CN",
+      "name": "알루미늄지르코늄트리클로로하이드레이트",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "Explicitly listed as a restricted ingredient for antiperspirants with a maximum concentration of 20% (as anhydrous aluminum zirconium chloride hydroxide)."
     }
   }
 }
