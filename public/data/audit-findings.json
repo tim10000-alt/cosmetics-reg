@@ -1,6 +1,6 @@
 {
   "note": "veto/저신뢰로 자동교정 보류분(가시성용)",
-  "total": 114,
+  "total": 115,
   "findings": {
     "347e91c2-8abd-4fe6-8363-e05138042f97:KR": {
       "country": "KR",
@@ -685,6 +685,12 @@
       "name": "알루미늄지르코늄트리클로로하이드레이트",
       "verdict": "un-ban 차단(권위금지)",
       "reason": "Explicitly listed as a restricted ingredient for antiperspirants with a maximum concentration of 20% (as anhydrous aluminum zirconium chloride hydroxide)."
+    },
+    "f39904f9-6f4f-490b-adf1-1d0c4b056cee:CN": {
+      "country": "CN",
+      "name": "칼슘티오글라이콜레이트하이드록사이드",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "퍼머 및 탈모 제품에 특정 농도 및 pH 조건 하에 제한적으로 사용 가능합니다."
     }
   }
 }
