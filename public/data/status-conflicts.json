@@ -1,5 +1,5 @@
 {
-  "total": 431,
+  "total": 434,
   "note": "같은 CAS 분절 카드 간 banned↔허용 충돌(false-banned/allowed 후보). limit-overrides 로 검토 교정.",
   "conflicts": [
     {
@@ -734,10 +734,32 @@
     },
     {
       "cc": "CN",
-      "cas": "68989-01-5",
+      "cas": "65072-01-7",
       "banned": [
         {
-          "name": "Myristalkonium Saccharinate",
+          "name": "Hair Keratin Amino Acids",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Wheat Amino Acids",
+          "status": "listed",
+          "prio": 100
+        },
+        {
+          "name": "Oat Amino Acids",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "68391-01-5",
+      "banned": [
+        {
+          "name": "Benzalkonium Chloride",
           "prio": 50
         }
       ],
@@ -761,22 +783,71 @@
     },
     {
       "cc": "CN",
-      "cas": "65072-01-7",
+      "cas": "68424-85-1",
       "banned": [
         {
-          "name": "Hair Keratin Amino Acids",
+          "name": "Benzalkonium Chloride",
           "prio": 50
         }
       ],
       "allowed": [
         {
-          "name": "Wheat Amino Acids",
+          "name": "Benzalkonium Bromide",
           "status": "listed",
           "prio": 100
         },
         {
-          "name": "Oat Amino Acids",
+          "name": "Benzalkonium Saccharinate",
           "status": "listed",
+          "prio": 100
+        },
+        {
+          "name": "Benzalkonium chloride, bromide and saccharinate",
+          "status": "restricted",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "8001-54-5",
+      "banned": [
+        {
+          "name": "Benzalkonium Chloride",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Benzalkonium chloride",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "85409-22-9",
+      "banned": [
+        {
+          "name": "Benzalkonium Chloride",
+          "prio": 50
+        }
+      ],
+      "allowed": [
+        {
+          "name": "Benzalkonium Bromide",
+          "status": "listed",
+          "prio": 100
+        },
+        {
+          "name": "Benzalkonium Saccharinate",
+          "status": "listed",
+          "prio": 100
+        },
+        {
+          "name": "Benzalkonium chloride, bromide and saccharinate",
+          "status": "restricted",
           "prio": 100
         }
       ]
@@ -1627,7 +1698,7 @@
         },
         {
           "name": "N-Methyl-1,4-Diaminoanthraquinone, reaction products with epichlorohydrin and monoethanolamine (HC Blue No 4) and its salts",
-          "prio": 105
+          "prio": 50
         },
         {
           "name": "N-Methyl-1,4-diaminoanthraquinone, reaction products with epichlo rohydrin and monoethanolamine (HC Blue No. 4) and its salts, when used as a substance in hair dye products",
@@ -5766,73 +5837,6 @@
           "name": "CI 27755",
           "status": "listed",
           "prio": 100
-        }
-      ]
-    },
-    {
-      "cc": "SG",
-      "cas": "4548-53-2",
-      "banned": [
-        {
-          "name": "Disodium 3-[(2,4-dimethyl-5-sulphonatophenyl)azo]-4-hydroxynaphthalene-1-sulphonate (Ponceaux SX; CI 14700) when used as a substance in hair dye products",
-          "prio": 100
-        }
-      ],
-      "allowed": [
-        {
-          "name": "CI 14700",
-          "status": "listed",
-          "prio": 100
-        }
-      ]
-    },
-    {
-      "cc": "SG",
-      "cas": "19381-50-1",
-      "banned": [
-        {
-          "name": "Trisodium tris[5,6-dihydro-5-(hydroxyimino)-6-oxonaphthalene-2-sulphonate(2-)-N5,O6]ferrate(3-); (Acid Green 1; CI 10020) when used as a substance in hair dye products",
-          "prio": 50
-        },
-        {
-          "name": "Acid Green 1",
-          "prio": 100
-        }
-      ],
-      "allowed": [
-        {
-          "name": "CI 10020",
-          "status": "listed",
-          "prio": 100
-        }
-      ]
-    },
-    {
-      "cc": "SG",
-      "cas": "8024-12-2",
-      "banned": [
-        {
-          "name": "Lippia Citriodora Flower/Leaf/Stem Oil",
-          "prio": 50
-        },
-        {
-          "name": "Lippia Citriodora Leaf Oil",
-          "prio": 50
-        },
-        {
-          "name": "Lippia Citriodora Leaf/Flower Oil",
-          "prio": 50
-        },
-        {
-          "name": "Verbena oil (Lippia citriodora Kunth.), when used as a fragrance ingredient 4",
-          "prio": 100
-        }
-      ],
-      "allowed": [
-        {
-          "name": "Verbena essential oils (Lippia citriodora Kunth.)\n(Verbena absolute (Lippia citriodora Kunth.)除外)",
-          "status": "restricted",
-          "prio": 50
         }
       ]
     }
