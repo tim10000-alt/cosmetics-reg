@@ -1,6 +1,6 @@
 {
   "note": "veto/저신뢰로 자동교정 보류분(가시성용)",
-  "total": 116,
+  "total": 118,
   "findings": {
     "347e91c2-8abd-4fe6-8363-e05138042f97:KR": {
       "country": "KR",
@@ -697,6 +697,18 @@
       "name": "스트론튬티오글라이콜레이트",
       "verdict": "un-ban 차단(권위금지)",
       "reason": "스트론튬티오글라이콜레이트는 특정 용도 및 농도 제한 하에 허용되는 제한 성분입니다. (티오글리콜산으로 계산 시 일반용 8%)"
+    },
+    "dc31353b-36db-41db-9f87-f130d43b4bc3:CN": {
+      "country": "CN",
+      "name": "치오글라이콜릭애씨드, 그 염류 및 에스텔류",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "The ingredient is restricted for use in perm and hair removal products with specific concentration limits in China."
+    },
+    "ded3195e-64fb-4b83-a6ae-be6b8dee5b33:CN": {
+      "country": "CN",
+      "name": "석유 유래물질 (Lubricating oils (petroleum), hydrocracked nonarom solvent-deparaffined)",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "Listed in China's Prohibited Ingredients for Cosmetics (CSTS 2015, Table 1) if containing > 3% w/w DMSO extract, implying a purity restriction."
     }
   }
 }
