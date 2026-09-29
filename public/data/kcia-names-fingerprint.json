@@ -1,8 +1,8 @@
 {
-  "sha": "fb7fd830066ad142f758c984af85e465ecd6c69c6ba83e5842c9ba2ef7acc6fb",
-  "parsed_at": "2026-09-01T21:07:49.924Z",
-  "parsed": 21762,
+  "sha": "2284f1694e90b8903ae9256f4b6553e31f74a8a714aff2bebfca5e1f2b43e77d",
+  "parsed_at": "2026-09-29T22:20:19.019Z",
+  "parsed": 21808,
   "changes": 4076,
-  "enriched": 98,
-  "created": 73
+  "enriched": 81,
+  "created": 46
 }
