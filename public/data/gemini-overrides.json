@@ -1,6 +1,6 @@
 {
   "note": "Gemini 듀얼합의 자동교정(법령변경 자가치유) — apply-gemini-overrides 가 prio105 로 baking. un-ban 은 권위 annex veto. 사람 개입 0.",
-  "total": 277,
+  "total": 270,
   "corrections": {
     "38629385-37bc-4757-85de-6fba8806a583:KR": {
       "ingredient_id": "38629385-37bc-4757-85de-6fba8806a583",
@@ -2719,94 +2719,6 @@
       "by": "gemini-consensus",
       "name": "다이아세틸날로르핀"
     },
-    "93184357-bd67-43c2-a227-b7b471e60b97:KR": {
-      "ingredient_id": "93184357-bd67-43c2-a227-b7b471e60b97",
-      "country_code": "KR",
-      "status": "restricted",
-      "max": 0.002,
-      "from": "restricted",
-      "confidence": 1,
-      "reason": "메틸옥틴카보네이트는 한국 화장품 안전기준 등에 관한 규정에서 0.002%로 배합한도가 명시되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "메틸옥틴카보네이트"
-    },
-    "1a09141d-d2eb-4084-977a-9ce9eac2d2cc:KR": {
-      "ingredient_id": "1a09141d-d2eb-4084-977a-9ce9eac2d2cc",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "아세닉펜타옥사이드는 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "아세닉펜타옥사이드"
-    },
-    "4a387b9a-a702-4022-93cc-aa12b59003e4:KR": {
-      "ingredient_id": "4a387b9a-a702-4022-93cc-aa12b59003e4",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "메탈포스파이드는 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "메탈포스파이드"
-    },
-    "bc4a55b3-d997-484c-af66-0b19ed614944:KR": {
-      "ingredient_id": "bc4a55b3-d997-484c-af66-0b19ed614944",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "하이드록시에틸-2,6-다이나이트로-p-아니시딘 및 그 염류는 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "하이드록시에틸-2,6-다이나이트로-p-아니시딘 및 그 염류"
-    },
-    "10c6f7a7-a0ef-4372-8f84-99cf0c3edf1e:KR": {
-      "ingredient_id": "10c6f7a7-a0ef-4372-8f84-99cf0c3edf1e",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "마부테롤은 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "마부테롤"
-    },
-    "7c85a0a7-ac65-44c0-be56-226f56ad833a:KR": {
-      "ingredient_id": "7c85a0a7-ac65-44c0-be56-226f56ad833a",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "파라티온-메틸은 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "파라티온-메틸"
-    },
-    "cd18f3ff-b537-42ea-a574-5daf65b05ad1:KR": {
-      "ingredient_id": "cd18f3ff-b537-42ea-a574-5daf65b05ad1",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "디이에이-세테아레스-2포스페이트는 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "디이에이-세테아레스-2포스페이트"
-    },
-    "8e0ec212-dc8b-40d5-b857-cff8255165ce:KR": {
-      "ingredient_id": "8e0ec212-dc8b-40d5-b857-cff8255165ce",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "다이옥세테드린 및 그 염류는 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "다이옥세테드린 및 그 염류"
-    },
     "23d7c687-699b-4885-9b70-103ab4b3af54:CN": {
       "ingredient_id": "23d7c687-699b-4885-9b70-103ab4b3af54",
       "country_code": "CN",
@@ -2873,82 +2785,16 @@
       "by": "gemini-consensus",
       "name": "징크페놀설포네이트"
     },
-    "1066817d-4dd8-4b47-b0be-8d89b22699b0:CN": {
-      "ingredient_id": "1066817d-4dd8-4b47-b0be-8d89b22699b0",
-      "country_code": "CN",
-      "status": "restricted",
-      "max": 0.5,
-      "from": "listed",
-      "confidence": 1,
-      "reason": "NMPA 화장품안전기술규범 표7에 준용 염모제로 등재되어 산화염모제에 0.5% 농도로 제한적으로 사용 가능함.",
-      "by": "gemini-consensus",
-      "name": "p-니트로-o-페닐렌디아민"
-    },
-    "14815f4c-d276-450e-b1b7-868d506b66ed:CN": {
-      "ingredient_id": "14815f4c-d276-450e-b1b7-868d506b66ed",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "NMPA 화장품안전기술규범 표1에 케토비마이돈 및 그 염류는 화장품 사용 금지 물질로 명시되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "케토비마이돈"
-    },
-    "e9c3a607-1daf-488a-b920-a336cda55776:CN": {
-      "ingredient_id": "e9c3a607-1daf-488a-b920-a336cda55776",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "NMPA 화장품안전기술규범 표2에 은방울꽃(Convallaria majalis L.)은 화장품 사용 금지 식물 물질로 명시되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "은방울꽃"
-    },
-    "679ce4a0-a968-41e6-adfc-f02c2c54099c:CN": {
-      "ingredient_id": "679ce4a0-a968-41e6-adfc-f02c2c54099c",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "NMPA 화장품안전기술규범 표1에 스트리키닌 및 그 염류는 화장품 사용 금지 물질로 명시되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "스트리키닌"
-    },
     "3189ffa6-b171-41e7-a4a3-9944a86d6487:CN": {
       "ingredient_id": "3189ffa6-b171-41e7-a4a3-9944a86d6487",
       "country_code": "CN",
       "status": "restricted",
-      "max": null,
+      "max": 0.01,
       "from": "restricted",
       "confidence": 1,
-      "reason": "NMPA 화장품안전기술규범에 따라 천연 에센스에 포함된 경우 최종 제품에서 100mg/kg(0.01%)을 초과할 수 없습니다.",
+      "reason": "NMPA 화장품안전기술규범 표3에 따라 천연 에센스에 포함된 경우 최종 제품에서 0.01%를 초과할 수 없습니다.",
       "by": "gemini-consensus",
       "name": "5-알릴-1,3-벤조다이옥솔"
-    },
-    "cd08e926-5abc-4ed0-9d44-8ce0a107e8cf:CN": {
-      "ingredient_id": "cd08e926-5abc-4ed0-9d44-8ce0a107e8cf",
-      "country_code": "CN",
-      "status": "restricted",
-      "max": null,
-      "from": "restricted",
-      "confidence": 0.9,
-      "reason": "NMPA 화장품안전기술규범에 따라 특정 불순물 총량에 대한 제한이 있으며, 색소는 일반적으로 사용 제한이 있는 물질로 분류됩니다.",
-      "by": "gemini-consensus",
-      "name": "적색102호"
-    },
-    "77e6ea49-6f5f-4eec-870d-6cc3c21d393b:CN": {
-      "ingredient_id": "77e6ea49-6f5f-4eec-870d-6cc3c21d393b",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "NMPA 화장품안전기술규범 표1에 4-나이트로-o-크레솔은 화장품 사용 금지 물질로 명시되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "4-나이트로-o-크레솔;o-크레솔,4-나이트로-;2-메틸-4나이트로아니솔"
     },
     "0799557a-0934-4868-a6e3-f94f9e28b7ec:CN": {
       "ingredient_id": "0799557a-0934-4868-a6e3-f94f9e28b7ec",
@@ -3048,6 +2894,83 @@
       "reason": "NMPA 화장품안전기술규범 표1 - 화장품 사용 금지 물질.",
       "by": "gemini-consensus",
       "name": "디메칠설폭사이드(DMSO)로 추출한 성분을 3% 초과하여 함유하는 탄화수소류 (hydrotreated solvent-deasphalted distn. Residue, vacuum distn. Lights)"
+    },
+    "c628aaf3-4f69-40fe-b18f-d8a3c8999f57:CN": {
+      "ingredient_id": "c628aaf3-4f69-40fe-b18f-d8a3c8999f57",
+      "country_code": "CN",
+      "status": "restricted",
+      "max": 12,
+      "from": "banned",
+      "confidence": 0.9,
+      "reason": "중국 화장품 규제상 두발제품에 12%까지 허용되는 제한 성분임.",
+      "by": "gemini-consensus",
+      "name": "과산화수소 및 과산화수소 생성물질"
+    },
+    "ce9c5179-ba47-476f-a15b-bb7ebfd70c8d:CN": {
+      "ingredient_id": "ce9c5179-ba47-476f-a15b-bb7ebfd70c8d",
+      "country_code": "CN",
+      "status": "restricted",
+      "max": 12,
+      "from": "banned",
+      "confidence": 0.9,
+      "reason": "중국 화장품 규제상 두발제품에 12%까지 허용되는 제한 성분임 (H2O2로 계산).",
+      "by": "gemini-consensus",
+      "name": "마그네슘퍼옥사이드"
+    },
+    "73b96345-5cf6-40f7-a332-219477a853b3:CN": {
+      "ingredient_id": "73b96345-5cf6-40f7-a332-219477a853b3",
+      "country_code": "CN",
+      "status": "restricted",
+      "max": 3,
+      "from": "banned",
+      "confidence": 0.9,
+      "reason": "중국 화장품 규제상 씻어내는 제품에 3%까지 허용되는 제한 성분임 (염화벤잘코늄으로 계산).",
+      "by": "gemini-consensus",
+      "name": "미리스탈코늄사카리네이트"
+    },
+    "8f9b30b0-a7fa-4e7c-9229-9c80ae8d57eb:CN": {
+      "ingredient_id": "8f9b30b0-a7fa-4e7c-9229-9c80ae8d57eb",
+      "country_code": "CN",
+      "status": "restricted",
+      "max": 12,
+      "from": "banned",
+      "confidence": 0.9,
+      "reason": "중국 화장품 규제상 두발제품에 12%까지 허용되는 제한 성분임 (H2O2로 계산).",
+      "by": "gemini-consensus",
+      "name": "칼슘퍼옥사이드"
+    },
+    "82c0047c-8512-42e0-8c5c-c0a00976aa5c:CN": {
+      "ingredient_id": "82c0047c-8512-42e0-8c5c-c0a00976aa5c",
+      "country_code": "CN",
+      "status": "listed",
+      "max": null,
+      "from": "unknown",
+      "confidence": 1,
+      "reason": "중국 화장품 규제상 착색제로 각종 화장품에 사용이 허가된 성분임.",
+      "by": "gemini-consensus",
+      "name": "실버"
+    },
+    "22acb37f-762e-40e1-93b6-22086db6221f:CN": {
+      "ingredient_id": "22acb37f-762e-40e1-93b6-22086db6221f",
+      "country_code": "CN",
+      "status": "restricted",
+      "max": 3,
+      "from": "banned",
+      "confidence": 0.9,
+      "reason": "중국 화장품 규제상 씻어내는 제품에 3%까지 허용되는 제한 성분임 (염화벤잘코늄으로 계산).",
+      "by": "gemini-consensus",
+      "name": "코코알코늄클로라이드"
+    },
+    "6fd7ab7b-74de-4006-b3f2-059368da20be:CN": {
+      "ingredient_id": "6fd7ab7b-74de-4006-b3f2-059368da20be",
+      "country_code": "CN",
+      "status": "restricted",
+      "max": 12,
+      "from": "banned",
+      "confidence": 0.9,
+      "reason": "중국 화장품 규제상 두발제품에 12%까지 허용되는 제한 성분임 (H2O2로 계산).",
+      "by": "gemini-consensus",
+      "name": "징크퍼옥사이드"
     }
   }
 }
