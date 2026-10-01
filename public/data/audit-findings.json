@@ -1,6 +1,6 @@
 {
   "note": "veto/저신뢰로 자동교정 보류분(가시성용)",
-  "total": 118,
+  "total": 119,
   "findings": {
     "347e91c2-8abd-4fe6-8363-e05138042f97:KR": {
       "country": "KR",
@@ -709,6 +709,12 @@
       "name": "석유 유래물질 (Lubricating oils (petroleum), hydrocracked nonarom solvent-deparaffined)",
       "verdict": "un-ban 차단(권위금지)",
       "reason": "Listed in China's Prohibited Ingredients for Cosmetics (CSTS 2015, Table 1) if containing > 3% w/w DMSO extract, implying a purity restriction."
+    },
+    "394fd5c1-3cee-4fd1-bf8d-4e641a9fe149:CN": {
+      "country": "CN",
+      "name": "에틸티오글라이콜레이트",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "The substance has specified application scope, usage conditions, and maximum concentration limits, indicating it is restricted, not banned."
     }
   }
 }
