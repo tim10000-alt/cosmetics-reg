@@ -1040,7 +1040,7 @@
       "source_match": "MFDS",
       "inci": "Hydrogenated Tallowalkonium Chloride",
       "ko": "하이드로제네이티드탈로우알코늄클로라이드",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "ad67e9e7-c001-41a7-b129-2e3cfc137093",
@@ -2160,7 +2160,7 @@
       "source_match": "MFDS",
       "inci": "MEA-Undecylenate",
       "ko": "엠이에이-운데실레네이트",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "2ccc4a7d-a6fb-4849-b142-a9ab06e05fb6",
@@ -2170,7 +2170,7 @@
       "source_match": "MFDS",
       "inci": "Hydrogenated Tallowalkonium Chloride",
       "ko": "하이드로제네이티드탈로우알코늄클로라이드",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "ac2c280e-22a2-4c63-8141-995a3aad255e",
@@ -2490,7 +2490,7 @@
       "source_match": "MFDS",
       "inci": "MEA-Undecylenate",
       "ko": "엠이에이-운데실레네이트",
-      "reason": "claude-judge: 허용 배합한도(농도) 명시"
+      "reason": "Gemini dual-consensus: 사용제한(제한) 자료가 banned 로 오분류"
     },
     {
       "ingredient_id": "35c18f67-4ee7-4c6f-aa04-0f521306e821",
