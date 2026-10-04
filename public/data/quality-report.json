@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-03T21:21:02.243Z",
-  "totalRegs": 95422,
+  "generated_at": "2026-10-04T21:32:18.666Z",
+  "totalRegs": 95438,
   "coverage": {
     "AR": 4832,
     "BO": 2229,
@@ -27,7 +27,7 @@
     "BO": 2229,
     "BR": 1037,
     "CA": 582,
-    "CN": 10500,
+    "CN": 10507,
     "CO": 2229,
     "EC": 2229,
     "EU": 2131,
@@ -43,7 +43,7 @@
     "US": 114,
     "VN": 1815
   },
-  "restrictedNoLimit": 3812,
+  "restrictedNoLimit": 3811,
   "statusConflicts": 474,
   "quarantinePending": 3,
   "casContaminationSuspects": 223,
