@@ -1,6 +1,6 @@
 {
   "note": "veto/저신뢰로 자동교정 보류분(가시성용)",
-  "total": 120,
+  "total": 121,
   "findings": {
     "347e91c2-8abd-4fe6-8363-e05138042f97:KR": {
       "country": "KR",
@@ -721,6 +721,12 @@
       "name": "석유 유래물질 (Gases (petroleum), catalytic cracked naphtha debutanizer)",
       "verdict": "un-ban 차단(권위금지)",
       "reason": "This ingredient is banned if it contains >0.1% w/w Butadiene, otherwise it may be allowed, making it restricted."
+    },
+    "c4345a34-ef59-4472-9f1f-561ce435de98:CN": {
+      "country": "CN",
+      "name": "석유 유래물질 (Distillates (petroleum), solvent dewaxed heavy paraffinic, clay-treated)",
+      "verdict": "un-ban 차단(권위금지)",
+      "reason": "Petroleum-derived substances like this are restricted in China; they are banned only if they contain more than 3% w/w DMSO extract, indicating conditional allowance."
     }
   }
 }
