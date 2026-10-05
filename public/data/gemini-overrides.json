@@ -1,6 +1,6 @@
 {
   "note": "Gemini 듀얼합의 자동교정(법령변경 자가치유) — apply-gemini-overrides 가 prio105 로 baking. un-ban 은 권위 annex veto. 사람 개입 0.",
-  "total": 304,
+  "total": 312,
   "corrections": {
     "38629385-37bc-4757-85de-6fba8806a583:KR": {
       "ingredient_id": "38629385-37bc-4757-85de-6fba8806a583",
@@ -2770,7 +2770,7 @@
       "max": null,
       "from": "restricted",
       "confidence": 0.9,
-      "reason": "NMPA Safety and Technical Standards for Cosmetics (2015 edition) lists Safrole as banned, but allows up to 0.01% if naturally present in essential oils.",
+      "reason": "NMPA Safety and Technical Standards for Cosmetics (2015 edition) allows Safrole up to 0.01% if naturally occurring.",
       "by": "gemini-consensus",
       "name": "5-알릴-1,3-벤조다이옥솔"
     },
@@ -2781,7 +2781,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "Polio vaccine is classified as a drug and is not permitted as a cosmetic ingredient in China.",
+      "reason": "Polio vaccine is classified as a drug and not permitted as a cosmetic ingredient in China.",
       "by": "gemini-consensus",
       "name": "소아마비백신"
     },
@@ -3345,6 +3345,94 @@
       "reason": "The provided conditions and requirements (avoiding nitrosating systems, limits on secondary alkylamines and nitrosoamines) indicate that the substance is restricted, not banned, in China. No direct maximum concentration for the ingredient itself is provided.",
       "by": "gemini-consensus",
       "name": "톨아마이드디이에이"
+    },
+    "21071891-6ec7-4385-865a-e0769d9c5590:CN": {
+      "ingredient_id": "21071891-6ec7-4385-865a-e0769d9c5590",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA 화장품안전기술규범 표1에 따라 화장품 사용 금지 물질로 지정됨.",
+      "by": "gemini-consensus",
+      "name": "1-아미노-4-[[4-[(다이메틸아미노)메틸] 페닐]아미노]안트라퀴논 및 그 염류, 염모제로 사용될때"
+    },
+    "285b9be5-5ff4-43d5-869f-5a17454b483f:CN": {
+      "ingredient_id": "285b9be5-5ff4-43d5-869f-5a17454b483f",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA 화장품안전기술규범 표1에 따라 화장품 사용 금지 물질로 지정됨.",
+      "by": "gemini-consensus",
+      "name": "1-[(2-하이드록시에틸)아미노]-4-(메틸아미노-9,10-안트라센다이온 및 그염류"
+    },
+    "ea5efc9a-f601-469a-a23f-40833bb3ee58:CN": {
+      "ingredient_id": "ea5efc9a-f601-469a-a23f-40833bb3ee58",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA 화장품안전기술규범 표1에 따라 화장품 사용 금지 물질로 지정됨.",
+      "by": "gemini-consensus",
+      "name": "1,2-나프틸아민 및 그 염류"
+    },
+    "fd6380f1-0c06-450d-9e3b-7e4040031dfb:CN": {
+      "ingredient_id": "fd6380f1-0c06-450d-9e3b-7e4040031dfb",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA 화장품안전기술규범 표1에 따라 화장품 사용 금지 물질로 지정됨.",
+      "by": "gemini-consensus",
+      "name": "1-브로모프로판"
+    },
+    "3e338d2b-28ca-4afe-8067-68567e4ffb7d:CN": {
+      "ingredient_id": "3e338d2b-28ca-4afe-8067-68567e4ffb7d",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA 화장품안전기술규범 표1에 따라 화장품 사용 금지 물질로 지정됨.",
+      "by": "gemini-consensus",
+      "name": "1-클로로-2,3-에폭시프로판"
+    },
+    "30219be0-87eb-4068-b30d-8e9f965e1ddc:CN": {
+      "ingredient_id": "30219be0-87eb-4068-b30d-8e9f965e1ddc",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA 화장품안전기술규범 표1에 따라 화장품 사용 금지 물질로 지정됨.",
+      "by": "gemini-consensus",
+      "name": "1-다이메틸아미노메틸-1-메틸프로필벤조에이트(아밀로카인) 및 그 염류"
+    },
+    "61fb4bc4-e731-4b9c-8986-97e4938318d7:CN": {
+      "ingredient_id": "61fb4bc4-e731-4b9c-8986-97e4938318d7",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA 화장품안전기술규범 표1에 따라 화장품 사용 금지 물질로 지정됨.",
+      "by": "gemini-consensus",
+      "name": "1-에틸-1-메틸모르폴리늄브로마이드"
+    },
+    "6c5c7612-88ee-40a2-ac7a-9b69186e6eba:CN": {
+      "ingredient_id": "6c5c7612-88ee-40a2-ac7a-9b69186e6eba",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA 화장품안전기술규범 표1에 따라 화장품 사용 금지 물질로 지정됨.",
+      "by": "gemini-consensus",
+      "name": "1-메톡시-2,4-다이아미노벤젠(2,4-다이아미노아니솔 또는 4-메톡시-m-페닐렌다이아민 또는 CI 76050) 및 그 염류"
     }
   }
 }
