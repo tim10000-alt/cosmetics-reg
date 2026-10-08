@@ -1656,7 +1656,7 @@
         },
         {
           "name": "A mixture of: 5-[(4-[(7-amino-1-hydroxy-3-sulfo-2-naphthyl)azo]- 2,5-diethoxyphenyl)azo]-2-[(3-phosphonophenyl)azo]benzoic acid and 5-[(4-[(7-amino-1-hydroxy-3-sulfo-2-naphthyl)azo]- 2,5-diethoxyphenyl)azo]-3-[(3-phosphonophenyl)azo]benzoic acid",
-          "prio": 100
+          "prio": 105
         }
       ],
       "allowed": [
