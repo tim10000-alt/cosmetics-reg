@@ -1,6 +1,6 @@
 {
   "note": "Gemini 듀얼합의 자동교정(법령변경 자가치유) — apply-gemini-overrides 가 prio105 로 baking. un-ban 은 권위 annex veto. 사람 개입 0.",
-  "total": 370,
+  "total": 372,
   "corrections": {
     "38629385-37bc-4757-85de-6fba8806a583:KR": {
       "ingredient_id": "38629385-37bc-4757-85de-6fba8806a583",
@@ -3390,179 +3390,14 @@
       "by": "gemini-consensus",
       "name": "클로르페녹사민"
     },
-    "93184357-bd67-43c2-a227-b7b471e60b97:KR": {
-      "ingredient_id": "93184357-bd67-43c2-a227-b7b471e60b97",
-      "country_code": "KR",
-      "status": "restricted",
-      "max": 0.002,
-      "from": "restricted",
-      "confidence": 1,
-      "reason": "메틸옥틴카보네이트는 한국 화장품 안전기준 등에 관한 규정에서 0.002%로 배합한도가 명시되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "메틸옥틴카보네이트"
-    },
-    "1a09141d-d2eb-4084-977a-9ce9eac2d2cc:KR": {
-      "ingredient_id": "1a09141d-d2eb-4084-977a-9ce9eac2d2cc",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "아세닉펜타옥사이드는 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "아세닉펜타옥사이드"
-    },
-    "4a387b9a-a702-4022-93cc-aa12b59003e4:KR": {
-      "ingredient_id": "4a387b9a-a702-4022-93cc-aa12b59003e4",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "메탈포스파이드는 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "메탈포스파이드"
-    },
-    "bc4a55b3-d997-484c-af66-0b19ed614944:KR": {
-      "ingredient_id": "bc4a55b3-d997-484c-af66-0b19ed614944",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "하이드록시에틸-2,6-다이나이트로-p-아니시딘 및 그 염류는 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "하이드록시에틸-2,6-다이나이트로-p-아니시딘 및 그 염류"
-    },
-    "10c6f7a7-a0ef-4372-8f84-99cf0c3edf1e:KR": {
-      "ingredient_id": "10c6f7a7-a0ef-4372-8f84-99cf0c3edf1e",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "마부테롤은 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "마부테롤"
-    },
-    "7c85a0a7-ac65-44c0-be56-226f56ad833a:KR": {
-      "ingredient_id": "7c85a0a7-ac65-44c0-be56-226f56ad833a",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "파라티온-메틸은 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "파라티온-메틸"
-    },
-    "cd18f3ff-b537-42ea-a574-5daf65b05ad1:KR": {
-      "ingredient_id": "cd18f3ff-b537-42ea-a574-5daf65b05ad1",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "디이에이-세테아레스-2포스페이트는 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "디이에이-세테아레스-2포스페이트"
-    },
-    "8e0ec212-dc8b-40d5-b857-cff8255165ce:KR": {
-      "ingredient_id": "8e0ec212-dc8b-40d5-b857-cff8255165ce",
-      "country_code": "KR",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "다이옥세테드린 및 그 염류는 한국 화장품 안전기준 등에 관한 규정의 사용금지 원료 목록에 포함되어 있습니다.",
-      "by": "gemini-consensus",
-      "name": "다이옥세테드린 및 그 염류"
-    },
-    "c628aaf3-4f69-40fe-b18f-d8a3c8999f57:CN": {
-      "ingredient_id": "c628aaf3-4f69-40fe-b18f-d8a3c8999f57",
-      "country_code": "CN",
-      "status": "restricted",
-      "max": 12,
-      "from": "banned",
-      "confidence": 0.9,
-      "reason": "The ingredient is restricted with specific maximum concentrations for different product types.",
-      "by": "gemini-consensus",
-      "name": "과산화수소 및 과산화수소 생성물질"
-    },
-    "ce9c5179-ba47-476f-a15b-bb7ebfd70c8d:CN": {
-      "ingredient_id": "ce9c5179-ba47-476f-a15b-bb7ebfd70c8d",
-      "country_code": "CN",
-      "status": "restricted",
-      "max": 12,
-      "from": "banned",
-      "confidence": 0.9,
-      "reason": "The ingredient is restricted with specific maximum concentrations for different product types.",
-      "by": "gemini-consensus",
-      "name": "마그네슘퍼옥사이드"
-    },
-    "73b96345-5cf6-40f7-a332-219477a853b3:CN": {
-      "ingredient_id": "73b96345-5cf6-40f7-a332-219477a853b3",
-      "country_code": "CN",
-      "status": "restricted",
-      "max": 3,
-      "from": "banned",
-      "confidence": 0.9,
-      "reason": "The ingredient is restricted with specific maximum concentrations for different product types.",
-      "by": "gemini-consensus",
-      "name": "미리스탈코늄사카리네이트"
-    },
-    "8f9b30b0-a7fa-4e7c-9229-9c80ae8d57eb:CN": {
-      "ingredient_id": "8f9b30b0-a7fa-4e7c-9229-9c80ae8d57eb",
-      "country_code": "CN",
-      "status": "restricted",
-      "max": 12,
-      "from": "banned",
-      "confidence": 0.9,
-      "reason": "The ingredient is restricted with specific maximum concentrations for different product types.",
-      "by": "gemini-consensus",
-      "name": "칼슘퍼옥사이드"
-    },
-    "82c0047c-8512-42e0-8c5c-c0a00976aa5c:CN": {
-      "ingredient_id": "82c0047c-8512-42e0-8c5c-c0a00976aa5c",
-      "country_code": "CN",
-      "status": "listed",
-      "max": null,
-      "from": "unknown",
-      "confidence": 0.9,
-      "reason": "The ingredient is listed as an allowed colorant in various cosmetics.",
-      "by": "gemini-consensus",
-      "name": "실버"
-    },
-    "22acb37f-762e-40e1-93b6-22086db6221f:CN": {
-      "ingredient_id": "22acb37f-762e-40e1-93b6-22086db6221f",
-      "country_code": "CN",
-      "status": "restricted",
-      "max": 3,
-      "from": "banned",
-      "confidence": 0.9,
-      "reason": "The ingredient is restricted with specific maximum concentrations for different product types.",
-      "by": "gemini-consensus",
-      "name": "코코알코늄클로라이드"
-    },
-    "6fd7ab7b-74de-4006-b3f2-059368da20be:CN": {
-      "ingredient_id": "6fd7ab7b-74de-4006-b3f2-059368da20be",
-      "country_code": "CN",
-      "status": "restricted",
-      "max": 12,
-      "from": "banned",
-      "confidence": 0.9,
-      "reason": "The ingredient is restricted with specific maximum concentrations for different product types.",
-      "by": "gemini-consensus",
-      "name": "징크퍼옥사이드"
-    },
     "ea0ef9ca-750c-47ba-8825-05a91f1543ca:CN": {
       "ingredient_id": "ea0ef9ca-750c-47ba-8825-05a91f1543ca",
       "country_code": "CN",
       "status": "restricted",
       "max": null,
       "from": "restricted",
-      "confidence": 1,
-      "reason": "China's NMPA regulations restrict furocoumarines to below 1 mg/kg (0.0001%) in sun protection and bronzing products.",
+      "confidence": 0.9,
+      "reason": "NMPA regulations restrict furocoumarines to 1 ppm (0.0001%) in sun protection and bronzing products.",
       "by": "gemini-consensus",
       "name": "푸로쿠마린류(예 : 트라이옥시살렌, 8-메톡시소랄렌, 5-메톡시소랄렌)(천연에센스에 자연적으로 함유된 경우는 제외. 다만, 자외선차단제품 및 인공선탠제품에서는 1ppm 이하이어야 한다.)"
     },
@@ -3672,7 +3507,7 @@
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "NMPA 화장품안전기술규범 표1에 따라 화장품 사용 금지 물질입니다.",
+      "reason": "NMPA 화장품안전기술규범 표1에 따라 부타디엔 0.1%w/w 이상 함유하는 부탄은 화장품 사용 금지 물질입니다.",
       "by": "gemini-consensus",
       "name": "부타디엔 0.1%w/w이상 함유하는 부탄"
     },
@@ -3698,171 +3533,6 @@
       "by": "gemini-consensus",
       "name": "부토피프린 및 그 염류"
     },
-    "2c594fbf-f62b-41e2-8a1c-82b86764b2f4:CN": {
-      "ingredient_id": "2c594fbf-f62b-41e2-8a1c-82b86764b2f4",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "NMPA 화장품안전기술규범 표1, 순번 409에 따라 화장품 사용 금지 물질임.",
-      "by": "gemini-consensus",
-      "name": "클로르프로파미드"
-    },
-    "0933f2c1-e993-486d-b02f-1994e910c167:CN": {
-      "ingredient_id": "0933f2c1-e993-486d-b02f-1994e910c167",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "NMPA 화장품안전기술규범 표1, 순번 410에 따라 화장품 사용 금지 물질임.",
-      "by": "gemini-consensus",
-      "name": "클로르프로티센 및 그 염류"
-    },
-    "063c7e71-3b32-4756-8690-39681336210d:CN": {
-      "ingredient_id": "063c7e71-3b32-4756-8690-39681336210d",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "NMPA Cosmetic Safety Technical Standard Table 1 lists this as a prohibited substance (No. 505).",
-      "by": "gemini-consensus",
-      "name": "다이소듐[5-[[4’-[[2,6-다이하이드록시-3-[(2-하이드록시-5-설포페닐)아조]페닐]아조] [1,1’바이페닐]-4-일]아조]살리실레이토(4-)]큐프레이트(2-)(다이렉트갈색95)"
-    },
-    "16d492c2-ff58-4405-b6a9-00a3fb50a4eb:CN": {
-      "ingredient_id": "16d492c2-ff58-4405-b6a9-00a3fb50a4eb",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "NMPA Cosmetic Safety Technical Standard Table 1 lists this as a prohibited substance (No. 506).",
-      "by": "gemini-consensus",
-      "name": "분산적색15호"
-    },
-    "06e1636d-1e2c-420e-bb44-eb80aa627389:CN": {
-      "ingredient_id": "06e1636d-1e2c-420e-bb44-eb80aa627389",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "NMPA Cosmetic Safety Technical Standard Table 1 lists this as a prohibited substance (No. 508).",
-      "by": "gemini-consensus",
-      "name": "벤조(a)피렌(benzo(a)pyrene) 0.005%를 초과하여 함유하고 있는 석유화학 유래물질, 석탄 및 목타르 유래물질"
-    },
-    "a848f66a-50e0-4872-b05c-6dd2f6562e60:CN": {
-      "ingredient_id": "a848f66a-50e0-4872-b05c-6dd2f6562e60",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "NMPA Cosmetic Safety Technical Standard Table 1 lists this as a prohibited substance (No. 510), with specific exceptions for purity.",
-      "by": "gemini-consensus",
-      "name": "석유 증류물, 산-처리 중질, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외"
-    },
-    "a7a00039-8534-4241-a822-4c31cfccd775:CN": {
-      "ingredient_id": "a7a00039-8534-4241-a822-4c31cfccd775",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "NMPA Cosmetic Safety Technical Standard Table 1 lists this as a prohibited substance (No. 511).",
-      "by": "gemini-consensus",
-      "name": "부타디엔 0.1%를 초과하여 함유하는 석유정제물(가스류, 탄화수소류, 알칸류, 증류물, 라피네이트)"
-    },
-    "b8a4ddd6-f722-409b-921a-c7769f5d113d:CN": {
-      "ingredient_id": "b8a4ddd6-f722-409b-921a-c7769f5d113d",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "NMPA Cosmetic Safety Technical Standard Table 1 lists this as a prohibited substance (No. 512), with specific exceptions for purity.",
-      "by": "gemini-consensus",
-      "name": "석유증류물, carbon-treated light paraffinic, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외"
-    },
-    "dfff8d05-16e7-45d1-bf98-ed2d4fec0118:CN": {
-      "ingredient_id": "dfff8d05-16e7-45d1-bf98-ed2d4fec0118",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "NMPA Cosmetic Safety Technical Standard Table 1 lists this as a prohibited substance (No. 513), with specific exceptions for purity.",
-      "by": "gemini-consensus",
-      "name": "석유 증류물, catalytic reformer fractionator residue, high-boiling, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외"
-    },
-    "07fda845-3c3a-441e-b758-145d12bb4fc8:CN": {
-      "ingredient_id": "07fda845-3c3a-441e-b758-145d12bb4fc8",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "NMPA Cosmetic Safety Technical Standard Table 1 lists this as a prohibited substance (No. 514), with specific exceptions for purity.",
-      "by": "gemini-consensus",
-      "name": "석유 증류물, catalytic reformer fractionator residue, intermediate-boiling, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외"
-    },
-    "8eda24ad-16db-4d92-970c-a908e76fe4ed:CN": {
-      "ingredient_id": "8eda24ad-16db-4d92-970c-a908e76fe4ed",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "NMPA Cosmetics Safety Technical Specification Table 1 lists this as a prohibited substance.",
-      "by": "gemini-consensus",
-      "name": "디메칠설폭사이드(DMSO)로 추출한 성분을 3% 초과하여 함유하고 있는석유 유래물질 (Distillates (petroleum), complex dewaxed heavy paraffinic)"
-    },
-    "bce994e9-65da-4910-9050-f21a0343a947:CN": {
-      "ingredient_id": "bce994e9-65da-4910-9050-f21a0343a947",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "NMPA Cosmetics Safety Technical Specification Table 1 lists this as a prohibited substance.",
-      "by": "gemini-consensus",
-      "name": "디메칠설폭사이드(DMSO)로 추출한 성분을 3% 초과하여 함유하고 있는 석유 유래물질 (Distillates (petroleum), complex dewaxed light paraffinic)"
-    },
-    "506748ff-b22f-4af3-a893-a27559e9e50e:CN": {
-      "ingredient_id": "506748ff-b22f-4af3-a893-a27559e9e50e",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "NMPA Cosmetics Safety Technical Specification Table 1 lists this as a prohibited substance.",
-      "by": "gemini-consensus",
-      "name": "디메칠설폭사이드(DMSO)로 추출한 성분을 3% 초과하여 함유하고 있는 석유 유래물질 (Distillates (petroleum), dewaxed heavy paraffinic, hydrotreated)"
-    },
-    "70358b59-f36f-4961-93a9-8a2613d345db:CN": {
-      "ingredient_id": "70358b59-f36f-4961-93a9-8a2613d345db",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "NMPA Cosmetics Safety Technical Specification Table 1 lists this as a prohibited substance.",
-      "by": "gemini-consensus",
-      "name": "디메칠설폭사이드(DMSO)로 추출한 성분을 3% 초과하여 함유하고 있는 석유 유래물질 (Distillates (petroleum), dewaxed light paraffinic, hydrotreated)"
-    },
-    "727d061e-c1c0-46bf-8255-29002a2a2cf0:CN": {
-      "ingredient_id": "727d061e-c1c0-46bf-8255-29002a2a2cf0",
-      "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "NMPA Cosmetics Safety Technical Specification Table 1 lists this as a prohibited substance.",
-      "by": "gemini-consensus",
-      "name": "디메칠설폭사이드(DMSO)로 추출한 성분을 3% 초과하여 함유하고 있는 석유 유래물질"
-    },
     "d1554f3c-2c6a-4c23-930d-1b3c9ddc68cf:CN": {
       "ingredient_id": "d1554f3c-2c6a-4c23-930d-1b3c9ddc68cf",
       "country_code": "CN",
@@ -3874,203 +3544,555 @@
       "by": "gemini-consensus",
       "name": "석유증류물, 정제 중질, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외"
     },
-    "62af9378-8913-4733-ad84-f0ad87951a75:CN": {
-      "ingredient_id": "62af9378-8913-4733-ad84-f0ad87951a75",
+    "3189ffa6-b171-41e7-a4a3-9944a86d6487:CN": {
+      "ingredient_id": "3189ffa6-b171-41e7-a4a3-9944a86d6487",
       "country_code": "CN",
-      "status": "banned",
-      "max": null,
-      "from": "banned",
-      "confidence": 1,
-      "reason": "NMPA Cosmetics Safety Technical Specification Table 1 lists this as a prohibited substance.",
+      "status": "restricted",
+      "max": 0.01,
+      "from": "restricted",
+      "confidence": 0.9,
+      "reason": "Safrole (5-Allyl-1,3-benzodioxole) is restricted in China with a maximum concentration of 100 mg/kg (0.01%) in the finished product.",
       "by": "gemini-consensus",
-      "name": "디메칠설폭사이드(DMSO)로 추출한 성분을 3% 초과하여 함유하고 있는 석유 유래물질 (Distillates (petroleum), hydrocracked solvent-refined light)"
+      "name": "5-알릴-1,3-벤조다이옥솔"
     },
-    "f3b7a2fd-ec84-47d3-9ae0-940c0b8a79dc:CN": {
-      "ingredient_id": "f3b7a2fd-ec84-47d3-9ae0-940c0b8a79dc",
+    "6307a355-bb4f-4726-b944-c98d052a9ce8:CN": {
+      "ingredient_id": "6307a355-bb4f-4726-b944-c98d052a9ce8",
       "country_code": "CN",
       "status": "banned",
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "NMPA Cosmetics Safety Technical Specification Table 1 lists this as a prohibited substance.",
+      "reason": "NMPA Cosmetics Safety Technical Standard, Table 1, lists this as a prohibited substance (No. 289).",
       "by": "gemini-consensus",
-      "name": "디메칠설폭사이드(DMSO)로 추출한 성분을 3% 초과하여 함유하고 있는 석유 유래물질 (Distillates (petroleum), hydrocracked solvent-refined, dewaxed)"
+      "name": "알로클아마이드 및 그 염류"
     },
-    "7af5c5f7-ab50-45d6-b3a8-bc38cd2e6607:CN": {
-      "ingredient_id": "7af5c5f7-ab50-45d6-b3a8-bc38cd2e6607",
+    "57937174-a5d4-4439-b41e-9973d1c4e40d:CN": {
+      "ingredient_id": "57937174-a5d4-4439-b41e-9973d1c4e40d",
       "country_code": "CN",
       "status": "banned",
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "Listed as a prohibited substance in NMPA Cosmetic Safety Technical Standard Table 1, with a specific exception condition.",
+      "reason": "NMPA 화장품안전기술규범 표1에 따라 화장품 사용 금지 물질입니다.",
       "by": "gemini-consensus",
-      "name": "석유 증류물, 수소화처리 중질, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외"
+      "name": "벤질부틸프탈레이트"
     },
-    "4d8e2885-02fa-49b9-aa45-838eaeee1a40:CN": {
-      "ingredient_id": "4d8e2885-02fa-49b9-aa45-838eaeee1a40",
+    "707dcf24-50fc-4803-8223-1d45cefc21c2:CN": {
+      "ingredient_id": "707dcf24-50fc-4803-8223-1d45cefc21c2",
       "country_code": "CN",
       "status": "banned",
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "Listed as a prohibited substance in NMPA Cosmetic Safety Technical Standard Table 1, with a specific exception condition.",
+      "reason": "NMPA 화장품안전기술규범 표1에 따라 화장품 사용 금지 물질입니다.",
       "by": "gemini-consensus",
-      "name": "석유증류물, intermediate paraffinic, carbon-treated, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외"
+      "name": "베톡시카인 및 그 염류"
     },
-    "7bccaf61-758c-414b-af08-83b6d9e25c65:CN": {
-      "ingredient_id": "7bccaf61-758c-414b-af08-83b6d9e25c65",
+    "d641ffd1-2268-4fae-a874-5e9eb55dcb04:CN": {
+      "ingredient_id": "d641ffd1-2268-4fae-a874-5e9eb55dcb04",
       "country_code": "CN",
       "status": "banned",
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "Listed as a prohibited substance in NMPA Cosmetic Safety Technical Standard Table 1, with a specific exception condition.",
+      "reason": "NMPA 화장품안전기술규범 표1에 따라 화장품 사용 금지 물질입니다.",
       "by": "gemini-consensus",
-      "name": "석유증류물, intermediate paraffinic, clay-treated, 정제과정이 완전히 알려지고 발암물질을 함유하지 않음을 보여줄 수 있으면 예외"
+      "name": "비에타미베린"
     },
-    "74336162-2ff5-480b-86e5-9538e8774401:CN": {
-      "ingredient_id": "74336162-2ff5-480b-86e5-9538e8774401",
+    "84f08ea6-d3ef-4333-9aec-9fb563fb5533:CN": {
+      "ingredient_id": "84f08ea6-d3ef-4333-9aec-9fb563fb5533",
       "country_code": "CN",
       "status": "banned",
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "Listed as a prohibited substance in NMPA Cosmetic Safety Technical Standard Table 1, with a specific compositional condition.",
+      "reason": "NMPA 화장품안전기술규범 표1에 따라 화장품 사용 금지 물질입니다.",
       "by": "gemini-consensus",
-      "name": "디메칠설폭사이드(DMSO)로 추출한 성분을 3% 초과하여 함유하고 있는 석유 유래물질 (Distillates (petroleum), solvent dewaxed heavy paraffinic, clay-treated)"
+      "name": "비페닐-4-일아민 및 그 염류"
     },
-    "e533afa4-4e93-4a46-8a72-451e03eadeb2:CN": {
-      "ingredient_id": "e533afa4-4e93-4a46-8a72-451e03eadeb2",
+    "625e12b6-11b0-4ee3-a6a7-c5b06672f6fd:CN": {
+      "ingredient_id": "625e12b6-11b0-4ee3-a6a7-c5b06672f6fd",
       "country_code": "CN",
       "status": "banned",
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "Listed as a prohibited substance in NMPA Cosmetic Safety Technical Standard Table 1, with a specific compositional condition.",
+      "reason": "NMPA 화장품안전기술규범 표1에 따라 화장품 사용 금지 물질입니다.",
       "by": "gemini-consensus",
-      "name": "디메칠설폭사이드(DMSO)로 추출한 성분을 3% 초과하여 함유하고 있는석유 유래물질 (Distillates (petroleum), solvent dewaxed light paraffinic, clay-treated)"
+      "name": "비스(2-에틸헥실)프탈레이트"
     },
-    "8a4c54cc-7417-4505-a033-96177a012955:CN": {
-      "ingredient_id": "8a4c54cc-7417-4505-a033-96177a012955",
+    "65707566-f4ad-45f8-b071-afb8978b0f61:CN": {
+      "ingredient_id": "65707566-f4ad-45f8-b071-afb8978b0f61",
       "country_code": "CN",
       "status": "banned",
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "Listed as a prohibited substance in NMPA Cosmetic Safety Technical Standard Table 1, with a specific compositional condition.",
+      "reason": "NMPA 화장품안전기술규범 표1에 따라 화장품 사용 금지 물질입니다.",
       "by": "gemini-consensus",
-      "name": "디메칠설폭사이드(DMSO)로 추출한 성분을 3% 초과하여 함유하고 있는석유 유래물질 (Distillates (petroleum), solvent dewaxed light paraffinic, hydrotreated)"
+      "name": "비스(2-메톡시에틸)프탈레이트"
     },
-    "8e8d6a3e-87ce-4dac-a23f-0207e7f3880c:CN": {
-      "ingredient_id": "8e8d6a3e-87ce-4dac-a23f-0207e7f3880c",
+    "fd458307-198c-4dd4-aedb-6ddf6d1e91a1:CN": {
+      "ingredient_id": "fd458307-198c-4dd4-aedb-6ddf6d1e91a1",
       "country_code": "CN",
       "status": "banned",
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "Listed as a prohibited substance in NMPA Cosmetic Safety Technical Standard Table 1, with a specific compositional condition.",
+      "reason": "NMPA 화장품안전기술규범 표1에 따라 화장품 사용 금지 물질입니다.",
       "by": "gemini-consensus",
-      "name": "디메칠설폭사이드(DMSO)로 추출한 성분을 3% 초과하여 함유하고 있는 석유 유래물질 (Distillates (petroleum), solvent-dewaxed heavy naphthenic)"
+      "name": "클로르단"
     },
-    "1f4dffac-1fb2-46d8-9736-217b47d0c76d:CN": {
-      "ingredient_id": "1f4dffac-1fb2-46d8-9736-217b47d0c76d",
+    "7350e64e-072c-46cf-a8f1-0e0eb55a1fb0:CN": {
+      "ingredient_id": "7350e64e-072c-46cf-a8f1-0e0eb55a1fb0",
       "country_code": "CN",
       "status": "banned",
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "Listed as a prohibited substance in NMPA Cosmetic Safety Technical Standard Table 1, with a specific compositional condition.",
+      "reason": "NMPA 화장품안전기술규범 표1에 따라 화장품 사용 금지 물질입니다.",
       "by": "gemini-consensus",
-      "name": "디메칠설폭사이드(DMSO)로 추출한 성분을 3% 초과하여 함유하고 있는석유 유래물질 (Distillates (petroleum), solvent-dewaxed heavy paraffinic)"
+      "name": "콜로로데콘"
     },
-    "9fff245b-0795-4806-8ab9-95709ee5597f:CN": {
-      "ingredient_id": "9fff245b-0795-4806-8ab9-95709ee5597f",
+    "a55ce974-504b-42da-b373-43b75674c270:CN": {
+      "ingredient_id": "a55ce974-504b-42da-b373-43b75674c270",
       "country_code": "CN",
       "status": "banned",
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "NMPA Cosmetic Safety Technical Standard Table 1 lists this as a prohibited substance.",
+      "reason": "NMPA Cosmetic Safety Technical Standard Table 1 lists it as a prohibited substance.",
       "by": "gemini-consensus",
-      "name": "디메칠설폭사이드(DMSO)로 추출한 성분을 3% 초과하여 함유하고 있는석유 유래물질 (Distillates (petroleum), solvent-dewaxed light naphthenic)"
+      "name": "코발트다이클로라이드(코발트클로라이드)"
     },
-    "f7157a3f-215e-44a5-a200-271221d70a31:CN": {
-      "ingredient_id": "f7157a3f-215e-44a5-a200-271221d70a31",
+    "0f018a1e-4456-48cc-8bf0-ee4d989ae563:CN": {
+      "ingredient_id": "0f018a1e-4456-48cc-8bf0-ee4d989ae563",
       "country_code": "CN",
       "status": "banned",
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "NMPA Cosmetic Safety Technical Standard Table 1 lists this as a prohibited substance.",
+      "reason": "NMPA Cosmetic Safety Technical Standard Table 1 lists it as a prohibited substance.",
       "by": "gemini-consensus",
-      "name": "디메칠설폭사이드(DMSO)로 추출한 성분을 3% 초과하여 함유하고 있는석유 유래물질 (Distillates (petroleum), solvent-dewaxed light paraffinic)"
+      "name": "코발트설페이트"
     },
-    "ca0e0af8-a85c-47c7-b1f6-ac6a7dec77c3:CN": {
-      "ingredient_id": "ca0e0af8-a85c-47c7-b1f6-ac6a7dec77c3",
+    "38555006-5153-4ffc-9531-8ee0a61c389c:CN": {
+      "ingredient_id": "38555006-5153-4ffc-9531-8ee0a61c389c",
       "country_code": "CN",
       "status": "banned",
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "NMPA Cosmetic Safety Technical Standard Table 1 lists this as a prohibited substance.",
+      "reason": "NMPA Cosmetic Safety Technical Standard Table 1 lists it as a prohibited substance.",
       "by": "gemini-consensus",
-      "name": "디메칠설폭사이드(DMSO)로 추출한 성분을 3% 초과하여 함유하고 있는 석유 유래물질 (Distillates (petroleum), solvent-refined heavy naphthenic)"
+      "name": "디기탈리스(Digitalis)속 및 그 생약제제"
     },
-    "6e17edd3-b7b7-4cf0-9dbc-f3646bf732b6:CN": {
-      "ingredient_id": "6e17edd3-b7b7-4cf0-9dbc-f3646bf732b6",
+    "1018cb4f-50f1-4eff-afdc-ed1c8366c7f5:CN": {
+      "ingredient_id": "1018cb4f-50f1-4eff-afdc-ed1c8366c7f5",
       "country_code": "CN",
       "status": "banned",
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "NMPA Cosmetic Safety Technical Standard Table 1 lists this as a prohibited substance.",
+      "reason": "NMPA Cosmetic Safety Technical Standard Table 1 lists it as a prohibited substance.",
       "by": "gemini-consensus",
-      "name": "디메칠설폭사이드(DMSO)로 추출한 성분을 3% 초과하여 함유하고 있는 석유 유래물질(Distillates (petroleum), solvent-refined heavy paraffinic)"
+      "name": "다이하이드로태키스테롤"
     },
-    "5d72165a-3936-4255-994e-ee7b05ca25cd:CN": {
-      "ingredient_id": "5d72165a-3936-4255-994e-ee7b05ca25cd",
+    "f47d1b69-cefd-4560-871e-1ec8ec91c695:CN": {
+      "ingredient_id": "f47d1b69-cefd-4560-871e-1ec8ec91c695",
       "country_code": "CN",
       "status": "banned",
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "NMPA Cosmetic Safety Technical Standard Table 1 lists this as a prohibited substance.",
+      "reason": "NMPA Cosmetic Safety Technical Standard Table 1 lists it as a prohibited substance.",
       "by": "gemini-consensus",
-      "name": "디메칠설폭사이드(DMSO)로 추출한 성분을 3% 초과하여 함유하고 있는석유 유래물질 (Distillates (petroleum), solvent-refined hydrocracked light)"
+      "name": "다이메틸설페이트"
     },
-    "dc3685e0-6250-4567-a659-5723df3fb980:CN": {
-      "ingredient_id": "dc3685e0-6250-4567-a659-5723df3fb980",
+    "e688ed7f-8b06-43a8-8957-d7edd0f8efec:CN": {
+      "ingredient_id": "e688ed7f-8b06-43a8-8957-d7edd0f8efec",
       "country_code": "CN",
       "status": "banned",
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "NMPA Cosmetic Safety Technical Standard Table 1 lists this as a prohibited substance.",
+      "reason": "NMPA Cosmetic Safety Technical Standard Table 1 lists it as a prohibited substance.",
       "by": "gemini-consensus",
-      "name": "디메칠설폭사이드(DMSO)로 추출한 성분을 3% 초과하여 함유하고 있는 석유 유래물질 (Distillates (petroleum), solvent-refined hydrogenated heavy)"
+      "name": "다이메틸설폭사이드"
     },
-    "ad0a356e-b034-49b1-9112-d626721a393c:CN": {
-      "ingredient_id": "ad0a356e-b034-49b1-9112-d626721a393c",
+    "f712c89d-9339-4d18-8d96-4abb2cb24f99:CN": {
+      "ingredient_id": "f712c89d-9339-4d18-8d96-4abb2cb24f99",
       "country_code": "CN",
       "status": "banned",
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "NMPA Cosmetic Safety Technical Standard Table 1 lists this as a prohibited substance.",
+      "reason": "NMPA Cosmetic Safety Technical Standard Table 1 lists it as a prohibited substance.",
       "by": "gemini-consensus",
-      "name": "디메칠설폭사이드(DMSO)로 추출한 성분을 3% 초과하여 함유하고 있는 석유 유래물질 (Distillates (petroleum), solvent-refined hydrotreated heavy, hydrogenated)"
+      "name": "다이메틸포름아마이드"
     },
-    "bbb139e9-c751-4945-a960-673815c13d64:CN": {
-      "ingredient_id": "bbb139e9-c751-4945-a960-673815c13d64",
+    "243cc687-5574-43b9-b69a-fc5ad6f1bc0a:CN": {
+      "ingredient_id": "243cc687-5574-43b9-b69a-fc5ad6f1bc0a",
       "country_code": "CN",
       "status": "banned",
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "NMPA Cosmetic Safety Technical Standard Table 1 lists this as a prohibited substance.",
+      "reason": "NMPA Cosmetic Safety Technical Standard Table 1 lists it as a prohibited substance.",
       "by": "gemini-consensus",
-      "name": "디메칠설폭사이드(DMSO)로 추출한 성분을 3% 초과하여 함유하고 있는석유 유래물질 (Distillates (petroleum), solvent-refined light naphthenic)"
+      "name": "다이메틸설파모일클로라이드"
+    },
+    "a3f6f75f-6775-4a64-8e54-276facbf1000:CN": {
+      "ingredient_id": "a3f6f75f-6775-4a64-8e54-276facbf1000",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA Cosmetics Safety Technical Standard Table 1 lists this as a prohibited substance (No. 578).",
+      "by": "gemini-consensus",
+      "name": "석유 증류물, light catalytic cracked, thermally degraded"
+    },
+    "199372f9-cb79-4f54-b846-871e8ab85beb:CN": {
+      "ingredient_id": "199372f9-cb79-4f54-b846-871e8ab85beb",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA Cosmetics Safety Technical Standard Table 1 lists this as a prohibited substance (No. 579).",
+      "by": "gemini-consensus",
+      "name": "석유 증류물, light hydrocracked"
+    },
+    "928394be-d27e-46c6-8838-50ee3f78b0c4:CN": {
+      "ingredient_id": "928394be-d27e-46c6-8838-50ee3f78b0c4",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA Cosmetics Safety Technical Standard Table 1 lists this as a prohibited substance (No. 580).",
+      "by": "gemini-consensus",
+      "name": "석유 증류물, light naphthenic"
+    },
+    "4d83d9d6-6c1a-495b-9c53-803bbda9e44e:CN": {
+      "ingredient_id": "4d83d9d6-6c1a-495b-9c53-803bbda9e44e",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA Cosmetics Safety Technical Standard Table 1 lists this as a prohibited substance (No. 581).",
+      "by": "gemini-consensus",
+      "name": "석유 증류물, hydrodesulfurised light catalytic cracked"
+    },
+    "ef9081c4-526b-4571-a860-2fb380ff3e5a:CN": {
+      "ingredient_id": "ef9081c4-526b-4571-a860-2fb380ff3e5a",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA Cosmetics Safety Technical Standard Table 1 lists this as a prohibited substance (No. 582).",
+      "by": "gemini-consensus",
+      "name": "석유 증류물, light thermal cracked"
+    },
+    "71c5c957-b888-4a20-9fc9-527a031fc87b:CN": {
+      "ingredient_id": "71c5c957-b888-4a20-9fc9-527a031fc87b",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA Cosmetics Safety Technical Standard Table 1 lists this as a prohibited substance (No. 583).",
+      "by": "gemini-consensus",
+      "name": "석유 증류물, light vacuum"
+    },
+    "279f5780-5848-4c2e-a628-8f14aa2dc707:CN": {
+      "ingredient_id": "279f5780-5848-4c2e-a628-8f14aa2dc707",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA Cosmetics Safety Technical Standard Table 1 lists this as a prohibited substance (No. 584).",
+      "by": "gemini-consensus",
+      "name": "석유 증류물, petroleum residues vacuum"
+    },
+    "0bfdd6b7-341a-46d8-9771-d76504ea629b:CN": {
+      "ingredient_id": "0bfdd6b7-341a-46d8-9771-d76504ea629b",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA Cosmetics Safety Technical Standard Table 1 lists this as a prohibited substance (No. 585).",
+      "by": "gemini-consensus",
+      "name": "석유 증류물, vacuum"
+    },
+    "4080fed4-79fb-4a90-af97-d3ae9f649018:CN": {
+      "ingredient_id": "4080fed4-79fb-4a90-af97-d3ae9f649018",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA 화장품안전기술규범 표1에 화장품 사용 금지 물질로 명시됨.",
+      "by": "gemini-consensus",
+      "name": "디메칠설폭사이드(DMSO)로 추출한 성분을 3% 초과하여 함유하고 있는 석유 유래물질 (Extracts (petroleum), light paraffinic distillate solvent, acid-treated)"
+    },
+    "0091cfab-c689-44d3-a133-f02d352e4636:CN": {
+      "ingredient_id": "0091cfab-c689-44d3-a133-f02d352e4636",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA 화장품안전기술규범 표1에 화장품 사용 금지 물질로 명시됨.",
+      "by": "gemini-consensus",
+      "name": "디메칠설폭사이드(DMSO)로 추출한 성분을 3% 초과하여 함유하고 있는 석유 유래물질 (Extracts (petroleum), light paraffinic distillate solvent, carbon-treated)"
+    },
+    "382ed412-fd39-451e-8f2b-9d5051655b9c:CN": {
+      "ingredient_id": "382ed412-fd39-451e-8f2b-9d5051655b9c",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA 화장품안전기술규범 표1에 화장품 사용 금지 물질로 명시됨.",
+      "by": "gemini-consensus",
+      "name": "디메칠설폭사이드(DMSO)로 추출한 성분을 3% 초과하여 함유하고 있는 석유 유래물질 (Extracts (petroleum), light paraffinic distillate solvent, clay-treated)"
+    },
+    "b7ba9acd-6947-4e48-91f4-2569d6649b21:CN": {
+      "ingredient_id": "b7ba9acd-6947-4e48-91f4-2569d6649b21",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA 화장품안전기술규범 표1에 화장품 사용 금지 물질로 명시됨.",
+      "by": "gemini-consensus",
+      "name": "디메칠설폭사이드(DMSO)로 추출한 성분을 3% 초과하여 함유하고 있는 석유 유래물질 (Extracts (petroleum), light paraffinic distillate solvent, hydrodesulfurised)"
+    },
+    "43d5e0a5-1a54-4114-b9ca-0aa925e92b03:CN": {
+      "ingredient_id": "43d5e0a5-1a54-4114-b9ca-0aa925e92b03",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA 화장품안전기술규범 표1에 화장품 사용 금지 물질로 명시됨.",
+      "by": "gemini-consensus",
+      "name": "디메칠설폭사이드(DMSO)로 추출한 성분을 3% 초과하여 함유하고 있는 석유 유래물질 (Extracts (petroleum), light paraffinic distillate solvent, hydrotreated)"
+    },
+    "636857d2-011c-4679-abba-ccb3b174e941:CN": {
+      "ingredient_id": "636857d2-011c-4679-abba-ccb3b174e941",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA 화장품안전기술규범 표1에 화장품 사용 금지 물질로 명시됨.",
+      "by": "gemini-consensus",
+      "name": "디메칠설폭사이드(DMSO)로 추출한 성분을 3% 초과하여 함유하고 있는석유 유래물질 (Extracts (petroleum), light vacuum gas oil solvent, clay-treated)"
+    },
+    "20ba51d2-1cfd-4396-9a96-51db8eed58d0:CN": {
+      "ingredient_id": "20ba51d2-1cfd-4396-9a96-51db8eed58d0",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA 화장품안전기술규범 표1에 화장품 사용 금지 물질로 명시됨.",
+      "by": "gemini-consensus",
+      "name": "디메칠설폭사이드(DMSO)로 추출한 성분을 3% 초과하여 함유하고 있는석유 유래물질 (Extracts (petroleum), light vacuum gas oil solvent, hydrotreated)"
+    },
+    "5aa70a95-4e91-4236-b68c-4b0f41858998:CN": {
+      "ingredient_id": "5aa70a95-4e91-4236-b68c-4b0f41858998",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA 화장품안전기술규범 표1에 화장품 사용 금지 물질로 명시됨.",
+      "by": "gemini-consensus",
+      "name": "디메칠설폭사이드(DMSO)로 추출한 성분을 3% 초과하여 함유하고 있는 석유 유래물질 (Extracts (petroleum), light vacuum, gas oil solvent, carbon-treated)"
+    },
+    "458c9dc4-923a-4ce5-896f-3feca94c9a72:CN": {
+      "ingredient_id": "458c9dc4-923a-4ce5-896f-3feca94c9a72",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA 화장품안전기술규범 표1에 명시된 화장품 사용 금지 물질입니다.",
+      "by": "gemini-consensus",
+      "name": "디메칠설폭사이드(DMSO)로 추출한 성분을 3% 초과하여 함유하고 있는석유 유래물질 (Extracts (petroleum), solvent-refined heavy paraffinic distillate solvent)"
+    },
+    "b6039812-d614-467e-ab47-2e56cf0afb53:CN": {
+      "ingredient_id": "b6039812-d614-467e-ab47-2e56cf0afb53",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA 화장품안전기술규범 표1에 명시된 화장품 사용 금지 물질입니다.",
+      "by": "gemini-consensus",
+      "name": "석유 추출물, heavy naphthenic distillate solvent"
+    },
+    "2643df1d-6f3d-4225-b3f4-e96a7e3b3067:CN": {
+      "ingredient_id": "2643df1d-6f3d-4225-b3f4-e96a7e3b3067",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA 화장품안전기술규범 표1에 명시된 화장품 사용 금지 물질입니다.",
+      "by": "gemini-consensus",
+      "name": "석유 추출물, light naphthenic distillate solvent"
+    },
+    "4a956e53-d200-46ac-9511-1741fc782ee4:CN": {
+      "ingredient_id": "4a956e53-d200-46ac-9511-1741fc782ee4",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA 화장품안전기술규범 표1에 명시된 화장품 사용 금지 물질입니다.",
+      "by": "gemini-consensus",
+      "name": "석유 추출물, light paraffinic distillate solvent"
+    },
+    "1a185c1d-de25-4bff-a627-10de265fc4dc:CN": {
+      "ingredient_id": "1a185c1d-de25-4bff-a627-10de265fc4dc",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA 화장품안전기술규범 표1에 명시된 화장품 사용 금지 물질입니다.",
+      "by": "gemini-consensus",
+      "name": "석유 추출물, light vacuum gas oil solvent"
+    },
+    "65132f50-48f9-4139-98d6-522307b04709:CN": {
+      "ingredient_id": "65132f50-48f9-4139-98d6-522307b04709",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA 화장품안전기술규범 표1에 명시된 화장품 사용 금지 물질입니다.",
+      "by": "gemini-consensus",
+      "name": "2-α-사이클로헥실벤질(N,N,N',N'테트라에틸)트라이메틸렌다이아민(페네타민)"
+    },
+    "0e96cbbf-4e72-405e-84d3-1784fe6d53e8:CN": {
+      "ingredient_id": "0e96cbbf-4e72-405e-84d3-1784fe6d53e8",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA 화장품안전기술규범 표1에 명시된 화장품 사용 금지 물질입니다.",
+      "by": "gemini-consensus",
+      "name": "페나다이아졸"
+    },
+    "36bcdbfa-bf15-409f-906e-5851d634a921:CN": {
+      "ingredient_id": "36bcdbfa-bf15-409f-906e-5851d634a921",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA 화장품안전기술규범 표1에 명시된 화장품 사용 금지 물질입니다.",
+      "by": "gemini-consensus",
+      "name": "페노졸론"
+    },
+    "cfed41cb-3c9e-44d7-aa03-012f67b3111f:CN": {
+      "ingredient_id": "cfed41cb-3c9e-44d7-aa03-012f67b3111f",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA 화장품안전기술규범 표1에 따라 화장품 사용 금지 물질입니다.",
+      "by": "gemini-consensus",
+      "name": "펜틴하이드록사이드"
+    },
+    "4aa37cc9-37f8-4b49-8834-ca7f227a73bd:CN": {
+      "ingredient_id": "4aa37cc9-37f8-4b49-8834-ca7f227a73bd",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA 화장품안전기술규범 표1에 따라 화장품 사용 금지 물질입니다.",
+      "by": "gemini-consensus",
+      "name": "페니라미돌"
+    },
+    "5922ba8f-00b6-4b46-ae71-8dc0ea6552ea:CN": {
+      "ingredient_id": "5922ba8f-00b6-4b46-ae71-8dc0ea6552ea",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA 화장품안전기술규범 표1에 따라 화장품 사용 금지 물질입니다.",
+      "by": "gemini-consensus",
+      "name": "플루아니손"
+    },
+    "953c85cb-33c2-4225-bf3f-a2c5e71428aa:CN": {
+      "ingredient_id": "953c85cb-33c2-4225-bf3f-a2c5e71428aa",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA 화장품안전기술규범 표1에 따라 화장품 사용 금지 물질입니다.",
+      "by": "gemini-consensus",
+      "name": "p-부틸플루지포프"
+    },
+    "4142cb3e-8360-4d06-9e0d-b3a761250239:CN": {
+      "ingredient_id": "4142cb3e-8360-4d06-9e0d-b3a761250239",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA 화장품안전기술규범 표1에 따라 화장품 사용 금지 물질입니다.",
+      "by": "gemini-consensus",
+      "name": "플루오레손"
+    },
+    "6f31bfe8-169b-43d7-96a8-1c93ae9a3abb:CN": {
+      "ingredient_id": "6f31bfe8-169b-43d7-96a8-1c93ae9a3abb",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA 화장품안전기술규범 표1에 따라 화장품 사용 금지 물질입니다.",
+      "by": "gemini-consensus",
+      "name": "플루오로우라실"
+    },
+    "fcd90793-3aa7-42b7-99d0-566d2abe5dc9:CN": {
+      "ingredient_id": "fcd90793-3aa7-42b7-99d0-566d2abe5dc9",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA 화장품안전기술규범 표1에 따라 화장품 사용 금지 물질입니다.",
+      "by": "gemini-consensus",
+      "name": "디메칠설폭사이드(DMSO)로 추출한 성분을 3% 초과하여 함유하고 있는 석유 유래물질 (Foots oil (petroleum))"
+    },
+    "5914425a-d9a0-484e-b7f5-b731d8eda8e5:CN": {
+      "ingredient_id": "5914425a-d9a0-484e-b7f5-b731d8eda8e5",
+      "country_code": "CN",
+      "status": "banned",
+      "max": null,
+      "from": "banned",
+      "confidence": 1,
+      "reason": "NMPA 화장품안전기술규범 표1에 따라 화장품 사용 금지 물질입니다.",
+      "by": "gemini-consensus",
+      "name": "디메칠설폭사이드(DMSO)로 추출한 성분을 3% 초과하여 함유하고 있는석유 유래물질 (Foots oil (petroleum), acid-treated)"
     }
   }
 }
