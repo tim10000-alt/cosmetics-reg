@@ -862,7 +862,7 @@
         },
         {
           "name": "Butane, if it contains ≥ 0,1 % w/w Butadiene",
-          "prio": 100
+          "prio": 105
         }
       ],
       "allowed": [
@@ -1096,7 +1096,7 @@
         },
         {
           "name": "Distillates (petroleum), heavy hydrocracked, if they contain > 3 % w/w DMSO extract 7",
-          "prio": 100
+          "prio": 105
         }
       ],
       "allowed": [
@@ -1394,7 +1394,7 @@
         },
         {
           "name": "Laccaic Acid (CI Natural Red 25) and its salts, when used as a substance in hair dye products 1",
-          "prio": 100
+          "prio": 105
         }
       ],
       "allowed": [
