@@ -196,5 +196,17 @@
     "parsed_at": "2026-10-20T21:40:49.414Z",
     "entry_count": 0,
     "article_no": "17918"
+  },
+  "public/data/raw-attach/kcia-17953/별첨1. 화장품 신원료 혁신 지도 업무 메커니즘(시범운영)_국문.pdf": {
+    "sha256": "87fc92df18914e1637ce4a4db7c8af3aeb08f5ea85dd98e729e1df6e2a248d57",
+    "parsed_at": "2026-10-27T22:18:09.207Z",
+    "entry_count": 0,
+    "article_no": "17953"
+  },
+  "public/data/raw-attach/kcia-17952/별첨1. 새로운 효능 화장품 허가 신청 사전 자문 업무 메커니즘(시범운영)_국문.pdf": {
+    "sha256": "9cc4abd426d2ab99d18c64363be74578af1d3fd22e098f1bb1d600297a98f901",
+    "parsed_at": "2026-10-27T22:18:09.207Z",
+    "entry_count": 0,
+    "article_no": "17952"
   }
 }

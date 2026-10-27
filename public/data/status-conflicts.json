@@ -1342,7 +1342,7 @@
       "banned": [
         {
           "name": "Thiourea (Thiocarbamide)",
-          "prio": 105
+          "prio": 100
         }
       ],
       "allowed": [
@@ -1364,7 +1364,7 @@
       "banned": [
         {
           "name": "Sympathicomimetic amines acting on the central nervous system: any substance contained in the first list of medicaments which are subject to medical prescription and are referred to in resolution AP (69) 2 of the Council of Europe",
-          "prio": 105
+          "prio": 100
         }
       ],
       "allowed": [
