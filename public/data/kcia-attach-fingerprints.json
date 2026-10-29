@@ -208,5 +208,17 @@
     "parsed_at": "2026-10-27T22:18:09.207Z",
     "entry_count": 0,
     "article_no": "17952"
+  },
+  "public/data/raw-attach/kcia-17959/중국생태환경부 신화학물질환경관리등록방법_국문.pdf": {
+    "sha256": "9001a1edf65ff7420d6bff15481ee93a9b991838a848d926932479d313e7f2e2",
+    "parsed_at": "2026-10-29T22:48:24.617Z",
+    "entry_count": 0,
+    "article_no": "17959"
+  },
+  "public/data/raw-attach/kcia-17959/중국생태환경부 신화학물질환경관리등록방법_원문.pdf": {
+    "sha256": "5d9892c70bcaa25a1d6349ff7d9094bd57da732db715631f25b57ed5b961c4c1",
+    "parsed_at": "2026-10-29T22:48:24.617Z",
+    "entry_count": 0,
+    "article_no": "17959"
   }
 }
