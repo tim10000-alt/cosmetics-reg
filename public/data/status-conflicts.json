@@ -1,5 +1,5 @@
 {
-  "total": 435,
+  "total": 433,
   "note": "같은 CAS 분절 카드 간 banned↔허용 충돌(false-banned/allowed 후보). limit-overrides 로 검토 교정.",
   "conflicts": [
     {
@@ -734,33 +734,6 @@
     },
     {
       "cc": "CN",
-      "cas": "68989-01-5",
-      "banned": [
-        {
-          "name": "Myristalkonium Saccharinate",
-          "prio": 50
-        }
-      ],
-      "allowed": [
-        {
-          "name": "Benzalkonium Bromide",
-          "status": "listed",
-          "prio": 100
-        },
-        {
-          "name": "Benzalkonium Saccharinate",
-          "status": "listed",
-          "prio": 100
-        },
-        {
-          "name": "Benzalkonium chloride, bromide and saccharinate",
-          "status": "restricted",
-          "prio": 100
-        }
-      ]
-    },
-    {
-      "cc": "CN",
       "cas": "65072-01-7",
       "banned": [
         {
@@ -1391,7 +1364,7 @@
       "banned": [
         {
           "name": "Sympathicomimetic amines acting on the central nervous system: any substance contained in the first list of medicaments which are subject to medical prescription and are referred to in resolution AP (69) 2 of the Council of Europe",
-          "prio": 105
+          "prio": 100
         }
       ],
       "allowed": [
@@ -1710,31 +1683,6 @@
       "allowed": [
         {
           "name": "Bishydroxyethyl Biscetyl Malonamide",
-          "status": "listed",
-          "prio": 100
-        }
-      ]
-    },
-    {
-      "cc": "CN",
-      "cas": "158571-57-4",
-      "banned": [
-        {
-          "name": "HC Blue No 4",
-          "prio": 50
-        },
-        {
-          "name": "N-Methyl-1,4-Diaminoanthraquinone, reaction products with epichlorohydrin and monoethanolamine (HC Blue No 4) and its salts",
-          "prio": 50
-        },
-        {
-          "name": "N-Methyl-1,4-diaminoanthraquinone, reaction products with epichlo rohydrin and monoethanolamine (HC Blue No. 4) and its salts, when used as a substance in hair dye products",
-          "prio": 105
-        }
-      ],
-      "allowed": [
-        {
-          "name": "HC BLUE NO. 4",
           "status": "listed",
           "prio": 100
         }
@@ -5845,6 +5793,40 @@
       "allowed": [
         {
           "name": "CI 50420",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "2118-39-0",
+      "banned": [
+        {
+          "name": "Tetrasodium 6-amino-4-hydroxy-3-[[7-sulphonato-4-[(4-sulphonatophenyl)azo]-1-naphthyl]azo]naphthalene-2,7-disulphonate (Food Black 2; CI 27755) when used as a substance in hair dye products",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 27755",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "SG",
+      "cas": "4548-53-2",
+      "banned": [
+        {
+          "name": "Disodium 3-[(2,4-dimethyl-5-sulphonatophenyl)azo]-4-hydroxynaphthalene-1-sulphonate (Ponceaux SX; CI 14700) when used as a substance in hair dye products",
+          "prio": 100
+        }
+      ],
+      "allowed": [
+        {
+          "name": "CI 14700",
           "status": "listed",
           "prio": 100
         }
