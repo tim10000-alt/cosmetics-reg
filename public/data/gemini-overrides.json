@@ -1,6 +1,6 @@
 {
   "note": "Gemini 듀얼합의 자동교정(법령변경 자가치유) — apply-gemini-overrides 가 prio105 로 baking. un-ban 은 권위 annex veto. 사람 개입 0.",
-  "total": 509,
+  "total": 510,
   "corrections": {
     "38629385-37bc-4757-85de-6fba8806a583:KR": {
       "ingredient_id": "38629385-37bc-4757-85de-6fba8806a583",
@@ -5524,82 +5524,93 @@
       "by": "gemini-consensus",
       "name": "부타디엔 0.1%를 초과하여 함유하는 석유정제물(가스류, 탄화수소류, 알칸류, 증류물, 라피네이트)"
     },
-    "23f1cd8b-3de1-49df-95ba-356e7224f36f:CN": {
-      "ingredient_id": "23f1cd8b-3de1-49df-95ba-356e7224f36f",
-      "country_code": "CN",
+    "93184357-bd67-43c2-a227-b7b471e60b97:KR": {
+      "ingredient_id": "93184357-bd67-43c2-a227-b7b471e60b97",
+      "country_code": "KR",
+      "status": "restricted",
+      "max": 0.002,
+      "from": "restricted",
+      "confidence": 1,
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 2] 배합 한도 지정 성분",
+      "by": "gemini-consensus",
+      "name": "메틸옥틴카보네이트"
+    },
+    "1a09141d-d2eb-4084-977a-9ce9eac2d2cc:KR": {
+      "ingredient_id": "1a09141d-d2eb-4084-977a-9ce9eac2d2cc",
+      "country_code": "KR",
       "status": "banned",
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "NMPA Cosmetic Safety Technical Standard Table 1 lists it as a prohibited substance.",
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 1] 배합 금지 성분 (비소 및 그 화합물)",
       "by": "gemini-consensus",
-      "name": "지르코늄및그산의염류"
+      "name": "아세닉펜타옥사이드"
     },
-    "f60dda08-0963-4df9-86c2-87fdf7236759:CN": {
-      "ingredient_id": "f60dda08-0963-4df9-86c2-87fdf7236759",
-      "country_code": "CN",
+    "4a387b9a-a702-4022-93cc-aa12b59003e4:KR": {
+      "ingredient_id": "4a387b9a-a702-4022-93cc-aa12b59003e4",
+      "country_code": "KR",
       "status": "banned",
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "NMPA Cosmetic Safety Technical Standard Table 2 lists it as a prohibited plant/animal substance.",
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 1] 배합 금지 성분 (인화물)",
       "by": "gemini-consensus",
-      "name": "아남미르타 코쿨루스(열매)"
+      "name": "메탈포스파이드"
     },
-    "c7a4ec90-1f2b-448b-a81d-5e602cb76bb4:CN": {
-      "ingredient_id": "c7a4ec90-1f2b-448b-a81d-5e602cb76bb4",
-      "country_code": "CN",
+    "bc4a55b3-d997-484c-af66-0b19ed614944:KR": {
+      "ingredient_id": "bc4a55b3-d997-484c-af66-0b19ed614944",
+      "country_code": "KR",
       "status": "banned",
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "NMPA Cosmetic Safety Technical Standard Table 2 lists it as a prohibited plant/animal substance.",
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 1] 배합 금지 성분",
       "by": "gemini-consensus",
-      "name": "쥐방울덩굴속(쥐방울덩굴과) 식물"
+      "name": "하이드록시에틸-2,6-다이나이트로-p-아니시딘 및 그 염류"
     },
-    "774d9ce1-0419-405a-96ed-548fdda45b35:CN": {
-      "ingredient_id": "774d9ce1-0419-405a-96ed-548fdda45b35",
-      "country_code": "CN",
+    "10c6f7a7-a0ef-4372-8f84-99cf0c3edf1e:KR": {
+      "ingredient_id": "10c6f7a7-a0ef-4372-8f84-99cf0c3edf1e",
+      "country_code": "KR",
       "status": "banned",
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "NMPA Cosmetic Safety Technical Standard Table 2 lists it as a prohibited plant/animal substance.",
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 1] 배합 금지 성분",
       "by": "gemini-consensus",
-      "name": "갓, 백개"
+      "name": "마부테롤"
     },
-    "99a53852-6289-4e70-bac1-5eab3e2f394f:CN": {
-      "ingredient_id": "99a53852-6289-4e70-bac1-5eab3e2f394f",
-      "country_code": "CN",
+    "7c85a0a7-ac65-44c0-be56-226f56ad833a:KR": {
+      "ingredient_id": "7c85a0a7-ac65-44c0-be56-226f56ad833a",
+      "country_code": "KR",
       "status": "banned",
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "NMPA Cosmetic Safety Technical Standard Table 2 lists it as a prohibited plant/animal substance.",
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 1] 배합 금지 성분",
       "by": "gemini-consensus",
-      "name": "반묘"
+      "name": "파라티온-메틸"
     },
-    "c67cad3f-bf11-4044-97c7-6f4e789358f5:CN": {
-      "ingredient_id": "c67cad3f-bf11-4044-97c7-6f4e789358f5",
-      "country_code": "CN",
+    "cd18f3ff-b537-42ea-a574-5daf65b05ad1:KR": {
+      "ingredient_id": "cd18f3ff-b537-42ea-a574-5daf65b05ad1",
+      "country_code": "KR",
       "status": "banned",
       "max": null,
       "from": "banned",
       "confidence": 1,
-      "reason": "NMPA Cosmetic Safety Technical Standard Table 2 lists it as a prohibited plant/animal substance.",
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 1] 배합 금지 성분",
       "by": "gemini-consensus",
-      "name": "양명아주(정유)"
+      "name": "디이에이-세테아레스-2포스페이트"
     },
-    "8d65a5b9-1ca6-4592-a017-f174c1384e82:CN": {
-      "ingredient_id": "8d65a5b9-1ca6-4592-a017-f174c1384e82",
-      "country_code": "CN",
+    "8e0ec212-dc8b-40d5-b857-cff8255165ce:KR": {
+      "ingredient_id": "8e0ec212-dc8b-40d5-b857-cff8255165ce",
+      "country_code": "KR",
       "status": "banned",
       "max": null,
-      "from": "listed",
+      "from": "banned",
       "confidence": 1,
-      "reason": "IECIC에 등재되어 있으나, 화장품안전기술규범에서 명확히 사용 금지된 원료입니다.",
+      "reason": "대한민국 화장품 안전기준 등에 관한 규정 [별표 1] 배합 금지 성분",
       "by": "gemini-consensus",
-      "name": "HC BLUE NO. 4"
+      "name": "다이옥세테드린 및 그 염류"
     }
   }
 }
