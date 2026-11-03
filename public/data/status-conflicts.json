@@ -1,5 +1,5 @@
 {
-  "total": 433,
+  "total": 434,
   "note": "같은 CAS 분절 카드 간 banned↔허용 충돌(false-banned/allowed 후보). limit-overrides 로 검토 교정.",
   "conflicts": [
     {
@@ -1683,6 +1683,31 @@
       "allowed": [
         {
           "name": "Bishydroxyethyl Biscetyl Malonamide",
+          "status": "listed",
+          "prio": 100
+        }
+      ]
+    },
+    {
+      "cc": "CN",
+      "cas": "158571-57-4",
+      "banned": [
+        {
+          "name": "HC Blue No 4",
+          "prio": 50
+        },
+        {
+          "name": "N-Methyl-1,4-Diaminoanthraquinone, reaction products with epichlorohydrin and monoethanolamine (HC Blue No 4) and its salts",
+          "prio": 50
+        },
+        {
+          "name": "N-Methyl-1,4-diaminoanthraquinone, reaction products with epichlo rohydrin and monoethanolamine (HC Blue No. 4) and its salts, when used as a substance in hair dye products",
+          "prio": 105
+        }
+      ],
+      "allowed": [
+        {
+          "name": "HC BLUE NO. 4",
           "status": "listed",
           "prio": 100
         }
@@ -5810,23 +5835,6 @@
       "allowed": [
         {
           "name": "CI 27755",
-          "status": "listed",
-          "prio": 100
-        }
-      ]
-    },
-    {
-      "cc": "SG",
-      "cas": "4548-53-2",
-      "banned": [
-        {
-          "name": "Disodium 3-[(2,4-dimethyl-5-sulphonatophenyl)azo]-4-hydroxynaphthalene-1-sulphonate (Ponceaux SX; CI 14700) when used as a substance in hair dye products",
-          "prio": 100
-        }
-      ],
-      "allowed": [
-        {
-          "name": "CI 14700",
           "status": "listed",
           "prio": 100
         }
