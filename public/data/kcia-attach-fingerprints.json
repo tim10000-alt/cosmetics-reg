@@ -220,5 +220,17 @@
     "parsed_at": "2026-10-29T22:48:24.617Z",
     "entry_count": 0,
     "article_no": "17959"
+  },
+  "public/data/raw-attach/kcia-17966/붙임1. 국가약품감독관리국의 「화장품 중 미생물 시험방법 통칙」 등 7개 시험방법을 「화장품 안전기술규범」에 포함시키는 것에 관한 공고(국문).pdf": {
+    "sha256": "4cc3ca0c24aa65ea91f53f66d7dd3e165d4cd74cc29a5ee61a7e984150f567be",
+    "parsed_at": "2026-11-04T23:43:28.204Z",
+    "entry_count": 0,
+    "article_no": "17966"
+  },
+  "public/data/raw-attach/kcia-17966/붙임2. 「화장품 안전기술규범」 7개 표준 제·개정 항목 총괄표(국문).pdf": {
+    "sha256": "b269db329298aeb629e3da3bfd73c7d086cd3551d3edfc855c26c8861311d9b2",
+    "parsed_at": "2026-11-04T23:43:28.204Z",
+    "entry_count": 0,
+    "article_no": "17966"
   }
 }

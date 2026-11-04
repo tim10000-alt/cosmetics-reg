@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T23:32:21.738Z",
+  "generated_at": "2026-11-04T23:46:20.283Z",
   "totalRegs": 95644,
   "coverage": {
     "AR": 4832,
@@ -62,14 +62,13 @@
   "limitAnomalyCount": 0,
   "postHealCorrupt": 0,
   "postHealWhitespace": 0,
-  "sourceFailCount": 7,
+  "sourceFailCount": 6,
   "sourceFailList": [
     "CN:cn_nmpa",
     "US:us_fda_cosmetics_announcements",
     "VN:vn_vietnam_dav",
     "CA:ca_health_canada_cosmetic_ingredient_hotlis",
     "PH:ph_philippines_fda_cosmetic",
-    "TH:th_thailand_fda_cosmetic_notifications",
     "TW:tw_tfda_data"
   ],
   "checked_at_note": "matches regulations-query primary-row logic"
