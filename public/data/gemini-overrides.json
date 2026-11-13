@@ -1,6 +1,6 @@
 {
   "note": "Gemini 듀얼합의 자동교정(법령변경 자가치유) — apply-gemini-overrides 가 prio105 로 baking. un-ban 은 권위 annex veto. 사람 개입 0.",
-  "total": 509,
+  "total": 510,
   "corrections": {
     "38629385-37bc-4757-85de-6fba8806a583:KR": {
       "ingredient_id": "38629385-37bc-4757-85de-6fba8806a583",
@@ -5529,9 +5529,9 @@
       "country_code": "CN",
       "status": "restricted",
       "max": 12,
-      "from": "banned",
-      "confidence": 0.9,
-      "reason": "중국 화장품 규제상 특정 제품군에 대해 최대 12%까지 허용되는 제한 성분임.",
+      "from": "restricted",
+      "confidence": 1,
+      "reason": "중국 화장품 규제상 특정 제품군에 대해 최대 12%까지 허용되는 제한 성분으로 확인됨.",
       "by": "gemini-consensus",
       "name": "과산화수소 및 과산화수소 생성물질"
     },
@@ -5540,9 +5540,9 @@
       "country_code": "CN",
       "status": "restricted",
       "max": 12,
-      "from": "banned",
-      "confidence": 0.9,
-      "reason": "중국 화장품 규제상 특정 제품군에 대해 최대 12%까지 허용되는 제한 성분임.",
+      "from": "restricted",
+      "confidence": 1,
+      "reason": "중국 화장품 규제상 특정 제품군에 대해 최대 12%까지 허용되는 제한 성분으로 확인됨.",
       "by": "gemini-consensus",
       "name": "마그네슘퍼옥사이드"
     },
@@ -5551,9 +5551,9 @@
       "country_code": "CN",
       "status": "restricted",
       "max": 3,
-      "from": "banned",
-      "confidence": 0.9,
-      "reason": "중국 화장품 규제상 특정 제품군에 대해 최대 3%까지 허용되는 제한 성분임.",
+      "from": "restricted",
+      "confidence": 1,
+      "reason": "중국 화장품 규제상 특정 제품군에 대해 최대 3%까지 허용되는 제한 성분으로 확인됨.",
       "by": "gemini-consensus",
       "name": "미리스탈코늄사카리네이트"
     },
@@ -5562,9 +5562,9 @@
       "country_code": "CN",
       "status": "restricted",
       "max": 12,
-      "from": "banned",
-      "confidence": 0.9,
-      "reason": "중국 화장품 규제상 특정 제품군에 대해 최대 12%까지 허용되는 제한 성분임.",
+      "from": "restricted",
+      "confidence": 1,
+      "reason": "중국 화장품 규제상 특정 제품군에 대해 최대 12%까지 허용되는 제한 성분으로 확인됨.",
       "by": "gemini-consensus",
       "name": "칼슘퍼옥사이드"
     },
@@ -5573,9 +5573,9 @@
       "country_code": "CN",
       "status": "listed",
       "max": null,
-      "from": "unknown",
+      "from": "listed",
       "confidence": 1,
-      "reason": "중국 화장품 규제상 착색제로 각종 화장품에 사용이 허가된 성분임.",
+      "reason": "중국 화장품 규제상 착색제로 사용이 허가된 성분으로 확인됨.",
       "by": "gemini-consensus",
       "name": "실버"
     },
@@ -5584,9 +5584,9 @@
       "country_code": "CN",
       "status": "restricted",
       "max": 12,
-      "from": "banned",
-      "confidence": 0.9,
-      "reason": "중국 화장품 규제상 특정 제품군에 대해 최대 12%까지 허용되는 제한 성분임.",
+      "from": "restricted",
+      "confidence": 1,
+      "reason": "중국 화장품 규제상 특정 제품군에 대해 최대 12%까지 허용되는 제한 성분으로 확인됨.",
       "by": "gemini-consensus",
       "name": "징크퍼옥사이드"
     },
@@ -5595,11 +5595,22 @@
       "country_code": "CN",
       "status": "banned",
       "max": null,
-      "from": "listed",
+      "from": "banned",
       "confidence": 1,
-      "reason": "Diethylene Glycol is explicitly listed as a prohibited ingredient in China's Safety and Technical Standards for Cosmetics (2015 edition, Table 1).",
+      "reason": "중국 화장품 안전 기술 표준(Safety and Technical Standards for Cosmetics)에 명시적으로 금지 성분으로 등재되어 있음.",
       "by": "gemini-consensus",
       "name": "다이에틸렌글라이콜"
+    },
+    "1aa87511-c5d8-47bb-adc7-6ce30a9bf0d9:CN": {
+      "ingredient_id": "1aa87511-c5d8-47bb-adc7-6ce30a9bf0d9",
+      "country_code": "CN",
+      "status": "listed",
+      "max": null,
+      "from": "listed",
+      "confidence": 1,
+      "reason": "IECIC (已使用化妆品原料目录)에 등재되어 중국 화장품에 사용 가능한 성분으로 확인됨.",
+      "by": "gemini-consensus",
+      "name": "벤조페논-6"
     }
   }
 }
