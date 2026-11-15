@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-14T22:33:24.377Z",
-  "totalRegs": 95628,
+  "generated_at": "2026-11-15T22:56:06.959Z",
+  "totalRegs": 95643,
   "coverage": {
     "AR": 4832,
     "BO": 2229,
@@ -27,7 +27,7 @@
     "BO": 2229,
     "BR": 1037,
     "CA": 582,
-    "CN": 10475,
+    "CN": 10481,
     "CO": 2229,
     "EC": 2229,
     "EU": 2131,
@@ -44,7 +44,7 @@
     "VN": 1815
   },
   "restrictedNoLimit": 3811,
-  "statusConflicts": 474,
+  "statusConflicts": 475,
   "quarantinePending": 3,
   "casContaminationSuspects": 223,
   "staleCount": 10,
@@ -63,13 +63,11 @@
   "limitAnomalyCount": 0,
   "postHealCorrupt": 0,
   "postHealWhitespace": 0,
-  "sourceFailCount": 6,
+  "sourceFailCount": 4,
   "sourceFailList": [
     "CN:cn_nmpa",
-    "US:us_fda_cosmetics_announcements",
     "VN:vn_vietnam_dav",
     "CA:ca_health_canada_cosmetic_ingredient_hotlis",
-    "PH:ph_philippines_fda_cosmetic",
     "TW:tw_tfda_data"
   ],
   "checked_at_note": "matches regulations-query primary-row logic"
