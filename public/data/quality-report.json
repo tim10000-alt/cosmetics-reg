@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-21T23:22:58.571Z",
-  "totalRegs": 95634,
+  "generated_at": "2026-11-22T23:44:13.522Z",
+  "totalRegs": 95643,
   "coverage": {
     "AR": 4832,
     "BO": 2229,
@@ -27,7 +27,7 @@
     "BO": 2229,
     "BR": 1037,
     "CA": 582,
-    "CN": 10481,
+    "CN": 10480,
     "CO": 2229,
     "EC": 2229,
     "EU": 2131,
@@ -63,9 +63,10 @@
   "limitAnomalyCount": 0,
   "postHealCorrupt": 0,
   "postHealWhitespace": 0,
-  "sourceFailCount": 7,
+  "sourceFailCount": 8,
   "sourceFailList": [
     "CN:cn_nmpa",
+    "TW:tw_tfda",
     "US:us_fda_cosmetics_announcements",
     "VN:vn_vietnam_dav",
     "BR:br_anvisa_cosm_ticos",
