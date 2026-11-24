@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-22T23:44:13.522Z",
-  "totalRegs": 95643,
+  "generated_at": "2026-11-24T04:06:13.923Z",
+  "totalRegs": 95628,
   "coverage": {
     "AR": 4832,
     "BO": 2229,
@@ -27,7 +27,7 @@
     "BO": 2229,
     "BR": 1037,
     "CA": 582,
-    "CN": 10480,
+    "CN": 10475,
     "CO": 2229,
     "EC": 2229,
     "EU": 2131,
@@ -47,7 +47,7 @@
   "statusConflicts": 474,
   "quarantinePending": 3,
   "casContaminationSuspects": 223,
-  "staleCount": 10,
+  "staleCount": 9,
   "staleSources": [
     "AR",
     "BR",
@@ -57,8 +57,7 @@
     "SG",
     "TH",
     "VN",
-    "TW",
-    "KCIA 성분사전(표준화명칭)"
+    "TW"
   ],
   "limitAnomalyCount": 0,
   "postHealCorrupt": 0,
@@ -66,7 +65,7 @@
   "sourceFailCount": 8,
   "sourceFailList": [
     "CN:cn_nmpa",
-    "TW:tw_tfda",
+    "EU:eu_cosing_database",
     "US:us_fda_cosmetics_announcements",
     "VN:vn_vietnam_dav",
     "BR:br_anvisa_cosm_ticos",
