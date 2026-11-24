@@ -1,6 +1,6 @@
 {
   "note": "Gemini 듀얼합의 자동교정(법령변경 자가치유) — apply-gemini-overrides 가 prio105 로 baking. un-ban 은 권위 annex veto. 사람 개입 0.",
-  "total": 494,
+  "total": 499,
   "corrections": {
     "38629385-37bc-4757-85de-6fba8806a583:KR": {
       "ingredient_id": "38629385-37bc-4757-85de-6fba8806a583",
@@ -5435,6 +5435,61 @@
       "reason": "NMPA 화장품안전기술규범 표2에 명시된 화장품 사용 금지 식물임.",
       "by": "gemini-consensus",
       "name": "복수초속(미나리아재비과) 식물"
+    },
+    "c628aaf3-4f69-40fe-b18f-d8a3c8999f57:CN": {
+      "ingredient_id": "c628aaf3-4f69-40fe-b18f-d8a3c8999f57",
+      "country_code": "CN",
+      "status": "restricted",
+      "max": 12,
+      "from": "banned",
+      "confidence": 0.9,
+      "reason": "중국 화장품 규제상 과산화수소는 두발제품 12%, 피부제품 4%로 사용이 제한된 성분임.",
+      "by": "gemini-consensus",
+      "name": "과산화수소 및 과산화수소 생성물질"
+    },
+    "ce9c5179-ba47-476f-a15b-bb7ebfd70c8d:CN": {
+      "ingredient_id": "ce9c5179-ba47-476f-a15b-bb7ebfd70c8d",
+      "country_code": "CN",
+      "status": "restricted",
+      "max": 12,
+      "from": "banned",
+      "confidence": 0.9,
+      "reason": "중국 화장품 규제상 마그네슘퍼옥사이드는 과산화수소 생성물질로 두발제품 12%, 피부제품 4%로 사용이 제한된 성분임.",
+      "by": "gemini-consensus",
+      "name": "마그네슘퍼옥사이드"
+    },
+    "73b96345-5cf6-40f7-a332-219477a853b3:CN": {
+      "ingredient_id": "73b96345-5cf6-40f7-a332-219477a853b3",
+      "country_code": "CN",
+      "status": "restricted",
+      "max": 3,
+      "from": "banned",
+      "confidence": 0.9,
+      "reason": "중국 화장품 규제상 미리스탈코늄사카리네이트는 씻어내는 제품 3%, 기타 제품 0.1%로 사용이 제한된 성분임.",
+      "by": "gemini-consensus",
+      "name": "미리스탈코늄사카리네이트"
+    },
+    "8f9b30b0-a7fa-4e7c-9229-9c80ae8d57eb:CN": {
+      "ingredient_id": "8f9b30b0-a7fa-4e7c-9229-9c80ae8d57eb",
+      "country_code": "CN",
+      "status": "restricted",
+      "max": 12,
+      "from": "banned",
+      "confidence": 0.9,
+      "reason": "중국 화장품 규제상 칼슘퍼옥사이드는 과산화수소 생성물질로 두발제품 12%, 피부제품 4%로 사용이 제한된 성분임.",
+      "by": "gemini-consensus",
+      "name": "칼슘퍼옥사이드"
+    },
+    "6fd7ab7b-74de-4006-b3f2-059368da20be:CN": {
+      "ingredient_id": "6fd7ab7b-74de-4006-b3f2-059368da20be",
+      "country_code": "CN",
+      "status": "restricted",
+      "max": 12,
+      "from": "banned",
+      "confidence": 0.9,
+      "reason": "중국 화장품 규제상 징크퍼옥사이드는 과산화수소 생성물질로 두발제품 12%, 피부제품 4%로 사용이 제한된 성분임.",
+      "by": "gemini-consensus",
+      "name": "징크퍼옥사이드"
     }
   }
 }
