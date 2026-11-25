@@ -232,5 +232,29 @@
     "parsed_at": "2026-11-04T23:43:28.204Z",
     "entry_count": 0,
     "article_no": "17966"
+  },
+  "public/data/raw-attach/kcia-18012/붙임1. 특수화장품 변경 관련 사항의 추가 최적화에 관한 중검원 통지_국문.pdf": {
+    "sha256": "af387ce748ff54c31e44b2e12ccd3fbba8406a1cbcd3c2699f1b57ccacd858e1",
+    "parsed_at": "2026-11-25T02:34:01.329Z",
+    "entry_count": 0,
+    "article_no": "18012"
+  },
+  "public/data/raw-attach/kcia-18012/붙임2. 특수화장품 변경사항 분류표_국문.pdf": {
+    "sha256": "4e9adcf39f34d8075f8bf2fb1a8ce27e47c25f5f3a5a7a429caea2945a8a7b7e",
+    "parsed_at": "2026-11-25T02:34:01.329Z",
+    "entry_count": 0,
+    "article_no": "18012"
+  },
+  "public/data/raw-attach/kcia-18012/붙임3. 「특수화장품 변경 관련 사항의 추가 최적화에 관한 중검원 통지」 질의응답_국문.pdf": {
+    "sha256": "4e0f15642a6d46b93510688b0207cbcf1ae45a011083c5d145a651b2fe2c4413",
+    "parsed_at": "2026-11-25T02:34:01.329Z",
+    "entry_count": 0,
+    "article_no": "18012"
+  },
+  "public/data/raw-attach/kcia-18011/붙임1. 히드록시에틸이미다졸리디논 등 2종 화장품 신원료 「기사용 화장품 원료 목록」 수록_국문.pdf": {
+    "sha256": "f6f1aeef77ef90b8bb6bf5a18c233a109dada393eb54e0f20de19d439aa33222",
+    "parsed_at": "2026-11-25T02:34:01.329Z",
+    "entry_count": 2,
+    "article_no": "18011"
   }
 }
